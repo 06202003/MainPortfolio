@@ -475,7 +475,7 @@
     width: 100%;
     height: auto;
     max-width: 200px;
-    max-height: 200px;
+    max-height: 300px;
   }
   .img-abouta {
     width: 100%;
@@ -522,3 +522,4 @@
     min-height: 150px;
   }
 }
+
