@@ -1,0 +1,236 @@
+/* Navbar Links Styling */
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* Custom Owl Carousel Styling */
+.portfolio-carousel .item,
+.publications-carousel .item {
+  padding: 15px;
+}
+
+.portfolio-carousel .card {
+  height: 420px !important;
+  background: #ffffff !important;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.publications-carousel .card {
+  height: 470px !important;
+  background: #ffffff !important;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.portfolio-carousel .card:hover,
+.publications-carousel .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(25, 135, 84, 0.3) !important;
+}
+
+/* Button styling to match website theme */
+.portfolio-carousel .btn-outline-primary,
+.publications-carousel .btn-outline-primary {
+  color: #198754;
+  border-color: #198754;
+}
+
+.portfolio-carousel .btn-outline-primary:hover,
+.publications-carousel .btn-outline-primary:hover {
+  background-color: #198754;
+  border-color: #198754;
+  color: white;
+}
+
+.portfolio-carousel .btn-outline-secondary,
+.publications-carousel .btn-outline-secondary {
+  color: #6c757d;
+  border-color: #6c757d;
+}
+
+.portfolio-carousel .btn-outline-secondary:hover,
+.publications-carousel .btn-outline-secondary:hover {
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: white;
+}
+
+.portfolio-carousel .btn-outline-info,
+.publications-carousel .btn-outline-info {
+  color: #198754;
+  border-color: #198754;
+}
+
+.portfolio-carousel .btn-outline-info:hover,
+.publications-carousel .btn-outline-info:hover {
+  background-color: #198754;
+  border-color: #198754;
+  color: white;
+}
+
+.portfolio-carousel .btn-outline-warning,
+.publications-carousel .btn-outline-warning {
+  color: #198754;
+  border-color: #198754;
+}
+
+.portfolio-carousel .btn-outline-warning:hover,
+.publications-carousel .btn-outline-warning:hover {
+  background-color: #198754;
+  border-color: #198754;
+  color: white;
+}
+
+.portfolio-carousel .btn-outline-success,
+.publications-carousel .btn-outline-success {
+  color: #198754;
+  border-color: #198754;
+}
+
+.portfolio-carousel .btn-outline-success:hover,
+.publications-carousel .btn-outline-success:hover {
+  background-color: #198754;
+  border-color: #198754;
+  color: white;
+}
+
+.portfolio-carousel .btn-outline-danger,
+.publications-carousel .btn-outline-danger {
+  color: #198754;
+  border-color: #198754;
+}
+
+.portfolio-carousel .btn-outline-danger:hover,
+.publications-carousel .btn-outline-danger:hover {
+  background-color: #198754;
+  border-color: #198754;
+  color: white;
+}
+
+.portfolio-carousel .card-body,
+.publications-carousel .card-body {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 250px);
+  overflow: hidden;
+  padding: 1rem 1.25rem 1.5rem 1.25rem !important;
+}
+
+.portfolio-carousel .card-text,
+.publications-carousel .card-text {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.portfolio-carousel .card-text::-webkit-scrollbar,
+.publications-carousel .card-text::-webkit-scrollbar {
+  width: 4px;
+}
+
+.portfolio-carousel .card-text::-webkit-scrollbar-thumb,
+.publications-carousel .card-text::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.3);
+  border-radius: 4px;
+}
+
+.portfolio-carousel .card-text::-webkit-scrollbar-thumb:hover,
+.publications-carousel .card-text::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.5);
+}
+
+/* Owl Carousel Custom Navigation - Modern Style */
+.owl-carousel .owl-nav button.owl-prev,
+.owl-carousel .owl-nav button.owl-next {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #667eea !important;
+  font-size: 24px;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.owl-carousel .owl-nav button.owl-prev {
+  left: 10px;
+}
+
+.owl-carousel .owl-nav button.owl-next {
+  right: 10px;
+}
+
+.owl-carousel .owl-nav button.owl-prev:hover,
+.owl-carousel .owl-nav button.owl-next:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+  border-color: transparent;
+}
+
+.owl-carousel .owl-nav button.owl-prev i,
+.owl-carousel .owl-nav button.owl-next i {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.owl-carousel .owl-nav button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Owl Dots - Simple & Clean */
+.owl-carousel .owl-dots {
+  text-align: center;
+  margin-top: 50px;
+  padding: 15px 0;
+}
+
+/* Hide dots navigation */
+.owl-carousel .owl-dots {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .portfolio-carousel .card,
+  .publications-carousel .card {
+    height: auto !important;
+    min-height: 500px;
+  }
+
+  .portfolio-carousel .card-body,
+  .publications-carousel .card-body {
+    height: auto;
+  }
+
+  .owl-carousel .owl-nav button.owl-prev {
+    left: 10px;
+  }
+
+  .owl-carousel .owl-nav button.owl-next {
+    right: 10px;
+  }
+}

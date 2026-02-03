@@ -15,6 +15,16 @@
   max-width: 400px;
   max-height: 400px;
   filter: grayscale(100%);
+  transition: all 0.1s ease-out;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.foto-hero:hover {
+  filter: grayscale(0%);
+  box-shadow:
+    -20px 20px 40px rgba(0, 0, 0, 0.5),
+    -10px 10px 20px rgba(0, 0, 0, 0.3),
+    inset 0 0 30px rgba(255, 255, 255, 0.2);
 }
 .btn-star {
   position: relative;
@@ -522,4 +532,3 @@
     min-height: 150px;
   }
 }
-

@@ -1,15 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
+    <!-- Meta Tags for SEO & Accessibility -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+    <meta name="description" content="Yehezkiel David Setiawan - AI Engineer & LLM Researcher. Fresh graduate in informatics engineering with expertise in large language models, data engineering, and AI-driven code intelligence systems." />
+    <meta name="keywords" content="AI Engineer, LLM Research, Data Engineering, Code Intelligence, Machine Learning, Full Stack Developer, Indonesia" />
+    <meta name="author" content="Yehezkiel David Setiawan" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#198754" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Yehezkiel David S." />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yehezkiel.dev/" />
+    <meta property="og:title" content="Yehezkiel David Setiawan - AI Engineer & LLM Researcher" />
+    <meta property="og:description" content="Practical AI LLM Researcher & Engineer in Advanced Code Intelligence Systems. Bachelor in Informatics Engineering, pursuing Master's in Computer Science." />
+    <meta property="og:image" content="https://yehezkiel.dev/img/david2.png" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Yehezkiel David Setiawan - AI Engineer" />
+    <meta name="twitter:description" content="Practical AI LLM Researcher & Engineer in Advanced Code Intelligence Systems" />
+    <meta name="twitter:image" content="https://yehezkiel.dev/img/david2.png" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yehezkiel.dev/" />
+    
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/custom-carousel.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/david2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/david2.png" />
     <link rel="shortcut icon" href="img/david2.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/david2.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -19,8 +55,39 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yehezkiel David Setiawan",
+      "url": "https://yehezkiel.dev/",
+      "image": "https://yehezkiel.dev/img/david2.png",
+      "description": "AI Engineer & LLM Researcher specializing in code intelligence and data engineering",
+      "jobTitle": "AI Engineer & Data Analyst",
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Royal Medicalink Pharmalab"
+        },
+        {
+          "@type": "Organization",
+          "name": "Maranatha Christian University"
+        }
+      ],
+      "sameAs": [
+        "https://github.com/06202003/",
+        "https://www.linkedin.com/in/ydavids/",
+        "https://www.instagram.com/yz.jsx/",
+        "https://mail.google.com/mail/u/1/?view=cm&fs=1&to=yehezkieldavid2006@gmail.com&tf=1"
+      ],
+      "email": "yehezkieldavid2006@gmail.com",
+      "knowsAbout": ["Artificial Intelligence", "Large Language Models", "Machine Learning", "Data Engineering", "Web Development", "Python", "JavaScript", "Laravel", "Go"]
+    }
+    </script>
     <script>
       var emojis = ['😃', '🤬', '😶‍🌫️', '😑', '🤯', '🤡'];
 
@@ -33,32 +100,39 @@
     </script>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark text-white sticky-top">
+    <!-- Skip to Main Content Link (Accessibility) -->
+    <a href="#main-content" class="btn btn-outline-light btn-sm visually-hidden-focusable" style="position: fixed; top: -40px; left: 0; z-index: 100; padding: 10px 20px;" onclick="document.getElementById('main-content').focus();">Skip to Main Content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-dark text-white sticky-top" aria-label="Main Navigation">
       <div class="container-fluid">
-        <h2>.-- . .-.. -.-. --- -- .</h2>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#home" aria-label="Yehezkiel David Setiawan - Portfolio Home">
+          <h2 aria-hidden="true">.-- . .-.. -.-. --- -- .</h2>
+          <span class="visually-hidden">Yehezkiel David Setiawan Portfolio</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#home"><p class="putih my-auto">Home</p></a>
+              <a class="nav-link" href="#home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about"><p class="putih my-auto">About</p></a>
+              <a class="nav-link" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#qualification"><p class="putih my-auto">Qualification</p></a>
+              <a class="nav-link" href="#qualification">Qualification</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#portfolio"><p class="putih my-auto">Portfolio</p></a>
+              <a class="nav-link" href="#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#reach"><p class="putih my-auto">Reach Me!</p></a>
+              <a class="nav-link" href="#reach">Reach Me!</a>
             </li>
           </ul>
-          <form class="d-flex" role="search">
-            <a href="https://wa.me/6289507647137" target="_blank" type="button" class="btn-star" style="text-decoration: none">
+          <div class="d-flex">
+            <a href="https://wa.me/6289507647137" target="_blank" rel="noopener noreferrer" class="btn-star" style="text-decoration: none" aria-label="Contact via WhatsApp">
               Contact Me! <i class="fa-brands fa-whatsapp fa-shake fa-lg"></i>
               <div class="star-1">
                 <svg
@@ -157,18 +231,19 @@
                 </svg>
               </div>
             </a>
-          </form>
+          </div>
         </div>
       </div>
     </nav>
 
-    <!-- Home -->
-    <section class="bg-dark">
+    <!-- Home Section -->
+    <main id="main-content">
+    <section class="bg-dark" aria-label="Hero section">
       <div id="home" style="width: 100%">
         <div class="container text-white" style="height: auto">
-          <div class="row d-flex justify-content-center align-items-center" style="min-height: 92.5vh">
+          <div class="row d-flex justify-content-center align-items-center" style="min-height: 100vh">
             <div class="col-md-4 order-sm-1 text-center" data-aos="fade-down" data-aos-offset="500" data-aos-duration="500">
-              <img src="img/david.JPG" class="foto-hero rounded-5" alt="" />
+              <img id="fotoHero" src="img/david.JPG" class="foto-hero rounded-5" alt="Yehezkiel David Setiawan - AI Engineer portrait" />
             </div>
 
             <div class="col-md-7 order-sm-0 px-5">
@@ -280,30 +355,31 @@
               </a>
             </div>
 
-            <div class="col-md-1 hidden order-sm-2" data-aos="zoom-in" data-aos-offset="500" data-aos-duration="500">
+            <div class="col-md-1 hidden order-sm-2" data-aos="zoom-in" data-aos-offset="500" data-aos-duration="500" aria-label="Social media links">
               <div class="tengah">
-                <a href="https://github.com/06202003/" target="_blank"> <i class="fa-brands fa-github fa-3x py-3" style="color: #198754"></i></a> <br />
-                <a href="https://www.linkedin.com/in/ydavids/" target="_blank"><i class="fa-brands fa-linkedin fa-3x py-3" style="color: #198754"></i></a><br />
-                <a href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=yehezkieldavid2006@gmail.com&tf=1" target="_blank"><i class="fa-brands fa-google fa-3x py-3" style="color: #198754"></i></a><br />
-                <a href="https://www.instagram.com/yz.jsx/" target="_blank"><i class="fa-brands fa-instagram fa-3x py-3" style="color: #198754"></i></a><br />
-                <a href="https://discordapp.com/users/705312106488135681" target="_blank"><i class="fa-brands fa-discord fa-2x py-3" style="color: #198754"></i></a><br />
+                <a href="https://github.com/06202003/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github fa-3x py-3" style="color: #198754" aria-hidden="true"></i></a> <br />
+                <a href="https://www.linkedin.com/in/ydavids/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin fa-3x py-3" style="color: #198754" aria-hidden="true"></i></a><br />
+                <a href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=yehezkieldavid2006@gmail.com&tf=1" target="_blank" rel="noopener noreferrer" aria-label="Send email"><i class="fa-brands fa-google fa-3x py-3" style="color: #198754" aria-hidden="true"></i></a><br />
+                <a href="https://www.instagram.com/yz.jsx/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile"><i class="fa-brands fa-instagram fa-3x py-3" style="color: #198754" aria-hidden="true"></i></a><br />
+                <a href="https://discordapp.com/users/705312106488135681" target="_blank" rel="noopener noreferrer" aria-label="Discord profile"><i class="fa-brands fa-discord fa-2x py-3" style="color: #198754" aria-hidden="true"></i></a><br />
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Home -->
+    <!-- End Home Section -->
 
-    <!-- About -->
+    <!-- About Section -->
+    <section id="about" aria-label="About Yehezkiel">
     <section id="about">
       <div class="container pt-5" style="height: auto">
         <div class="row d-flex justify-content-center align-items-center" style="min-height: 90vh">
           <div class="col-md-4" data-aos="fade-down" data-aos-delay="250" data-aos-duration="300" data-aos-mirror="true">
-            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" aria-label="Open video and quotes gallery">
               <div class="card border-0 mx-auto" style="width: 100%;">
                 <div class="card-body">
-                  <video class="rounded-5" autoplay muted style="width: 100%; height: 100%; width: 100%">
+                  <video class="rounded-5" autoplay muted style="width: 100%; height: 100%; width: 100%" aria-label="Profile video introduction">
                     <source src="media/video.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
@@ -312,6 +388,7 @@
             </button>
           </div>
           <div class="col-md-8 px-5" data-aos="fade-down" data-aos-delay="250" data-aos-duration="300" data-aos-mirror="true">
+            <h1>About Me</h1>
             <p style="text-align: justify;font-size: 1em;">
            Yehezkiel David Setiawan is an AI engineer from Bandung, Indonesia, specializing in large language model (LLM) innovation and data engineering. He combines rigorous academic research with practical system development to design, implement, and deploy production-grade machine learning systems. His research and projects concentrate on LLM-driven code intelligence and operational LLM deployment. He develops and evaluates semantic code-similarity systems, empirically measures properties of GenAI-generated code in educational contexts, and designs applied solutions that integrate LLMs into production workflows while addressing detection, governance, and reproducibility.
             </p>
@@ -338,7 +415,7 @@
             </div>
           
           
-            <a href="data/Yehezkiel.pdf" download data-aos="fade-down" data-aos-delay="850" data-aos-duration="200" data-aos-mirror="true">
+            <a href="data/Yehezkiel.pdf" download="Yehezkiel_David_Setiawan_CV.pdf" data-aos="fade-down" data-aos-delay="850" data-aos-duration="200" data-aos-mirror="true" aria-label="Download CV in PDF format">
               <button class="btn-star buttonkagok2 w-100">
                 Download CV <i class="fa-solid fa-file-arrow-down fa-beat-fade"></i>
                 <div class="star-1">
@@ -443,8 +520,9 @@
         </div>
       </div>
     </section>
+    <!-- End About Section -->
 
-    <div class="offcanvas offcanvas-bottom h-100" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+    <div class="offcanvas offcanvas-bottom h-100" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel" aria-modal="true" role="dialog">
       <div class="offcanvas-header">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
@@ -466,20 +544,20 @@
                 <div class="col-md-4">
                   <div class="card m-3">
                     <div class="card-body">
-                      <div>
+                      <blockquote class="blockquote">
                         <p>"Programming is not about what you know; it's about what you can figure out."</p>
-                        <p class="fw-bold">- Chris Pine</p>
-                      </div>
+                        <footer class="blockquote-footer">Chris Pine</footer>
+                      </blockquote>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-8">
                   <div class="card m-3">
                     <div class="card-body">
-                      <div>
+                      <blockquote class="blockquote">
                         <p>"Information technology and business are becoming inextricably interwoven. I don't think anybody can talk meaningfully about one without the talking about the other."</p>
-                        <p class="fw-bold">- Bill Gates</p>
-                      </div>
+                        <footer class="blockquote-footer">Bill Gates</footer>
+                      </blockquote>
                     </div>
                   </div>
                 </div>
@@ -488,29 +566,29 @@
                 <div class="col">
                   <div class="card m-3">
                     <div class="card-body">
-                      <div>
+                      <blockquote class="blockquote">
                         <p>"Leadership is not about being in charge. It's about taking care of those in your charge."</p>
-                        <p class="fw-bold">- Simon Sinek</p>
-                      </div>
+                        <footer class="blockquote-footer">Simon Sinek</footer>
+                      </blockquote>
                     </div>
                   </div>
                 </div>
                 <div class="col">
                   <div class="card m-3">
                     <div class="card-body">
-                      <div>
+                      <blockquote class="blockquote">
                         <p>"Good design is obvious. Great design is transparent."</p>
-                        <p class="fw-bold">- Joe Sparano</p>
-                      </div>
+                        <footer class="blockquote-footer">Joe Sparano</footer>
+                      </blockquote>
                     </div>
                   </div>
                 </div>
                 <div class="col">
                   <div class="card m-3">
                     <div class="card-body">
-                      <div>
+                      <blockquote class="blockquote">
                         <p>"The best way to predict the future is to invent it."</p>
-                        <p class="fw-bold">- Alan Kay</p>
+                        <footer class="blockquote-footer">Alan Kay</footer>
                       </div>
                     </div>
                   </div>
@@ -556,11 +634,11 @@
     </svg>
     <!-- Wave -->
 
-    <!-- Skills -->
-    <section id="skills" style="background-color: #212529">
+    <!-- Skills & Qualification Section -->
+    <section id="skills" style="background-color: #212529" aria-label="Qualifications and skills">
       <div class="container text-white bg-dark" style="height: auto">
         <div class="row d-flex justify-content-center align-items-center" id="qualification">
-          <h1 class="text-center pt-5 mt-5">Qualification</h1>
+          <h2 class="text-center pt-5 mt-5">Qualification</h2>
           <p class="text-center fs-5 py-2">"Dive into a captivating journey through my remarkable experiences, where every step unveils a tapestry of triumphs, challenges, and unforgettable moments."</p>
         </div>
         <div class="row d-flex justify-content-center align-items-center">
@@ -873,19 +951,19 @@
             <div class="container">
               <div class="row my-5 d-flex justify-content-center align-items-center" style="height: auto">
                 <div class="col-md-5 px-2 py-2">
-                  <h1>Informatics Engineering</h1>
-                  <h2>Bachelor's Degree</h2>
-                  <h4>Maranatha Christian University, Bandung</h4>
-                  <h5><i class="fa-solid fa-calendar-days fa-fade"></i> 2021-2025</h5>
+                  <h3>Informatics Engineering</h3>
+                  <h4>Bachelor's Degree</h4>
+                  <p>Maranatha Christian University, Bandung</p>
+                  <p><i class="fa-solid fa-calendar-days fa-fade" aria-hidden="true"></i> 2021-2025</p>
                 </div>
                 <div class="col-md-5 px-2 py-2">
-                  <h1>Computer Science</h1>
-                  <h2>Master's Degree</h2>
-                  <h4>Maranatha Christian University, Bandung</h4>
-                  <h5><i class="fa-solid fa-calendar-days fa-fade"></i> 2025-2026</h5>
+                  <h3>Computer Science</h3>
+                  <h4>Master's Degree</h4>
+                  <p>Maranatha Christian University, Bandung</p>
+                  <p><i class="fa-solid fa-calendar-days fa-fade" aria-hidden="true"></i> 2025-2026</p>
                 </div>
                 <div class="col-md-2 px-2 py-2 py-2">
-                  <img src="img/marnat.png" alt="" class="marnat" />
+                  <img src="img/marnat.png" alt="Maranatha Christian University Logo" class="marnat" />
                 </div>
               </div>
             </div>
@@ -894,17 +972,17 @@
             <div class="container">
               <div class="row my-5 d-flex justify-content-center align-items-center" style="height: auto">
                 <div class="col-md-5 px-2 py-2">
-                  <h1>Academic Coordinator</h1>
-                  <h5>Information Technology Faculty Student Senate,<br />Maranatha Christian University</h5>
-                  <h5><i class="fa-solid fa-calendar-days fa-fade"></i> 2022-2023</h5>
+                  <h3>Academic Coordinator</h3>
+                  <p>Information Technology Faculty Student Senate,<br />Maranatha Christian University</p>
+                  <p><i class="fa-solid fa-calendar-days fa-fade" aria-hidden="true"></i> 2022-2023</p>
                 </div>
                 <div class="col-md-5 px-2 py-2">
-                  <h1>President</h1>
-                  <h5>Information Technology Faculty Student Senate,<br />Maranatha Christian University</h5>
-                  <h5><i class="fa-solid fa-calendar-days fa-fade"></i> 2023-2024</h5>
+                  <h3>President</h3>
+                  <p>Information Technology Faculty Student Senate,<br />Maranatha Christian University</p>
+                  <p><i class="fa-solid fa-calendar-days fa-fade" aria-hidden="true"></i> 2023-2024</p>
                 </div>
                 <div class="col-md-2 px-2 py-2">
-                  <img src="img/sema.png" alt="" class="sema" />
+                  <img src="img/sema.png" alt="Student Senate Logo" class="sema" />
                 </div>
               </div>
             </div>
@@ -922,22 +1000,22 @@
                   <img src="img/logoftrc.png" alt="" class="sema" />
                 </div> -->
                 <div class="col-md-4 px-2 py-2 pe-2">
-                  <h2>Fullstack Engineer Internship</h2>
-                  <h3>WIT.id</h3>
-                  <h5>Expertise : Laravel & GO</h5>
-                  <h5><i class="fa-solid fa-calendar-days fa-fade"></i> 2023-2024</h5>
+                  <h3>Fullstack Engineer Internship</h3>
+                  <h4>WIT.id</h4>
+                  <p>Expertise: Laravel & GO</p>
+                  <p><i class="fa-solid fa-calendar-days fa-fade" aria-hidden="true"></i> 2023-2024</p>
                 </div>
                 <div class="col-md-2">
-                  <img src="img/WIT.png" alt="" class="sema" />
+                  <img src="img/WIT.png" alt="WIT.id Company Logo" class="sema" />
                 </div>
                 <div class="col-md-4 ps-5 pe-2 py-2 border-start border-3">
-                  <h2>Data & System Analyst</h2>
-                  <h3>Royal Medicalink Pharmalab</h3>
-                  <h5>Super App System Analyst & Business Data Analyst</h5>
-                  <h5><i class="fa-solid fa-calendar-days fa-fade"></i> 2025-now</h5>
+                  <h3>Data & System Analyst</h3>
+                  <h4>Royal Medicalink Pharmalab</h4>
+                  <p>Super App System Analyst & Business Data Analyst</p>
+                  <p><i class="fa-solid fa-calendar-days fa-fade" aria-hidden="true"></i> 2025-2026</p>
                 </div>
                 <div class="col-md-2">
-                  <img src="img/logoroyal.png" alt="" class="sema" />
+                  <img src="img/logoroyal.png" alt="Royal Medicalink Pharmalab Logo" class="sema" />
                 </div>
               </div>
             </div>
@@ -945,7 +1023,7 @@
         </div>
       </div>
     </section>
-    <!-- Skills -->
+    <!-- End Skills & Qualification Section -->
 
     <!-- Wave -->
     <svg class="wave-top" viewBox="0 0 1200 250" style="background-color: white">
@@ -958,221 +1036,230 @@
     </svg>
     <!-- Wave -->
 
-    <!-- About -->
-    <section>
+    <!-- Portfolio Section -->
+    <section aria-label="Portfolio projects">
       <div class="container" style="height: auto">
         <div class="row d-flex justify-content-center align-items-center" style="min-height: auto" id="portfolio">
-          <h1 class="text-center mt-5 pt-5">Portfolio</h1>
+          <h2 class="text-center mt-5 pt-5">Portfolio</h2>
           <p class="text-center fs-5 py-2">"Unlocking the realms of digital innovation and craftsmanship, my portfolio showcases a captivating fusion of creativity and technical prowess."</p>
-          <div id="carouselExampleIndicators" class="carousel slide py-5">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-5">
-                      <iframe
-                        class="img-aboutii"
-                        src="https://www.youtube.com/embed/s1VIMZFjEK0?si=UzIcoqcuwohLeziX?controls=0"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen
-                      ></iframe>
-                    </div>
-                    <div class="col-md-7">
-                      <h1 class="projects-title">Final Project</h1>
-                      <h4 class="projects-asal hidden">Bachelor of Informatics Engineering</h4>
-                      <h5 class="projects-name hidden">Development of SSTRANGE Web Application With Generative AI Integration for Code Plagiarism Detection</h5>
-                      <h6 class="projects-desc hidden">The SSTRANGE web application integrating Generative AI to enhance code plagiarism detection and generate code recommendations. Testing demonstrated 80.97% code correctness, 80% code uniqueness, and an average similarity rate of 42.42% in student submissions, highlighting its efficiency and reliability in managing academic submissions for programming education.</h6>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://youtu.be/s1VIMZFjEK0?si=5tmwJsOQnh3qFDIR" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
+          
+          <!-- Portfolio Owl Carousel -->
+          <div class="owl-carousel owl-theme portfolio-carousel py-4" style="padding-top: 30px;">
+            
+            <!-- SSTRANGE Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5;">
+                  <iframe
+                    class="w-100 h-100"
+                    src="https://www.youtube.com/embed/s1VIMZFjEK0?si=UzIcoqcuwohLeziX"
+                    title="SSTRANGE Web Application: Generative AI Integration for Code Plagiarism Detection - Project Demo Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    aria-label="Video demonstration of SSTRANGE final project"
+                  ></iframe>
                 </div>
-              </div>
-              <div class="carousel-item ">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/greenmobility.jpg" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h1 class="projects-title">Green Mobility Hub</h1>
-                      <h5 class="projects-name hidden">Web Development Competition</h5>
-                      <h4 class="projects-asal hidden">FIT Competition Satya Wacana Christian University</h4>
-                      <h4 class="projects-hasil hidden fw-bold">1<sup>st</sup> Place</h4>
-                      <h6 class="projects-desc hidden">Green Mobility Hub offers comprehensive solutions to enhance energy efficiency and urban planning. The Green Mobility Hub functions as an integrative point for encouraging societal behavior changes towards a cleaner and greener urban lifestyle.</h6>
-                      <span><p style="font-size: 0.8em">&lt;&lt;&lt; website built in just 12 hours &gt;&gt;&gt;</p></span>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://www.instagram.com/p/C-O2vzXzq5i/?igsh=Njl0cmdjMW9iYW84&img_index=2" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/agrisense.jpg" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h1 class="projects-title">AgriSense</h1>
-                      <h5 class="projects-name hidden">Business Plan Competition</h5>
-                      <h4 class="projects-asal hidden">I/O Festival Tarumanagara University</h2>
-                      <h5 class="projects-hasil hidden fw-bold">3<sup>rd</sup> Place</h4>
-                      <h6 class="projects-desc hidden">AgriSense is a satellite-based platform that uses AIoT (Artificial Intelligence of Things) to provide real-time data on crop health, growth patterns, and weather forecasts. This helps farmers make informed decisions for sustainable farming.</h6>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://untar.ac.id/2024/06/12/fti-untar-dorong-inovasi-dan-kreativitas-digital-untuk-masa-depan-indonesia/?fbclid=PAZXh0bgNhZW0CMTEAAab00I8Mw3JgQqkjbUDW32pKprylG2oJSTnERrB7wwiZtWDuvpYwwxAeO1g_aem_ZmFrZWR1bW15MTZieXRlcw" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/golang.png" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h1 class="projects-title">Office Inventory API</h1>
-                      <h5 class="projects-name hidden">Internship @WIT || Grade: 94/100</h5>
-                      <h6 class="projects-desc hidden">
-                        This repository contains the documentation for the Inventory API, implemented in the Go programming language. Developers can utilize these endpoints to seamlessly integrate various functionalities into their
-                        applications.
-                      </h6>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://github.com/06202003/PublicAPIInventory" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/react.png" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h1 class="projects-title">YZFlix</h1>
-                      <h5 class="projects-name hidden">First React Project</h5>
-                      <h6 class="projects-desc hidden">YZFlix is a website to find movies by description. This website is made using React JS with TMDB API</h6>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://yzflix.netlify.app/" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/Cred.png" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h1 class="projects-title">CrediTion</h1>
-                      <h5 class="projects-name hidden">Web Design Competition Project</h5>
-                      <h4 class="projects-asal hidden">IFest #10 Atma Jaya University</h4>
-                      <h5 class="projects-hasil hidden fw-bold">3<sup>rd</sup> Place</h4>
-                      <h6 class="projects-desc hidden">CrediTion is a prototype website that serves credible information search and hoax reporting services</h6>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://creditionwdc.netlify.app/" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/UnivAssist.png" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h1 class="projects-title">UnivAssist</h1>
-                      <h5 class="projects-name hidden">Web Development Competition</h5>
-                      <h4 class="projects-asal hidden">FIT Competition Satya Wacana Christian University</h4>
-                      <h4 class="projects-hasil hidden fw-bold" >4<sup>th</sup> Place</h4>
-                      <h6 class="projects-desc hidden">UnivAssist is a web app that offers rental services for boarding houses, laptops and lecture books as a very meaningful solution for students.</h6>
-                      <span><p style="font-size: 0.8em">&lt;&lt;&lt; website built in just 12 hours &gt;&gt;&gt;</p></span>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://github.com/06202003/UnivAssist" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/kulitabdi.png" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h1 class="projects-title">KulitAbdi.Co</h1>
-                      <h5 class="projects-name hidden">Web Design Competition Project</h5>
-                      <h4 class="projects-asal hidden">IFest #11 Atma Jaya University</h4>
-                      <h5 class="projects-hasil hidden fw-bold">Top 5 finalists</h4>
-                      <h6 class="projects-desc hidden">KulitAbdi is a leather fashion company that has developed by creating its eccommerce website using 3D media.</h6>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://creditionwdc.netlify.app/" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/sawitco.png" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h1 class="projects-title">SawitCo</h1>
-                      <h5 class="projects-name hidden">Web Developer Competition Project</h5>
-                      <h4 class="projects-asal hidden">Sevent Institut Teknologi Telkom Purwokerto</h4>
-                      <h6 class="projects-desc hidden">SawitCo was founded in 2022, based on awareness of the potential and promising prospect of the local palm-based products in Indonesia.</h6>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://sawitco.netlify.app/" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/yuksehat.png" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h1 class="projects-title">YukSehat</h1>
-                      <h5 class="projects-name hidden">Web Design Competition</h5>
-                      <h4 class="projects-asal hidden">Invention Universitas Udayana</h4>
-                      <h6 class="projects-desc hidden">YukSehat is a Health Care prototype website created to meet the needs of the community in accessing health service information</h6>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://yuksehat.netlify.app/" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-5">
-                      <iframe
-                        class="img-aboutii"
-                        src="https://www.youtube.com/embed/9__uz0xQnjc?controls=0"
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen
-                      ></iframe>
-                    </div>
-                    <div class="col-md-7">
-                      <h1 class="projects-title">Perwalian</h1>
-                      <h4 class="projects-asal hidden">Adv. Web Programming Class</h4>
-                      <h3 class="projects-name hidden">Final Project || Grade: 100/100</h3>
-                      <h6 class="projects-desc hidden">Perwalian is a full-stack website created to fulfill the selection of new courses every semester between study programs and students</h6>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://youtu.be/9__uz0xQnjc" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-warning text-dark mb-2" style="width: fit-content;"> Undergraduate Thesis</span>
+                  <h5 class="card-title fw-bold mb-2">SSTRANGE</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-award"></i> Bachelor Final Project</p>
+                  <p class="card-text flex-grow-1" style="font-size: 0.9rem; color: #666;">
+                    Web application integrating Generative AI for code plagiarism detection with 80.97% code correctness and 80% uniqueness.
+                  </p>
+                  <a href="https://youtu.be/s1VIMZFjEK0?si=5tmwJsOQnh3qFDIR" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">View Project <i class="fa-solid fa-arrow-right ms-1"></i></a>
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-              <i class="fa-solid fa-chevron-left fa-2xl warnachev"></i>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-              <i class="fa-solid fa-chevron-right fa-2xl warnachev"></i>
-              <span class="visually-hidden">Next</span>
-            </button>
+            
+            <!-- Green Mobility Hub Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5;">
+                  <img src="img/greenmobility.jpg" alt="Green Mobility Hub - Web Development Competition Project" class="w-100 h-100" style="object-fit: cover;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-warning text-dark mb-2" style="width: fit-content;">🏆 1st Place</span>
+                  <h5 class="card-title fw-bold mb-2">Green Mobility Hub</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-calendar-days"></i> FIT Competition (12 hours)</p>
+                  <p class="card-text flex-grow-1" style="font-size: 0.9rem; color: #666;">
+                    Comprehensive solutions to enhance energy efficiency and urban planning for cleaner and greener urban lifestyle.
+                  </p>
+                  <a href="https://www.instagram.com/p/C-O2vzXzq5i/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">View Project <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- AgriSense Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5;">
+                  <img src="img/agrisense.jpg" alt="AgriSense - Satellite-based AI Agriculture Platform" class="w-100 h-100" style="object-fit: cover;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-warning text-dark mb-2" style="width: fit-content;">🏆 3rd Place</span>
+                  <h5 class="card-title fw-bold mb-2">AgriSense</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-leaf"></i> Business Plan Competition</p>
+                  <p class="card-text flex-grow-1" style="font-size: 0.9rem; color: #666;">
+                    Satellite-based platform using AIoT to provide real-time data on crop health, growth patterns, and weather forecasts for sustainable farming.
+                  </p>
+                  <a href="https://untar.ac.id/2024/06/12/fti-untar-dorong-inovasi-dan-kreativitas-digital-untuk-masa-depan-indonesia/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">View Project <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Office Inventory API Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: white; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/golang.png" alt="Office Inventory API - Go Programming Language Project" class="img-fluid" style="max-height: 80%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-warning text-dark mb-2" style="width: fit-content;">⭐ 94/100</span>
+                  <h5 class="card-title fw-bold mb-2">Office Inventory API</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-code"></i> Go Programming Internship</p>
+                  <p class="card-text flex-grow-1" style="font-size: 0.9rem; color: #666;">
+                    Complete Inventory API documentation implemented in Go programming language with seamless integration functionalities.
+                  </p>
+                  <a href="https://github.com/06202003/PublicAPIInventory" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">View Project <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- YZFlix Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: white; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/react.png" alt="YZFlix - Movie Search Website with React and TMDB API" class="img-fluid" style="max-height: 80%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-info text-white mb-2" style="width: fit-content;">React</span>
+                  <h5 class="card-title fw-bold mb-2">YZFlix</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-film"></i> First React Project</p>
+                  <p class="card-text flex-grow-1" style="font-size: 0.9rem; color: #666;">
+                    Movie discovery platform using React JS with TMDB API integration for comprehensive film exploration.
+                  </p>
+                  <a href="https://yzflix.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">View Project <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- CrediTion Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: white; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/Cred.png" alt="CrediTion - Credible Information Search and Hoax Reporting Platform" class="img-fluid" style="max-height: 80%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-warning text-dark mb-2" style="width: fit-content;">🏆 3rd Place</span>
+                  <h5 class="card-title fw-bold mb-2">CrediTion</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-shield-check"></i> Design Competition</p>
+                  <p class="card-text flex-grow-1" style="font-size: 0.9rem; color: #666;">
+                    Credible information platform with hoax reporting services for enhancing media literacy and information verification.
+                  </p>
+                  <a href="https://creditionwdc.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">View Project <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- UnivAssist Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: white; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/UnivAssist.png" alt="UnivAssist - University Rental Services Web Application" class="img-fluid" style="max-height: 80%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-warning text-dark mb-2" style="width: fit-content;">🏆 4th Place</span>
+                  <h5 class="card-title fw-bold mb-2">UnivAssist</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-graduation-cap"></i> Web Competition (12 hours)</p>
+                  <p class="card-text flex-grow-1" style="font-size: 0.9rem; color: #666;">
+                    Student rental services platform for boarding, laptops, and academic materials to meet campus needs.
+                  </p>
+                  <a href="https://github.com/06202003/UnivAssist" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">View Project <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- KulitAbdi Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5;">
+                  <img src="img/kulitabdi.png" alt="KulitAbdi.Co - Leather Fashion E-commerce Website with 3D Media" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-secondary text-white mb-2" style="width: fit-content;">Top 5</span>
+                  <h5 class="card-title fw-bold mb-2">KulitAbdi.Co</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-cube"></i> 3D Fashion E-commerce</p>
+                  <p class="card-text flex-grow-1" style="font-size: 0.9rem; color: #666;">
+                    Leather fashion platform with 3D media showcase providing premium shopping experience with interactive elements.
+                  </p>
+                  <a href="https://creditionwdc.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">View Project <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- SawitCo Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5;">
+                  <img src="img/sawitco.png" alt="SawitCo - Palm-based Products E-commerce Platform" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-success text-white mb-2" style="width: fit-content;">E-commerce</span>
+                  <h5 class="card-title fw-bold mb-2">SawitCo</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-leaf"></i> Palm Products Platform</p>
+                  <p class="card-text flex-grow-1" style="font-size: 0.9rem; color: #666;">
+                    Sustainable palm-based products e-commerce platform supporting local Indonesian producers and MSME development.
+                  </p>
+                  <a href="https://sawitco.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">View Project <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- YukSehat Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: white; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/yuksehat.png" alt="YukSehat - Health Care Information Services Website" class="w-100 h-100" style="object-fit: cover;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-danger text-white mb-2" style="width: fit-content;">Health</span>
+                  <h5 class="card-title fw-bold mb-2">YukSehat</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-heartbeat"></i> Web Design Competition</p>
+                  <p class="card-text flex-grow-1" style="font-size: 0.9rem; color: #666;">
+                    Health Care prototype website created to meet community needs in accessing health service information efficiently.
+                  </p>
+                  <a href="https://yuksehat.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">View Project <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Perwalian Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5;">
+                  <iframe
+                    class="w-100 h-100"
+                    src="https://www.youtube.com/embed/9__uz0xQnjc"
+                    title="Perwalian Academic Advisory System Demo Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    aria-label="Video demonstration of Perwalian academic system"
+                  ></iframe>
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-primary text-white mb-2" style="width: fit-content;">⭐ 100/100</span>
+                  <h5 class="card-title fw-bold mb-2">Perwalian</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-users"></i> Academic Management System</p>
+                  <p class="card-text flex-grow-1" style="font-size: 0.9rem; color: #666;">
+                    Full-stack course registration platform connecting study programs with students for efficient academic advisory each semester.
+                  </p>
+                  <a href="https://youtu.be/9__uz0xQnjc" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">View Project <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -1180,125 +1267,438 @@
     <!-- About -->
 
 
-    <!-- Publication -->
-     <section>
+    <!-- Publication Section -->
+    <section aria-label="Academic publications and research">
       <div class="container" style="height: auto">
-        <div class="row d-flex justify-content-center align-items-center" style="min-height: auto" id="portfolio">
-          <h1 class="text-center mt-5 pt-5">Publications</h1>
-          <p class="text-center fs-5 py-2">"Dive into my publications filled with insightful articles and interesting content."</p>
-          <div id="carouselExampleIndicators2" class="carousel slide py-5">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/icalt.png" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h2 class="projects-title">25th IEEE International Conference on Advanced Learning Technologies</h2>
-                      <h4 class="projects-asal hidden">National Changhua University of Education, Taiwan</h4>
-                      <h6 class="projects-name hidden fw-bold">Web-Based Similarity Detector for Identifying Programming Plagiarism </h6>
-                      <p class="projects-desc hidden" style="font-size: 0.7em;">To deal with programming plagiarism, a number of similarity detectors have been developed. However, many of them are either not user-friendly or require local installation. We present a web-based similarity detector that is user-friendly and requires no local installation. The detector is expanded from our previous work, whose performance has been proven. Unlike existing web-based similarity detectors, ours is not commercialized. Further, it offers several similarity measurements and enhanced privacy. According to a controlled experiment with 24 tutors or staff, our similarity detector is effective and efficient. Participants with the detector can identify all copied submissions in which the completion time is reduced by at least two-thirds.</p>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://doi.org/10.1109/ICALT64023.2025.00113" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
+        <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
+          <h2 class="text-center mt-5 pt-5">Publications</h2>
+          <p class="text-center fs-5 py-2">"Dive into my publications filled with insightful articles and interesting research."</p>
+          
+          <!-- Publications Owl Carousel -->
+          <div class="owl-carousel owl-theme publications-carousel py-4" style="padding-top: 30px;">
+            
+            <!-- IOCES 2026 Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/ioces.webp" alt="IOCES 2026 - International Online Conference on Education Sciences" class="img-fluid" style="max-height: 90%; object-fit: contain;">
                 </div>
-              </div>
-              <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/icicl.png" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h2 class="projects-title">28th International Conference on Interactive Collaborative Learning</h2>
-                      <h4 class="projects-asal hidden">Budapest University of Technology and Economics (BME), Hungary</h2>
-                      <h6 class="projects-name hidden fw-bold">How Unique and Accurate is GenAI Generated Code in Introductory Programming? </h6>
-                      <p class="projects-desc hidden" style="font-size: 0.7em;">Generative Artificial Intelligence (GenAI) is transforming education, especially engineering education. Despite its benefits, GenAI introduces a new form of plagiarism where students claim GenAI results as their own work. To foster the development of automated detectors for GenAI-based plagiarism, we observe two key characteristics of GenAIgenerated programs in introductory programming concepts: uniqueness and correctness. Automated detectors can focus on these aspects to identify GenAI-based plagiarism. According to our observation of an offering of introductory programming course, we found that GenAI-generated programs were unique (80%) and accurate (81%) for introductory programming assignment tasks. They could be more unique yet less accurate on advanced or uncommon assignment tasks. GenAI’s high accuracy shows the urgency of GenAI policies, literacy, and the development of automated detectors.</p>
-                      <!-- <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://doi.org/10.1109/TALE56641.2023.10398397" target="_blank">Click Here!</a> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/icsthe.jpg" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h2 class="projects-title">ICSTHE 2024 (Author)</h2>
-                      <h4 class="projects-asal hidden">Krida Wacana Christian University, Jakarta</h2>
-                      <h6 class="projects-name hidden fw-bold">ParkSphere: Smart Mobility Solution for Sustainable Urban Parking and Carbon Emission Reduction in the Framework of Inclusive Smart Cities</h6>
-                      <p class="projects-desc hidden" style="font-size: 0.7em;">Urban mobility faces challenges from population growth and private vehicle reliance, leading to congestion and pollution. ParkSphere, a WhatsApp-based chatbot, addresses these issues by providing real-time parking availability and reducing search time, traffic congestion, and emissions. Testing showed high user satisfaction, and future updates aim to enhance interactions with generative AI and add parking reservations.</p>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://youtu.be/QeGgcQXul54" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-               <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/jaic.jpg" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h2 class="projects-title">JAIC 2024 (Author)</h2>
-                      <h4 class="projects-asal hidden">Politeknik Negeri Batam, Batam</h2>
-                      <h6 class="projects-name hidden fw-bold">ChatGPT Impact Analysis on API Testing: A Controlled Experiment</h6>
-                      <p class="projects-desc hidden" style="font-size: 0.7em;">The research demonstrates that students utilizing ChatGPT for API testing achieved higher test scores than those relying on traditional documentation, albeit with longer task completion times. While participants reported enhanced confidence and effectiveness, concerns regarding over-reliance on the tool and limited conceptual understanding were identified. These findings suggest that ChatGPT is a valuable educational resource complemented by independent problem-solving skills.</p>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://doi.org/10.30871/jaic.v8i2.8182" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <div class="carousel-item">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/konstelasi.png" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h2 class="projects-title">KONSTELASI 2024 (Author)</h2>
-                      <h4 class="projects-asal hidden">Atma Jaya University, Yogyakarta</h2>
-                      <h6 class="projects-name hidden fw-bold">Transformasi Ekosistem Digital melalui Implementasi Super App untuk Meningkatkan Administrasi Kantor</h6>
-                      <p class="projects-desc hidden" style="font-size: 0.7em;">Office management is vital for seamless organizational operations. To tackle the complexities of this role, we've developed a comprehensive super application that integrates various office administration features. Built on the Laravel framework, this super application ensures stability, security, and scalability for seamless integration of complex features. Implementing this application is expected to reduce administrative task time and increase productivity.The design and prototype validation process involved user testing and feedback from stakeholders, resulting in an innovative, stakeholder-validated solution that significantly contributes to office administration management. This solution enhances office administration efficiency and effectiveness, paving the way for future similar applications.</p>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://doi.org/10.24002/konstelasi.v4i1.9179" target="_blank">Click Here!</a>
-                    </div>
-                  </div>
-                </div>
-            </div>
-              <div class="carousel-item ">
-                <div class="heheaa">
-                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
-                    <div class="col-md-4">
-                      <img src="img/tale.png" class="img-about" alt="" />
-                    </div>
-                    <div class="col-md-8">
-                      <h2 class="projects-title">IEEE TALE International Conference 2023 (Co-Author)</h2>
-                      <h4 class="projects-asal hidden">Auckland, New Zealand</h2>
-                      <h6 class="projects-name hidden fw-bold">Plagiarism and AI Assistance Misuse in Web Programming: Unfair Benefits and Characteristics </h6>
-                      <p class="projects-desc hidden" style="font-size: 0.7em;">In programming education, plagiarism and misuse of artificial intelligence (AI) assistance are emerging issues. However, not many relevant studies are focused on web programming. We plan to develop automated tools to help instructors identify both misconducts. To fully understand the issues, we conducted a controlled experiment to observe the unfair benefits and the characteristics. We compared student performance in completing web programming tasks independently, with a submission to plagiarize, and with the help of AI assistance (ChatGPT). Our study shows that students who are involved in such misconducts get comparable test marks with less completion time. Plagiarized submissions are similar to the independent ones except in trivial aspects such as color and identifier names. AI-assisted submissions are more complex, making them less readable. Students believe AI assistance could be useful given proper acknowledgment of the use, although they are not convinced with readability and correctness of the solutions.</p>
-                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://doi.org/10.1109/TALE56641.2023.10398397" target="_blank">Click Here!</a>
-                    </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-warning text-dark mb-2" style="width: fit-content;">IOCES 2026</span>
+                  <h5 class="card-title fw-bold mb-2">Promoting Sustainable Use of LLM Through Mindful Prompting and Gamification</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-building"></i> Basel, Switzerland (MDPI)</p>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Author</p>
+                  <div class="mt-auto">
+                    <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#modalIOCES2026">
+                      <i class="fa-solid fa-book-open"></i> Read More
+                    </button>
+                    <a href="https://sciforum.net/event/IOCES2026?subscribe&section=#session4095" target="_blank" rel="noopener noreferrer" class="btn btn-outline-warning btn-sm">Accepted Abstract <i class="fa-solid fa-arrow-right ms-1"></i></a>
                   </div>
                 </div>
               </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
-              <i class="fa-solid fa-chevron-left fa-2xl warnachev"></i>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
-              <i class="fa-solid fa-chevron-right fa-2xl warnachev"></i>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </section>
-    <!-- Publication -->
 
-    <!-- Wave -->
-    <svg class="wave-top" viewBox="0 0 1200 250" style="background-color: #212529">
+            <!-- Springer Nature (Discover Computing) Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/springer.avif" alt="Springer Nature - Discover Computing Journal" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-success text-white mb-2" style="width: fit-content;">Springer Nature</span>
+                  <h6 class="card-title fw-bold mb-2">Detecting GenAI assistance in programming assessments with over-uniqueness and sample matching</h6>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-building"></i> Dordrecht, Netherlands (Springer)</p>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Co-Author</p>
+                  <p class="card-text" style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">
+                    Automated GenAI detector requiring no training data, covering 8 languages...
+                  </p>
+                  <div class="mt-auto">
+                    <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#modalSpringer2025">
+                      <i class="fa-solid fa-book-open"></i> Read More
+                    </button>
+                    <a href="https://doi.org/10.1007/s10791-025-09884-9" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">Read Paper <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- ICICL 2025 Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/icicl.png" alt="ICICL 2024 - Interactive Collaborative Learning Conference" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-info text-white mb-2" style="width: fit-content;">ICICL 2025</span>
+                  <h5 class="card-title fw-bold mb-2">How Unique and Accurate is GenAI Generated Code in Introductory Programming?</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-building"></i> BME Budapest, Hungary</p>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Author</p>
+                  
+                  <div class="mt-auto">
+                    <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#modalICICL2024">
+                      <i class="fa-solid fa-book-open"></i> Read More
+                    </button>
+                    <a href="#" class="btn btn-outline-info btn-sm">Read Paper <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- ICALT 2025 Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/icalt.png" alt="IEEE ICALT 2025 - 25th International Conference on Advanced Learning Technologies" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-primary text-white mb-2" style="width: fit-content;">IEEE 2025</span>
+                  <h5 class="card-title fw-bold mb-2">Web-Based Similarity Detector for Programming Plagiarism</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-building"></i> Changhua University, Taiwan</p>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Co-Author</p>
+                  <div class="mt-auto">
+                    <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#modalICALT2025">
+                      <i class="fa-solid fa-book-open"></i> Read More
+                    </button>
+                    <a href="https://doi.org/10.1109/ICALT64023.2025.00113" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary btn-sm">Read Paper <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- TALE 2023 Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/tale.png" alt="IEEE TALE 2023 - Teaching and Learning Conference" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-secondary text-white mb-2" style="width: fit-content;">TALE 2023</span>
+                  <h6 class="card-title fw-bold mb-2">Plagiarism and AI Assistance Misuse in Web Programming: Unfair Benefits and Characteristics</h6>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-building"></i> Auckland, New Zealand</p>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Co-Author</p>
+                  
+                  <div class="mt-auto">
+                    <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#modalTALE2023">
+                      <i class="fa-solid fa-book-open"></i> Read More
+                    </button>
+                    <a href="https://doi.org/10.1109/TALE56641.2023.10398397" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm">Read Paper <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- ICSTHE 2024 Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/icsthe.jpg" alt="ICSTHE 2024 - Education and Technology Conference" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-warning text-dark mb-2" style="width: fit-content;">ICSTHE 2024</span>
+                  <h5 class="card-title fw-bold mb-2">ParkSphere: Smart Mobility Solution for Sustainable Urban Parking</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-building"></i> Krida Wacana, Jakarta</p>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Author</p>
+                  
+                  <div class="mt-auto">
+                    <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#modalICST2024">
+                      <i class="fa-solid fa-book-open"></i> Read More
+                    </button>
+                    <a href="https://youtu.be/QeGgcQXul54" target="_blank" rel="noopener noreferrer" class="btn btn-outline-warning btn-sm">Watch Video <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- JAIC 2024 Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/jaic.jpg" alt="JAIC 2024 - Journal of AI Computing" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-success text-white mb-2" style="width: fit-content;">JAIC 2024</span>
+                  <h5 class="card-title fw-bold mb-2">ChatGPT Impact Analysis on API Testing: A Controlled Experiment</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-building"></i> Politeknik Batam, Indonesia</p>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Author</p>
+                  
+                  <div class="mt-auto">
+                    <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#modalJAIC2024">
+                      <i class="fa-solid fa-book-open"></i> Read More
+                    </button>
+                    <a href="https://doi.org/10.30871/jaic.v8i2.8182" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">Read Paper <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- KONSTELASI 2024 Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/konstelasi.png" alt="KONSTELASI 2024 - Digital Transformation Conference" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-danger text-white mb-2" style="width: fit-content;">KONSTELASI 2024</span>
+                  <h6 class="card-title fw-bold mb-2">Transformasi Ekosistem Digital melalui Implementasi Super App untuk Meningkatkan Administrasi Kantor</h6>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-building"></i> Atma Jaya, Yogyakarta</p>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Author</p>
+                  
+                  <div class="mt-auto">
+                    <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#modalKONSTELASI2024">
+                      <i class="fa-solid fa-book-open"></i> Read More
+                    </button>
+                    <a href="https://doi.org/10.24002/konstelasi.v4i1.9179" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm">Read Paper <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Publication Modals -->
+      <!-- ICALT 2025 Modal -->
+      <div class="modal fade" id="modalICALT2025" tabindex="-1" aria-labelledby="modalICALT2025Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h5 class="modal-title" id="modalICALT2025Label">Web-Based Similarity Detector for Programming Plagiarism</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong><i class="fa-solid fa-building"></i> Conference:</strong> IEEE ICALT 2025 - 25th International Conference on Advanced Learning Technologies</p>
+              <p><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> Changhua University, Taiwan</p>
+              <p><strong><i class="fa-solid fa-file-lines"></i> Abstract:</strong></p>
+              <p style="text-align: justify;">
+                To deal with programming plagiarism, a number of similarity detectors have been developed. However, many of them are either not user-friendly or require local installation. We present a web-based similarity detector that is user-friendly and requires no local installation. The detector is expanded from our previous work, whose performance has been proven. Unlike existing web-based similarity detectors, ours is not commercialized. Further, it offers several similarity measurements and enhanced privacy. According to a controlled experiment with 24 tutors or staff, our similarity detector is effective and efficient. Participants with the detector can identify all copied submissions in which the completion time is reduced by at least two-thirds.              
+              </p>
+              <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Co-Author</p>
+    
+            </div>
+            <div class="modal-footer">
+              <a href="https://doi.org/10.1109/ICALT64023.2025.00113" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <i class="fa-solid fa-external-link"></i> Read Full Paper
+              </a>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ICICL 2024 Modal -->
+      <div class="modal fade" id="modalICICL2024" tabindex="-1" aria-labelledby="modalICICL2024Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h5 class="modal-title" id="modalICICL2024Label">How Unique and Accurate is GenAI Generated Code?</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong><i class="fa-solid fa-building"></i> Conference:</strong> ICICL 2024 - 28th International Conference on Interactive Collaborative Learning</p>
+              <p><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> Budapest University of Technology and Economics (BME), Hungary</p>
+              <p><strong><i class="fa-solid fa-file-lines"></i> Abstract:</strong></p>
+              <p style="text-align: justify;">
+                Generative Artificial Intelligence (GenAI) is transforming
+education, especially engineering education. Despite its benefits, GenAI
+introduces a new form of plagiarism where students claim GenAI results
+as their own work. To foster the development of automated detectors for
+GenAI-based plagiarism, we observe two key characteristics of GenAI
+generated programs in introductory programming concepts: uniqueness
+and correctness. Automated detectors can focus on these aspects to iden
+tify GenAI-based plagiarism. According to our observation of an offering
+of introductory programming course, we found that GenAI-generated
+programs were unique (80%) and accurate (81%) for introductory pro
+gramming assignment tasks. They could be more unique yet less accu
+rate on advanced or uncommon assignment tasks. GenAI’s high accuracy
+shows the urgency of GenAI policies, literacy, and the development of
+automated detectors
+              </p>
+              <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Author</p>
+                  
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ICSTHE 2024 Modal -->
+      <div class="modal fade" id="modalICST2024" tabindex="-1" aria-labelledby="modalICST2024Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h5 class="modal-title" id="modalICST2024Label">ParkSphere: Smart Mobility Solution</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong><i class="fa-solid fa-building"></i> Conference:</strong> ICSTHE 2024</p>
+              <p><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> Krida Wacana Christian University, Jakarta</p>
+              <p><strong><i class="fa-solid fa-file-lines"></i> Abstract:</strong></p>
+              <p style="text-align: justify;">
+                Urban mobility faces challenges from population growth and private vehicle reliance, leading to congestion and pollution. ParkSphere, a WhatsApp-based chatbot, addresses these issues by providing real-time parking availability and reducing search time, traffic congestion, and emissions. Testing showed high user satisfaction, and future updates aim to enhance interactions with generative AI and add parking reservations.
+              </p>
+              <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Author</p>
+                  
+            </div>
+            <div class="modal-footer">
+              <a href="https://youtu.be/QeGgcQXul54" target="_blank" rel="noopener noreferrer" class="btn btn-warning">
+                <i class="fa-solid fa-video"></i> Watch Video
+              </a>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JAIC 2024 Modal -->
+      <div class="modal fade" id="modalJAIC2024" tabindex="-1" aria-labelledby="modalJAIC2024Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h5 class="modal-title" id="modalJAIC2024Label">ChatGPT Impact Analysis on API Testing</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong><i class="fa-solid fa-building"></i> Journal:</strong> JAIC 2024 - Journal of AI Computing</p>
+              <p><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> Politeknik Negeri Batam, Indonesia</p>
+              <p><strong><i class="fa-solid fa-file-lines"></i> Abstract:</strong></p>
+              <p style="text-align: justify;">
+                The research demonstrates that students utilizing ChatGPT for API testing achieved higher test scores than those relying on traditional documentation, albeit with longer task completion times. While participants reported enhanced confidence and effectiveness, concerns regarding over-reliance on the tool and limited conceptual understanding were identified. These findings suggest that ChatGPT is a valuable educational resource complemented by independent problem-solving skills.              
+              </p>
+              <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Author</p>
+                  
+            </div>
+            <div class="modal-footer">
+              <a href="https://doi.org/10.30871/jaic.v8i2.8182" target="_blank" rel="noopener noreferrer" class="btn btn-success">
+                <i class="fa-solid fa-external-link"></i> Read Full Paper
+              </a>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KONSTELASI 2024 Modal -->
+      <div class="modal fade" id="modalKONSTELASI2024" tabindex="-1" aria-labelledby="modalKONSTELASI2024Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h5 class="modal-title" id="modalKONSTELASI2024Label">Transformasi Ekosistem Digital - Super App</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong><i class="fa-solid fa-building"></i> Conference:</strong> KONSTELASI 2024</p>
+              <p><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> Atma Jaya University, Yogyakarta</p>
+              <p><strong><i class="fa-solid fa-file-lines"></i> Abstract:</strong></p>
+              <p style="text-align: justify;">
+                Office management is vital for seamless organizational operations. To tackle the complexities of this role, we've developed a comprehensive super application that integrates various office administration features. Built on the Laravel framework, this super application ensures stability, security, and scalability for seamless integration of complex features. Implementing this application is expected to reduce administrative task time and increase productivity.The design and prototype validation process involved user testing and feedback from stakeholders, resulting in an innovative, stakeholder-validated solution that significantly contributes to office administration management. This solution enhances office administration efficiency and effectiveness, paving the way for future similar applications.  
+              </p>
+              <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Author</p>
+                  
+            </div>
+            <div class="modal-footer">
+              <a href="https://doi.org/10.24002/konstelasi.v4i1.9179" target="_blank" rel="noopener noreferrer" class="btn btn-danger">
+                <i class="fa-solid fa-external-link"></i> Read Full Paper
+              </a>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TALE 2023 Modal -->
+      <div class="modal fade" id="modalTALE2023" tabindex="-1" aria-labelledby="modalTALE2023Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h6 class="modal-title" id="modalTALE2023Label">Plagiarism and AI Assistance Misuse in Web Programming</h6>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong><i class="fa-solid fa-building"></i> Conference:</strong> IEEE TALE 2023 - Teaching and Learning Conference</p>
+              <p><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> Auckland, New Zealand</p>
+              <p><strong><i class="fa-solid fa-file-lines"></i> Abstract:</strong></p>
+              <p style="text-align: justify;">
+                In programming education, plagiarism and misuse of artificial intelligence (AI) assistance are emerging issues. However, not many relevant studies are focused on web programming. We plan to develop automated tools to help instructors identify both misconducts. To fully understand the issues, we conducted a controlled experiment to observe the unfair benefits and the characteristics. We compared student performance in completing web programming tasks independently, with a submission to plagiarize, and with the help of AI assistance (ChatGPT). Our study shows that students who are involved in such misconducts get comparable test marks with less completion time. Plagiarized submissions are similar to the independent ones except in trivial aspects such as color and identifier names. AI-assisted submissions are more complex, making them less readable. Students believe AI assistance could be useful given proper acknowledgment of the use, although they are not convinced with readability and correctness of the solutions.
+
+
+
+              </p>
+              <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i> Co-Author</p>
+                  
+            </div>
+            <div class="modal-footer">
+              <a href="https://doi.org/10.1109/TALE56641.2023.10398397" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                <i class="fa-solid fa-external-link"></i> Read Full Paper
+              </a>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Springer Nature Modal -->
+      <div class="modal fade" id="modalSpringer2025" tabindex="-1" aria-labelledby="modalSpringer2025Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h5 class="modal-title" id="modalSpringer2025Label">Detecting GenAI assistance in programming assessments</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong><i class="fa-solid fa-book"></i> Journal:</strong> Springer Nature - Discover Computing</p>
+              <p><strong><i class="fa-solid fa-user-group"></i> Role:</strong> Co-Author</p>
+              <p><strong><i class="fa-solid fa-file-lines"></i> Abstract:</strong></p>
+              <p style="text-align: justify;">
+                In engineering education, Generative Artificial Intelligence (GenAI) might be misused to complete assessments with limited understanding. On courses that allow the use of GenAI, students might also forget to acknowledge its assistance. There is a need to identify such assistance. We present an automated detector with over-uniqueness and sample matching. GenAI-assisted submissions are identified based on their uniqueness and their similarity to a GenAI sample. Unique to our GenAI detector, it requires no training data and/or dedicated rules for each programming/scripting language. Further, the method can be integrated into any existing similarity detectors to identify plagiarism. The detector covers five similarity measurements, two similarity modes, and eight programming/scripting languages. Our evaluation of four data sets with thousands of submissions shows that our detector is effective (71% MAP). However, many factors can affect its effectiveness, including submission length and student attempts to align the code. Combining both mechanisms does not result in higher effectiveness, yet it takes longer to process.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a href="https://doi.org/10.1007/s10791-025-09884-9" target="_blank" rel="noopener noreferrer" class="btn btn-success">
+                <i class="fa-solid fa-external-link"></i> Read Full Paper
+              </a>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IOCES 2026 Modal -->
+      <div class="modal fade" id="modalIOCES2026" tabindex="-1" aria-labelledby="modalIOCES2026Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h5 class="modal-title" id="modalIOCES2026Label">Promoting Sustainable Use of LLM</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong><i class="fa-solid fa-building"></i> Conference:</strong> IOCES 2026 - 1st International Online Conference on Education Sciences</p>
+              <p><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> Basel, Switzerland (MDPI)</p>
+              <p><strong><i class="fa-solid fa-file-lines"></i> Abstract:</strong></p>
+              <p style="text-align: justify;">
+               Large Language Models (LLMs) can help students learn effectively. However, its use can introduce several issues, including ethical breaches and environmental harms. While ethical breaches have been extensively addressed, the environmental harms receive little attention. LLMs require substantial computational power, harming the environment. One LLM prompt results in a carbon footprint four times that of a Google search. There are a few studies that focus on informing LLMs’ environmental harms in education. However, many of those are designed as course materials or general guidance. Students might not have time to learn the course materials and may find the guidance limited in relevance to their own context.
+We present an online platform that bootstraps LLMs, promoting the sustainable use through mindful prompting and gamification. Mindful prompting is encouraged by applying course-relevant pre-prompts, setting minimum prompt length, limiting one prompt per minute, and recommending the reuse of similar prompt responses. The first two aim for effective prompt interactions, while the last two aim to minimise environmental harm. Gamification is applied by reducing the incentive for students using LLMs excessively. For each assessment, students will get 100 game points if their use of LLMs (measured in the total number of words in prompts and responses) is no more than 25% higher than the average. Otherwise, they will have game points deducted based on a proportion of excessive use.
+The platform is being evaluated in an informatics course (60 students) via a quasi-experiment. Our platform will be evaluated based on students’ awareness of the sustainable use of LLMs, the number of reused prompt responses, the number of words in prompts and responses, and their perception of the platform. Other indirect metrics will also be discussed, including academic performance, prompt analysis and response similarity.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a href="https://sciforum.net/event/IOCES2026?subscribe&section=#session4095" target="_blank" rel="noopener noreferrer" class="btn btn-warning">
+                <i class="fa-solid fa-external-link"></i> View Conference
+              </a>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- End Publication Section -->
+    
+    <!-- Wave Separator -->
+    <svg class="wave-top" viewBox="0 0 1200 250" style="background-color: #212529" aria-hidden="true" role="presentation" title="Wave separator">
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
@@ -1306,10 +1706,10 @@
         fill="white"
       />
     </svg>
-    <!-- Wave -->
+    <!-- End Wave -->
 
-    <!-- Reach Me -->
-    <section class="bg-dark text-white">
+    <!-- Contact Section -->
+    <section class="bg-dark text-white" aria-label="Contact form and location">
       <div class="container py-5">
         <div class="row d-flex justify-content-center align-items-center" style="min-height: auto" id="reach">
           <h1 class="text-center mt-5 pt-5">Reach Me!</h1>
@@ -1325,19 +1725,19 @@
               ></iframe>
             </div>
             <div class="col-lg-6" data-aos="fade-down" data-aos-duration="1000" data-aos-mirror="true" data-aos-once="false">
-              <form id="myForm" name="NewPort">
+              <form id="myForm" name="NewPort" aria-label="Contact form">
                 <div class="mb-3">
-                  <label for="Email" class="form-label"> Email</label>
-                  <input type="email" class="form-control" placeholder="Ex : admin@gamil.com" name="email" required />
-                  <div id="emailHelp" class="form-text">&nbsp; I will not share your email</div>
+                  <label for="contactEmail" class="form-label">Email <span aria-label="required">*</span></label>
+                  <input type="email" class="form-control" id="contactEmail" placeholder="Ex : admin@gmail.com" name="email" required aria-required="true" />
+                  <div id="emailHelp" class="form-text">I will not share your email</div>
                 </div>
                 <div class="mb-3">
-                  <label for="Name" class="form-label">Fullname</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="Ex : John Doe" required />
+                  <label for="contactName" class="form-label">Fullname <span aria-label="required">*</span></label>
+                  <input type="text" class="form-control" id="contactName" name="name" placeholder="Ex : John Doe" required aria-required="true" />
                 </div>
                 <div class="mb-3">
-                  <label for="country" class="form-label">Country</label>
-                  <select id="country" class="form-select" name="country" class="mb-3" required>
+                  <label for="contactCountry" class="form-label">Country <span aria-label="required">*</span></label>
+                  <select id="contactCountry" class="form-select" name="country" required aria-required="true" aria-label="Select your country">
                     <option value="">--- Select Country ---</option>
                     <option value="Indonesia">Indonesia</option>
                     <option value="Malaysia">Malaysia</option>
@@ -1347,12 +1747,12 @@
                   </select>
                 </div>
                 <div class="mb-3">
-                  <label for="massages1" class="form-label">Message</label>
-                  <textarea class="form-control contact-textarea" id="massages1" rows="5" name="message" placeholder="Ex : Hello World" required></textarea>
+                  <label for="contactMessage" class="form-label">Message <span aria-label="required">*</span></label>
+                  <textarea class="form-control contact-textarea" id="contactMessage" rows="5" name="message" placeholder="Ex : Hello World" required aria-required="true"></textarea>
                 </div>
-                <button type="submit" class="btn-lg btn-star buttonkagok" id="contact-button">
-                  Send <i class="fa-regular fa-paper-plane fa-bounce fa-lg"></i>
-                  <div class="star-1">
+                <button type="submit" class="btn-lg btn-star buttonkagok" id="contact-button" aria-label="Send message">
+                  Send <i class="fa-regular fa-paper-plane fa-bounce fa-lg" aria-hidden="true"></i>
+                  <div class="star-1" aria-hidden="true">
                     <svg
                       xmlns:xlink="http://www.w3.org/1999/xlink"
                       viewBox="0 0 784.11 815.53"
@@ -1473,23 +1873,21 @@
     <!-- Quotes -->
 
     <!-- Footer -->
-    <footer class="text-center text-white" style="background-color: rgba(0, 0, 0, 0.2)">
+    <footer class="text-center text-white" style="background-color: rgba(0, 0, 0, 0.2)" aria-label="Site footer">
       <!-- Grid container -->
       <div class="container pt-1">
         <!-- Section: Social media -->
-        <section class="mb-1">
+        <section class="mb-1" aria-label="Social media links">
           <!-- Discord -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://discordapp.com/users/705312106488135681" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-discord"></i></a>
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://discordapp.com/users/705312106488135681" target="_blank" rel="noopener noreferrer" aria-label="Connect on Discord"><i class="fab fa-discord" aria-hidden="true"></i></a>
           <!-- Google -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=yehezkieldavid2006@gmail.com&tf=1" target="_blank" role="button" data-mdb-ripple-color="dark"
-            ><i class="fab fa-google"></i
-          ></a>
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=yehezkieldavid2006@gmail.com&tf=1" target="_blank" rel="noopener noreferrer" aria-label="Contact via Gmail"><i class="fab fa-google" aria-hidden="true"></i></a>
           <!-- Instagram -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/yz.jsx/" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/yz.jsx/" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
           <!-- Linkedin -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.linkedin.com/in/ydavids/" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.linkedin.com/in/ydavids/" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
           <!-- Github -->
-          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/06202003/" target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/06202003/" target="_blank" rel="noopener noreferrer" aria-label="View GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
         </section>
         <!-- Section: Social media -->
       </div>
@@ -1497,75 +1895,75 @@
 
       <!-- Copyright -->
       <div class="text-center text-white py-1" style="background-color: #212529; font-size: 16px; line-height: 1">
-        <p>Ad Maiora Natus Sum <br/>© 2025 Copyright : Yehezkiel David Setiawan</p>
+        <p><em>Ad Maiora Natus Sum</em> <br/>&copy; 2026 Copyright: Yehezkiel David Setiawan</p>
       </div>
       <!-- Copyright -->
     </footer>
     <!-- Footer -->
 
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="frontendLabel" aria-modal="true">
+      <div class="modal-dialog modal-dialog-centered" role="dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Front-End Development</h1>
+            <h1 class="modal-title fs-5" id="frontendLabel">Front-End Development</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <ul style="list-style-type: none">
-              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2"></i> Can use HTML, CSS, JavaScript, etc</li>
-              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2"></i> Use any JavaScript library/framework</li>
-              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2"></i> Responsive Design of Websites or applications</li>
+              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Can use HTML, CSS, JavaScript, etc</li>
+              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Use any JavaScript library/framework</li>
+              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Responsive Design of Websites or applications</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="backendLabel" aria-modal="true">
+      <div class="modal-dialog modal-dialog-centered" role="dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Back-End Development</h1>
+            <h1 class="modal-title fs-5" id="backendLabel">Back-End Development</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="modal-body">
               <ul style="list-style-type: none">
-                <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2"></i> Can use Node.JS, PHP, etc</li>
-                <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2"></i> Integration with RDBMS (MySQL)</li>
-                <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2"></i> Use Laravel Framework for MVC model</li>
+                <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Can use Node.JS, PHP, etc</li>
+                <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Integration with RDBMS (MySQL)</li>
+                <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Use Laravel Framework for MVC model</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
+    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="designLabel" aria-modal="true">
+      <div class="modal-dialog modal-dialog-centered" role="dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="staticBackdropLabel">Designing Interface</h1>
+            <h1 class="modal-title fs-5" id="designLabel">Designing Interface</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <ul style="list-style-type: none">
-              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2"></i> Create design for website and mobile application</li>
-              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2"></i> Responsive Mobile/Website design</li>
-              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2"></i> Using Figma/Adobe XD/Whimsichal</li>
+              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Create design for website and mobile application</li>
+              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Responsive Mobile/Website design</li>
+              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Using Figma/Adobe XD/Whimsichal</li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="modal fade" id="contact-thx" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
+    <div class="modal fade" id="contact-thx" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="thankYouLabel" aria-modal="true">
+      <div class="modal-dialog" role="dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Thank You</h5>
+            <h5 class="modal-title" id="thankYouLabel">Thank You</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <img class="contact-modal-thx" src="img/thx.gif" />
+            <img class="contact-modal-thx" src="img/thx.gif" alt="Thank you confirmation animation" />
             <h4 class="contact-modal-h4">Your message has been received by the system, the message will be replied to as soon as possible.</h4>
           </div>
         </div>
@@ -1635,6 +2033,103 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <!-- Owl Carousel Initialization -->
+    <script>
+      $(document).ready(function(){
+        // 3D Photo Follow Mouse Effect
+        const fotoHero = document.getElementById('fotoHero');
+        
+        if (fotoHero) {
+          fotoHero.addEventListener('mousemove', function(e) {
+            const rect = fotoHero.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateY = ((x - centerX) / centerX) * 20;
+            const rotateX = ((centerY - y) / centerY) * 20;
+            const scale = 1.05;
+            
+            fotoHero.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
+          });
+          
+          fotoHero.addEventListener('mouseleave', function() {
+            fotoHero.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+          });
+        }
+        
+        // Portfolio Carousel
+        $('.portfolio-carousel').owlCarousel({
+          items: 2,
+          loop: true,
+          margin: 30,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          nav: true,
+          dots: true,
+          mouseDrag: true,
+          touchDrag: true,
+          pullDrag: true,
+          freeDrag: false,
+          navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>'],
+          responsive: {
+            0: {
+              items: 1,
+              margin: 10
+            },
+            768: {
+              items: 1,
+              margin: 15
+            },
+            1024: {
+              items: 2,
+              margin: 30
+            }
+          }
+        });
+
+        // Publications Carousel
+        $('.publications-carousel').owlCarousel({
+          items: 2,
+          loop: true,
+          margin: 30,
+          autoplay: true,
+          autoplayTimeout: 5000,
+          autoplayHoverPause: true,
+          nav: true,
+          dots: true,
+          mouseDrag: true,
+          touchDrag: true,
+          pullDrag: true,
+          freeDrag: false,
+          navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>'],
+          responsive: {
+            0: {
+              items: 1,
+              margin: 10
+            },
+            768: {
+              items: 1,
+              margin: 15
+            },
+            1024: {
+              items: 2,
+              margin: 30
+            }
+          }
+        });
+      });
+    </script>
+
+    <noscript>
+      <div role="alert" style="background-color: #f8d7da; color: #721c24; padding: 20px; margin: 20px; border: 1px solid #f5c6cb; border-radius: 4px;">
+        <strong>JavaScript is required:</strong> This portfolio website requires JavaScript to be enabled for full functionality. Please enable JavaScript in your browser settings to access all features including animations, carousels, form submission, and dynamic content.
+      </div>
+    </noscript>
   </body>
 </html>
 

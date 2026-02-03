@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <!-- Meta Tags for SEO & Accessibility -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+    <meta name="description" content="Yehezkiel David Setiawan - AI Engineer & LLM Researcher. Fresh graduate in informatics engineering with expertise in large language models, data engineering, and AI-driven code intelligence systems." />
+    <meta name="keywords" content="AI Engineer, LLM Research, Data Engineering, Code Intelligence, Machine Learning, Full Stack Developer, Indonesia" />
+    <meta name="author" content="Yehezkiel David Setiawan" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#198754" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Yehezkiel David S." />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yehezkiel.dev/" />
+    <meta property="og:title" content="Yehezkiel David Setiawan - AI Engineer & LLM Researcher" />
+    <meta property="og:description" content="Practical AI LLM Researcher & Engineer in Advanced Code Intelligence Systems. Bachelor in Informatics Engineering, pursuing Master's in Computer Science." />
+    <meta property="og:image" content="https://yehezkiel.dev/img/david2.png" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Yehezkiel David Setiawan - AI Engineer" />
+    <meta name="twitter:description" content="Practical AI LLM Researcher & Engineer in Advanced Code Intelligence Systems" />
+    <meta name="twitter:image" content="https://yehezkiel.dev/img/david2.png" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://yehezkiel.dev/" />
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/david2.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/david2.png" />
+    <link rel="shortcut icon" href="img/david2.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/david2.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yehezkiel David Setiawan",
+      "url": "https://yehezkiel.dev/",
+      "image": "https://yehezkiel.dev/img/david2.png",
+      "description": "AI Engineer & LLM Researcher specializing in code intelligence and data engineering",
+      "jobTitle": "AI Engineer & Data Analyst",
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Royal Medicalink Pharmalab"
+        },
+        {
+          "@type": "Organization",
+          "name": "Maranatha Christian University"
+        }
+      ],
+      "sameAs": [
+        "https://github.com/06202003/",
+        "https://www.linkedin.com/in/ydavids/",
+        "https://www.instagram.com/yz.jsx/",
+        "https://mail.google.com/mail/u/1/?view=cm&fs=1&to=yehezkieldavid2006@gmail.com&tf=1"
+      ],
+      "email": "yehezkieldavid2006@gmail.com",
+      "knowsAbout": ["Artificial Intelligence", "Large Language Models", "Machine Learning", "Data Engineering", "Web Development", "Python", "JavaScript", "Laravel", "Go"]
+    }
+    </script>
+    <script>
+      var emojis = ['😃', '🤬', '😶‍🌫️', '😑', '🤯', '🤡'];
+
+      function changeEmoji() {
+        var randomIndex = Math.floor(Math.random() * emojis.length);
+        document.title = 'Yehezkiel David S. ' + emojis[randomIndex];
+      }
+
+      setInterval(changeEmoji, 1000);
+    </script>
+  </head>
+  <body>
+    <!-- Skip to Main Content Link (Accessibility) -->
+    <a href="#main-content" class="btn btn-outline-light btn-sm visually-hidden-focusable" style="position: fixed; top: -40px; left: 0; z-index: 100; padding: 10px 20px;" onclick="document.getElementById('main-content').focus();">Skip to Main Content</a>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg bg-dark text-white sticky-top" aria-label="Main Navigation">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#home" aria-label="Yehezkiel David Setiawan - Portfolio Home">
+          <h2 aria-hidden="true">.-- . .-.. -.-. --- -- .</h2>
+          <span class="visually-hidden">Yehezkiel David Setiawan Portfolio</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#qualification">Qualification</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reach">Reach Me!</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <a href="https://wa.me/6289507647137" target="_blank" rel="noopener noreferrer" class="btn-star" style="text-decoration: none" aria-label="Contact via WhatsApp">
+              Contact Me! <i class="fa-brands fa-whatsapp fa-shake fa-lg"></i>
+              <div class="star-1">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-2">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-3">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-4">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-5">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-6">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <main id="main-content">
+    <section class="bg-dark" aria-label="Hero section">
+      <div id="home" style="width: 100%">
+        <div class="container text-white" style="height: auto">
+          <div class="row d-flex justify-content-center align-items-center" style="min-height: 92.5vh">
+            <div class="col-md-4 order-sm-1 text-center" data-aos="fade-down" data-aos-offset="500" data-aos-duration="500">
+              <img src="img/david.JPG" class="foto-hero rounded-5" alt="Yehezkiel David Setiawan - AI Engineer portrait" />
+            </div>
+
+            <div class="col-md-7 order-sm-0 px-5">
+              <h3 class="asepanaaa"></h3>
+              <h1 class="my-3 asepanaa" style="font-size: 2.9em"></h1>
+              <p class="fs-3 fw-bold asep" style="text-align: justify"></p>
+              <p class="fs-5 asepan" style="text-align: justify"></p>
+
+              <a href="#about">
+                <button class="btn-star my-3 buttonkagok">
+                  Read more about Me
+                  <div class="star-1">
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 784.11 815.53"
+                      style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                      version="1.1"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="star-2">
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 784.11 815.53"
+                      style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                      version="1.1"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="star-3">
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 784.11 815.53"
+                      style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                      version="1.1"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="star-4">
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 784.11 815.53"
+                      style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                      version="1.1"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="star-5">
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 784.11 815.53"
+                      style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                      version="1.1"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="star-6">
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 784.11 815.53"
+                      style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                      version="1.1"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                      </g>
+                    </svg>
+                  </div>
+                </button>
+              </a>
+            </div>
+
+            <div class="col-md-1 hidden order-sm-2" data-aos="zoom-in" data-aos-offset="500" data-aos-duration="500" aria-label="Social media links">
+              <div class="tengah">
+                <a href="https://github.com/06202003/" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fa-brands fa-github fa-3x py-3" style="color: #198754" aria-hidden="true"></i></a> <br />
+                <a href="https://www.linkedin.com/in/ydavids/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fa-brands fa-linkedin fa-3x py-3" style="color: #198754" aria-hidden="true"></i></a><br />
+                <a href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=yehezkieldavid2006@gmail.com&tf=1" target="_blank" rel="noopener noreferrer" aria-label="Send email"><i class="fa-brands fa-google fa-3x py-3" style="color: #198754" aria-hidden="true"></i></a><br />
+                <a href="https://www.instagram.com/yz.jsx/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile"><i class="fa-brands fa-instagram fa-3x py-3" style="color: #198754" aria-hidden="true"></i></a><br />
+                <a href="https://discordapp.com/users/705312106488135681" target="_blank" rel="noopener noreferrer" aria-label="Discord profile"><i class="fa-brands fa-discord fa-2x py-3" style="color: #198754" aria-hidden="true"></i></a><br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Home Section -->
+
+    <!-- About Section -->
+    <section id="about" aria-label="About Yehezkiel">
+    <section id="about">
+      <div class="container pt-5" style="height: auto">
+        <div class="row d-flex justify-content-center align-items-center" style="min-height: 90vh">
+          <div class="col-md-4" data-aos="fade-down" data-aos-delay="250" data-aos-duration="300" data-aos-mirror="true">
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" aria-label="Open video and quotes gallery">
+              <div class="card border-0 mx-auto" style="width: 100%;">
+                <div class="card-body">
+                  <video class="rounded-5" autoplay muted style="width: 100%; height: 100%; width: 100%" aria-label="Profile video introduction">
+                    <source src="media/video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div class="col-md-8 px-5" data-aos="fade-down" data-aos-delay="250" data-aos-duration="300" data-aos-mirror="true">
+            <h1>About Me</h1>
+            <p style="text-align: justify;font-size: 1em;">
+           Yehezkiel David Setiawan is an AI engineer from Bandung, Indonesia, specializing in large language model (LLM) innovation and data engineering. He combines rigorous academic research with practical system development to design, implement, and deploy production-grade machine learning systems. His research and projects concentrate on LLM-driven code intelligence and operational LLM deployment. He develops and evaluates semantic code-similarity systems, empirically measures properties of GenAI-generated code in educational contexts, and designs applied solutions that integrate LLMs into production workflows while addressing detection, governance, and reproducibility.
+            </p>
+            <div class="mt-4" data-aos="fade-up" data-aos-delay="600" data-aos-duration="400">
+              <div class="d-flex flex-wrap text-center justify-content-center align-items-center gap-4 mb-4">
+                <div class="text-center">
+                  <i class="fa-solid fa-brain fa-2x mb-2 text-primary" style="color: black;"></i>
+                  <p class="mb-0 fw-semibold">AI Research</p>
+                </div>
+                <div class="text-center">
+                  <i class="fa-solid fa-database fa-2x mb-2 text-primary" style="color: black;"></i>
+                  <p class="mb-0 fw-semibold">Data Engineering</p>
+                </div>
+                <div class="text-center">
+                  <i class="fa-solid fa-code fa-2x mb-2 text-primary" style="color: black;"></i>
+                  <p class="mb-0 fw-semibold">LLM Deployment</p>
+                </div>
+              </div>
+            
+              <!-- Subtle Quote -->
+              <blockquote class="fst-italic text-secondary border-start border-3 ps-3 text-start" style="font-size: 0.95em;">
+                “Bridging research and real-world systems — because intelligence is only meaningful when it scales.”
+              </blockquote>
+            </div>
+          
+          
+            <a href="data/Yehezkiel.pdf" download="Yehezkiel_David_Setiawan_CV.pdf" data-aos="fade-down" data-aos-delay="850" data-aos-duration="200" data-aos-mirror="true" aria-label="Download CV in PDF format">
+              <button class="btn-star buttonkagok2 w-100">
+                Download CV <i class="fa-solid fa-file-arrow-down fa-beat-fade"></i>
+                <div class="star-1">
+                  <svg
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 784.11 815.53"
+                    style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                    version="1.1"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs></defs>
+                    <g id="Layer_x0020_1">
+                      <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                      <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="star-2">
+                  <svg
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 784.11 815.53"
+                    style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                    version="1.1"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs></defs>
+                    <g id="Layer_x0020_1">
+                      <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                      <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="star-3">
+                  <svg
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 784.11 815.53"
+                    style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                    version="1.1"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs></defs>
+                    <g id="Layer_x0020_1">
+                      <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                      <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="star-4">
+                  <svg
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 784.11 815.53"
+                    style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                    version="1.1"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs></defs>
+                    <g id="Layer_x0020_1">
+                      <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                      <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="star-5">
+                  <svg
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 784.11 815.53"
+                    style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                    version="1.1"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs></defs>
+                    <g id="Layer_x0020_1">
+                      <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                      <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="star-6">
+                  <svg
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 784.11 815.53"
+                    style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                    version="1.1"
+                    xml:space="preserve"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs></defs>
+                    <g id="Layer_x0020_1">
+                      <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                      <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                    </g>
+                  </svg>
+                </div>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <div class="offcanvas offcanvas-bottom h-100" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel" aria-modal="true" role="dialog">
+      <div class="offcanvas-header">
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body small">
+        <div class="container">
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-md-4">
+              <div class="card border-0 mx-auto" style="max-width: 390px; width: 100%; overflow-y: hidden">
+                <div class="card-body">
+                  <video class="rounded-5" controls style="width: 100%; height: 100%">
+                    <source src="media/video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="row align-items-center">
+                <div class="col-md-4">
+                  <div class="card m-3">
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p>"Programming is not about what you know; it's about what you can figure out."</p>
+                        <footer class="blockquote-footer">Chris Pine</footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="card m-3">
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p>"Information technology and business are becoming inextricably interwoven. I don't think anybody can talk meaningfully about one without the talking about the other."</p>
+                        <footer class="blockquote-footer">Bill Gates</footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <div class="card m-3">
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p>"Leadership is not about being in charge. It's about taking care of those in your charge."</p>
+                        <footer class="blockquote-footer">Simon Sinek</footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card m-3">
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p>"Good design is obvious. Great design is transparent."</p>
+                        <footer class="blockquote-footer">Joe Sparano</footer>
+                      </blockquote>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card m-3">
+                    <div class="card-body">
+                      <blockquote class="blockquote">
+                        <p>"The best way to predict the future is to invent it."</p>
+                        <footer class="blockquote-footer">Alan Kay</footer>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-7">
+                  <div class="card m-3">
+                    <div class="card-body">
+                      <div>
+                        <p>"A full-stack developer is someone who is not only comfortable working with backend and frontend technologies but also has a good understanding of the entire web development process."</p>
+                        <p class="fw-bold">- Chris Wanstrath</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-5">
+                  <div class="card m-3">
+                    <div class="card-body">
+                      <div>
+                        <p>"Being a student is easy. Learning requires actual work."</p>
+                        <p class="fw-bold">- William Crawford</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About -->
+
+    <!-- Wave -->
+    <svg class="wave-top aaaa" viewBox="0 0 1200 250">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0 108.306L50 114.323C100 120.34 200 132.374 300 168.476C400 204.578 500 264.749 600 246.698C700 228.647 800 132.374 900 108.306C1000 84.2382 1100 132.374 1150 156.442L1200 180.51V-8.5451e-06H1150C1100 -8.5451e-06 1000 -8.5451e-06 900 -8.5451e-06C800 -8.5451e-06 700 -8.5451e-06 600 -8.5451e-06C500 -8.5451e-06 400 -8.5451e-06 300 -8.5451e-06C200 -8.5451e-06 100 -8.5451e-06 50 -8.5451e-06H0V108.306Z"
+        fill="white"
+      />
+    </svg>
+    <!-- Wave -->
+
+    <!-- Skills & Qualification Section -->
+    <section id="skills" style="background-color: #212529" aria-label="Qualifications and skills">
+      <div class="container text-white bg-dark" style="height: auto">
+        <div class="row d-flex justify-content-center align-items-center" id="qualification">
+          <h2 class="text-center pt-5 mt-5">Qualification</h2>
+          <p class="text-center fs-5 py-2">"Dive into a captivating journey through my remarkable experiences, where every step unveils a tapestry of triumphs, challenges, and unforgettable moments."</p>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-md-2 mx-auto">
+            <button class="btn-star buttonkagok2 w-100" data-target="div1">
+              Education
+              <div class="star-1">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-2">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-3">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-4">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-5">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-6">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+            </button>
+          </div>
+          <div class="col-md-2 mx-auto">
+            <button class="btn-star buttonkagok2 w-100" data-target="div2">
+              Organization
+              <div class="star-1">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-2">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-3">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-4">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-5">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-6">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+            </button>
+          </div>
+          <div class="col-md-2 mx-auto">
+            <button class="btn-star buttonkagok2 w-100" data-target="div3">
+              Experience
+              <div class="star-1">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-2">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-3">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-4">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-5">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+              <div class="star-6">
+                <svg
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                  viewBox="0 0 784.11 815.53"
+                  style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                  version="1.1"
+                  xml:space="preserve"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <defs></defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                    <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                  </g>
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center align-items-center">
+          <div id="div1">
+            <div class="container">
+              <div class="row my-5 d-flex justify-content-center align-items-center" style="height: auto">
+                <div class="col-md-5 px-2 py-2">
+                  <h3>Informatics Engineering</h3>
+                  <h4>Bachelor's Degree</h4>
+                  <p>Maranatha Christian University, Bandung</p>
+                  <p><i class="fa-solid fa-calendar-days fa-fade" aria-hidden="true"></i> 2021-2025</p>
+                </div>
+                <div class="col-md-5 px-2 py-2">
+                  <h3>Computer Science</h3>
+                  <h4>Master's Degree</h4>
+                  <p>Maranatha Christian University, Bandung</p>
+                  <p><i class="fa-solid fa-calendar-days fa-fade" aria-hidden="true"></i> 2025-2026</p>
+                </div>
+                <div class="col-md-2 px-2 py-2 py-2">
+                  <img src="img/marnat.png" alt="Maranatha Christian University Logo" class="marnat" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="div2">
+            <div class="container">
+              <div class="row my-5 d-flex justify-content-center align-items-center" style="height: auto">
+                <div class="col-md-5 px-2 py-2">
+                  <h3>Academic Coordinator</h3>
+                  <p>Information Technology Faculty Student Senate,<br />Maranatha Christian University</p>
+                  <p><i class="fa-solid fa-calendar-days fa-fade" aria-hidden="true"></i> 2022-2023</p>
+                </div>
+                <div class="col-md-5 px-2 py-2">
+                  <h3>President</h3>
+                  <p>Information Technology Faculty Student Senate,<br />Maranatha Christian University</p>
+                  <p><i class="fa-solid fa-calendar-days fa-fade" aria-hidden="true"></i> 2023-2024</p>
+                </div>
+                <div class="col-md-2 px-2 py-2">
+                  <img src="img/sema.png" alt="Student Senate Logo" class="sema" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="div3">
+            <div class="container">
+              <div class="row my-5 d-flex justify-content-center align-items-center" style="height: auto">
+                <!-- <div class="col-md-4 px-2 py-2">
+                  <h2>Lecturer Assistant & Laboratory Staff</h2>
+                  <h5>Faculty of Smart Technology & Engineering, Maranatha Christian University</h5>
+                  <p style="font-size: 0.8em">Basic Web | Basic Programming | Computer Network | Advanced Database | Advanced Web | Machine Learning | Computer Graphic | Big Data Analytics</p>
+                  <h5><i class="fa-solid fa-calendar-days fa-fade"></i> 2022-2024</h5>
+                </div>
+                <div class="col-md-2">
+                  <img src="img/logoftrc.png" alt="" class="sema" />
+                </div> -->
+                <div class="col-md-4 px-2 py-2 pe-2">
+                  <h3>Fullstack Engineer Internship</h3>
+                  <h4>WIT.id</h4>
+                  <p>Expertise: Laravel & GO</p>
+                  <p><i class="fa-solid fa-calendar-days fa-fade" aria-hidden="true"></i> 2023-2024</p>
+                </div>
+                <div class="col-md-2">
+                  <img src="img/WIT.png" alt="WIT.id Company Logo" class="sema" />
+                </div>
+                <div class="col-md-4 ps-5 pe-2 py-2 border-start border-3">
+                  <h3>Data & System Analyst</h3>
+                  <h4>Royal Medicalink Pharmalab</h4>
+                  <p>Super App System Analyst & Business Data Analyst</p>
+                  <p><i class="fa-solid fa-calendar-days fa-fade" aria-hidden="true"></i> 2025-now</p>
+                </div>
+                <div class="col-md-2">
+                  <img src="img/logoroyal.png" alt="Royal Medicalink Pharmalab Logo" class="sema" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Skills & Qualification Section -->
+
+    <!-- Wave -->
+    <svg class="wave-top" viewBox="0 0 1200 250" style="background-color: white">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0 108.306L50 114.323C100 120.34 200 132.374 300 168.476C400 204.578 500 264.749 600 246.698C700 228.647 800 132.374 900 108.306C1000 84.2382 1100 132.374 1150 156.442L1200 180.51V-8.5451e-06H1150C1100 -8.5451e-06 1000 -8.5451e-06 900 -8.5451e-06C800 -8.5451e-06 700 -8.5451e-06 600 -8.5451e-06C500 -8.5451e-06 400 -8.5451e-06 300 -8.5451e-06C200 -8.5451e-06 100 -8.5451e-06 50 -8.5451e-06H0V108.306Z"
+        fill="#212529"
+      />
+    </svg>
+    <!-- Wave -->
+
+    <!-- Portfolio Section -->
+    <section aria-label="Portfolio projects">
+      <div class="container" style="height: auto">
+        <div class="row d-flex justify-content-center align-items-center" style="min-height: auto" id="portfolio">
+          <h2 class="text-center mt-5 pt-5">Portfolio</h2>
+          <p class="text-center fs-5 py-2">"Unlocking the realms of digital innovation and craftsmanship, my portfolio showcases a captivating fusion of creativity and technical prowess."</p>
+          
+          <!-- Portfolio Owl Carousel -->
+          <div class="owl-carousel owl-theme portfolio-carousel py-4"style="padding-top: 30px;">
+            
+            <!-- SSTRANGE Card -->
+            <div class="item">
+              <div class="card border-0 shadow" style="height: 450px; border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5;">
+                  <iframe
+                    class="w-100 h-100"
+                    src="https://www.youtube.com/embed/s1VIMZFjEK0?si=UzIcoqcuwohLeziX"
+                    title="SSTRANGE Web Application: Generative AI Integration for Code Plagiarism Detection - Project Demo Video"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    aria-label="Video demonstration of SSTRANGE final project"
+                  ></iframe>
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-warning text-dark mb-2" style="width: fit-content;">AI Integration</span>
+                  <h5 class="card-title fw-bold mb-2">SSTRANGE</h5>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-award"></i> Bachelor Final Project</p>
+                  <p class="card-text flex-grow-1" style="font-size: 0.9rem; color: #666;">
+                    Web application integrating Generative AI for code plagiarism detection with 80.97% code correctness and 80% uniqueness.
+                  </p>
+                  <a href="https://youtu.be/s1VIMZFjEK0?si=5tmwJsOQnh3qFDIR" target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">View Project <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                </div>
+              </div>
+            </div>
+                      Generative AI-integrated web app for code plagiarism detection. 80.97% code correctness, 80% uniqueness.
+                    </p>
+                    <a href="https://youtu.be/s1VIMZFjEK0?si=5tmwJsOQnh3qFDIR" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">View Project <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Green Mobility Card -->
+              <div class="portfolio-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden;">
+                    <img src="img/greenmobility.jpg" alt="Green Mobility Hub - Web Development Competition Project" class="w-100 h-100" style="object-fit: cover;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">🏆 1st Place</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #11998e;">Green Mobility Hub</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-calendar-days" aria-hidden="true"></i> FIT Competition (12 hours build)
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                      Energy-efficient urban mobility solutions with sustainable behavior change integration.
+                    </p>
+                    <a href="https://www.instagram.com/p/C-O2vzXzq5i/?igsh=Njl0cmdjMW9iYW84&img_index=2" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">View Project <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- AgriSense Card -->
+              <div class="portfolio-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden;">
+                    <img src="img/agrisense.jpg" alt="AgriSense - Satellite-based AI Agriculture Platform" class="w-100 h-100" style="object-fit: cover;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">🏆 3rd Place</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #f5576c;">AgriSense</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-leaf" aria-hidden="true"></i> Business Plan Competition
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                      AI-powered satellite platform for crop health monitoring and sustainable farming decisions.
+                    </p>
+                    <a href="https://untar.ac.id/2024/06/12/fti-untar-dorong-inovasi-dan-kreativitas-digital-untuk-masa-depan-indonesia/?fbclid=PAZXh0bgNhZW0CMTEAAab00I8Mw3JgQqkjbUDW32pKprylG2oJSTnERrB7wwiZtWDuvpYwwxAeO1g_aem_ZmFrZWR1bW15MTZieXRlcw" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">View Project <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Office Inventory Card -->
+              <div class="portfolio-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: white;">
+                    <img src="img/golang.png" alt="Office Inventory API - Go Programming Language Project" class="img-fluid" style="max-height: 80%; object-fit: contain;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">⭐ 94/100</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #00f2fe;">Office Inventory API</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-code" aria-hidden="true"></i> Go Programming Internship
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                      Complete REST API documentation in Go for inventory management integration.
+                    </p>
+                    <a href="https://github.com/06202003/PublicAPIInventory" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">View Project <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- YZFlix Card -->
+              <div class="portfolio-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: white;">
+                    <img src="img/react.png" alt="YZFlix - Movie Search Website with React and TMDB API" class="img-fluid" style="max-height: 80%; object-fit: contain;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">React</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #fa709a;">YZFlix</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-film" aria-hidden="true"></i> First React Project
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                      Movie discovery platform using React JS with TMDB API integration.
+                    </p>
+                    <a href="https://yzflix.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">View Project <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- CrediTion Card -->
+              <div class="portfolio-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: white;">
+                    <img src="img/Cred.png" alt="CrediTion - Credible Information Search and Hoax Reporting Platform" class="img-fluid" style="max-height: 80%; object-fit: contain;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">🏆 3rd Place</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #fed6e3;">CrediTion</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-shield-check" aria-hidden="true"></i> Design Competition
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                      Credible information platform with hoax reporting services for media literacy.
+                    </p>
+                    <a href="https://creditionwdc.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">View Project <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- UnivAssist Card -->
+              <div class="portfolio-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: white;">
+                    <img src="img/UnivAssist.png" alt="UnivAssist - University Rental Services Web Application" class="img-fluid" style="max-height: 80%; object-fit: contain;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">🏆 4th Place</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #ff6a88;">UnivAssist</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> Web Competition (12 hours)
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                      Student rental services platform for boarding, laptops, and academic materials.
+                    </p>
+                    <a href="https://github.com/06202003/UnivAssist" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">View Project <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- KulitAbdi Card -->
+              <div class="portfolio-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #b284be 0%, #8f6b47 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f5f5f5;">
+                    <img src="img/kulitabdi.png" alt="KulitAbdi.Co - Leather Fashion E-commerce Website with 3D Media" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">Top 5</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #8f6b47;">KulitAbdi.Co</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-cube" aria-hidden="true"></i> 3D Fashion E-commerce
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                      Leather fashion platform with 3D media showcase for premium shopping experience.
+                    </p>
+                    <a href="https://creditionwdc.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #b284be 0%, #8f6b47 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">View Project <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- SawitCo Card -->
+              <div class="portfolio-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #d4a574 0%, #8b7355 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f5f5f5;">
+                    <img src="img/sawitco.png" alt="SawitCo - Palm-based Products E-commerce Platform" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">E-commerce</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #8b7355;">SawitCo</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-leaf" aria-hidden="true"></i> Palm Products Platform
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                      Sustainable palm-based products e-commerce platform supporting local Indonesian producers.
+                    </p>
+                    <a href="https://github.com/06202003/" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #d4a574 0%, #8b7355 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">View Project <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- YukSehat Card -->
+              <div class="portfolio-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: white;">
+                    <i class="fa-solid fa-heart" style="font-size: 120px; color: #ff6b6b; opacity: 0.2;" aria-hidden="true"></i>
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">Health</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #ee5a6f;">YukSehat</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-heartbeat" aria-hidden="true"></i> Health Initiative
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                      Community-driven health initiative platform promoting wellness and healthy lifestyles.
+                    </p>
+                    <a href="https://github.com/06202003/" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">View Project <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Perwalian Card -->
+              <div class="portfolio-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #5f72bd 0%, #9921e8 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden;">
+                    <iframe
+                      class="w-100 h-100"
+                      src="https://www.youtube.com/embed/9__uz0xQnjc"
+                      title="Perwalian Academic Advisory System Demo Video"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                      aria-label="Video demonstration of Perwalian academic system"
+                      style="border: none;"
+                    ></iframe>
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">Full-Stack</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #9921e8;">Perwalian</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-users" aria-hidden="true"></i> Academic Management System
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;">
+                      Full-stack course registration platform connecting study programs with students each semester.
+                    </p>
+                    <a href="https://youtu.be/9__uz0xQnjc" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #5f72bd 0%, #9921e8 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">View Project <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px;">
+            <button class="portfolio-scroll-btn" onclick="scrollPortfolio('left')" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; cursor: pointer; font-size: 1.2rem; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="portfolio-scroll-btn" onclick="scrollPortfolio('right')" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; cursor: pointer; font-size: 1.2rem; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://sawitco.netlify.app/" target="_blank">Click Here!</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="heheaa">
+                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
+                    <div class="col-md-4">
+                      <img src="img/yuksehat.png" class="img-about" alt="YukSehat - Health Care Information Services Website" />
+                    </div>
+                    <div class="col-md-8">
+                      <h1 class="projects-title">YukSehat</h1>
+                      <h5 class="projects-name hidden">Web Design Competition</h5>
+                      <h4 class="projects-asal hidden">Invention Universitas Udayana</h4>
+                      <h6 class="projects-desc hidden">YukSehat is a Health Care prototype website created to meet the needs of the community in accessing health service information</h6>
+                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://yuksehat.netlify.app/" target="_blank">Click Here!</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="heheaa">
+                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
+                    <div class="col-md-5">
+                      <iframe
+                        class="img-aboutii"
+                        src="https://www.youtube.com/embed/9__uz0xQnjc?controls=0"
+                        title="Perwalian - Full-Stack Course Selection Web Application - Project Demo"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        aria-label="Video demonstration of Perwalian project"
+                      ></iframe>
+                    </div>
+                    <div class="col-md-7">
+                      <h1 class="projects-title">Perwalian</h1>
+                      <h4 class="projects-asal hidden">Adv. Web Programming Class</h4>
+                      <h3 class="projects-name hidden">Final Project || Grade: 100/100</h3>
+                      <h6 class="projects-desc hidden">Perwalian is a full-stack website created to fulfill the selection of new courses every semester between study programs and students</h6>
+                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://youtu.be/9__uz0xQnjc" target="_blank">Click Here!</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <i class="fa-solid fa-chevron-left fa-2xl warnachev"></i>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <i class="fa-solid fa-chevron-right fa-2xl warnachev"></i>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About -->
+
+
+    <!-- Publication Section -->
+    </section>
+    <section aria-label="Academic publications and research">
+      <div class="container" style="height: auto">
+        <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
+          <h2 class="text-center mt-5 pt-5">Publications</h2>
+          <p class="text-center fs-5 py-2">"Dive into my publications filled with insightful articles and interesting research."</p>
+          
+          <!-- Publications Cards Carousel -->
+          <div class="publications-carousel-container py-5 w-100" style="overflow: hidden;">
+            <div class="publications-cards-wrapper" style="display: flex; gap: 20px; overflow-x: auto; scroll-behavior: smooth; padding: 20px 0; margin: 0 -15px; padding-left: calc(50% - 300px); padding-right: calc(50% - 300px);">
+              
+              <!-- ICALT 2025 Card -->
+              <div class="publication-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #2e2e2e 0%, #1a1a1a 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f0f0;">
+                    <img src="img/icalt.png" alt="IEEE ICALT 2025 - 25th International Conference on Advanced Learning Technologies" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #00d4ff; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">IEEE 2025</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #1a1a1a; font-size: 1.1rem;">Web-Based Similarity Detector</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-building" aria-hidden="true"></i> Changhua University, Taiwan
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px;">
+                      User-friendly detector with multiple measurements and enhanced privacy, reducing detection time by 2/3.
+                    </p>
+                    <a href="https://doi.org/10.1109/ICALT64023.2025.00113" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">Read Paper <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- ICICL 2024 Card -->
+              <div class="publication-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f0f0;">
+                    <img src="img/icicl.png" alt="ICICL 2024 - Interactive Collaborative Learning Conference" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">ICICL 2024</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #667eea; font-size: 1.1rem;">GenAI Code: Uniqueness & Accuracy</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-building" aria-hidden="true"></i> BME Budapest, Hungary
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px;">
+                      Study on GenAI code uniqueness (80%) and accuracy (81%) in introductory programming.
+                    </p>
+                    <a href="#" class="btn btn-sm" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">Read Paper <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- ICSTHE 2024 Card -->
+              <div class="publication-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f0f0;">
+                    <img src="img/icsthe.jpg" alt="ICSTHE 2024 - Education and Technology Conference" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">ICSTHE 2024</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #f5576c; font-size: 1.1rem;">ParkSphere: Smart Mobility</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-building" aria-hidden="true"></i> Krida Wacana, Jakarta
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px;">
+                      WhatsApp-based chatbot reducing parking congestion and carbon emissions.
+                    </p>
+                    <a href="https://youtu.be/QeGgcQXul54" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">Watch Video <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- JAIC 2024 Card -->
+              <div class="publication-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f0f0;">
+                    <img src="img/jaic.jpg" alt="JAIC 2024 - Journal of AI Computing" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">JAIC 2024</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #00f2fe; font-size: 1.1rem;">ChatGPT API Testing Impact</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-building" aria-hidden="true"></i> Politeknik Batam, Indonesia
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px;">
+                      Experiment showing ChatGPT improves test scores with enhanced confidence.
+                    </p>
+                    <a href="https://doi.org/10.30871/jaic.v8i2.8182" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">Read Paper <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- KONSTELASI 2024 Card -->
+              <div class="publication-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f0f0;">
+                    <img src="img/konstelasi.png" alt="KONSTELASI 2024 - Digital Transformation Conference" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">KONSTELASI 2024</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #fee140; font-size: 1.1rem;">Transformasi Digital Super App</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-building" aria-hidden="true"></i> Atma Jaya, Yogyakarta
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px;">
+                      Laravel super app for office administration reducing task time significantly.
+                    </p>
+                    <a href="https://doi.org/10.24002/konstelasi.v4i1.9179" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">Read Paper <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- TALE 2023 Card -->
+              <div class="publication-card" style="min-width: 600px; flex-shrink: 0;">
+                <div class="card border-0 shadow-lg" style="height: 100%; border-radius: 15px; overflow: hidden; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); transition: all 0.3s ease;">
+                  <div style="position: relative; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f0f0f0;">
+                    <img src="img/tale.png" alt="IEEE TALE 2023 - Teaching and Learning Conference" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                    <div style="position: absolute; top: 10px; right: 10px; background: #ffc107; color: #000; padding: 8px 16px; border-radius: 20px; font-weight: bold; font-size: 0.85rem;">TALE 2023</div>
+                  </div>
+                  <div class="card-body" style="background: white; padding: 25px;">
+                    <h3 class="card-title fw-bold" style="margin-bottom: 10px; color: #38ef7d; font-size: 1.1rem;">Plagiarism & AI Misuse</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 10px;">
+                      <i class="fa-solid fa-building" aria-hidden="true"></i> Auckland, New Zealand
+                    </p>
+                    <p class="card-text" style="color: #555; font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px;">
+                      Controlled experiment analyzing plagiarism and AI assistance misuse in web programming.
+                    </p>
+                    <a href="https://doi.org/10.1109/TALE56641.2023.10398397" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white; border: none; border-radius: 8px; padding: 8px 20px;">Read Paper <i class="fa-solid fa-arrow-right ms-2" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px; margin-bottom: 20px;">
+            <button class="publication-scroll-btn" onclick="scrollPublications('left')" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; cursor: pointer; font-size: 1.2rem; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+            </button>
+            <button class="publication-scroll-btn" onclick="scrollPublications('right')" style="width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; cursor: pointer; font-size: 1.2rem; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+              <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+              <div class="carousel-item active">
+                <div class="heheaa">
+                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
+                    <div class="col-md-4">
+                      <img src="img/icalt.png" class="img-about" alt="IEEE ICALT 2025 - 25th International Conference on Advanced Learning Technologies" />
+                    </div>
+                    <div class="col-md-8">
+                      <h2 class="projects-title">25th IEEE International Conference on Advanced Learning Technologies</h2>
+                      <h4 class="projects-asal hidden">National Changhua University of Education, Taiwan</h4>
+                      <h6 class="projects-name hidden fw-bold">Web-Based Similarity Detector for Identifying Programming Plagiarism </h6>
+                      <p class="projects-desc hidden" style="font-size: 0.7em;">To deal with programming plagiarism, a number of similarity detectors have been developed. However, many of them are either not user-friendly or require local installation. We present a web-based similarity detector that is user-friendly and requires no local installation. The detector is expanded from our previous work, whose performance has been proven. Unlike existing web-based similarity detectors, ours is not commercialized. Further, it offers several similarity measurements and enhanced privacy. According to a controlled experiment with 24 tutors or staff, our similarity detector is effective and efficient. Participants with the detector can identify all copied submissions in which the completion time is reduced by at least two-thirds.</p>
+                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://doi.org/10.1109/ICALT64023.2025.00113" target="_blank">Click Here!</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="heheaa">
+                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
+                    <div class="col-md-4">
+                      <img src="img/icicl.png" class="img-about" alt="ICICL 2024 - Interactive Collaborative Learning Conference" />
+                    </div>
+                    <div class="col-md-8">
+                      <h2 class="projects-title">28th International Conference on Interactive Collaborative Learning</h2>
+                      <h4 class="projects-asal hidden">Budapest University of Technology and Economics (BME), Hungary</h2>
+                      <h6 class="projects-name hidden fw-bold">How Unique and Accurate is GenAI Generated Code in Introductory Programming? </h6>
+                      <p class="projects-desc hidden" style="font-size: 0.7em;">Generative Artificial Intelligence (GenAI) is transforming education, especially engineering education. Despite its benefits, GenAI introduces a new form of plagiarism where students claim GenAI results as their own work. To foster the development of automated detectors for GenAI-based plagiarism, we observe two key characteristics of GenAIgenerated programs in introductory programming concepts: uniqueness and correctness. Automated detectors can focus on these aspects to identify GenAI-based plagiarism. According to our observation of an offering of introductory programming course, we found that GenAI-generated programs were unique (80%) and accurate (81%) for introductory programming assignment tasks. They could be more unique yet less accurate on advanced or uncommon assignment tasks. GenAI’s high accuracy shows the urgency of GenAI policies, literacy, and the development of automated detectors.</p>
+                      <!-- <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://doi.org/10.1109/TALE56641.2023.10398397" target="_blank">Click Here!</a> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="heheaa">
+                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
+                    <div class="col-md-4">
+                      <img src="img/icsthe.jpg" class="img-about" alt="ICSTHE 2024 - Education and Technology Conference" />
+                    </div>
+                    <div class="col-md-8">
+                      <h2 class="projects-title">ICSTHE 2024 (Author)</h2>
+                      <h4 class="projects-asal hidden">Krida Wacana Christian University, Jakarta</h2>
+                      <h6 class="projects-name hidden fw-bold">ParkSphere: Smart Mobility Solution for Sustainable Urban Parking and Carbon Emission Reduction in the Framework of Inclusive Smart Cities</h6>
+                      <p class="projects-desc hidden" style="font-size: 0.7em;">Urban mobility faces challenges from population growth and private vehicle reliance, leading to congestion and pollution. ParkSphere, a WhatsApp-based chatbot, addresses these issues by providing real-time parking availability and reducing search time, traffic congestion, and emissions. Testing showed high user satisfaction, and future updates aim to enhance interactions with generative AI and add parking reservations.</p>
+                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://youtu.be/QeGgcQXul54" target="_blank">Click Here!</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+               <div class="carousel-item">
+                <div class="heheaa">
+                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
+                    <div class="col-md-4">
+                      <img src="img/jaic.jpg" class="img-about" alt="JAIC 2024 - Journal of AI Computing" />
+                    </div>
+                    <div class="col-md-8">
+                      <h2 class="projects-title">JAIC 2024 (Author)</h2>
+                      <h4 class="projects-asal hidden">Politeknik Negeri Batam, Batam</h2>
+                      <h6 class="projects-name hidden fw-bold">ChatGPT Impact Analysis on API Testing: A Controlled Experiment</h6>
+                      <p class="projects-desc hidden" style="font-size: 0.7em;">The research demonstrates that students utilizing ChatGPT for API testing achieved higher test scores than those relying on traditional documentation, albeit with longer task completion times. While participants reported enhanced confidence and effectiveness, concerns regarding over-reliance on the tool and limited conceptual understanding were identified. These findings suggest that ChatGPT is a valuable educational resource complemented by independent problem-solving skills.</p>
+                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://doi.org/10.30871/jaic.v8i2.8182" target="_blank">Click Here!</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div class="carousel-item">
+                <div class="heheaa">
+                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
+                    <div class="col-md-4">
+                      <img src="img/konstelasi.png" class="img-about" alt="KONSTELASI 2024 - Digital Transformation Conference" />
+                    </div>
+                    <div class="col-md-8">
+                      <h2 class="projects-title">KONSTELASI 2024 (Author)</h2>
+                      <h4 class="projects-asal hidden">Atma Jaya University, Yogyakarta</h2>
+                      <h6 class="projects-name hidden fw-bold">Transformasi Ekosistem Digital melalui Implementasi Super App untuk Meningkatkan Administrasi Kantor</h6>
+                      <p class="projects-desc hidden" style="font-size: 0.7em;">Office management is vital for seamless organizational operations. To tackle the complexities of this role, we've developed a comprehensive super application that integrates various office administration features. Built on the Laravel framework, this super application ensures stability, security, and scalability for seamless integration of complex features. Implementing this application is expected to reduce administrative task time and increase productivity.The design and prototype validation process involved user testing and feedback from stakeholders, resulting in an innovative, stakeholder-validated solution that significantly contributes to office administration management. This solution enhances office administration efficiency and effectiveness, paving the way for future similar applications.</p>
+                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://doi.org/10.24002/konstelasi.v4i1.9179" target="_blank">Click Here!</a>
+                    </div>
+                  </div>
+                </div>
+            </div>
+              <div class="carousel-item ">
+                <div class="heheaa">
+                  <div class="row d-flex justify-content-center align-items-center" style="min-height: auto">
+                    <div class="col-md-4">
+                      <img src="img/tale.png" class="img-about" alt="IEEE TALE 2023 - Auckland, New Zealand - Teaching and Learning Conference" />
+                    </div>
+                    <div class="col-md-8">
+                      <h2 class="projects-title">IEEE TALE International Conference 2023 (Co-Author)</h2>
+                      <h4 class="projects-asal hidden">Auckland, New Zealand</h2>
+                      <h6 class="projects-name hidden fw-bold">Plagiarism and AI Assistance Misuse in Web Programming: Unfair Benefits and Characteristics </h6>
+                      <p class="projects-desc hidden" style="font-size: 0.7em;">In programming education, plagiarism and misuse of artificial intelligence (AI) assistance are emerging issues. However, not many relevant studies are focused on web programming. We plan to develop automated tools to help instructors identify both misconducts. To fully understand the issues, we conducted a controlled experiment to observe the unfair benefits and the characteristics. We compared student performance in completing web programming tasks independently, with a submission to plagiarize, and with the help of AI assistance (ChatGPT). Our study shows that students who are involved in such misconducts get comparable test marks with less completion time. Plagiarized submissions are similar to the independent ones except in trivial aspects such as color and identifier names. AI-assisted submissions are more complex, making them less readable. Students believe AI assistance could be useful given proper acknowledgment of the use, although they are not convinced with readability and correctness of the solutions.</p>
+                      <a type="button" class="btn btn-outline-success mt-3 btn-lg" href="https://doi.org/10.1109/TALE56641.2023.10398397" target="_blank">Click Here!</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="prev">
+              <i class="fa-solid fa-chevron-left fa-2xl warnachev"></i>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide="next">
+              <i class="fa-solid fa-chevron-right fa-2xl warnachev"></i>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </section>
+    <!-- End Publication Section -->
+    
+    <!-- Wave Separator -->
+    <svg class="wave-top" viewBox="0 0 1200 250" style="background-color: #212529" aria-hidden="true" role="presentation" title="Wave separator">
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M0 108.306L50 114.323C100 120.34 200 132.374 300 168.476C400 204.578 500 264.749 600 246.698C700 228.647 800 132.374 900 108.306C1000 84.2382 1100 132.374 1150 156.442L1200 180.51V-8.5451e-06H1150C1100 -8.5451e-06 1000 -8.5451e-06 900 -8.5451e-06C800 -8.5451e-06 700 -8.5451e-06 600 -8.5451e-06C500 -8.5451e-06 400 -8.5451e-06 300 -8.5451e-06C200 -8.5451e-06 100 -8.5451e-06 50 -8.5451e-06H0V108.306Z"
+        fill="white"
+      />
+    </svg>
+    <!-- End Wave -->
+
+    <!-- Contact Section -->
+    <section class="bg-dark text-white" aria-label="Contact form and location">
+      <div class="container py-5">
+        <div class="row d-flex justify-content-center align-items-center" style="min-height: auto" id="reach">
+          <h1 class="text-center mt-5 pt-5">Reach Me!</h1>
+          <p class="text-center fs-5">"Feel free to reach out to me through the contact form provided on this website, and I'll be delighted to connect with you!"</p>
+          <div class="row">
+            <div class="col-lg-6 align-self-center justify-content-md-center" data-aos="fade-up" data-aos-duration="1000" data-aos-mirror="true" data-aos-once="false">
+              <iframe
+                class="contact-maps"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31688.293133869793!2d107.52361194972042!3d-6.886214575303446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e43e8ebf7617%3A0x501e8f1fc2974e0!2sCimahi%2C%20Cimahi%20Tengah%2C%20Cimahi%20City%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1656043129828!5m2!1sen!2sid"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="col-lg-6" data-aos="fade-down" data-aos-duration="1000" data-aos-mirror="true" data-aos-once="false">
+              <form id="myForm" name="NewPort" aria-label="Contact form">
+                <div class="mb-3">
+                  <label for="contactEmail" class="form-label">Email <span aria-label="required">*</span></label>
+                  <input type="email" class="form-control" id="contactEmail" placeholder="Ex : admin@gmail.com" name="email" required aria-required="true" />
+                  <div id="emailHelp" class="form-text">I will not share your email</div>
+                </div>
+                <div class="mb-3">
+                  <label for="contactName" class="form-label">Fullname <span aria-label="required">*</span></label>
+                  <input type="text" class="form-control" id="contactName" name="name" placeholder="Ex : John Doe" required aria-required="true" />
+                </div>
+                <div class="mb-3">
+                  <label for="contactCountry" class="form-label">Country <span aria-label="required">*</span></label>
+                  <select id="contactCountry" class="form-select" name="country" required aria-required="true" aria-label="Select your country">
+                    <option value="">--- Select Country ---</option>
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Singapura">Singapura</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Negara Lain">Other Country</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="contactMessage" class="form-label">Message <span aria-label="required">*</span></label>
+                  <textarea class="form-control contact-textarea" id="contactMessage" rows="5" name="message" placeholder="Ex : Hello World" required aria-required="true"></textarea>
+                </div>
+                <button type="submit" class="btn-lg btn-star buttonkagok" id="contact-button" aria-label="Send message">
+                  Send <i class="fa-regular fa-paper-plane fa-bounce fa-lg" aria-hidden="true"></i>
+                  <div class="star-1" aria-hidden="true">
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 784.11 815.53"
+                      style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                      version="1.1"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="star-2">
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 784.11 815.53"
+                      style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                      version="1.1"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="star-3">
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 784.11 815.53"
+                      style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                      version="1.1"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="star-4">
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 784.11 815.53"
+                      style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                      version="1.1"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="star-5">
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 784.11 815.53"
+                      style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                      version="1.1"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                      </g>
+                    </svg>
+                  </div>
+                  <div class="star-6">
+                    <svg
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      viewBox="0 0 784.11 815.53"
+                      style="shape-rendering: geometricPrecision; text-rendering: geometricPrecision; image-rendering: optimizeQuality; fill-rule: evenodd; clip-rule: evenodd"
+                      version="1.1"
+                      xml:space="preserve"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <defs></defs>
+                      <g id="Layer_x0020_1">
+                        <metadata id="CorelCorpID_0Corel-Layer"></metadata>
+                        <path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path>
+                      </g>
+                    </svg>
+                  </div>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Reach Me -->
+
+    <!-- Quotes -->
+    <section>
+      <div class="hey">
+        <div class="container" style="height: 100%">
+          <div class="row d-flex justify-content-center align-items-center awmeme">
+            <div class="col-md-12 bg-dark p-3">
+              <h1 class="content text-center" id="quotes"></h1>
+              <h2 class="content text-center" id="author"></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Quotes -->
+
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: rgba(0, 0, 0, 0.2)" aria-label="Site footer">
+      <!-- Grid container -->
+      <div class="container pt-1">
+        <!-- Section: Social media -->
+        <section class="mb-1" aria-label="Social media links">
+          <!-- Discord -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://discordapp.com/users/705312106488135681" target="_blank" rel="noopener noreferrer" aria-label="Connect on Discord"><i class="fab fa-discord" aria-hidden="true"></i></a>
+          <!-- Google -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=yehezkieldavid2006@gmail.com&tf=1" target="_blank" rel="noopener noreferrer" aria-label="Contact via Gmail"><i class="fab fa-google" aria-hidden="true"></i></a>
+          <!-- Instagram -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/yz.jsx/" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <!-- Linkedin -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.linkedin.com/in/ydavids/" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+          <!-- Github -->
+          <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/06202003/" target="_blank" rel="noopener noreferrer" aria-label="View GitHub profile"><i class="fab fa-github" aria-hidden="true"></i></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center text-white py-1" style="background-color: #212529; font-size: 16px; line-height: 1">
+        <p><em>Ad Maiora Natus Sum</em> <br/>&copy; 2025 Copyright: Yehezkiel David Setiawan</p>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="frontendLabel" aria-modal="true">
+      <div class="modal-dialog modal-dialog-centered" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="frontendLabel">Front-End Development</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul style="list-style-type: none">
+              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Can use HTML, CSS, JavaScript, etc</li>
+              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Use any JavaScript library/framework</li>
+              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Responsive Design of Websites or applications</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="backendLabel" aria-modal="true">
+      <div class="modal-dialog modal-dialog-centered" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="backendLabel">Back-End Development</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-body">
+              <ul style="list-style-type: none">
+                <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Can use Node.JS, PHP, etc</li>
+                <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Integration with RDBMS (MySQL)</li>
+                <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Use Laravel Framework for MVC model</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="designLabel" aria-modal="true">
+      <div class="modal-dialog modal-dialog-centered" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="designLabel">Designing Interface</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <ul style="list-style-type: none">
+              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Create design for website and mobile application</li>
+              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Responsive Mobile/Website design</li>
+              <li class="my-3"><i class="fa-regular fa-circle-check fa-beat fa-xl me-2" aria-hidden="true"></i> Using Figma/Adobe XD/Whimsichal</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="contact-thx" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="thankYouLabel" aria-modal="true">
+      <div class="modal-dialog" role="dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="thankYouLabel">Thank You</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <img class="contact-modal-thx" src="img/thx.gif" alt="Thank you confirmation animation" />
+            <h4 class="contact-modal-h4">Your message has been received by the system, the message will be replied to as soon as possible.</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+    <script>
+      VANTA.BIRDS({
+        el: '#home',
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 0.5,
+        scaleMobile: 1.0,
+        color1: 0xfecca9,
+        color2: 0x00ff00,
+        backgroundColor: 0x212529,
+        birdSize: 1.5,
+        wingSpan: 30.0,
+        speedLimit: 3.0,
+        separation: 40.0,
+        alignment: 26.0,
+        cohesion: 33.0,
+        quantity: 3,
+      });
+    </script>
+    <script src="script/anime.min.js"></script>
+    <script src="script/main.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+
+      gsap.to('.asep', {
+        duration: 8,
+        delay: 5,
+        text: "Practical AI LLM Researcher & Engineer in Advanced Code Intelligence Systems",
+      });
+      
+      gsap.to('.asepan', {
+        duration: 8,
+        delay: 14.5,
+        text: "Fresh graduate with a bachelor's degree in informatics engineering and currently taking a master's degree in computer science at Maranatha Christian University.",
+      });
+      
+      gsap.to('.asepanaa', {
+        duration: 3,
+        delay: 1.5,
+        text: 'Yehezkiel David Setiawan',
+      });
+
+      gsap.to('.asepanaaa', {
+        duration: 1,
+        text: 'Hi, I am',
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    <!-- Carousel Scroll Functions -->
+    <script>
+      function scrollPortfolio(direction) {
+        const wrapper = document.querySelector('.portfolio-cards-wrapper');
+        const cardWidth = 620; // 600px card + 20px gap
+        if (direction === 'left') {
+          wrapper.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        } else {
+          wrapper.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        }
+      }
+
+      function scrollPublications(direction) {
+        const wrapper = document.querySelector('.publications-cards-wrapper');
+        const cardWidth = 620; // 600px card + 20px gap
+        if (direction === 'left') {
+          wrapper.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        } else {
+          wrapper.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        }
+      }
+
+      // Add hover effects
+      document.addEventListener('DOMContentLoaded', function() {
+        const portfolioCards = document.querySelectorAll('.portfolio-card');
+        const publicationCards = document.querySelectorAll('.publication-card');
+        
+        portfolioCards.forEach(card => {
+          card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
+          });
+          card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '';
+          });
+        });
+
+        publicationCards.forEach(card => {
+          card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.2)';
+          });
+          card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '';
+          });
+        });
+      });
+    </script>
+
+    <noscript>
+      <div role="alert" style="background-color: #f8d7da; color: #721c24; padding: 20px; margin: 20px; border: 1px solid #f5c6cb; border-radius: 4px;">
+        <strong>JavaScript is required:</strong> This portfolio website requires JavaScript to be enabled for full functionality. Please enable JavaScript in your browser settings to access all features including animations, carousels, form submission, and dynamic content.
+      </div>
+    </noscript>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
