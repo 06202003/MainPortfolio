@@ -1277,6 +1277,27 @@
           <!-- Publications Owl Carousel -->
           <div class="owl-carousel owl-theme publications-carousel py-4" style="padding-top: 30px;">
             
+            <!-- Software Impact 2026 Card -->
+            <div class="item">
+              <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
+                <div style="position: relative; height: 250px; overflow: hidden; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">
+                  <img src="img/softwareimpact.png" alt="Software Impact - Elsevier" class="img-fluid" style="max-height: 90%; object-fit: contain;">
+                </div>
+                <div class="card-body d-flex flex-column" style="padding: 20px;">
+                  <span class="badge bg-warning text-dark mb-2" style="width: fit-content;">Software Impact</span>
+                  <h6 class="card-title fw-bold mb-2">E-STRANGE: A programming support platform in Academia for Code Ethics, Quality, and Efficiency</h6>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-building"></i> Amsterdam, Netherlands (Elsevier B.V.)</p>
+                  <p class="text-muted mb-2" style="font-size: 0.9rem;"><i class="fa-solid fa-user-group"></i>Co-Author</p>
+                  <div class="mt-auto">
+                    <button class="btn btn-sm btn-outline-secondary me-2" data-bs-toggle="modal" data-bs-target="#modalSoftwareImpact2026">
+                      <i class="fa-solid fa-book-open"></i> Read More
+                    </button>
+                    <a href="https://doi.org/10.1016/j.simpa.2026.100814" target="_blank" rel="noopener noreferrer" class="btn btn-outline-warning btn-sm">Read Paper <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- IOCES 2026 Card -->
             <div class="item">
               <div class="card border-0 shadow h-100" style="border-radius: 12px; overflow: hidden;">
@@ -1686,6 +1707,31 @@ The platform is being evaluated in an informatics course (60 students) via a qua
             <div class="modal-footer">
               <a href="https://sciforum.net/event/IOCES2026?subscribe&section=#session4095" target="_blank" rel="noopener noreferrer" class="btn btn-warning">
                 <i class="fa-solid fa-external-link"></i> View Conference
+              </a>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            <!-- Software Impacts 2026 Modal -->
+      <div class="modal fade" id="modalSoftwareImpact2026" tabindex="-1" aria-labelledby="modalSoftwareImpact2026Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+          <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+              <h5 class="modal-title" id="modalSoftwareImpact2026Label">E-STRANGE: A programming support platform in Academia for Code Ethics, Quality, and Efficiency</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p><strong><i class="fa-solid fa-location-dot"></i> Location:</strong> Amsterdam, Netherlands (Elsevier B.V.)</p>
+              <p><strong><i class="fa-solid fa-file-lines"></i> Abstract:</strong></p>
+              <p style="text-align: justify;">
+               In learning programming, students are often focused on the correctness of the programs. However, other important aspects should be considered, including code ethics, quality, and efficiency. This platform supports students in learning about these aspects through their own submissions. For each submission, a comprehensive report will be provided, showing instructors’ expectations, simulated similarities, obvious similarities, the likelihood of AI-generated code, code quality issues, and the likelihood of inefficiency. Gamification is applied to promote engagement. More game points will be obtained by responding to relevant quizzes and submitting original, high-quality, and efficient programs.
+              </p>
+            </div>
+            <div class="modal-footer">
+              <a href="https://doi.org/10.1016/j.simpa.2026.100814" target="_blank" rel="noopener noreferrer" class="btn btn-warning">
+                <i class="fa-solid fa-external-link"></i> View Paper
               </a>
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
