@@ -38,86 +38,86 @@
 .portfolio-carousel .card:hover,
 .publications-carousel .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 35px rgba(25, 135, 84, 0.3) !important;
+  box-shadow: 0 15px 35px rgba(15, 42, 67, 0.28) !important;
 }
 
 /* Button styling to match website theme */
 .portfolio-carousel .btn-outline-primary,
 .publications-carousel .btn-outline-primary {
-  color: #198754;
-  border-color: #198754;
+  color: #ffffff;
+  border-color: #2e8b57;
 }
 
 .portfolio-carousel .btn-outline-primary:hover,
 .publications-carousel .btn-outline-primary:hover {
-  background-color: #198754;
-  border-color: #198754;
-  color: white;
+  background-color: #2e8b57;
+  border-color: #2e8b57;
+  color: #ffffff;
 }
 
 .portfolio-carousel .btn-outline-secondary,
 .publications-carousel .btn-outline-secondary {
-  color: #6c757d;
-  border-color: #6c757d;
+  color: #ffffff;
+  border-color: #2e8b57;
 }
 
 .portfolio-carousel .btn-outline-secondary:hover,
 .publications-carousel .btn-outline-secondary:hover {
-  background-color: #6c757d;
-  border-color: #6c757d;
-  color: white;
+  background-color: #2e8b57;
+  border-color: #2e8b57;
+  color: #ffffff;
 }
 
 .portfolio-carousel .btn-outline-info,
 .publications-carousel .btn-outline-info {
-  color: #198754;
-  border-color: #198754;
+  color: #ffffff;
+  border-color: #2e8b57;
 }
 
 .portfolio-carousel .btn-outline-info:hover,
 .publications-carousel .btn-outline-info:hover {
-  background-color: #198754;
-  border-color: #198754;
-  color: white;
+  background-color: #2e8b57;
+  border-color: #2e8b57;
+  color: #ffffff;
 }
 
 .portfolio-carousel .btn-outline-warning,
 .publications-carousel .btn-outline-warning {
-  color: #198754;
-  border-color: #198754;
+  color: #ffffff;
+  border-color: #2e8b57;
 }
 
 .portfolio-carousel .btn-outline-warning:hover,
 .publications-carousel .btn-outline-warning:hover {
-  background-color: #198754;
-  border-color: #198754;
-  color: white;
+  background-color: #2e8b57;
+  border-color: #2e8b57;
+  color: #ffffff;
 }
 
 .portfolio-carousel .btn-outline-success,
 .publications-carousel .btn-outline-success {
-  color: #198754;
-  border-color: #198754;
+  color: #ffffff;
+  border-color: #2e8b57;
 }
 
 .portfolio-carousel .btn-outline-success:hover,
 .publications-carousel .btn-outline-success:hover {
-  background-color: #198754;
-  border-color: #198754;
-  color: white;
+  background-color: #2e8b57;
+  border-color: #2e8b57;
+  color: #ffffff;
 }
 
 .portfolio-carousel .btn-outline-danger,
 .publications-carousel .btn-outline-danger {
-  color: #198754;
-  border-color: #198754;
+  color: #ffffff;
+  border-color: #2e8b57;
 }
 
 .portfolio-carousel .btn-outline-danger:hover,
 .publications-carousel .btn-outline-danger:hover {
-  background-color: #198754;
-  border-color: #198754;
-  color: white;
+  background-color: #2e8b57;
+  border-color: #2e8b57;
+  color: #ffffff;
 }
 
 .portfolio-carousel .card-body,
@@ -143,13 +143,13 @@
 
 .portfolio-carousel .card-text::-webkit-scrollbar-thumb,
 .publications-carousel .card-text::-webkit-scrollbar-thumb {
-  background: rgba(102, 126, 234, 0.3);
+  background: rgba(51, 65, 85, 0.3);
   border-radius: 4px;
 }
 
 .portfolio-carousel .card-text::-webkit-scrollbar-thumb:hover,
 .publications-carousel .card-text::-webkit-scrollbar-thumb:hover {
-  background: rgba(102, 126, 234, 0.5);
+  background: rgba(51, 65, 85, 0.5);
 }
 
 /* Owl Carousel Custom Navigation - Modern Style */
@@ -159,14 +159,14 @@
   height: 55px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.95) !important;
-  color: #667eea !important;
+  color: #ffffff !important;
   font-size: 24px;
   position: absolute;
   top: 40%;
   transform: translateY(-50%);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border: 2px solid rgba(102, 126, 234, 0.2);
+  border: 2px solid rgba(46, 139, 87, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,10 +183,10 @@
 
 .owl-carousel .owl-nav button.owl-prev:hover,
 .owl-carousel .owl-nav button.owl-next:hover {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
-  color: white !important;
+  background: linear-gradient(135deg, #2e8b57 0%, #257246 100%) !important;
+  color: #ffffff !important;
   transform: translateY(-50%) scale(1.15);
-  box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+  box-shadow: 0 6px 25px rgba(46, 139, 87, 0.42);
   border-color: transparent;
 }
 
