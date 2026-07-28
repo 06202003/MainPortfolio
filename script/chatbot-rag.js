@@ -92,6 +92,10 @@ class YZAIRAGEngine {
 
     // If query has no relevant matches to Yehezkiel's knowledge base
     if (retrievedChunks.length === 0) {
+      if (/\b(kamu gemini|are you gemini|who are you|siapa kamu|kamu siapa|what is yz\.ai|apa itu yz\.ai|who is yz\.ai)\b/i.test(query)) {
+        return "I am **YZ.AI**, the official AI portfolio assistant for **Yehezkiel David Setiawan**. I am powered by Google Gemini 1.5 Flash LLM architecture combined with a custom RAG (Retrieval-Augmented Generation) knowledge engine to assist you with Yehezkiel's background, research, publications, and awards!";
+      }
+
       if (/^(hi|hello|hey|halo|hai|pings?|good (morning|afternoon|evening))\b/i.test(query)) {
         return "Hello! I am **YZ.AI**, the official AI Assistant for **Yehezkiel David Setiawan**. How can I help you today? You can ask me about his education, AI research, S-SPARC project, BRICS award, or contact details!";
       }

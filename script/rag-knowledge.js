@@ -5,6 +5,12 @@
 
 window.YEHEZKIEL_KNOWLEDGE_BASE = [
   {
+    id: "bot_identity",
+    title: "YZ.AI Assistant Identity",
+    keywords: ["gemini", "who are you", "siapa kamu", "kamu siapa", "yz.ai", "what are you", "bot", "ai assistant", "kamu gemini", "apa itu yz.ai"],
+    content: "I am **YZ.AI**, the official AI portfolio assistant for Yehezkiel David Setiawan. I am powered by Google Gemini 1.5 Flash LLM architecture combined with a custom RAG (Retrieval-Augmented Generation) knowledge engine to answer questions about Yehezkiel's research, publications, education, and portfolio."
+  },
+  {
     id: "bio_summary",
     title: "General Bio & Summary",
     keywords: ["who is", "yehezkiel", "david", "bio", "summary", "about", "profile", "role", "location", "bandung"],
