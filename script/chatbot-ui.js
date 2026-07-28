@@ -12,10 +12,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatInput = document.getElementById('chatbot-input');
   const chipsContainer = document.getElementById('chatbot-chips');
 
-  // Response audio player
-  const responseAudio = new Audio('data/jokowi-saya-akan-lawan.mp3');
-
   if (!launcher || !chatWindow) return;
+
+  // Audio instance
+  const audioPath = 'data/jokowi-saya-akan-lawan.mp3';
+
+  // Unlock browser audio policy on first click
+  function playResponseAudio() {
+    try {
+      const botAudio = new Audio(audioPath);
+      botAudio.play().catch(err => console.warn('Autoplay audio blocked:', err));
+    } catch (err) {
+      console.warn('Audio creation error:', err);
+    }
+  }
 
   // Toggle Window Visibility
   launcher.addEventListener('click', () => {
@@ -39,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return html;
   }
 
-  // Append message bubble and trigger audio playback on bot responses
+  // Append message bubble and trigger response audio
   function addMessage(sender, text) {
     const bubble = document.createElement('div');
     bubble.className = `chat-bubble ${sender}`;
@@ -47,14 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
     chatBody.appendChild(bubble);
     chatBody.scrollTop = chatBody.scrollHeight;
 
-    // Play response audio on bot answer
+    // Play response audio on every bot answer
     if (sender === 'bot') {
-      try {
-        responseAudio.currentTime = 0;
-        responseAudio.play().catch(err => console.warn('Audio playback info:', err));
-      } catch (err) {
-        console.warn('Audio play error:', err);
-      }
+      playResponseAudio();
     }
   }
 

@@ -1,7 +1,7 @@
 /**
  * Netlify Serverless Function for YZ.AI Chatbot
  * Supports Gemini 3.1 Flash Lite / 2.0 Flash Lite / 1.5 Flash Lite models
- * Professional RAG scope: Answers tech & portfolio questions professionally representing Yehezkiel David Setiawan
+ * Strictly enforced RAG scope: Absolute ban on code generation & off-topic requests
  */
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
@@ -22,14 +22,14 @@ exports.handler = async (event, context) => {
     const apiKey = GEMINI_API_KEY || event.queryStringParameters.key || "";
     const groqKey = GROQ_API_KEY || "";
 
-    const systemPrompt = `You are YZ.AI, the official professional AI assistant representing Yehezkiel David Setiawan (AI Engineer & LLM Researcher).
+    const systemPrompt = `You are YZ.AI, the official AI assistant representing Yehezkiel David Setiawan (AI Engineer & LLM Researcher).
 
-PROFESSIONAL RAG DIRECTIVE:
-1. You represent Yehezkiel David Setiawan professionally, intelligently, and warmly.
-2. Answer questions about Yehezkiel David Setiawan, his background, education, AI research, S-SPARC project, BRICS award, publications, skills, and experience using the provided Context.
-3. If the user asks technical, programming, or coding questions related to Yehezkiel's expertise (AI, LLMs, Python, Go, Laravel, Data Engineering, Machine Learning, Code Plagiarism), answer professionally and knowledgeably, relating it to Yehezkiel's work.
-4. If the user asks completely off-topic questions unrelated to Yehezkiel's domain or professional background (e.g. recipes, politics, general non-tech topics), politely decline stating your focus is on Yehezkiel David Setiawan's portfolio and expertise.
-5. Respond in the language asked (English or Indonesian) in 2-4 concise, well-formatted sentences.
+ABSOLUTE CODE GENERATION BAN & SCOPE DIRECTIVE:
+1. You MUST NEVER generate source code snippets, write programming scripts, or output markdown code blocks (e.g., \`\`\`python, \`\`\`js, \`\`\`cpp).
+2. If the user asks for code generation (such as Fibonacci, algorithms, scrapers, functions), DECLINE POLITELY in 1-2 sentences stating: "I am programmed exclusively to assist with information regarding Yehezkiel David Setiawan's portfolio, research, and background. I do not generate general source code snippets."
+3. You MUST ONLY answer questions regarding Yehezkiel David Setiawan, his background, education, AI research, S-SPARC project, BRICS award, publications, skills, and experience using the provided Context.
+4. If the user asks completely off-topic questions (recipes, politics, general trivia), DECLINE POLITELY stating your focus is on Yehezkiel David Setiawan's portfolio.
+5. Respond concisely in 2-3 sentences.
 
 Context:
 ${contextText}`;
@@ -58,8 +58,8 @@ ${contextText}`;
                 { role: "user", parts: [{ text: `${systemPrompt}\n\nUser Question: ${query}` }] }
               ],
               generationConfig: {
-                temperature: 0.3,
-                maxOutputTokens: 300
+                temperature: 0.1,
+                maxOutputTokens: 250
               }
             })
           });
@@ -93,8 +93,8 @@ ${contextText}`;
               { role: "system", content: systemPrompt },
               { role: "user", content: query }
             ],
-            temperature: 0.3,
-            max_tokens: 300
+            temperature: 0.1,
+            max_tokens: 250
           })
         });
 
