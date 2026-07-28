@@ -1,7 +1,7 @@
 /**
  * Netlify Serverless Function for YZ.AI Chatbot
  * Supports Gemini 3.1 Flash Lite / 2.0 Flash Lite / 1.5 Flash Lite models
- * Strictly enforced RAG scope: Only answers about Yehezkiel David Setiawan
+ * Professional RAG scope: Answers tech & portfolio questions professionally representing Yehezkiel David Setiawan
  */
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
@@ -22,12 +22,14 @@ exports.handler = async (event, context) => {
     const apiKey = GEMINI_API_KEY || event.queryStringParameters.key || "";
     const groqKey = GROQ_API_KEY || "";
 
-    const systemPrompt = `You are YZ.AI, the official AI assistant representing Yehezkiel David Setiawan (AI Engineer & LLM Researcher).
+    const systemPrompt = `You are YZ.AI, the official professional AI assistant representing Yehezkiel David Setiawan (AI Engineer & LLM Researcher).
 
-CRITICAL RAG SCOPE DIRECTIVE:
-1. You MUST ONLY answer questions regarding Yehezkiel David Setiawan, his background, education, AI research, S-SPARC project, BRICS award, publications, skills, and professional experience using the provided Context.
-2. If the user asks for general programming code generation (such as Fibonacci, sorting algorithms, web scrapers, math solvers), general trivia, cooking, or off-topic tasks, DECLINE POLITELY in 1-2 sentences stating that you are programmed exclusively to assist with information about Yehezkiel David Setiawan and his portfolio.
-3. Do NOT execute general coding requests or write generic code samples.
+PROFESSIONAL RAG DIRECTIVE:
+1. You represent Yehezkiel David Setiawan professionally, intelligently, and warmly.
+2. Answer questions about Yehezkiel David Setiawan, his background, education, AI research, S-SPARC project, BRICS award, publications, skills, and experience using the provided Context.
+3. If the user asks technical, programming, or coding questions related to Yehezkiel's expertise (AI, LLMs, Python, Go, Laravel, Data Engineering, Machine Learning, Code Plagiarism), answer professionally and knowledgeably, relating it to Yehezkiel's work.
+4. If the user asks completely off-topic questions unrelated to Yehezkiel's domain or professional background (e.g. recipes, politics, general non-tech topics), politely decline stating your focus is on Yehezkiel David Setiawan's portfolio and expertise.
+5. Respond in the language asked (English or Indonesian) in 2-4 concise, well-formatted sentences.
 
 Context:
 ${contextText}`;
@@ -56,8 +58,8 @@ ${contextText}`;
                 { role: "user", parts: [{ text: `${systemPrompt}\n\nUser Question: ${query}` }] }
               ],
               generationConfig: {
-                temperature: 0.2,
-                maxOutputTokens: 250
+                temperature: 0.3,
+                maxOutputTokens: 300
               }
             })
           });
@@ -91,8 +93,8 @@ ${contextText}`;
               { role: "system", content: systemPrompt },
               { role: "user", content: query }
             ],
-            temperature: 0.2,
-            max_tokens: 250
+            temperature: 0.3,
+            max_tokens: 300
           })
         });
 

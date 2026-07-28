@@ -1,6 +1,6 @@
 /**
  * YZ.AI Chatbot UI Controller
- * Manages floating widget state, message rendering, suggestion chips, and instant RAG interaction.
+ * Manages floating widget state, message rendering, suggestion chips, instant RAG interaction, and response audio playback.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatForm = document.getElementById('chatbot-form');
   const chatInput = document.getElementById('chatbot-input');
   const chipsContainer = document.getElementById('chatbot-chips');
+
+  // Response audio player
+  const responseAudio = new Audio('data/jokowi-saya-akan-lawan.mp3');
 
   if (!launcher || !chatWindow) return;
 
@@ -36,13 +39,23 @@ document.addEventListener('DOMContentLoaded', () => {
     return html;
   }
 
-  // Append message bubble
+  // Append message bubble and trigger audio playback on bot responses
   function addMessage(sender, text) {
     const bubble = document.createElement('div');
     bubble.className = `chat-bubble ${sender}`;
     bubble.innerHTML = formatMarkdown(text);
     chatBody.appendChild(bubble);
     chatBody.scrollTop = chatBody.scrollHeight;
+
+    // Play response audio on bot answer
+    if (sender === 'bot') {
+      try {
+        responseAudio.currentTime = 0;
+        responseAudio.play().catch(err => console.warn('Audio playback info:', err));
+      } catch (err) {
+        console.warn('Audio play error:', err);
+      }
+    }
   }
 
   // Show typing indicator
