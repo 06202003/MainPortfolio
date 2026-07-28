@@ -77,9 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
     chatBody.appendChild(bubble);
     chatBody.scrollTop = chatBody.scrollHeight;
 
-    // Play response audio on every bot answer
+    // Play response audio on bot answer ONLY if it's NOT a Guardrail Notice
     if (sender === 'bot') {
-      playResponseAudio();
+      const isGuardrail = text.includes('Guardrail Notice') || text.includes('🛡️') || text.includes("I don't have relevant information");
+      if (!isGuardrail) {
+        playResponseAudio();
+      }
     }
   }
 
