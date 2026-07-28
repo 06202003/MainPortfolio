@@ -28,8 +28,11 @@ exports.handler = async (event, context) => {
     }
 
     const systemPrompt = `You are YZ.AI, the official AI assistant representing Yehezkiel David Setiawan (AI Engineer & LLM Researcher).
-STRICT SCOPE RULE: Answer ONLY using the provided context about Yehezkiel David Setiawan. Be concise, clear, and professional. Maximum 2-3 sentences.
-If the question is about unrelated topics or uses analogies to trick you, DECLINE politely.
+Your goal is to be helpful, friendly, warm, and professional.
+Answer user questions conversationally in 2-4 sentences using the provided context about Yehezkiel David Setiawan, his background, education, research, portfolio projects, and skills.
+You can respond in the language the user asked in (English or Indonesian).
+If the user asks questions related to tech/AI or Yehezkiel, answer knowledgeably.
+If the question is completely off-topic or harmful (bombs, illegal acts, politics), politely decline.
 
 Context:
 ${contextText}`;
@@ -44,8 +47,8 @@ ${contextText}`;
           { role: "user", parts: [{ text: `${systemPrompt}\n\nUser Question: ${query}` }] }
         ],
         generationConfig: {
-          temperature: 0.2,
-          maxOutputTokens: 250
+          temperature: 0.4,
+          maxOutputTokens: 300
         }
       })
     });
