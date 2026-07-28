@@ -11,37 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatForm = document.getElementById('chatbot-form');
   const chatInput = document.getElementById('chatbot-input');
   const chipsContainer = document.getElementById('chatbot-chips');
+  const jokowiAudio = document.getElementById('jokowi-audio');
 
   if (!launcher || !chatWindow) return;
 
-  // Single global Audio instance
-  const audioPath = 'data/jokowi-saya-akan-lawan.mp3';
-  const jokowiAudio = new Audio(audioPath);
-
-  // Pre-unlock audio playback permissions on user click gesture
-  function prepareAudioOnGesture() {
-    try {
-      jokowiAudio.currentTime = 0;
-      const promise = jokowiAudio.play();
-      if (promise !== undefined) {
-        promise.then(() => {
-          jokowiAudio.pause();
-          jokowiAudio.currentTime = 0;
-        }).catch(() => {});
-      }
-    } catch (e) {}
-  }
-
-  // Play response audio when bot answers
+  // Function to play audio safely
   function playResponseAudio() {
+    if (!jokowiAudio) return;
     try {
       jokowiAudio.currentTime = 0;
       const playPromise = jokowiAudio.play();
       if (playPromise !== undefined) {
         playPromise.catch(err => {
-          console.warn('Primary audio play blocked, attempting fallback:', err);
-          const fallbackAudio = new Audio(audioPath);
-          fallbackAudio.play().catch(e => console.error('Audio play error:', e));
+          console.warn('Audio play info:', err);
         });
       }
     } catch (err) {
@@ -49,9 +31,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Pre-unlock audio context on user interaction
+  function unlockAudioOnGesture() {
+    if (!jokowiAudio) return;
+    try {
+      jokowiAudio.currentTime = 0;
+      const p = jokowiAudio.play();
+      if (p !== undefined) {
+        p.then(() => {
+          jokowiAudio.pause();
+          jokowiAudio.currentTime = 0;
+        }).catch(() => {});
+      }
+    } catch (e) {}
+  }
+
   // Unlock audio permissions on launcher click
   launcher.addEventListener('click', () => {
-    prepareAudioOnGesture();
+    unlockAudioOnGesture();
     chatWindow.classList.toggle('active');
     if (chatWindow.classList.contains('active')) {
       chatInput.focus();
@@ -127,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle Form Submit
   chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    prepareAudioOnGesture();
+    unlockAudioOnGesture();
     handleSend();
   });
 
@@ -135,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (chipsContainer) {
     chipsContainer.addEventListener('click', (e) => {
       if (e.target.classList.contains('chip-btn')) {
-        prepareAudioOnGesture();
+        unlockAudioOnGesture();
         const promptText = e.target.getAttribute('data-prompt');
         if (promptText) handleSend(promptText);
       }
