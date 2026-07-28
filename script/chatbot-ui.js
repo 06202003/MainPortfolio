@@ -14,21 +14,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!launcher || !chatWindow) return;
 
-  // Audio instance
+  // Single global Audio instance
   const audioPath = 'data/jokowi-saya-akan-lawan.mp3';
+  const jokowiAudio = new Audio(audioPath);
 
-  // Unlock browser audio policy on first click
+  // Pre-unlock audio playback permissions on user click gesture
+  function prepareAudioOnGesture() {
+    try {
+      jokowiAudio.currentTime = 0;
+      const promise = jokowiAudio.play();
+      if (promise !== undefined) {
+        promise.then(() => {
+          jokowiAudio.pause();
+          jokowiAudio.currentTime = 0;
+        }).catch(() => {});
+      }
+    } catch (e) {}
+  }
+
+  // Play response audio when bot answers
   function playResponseAudio() {
     try {
-      const botAudio = new Audio(audioPath);
-      botAudio.play().catch(err => console.warn('Autoplay audio blocked:', err));
+      jokowiAudio.currentTime = 0;
+      const playPromise = jokowiAudio.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(err => {
+          console.warn('Primary audio play blocked, attempting fallback:', err);
+          const fallbackAudio = new Audio(audioPath);
+          fallbackAudio.play().catch(e => console.error('Audio play error:', e));
+        });
+      }
     } catch (err) {
-      console.warn('Audio creation error:', err);
+      console.warn('Audio play error:', err);
     }
   }
 
-  // Toggle Window Visibility
+  // Unlock audio permissions on launcher click
   launcher.addEventListener('click', () => {
+    prepareAudioOnGesture();
     chatWindow.classList.toggle('active');
     if (chatWindow.classList.contains('active')) {
       chatInput.focus();
@@ -104,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle Form Submit
   chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    prepareAudioOnGesture();
     handleSend();
   });
 
@@ -111,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (chipsContainer) {
     chipsContainer.addEventListener('click', (e) => {
       if (e.target.classList.contains('chip-btn')) {
+        prepareAudioOnGesture();
         const promptText = e.target.getAttribute('data-prompt');
         if (promptText) handleSend(promptText);
       }
