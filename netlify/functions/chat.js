@@ -1,7 +1,7 @@
 /**
  * Netlify Serverless Function for YZ.AI Chatbot
- * Proxies requests to Gemini 2.0 Flash / 1.5 Flash / Llama 3.1 Flash models
- * 100% Free on Netlify (125,000 requests/month) - Zero Database Required
+ * Supports Gemini 3.1 Flash Lite / 2.0 Flash Lite / 1.5 Flash Lite models
+ * 100% Free on Netlify - Zero Database Required
  */
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
@@ -32,9 +32,18 @@ If the question is completely off-topic or harmful (bombs, illegal acts, politic
 Context:
 ${contextText}`;
 
-    // 1. Try Gemini 2.0 Flash / 1.5 Flash if Gemini API Key is available
+    // 1. Try Gemini 3.1 / 2.0 / 1.5 Flash Lite models
     if (apiKey) {
-      const models = ["gemini-2.0-flash-exp", "gemini-1.5-flash", "gemini-1.5-flash-8b"];
+      const models = [
+        "gemini-3.1-flash-lite",
+        "gemini-3.0-flash-lite",
+        "gemini-2.0-flash-lite-preview-02-05",
+        "gemini-2.0-flash-lite",
+        "gemini-2.0-flash-exp",
+        "gemini-1.5-flash-lite",
+        "gemini-1.5-flash",
+        "gemini-1.5-flash-8b"
+      ];
       
       for (const model of models) {
         try {
@@ -62,12 +71,12 @@ ${contextText}`;
             };
           }
         } catch (e) {
-          console.warn(`Model ${model} failed, trying next fallback...`);
+          console.warn(`Model ${model} failed, attempting fallback...`);
         }
       }
     }
 
-    // 2. Try Groq Llama 3.1 Flash (llama-3.1-8b-instant) if Groq Key is available
+    // 2. Fallback to Groq Llama 3.1 Flash (llama-3.1-8b-instant) if Groq key exists
     if (groqKey) {
       try {
         const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
