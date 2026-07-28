@@ -116,11 +116,24 @@ class YZAIRAGEngine {
         body: JSON.stringify({ query, contextText })
       });
 
+      if (netlifyRes.status === 429) {
+        const errorData = await netlifyRes.json();
+        const rateErr = new Error('RATE_LIMIT_EXHAUSTED');
+        rateErr.isRateLimited = true;
+        throw rateErr;
+      }
+
       if (netlifyRes.ok) {
         const data = await netlifyRes.json();
+        if (data.isRateLimited) {
+          const rateErr = new Error('RATE_LIMIT_EXHAUSTED');
+          rateErr.isRateLimited = true;
+          throw rateErr;
+        }
         if (data.answer) return data.answer;
       }
     } catch (e) {
+      if (e.isRateLimited) throw e;
       // Netlify function offline or local mode
     }
 

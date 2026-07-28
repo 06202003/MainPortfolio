@@ -1,7 +1,7 @@
 /**
  * Netlify Serverless Function for YZ.AI Chatbot
  * Supports Gemini 3.1 Flash Lite / 2.0 Flash Lite / 1.5 Flash Lite models
- * Strictly enforced RAG scope: Absolute ban on code generation & off-topic requests
+ * Rate Limit detection: Returns 429 rate limit flag when API quota is exhausted
  */
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
@@ -34,6 +34,8 @@ ABSOLUTE CODE GENERATION BAN & SCOPE DIRECTIVE:
 Context:
 ${contextText}`;
 
+    let lastError = null;
+
     // 1. Try Gemini 3.1 / 2.0 / 1.5 Flash Lite models
     if (apiKey) {
       const models = [
@@ -64,7 +66,24 @@ ${contextText}`;
             })
           });
 
+          // Check if Gemini API returned Rate Limit (HTTP 429 or RESOURCE_EXHAUSTED)
+          if (response.status === 429) {
+            return {
+              statusCode: 429,
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ isRateLimited: true, error: "Gemini API Quota Limit Reached" })
+            };
+          }
+
           const data = await response.json();
+          if (data.error && (data.error.code === 429 || (data.error.message && data.error.message.toLowerCase().includes("quota")))) {
+            return {
+              statusCode: 429,
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ isRateLimited: true, error: "Gemini API Quota Limit Reached" })
+            };
+          }
+
           if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts[0].text) {
             return {
               statusCode: 200,
@@ -73,6 +92,7 @@ ${contextText}`;
             };
           }
         } catch (e) {
+          lastError = e;
           console.warn(`Model ${model} failed, attempting fallback...`);
         }
       }
@@ -97,6 +117,14 @@ ${contextText}`;
             max_tokens: 250
           })
         });
+
+        if (response.status === 429) {
+          return {
+            statusCode: 429,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ isRateLimited: true, error: "Groq Rate Limit Reached" })
+          };
+        }
 
         const data = await response.json();
         if (data.choices && data.choices[0].message && data.choices[0].message.content) {

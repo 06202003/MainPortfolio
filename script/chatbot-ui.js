@@ -1,6 +1,6 @@
 /**
  * YZ.AI Chatbot UI Controller
- * Manages floating widget state, message rendering, suggestion chips, instant RAG interaction, and response audio playback.
+ * Manages floating widget state, message rendering, suggestion chips, instant RAG interaction, and AI rest/pause mode on rate limits.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -12,12 +12,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatInput = document.getElementById('chatbot-input');
   const chipsContainer = document.getElementById('chatbot-chips');
   const jokowiAudio = document.getElementById('jokowi-audio');
+  const sendBtn = chatForm ? chatForm.querySelector('button[type="submit"]') : null;
+  const statusEl = document.querySelector('.chatbot-status');
 
   if (!launcher || !chatWindow) return;
 
+  let isRestMode = false;
+
   // Function to play audio safely
   function playResponseAudio() {
-    if (!jokowiAudio) return;
+    if (!jokowiAudio || isRestMode) return;
     try {
       jokowiAudio.currentTime = 0;
       const playPromise = jokowiAudio.play();
@@ -33,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Pre-unlock audio context on user interaction
   function unlockAudioOnGesture() {
-    if (!jokowiAudio) return;
+    if (!jokowiAudio || isRestMode) return;
     try {
       jokowiAudio.currentTime = 0;
       const p = jokowiAudio.play();
@@ -46,11 +50,40 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {}
   }
 
-  // Unlock audio permissions on launcher click
+  // Activate Rest/Pause Mode when API Quota/Rate Limit is reached
+  function activateRestMode() {
+    isRestMode = true;
+    
+    // Disable inputs & buttons
+    if (chatInput) {
+      chatInput.disabled = true;
+      chatInput.placeholder = "😴 YZ.AI is taking a rest (Quota limit reached)...";
+    }
+    if (sendBtn) {
+      sendBtn.disabled = true;
+      sendBtn.style.opacity = '0.5';
+      sendBtn.style.cursor = 'not-allowed';
+    }
+    if (chipsContainer) {
+      chipsContainer.style.opacity = '0.5';
+      chipsContainer.style.pointerEvents = 'none';
+    }
+
+    // Update Status Badge in Header
+    if (statusEl) {
+      statusEl.innerHTML = '<i class="fa-solid fa-moon text-warning" style="font-size: 8px;"></i> Rest Mode • Quota Limit Reached';
+      statusEl.className = 'chatbot-status text-warning';
+    }
+
+    // Append Rest Notice Bubble
+    addMessage('bot', '☕ **YZ.AI Rest Notice**: The AI LLM model has reached its hourly/daily request quota limit. YZ.AI is currently taking a short rest to recharge its API quota. Please check back in a little while!');
+  }
+
+  // Toggle Window Visibility
   launcher.addEventListener('click', () => {
     unlockAudioOnGesture();
     chatWindow.classList.toggle('active');
-    if (chatWindow.classList.contains('active')) {
+    if (chatWindow.classList.contains('active') && !isRestMode) {
       chatInput.focus();
     }
   });
@@ -77,9 +110,9 @@ document.addEventListener('DOMContentLoaded', () => {
     chatBody.appendChild(bubble);
     chatBody.scrollTop = chatBody.scrollHeight;
 
-    // Play response audio on bot answer ONLY if it's NOT a Guardrail Notice
+    // Play response audio on bot answer ONLY if it's NOT a Guardrail Notice or Rest Notice
     if (sender === 'bot') {
-      const isGuardrail = text.includes('Guardrail Notice') || text.includes('🛡️') || text.includes("I don't have relevant information");
+      const isGuardrail = text.includes('Guardrail Notice') || text.includes('🛡️') || text.includes("I don't have relevant information") || text.includes('Rest Notice');
       if (!isGuardrail) {
         playResponseAudio();
       }
@@ -104,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Process User Question
   async function handleSend(userMsg) {
+    if (isRestMode) return;
     const message = userMsg || chatInput.value.trim();
     if (!message) return;
 
@@ -119,7 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
       addMessage('bot', botResponse);
     } catch (err) {
       removeTypingIndicator();
-      addMessage('bot', '⚠️ Sorry, an error occurred while processing your request. Please try again.');
+      if (err && (err.isRateLimited || err.message === 'RATE_LIMIT_EXHAUSTED')) {
+        activateRestMode();
+      } else {
+        addMessage('bot', '⚠️ Sorry, an error occurred while processing your request. Please try again.');
+      }
       console.error(err);
     }
   }
@@ -127,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle Form Submit
   chatForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    if (isRestMode) return;
     unlockAudioOnGesture();
     handleSend();
   });
@@ -134,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle Chips Click
   if (chipsContainer) {
     chipsContainer.addEventListener('click', (e) => {
+      if (isRestMode) return;
       if (e.target.classList.contains('chip-btn')) {
         unlockAudioOnGesture();
         const promptText = e.target.getAttribute('data-prompt');
