@@ -841,3 +841,27 @@ i[style*='#198754'] {
     min-height: 150px;
   }
 }
+
+/* Harmonized Hero Social Links */
+.tengah a i {
+  color: #2e8b57 !important;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.tengah a:hover i {
+  color: #198754 !important;
+  transform: scale(1.18);
+}
+
+/* Feature Icons in About section */
+.about-feature-icon {
+  color: #2e8b57 !important;
+  transition: transform 0.3s ease;
+}
+
+.about-feature-icon:hover {
+  transform: scale(1.2);
+}
+
+
+
