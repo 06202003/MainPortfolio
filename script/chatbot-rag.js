@@ -1,32 +1,34 @@
 /**
- * YZ.AI - Balanced RAG LLM Chatbot Engine
- * - Natural, friendly, and conversational AI
+ * YZ.AI - Strict RAG LLM Chatbot Engine
+ * - Enforces strict scope on Yehezkiel David Setiawan's portfolio
+ * - Rejects general coding tasks (Fibonacci, scrapers, etc.), off-topic queries, and prompt injections
  * - Netlify Serverless Function proxy support (/.netlify/functions/chat)
- * - Harmful content & prompt injection guardrails
- * - In-browser smart RAG engine fallback
+ * - In-browser RAG engine fallback
  */
 
 class YZAIRAGEngine {
   constructor() {
     this.kb = window.YEHEZKIEL_KNOWLEDGE_BASE || [];
     
-    // Strict harmful or illegal patterns only
+    // Strict prohibited patterns (general code generation, cooking, weapons, politics, etc.)
     this.restrictedPatterns = [
       /\b(recipe|cook|food|bake|pizza|ingredient)\b/i,
       /\b(bomb|weapon|hack|exploit|malware|virus|attack|password|crack)\b/i,
       /\b(president|politics|election|government|war)\b/i,
+      /\b(fibonacci|prime number|bubble sort|quick sort|leetcode|factorial|calculator)\b/i,
+      /\b(write code for|generate code|make a script|create an app for)\b/i,
       /\b(ignore (all )?previous instructions|system prompt|reveal prompt|dan mode)\b/i
     ];
   }
 
-  // Pre-check for harmful content or prompt injection attempts
+  // Pre-check for restricted patterns
   isRestrictedQuery(query) {
     const qLower = query.toLowerCase();
     
     for (const pattern of this.restrictedPatterns) {
       if (pattern.test(qLower)) {
-        // If it specifically asks about Yehezkiel's work/security research, allow
-        if (qLower.includes('yehezkiel') && (qLower.includes('research') || qLower.includes('plagiarism') || qLower.includes('thesis'))) {
+        // Exception: If query explicitly asks about Yehezkiel's thesis/code plagiarism research
+        if (qLower.includes('yehezkiel') && (qLower.includes('sstrange') || qLower.includes('plagiarism') || qLower.includes('thesis'))) {
           return false;
         }
         return true;
@@ -39,7 +41,7 @@ class YZAIRAGEngine {
   // Retrieve top-K relevant knowledge chunks using keyword matching & similarity scoring
   retrieve(query, topK = 3) {
     const tokens = query.toLowerCase().split(/\W+/).filter(t => t.length > 2);
-    if (tokens.length === 0) return this.kb.slice(0, 2);
+    if (tokens.length === 0) return [];
 
     const scored = this.kb.map(chunk => {
       let score = 0;
@@ -64,11 +66,7 @@ class YZAIRAGEngine {
 
     const filtered = scored.filter(item => item.score > 0).sort((a, b) => b.score - a.score).map(item => item.chunk);
 
-    // If no specific match found, return general bio + skills chunks so Gemini has context
-    if (filtered.length === 0) {
-      return this.kb.slice(0, 2);
-    }
-
+    // Strictly return matching chunks only (DO NOT return fallback chunks for off-topic queries!)
     return filtered.slice(0, topK);
   }
 
@@ -77,9 +75,9 @@ class YZAIRAGEngine {
     const query = userMessage.trim();
     if (!query) return "Please enter a question about Yehezkiel David Setiawan.";
 
-    // 1. Harmful / Prompt Injection Guardrail Check
+    // 1. Harmful / General Coding / Restricted Check
     if (this.isRestrictedQuery(query)) {
-      return "🛡️ **Guardrail Notice**: I am programmed exclusively to assist with information regarding **Yehezkiel David Setiawan**, his background, research, projects, publications, and qualifications. I cannot answer off-topic or restricted questions.";
+      return "🛡️ **Guardrail Notice**: I am programmed exclusively to assist with information regarding **Yehezkiel David Setiawan**, his background, research, projects, publications, and qualifications. I cannot generate general code or answer off-topic questions outside his professional profile.";
     }
 
     // 2. Greetings or Bot Identity fast checks
@@ -93,6 +91,12 @@ class YZAIRAGEngine {
 
     // 3. RAG Retrieval Step
     const retrievedChunks = this.retrieve(query);
+
+    // If query has no relevant matches to Yehezkiel's knowledge base, DECLINE STRICTLY!
+    if (retrievedChunks.length === 0) {
+      return "🛡️ **Guardrail Notice**: I don't have relevant information about that in Yehezkiel's profile. Please ask questions related to Yehezkiel David Setiawan's education, publications, AI research, portfolio projects (such as S-SPARC or BRICS 2026), or work experience.";
+    }
+
     const contextText = retrievedChunks.map(c => `- **${c.title}**: ${c.content}`).join("\n");
 
     // 4. Try Netlify Serverless Gemini Function
@@ -108,7 +112,7 @@ class YZAIRAGEngine {
         if (data.answer) return data.answer;
       }
     } catch (e) {
-      // Netlify function not running locally or environment variable pending
+      // Netlify function offline or local mode
     }
 
     // 5. In-Browser Smart RAG Synthesizer Fallback

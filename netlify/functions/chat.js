@@ -1,7 +1,7 @@
 /**
  * Netlify Serverless Function for YZ.AI Chatbot
  * Supports Gemini 3.1 Flash Lite / 2.0 Flash Lite / 1.5 Flash Lite models
- * 100% Free on Netlify - Zero Database Required
+ * Strictly enforced RAG scope: Only answers about Yehezkiel David Setiawan
  */
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
@@ -23,11 +23,11 @@ exports.handler = async (event, context) => {
     const groqKey = GROQ_API_KEY || "";
 
     const systemPrompt = `You are YZ.AI, the official AI assistant representing Yehezkiel David Setiawan (AI Engineer & LLM Researcher).
-Your goal is to be helpful, friendly, warm, and professional.
-Answer user questions conversationally in 2-4 sentences using the provided context about Yehezkiel David Setiawan, his background, education, research, portfolio projects, and skills.
-You can respond in the language the user asked in (English or Indonesian).
-If the user asks questions related to tech/AI or Yehezkiel, answer knowledgeably.
-If the question is completely off-topic or harmful (bombs, illegal acts, politics), politely decline.
+
+CRITICAL RAG SCOPE DIRECTIVE:
+1. You MUST ONLY answer questions regarding Yehezkiel David Setiawan, his background, education, AI research, S-SPARC project, BRICS award, publications, skills, and professional experience using the provided Context.
+2. If the user asks for general programming code generation (such as Fibonacci, sorting algorithms, web scrapers, math solvers), general trivia, cooking, or off-topic tasks, DECLINE POLITELY in 1-2 sentences stating that you are programmed exclusively to assist with information about Yehezkiel David Setiawan and his portfolio.
+3. Do NOT execute general coding requests or write generic code samples.
 
 Context:
 ${contextText}`;
@@ -56,8 +56,8 @@ ${contextText}`;
                 { role: "user", parts: [{ text: `${systemPrompt}\n\nUser Question: ${query}` }] }
               ],
               generationConfig: {
-                temperature: 0.4,
-                maxOutputTokens: 300
+                temperature: 0.2,
+                maxOutputTokens: 250
               }
             })
           });
@@ -91,8 +91,8 @@ ${contextText}`;
               { role: "system", content: systemPrompt },
               { role: "user", content: query }
             ],
-            temperature: 0.4,
-            max_tokens: 300
+            temperature: 0.2,
+            max_tokens: 250
           })
         });
 
