@@ -120,12 +120,12 @@ function initThreeWorld() {
 
   // Scene & Fog
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x050814);
-  scene.fog = new THREE.FogExp2(0x050814, 0.012);
+  scene.background = new THREE.Color(0x0e172a);
+  scene.fog = new THREE.FogExp2(0x0e172a, 0.008);
 
   // Camera
   camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.set(0, 5, 18);
+  camera.position.set(0, 6, 22);
 
   // Renderer
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: "high-performance" });
@@ -134,7 +134,7 @@ function initThreeWorld() {
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.1;
+  renderer.toneMappingExposure = 1.3;
 
   // Clear existing canvas inside viewport
   container.innerHTML = '';
@@ -144,46 +144,52 @@ function initThreeWorld() {
   controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
-  controls.maxPolarAngle = Math.PI / 2 + 0.05; // Prevent camera clipping below floor
+  controls.maxPolarAngle = Math.PI / 2 - 0.01;
   controls.minDistance = 3;
-  controls.maxDistance = 45;
+  controls.maxDistance = 60;
   controls.target.set(0, 3, 0);
 
-  // Lighting
-  const ambientLight = new THREE.AmbientLight(0x223355, 1.2);
+  // Bright Lighting Setup
+  const ambientLight = new THREE.AmbientLight(0xffffff, 2.5);
   scene.add(ambientLight);
 
-  const mainDirLight = new THREE.DirectionalLight(0x99bbff, 1.8);
-  mainDirLight.position.set(10, 25, 15);
+  const mainDirLight = new THREE.DirectionalLight(0xa5f3fc, 2.5);
+  mainDirLight.position.set(15, 30, 20);
   mainDirLight.castShadow = true;
   scene.add(mainDirLight);
 
-  // Warm Japanese Lantern Light
-  const lanternLight1 = new THREE.PointLight(0xff7700, 3, 20);
-  lanternLight1.position.set(-4, 4, 2);
+  // Warm Japanese Lantern Light & Neon Accents
+  const lanternLight1 = new THREE.PointLight(0xff7700, 6, 30);
+  lanternLight1.position.set(-6, 5, 2);
   scene.add(lanternLight1);
 
-  // Neon Accent Lights
-  const neonBlueLight = new THREE.PointLight(0x00f0ff, 3, 25);
-  neonBlueLight.position.set(6, 6, -3);
+  const neonBlueLight = new THREE.PointLight(0x00f0ff, 6, 35);
+  neonBlueLight.position.set(6, 7, -3);
   scene.add(neonBlueLight);
 
-  const neonPurpleLight = new THREE.PointLight(0xb000ff, 2.5, 20);
+  const neonPurpleLight = new THREE.PointLight(0xd946ef, 5, 30);
   neonPurpleLight.position.set(-6, 8, -8);
   scene.add(neonPurpleLight);
 
   // Wet Asphalt Floor Ground
-  const floorGeo = new THREE.PlaneGeometry(100, 100);
+  const floorGeo = new THREE.PlaneGeometry(120, 120);
   const floorMat = new THREE.MeshStandardMaterial({
-    color: 0x0a0f1d,
-    roughness: 0.15,
-    metalness: 0.8,
+    color: 0x1e293b,
+    roughness: 0.2,
+    metalness: 0.5,
+    emissive: 0x0f172a,
+    emissiveIntensity: 0.4
   });
   const floorMesh = new THREE.Mesh(floorGeo, floorMat);
   floorMesh.rotation.x = -Math.PI / 2;
   floorMesh.position.y = 0;
   floorMesh.receiveShadow = true;
   scene.add(floorMesh);
+
+  // Grid helper overlay for futuristic cyberpunk street effect
+  const gridHelper = new THREE.GridHelper(120, 40, 0x00f0ff, 0x334155);
+  gridHelper.position.y = 0.01;
+  scene.add(gridHelper);
 
   // Rain Particle System
   createRainParticles();
@@ -293,50 +299,82 @@ function loadKyotoModel() {
 
 // Create Fallback Procedural Scenery if GLTF fails or missing
 function createFallbackScenery() {
-  // Ramen Stall / Teahouse Box
-  const shopGeo = new THREE.BoxGeometry(6, 4, 5);
-  const shopMat = new THREE.MeshStandardMaterial({ color: 0x4a2c11 });
+  interactiveObjects = [];
+
+  // 1. Ramen Shop / Teahouse (About Me)
+  const shopGeo = new THREE.BoxGeometry(7, 5, 6);
+  const shopMat = new THREE.MeshStandardMaterial({ color: 0x78350f, roughness: 0.4 });
   const shopMesh = new THREE.Mesh(shopGeo, shopMat);
-  shopMesh.position.set(-6, 2, -2);
-  shopMesh.userData = { id: 'about', title: '🍜 Ramen Shop (About Me)' };
+  shopMesh.position.set(-7, 2.5, -2);
+
+  const roofGeo = new THREE.ConeGeometry(6, 2, 4);
+  const roofMat = new THREE.MeshStandardMaterial({ color: 0x991b1b });
+  const roofMesh = new THREE.Mesh(roofGeo, roofMat);
+  roofMesh.position.set(-7, 6, -2);
+  roofMesh.rotation.y = Math.PI / 4;
+
+  const signGeo = new THREE.BoxGeometry(4, 1.2, 0.4);
+  const signMat = new THREE.MeshStandardMaterial({ color: 0xffaa00, emissive: 0xffaa00, emissiveIntensity: 0.9 });
+  const signMesh = new THREE.Mesh(signGeo, signMat);
+  signMesh.position.set(-7, 4.5, 1.2);
+  signMesh.userData = { id: 'about', title: '🍜 Ramen Shop (About Me)' };
+
   scene.add(shopMesh);
-  interactiveObjects.push(shopMesh);
+  scene.add(roofMesh);
+  scene.add(signMesh);
+  interactiveObjects.push(shopMesh, signMesh);
 
-  // Train Station Signboard
-  const stationGeo = new THREE.BoxGeometry(4, 3, 4);
-  const stationMat = new THREE.MeshStandardMaterial({ color: 0x1e293b });
+  // 2. Train Station (Qualifications)
+  const stationGeo = new THREE.BoxGeometry(6, 4.5, 5);
+  const stationMat = new THREE.MeshStandardMaterial({ color: 0x0f766e, roughness: 0.3 });
   const stationMesh = new THREE.Mesh(stationGeo, stationMat);
-  stationMesh.position.set(6, 1.5, -4);
+  stationMesh.position.set(7, 2.25, -4);
   stationMesh.userData = { id: 'qualification', title: '🚉 Train Station (Qualifications)' };
-  scene.add(stationMesh);
-  interactiveObjects.push(stationMesh);
 
-  // Arcade Cabinet
-  const arcadeGeo = new THREE.BoxGeometry(3, 4, 3);
-  const arcadeMat = new THREE.MeshStandardMaterial({ color: 0x0284c7 });
+  const stationSignGeo = new THREE.BoxGeometry(4, 1, 0.4);
+  const stationSignMat = new THREE.MeshStandardMaterial({ color: 0x06b6d4, emissive: 0x06b6d4, emissiveIntensity: 0.9 });
+  const stationSignMesh = new THREE.Mesh(stationSignGeo, stationSignMat);
+  stationSignMesh.position.set(7, 4.2, -1.3);
+
+  scene.add(stationMesh);
+  scene.add(stationSignMesh);
+  interactiveObjects.push(stationMesh, stationSignMesh);
+
+  // 3. Arcade Machine (Projects)
+  const arcadeGeo = new THREE.BoxGeometry(3.5, 5, 3.5);
+  const arcadeMat = new THREE.MeshStandardMaterial({ color: 0x4c1d95, emissive: 0x581c87, emissiveIntensity: 0.5 });
   const arcadeMesh = new THREE.Mesh(arcadeGeo, arcadeMat);
-  arcadeMesh.position.set(-2, 2, -8);
+  arcadeMesh.position.set(-3, 2.5, -9);
   arcadeMesh.userData = { id: 'portfolio', title: '🕹️ Arcade Room (Projects Portfolio)' };
+
+  const arcadeScreenGeo = new THREE.PlaneGeometry(2.5, 2);
+  const arcadeScreenMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff });
+  const arcadeScreenMesh = new THREE.Mesh(arcadeScreenGeo, arcadeScreenMat);
+  arcadeScreenMesh.position.set(-3, 3.2, -7.2);
+
   scene.add(arcadeMesh);
+  scene.add(arcadeScreenMesh);
   interactiveObjects.push(arcadeMesh);
 
-  // Library / Desk
-  const libGeo = new THREE.BoxGeometry(4, 3, 3);
-  const libMat = new THREE.MeshStandardMaterial({ color: 0x78350f });
+  // 4. Shrine Library Desk (Research)
+  const libGeo = new THREE.BoxGeometry(5, 4, 4);
+  const libMat = new THREE.MeshStandardMaterial({ color: 0x854d0e, roughness: 0.4 });
   const libMesh = new THREE.Mesh(libGeo, libMat);
-  libMesh.position.set(4, 1.5, -9);
+  libMesh.position.set(5, 2, -10);
   libMesh.userData = { id: 'research', title: '📚 Shrine Library (Research & Thesis)' };
+
   scene.add(libMesh);
   interactiveObjects.push(libMesh);
 
-  // Contact Billboard
-  const signGeo = new THREE.BoxGeometry(5, 3, 1);
-  const signMat = new THREE.MeshStandardMaterial({ color: 0xe11d48, emissive: 0x9f1239 });
-  const signMesh = new THREE.Mesh(signGeo, signMat);
-  signMesh.position.set(0, 6, -12);
-  signMesh.userData = { id: 'reach', title: '🏮 Neon Rooftop (Reach Me / Contact)' };
-  scene.add(signMesh);
-  interactiveObjects.push(signMesh);
+  // 5. Contact Neon Billboard (Reach Me)
+  const billboardGeo = new THREE.BoxGeometry(8, 4, 0.8);
+  const billboardMat = new THREE.MeshStandardMaterial({ color: 0xf43f5e, emissive: 0xbe123c, emissiveIntensity: 0.9 });
+  const billboardMesh = new THREE.Mesh(billboardGeo, billboardMat);
+  billboardMesh.position.set(0, 7.5, -14);
+  billboardMesh.userData = { id: 'reach', title: '🏮 Neon Rooftop (Reach Me / Contact)' };
+
+  scene.add(billboardMesh);
+  interactiveObjects.push(billboardMesh);
 
   // Create Interactive Hotspots
   createInteractiveHotspots();
