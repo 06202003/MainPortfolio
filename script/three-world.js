@@ -132,15 +132,22 @@ function initThreeWorld() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  // Orbit Controls targeting center of Japanese street (Safely guarded)
+  // Orbit Controls targeting center of Japanese street (Full 360 Degree Orbit & Auto Rotate)
   if (typeof THREE.OrbitControls === 'function') {
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
     controls.dampingFactor = 0.05;
-    controls.maxPolarAngle = Math.PI / 2 - 0.01;
-    controls.minDistance = 3;
-    controls.maxDistance = 60;
-    controls.target.set(0, 2.5, -4);
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 0.8; // Smooth 360 degree cinematic rotation
+    controls.maxPolarAngle = Math.PI / 2 + 0.15; // Full ground to sky 360 degree navigation
+    controls.minDistance = 2;
+    controls.maxDistance = 80;
+    controls.target.set(0, 2.5, -2);
+
+    // Stop auto-rotate when user manually drags or interacts
+    controls.addEventListener('start', () => {
+      controls.autoRotate = false;
+    });
   }
 
   // Bright Lighting Setup (Vivid Sky + Full Ambient)
