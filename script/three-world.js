@@ -204,6 +204,26 @@ function initThreeWorld() {
   animate();
 }
 
+// Window Resize Event Handler
+function onWindowResize() {
+  if (!camera || !renderer) return;
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+// Main Animation & Render Loop (60 FPS)
+function animate() {
+  animFrameId = requestAnimationFrame(animate);
+
+  if (controls) controls.update();
+  updateRain();
+
+  if (renderer && scene && camera) {
+    renderer.render(scene, camera);
+  }
+}
+
 // Create Falling GPU Rain Particles
 function createRainParticles() {
   const rainGeo = new THREE.BufferGeometry();
