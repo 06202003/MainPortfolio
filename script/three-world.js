@@ -308,30 +308,26 @@ function updateRain() {
   rainParticles.geometry.attributes.position.needsUpdate = true;
 }
 
-// Create Canvas Texture for Sketchfab-style Number Badges (1, 2, 3, 4, 5)
+// Create Canvas Texture for Transparent Glass Number Badges (1, 2, 3, 4, 5)
 function createSketchfabNumberBadgeTexture(num, hexColorStr) {
   const canvas = document.createElement('canvas');
   canvas.width = 128;
   canvas.height = 128;
   const ctx = canvas.getContext('2d');
 
-  // Outer semi-transparent background circle
+  // Outer transparent glass circle
   ctx.beginPath();
-  ctx.arc(64, 64, 58, 0, 2 * Math.PI);
-  ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+  ctx.arc(64, 64, 54, 0, 2 * Math.PI);
+  ctx.fillStyle = 'rgba(15, 23, 42, 0.45)';
   ctx.fill();
 
   // Colored circle border
-  ctx.beginPath();
-  ctx.arc(64, 64, 48, 0, 2 * Math.PI);
-  ctx.fillStyle = hexColorStr;
-  ctx.fill();
   ctx.lineWidth = 6;
-  ctx.strokeStyle = '#ffffff';
+  ctx.strokeStyle = hexColorStr;
   ctx.stroke();
 
   // White Number (1, 2, 3, 4, 5)
-  ctx.font = 'bold 54px Arial, sans-serif';
+  ctx.font = 'bold 52px Arial, sans-serif';
   ctx.fillStyle = '#ffffff';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
@@ -342,7 +338,7 @@ function createSketchfabNumberBadgeTexture(num, hexColorStr) {
   return texture;
 }
 
-// Create Sleek Compact Sketchfab-style 1, 2, 3, 4, 5 Numbered Pins on Kyoto Scene
+// Create Sleek Compact Transparent Glass 1, 2, 3, 4, 5 Numbered Pins on Kyoto Scene
 function createSketchfabAnnotationsInScene() {
   interactiveObjects = [];
 
@@ -356,11 +352,11 @@ function createSketchfabAnnotationsInScene() {
 
   annotations.forEach((anno) => {
     const badgeTexture = createSketchfabNumberBadgeTexture(anno.num, anno.colorStr);
-    const spriteMat = new THREE.SpriteMaterial({ map: badgeTexture, depthTest: true });
+    const spriteMat = new THREE.SpriteMaterial({ map: badgeTexture, depthTest: true, transparent: true });
     const sprite = new THREE.Sprite(spriteMat);
 
     sprite.position.set(...anno.pos);
-    sprite.scale.set(1.4, 1.4, 1);
+    sprite.scale.set(0.9, 0.9, 1);
     sprite.userData = { id: anno.id, title: anno.title, num: anno.num, basePosY: anno.pos[1] };
 
     scene.add(sprite);
@@ -431,16 +427,12 @@ function loadKyotoModel() {
 
 
 
-// Raycasting Mouse Hover & Real-Time 3D Surface Coordinate Tooltip
+// Raycasting Mouse Hover
 function onMouseMove(event) {
   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-  const coordBadge = document.getElementById('cursor-coord-badge');
-  const hudBadgeText = document.getElementById('hud-coord-text');
-
-  if (raycaster && camera) {
-    // 1. Hover check on pins
+  if (raycaster && camera && interactiveObjects.length > 0) {
     raycaster.setFromCamera(mouse, camera);
     const pinIntersects = raycaster.intersectObjects(interactiveObjects, true);
 
@@ -462,60 +454,13 @@ function onMouseMove(event) {
         hint.style.display = 'none';
       }
     }
-
-    // 2. Real-time [X, Y, Z] 3D Surface Coordinate Tooltip following cursor
-    if (kyotoGltfModel) {
-      const surfaceIntersects = raycaster.intersectObject(kyotoGltfModel, true);
-      if (surfaceIntersects.length > 0) {
-        const pt = surfaceIntersects[0].point;
-        const x = pt.x.toFixed(2);
-        const y = pt.y.toFixed(2);
-        const z = pt.z.toFixed(2);
-        const coordStr = `X: ${x} | Y: ${y} | Z: ${z}`;
-
-        if (coordBadge) {
-          coordBadge.style.display = 'block';
-          coordBadge.style.left = event.clientX + 'px';
-          coordBadge.style.top = event.clientY + 'px';
-          coordBadge.innerHTML = `📍 ${coordStr}`;
-        }
-        if (hudBadgeText) {
-          hudBadgeText.textContent = `🎯 ${coordStr}`;
-        }
-      } else {
-        if (coordBadge) coordBadge.style.display = 'none';
-        if (hudBadgeText) hudBadgeText.textContent = 'Move cursor over 3D model';
-      }
-    }
   }
 }
 
 let kyotoGltfModel = null;
 
-// Live Surface Raycast Inspector (Auto-copies [x, y, z] to Clipboard on Click!)
-function inspect3DSurfaceClick(event) {
-  if (!raycaster || !camera || !kyotoGltfModel) return;
-
-  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-  raycaster.setFromCamera(mouse, camera);
-  const intersects = raycaster.intersectObject(kyotoGltfModel, true);
-
-  if (intersects.length > 0) {
-    const pt = intersects[0].point;
-    const exactPos = `[${pt.x.toFixed(2)}, ${(pt.y + 0.6).toFixed(2)}, ${pt.z.toFixed(2)}]`;
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(exactPos).catch(e => {});
-    }
-    console.log(`📍 COPIED 3D SURFACE COORD: ${exactPos}`);
-    showToast(`📋 Copied 3D Point to Clipboard: ${exactPos}`);
-  }
-}
-// Handle Raycast Scene Clicks
+// Handle Raycast Scene Clicks (Pin Annotations Zoom-In)
 function onSceneClick(event) {
-  inspect3DSurfaceClick(event);
-
   if (!raycaster || !camera || interactiveObjects.length === 0) return;
 
   raycaster.setFromCamera(mouse, camera);
