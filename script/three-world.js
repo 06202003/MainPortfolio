@@ -323,11 +323,11 @@ function createSketchfabAnnotationsInScene() {
   interactiveObjects = [];
 
   const annotations = [
-    { num: 1, pos: [0.0, 1.8, 1.2], colorStr: '#f59e0b', id: 'about', title: '🍜 1. Teahouse & River Bridge (About Me)' },
-    { num: 2, pos: [-2.5, 3.2, -1.8], colorStr: '#06b6d4', id: 'qualification', title: '🚉 2. Machiya Building (Qualifications & Journey)' },
-    { num: 3, pos: [2.8, 3.0, 0.8], colorStr: '#a855f7', id: 'portfolio', title: '🕹️ 3. Arcade & Pine Garden (Featured Projects)' },
-    { num: 4, pos: [-3.2, 2.2, 1.8], colorStr: '#10b981', id: 'research', title: '⛩️ 4. Torii Shrine & Steps (Research & Thesis)' },
-    { num: 5, pos: [0.0, 5.2, -2.0], colorStr: '#ef4444', id: 'reach', title: '🏮 5. Rooftop Sky Tower (Reach Me / Contact)' }
+    { num: 1, pos: [0.0, 2.2, 3.5], colorStr: '#f59e0b', id: 'about', title: '🍜 1. Teahouse & River Bridge (About Me)' },
+    { num: 2, pos: [-4.5, 4.2, -1.5], colorStr: '#06b6d4', id: 'qualification', title: '🚉 2. Machiya Building (Qualifications & Journey)' },
+    { num: 3, pos: [4.5, 3.8, 1.0], colorStr: '#a855f7', id: 'portfolio', title: '🕹️ 3. Arcade & Pine Garden (Featured Projects)' },
+    { num: 4, pos: [-4.8, 2.8, 2.5], colorStr: '#10b981', id: 'research', title: '⛩️ 4. Torii Shrine & Steps (Research & Thesis)' },
+    { num: 5, pos: [0.0, 7.2, -2.5], colorStr: '#ef4444', id: 'reach', title: '🏮 5. Rooftop Sky Tower (Reach Me / Contact)' }
   ];
 
   annotations.forEach((anno) => {
@@ -380,11 +380,13 @@ function loadKyotoModel() {
           }
         });
 
+        kyotoGltfModel = model;
+
         // Create sleek compact Sketchfab numbered annotations
         createSketchfabAnnotationsInScene();
 
         scene.add(model);
-        showToast('🏯 Kyoto Midnight City Loaded! Click annotations 1, 2, 3, 4, 5 to explore.');
+        showToast('🏯 Kyoto Midnight City Loaded! Click any surface to inspect 3D coordinates or click pins 1-5.');
       },
       (xhr) => {
         if (xhr.lengthComputable && xhr.total > 0) {
@@ -515,8 +517,30 @@ function resetCameraView() {
   }
 }
 
+let kyotoGltfModel = null;
+
+// Live Surface Raycast Inspector (Prints exact [x, y, z] when clicking any 3D mesh surface!)
+function inspect3DSurfaceClick(event) {
+  if (!raycaster || !camera || !kyotoGltfModel) return;
+
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+  raycaster.setFromCamera(mouse, camera);
+  const intersects = raycaster.intersectObject(kyotoGltfModel, true);
+
+  if (intersects.length > 0) {
+    const pt = intersects[0].point;
+    const meshName = intersects[0].object.name || 'mesh';
+    const exactPos = `[${pt.x.toFixed(2)}, ${(pt.y + 0.6).toFixed(2)}, ${pt.z.toFixed(2)}]`;
+    console.log(`📍 EXACT 3D CLICKED SURFACE COORD: pos: ${exactPos}, mesh: "${meshName}"`);
+    showToast(`📍 Clicked 3D Point: ${exactPos}`);
+  }
+}
 // Handle Raycast Scene Clicks
 function onSceneClick(event) {
+  inspect3DSurfaceClick(event);
+
   if (!raycaster || !camera || interactiveObjects.length === 0) return;
 
   raycaster.setFromCamera(mouse, camera);
