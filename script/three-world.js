@@ -286,6 +286,7 @@ function loadKyotoModel() {
 
   const modelPath = 'assets/models/tanabata_evening_-_kyoto_inspired_city_scene.glb';
   if (typeof THREE.GLTFLoader === 'function') {
+    showToast('⏳ Loading 3D Kyoto City Scene Model...');
     const loader = new THREE.GLTFLoader();
     loader.load(
       modelPath,
@@ -297,9 +298,13 @@ function loadKyotoModel() {
           if (child.isMesh) {
             child.castShadow = true;
             child.receiveShadow = true;
+            if (child.material) {
+              child.material.side = THREE.DoubleSide;
+            }
           }
         });
         scene.add(model);
+        showToast('🏯 Kyoto Midnight City Scene Model Loaded!');
       },
       (xhr) => {
         if (xhr.lengthComputable && progressBar) {
@@ -308,7 +313,7 @@ function loadKyotoModel() {
         }
       },
       (error) => {
-        console.warn('GLTF background load note:', error);
+        console.warn('GLTF load note:', error);
       }
     );
   }
