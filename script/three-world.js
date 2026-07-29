@@ -115,8 +115,8 @@ function showToast(message) {
 
 // Initialize 3D World Scene
 function initThreeWorld() {
-  const container = document.getElementById('three-viewport') || document.getElementById('three-canvas-container');
-  if (!container) return;
+  const canvas = document.getElementById('three-canvas');
+  if (!canvas) return;
 
   // Scene & Background (Vivid Kyoto Dusk Sky)
   scene = new THREE.Scene();
@@ -127,18 +127,10 @@ function initThreeWorld() {
   camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 1000);
   camera.position.set(0, 6, 22);
 
-  // Renderer
-  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: "high-performance" });
+  // Renderer attached directly to static canvas element
+  renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  renderer.shadowMap.enabled = true;
-  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.8; // Bright vibrant exposure
-
-  // Clear existing canvas inside viewport
-  container.innerHTML = '';
-  container.appendChild(renderer.domElement);
 
   // Orbit Controls
   controls = new THREE.OrbitControls(camera, renderer.domElement);
