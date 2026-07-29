@@ -1,0 +1,430 @@
+/* ==========================================================================
+   BEYOND THE DOOR: 3D MIDNIGHT ARCHIVE STYLES
+   ========================================================================== */
+
+/* 🚪 Mysterious Navbar Door Button */
+.secret-door-btn {
+  background: rgba(255, 120, 40, 0.15);
+  border: 1px solid rgba(255, 140, 50, 0.4);
+  border-radius: 8px;
+  padding: 6px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 12px rgba(255, 120, 40, 0.25);
+  margin-right: 12px;
+}
+
+.secret-door-btn:hover {
+  background: rgba(255, 140, 50, 0.3);
+  border-color: rgba(255, 180, 80, 0.8);
+  box-shadow: 0 0 20px rgba(255, 140, 50, 0.6), 0 0 40px rgba(255, 100, 0, 0.3);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.secret-door-btn .door-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 0 6px rgba(255, 160, 50, 0.8));
+}
+
+.secret-door-btn:hover .door-icon {
+  transform: rotateY(-30deg) scale(1.15);
+}
+
+.secret-door-btn .door-label {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #ffd8a8;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* 🌀 Portal Vignette Overlay Transition */
+#portal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(5, 8, 20, 0.95) 70%, #050814 100%);
+  backdrop-filter: blur(0px);
+  transition: opacity 0.8s ease, backdrop-filter 0.8s ease;
+}
+
+#portal-overlay.active {
+  pointer-events: all;
+  opacity: 1;
+  backdrop-filter: blur(15px);
+}
+
+/* 🌌 3D Canvas Viewport Container */
+#three-canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: #04060f;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#three-canvas-container.visible {
+  display: block;
+  opacity: 1;
+}
+
+#three-canvas-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+/* ⏳ 3D Scene Loading Screen */
+#three-loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #0e1428 0%, #04060f 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100001;
+  color: #ffffff;
+  font-family: 'Roboto Mono', monospace;
+  transition: opacity 0.6s ease;
+}
+
+#three-loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff9d42;
+  margin-bottom: 8px;
+  text-shadow: 0 0 15px rgba(255, 157, 66, 0.5);
+  letter-spacing: 1px;
+}
+
+.loader-subtitle {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 24px;
+}
+
+.loader-progress-bg {
+  width: 280px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 157, 66, 0.3);
+}
+
+.loader-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #ff7828, #00f0ff, #b000ff);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.8);
+}
+
+.loader-status {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+/* 🕹️ HUD Top Controls Bar */
+#three-hud-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+.hud-top-bar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.hud-badge {
+  background: rgba(10, 15, 30, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 157, 66, 0.3);
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: #ffb870;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hud-badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00f0ff;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00f0ff;
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.hud-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.hud-btn {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hud-btn:hover {
+  background: rgba(255, 120, 40, 0.25);
+  border-color: rgba(255, 150, 60, 0.6);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 120, 40, 0.4);
+}
+
+.hud-btn-exit {
+  background: rgba(225, 29, 72, 0.2);
+  border-color: rgba(244, 63, 94, 0.5);
+  color: #fecdd3;
+}
+
+.hud-btn-exit:hover {
+  background: rgba(225, 29, 72, 0.5);
+  border-color: #f43f5e;
+  color: #ffffff;
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.6);
+}
+
+/* 🎯 Bottom Center Interaction Prompt */
+.hud-interaction-hint {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  padding: 10px 24px;
+  border-radius: 30px;
+  color: #e0f2fe;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.9rem;
+  pointer-events: auto;
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: float-hint 3s infinite ease-in-out;
+}
+
+@keyframes float-hint {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -6px); }
+}
+
+/* 🪟 Interactive Content Modals (Glassmorphism) */
+.three-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 8, 20, 0.65);
+  backdrop-filter: blur(8px);
+  z-index: 100005;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.three-modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.three-modal-card {
+  width: 90%;
+  max-width: 680px;
+  max-height: 80vh;
+  background: rgba(10, 16, 32, 0.92);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 157, 66, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 120, 40, 0.2);
+  color: #f8fafc;
+  overflow-y: auto;
+  padding: 28px;
+  position: relative;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.three-modal-backdrop.active .three-modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.three-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+
+.three-modal-title {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ff9d42;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.three-modal-close {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #94a3b8;
+  font-size: 1.2rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.three-modal-close:hover {
+  background: rgba(244, 63, 94, 0.3);
+  color: #ffffff;
+}
+
+.three-modal-body {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.three-modal-body h4 {
+  color: #38bdf8;
+  margin-top: 14px;
+  margin-bottom: 6px;
+}
+
+.three-modal-body ul {
+  padding-left: 20px;
+}
+
+.three-modal-body li {
+  margin-bottom: 6px;
+}
+
+/* 🍞 Toast Notification */
+.three-toast {
+  position: absolute;
+  top: 80px;
+  right: 20px;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(16, 185, 129, 0.5);
+  border-radius: 12px;
+  padding: 12px 20px;
+  color: #ecfdf5;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.85rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(16, 185, 129, 0.3);
+  transform: translateX(120%);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: auto;
+  z-index: 100010;
+}
+
+.three-toast.show {
+  transform: translateX(0);
+}
+
+/* 📱 Responsive Mobile Tweaks */
+@media (max-width: 768px) {
+  .hud-top-bar {
+    top: 12px;
+    left: 12px;
+    right: 12px;
+  }
+  
+  .hud-badge {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+
+  .hud-btn {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+  }
+
+  .hud-interaction-hint {
+    bottom: 20px;
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  .three-modal-card {
+    padding: 20px;
+    width: 95%;
+  }
+}

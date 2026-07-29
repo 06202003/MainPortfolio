@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/custom-carousel.css" />
   <link rel="stylesheet" href="css/chatbot.css" />
+  <link rel="stylesheet" href="css/three-world.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -121,10 +122,15 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg bg-dark text-white sticky-top" aria-label="Main Navigation">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#home" aria-label="Yehezkiel David Setiawan - Portfolio Home">
-        <h2 aria-hidden="true"></h2>
-        <span class="visually-hidden">Yehezkiel David Setiawan Portfolio</span>
-      </a>
+      <div class="d-flex align-items-center">
+        <button id="secret-door-trigger" class="secret-door-btn" title="Open another world: Beyond The Door" aria-label="Enter hidden 3D archive">
+          <span class="door-icon">🚪</span>
+          <span class="door-label">Beyond The Door</span>
+        </button>
+        <a class="navbar-brand m-0" href="#home" aria-label="Yehezkiel David Setiawan - Portfolio Home">
+          <span class="visually-hidden">Yehezkiel David Setiawan Portfolio</span>
+        </a>
+      </div>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
         <span class="navbar-toggler-icon"></span>
@@ -2652,6 +2658,57 @@
       <script src="script/rag-knowledge.js"></script>
       <script src="script/chatbot-rag.js"></script>
       <script src="script/chatbot-ui.js"></script>
+
+      <!-- 🌀 Beyond The Door 3D Overlay Elements -->
+      <div id="portal-overlay"></div>
+
+      <div id="three-canvas-container">
+        <!-- ⏳ Loading Screen -->
+        <div id="three-loading-screen">
+          <div class="loader-title">🏮 Beyond The Door</div>
+          <div class="loader-subtitle">Entering Yehezkiel's Kyoto Midnight Archive...</div>
+          <div class="loader-progress-bg">
+            <div class="loader-progress-bar" id="loader-progress-bar"></div>
+          </div>
+          <div class="loader-status" id="loader-status">Initializing WebGL Engine...</div>
+        </div>
+
+        <!-- 🕹️ HUD Overlay -->
+        <div id="three-hud-overlay">
+          <div class="hud-top-bar">
+            <div class="hud-badge">
+              <span class="hud-badge-dot"></span>
+              <span>Kyoto Midnight Archive</span>
+            </div>
+            <div class="hud-actions">
+              <button id="btn-audio-toggle" class="hud-btn">🎵 Play Lo-Fi</button>
+              <button id="btn-exit-3d" class="hud-btn hud-btn-exit">🚪 Exit 3D</button>
+            </div>
+          </div>
+
+          <div class="hud-interaction-hint" id="hud-interaction-hint" style="display: none;">
+            <span>✨ Drag to Look Around • Click Glowing Hotspots to Explore</span>
+          </div>
+
+          <div class="three-toast" id="three-toast"></div>
+        </div>
+
+        <!-- 🪟 Interactive Content Glassmorphism Modal -->
+        <div class="three-modal-backdrop" id="three-modal-backdrop">
+          <div class="three-modal-card">
+            <div class="three-modal-header">
+              <div class="three-modal-title" id="three-modal-title">Title</div>
+              <button class="three-modal-close" id="three-modal-close">&times;</button>
+            </div>
+            <div class="three-modal-body" id="three-modal-body">
+              Content body
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Engine JS Module -->
+      <script type="module" src="script/three-world.js"></script>
 </body>
 
 </html>
