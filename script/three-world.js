@@ -347,11 +347,11 @@ function createSketchfabAnnotationsInScene() {
   interactiveObjects = [];
 
   const annotations = [
-    { num: 1, pos: [0.0, 2.2, 3.5], colorStr: '#f59e0b', id: 'about', title: '🍜 1. Teahouse & River Bridge (About Me)' },
-    { num: 2, pos: [-4.5, 4.2, -1.5], colorStr: '#06b6d4', id: 'qualification', title: '🚉 2. Machiya Building (Qualifications & Journey)' },
-    { num: 3, pos: [4.5, 3.8, 1.0], colorStr: '#a855f7', id: 'portfolio', title: '🕹️ 3. Arcade & Pine Garden (Featured Projects)' },
-    { num: 4, pos: [-4.8, 2.8, 2.5], colorStr: '#10b981', id: 'research', title: '⛩️ 4. Torii Shrine & Steps (Research & Thesis)' },
-    { num: 5, pos: [0.0, 7.2, -2.5], colorStr: '#ef4444', id: 'reach', title: '🏮 5. Rooftop Sky Tower (Reach Me / Contact)' }
+    { num: 1, pos: [12.74, 6.26, 4.05], colorStr: '#f59e0b', id: 'about', title: '🍜 1. Teahouse & River Bridge (About Me)' },
+    { num: 2, pos: [7.96, 9.68, 7.28], colorStr: '#06b6d4', id: 'qualification', title: '🚉 2. Machiya Building (Qualifications & Journey)' },
+    { num: 3, pos: [6.96, 5.46, -8.10], colorStr: '#a855f7', id: 'portfolio', title: '🕹️ 3. Arcade & Pine Garden (Featured Projects)' },
+    { num: 4, pos: [-4.36, 4.35, 10.63], colorStr: '#10b981', id: 'research', title: '⛩️ 4. Torii Shrine & Steps (Research & Thesis)' },
+    { num: 5, pos: [-8.58, 3.65, -8.95], colorStr: '#ef4444', id: 'reach', title: '🏮 5. Rooftop Sky Tower (Reach Me / Contact)' }
   ];
 
   annotations.forEach((anno) => {
