@@ -296,20 +296,33 @@ function loadKyotoModel() {
 function createFallbackScenery() {
   interactiveObjects = [];
 
+  // Ground Floor Plane (Slate Gray Street)
+  const floorGeo = new THREE.PlaneGeometry(100, 100);
+  const floorMat = new THREE.MeshBasicMaterial({ color: 0x334155 });
+  const floorMesh = new THREE.Mesh(floorGeo, floorMat);
+  floorMesh.rotation.x = -Math.PI / 2;
+  floorMesh.position.y = 0;
+  scene.add(floorMesh);
+
+  // Grid
+  const gridHelper = new THREE.GridHelper(100, 20, 0x00f0ff, 0x94a3b8);
+  gridHelper.position.y = 0.02;
+  scene.add(gridHelper);
+
   // 1. Ramen Shop / Teahouse (About Me)
   const shopGeo = new THREE.BoxGeometry(7, 5, 6);
-  const shopMat = new THREE.MeshStandardMaterial({ color: 0x78350f, roughness: 0.4 });
+  const shopMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b });
   const shopMesh = new THREE.Mesh(shopGeo, shopMat);
   shopMesh.position.set(-5, 2.5, -3);
 
   const roofGeo = new THREE.ConeGeometry(6, 2, 4);
-  const roofMat = new THREE.MeshStandardMaterial({ color: 0x991b1b });
+  const roofMat = new THREE.MeshBasicMaterial({ color: 0xd97706 });
   const roofMesh = new THREE.Mesh(roofGeo, roofMat);
   roofMesh.position.set(-5, 6, -3);
   roofMesh.rotation.y = Math.PI / 4;
 
   const signGeo = new THREE.BoxGeometry(4, 1.2, 0.4);
-  const signMat = new THREE.MeshStandardMaterial({ color: 0xffaa00, emissive: 0xffaa00, emissiveIntensity: 0.9 });
+  const signMat = new THREE.MeshBasicMaterial({ color: 0xfacc15 });
   const signMesh = new THREE.Mesh(signGeo, signMat);
   signMesh.position.set(-5, 4.5, -0.2);
   signMesh.userData = { id: 'about', title: '🍜 Ramen Shop (About Me)' };
@@ -321,13 +334,13 @@ function createFallbackScenery() {
 
   // 2. Train Station (Qualifications)
   const stationGeo = new THREE.BoxGeometry(6, 4.5, 5);
-  const stationMat = new THREE.MeshStandardMaterial({ color: 0x0f766e, roughness: 0.3 });
+  const stationMat = new THREE.MeshBasicMaterial({ color: 0x06b6d4 });
   const stationMesh = new THREE.Mesh(stationGeo, stationMat);
   stationMesh.position.set(5, 2.25, -3);
   stationMesh.userData = { id: 'qualification', title: '🚉 Train Station (Qualifications)' };
 
   const stationSignGeo = new THREE.BoxGeometry(4, 1, 0.4);
-  const stationSignMat = new THREE.MeshStandardMaterial({ color: 0x06b6d4, emissive: 0x06b6d4, emissiveIntensity: 0.9 });
+  const stationSignMat = new THREE.MeshBasicMaterial({ color: 0x67e8f9 });
   const stationSignMesh = new THREE.Mesh(stationSignGeo, stationSignMat);
   stationSignMesh.position.set(5, 4.2, -0.5);
 
@@ -337,13 +350,13 @@ function createFallbackScenery() {
 
   // 3. Arcade Machine (Projects)
   const arcadeGeo = new THREE.BoxGeometry(3.5, 5, 3.5);
-  const arcadeMat = new THREE.MeshStandardMaterial({ color: 0x4c1d95, emissive: 0x581c87, emissiveIntensity: 0.5 });
+  const arcadeMat = new THREE.MeshBasicMaterial({ color: 0xa855f7 });
   const arcadeMesh = new THREE.Mesh(arcadeGeo, arcadeMat);
   arcadeMesh.position.set(-3, 2.5, -7);
   arcadeMesh.userData = { id: 'portfolio', title: '🕹️ Arcade Room (Projects Portfolio)' };
 
   const arcadeScreenGeo = new THREE.PlaneGeometry(2.5, 2);
-  const arcadeScreenMat = new THREE.MeshBasicMaterial({ color: 0x00f0ff });
+  const arcadeScreenMat = new THREE.MeshBasicMaterial({ color: 0xe879f9 });
   const arcadeScreenMesh = new THREE.Mesh(arcadeScreenGeo, arcadeScreenMat);
   arcadeScreenMesh.position.set(-3, 3.2, -5.2);
 
@@ -353,7 +366,7 @@ function createFallbackScenery() {
 
   // 4. Shrine Library Desk (Research)
   const libGeo = new THREE.BoxGeometry(5, 4, 4);
-  const libMat = new THREE.MeshStandardMaterial({ color: 0x854d0e, roughness: 0.4 });
+  const libMat = new THREE.MeshBasicMaterial({ color: 0x22c55e });
   const libMesh = new THREE.Mesh(libGeo, libMat);
   libMesh.position.set(3, 2, -7);
   libMesh.userData = { id: 'research', title: '📚 Shrine Library (Research & Thesis)' };
@@ -363,7 +376,7 @@ function createFallbackScenery() {
 
   // 5. Contact Neon Billboard (Reach Me)
   const billboardGeo = new THREE.BoxGeometry(8, 4, 0.8);
-  const billboardMat = new THREE.MeshStandardMaterial({ color: 0xf43f5e, emissive: 0xbe123c, emissiveIntensity: 0.9 });
+  const billboardMat = new THREE.MeshBasicMaterial({ color: 0xef4444 });
   const billboardMesh = new THREE.Mesh(billboardGeo, billboardMat);
   billboardMesh.position.set(0, 6.5, -9);
   billboardMesh.userData = { id: 'reach', title: '🏮 Neon Rooftop (Reach Me / Contact)' };
@@ -380,24 +393,18 @@ function createInteractiveHotspots() {
   const hotspotGeo = new THREE.SphereGeometry(0.8, 16, 16);
 
   const hotspots = [
-    { pos: [-5, 3.5, -1], color: 0xff7700, id: 'about', title: '🍜 Teahouse & Laptop (About Me)' },
-    { pos: [5, 3.5, -1], color: 0x00f0ff, id: 'qualification', title: '🚉 Station Platform (Qualifications)' },
-    { pos: [-3, 3.5, -5], color: 0xbf5af2, id: 'portfolio', title: '🕹️ Arcade Cabinet (Projects Portfolio)' },
-    { pos: [3, 3.5, -5], color: 0x30d158, id: 'research', title: '📚 Shrine Desk (Research Papers)' },
-    { pos: [0, 6.5, -7], color: 0xff375f, id: 'reach', title: '🏮 Neon Rooftop (Reach Me / Contact)' },
-    { pos: [-1, 1.2, 0], color: 0xffd60a, id: 'cat', title: '🐱 Alley Stray Cat (Easter Egg)' },
-    { pos: [-3.5, 2.2, 0], color: 0x64d2ff, id: 'vending', title: '🥤 Japanese Vending Machine (Easter Egg)' },
-    { pos: [1, 1.5, 0], color: 0x5e5ce6, id: 'radio', title: '📻 Lo-Fi Vintage Radio (Audio Player)' }
+    { pos: [-5, 3.5, -1], color: 0xf59e0b, id: 'about', title: '🍜 Teahouse & Laptop (About Me)' },
+    { pos: [5, 3.5, -1], color: 0x06b6d4, id: 'qualification', title: '🚉 Station Platform (Qualifications)' },
+    { pos: [-3, 3.5, -5], color: 0xa855f7, id: 'portfolio', title: '🕹️ Arcade Cabinet (Projects Portfolio)' },
+    { pos: [3, 3.5, -5], color: 0x22c55e, id: 'research', title: '📚 Shrine Desk (Research Papers)' },
+    { pos: [0, 6.5, -7], color: 0xef4444, id: 'reach', title: '🏮 Neon Rooftop (Reach Me / Contact)' },
+    { pos: [-1, 1.2, 0], color: 0xf97316, id: 'cat', title: '🐱 Alley Stray Cat (Easter Egg)' },
+    { pos: [-3.5, 2.2, 0], color: 0x3b82f6, id: 'vending', title: '🥤 Japanese Vending Machine (Easter Egg)' },
+    { pos: [1, 1.5, 0], color: 0xec4899, id: 'radio', title: '📻 Lo-Fi Vintage Radio (Audio Player)' }
   ];
 
   hotspots.forEach(h => {
-    const mat = new THREE.MeshStandardMaterial({
-      color: h.color,
-      emissive: h.color,
-      emissiveIntensity: 0.8,
-      transparent: true,
-      opacity: 0.75
-    });
+    const mat = new THREE.MeshBasicMaterial({ color: h.color });
     const mesh = new THREE.Mesh(hotspotGeo, mat);
     mesh.position.set(...h.pos);
     mesh.userData = { id: h.id, title: h.title };
