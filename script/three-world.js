@@ -556,8 +556,79 @@ function onMouseMove(event) {
       document.body.style.cursor = 'default';
       if (hint) {
         hint.style.display = 'none';
+// Smooth Camera Zoom-In to Clicked Annotation Landmark (Sketchfab Feature!)
+function zoomToAnnotation(sprite, targetId) {
+  if (!sprite || !camera || !controls) return;
+
+  const targetWorldPos = new THREE.Vector3();
+  sprite.getWorldPosition(targetWorldPos);
+
+  // Offset camera 8 units back and 2.5 units higher for cinematic landmark view
+  const camOffset = new THREE.Vector3(0, 2.5, 8);
+  const targetCamPos = targetWorldPos.clone().add(camOffset);
+
+  if (controls) controls.autoRotate = false;
+
+  playSound('click');
+
+  if (typeof gsap !== 'undefined') {
+    gsap.to(camera.position, {
+      x: targetCamPos.x,
+      y: targetCamPos.y,
+      z: targetCamPos.z,
+      duration: 1.2,
+      ease: 'power2.inOut',
+      onUpdate: () => controls.update()
+    });
+
+    gsap.to(controls.target, {
+      x: targetWorldPos.x,
+      y: targetWorldPos.y,
+      z: targetWorldPos.z,
+      duration: 1.2,
+      ease: 'power2.inOut',
+      onUpdate: () => controls.update(),
+      onComplete: () => {
+        openContentModal(targetId);
       }
-    }
+    });
+  } else {
+    camera.position.copy(targetCamPos);
+    controls.target.copy(targetWorldPos);
+    controls.update();
+    openContentModal(targetId);
+  }
+}
+
+// Reset Camera Back to Overview View When Modal Closes
+function resetCameraView() {
+  if (!camera || !controls) return;
+
+  const defaultCamPos = new THREE.Vector3(0, 7, 18);
+  const defaultTarget = new THREE.Vector3(0, 2.5, -2);
+
+  if (typeof gsap !== 'undefined') {
+    gsap.to(camera.position, {
+      x: defaultCamPos.x,
+      y: defaultCamPos.y,
+      z: defaultCamPos.z,
+      duration: 1.0,
+      ease: 'power2.out',
+      onUpdate: () => controls.update()
+    });
+
+    gsap.to(controls.target, {
+      x: defaultTarget.x,
+      y: defaultTarget.y,
+      z: defaultTarget.z,
+      duration: 1.0,
+      ease: 'power2.out',
+      onUpdate: () => controls.update()
+    });
+  } else {
+    camera.position.copy(defaultCamPos);
+    controls.target.copy(defaultTarget);
+    controls.update();
   }
 }
 
@@ -569,9 +640,13 @@ function onSceneClick(event) {
   const intersects = raycaster.intersectObjects(interactiveObjects, true);
 
   if (intersects.length > 0) {
-    const info = getMeshTargetInfo(intersects[0]);
-    playSound('click');
-    openContentModal(info.id);
+    let obj = intersects[0].object;
+    while (obj && !obj.userData.id && obj.parent) {
+      obj = obj.parent;
+    }
+    if (obj && obj.userData.id) {
+      zoomToAnnotation(obj, obj.userData.id);
+    }
   }
 }
 
@@ -760,10 +835,14 @@ function initEventListeners() {
   const modalClose = document.getElementById('three-modal-close');
   const modalBackdrop = document.getElementById('three-modal-backdrop');
   if (modalClose && modalBackdrop) {
-    modalClose.addEventListener('click', () => modalBackdrop.classList.remove('active'));
+    modalClose.addEventListener('click', () => {
+      modalBackdrop.classList.remove('active');
+      resetCameraView();
+    });
     modalBackdrop.addEventListener('click', (e) => {
       if (e.target === modalBackdrop) {
         modalBackdrop.classList.remove('active');
+        resetCameraView();
       }
     });
   }
