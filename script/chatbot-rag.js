@@ -114,19 +114,48 @@ class YZAIRAGEngine {
     return this.synthesizeRAGAnswer(query, retrievedChunks);
   }
 
-  // In-Browser Smart RAG Synthesizer with Bridging Pivot
+  // In-Browser Smart RAG Synthesizer with Natural Educational Explanations & Pivot
   synthesizeRAGAnswer(query, chunks) {
+    const qLower = query.toLowerCase();
+
+    // 1. Special explanation handler for LLM & RAG queries
+    if (qLower.includes('llm') && qLower.includes('rag')) {
+      return `🤖 **Cara Kerja LLM & RAG (Retrieval-Augmented Generation)**:
+
+1. **Large Language Model (LLM)**: Model AI kecerdasan buatan (seperti Google Gemini) yang dilatih dengan miliaran data teks untuk memahami, memproses, dan menghasilkan bahasa manusia secara alami.
+2. **Retrieval-Augmented Generation (RAG)**: Teknik gabungan yang mengambil dokumen/fakta khusus terlebih dahulu dari basis data (*Retrieval*), lalu mengumpankannya ke LLM untuk menyusun jawaban faktual yang akurat tanpa halusinasi.
+
+💡 *Hubungan dengan Pengembang:* **Yehezkiel David Setiawan** mengimplementasikan arsitektur RAG ini pada sistem **YZ.AI Assistant** ini dan menerapkannya dalam riset *AI Code Intelligence & Synthetic Data Evaluation* miliknya.`;
+    }
+
+    if (qLower.includes('llm') || qLower.includes('large language model')) {
+      return `🤖 **Cara Kerja LLM (Large Language Model)**:
+
+LLM memproses teks masukan (*prompt*), mengubah kata menjadi representasi vektor numerik (*embeddings*), lalu menggunakan arsitektur Transformer untuk memprediksi token/kata berikutnya yang paling relevan secara kontekstual.
+
+💡 *Hubungan dengan Pengembang:* **Yehezkiel David Setiawan** berfokus pada riset fine-tuning LLM, prompt engineering, dan evaluasi kode otomatis.`;
+    }
+
+    if (qLower.includes('rag') || qLower.includes('retrieval')) {
+      return `💡 **Cara Kerja RAG (Retrieval-Augmented Generation)**:
+
+RAG membagi basis data pengetahuan menjadi potongan teks (*chunks*), mencari potongan paling relevan dengan pertanyaan pengguna (*semantic search*), lalu memberikan konteks faktual tersebut kepada LLM agar menghasilkan jawaban yang akurat.
+
+💡 *Hubungan dengan Pengembang:* **Yehezkiel David Setiawan** mendesain arsitektur RAG custom pada **YZ.AI Assistant** ini untuk menjawab pertanyaan portofolio secara akurat.`;
+    }
+
+    // 2. Formatting chunks into natural conversational text
     if (chunks.length > 0) {
       const primary = chunks[0];
-      let reply = `**${primary.title}**\n\n${primary.content}`;
+      let reply = `📌 **${primary.title}**\n\n${primary.content}`;
       if (chunks.length > 1) {
-        reply += `\n\n*Related details:* ${chunks[1].content}`;
+        reply += `\n\n*Informasi Terkait:* ${chunks[1].content}`;
       }
       return reply;
     }
 
-    // For general tech questions when offline: synthesize answer and pivot back to Yehezkiel
-    return `Regarding your question about "${query}": This is an important concept in modern computer science and technology.\n\n💡 *Developer Context:* **Yehezkiel David Setiawan** actively applies advanced computer science principles, AI research methodologies, and machine learning pipelines in his engineering projects. Feel free to ask more about his research or portfolio!`;
+    // 3. Fallback for general technical questions
+    return `Mengenai pertanyaan Anda tentang "${query}": Ini merupakan konsep penting dalam bidang rekayasa perangkat lunak dan kecerdasan buatan.\n\n💡 *Konteks Pengembang:* **Yehezkiel David Setiawan** aktif menerapkan prinsip ilmu komputer terapan, Machine Learning, dan rekayasa data dalam proyek-proyeknya.`;
   }
 }
 
