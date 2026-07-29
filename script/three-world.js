@@ -320,11 +320,11 @@ function createInteractiveHotspots() {
   const pinGeo = new THREE.OctahedronGeometry(0.35, 0);
 
   const pins = [
-    { pos: [-5.5, 4.2, -2], color: 0xf59e0b, id: 'about', title: '🍜 Kyoto Machiya & Teahouse (About Me)' },
-    { pos: [5.5, 4.2, -2], color: 0x06b6d4, id: 'qualification', title: '🚉 Kyoto Station Platform (Qualifications & Journey)' },
-    { pos: [-3.2, 4.2, -6], color: 0xa855f7, id: 'portfolio', title: '🕹️ Neon Arcade Room (Featured Projects)' },
-    { pos: [3.2, 4.2, -6], color: 0x22c55e, id: 'research', title: '📚 Torii Shrine & Desk (Research & Thesis)' },
-    { pos: [0, 7.2, -8], color: 0xef4444, id: 'reach', title: '🏮 Rooftop Neon Billboard (Reach Me / Contact)' }
+    { pos: [0.0, 2.0, 1.2], color: 0xf59e0b, id: 'about', title: '🍜 Kyoto River Bridge & Teahouse (About Me)' },
+    { pos: [-2.8, 4.2, -1.8], color: 0x06b6d4, id: 'qualification', title: '🚉 Machiya House & Platform (Qualifications & Journey)' },
+    { pos: [3.5, 3.8, 1.0], color: 0xa855f7, id: 'portfolio', title: '🕹️ Pine Garden & Arcade Room (Featured Projects)' },
+    { pos: [-4.0, 2.8, 1.8], color: 0x10b981, id: 'research', title: '⛩️ Torii Shrine & Waterfall Alley (Research & Thesis)' },
+    { pos: [0.0, 5.8, -2.5], color: 0xef4444, id: 'reach', title: '🏮 Rooftop Sky Cables & Neon (Reach Me / Contact)' }
   ];
 
   pins.forEach((p, idx) => {
