@@ -254,13 +254,12 @@ function loadKyotoModel() {
   // Always create interactive scenery immediately so the world renders INSTANTLY!
   createFallbackScenery();
 
-  // Auto hide loading screen after 800ms max so user is NEVER stuck on loading screen
-  setTimeout(() => {
-    if (loadingScreen) {
-      loadingScreen.classList.add('hidden');
-    }
-    showToast('🏮 Welcome to Yehezkiel\'s Midnight Archive! Click around to explore.');
-  }, 800);
+  // Instantly hide loading screen
+  if (loadingScreen) {
+    loadingScreen.classList.add('hidden');
+    loadingScreen.style.display = 'none';
+  }
+  showToast('🏮 Welcome to Yehezkiel\'s Midnight Archive! Click around to explore.');
 
   const modelPath = 'assets/models/tanabata_evening_-_kyoto_inspired_city_scene.glb';
   if (typeof THREE.GLTFLoader === 'function') {
@@ -534,16 +533,23 @@ function enter3DWorld() {
   document.body.style.overflow = 'hidden';
   const overlay = document.getElementById('portal-overlay');
   const canvasContainer = document.getElementById('three-canvas-container');
+  const loadingScreen = document.getElementById('three-loading-screen');
 
   if (overlay) overlay.classList.add('active');
 
+  if (canvasContainer) {
+    canvasContainer.classList.add('visible');
+    initThreeWorld();
+  }
+
+  if (loadingScreen) {
+    loadingScreen.classList.add('hidden');
+    loadingScreen.style.display = 'none';
+  }
+
   setTimeout(() => {
-    if (canvasContainer) {
-      canvasContainer.classList.add('visible');
-      initThreeWorld();
-    }
     if (overlay) overlay.classList.remove('active');
-  }, 1000);
+  }, 300);
 }
 
 // Exit 3D World back to 2D HTML Portfolio
