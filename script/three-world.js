@@ -118,10 +118,10 @@ function initThreeWorld() {
   const container = document.getElementById('three-viewport') || document.getElementById('three-canvas-container');
   if (!container) return;
 
-  // Scene & Fog
+  // Scene & Background (Vivid Kyoto Dusk Sky)
   scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x0e172a);
-  scene.fog = new THREE.FogExp2(0x0e172a, 0.008);
+  scene.background = new THREE.Color(0x1e1b4b);
+  scene.fog = null; // No dark fog blocking the view!
 
   // Camera
   camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -134,7 +134,7 @@ function initThreeWorld() {
   renderer.shadowMap.enabled = true;
   renderer.shadowMap.type = THREE.PCFSoftShadowMap;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.3;
+  renderer.toneMappingExposure = 1.8; // Bright vibrant exposure
 
   // Clear existing canvas inside viewport
   container.innerHTML = '';
@@ -149,36 +149,39 @@ function initThreeWorld() {
   controls.maxDistance = 60;
   controls.target.set(0, 3, 0);
 
-  // Bright Lighting Setup
-  const ambientLight = new THREE.AmbientLight(0xffffff, 2.5);
+  // Bright Lighting Setup (Vivid Sky + Full Ambient)
+  const hemiLight = new THREE.HemisphereLight(0x38bdf8, 0x1e1b4b, 4.0);
+  scene.add(hemiLight);
+
+  const ambientLight = new THREE.AmbientLight(0xffffff, 3.5);
   scene.add(ambientLight);
 
-  const mainDirLight = new THREE.DirectionalLight(0xa5f3fc, 2.5);
+  const mainDirLight = new THREE.DirectionalLight(0xffffff, 4.0);
   mainDirLight.position.set(15, 30, 20);
   mainDirLight.castShadow = true;
   scene.add(mainDirLight);
 
   // Warm Japanese Lantern Light & Neon Accents
-  const lanternLight1 = new THREE.PointLight(0xff7700, 6, 30);
+  const lanternLight1 = new THREE.PointLight(0xff7700, 8, 40);
   lanternLight1.position.set(-6, 5, 2);
   scene.add(lanternLight1);
 
-  const neonBlueLight = new THREE.PointLight(0x00f0ff, 6, 35);
+  const neonBlueLight = new THREE.PointLight(0x00f0ff, 8, 45);
   neonBlueLight.position.set(6, 7, -3);
   scene.add(neonBlueLight);
 
-  const neonPurpleLight = new THREE.PointLight(0xd946ef, 5, 30);
+  const neonPurpleLight = new THREE.PointLight(0xf0abfc, 8, 40);
   neonPurpleLight.position.set(-6, 8, -8);
   scene.add(neonPurpleLight);
 
-  // Wet Asphalt Floor Ground
+  // Lit Stone/Asphalt Floor Ground
   const floorGeo = new THREE.PlaneGeometry(120, 120);
   const floorMat = new THREE.MeshStandardMaterial({
-    color: 0x1e293b,
+    color: 0x334155,
     roughness: 0.2,
-    metalness: 0.5,
-    emissive: 0x0f172a,
-    emissiveIntensity: 0.4
+    metalness: 0.3,
+    emissive: 0x1e293b,
+    emissiveIntensity: 0.6
   });
   const floorMesh = new THREE.Mesh(floorGeo, floorMat);
   floorMesh.rotation.x = -Math.PI / 2;
@@ -187,7 +190,7 @@ function initThreeWorld() {
   scene.add(floorMesh);
 
   // Grid helper overlay for futuristic cyberpunk street effect
-  const gridHelper = new THREE.GridHelper(120, 40, 0x00f0ff, 0x334155);
+  const gridHelper = new THREE.GridHelper(120, 40, 0x00f0ff, 0x475569);
   gridHelper.position.y = 0.01;
   scene.add(gridHelper);
 
