@@ -431,19 +431,23 @@ function loadKyotoModel() {
 
 
 
-// Raycasting Mouse Hover
+// Raycasting Mouse Hover & Real-Time 3D Surface Coordinate Tooltip
 function onMouseMove(event) {
   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-  if (raycaster && camera && interactiveObjects.length > 0) {
+  const coordBadge = document.getElementById('cursor-coord-badge');
+  const hudBadgeText = document.getElementById('hud-coord-text');
+
+  if (raycaster && camera) {
+    // 1. Hover check on pins
     raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObjects(interactiveObjects, true);
+    const pinIntersects = raycaster.intersectObjects(interactiveObjects, true);
 
     const hint = document.getElementById('hud-interaction-hint');
-    if (intersects.length > 0) {
+    if (pinIntersects.length > 0) {
       document.body.style.cursor = 'pointer';
-      let obj = intersects[0].object;
+      let obj = pinIntersects[0].object;
       while (obj && !obj.userData.title && obj.parent) {
         obj = obj.parent;
       }
@@ -458,92 +462,37 @@ function onMouseMove(event) {
         hint.style.display = 'none';
       }
     }
-  }
-}
-function zoomToAnnotation(sprite, targetId) {
-  if (!sprite || !camera || !controls) return;
 
-  const targetWorldPos = sprite.position.clone();
-  const targetCamPos = new THREE.Vector3(
-    targetWorldPos.x * 0.6,
-    targetWorldPos.y + 1.8,
-    targetWorldPos.z + 6.5
-  );
+    // 2. Real-time [X, Y, Z] 3D Surface Coordinate Tooltip following cursor
+    if (kyotoGltfModel) {
+      const surfaceIntersects = raycaster.intersectObject(kyotoGltfModel, true);
+      if (surfaceIntersects.length > 0) {
+        const pt = surfaceIntersects[0].point;
+        const x = pt.x.toFixed(2);
+        const y = pt.y.toFixed(2);
+        const z = pt.z.toFixed(2);
+        const coordStr = `X: ${x} | Y: ${y} | Z: ${z}`;
 
-  if (controls) controls.autoRotate = false;
-  playSound('click');
-
-  if (typeof gsap !== 'undefined') {
-    gsap.killTweensOf(camera.position);
-    gsap.killTweensOf(controls.target);
-
-    gsap.to(camera.position, {
-      x: targetCamPos.x,
-      y: targetCamPos.y,
-      z: targetCamPos.z,
-      duration: 1.2,
-      ease: 'power2.inOut',
-      onUpdate: () => {
-        controls.update();
+        if (coordBadge) {
+          coordBadge.style.display = 'block';
+          coordBadge.style.left = event.clientX + 'px';
+          coordBadge.style.top = event.clientY + 'px';
+          coordBadge.innerHTML = `📍 ${coordStr}`;
+        }
+        if (hudBadgeText) {
+          hudBadgeText.textContent = `🎯 ${coordStr}`;
+        }
+      } else {
+        if (coordBadge) coordBadge.style.display = 'none';
+        if (hudBadgeText) hudBadgeText.textContent = 'Move cursor over 3D model';
       }
-    });
-
-    gsap.to(controls.target, {
-      x: targetWorldPos.x,
-      y: targetWorldPos.y,
-      z: targetWorldPos.z,
-      duration: 1.2,
-      ease: 'power2.inOut',
-      onUpdate: () => {
-        controls.update();
-      },
-      onComplete: () => {
-        openContentModal(targetId);
-      }
-    });
-  } else {
-    camera.position.copy(targetCamPos);
-    controls.target.copy(targetWorldPos);
-    controls.update();
-    openContentModal(targetId);
-  }
-}
-
-// Reset Camera Back to Overview View When Modal Closes
-function resetCameraView() {
-  if (!camera || !controls) return;
-
-  const defaultCamPos = new THREE.Vector3(0, 7, 18);
-  const defaultTarget = new THREE.Vector3(0, 2.5, -2);
-
-  if (typeof gsap !== 'undefined') {
-    gsap.to(camera.position, {
-      x: defaultCamPos.x,
-      y: defaultCamPos.y,
-      z: defaultCamPos.z,
-      duration: 1.0,
-      ease: 'power2.out',
-      onUpdate: () => controls.update()
-    });
-
-    gsap.to(controls.target, {
-      x: defaultTarget.x,
-      y: defaultTarget.y,
-      z: defaultTarget.z,
-      duration: 1.0,
-      ease: 'power2.out',
-      onUpdate: () => controls.update()
-    });
-  } else {
-    camera.position.copy(defaultCamPos);
-    controls.target.copy(defaultTarget);
-    controls.update();
+    }
   }
 }
 
 let kyotoGltfModel = null;
 
-// Live Surface Raycast Inspector (Prints exact [x, y, z] when clicking any 3D mesh surface!)
+// Live Surface Raycast Inspector (Auto-copies [x, y, z] to Clipboard on Click!)
 function inspect3DSurfaceClick(event) {
   if (!raycaster || !camera || !kyotoGltfModel) return;
 
@@ -555,10 +504,12 @@ function inspect3DSurfaceClick(event) {
 
   if (intersects.length > 0) {
     const pt = intersects[0].point;
-    const meshName = intersects[0].object.name || 'mesh';
     const exactPos = `[${pt.x.toFixed(2)}, ${(pt.y + 0.6).toFixed(2)}, ${pt.z.toFixed(2)}]`;
-    console.log(`📍 EXACT 3D CLICKED SURFACE COORD: pos: ${exactPos}, mesh: "${meshName}"`);
-    showToast(`📍 Clicked 3D Point: ${exactPos}`);
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(exactPos).catch(e => {});
+    }
+    console.log(`📍 COPIED 3D SURFACE COORD: ${exactPos}`);
+    showToast(`📋 Copied 3D Point to Clipboard: ${exactPos}`);
   }
 }
 // Handle Raycast Scene Clicks

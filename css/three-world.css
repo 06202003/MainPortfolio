@@ -439,6 +439,28 @@
   50% { transform: translate(-50%, -6px); }
 }
 
+/* 📍 Floating Mouse Cursor 3D Coordinate Badge */
+#cursor-coord-badge {
+  position: fixed;
+  pointer-events: none;
+  z-index: 100002;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 240, 255, 0.6);
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: #00f0ff;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.4);
+  transform: translate(14px, 14px);
+  display: none;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+}
+
 /* 🪟 Interactive Content Modals (Glassmorphism) */
 .three-modal-backdrop {
   position: absolute;
