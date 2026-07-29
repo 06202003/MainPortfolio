@@ -246,34 +246,59 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
+/* 🔘 Base HUD Glassmorphic Pill Buttons */
+.hud-btn {
+  height: 38px !important;
+  padding: 8px 18px !important;
+  margin: 0 4px !important;
+  border-radius: 25px !important;
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  pointer-events: auto;
+}
+
 /* 🎨 3D Model Credits Button (Indigo Neon Pill) */
 .hud-btn-credits {
-  background: rgba(99, 102, 241, 0.18);
-  border-color: rgba(129, 140, 248, 0.35);
-  color: #c7d2fe;
+  background: rgba(99, 102, 241, 0.22) !important;
+  border: 1px solid rgba(129, 140, 248, 0.45) !important;
+  color: #c7d2fe !important;
+  border-radius: 25px !important;
+  padding: 8px 18px !important;
+  margin: 0 4px !important;
 }
 
 .hud-btn-credits:hover {
-  background: rgba(99, 102, 241, 0.5);
-  border-color: #818cf8;
-  color: #ffffff;
-  box-shadow: 0 0 24px rgba(99, 102, 241, 0.7), 0 6px 20px rgba(0, 0, 0, 0.4);
-  transform: translateY(-2px) scale(1.03);
+  background: rgba(99, 102, 241, 0.55) !important;
+  border-color: #818cf8 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 24px rgba(99, 102, 241, 0.7), 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-2px) scale(1.04) !important;
 }
 
 /* 🚪 Exit 3D Button (Crimson Neon Pill) */
 .hud-btn-exit {
-  background: rgba(225, 29, 72, 0.18);
-  border-color: rgba(244, 63, 94, 0.4);
-  color: #fecdd3;
+  background: rgba(225, 29, 72, 0.22) !important;
+  border: 1px solid rgba(244, 63, 94, 0.45) !important;
+  color: #fecdd3 !important;
+  border-radius: 25px !important;
+  padding: 8px 18px !important;
+  margin: 0 4px !important;
 }
 
 .hud-btn-exit:hover {
-  background: rgba(225, 29, 72, 0.55);
-  border-color: #f43f5e;
-  color: #ffffff;
-  box-shadow: 0 0 24px rgba(244, 63, 94, 0.7), 0 6px 20px rgba(0, 0, 0, 0.4);
-  transform: translateY(-2px) scale(1.03);
+  background: rgba(225, 29, 72, 0.6) !important;
+  border-color: #f43f5e !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 24px rgba(244, 63, 94, 0.7), 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-2px) scale(1.04) !important;
 }
 
 /* 💭 Random Thoughts, Quotes & Jokes Floating Pop-up Card */

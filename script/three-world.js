@@ -630,17 +630,13 @@ const modalContentMap = {
   }
 };
 
-// 🌤️ Live Weather API Integration & Dynamic 3D Atmosphere Synchronization
+// 🌤️ Live Real-Time User Location Weather API Integration
 function fetchLiveWeatherAndSetAtmosphere() {
   const weatherBadge = document.getElementById('hud-weather-badge');
 
-  // Kyoto coordinates (35.01, 135.76)
-  const lat = 35.01;
-  const lon = 135.76;
-
-  const updateWeatherUI = (temp, code, isRainy) => {
+  const updateWeatherUI = (cityName, temp, code, isRainy) => {
     let weatherIcon = '🌤️';
-    let weatherLabel = 'Clear';
+    let weatherLabel = 'Clear Sky';
 
     if (code >= 51 && code <= 99) {
       weatherIcon = '🌧️';
@@ -654,7 +650,7 @@ function fetchLiveWeatherAndSetAtmosphere() {
     }
 
     if (weatherBadge) {
-      weatherBadge.innerHTML = `${weatherIcon} <span>Kyoto: ${temp}°C • ${weatherLabel}</span>`;
+      weatherBadge.innerHTML = `${weatherIcon} <span>${cityName}: ${temp}°C • ${weatherLabel}</span>`;
     }
 
     if (rainParticles) {
@@ -662,20 +658,52 @@ function fetchLiveWeatherAndSetAtmosphere() {
     }
   };
 
-  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code`)
-    .then(res => res.json())
-    .then(data => {
-      if (data && data.current) {
-        const temp = Math.round(data.current.temperature_2m);
-        const code = data.current.weather_code;
-        const isRainy = code >= 51 && code <= 99;
-        updateWeatherUI(temp, code, isRainy);
-      }
-    })
-    .catch(e => {
-      console.warn('Weather API fallback to Kyoto ambient:', e);
-      updateWeatherUI(22, 61, true);
-    });
+  const fetchWeatherByCoords = (lat, lon, fallbackName = 'Local') => {
+    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code`)
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.current) {
+          const temp = Math.round(data.current.temperature_2m);
+          const code = data.current.weather_code;
+          const isRainy = code >= 51 && code <= 99;
+
+          // Reverse geocode to get exact city name
+          fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`)
+            .then(res => res.json())
+            .then(geo => {
+              const city = geo.city || geo.locality || geo.principalSubdivision || fallbackName;
+              updateWeatherUI(city, temp, code, isRainy);
+            })
+            .catch(() => updateWeatherUI(fallbackName, temp, code, isRainy));
+        }
+      })
+      .catch(() => updateWeatherUI('Kyoto', 22, 61, true));
+  };
+
+  // 1. Try Browser Geolocation API
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        fetchWeatherByCoords(pos.coords.latitude, pos.coords.longitude, 'Your Location');
+      },
+      () => {
+        // Fallback to IP geolocation if browser location permission is denied
+        fetch('https://ipapi.co/json/')
+          .then(res => res.json())
+          .then(data => {
+            if (data.latitude && data.longitude) {
+              fetchWeatherByCoords(data.latitude, data.longitude, data.city || 'Local');
+            } else {
+              fetchWeatherByCoords(-6.2, 106.81, 'Jakarta');
+            }
+          })
+          .catch(() => fetchWeatherByCoords(-6.2, 106.81, 'Jakarta'));
+      },
+      { timeout: 5000 }
+    );
+  } else {
+    fetchWeatherByCoords(-6.2, 106.81, 'Jakarta');
+  }
 }
 
 // 💭 Random Thoughts, Tech Quotes & Jokes Pop-up Engine
