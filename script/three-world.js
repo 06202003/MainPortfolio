@@ -459,16 +459,19 @@ function onMouseMove(event) {
 
 let kyotoGltfModel = null;
 
-// Smooth Camera Zoom-In to Clicked Annotation Landmark (Sketchfab Feature!)
+// Smooth Camera Zoom-In to Clicked Annotation Landmark (Sketchfab-Style Ray Zoom!)
 function zoomToAnnotation(sprite, targetId) {
   if (!sprite || !camera || !controls) return;
 
   const targetWorldPos = sprite.position.clone();
   
-  // Smart Front-Facing Camera Angle Calculation (Always faces landmark from front view!)
-  const frontDir = new THREE.Vector3(0, 0.4, 1.0).normalize();
-  const targetCamPos = targetWorldPos.clone().add(frontDir.multiplyScalar(6.5));
-  targetCamPos.y += 0.8;
+  // Calculate vector pointing from target pin BACK along the user's current line of sight
+  const viewDir = camera.position.clone().sub(targetWorldPos).normalize();
+  const targetCamPos = targetWorldPos.clone().add(viewDir.multiplyScalar(5.5));
+  
+  if (targetCamPos.y < targetWorldPos.y + 0.8) {
+    targetCamPos.y = targetWorldPos.y + 0.8;
+  }
 
   if (controls) controls.autoRotate = false;
   playSound('click');
