@@ -355,13 +355,16 @@ function createFallbackScenery() {
 function loadKyotoModel() {
   createFallbackScenery();
 
-  const modelPath = 'assets/models/kyoto.glb';
+  const modelPath = './assets/models/kyoto.glb';
   if (typeof THREE.GLTFLoader === 'function') {
-    showToast('⏳ Loading Kyoto 3D City Scene (82 MB)...');
+    showToast('⏳ Fetching 3D Kyoto City Scene (82 MB)...');
+    console.log('Starting GLTFLoader fetch for:', modelPath);
+    
     const loader = new THREE.GLTFLoader();
     loader.load(
       modelPath,
       (gltf) => {
+        console.log('GLTF Loaded successfully!', gltf);
         const model = gltf.scene;
 
         // Auto-scale and center GLTF model
@@ -369,12 +372,12 @@ function loadKyotoModel() {
         const size = box.getSize(new THREE.Vector3());
         const center = box.getCenter(new THREE.Vector3());
         const maxDim = Math.max(size.x, size.y, size.z);
-        const targetScale = maxDim > 0 ? (28 / maxDim) : 1;
+        const targetScale = maxDim > 0 ? (35 / maxDim) : 1;
 
         model.scale.set(targetScale, targetScale, targetScale);
         model.position.x = -center.x * targetScale;
         model.position.y = -box.min.y * targetScale;
-        model.position.z = -center.z * targetScale - 3;
+        model.position.z = -center.z * targetScale - 2;
 
         model.traverse((child) => {
           if (child.isMesh) {
@@ -382,6 +385,9 @@ function loadKyotoModel() {
             child.receiveShadow = true;
             if (child.material) {
               child.material.side = THREE.DoubleSide;
+              if (child.material.emissive && child.material.emissiveIntensity !== undefined) {
+                child.material.emissiveIntensity = 0.6;
+              }
             }
           }
         });
@@ -396,17 +402,17 @@ function loadKyotoModel() {
         showToast('🏯 Kyoto Midnight City Scene Model Loaded!');
       },
       (xhr) => {
-        if (xhr.lengthComputable) {
+        if (xhr.lengthComputable && xhr.total > 0) {
           const percent = Math.round((xhr.loaded / xhr.total) * 100);
-          const toast = document.getElementById('three-toast');
-          if (toast && percent < 100) {
-            toast.textContent = `⏳ Loading Kyoto 3D City: ${percent}%`;
-            toast.classList.add('show');
-          }
+          showToast(`⏳ Downloading Kyoto 3D City: ${percent}%`);
+        } else if (xhr.loaded) {
+          const mb = (xhr.loaded / (1024 * 1024)).toFixed(1);
+          showToast(`⏳ Downloading Kyoto 3D City: ${mb} MB / 82.9 MB`);
         }
       },
       (error) => {
-        console.warn('GLTF load note:', error);
+        console.error('GLTF load error:', error);
+        showToast('⚠️ Note: Using procedural scenery (' + (error.message || 'GLB load') + ')');
       }
     );
   }
