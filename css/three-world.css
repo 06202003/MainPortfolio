@@ -2,6 +2,22 @@
    BEYOND THE DOOR: 3D MIDNIGHT ARCHIVE STYLES
    ========================================================================== */
 
+/* ⚪ Navbar Text Color White */
+.navbar .nav-link,
+.navbar-nav .nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar-nav .nav-link:hover,
+.navbar .nav-link.active,
+.navbar-nav .nav-link.active {
+  color: #ff9d42 !important;
+  opacity: 1;
+}
+
 /* 🚪 Mysterious Navbar Door Button */
 .secret-door-btn {
   background: rgba(255, 120, 40, 0.15);
