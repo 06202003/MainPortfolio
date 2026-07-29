@@ -697,16 +697,16 @@ const modalContentMap = {
       <div class="diary-story-quote">
         "Walking up the shrine steps through crimson torii gates mirrors my journey in AI research — quiet, dedicated, but rewarding at the peak."
       </div>
-      <p>The serene atmosphere of this Shinto shrine is my favorite space for deep focus. In my <strong>Bachelor's Thesis</strong> and academic exploration of LLM Synthetic Data Generation & Evaluation, I investigate how artificial intelligence can be trained and evaluated ethically, efficiently, and objectively for automated code generation.</p>
+      <p>The serene atmosphere of this Shinto shrine is my favorite space for deep focus. In my <strong>Master's Thesis (Postgraduate Research)</strong> and academic exploration of LLM Synthetic Data Generation & Evaluation, I investigate how artificial intelligence can be trained and evaluated ethically, efficiently, and objectively for automated code generation.</p>
 
-      <!-- 🎬 Embedded YouTube Bachelor's Thesis Showcase Video -->
+      <!-- 🎬 Embedded YouTube Master's / Postgraduate Thesis Showcase Video -->
       <div style="margin: 16px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.2); position: relative; padding-bottom: 56.25%; height: 0;">
-        <iframe src="https://www.youtube.com/embed/s41cY0YNGBE" title="Bachelor's Thesis AI Video Showcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;"></iframe>
+        <iframe src="https://www.youtube.com/embed/s41cY0YNGBE" title="Master's Thesis AI Video Showcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;"></iframe>
       </div>
 
       <p>Research is like climbing thousands of shrine steps: dozens of hypotheses may fall along the way, but relentless data inquiry always reveals the clear truth of underlying patterns.</p>
       <div class="diary-personal-note">
-        ⛩️ <span>Personal Note: Watch my Bachelor's Thesis video presentation above! AI research isn't just about chasing accuracy metrics on paper; it's about understanding how intelligence evolves.</span>
+        ⛩️ <span>Personal Note: Watch my Master's Thesis video presentation above! AI research isn't just about chasing accuracy metrics on paper; it's about understanding how intelligence evolves.</span>
       </div>
     `
   },
