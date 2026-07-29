@@ -247,17 +247,9 @@ function updateRain() {
   rainParticles.geometry.attributes.position.needsUpdate = true;
 }
 
-// Create Scenery (Pure GLB Model + Interactive Hotspots)
-function createFallbackScenery() {
-  interactiveObjects = [];
-
-  // Create Interactive Hotspots on 3D Model
-  createInteractiveHotspots();
-}
-
-// Load Kyoto GLTF Model
+// Load Pure 3D Kyoto GLTF Model from Mathias Tossens Sketchfab
 function loadKyotoModel() {
-  createFallbackScenery();
+  interactiveObjects = [];
 
   const modelPath = './assets/models/kyoto.glb';
   if (typeof THREE.GLTFLoader === 'function') {
@@ -281,8 +273,9 @@ function loadKyotoModel() {
         model.scale.set(targetScale, targetScale, targetScale);
         model.position.x = -center.x * targetScale;
         model.position.y = -box.min.y * targetScale;
-        model.position.z = -center.z * targetScale - 2;
+        model.position.z = -center.z * targetScale;
 
+        let gltfMeshes = [];
         model.traverse((child) => {
           if (child.isMesh) {
             child.castShadow = true;
@@ -290,11 +283,13 @@ function loadKyotoModel() {
             if (child.material) {
               child.material.side = THREE.DoubleSide;
             }
+            gltfMeshes.push(child);
           }
         });
 
         scene.add(model);
-        showToast('🏯 Kyoto Midnight City Scene Model Loaded!');
+        interactiveObjects = gltfMeshes;
+        showToast('🏯 Kyoto Midnight City Scene Loaded! Click any 3D landmark to explore.');
       },
       (xhr) => {
         if (xhr.lengthComputable && xhr.total > 0) {
@@ -307,7 +302,7 @@ function loadKyotoModel() {
       },
       (error) => {
         console.error('GLTF load error:', error);
-        showToast('⚠️ GLTF Load Note: ' + (error.message || '82MB Model processing'));
+        showToast('⚠️ GLTF Load Note: ' + (error.message || 'GLB load'));
       }
     );
   }
@@ -434,22 +429,54 @@ function createInteractiveHotspots() {
   });
 }
 
+// Resolve 3D Mesh Target Category from Clicked Point in Kyoto City
+function getMeshTargetInfo(intersect) {
+  if (!intersect) return { id: 'about', title: '🍜 Kyoto City Archive' };
+
+  const point = intersect.point;
+  const x = point ? point.x : 0;
+  const y = point ? point.y : 0;
+  const z = point ? point.z : 0;
+
+  let categoryId = 'about';
+  let title = '🍜 Kyoto Machiya & Teahouse (About Me)';
+
+  if (y > 4.2) {
+    categoryId = 'reach';
+    title = '🏮 Rooftop Neon & Socials (Reach Me / Contact)';
+  } else if (x < -2.0) {
+    categoryId = 'about';
+    title = '🍜 Kyoto Machiya & Teahouse (About Me)';
+  } else if (x > 2.0) {
+    categoryId = 'qualification';
+    title = '🚉 Kyoto Station Platform (Qualifications & Journey)';
+  } else if (z < -3.5) {
+    categoryId = 'portfolio';
+    title = '🕹️ Neon Arcade Room (Featured Projects)';
+  } else {
+    categoryId = 'research';
+    title = '📚 Shrine Desk & Library (Research & Thesis)';
+  }
+
+  return { id: categoryId, title: title };
+}
+
 // Raycasting Mouse Hover
 function onMouseMove(event) {
   mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-  if (raycaster && camera) {
+  if (raycaster && camera && interactiveObjects.length > 0) {
     raycaster.setFromCamera(mouse, camera);
-    const intersects = raycaster.intersectObjects(interactiveObjects);
+    const intersects = raycaster.intersectObjects(interactiveObjects, true);
 
     const hint = document.getElementById('hud-interaction-hint');
     if (intersects.length > 0) {
       document.body.style.cursor = 'pointer';
-      const obj = intersects[0].object;
+      const info = getMeshTargetInfo(intersects[0]);
       if (hint) {
         hint.style.display = 'flex';
-        hint.innerHTML = `<span>✨ Click: <strong>${obj.userData.title}</strong></span>`;
+        hint.innerHTML = `<span>✨ Click to Explore: <strong>${info.title}</strong></span>`;
       }
     } else {
       document.body.style.cursor = 'default';
@@ -462,26 +489,15 @@ function onMouseMove(event) {
 
 // Handle Raycast Scene Clicks
 function onSceneClick(event) {
-  if (!raycaster || !camera) return;
+  if (!raycaster || !camera || interactiveObjects.length === 0) return;
 
   raycaster.setFromCamera(mouse, camera);
-  const intersects = raycaster.intersectObjects(interactiveObjects);
+  const intersects = raycaster.intersectObjects(interactiveObjects, true);
 
   if (intersects.length > 0) {
-    const clickedObj = intersects[0].object;
-    const targetId = clickedObj.userData.id;
+    const info = getMeshTargetInfo(intersects[0]);
     playSound('click');
-
-    if (targetId === 'cat') {
-      playSound('meow');
-      showToast('🐱 Meow! Achievement Unlocked: Curious Explorer!');
-    } else if (targetId === 'vending') {
-      showToast('🥤 Vending Machine: Grabbed a refreshing Japanese Green Tea!');
-    } else if (targetId === 'radio') {
-      toggleLofiMusic();
-    } else {
-      openContentModal(targetId);
-    }
+    openContentModal(info.id);
   }
 }
 
