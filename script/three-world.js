@@ -646,73 +646,73 @@ function onSceneClick(event) {
   }
 }
 
-// Content Modals Map — Yehezkiel's Personal Kyoto Travel Journal & Stories
+// Content Modals Map — Yehezkiel's Personal Kyoto Travel Journal & Stories (English Edition)
 const modalContentMap = {
   about: {
-    title: '📖 Catatan 01: Kedai Ramen Yatai di Sudut Malam',
+    title: '📖 Entry 01: Late Night at the Ramen Yatai',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #01 (Ramen Yatai)</div>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Entry #01 (Ramen Yatai)</div>
       <div class="diary-story-quote">
-        "Kuah hangat ramen Yatai di larut malam selalu mengajarkan satu hal: karya yang berkesan butuh ketelitian meracik bumbu dasar hingga menjadi satu sajian yang utuh."
+        "A bowl of late-night Yatai ramen teaches one thing: memorable work comes from meticulously blending base ingredients into a cohesive whole."
       </div>
-      <p>Selamat datang di kedai Ramen Yatai saya. Di sini, di tengah kepulan uap hangat di pinggir jalan Kyoto, saya menemukan analogi terbaik tentang diri saya. Saya <strong>Yehezkiel David Setiawan</strong> — seorang AI Engineer & Researcher yang memandang kode seperti racikan kuah ramen: bukan tentang berapa banyak bahan yang dimasukkan, melainkan tentang keseimbangan logika yang pas.</p>
-      <p>Bagi saya, merancang model AI atau arsitektur LLM adalah tentang menciptakan pengalaman yang tidak hanya pintar, tapi juga memberi rasa nyaman dan kemudahan nyata bagi penggunanya.</p>
+      <p>Welcome to my quiet corner. Here, amidst the warm steam of a midnight Kyoto ramen stand, I find the best analogy for my engineering mindset. I am <strong>Yehezkiel David Setiawan</strong> — an AI Engineer & Researcher who views code like a broth recipe: it’s not about how many ingredients you throw in, but about achieving a harmonious logical balance.</p>
+      <p>For me, crafting AI models and LLM architectures is about creating experiences that aren't just intelligent, but feel intuitive, warm, and genuinely helpful for people.</p>
       <div class="diary-personal-note">
-        🍜 <span>Catatan Pribadi: Menikmati semangkuk ramen hangat sambil menelaah arsitektur prompt AI di larut malam adalah ritual favorit saya.</span>
+        🍜 <span>Personal Note: Sipping warm ramen while analyzing LLM prompt architectures late at night is my favorite ritual.</span>
       </div>
     `
   },
   qualification: {
-    title: '📖 Catatan 02: Tungku Kuno Sake Brewery & Waktu',
+    title: '📖 Entry 02: Aged Vats at the Sake Brewery',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #02 (Sake Brewery)</div>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Entry #02 (Sake Brewery)</div>
       <div class="diary-story-quote">
-        "Proses penyulingan Sake terbaik butuh fermentasi panjang, kesabaran, dan kontrol suhu yang presisi. Tidak ada jalan pintas untuk kualitas sejati."
+        "Brewing fine Sake requires patient fermentation, time, and precise thermal control. There are no shortcuts to true craftsmanship."
       </div>
-      <p>Di pabrik penyulingan Sake kuno ini, waktu bekerja dengan caranya sendiri. Perjalanan karier dan keahlian saya di dunia Informatika dibangun dengan prinsip yang sama. Dari menggembleng fondasi Laravel, merancang pipa data medis berkapasitas besar di Royal Medicalink Pharmalab, hingga mengeksplorasi riset kecerdasan buatan di Universitas Kristen Maranatha — tidak ada langkah yang saya lewati secara instan.</p>
-      <p>Setiap error yang dipecahkan dan setiap arsitektur data yang dirancang adalah proses fermentasi pengalaman yang membentuk cara berpikir saya agar tetap matang, rapi, dan tahan diuji waktu.</p>
+      <p>In this traditional Sake distillery, time works on its own terms. My journey in Informatics was built on the exact same principle. From mastering Laravel fundamentals, engineering high-throughput medical data pipelines at Royal Medicalink Pharmalab, to diving into artificial intelligence research at Maranatha Christian University — no milestone was rushed.</p>
+      <p>Every debugged edge case and every data pipeline designed is a fermentation of experience, shaping my problem-solving mindset to remain refined, resilient, and built to last.</p>
       <div class="diary-personal-note">
-        🍶 <span>Catatan Pribadi: Engineering is like traditional brewing — patient, meticulous, and built to stand the test of time.</span>
+        🍶 <span>Personal Note: Engineering is like traditional brewing — patient, meticulous, and built to stand the test of time.</span>
       </div>
     `
   },
   portfolio: {
-    title: '📖 Catatan 03: Aroma Toko Roti Tradisional Jepang',
+    title: '📖 Entry 03: Aromas from the Traditional Bakery',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #03 (Traditional Bakery)</div>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Entry #03 (Traditional Bakery)</div>
       <div class="diary-story-quote">
-        "Aroma roti manis tradisional yang baru matang selalu membawa kehangatan dan senyuman. Begitu juga setiap eksperimen aplikasi yang saya ciptakan."
+        "The scent of freshly baked artisan bread brings warmth and smiles. So should every digital product I create."
       </div>
-      <p>Toko roti tradisional ini selalu penuh dengan kreativitas dan kehangatan. Di sinilah tempat eksperimen-eksperimen terbaik saya lahir. Saat merancang <strong>S-SPARC</strong> (sistem kontrol prompt AI yang berhasil meraih <em>Merit Award AIREA 2026</em>) hingga portal 3D WebGL interaktif ini, impian saya sederhana: ingin 'memanggang' aplikasi yang tidak sekadar berfungsi, tapi memberikan kehangatan dan kejutan manis bagi siapa pun yang mencobanya.</p>
-      <p>Bagi saya, perpaduan antara kecanggihan algoritma dan desain visual yang estetik adalah resep utama menciptakan karya digital yang dicintai penggunanya.</p>
+      <p>This traditional bakery is filled with warmth and creative spirit. This is where my best experimental projects were born. When designing <strong>S-SPARC</strong> (an AI prompt control system awarded the <em>Merit Award at AIREA 2026</em>) to this interactive 3D WebGL portal, my ambition has always been simple: to 'bake' applications that don't just function, but bring delight and a memorable warm surprise to everyone who tries them.</p>
+      <p>To me, combining algorithmic precision with aesthetic visual design is the secret recipe for digital products people love.</p>
       <div class="diary-personal-note">
-        🍞 <span>Catatan Pribadi: Di balik setiap algoritma yang dingin dan presisi, harus selalu ada kehangatan yang membuat orang tersenyum.</span>
+        🍞 <span>Personal Note: Behind every cold, precise algorithm, there should always be a human touch that brings a smile.</span>
       </div>
     `
   },
   research: {
-    title: '📖 Catatan 04: Tangga Kuil Shinto & Gerbang Torii',
+    title: '📖 Entry 04: Torii Gates at the Shinto Shrine',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #04 (Shinto Shrine)</div>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Entry #04 (Shinto Shrine)</div>
       <div class="diary-story-quote">
-        "Melangkah menaiki tangga kuil Shinto melewati deretan torii merah mengingatkan saya pada perjalanan meneliti AI — sunyi, penuh dedikasi, namun indah di puncaknya."
+        "Walking up the shrine steps through crimson torii gates mirrors my journey in AI research — quiet, dedicated, but rewarding at the peak."
       </div>
-      <p>Suasana hening di kuil Shinto ini adalah ruang jelajah favorit untuk pikiran saya. Dalam skripsi dan eksplorasi akademis mengenai LLM Synthetic Data Generation & Evaluation, saya menyelami bagaimana kecerdasan buatan dapat dilatih dan dievaluasi secara etis, efisien, dan objektif untuk generasi kode otomatis.</p>
-      <p>Proses riset adalah ibarat meniti ribuan anak tangga kuil: ada puluhan hipotesis yang patah di tengah jalan, namun ketekunan menelusuri data selalu membawa saya menemukan kebenaran pola yang terang.</p>
+      <p>The serene atmosphere of this Shinto shrine is my favorite space for deep focus. In my thesis and academic exploration of LLM Synthetic Data Generation & Evaluation, I investigate how artificial intelligence can be trained and evaluated ethically, efficiently, and objectively for automated code generation.</p>
+      <p>Research is like climbing thousands of shrine steps: dozens of hypotheses may fall along the way, but relentless data inquiry always reveals the clear truth of underlying patterns.</p>
       <div class="diary-personal-note">
-        ⛩️ <span>Catatan Pribadi: Meneliti AI bukan sekadar mengejar angka akurasi di atas kertas, tapi memahami bagaimana kecerdasan berkembang.</span>
+        ⛩️ <span>Personal Note: AI research isn't just about chasing accuracy metrics on paper; it's about understanding how intelligence evolves.</span>
       </div>
     `
   },
   reach: {
-    title: '📖 Catatan 05: Vending Machine & Lentera Jalan',
+    title: '📖 Entry 05: Vending Machine & Red Lanterns',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #05 (Vending Machine)</div>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Entry #05 (Vending Machine)</div>
       <div class="diary-story-quote">
-        "Vending machine yang menyala hangat di sudut jalan malam Kyoto selalu siap melayani siapa saja yang lewat. Begitu juga pintu diskusi saya."
+        "The glowing vending machine under red lanterns is always ready to serve travelers. So is my door for meaningful conversations."
       </div>
-      <p>Terima kasih telah menelusuri perjalanan 3D ini sampai ke sudut vending machine dan lentera merah ini. Baik Anda seorang <strong>recruiter</strong> yang mencari engineer penuh inisiatif, sesama developer, atau rekan bertukar pikiran tentang masa depan AI — saya selalu menyambut komunikasi Anda dengan terbuka.</p>
-      <p>Mari ambil minuman segar, duduk sejenak, dan kita diskusikan bagaimana kita bisa menciptakan inovasi berkesan berikutnya bersama.</p>
+      <p>Thank you for journeying through this 3D travel journal to this cozy lantern-lit corner. Whether you are a <strong>recruiter</strong> seeking a proactive engineer, a fellow developer, or someone eager to discuss the future of AI — my line of communication is always open.</p>
+      <p>Grab a fresh drink, sit back for a moment, and let’s discuss how we can build the next remarkable innovation together.</p>
       <ul style="margin-top: 14px; padding-left: 0; list-style: none;">
         <li style="margin-bottom: 8px;">📧 <strong>Email:</strong> <a href="mailto:yehezkieldavid2006@gmail.com" style="color: #b85c40; font-weight: 700;">yehezkieldavid2006@gmail.com</a></li>
         <li style="margin-bottom: 8px;">💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ydavids/" target="_blank" style="color: #b85c40; font-weight: 700;">linkedin.com/in/ydavids/</a></li>
@@ -720,7 +720,7 @@ const modalContentMap = {
         <li style="margin-bottom: 8px;">📱 <strong>WhatsApp:</strong> <a href="https://wa.me/6289507647137" target="_blank" style="color: #b85c40; font-weight: 700;">+62 895-0764-7137</a></li>
       </ul>
       <div class="diary-personal-note">
-        🧃 <span>Catatan Pribadi: Selalu siap untuk kolaborasi hebat dan tantangan teknologi berikutnya!</span>
+        🧃 <span>Personal Note: Always ready for great conversations and the next technological challenge!</span>
       </div>
     `
   },
