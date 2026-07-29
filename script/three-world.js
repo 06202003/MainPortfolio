@@ -288,37 +288,28 @@ function createSketchfabNumberBadgeTexture(num, hexColorStr) {
   return texture;
 }
 
-// Attach Sketchfab-style 1, 2, 3, 4, 5 Numbered Pins directly inside GLTF Model Hierarchy
-function attachSketchfabAnnotationsToModel(model) {
+// Create Sleek Compact Sketchfab-style 1, 2, 3, 4, 5 Numbered Pins on Kyoto Scene
+function createSketchfabAnnotationsInScene() {
   interactiveObjects = [];
 
   const annotations = [
-    { num: 1, relPos: [0.0, 0.22, 0.15], colorStr: '#f59e0b', id: 'about', title: '🍜 1. Teahouse & River Bridge (About Me)' },
-    { num: 2, relPos: [-0.35, 0.42, -0.22], colorStr: '#06b6d4', id: 'qualification', title: '🚉 2. Machiya Building (Qualifications & Journey)' },
-    { num: 3, relPos: [0.38, 0.38, 0.12], colorStr: '#a855f7', id: 'portfolio', title: '🕹️ 3. Arcade & Pine Garden (Featured Projects)' },
-    { num: 4, relPos: [-0.42, 0.30, 0.25], colorStr: '#10b981', id: 'research', title: '⛩️ 4. Torii Shrine & Steps (Research & Thesis)' },
-    { num: 5, relPos: [0.0, 0.72, -0.28], colorStr: '#ef4444', id: 'reach', title: '🏮 5. Rooftop Sky Tower (Reach Me / Contact)' }
+    { num: 1, pos: [-0.8, 2.8, 2.2], colorStr: '#f59e0b', id: 'about', title: '🍜 1. Teahouse & River Bridge (About Me)' },
+    { num: 2, pos: [-3.8, 4.2, -1.5], colorStr: '#06b6d4', id: 'qualification', title: '🚉 2. Machiya Building (Qualifications & Journey)' },
+    { num: 3, pos: [3.8, 3.8, 1.0], colorStr: '#a855f7', id: 'portfolio', title: '🕹️ 3. Arcade & Pine Garden (Featured Projects)' },
+    { num: 4, pos: [-4.2, 2.8, 1.5], colorStr: '#10b981', id: 'research', title: '⛩️ 4. Torii Shrine & Steps (Research & Thesis)' },
+    { num: 5, pos: [0.0, 6.8, -2.2], colorStr: '#ef4444', id: 'reach', title: '🏮 5. Rooftop Sky Tower (Reach Me / Contact)' }
   ];
-
-  // Bounding box of native model geometry
-  const box = new THREE.Box3().setFromObject(model);
-  const size = box.getSize(new THREE.Vector3());
 
   annotations.forEach((anno) => {
     const badgeTexture = createSketchfabNumberBadgeTexture(anno.num, anno.colorStr);
-    const spriteMat = new THREE.SpriteMaterial({ map: badgeTexture, depthTest: false });
+    const spriteMat = new THREE.SpriteMaterial({ map: badgeTexture, depthTest: true });
     const sprite = new THREE.Sprite(spriteMat);
 
-    // Calculate relative position in model coordinate space
-    const posX = anno.relPos[0] * size.x;
-    const posY = anno.relPos[1] * size.y;
-    const posZ = anno.relPos[2] * size.z;
+    sprite.position.set(...anno.pos);
+    sprite.scale.set(1.4, 1.4, 1);
+    sprite.userData = { id: anno.id, title: anno.title, num: anno.num, basePosY: anno.pos[1] };
 
-    sprite.position.set(posX, posY, posZ);
-    sprite.scale.set(3.2, 3.2, 1);
-    sprite.userData = { id: anno.id, title: anno.title, num: anno.num };
-
-    model.add(sprite);
+    scene.add(sprite);
     interactiveObjects.push(sprite);
   });
 }
@@ -359,8 +350,8 @@ function loadKyotoModel() {
           }
         });
 
-        // Attach Sketchfab-style 1, 2, 3, 4, 5 Numbered Pins directly inside model hierarchy
-        attachSketchfabAnnotationsToModel(model);
+        // Create sleek compact Sketchfab numbered annotations
+        createSketchfabAnnotationsInScene();
 
         scene.add(model);
         showToast('🏯 Kyoto Midnight City Loaded! Click annotations 1, 2, 3, 4, 5 to explore.');
@@ -560,25 +551,29 @@ function onMouseMove(event) {
 function zoomToAnnotation(sprite, targetId) {
   if (!sprite || !camera || !controls) return;
 
-  const targetWorldPos = new THREE.Vector3();
-  sprite.getWorldPosition(targetWorldPos);
-
-  // Offset camera 8 units back and 2.5 units higher for cinematic landmark view
-  const camOffset = new THREE.Vector3(0, 2.5, 8);
-  const targetCamPos = targetWorldPos.clone().add(camOffset);
+  const targetWorldPos = sprite.position.clone();
+  const targetCamPos = new THREE.Vector3(
+    targetWorldPos.x * 0.6,
+    targetWorldPos.y + 1.8,
+    targetWorldPos.z + 6.5
+  );
 
   if (controls) controls.autoRotate = false;
-
   playSound('click');
 
   if (typeof gsap !== 'undefined') {
+    gsap.killTweensOf(camera.position);
+    gsap.killTweensOf(controls.target);
+
     gsap.to(camera.position, {
       x: targetCamPos.x,
       y: targetCamPos.y,
       z: targetCamPos.z,
       duration: 1.2,
       ease: 'power2.inOut',
-      onUpdate: () => controls.update()
+      onUpdate: () => {
+        controls.update();
+      }
     });
 
     gsap.to(controls.target, {
@@ -587,7 +582,9 @@ function zoomToAnnotation(sprite, targetId) {
       z: targetWorldPos.z,
       duration: 1.2,
       ease: 'power2.inOut',
-      onUpdate: () => controls.update(),
+      onUpdate: () => {
+        controls.update();
+      },
       onComplete: () => {
         openContentModal(targetId);
       }
