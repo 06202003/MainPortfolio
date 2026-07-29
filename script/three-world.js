@@ -200,11 +200,10 @@ function animate() {
   if (controls) controls.update();
   updateRain();
 
-  // Floating & rotation animation for 3D diamond pins
+  // Floating bobbing animation for Sketchfab numbered badges 1, 2, 3, 4, 5
   interactiveObjects.forEach((obj) => {
-    if (obj.userData && obj.userData.basePos) {
-      obj.rotation.y += 0.025;
-      obj.position.y = obj.userData.basePos[1] + Math.sin(Date.now() * 0.003 + obj.userData.idx) * 0.12;
+    if (obj.userData && obj.userData.num) {
+      obj.position.y = (obj.userData.basePosY || obj.position.y) + Math.sin(Date.now() * 0.003 + obj.userData.num) * 0.08;
     }
   });
 
@@ -255,10 +254,77 @@ function updateRain() {
   rainParticles.geometry.attributes.position.needsUpdate = true;
 }
 
-// Load Pure 3D Kyoto GLTF Model from Mathias Tossens Sketchfab
-function loadKyotoModel() {
-  createInteractiveHotspots();
+// Create Canvas Texture for Sketchfab-style Number Badges (1, 2, 3, 4, 5)
+function createSketchfabNumberBadgeTexture(num, hexColorStr) {
+  const canvas = document.createElement('canvas');
+  canvas.width = 128;
+  canvas.height = 128;
+  const ctx = canvas.getContext('2d');
 
+  // Outer semi-transparent background circle
+  ctx.beginPath();
+  ctx.arc(64, 64, 58, 0, 2 * Math.PI);
+  ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+  ctx.fill();
+
+  // Colored circle border
+  ctx.beginPath();
+  ctx.arc(64, 64, 48, 0, 2 * Math.PI);
+  ctx.fillStyle = hexColorStr;
+  ctx.fill();
+  ctx.lineWidth = 6;
+  ctx.strokeStyle = '#ffffff';
+  ctx.stroke();
+
+  // White Number (1, 2, 3, 4, 5)
+  ctx.font = 'bold 54px Arial, sans-serif';
+  ctx.fillStyle = '#ffffff';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(num.toString(), 64, 66);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.needsUpdate = true;
+  return texture;
+}
+
+// Attach Sketchfab-style 1, 2, 3, 4, 5 Numbered Pins directly inside GLTF Model Hierarchy
+function attachSketchfabAnnotationsToModel(model) {
+  interactiveObjects = [];
+
+  const annotations = [
+    { num: 1, relPos: [0.0, 0.22, 0.15], colorStr: '#f59e0b', id: 'about', title: '🍜 1. Teahouse & River Bridge (About Me)' },
+    { num: 2, relPos: [-0.35, 0.42, -0.22], colorStr: '#06b6d4', id: 'qualification', title: '🚉 2. Machiya Building (Qualifications & Journey)' },
+    { num: 3, relPos: [0.38, 0.38, 0.12], colorStr: '#a855f7', id: 'portfolio', title: '🕹️ 3. Arcade & Pine Garden (Featured Projects)' },
+    { num: 4, relPos: [-0.42, 0.30, 0.25], colorStr: '#10b981', id: 'research', title: '⛩️ 4. Torii Shrine & Steps (Research & Thesis)' },
+    { num: 5, relPos: [0.0, 0.72, -0.28], colorStr: '#ef4444', id: 'reach', title: '🏮 5. Rooftop Sky Tower (Reach Me / Contact)' }
+  ];
+
+  // Bounding box of native model geometry
+  const box = new THREE.Box3().setFromObject(model);
+  const size = box.getSize(new THREE.Vector3());
+
+  annotations.forEach((anno) => {
+    const badgeTexture = createSketchfabNumberBadgeTexture(anno.num, anno.colorStr);
+    const spriteMat = new THREE.SpriteMaterial({ map: badgeTexture, depthTest: false });
+    const sprite = new THREE.Sprite(spriteMat);
+
+    // Calculate relative position in model coordinate space
+    const posX = anno.relPos[0] * size.x;
+    const posY = anno.relPos[1] * size.y;
+    const posZ = anno.relPos[2] * size.z;
+
+    sprite.position.set(posX, posY, posZ);
+    sprite.scale.set(3.2, 3.2, 1);
+    sprite.userData = { id: anno.id, title: anno.title, num: anno.num };
+
+    model.add(sprite);
+    interactiveObjects.push(sprite);
+  });
+}
+
+// Load Pure 3D Kyoto GLTF Model & Attach Numbered Annotations
+function loadKyotoModel() {
   const modelPath = './assets/models/kyoto.glb';
   if (typeof THREE.GLTFLoader === 'function') {
     showToast('⏳ Fetching 3D Kyoto City Scene (82 MB)...');
@@ -293,8 +359,11 @@ function loadKyotoModel() {
           }
         });
 
+        // Attach Sketchfab-style 1, 2, 3, 4, 5 Numbered Pins directly inside model hierarchy
+        attachSketchfabAnnotationsToModel(model);
+
         scene.add(model);
-        showToast('🏯 Kyoto Midnight City Scene Loaded! Click floating pins to explore.');
+        showToast('🏯 Kyoto Midnight City Loaded! Click annotations 1, 2, 3, 4, 5 to explore.');
       },
       (xhr) => {
         if (xhr.lengthComputable && xhr.total > 0) {
@@ -311,38 +380,6 @@ function loadKyotoModel() {
       }
     );
   }
-}
-
-// Create 5 Sleek 3D Floating Landmark Pins
-function createInteractiveHotspots() {
-  interactiveObjects = [];
-
-  const pinGeo = new THREE.OctahedronGeometry(0.35, 0);
-
-  const pins = [
-    { pos: [0.0, 2.0, 1.2], color: 0xf59e0b, id: 'about', title: '🍜 Kyoto River Bridge & Teahouse (About Me)' },
-    { pos: [-2.8, 4.2, -1.8], color: 0x06b6d4, id: 'qualification', title: '🚉 Machiya House & Platform (Qualifications & Journey)' },
-    { pos: [3.5, 3.8, 1.0], color: 0xa855f7, id: 'portfolio', title: '🕹️ Pine Garden & Arcade Room (Featured Projects)' },
-    { pos: [-4.0, 2.8, 1.8], color: 0x10b981, id: 'research', title: '⛩️ Torii Shrine & Waterfall Alley (Research & Thesis)' },
-    { pos: [0.0, 5.8, -2.5], color: 0xef4444, id: 'reach', title: '🏮 Rooftop Sky Cables & Neon (Reach Me / Contact)' }
-  ];
-
-  pins.forEach((p, idx) => {
-    const mat = new THREE.MeshBasicMaterial({ color: p.color, wireframe: false });
-    const mesh = new THREE.Mesh(pinGeo, mat);
-    mesh.position.set(...p.pos);
-    mesh.userData = { id: p.id, title: p.title, basePos: [...p.pos], idx: idx };
-
-    // Outer glowing ring
-    const ringGeo = new THREE.RingGeometry(0.45, 0.55, 16);
-    const ringMat = new THREE.MeshBasicMaterial({ color: p.color, side: THREE.DoubleSide });
-    const ringMesh = new THREE.Mesh(ringGeo, ringMat);
-    ringMesh.rotation.x = Math.PI / 2;
-    mesh.add(ringMesh);
-
-    scene.add(mesh);
-    interactiveObjects.push(mesh);
-  });
 }
 
 // Create Fallback Procedural Scenery if GLTF fails or missing
