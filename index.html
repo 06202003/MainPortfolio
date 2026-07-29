@@ -2684,14 +2684,25 @@
               <span>Kyoto Midnight Archive</span>
             </div>
             <div class="hud-actions">
-              <!-- 📻 Glassmorphic Lo-Fi Radio Widget -->
-              <div class="hud-radio-card">
-                <div class="radio-wave-dot" id="radio-wave-dot"></div>
-                <div class="radio-details">
-                  <span class="radio-header-text">📻 24/7 Lo-Fi Radio</span>
-                  <span class="radio-song-text" id="radio-status-text">Click Play to Stream</span>
+              <!-- 🎵 Spotify-Style Glassmorphic Radio Player Widget -->
+              <div class="hud-spotify-player">
+                <div class="spotify-art" id="spotify-art-icon">🎧</div>
+                <div class="spotify-track-info">
+                  <span class="spotify-station-name" id="spotify-station-title">☕ Kyoto Midnight</span>
+                  <span class="spotify-song-title" id="spotify-song-subtitle">24/7 Lofi Beats • Live</span>
                 </div>
-                <button id="btn-audio-toggle" class="hud-btn">🎵 Play Radio</button>
+                <div class="spotify-eq" id="spotify-eq">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="spotify-controls">
+                  <button id="btn-audio-prev" class="spotify-btn" title="Previous Station"><i class="fa-solid fa-backward-step"></i></button>
+                  <button id="btn-audio-toggle" class="spotify-btn spotify-btn-play" title="Play/Pause"><i class="fa-solid fa-play" id="spotify-play-icon"></i></button>
+                  <button id="btn-audio-next" class="spotify-btn" title="Next Station"><i class="fa-solid fa-forward-step"></i></button>
+                </div>
+                <div class="spotify-volume-wrap">
+                  <i class="fa-solid fa-volume-high"></i>
+                  <input type="range" id="spotify-volume" class="spotify-volume-slider" min="0" max="1" step="0.05" value="0.7" title="Volume">
+                </div>
               </div>
               <button id="btn-exit-3d" class="hud-btn hud-btn-exit">🚪 Exit 3D</button>
             </div>
@@ -2719,7 +2730,7 @@
       </div>
 
       <!-- 3D Engine JS Script -->
-      <script src="script/three-world.js?v=26"></script>
+      <script src="script/three-world.js?v=27"></script>
 </body>
 
 </html>

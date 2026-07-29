@@ -67,68 +67,92 @@ function playSound(type) {
   }
 }
 
+// 🎵 Spotify-Style Multi-Channel Live Radio Engine
+const radioStations = [
+  { name: '☕ Kyoto Midnight', subtitle: '24/7 Lofi Girl Beats', icon: '🎧', url: 'https://stream.zeno.fm/f3vkgmy1ahuvv' },
+  { name: '🌧️ Rainy Day Lofi', subtitle: 'Rain & Chillhop Vibes', icon: '☕', url: 'https://lofi.stream.laut.fm/lofi' },
+  { name: '🌙 Tokyo Synthwave', subtitle: 'Cyberpunk Night Beats', icon: '🌙', url: 'https://streams.ilovemusic.de/iloveradio/lofigirl.mp3' },
+  { name: '🎮 8-Bit Chiptune', subtitle: 'Retro Arcade Radio', icon: '🎮', url: 'https://stream.zeno.fm/s0822u8yq8uvv' }
+];
+
+let activeStationIdx = 0;
 let lofiStreamAudio = null;
 
-// Toggle 24/7 Live Lo-Fi Radio Stream
-function toggleLofiMusic() {
-  const btn = document.getElementById('btn-audio-toggle');
-  const dot = document.getElementById('radio-wave-dot');
-  const statusText = document.getElementById('radio-status-text');
+function updateSpotifyUI() {
+  const station = radioStations[activeStationIdx];
+  const artElem = document.getElementById('spotify-art-icon');
+  const titleElem = document.getElementById('spotify-station-title');
+  const subtitleElem = document.getElementById('spotify-song-subtitle');
+  const playIcon = document.getElementById('spotify-play-icon');
+  const eqElem = document.getElementById('spotify-eq');
+
+  if (artElem) artElem.textContent = station.icon;
+  if (titleElem) titleElem.textContent = station.name;
+  if (subtitleElem) subtitleElem.textContent = isLofiPlaying ? 'Playing Live 🟢' : station.subtitle;
+  if (playIcon) playIcon.className = isLofiPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+  if (eqElem) {
+    if (isLofiPlaying) eqElem.classList.add('playing');
+    else eqElem.classList.remove('playing');
+  }
+}
+
+function switchStation(direction) {
+  if (direction === 'next') {
+    activeStationIdx = (activeStationIdx + 1) % radioStations.length;
+  } else if (direction === 'prev') {
+    activeStationIdx = (activeStationIdx - 1 + radioStations.length) % radioStations.length;
+  }
+
+  const station = radioStations[activeStationIdx];
+  showToast(`📻 Switched Station: ${station.name}`);
 
   if (!lofiStreamAudio) {
     lofiStreamAudio = new Audio();
     lofiStreamAudio.id = 'lofi-live-stream-audio';
     lofiStreamAudio.crossOrigin = 'anonymous';
+    lofiStreamAudio.volume = 0.7;
+  }
 
-    // 24/7 Live Lo-Fi Stream URLs with automatic fallback
-    const streams = [
-      'https://stream.zeno.fm/f3vkgmy1ahuvv',
-      'https://lofi.stream.laut.fm/lofi',
-      'https://streams.ilovemusic.de/iloveradio/lofigirl.mp3'
-    ];
+  lofiStreamAudio.src = station.url;
+  if (isLofiPlaying) {
+    lofiStreamAudio.play().catch(e => console.warn('Radio switch play error:', e));
+  }
+  updateSpotifyUI();
+}
 
-    let currentStreamIdx = 0;
-    lofiStreamAudio.src = streams[currentStreamIdx];
+function toggleLofiMusic() {
+  if (!lofiStreamAudio) {
+    lofiStreamAudio = new Audio();
+    lofiStreamAudio.id = 'lofi-live-stream-audio';
+    lofiStreamAudio.crossOrigin = 'anonymous';
+    lofiStreamAudio.volume = 0.7;
+    lofiStreamAudio.src = radioStations[activeStationIdx].url;
 
     lofiStreamAudio.onerror = () => {
-      console.warn('Stream offline, switching to backup stream...');
-      currentStreamIdx = (currentStreamIdx + 1) % streams.length;
-      lofiStreamAudio.src = streams[currentStreamIdx];
-      if (isLofiPlaying) {
-        lofiStreamAudio.play().catch(e => console.warn('Stream play retry error:', e));
-      }
+      console.warn('Stream offline, switching station...');
+      switchStation('next');
     };
   }
 
   if (isLofiPlaying) {
     lofiStreamAudio.pause();
     isLofiPlaying = false;
-    if (btn) btn.innerHTML = '🎵 Play Radio';
-    if (dot) dot.classList.remove('active');
-    if (statusText) statusText.textContent = 'Paused';
-    showToast('📻 Lo-Fi Radio Stream Paused');
+    showToast('📻 Radio Paused');
   } else {
-    showToast('📻 Connecting to 24/7 Live Lo-Fi Radio Stream...');
-    if (statusText) statusText.textContent = 'Connecting...';
-
+    showToast(`📻 Connecting to ${radioStations[activeStationIdx].name}...`);
     const playPromise = lofiStreamAudio.play();
     if (playPromise !== undefined) {
       playPromise.then(() => {
         isLofiPlaying = true;
-        if (btn) btn.innerHTML = '⏸️ Pause';
-        if (dot) dot.classList.add('active');
-        if (statusText) statusText.textContent = 'Live 🟢 Chillhop Beats';
-        showToast('🎶 24/7 Live Lo-Fi Chillhop Radio Playing!');
+        showToast(`🎶 Playing: ${radioStations[activeStationIdx].name}`);
       }).catch(err => {
         console.warn('Lo-Fi radio stream play error:', err);
         isLofiPlaying = false;
-        if (btn) btn.innerHTML = '🎵 Play Radio';
-        if (dot) dot.classList.remove('active');
-        if (statusText) statusText.textContent = 'Click to Retry';
-        showToast('⚠️ Click again to start 24/7 Lo-Fi Radio Stream');
+        showToast('⚠️ Click play again to start radio stream');
       });
     }
   }
+  updateSpotifyUI();
 }
 
 // Show Toast Message
@@ -736,6 +760,32 @@ function initEventListeners() {
     audioBtn.addEventListener('click', (e) => {
       e.preventDefault();
       toggleLofiMusic();
+    });
+  }
+
+  const prevBtn = document.getElementById('btn-audio-prev');
+  if (prevBtn) {
+    prevBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      switchStation('prev');
+    });
+  }
+
+  const nextBtn = document.getElementById('btn-audio-next');
+  if (nextBtn) {
+    nextBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      switchStation('next');
+    });
+  }
+
+  const volumeSlider = document.getElementById('spotify-volume');
+  if (volumeSlider) {
+    volumeSlider.addEventListener('input', (e) => {
+      const vol = parseFloat(e.target.value);
+      if (lofiStreamAudio) {
+        lofiStreamAudio.volume = vol;
+      }
     });
   }
 
