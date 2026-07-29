@@ -2682,9 +2682,14 @@
         <!-- 🕹️ HUD Overlay -->
         <div id="three-hud-overlay">
           <div class="hud-top-bar">
-            <div class="hud-badge">
-              <span class="hud-badge-dot"></span>
-              <span id="hud-coord-text">🎯 Move cursor over 3D model</span>
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <div class="hud-badge">
+                <span class="hud-badge-dot"></span>
+                <span id="hud-coord-text">🎯 Move cursor over 3D model</span>
+              </div>
+              <div class="hud-weather-badge" id="hud-weather-badge">
+                🌤️ <span>Kyoto 24°C • Rain 🌧️</span>
+              </div>
             </div>
             <div class="hud-actions">
               <!-- 🎵 Spotify-Style Glassmorphic Radio Player Widget -->
@@ -2707,7 +2712,19 @@
                   <input type="range" id="spotify-volume" class="spotify-volume-slider" min="0" max="1" step="0.05" value="0.7" title="Volume">
                 </div>
               </div>
+              <button id="btn-credits-3d" class="hud-btn hud-btn-credits" title="3D Model Attribution">🎨 Credits</button>
               <button id="btn-exit-3d" class="hud-btn hud-btn-exit">🚪 Exit 3D</button>
+            </div>
+          </div>
+
+          <!-- 💭 Random Thought / Quote / Joke Pop-up Card -->
+          <div class="hud-thought-card" id="hud-thought-card">
+            <div class="thought-header">
+              <span class="thought-category-tag" id="thought-tag">💭 Random Thought</span>
+              <button class="thought-close-btn" id="thought-close-btn"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="thought-body-text" id="thought-body-text">
+              Did you know? Code intelligence models process syntax trees like natural language grammar.
             </div>
           </div>
 
@@ -2733,7 +2750,7 @@
       </div>
 
       <!-- 3D Engine JS Script -->
-      <script src="script/three-world.js?v=29"></script>
+      <script src="script/three-world.js?v=30"></script>
 </body>
 
 </html>

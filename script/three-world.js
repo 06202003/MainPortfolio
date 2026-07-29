@@ -591,8 +591,105 @@ const modalContentMap = {
         <li>📱 <strong>WhatsApp:</strong> <a href="https://wa.me/6289507647137" target="_blank" style="color: #38bdf8;">+62 895-0764-7137</a></li>
       </ul>
     `
+  },
+  credits: {
+    title: '🎨 3D Model Artwork Attribution',
+    html: `
+      <p><strong>"Tanabata evening - Kyoto inspired city scene"</strong></p>
+      <p>3D Artwork by <strong>Mathias Tossens</strong> on Sketchfab.</p>
+      <p>Licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" style="color: #38bdf8;">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
+      <p style="margin-top: 14px;"><a href="https://sketchfab.com/3d-models/tanabata-evening-kyoto-inspired-city-scene-04dc9402b74d43ef86c4795311c0e4bb" target="_blank" style="color: #38bdf8; text-decoration: underline;">🔗 View Original 3D Model on Sketchfab</a></p>
+    `
   }
 };
+
+// 🌤️ Live Weather API Integration & Dynamic 3D Atmosphere Synchronization
+function fetchLiveWeatherAndSetAtmosphere() {
+  const weatherBadge = document.getElementById('hud-weather-badge');
+
+  // Kyoto coordinates (35.01, 135.76)
+  const lat = 35.01;
+  const lon = 135.76;
+
+  const updateWeatherUI = (temp, code, isRainy) => {
+    let weatherIcon = '🌤️';
+    let weatherLabel = 'Clear';
+
+    if (code >= 51 && code <= 99) {
+      weatherIcon = '🌧️';
+      weatherLabel = 'Rainy';
+    } else if (code >= 1 && code <= 3) {
+      weatherIcon = '☁️';
+      weatherLabel = 'Cloudy';
+    } else if (code >= 71 && code <= 77) {
+      weatherIcon = '❄️';
+      weatherLabel = 'Snowy';
+    }
+
+    if (weatherBadge) {
+      weatherBadge.innerHTML = `${weatherIcon} <span>Kyoto: ${temp}°C • ${weatherLabel}</span>`;
+    }
+
+    if (rainParticles) {
+      rainParticles.visible = isRainy;
+    }
+  };
+
+  fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,weather_code`)
+    .then(res => res.json())
+    .then(data => {
+      if (data && data.current) {
+        const temp = Math.round(data.current.temperature_2m);
+        const code = data.current.weather_code;
+        const isRainy = code >= 51 && code <= 99;
+        updateWeatherUI(temp, code, isRainy);
+      }
+    })
+    .catch(e => {
+      console.warn('Weather API fallback to Kyoto ambient:', e);
+      updateWeatherUI(22, 61, true);
+    });
+}
+
+// 💭 Random Thoughts, Tech Quotes & Jokes Pop-up Engine
+const popupContentList = [
+  { tag: '💭 Random Thought', text: 'Did you know? Code intelligence models process syntax trees like natural language grammar.' },
+  { tag: '💭 Random Thought', text: 'Kyoto traditional Machiya architecture uses wooden joinery without a single metal nail!' },
+  { tag: '💭 Random Thought', text: 'Synthetic data generation in LLMs reduces human labeling costs by up to 90%.' },
+  { tag: '💡 Tech Quote', text: '"Simplicity is prerequisite for reliability." — Edsger W. Dijkstra' },
+  { tag: '💡 Tech Quote', text: '"First, solve the problem. Then, write the code." — John Johnson' },
+  { tag: '💡 Tech Quote', text: '"Artificial Intelligence is the new electricity." — Andrew Ng' },
+  { tag: '☕ Dev Joke', text: 'There are 10 types of people in the world: those who understand binary, and those who don\'t.' },
+  { tag: '☕ Dev Joke', text: 'Why do programmers prefer dark mode? Because light attracts bugs!' },
+  { tag: '☕ Dev Joke', text: 'A SQL query walks into a bar, walks up to two tables and asks: "Can I join you?"' },
+  { tag: '☕ Dev Joke', text: 'Hardware: The part of a computer that you can kick when software crashes.' }
+];
+
+let thoughtIntervalId = null;
+
+function showRandomThoughtPopup() {
+  const card = document.getElementById('hud-thought-card');
+  const tagElem = document.getElementById('thought-tag');
+  const textElem = document.getElementById('thought-body-text');
+
+  if (!card || !tagElem || !textElem) return;
+
+  const randomItem = popupContentList[Math.floor(Math.random() * popupContentList.length)];
+  tagElem.textContent = randomItem.tag;
+  textElem.textContent = randomItem.text;
+
+  card.classList.add('active');
+
+  setTimeout(() => {
+    card.classList.remove('active');
+  }, 7000);
+}
+
+function startThoughtPopups() {
+  if (thoughtIntervalId) clearInterval(thoughtIntervalId);
+  setTimeout(showRandomThoughtPopup, 3000);
+  thoughtIntervalId = setInterval(showRandomThoughtPopup, 14000);
+}
 
 // Open Content Glassmorphism Modal
 function openContentModal(id) {
@@ -648,6 +745,8 @@ function enter3DWorld() {
   if (canvasContainer) {
     canvasContainer.classList.add('visible');
     initThreeWorld();
+    fetchLiveWeatherAndSetAtmosphere();
+    startThoughtPopups();
   }
 
   if (loadingScreen) {
@@ -670,6 +769,11 @@ function exit3DWorld() {
 
   if (isLofiPlaying) {
     toggleLofiMusic();
+  }
+
+  if (thoughtIntervalId) {
+    clearInterval(thoughtIntervalId);
+    thoughtIntervalId = null;
   }
 
   setTimeout(() => {
@@ -703,6 +807,23 @@ function initEventListeners() {
     exitBtn.addEventListener('click', (e) => {
       e.preventDefault();
       exit3DWorld();
+    });
+  }
+
+  const creditsBtn = document.getElementById('btn-credits-3d');
+  if (creditsBtn) {
+    creditsBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      playSound('click');
+      openContentModal('credits');
+    });
+  }
+
+  const thoughtClose = document.getElementById('thought-close-btn');
+  const thoughtCard = document.getElementById('hud-thought-card');
+  if (thoughtClose && thoughtCard) {
+    thoughtClose.addEventListener('click', () => {
+      thoughtCard.classList.remove('active');
     });
   }
 
