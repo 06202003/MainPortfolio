@@ -426,20 +426,21 @@ function createSketchfabAnnotationsInScene() {
   interactiveObjects = [];
 
   const annotations = [
-    { num: 1, pos: [12.74, 6.26, 4.05], colorStr: '#f59e0b', id: 'about', title: '🍜 1. Teahouse & River Bridge (About Me)' },
-    { num: 2, pos: [7.96, 9.68, 7.28], colorStr: '#06b6d4', id: 'qualification', title: '🚉 2. Machiya Building (Qualifications & Journey)' },
-    { num: 3, pos: [6.96, 5.46, -8.10], colorStr: '#a855f7', id: 'portfolio', title: '🕹️ 3. Arcade & Pine Garden (Featured Projects)' },
-    { num: 4, pos: [-4.36, 4.35, 10.63], colorStr: '#10b981', id: 'research', title: '⛩️ 4. Torii Shrine & Steps (Research & Thesis)' },
-    { num: 5, pos: [-8.58, 3.65, -8.95], colorStr: '#ef4444', id: 'reach', title: '🏮 5. Rooftop Sky Tower (Reach Me / Contact)' }
+    { num: 1, pos: [12.74, 6.26, 4.05], colorStr: '#f59e0b', id: 'about', title: '🍜 1. Ramen Yatai (About Me)' },
+    { num: 2, pos: [7.96, 10.40, 8.50], colorStr: '#06b6d4', id: 'qualification', title: '🍶 2. Sake Brewery (Qualifications & Journey)' },
+    { num: 3, pos: [6.96, 6.50, -6.80], colorStr: '#a855f7', id: 'portfolio', title: '🍞 3. Japanese Traditional Bakery (Featured Projects)' },
+    { num: 4, pos: [-4.36, 4.35, 10.63], colorStr: '#10b981', id: 'research', title: '⛩️ 4. Shinto Shrine (Research & Thesis)' },
+    { num: 5, pos: [-8.58, 3.65, -8.95], colorStr: '#ef4444', id: 'reach', title: '🧃 5. Vending Machine (Reach Me / Contact)' }
   ];
 
   annotations.forEach((anno) => {
     const badgeTexture = createSketchfabNumberBadgeTexture(anno.num, anno.colorStr);
-    const spriteMat = new THREE.SpriteMaterial({ map: badgeTexture, depthTest: true, transparent: true });
+    const spriteMat = new THREE.SpriteMaterial({ map: badgeTexture, depthTest: false, transparent: true });
     const sprite = new THREE.Sprite(spriteMat);
 
     sprite.position.set(...anno.pos);
     sprite.scale.set(0.9, 0.9, 1);
+    sprite.renderOrder = 999;
     sprite.userData = { id: anno.id, title: anno.title, num: anno.num, basePosY: anno.pos[1] };
 
     scene.add(sprite);
@@ -648,53 +649,53 @@ function onSceneClick(event) {
 // Content Modals Map — Yehezkiel's Personal Kyoto Travel Journal & Memories
 const modalContentMap = {
   about: {
-    title: '📖 Catatan 01: Teh Hangat di Pinggir Sungai',
+    title: '📖 Catatan 01: Kedai Ramen Yatai',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #01</div>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #01 (Ramen Yatai)</div>
       <div class="diary-story-quote">
         "Bagi saya, membangun AI bukan tentang menggantikan manusia, melainkan menciptakan jembatan antara ide rumit dan kemudahan yang hangat."
       </div>
       <p>Selamat datang di sudut tenang saya. Di balik baris-baris kode dan arsitektur LLM, saya adalah <strong>Yehezkiel David Setiawan</strong> — seorang pembelajar seumur hidup yang lebih suka mendengarkan alur logika daripada sekadar mengetik sintaks.</p>
       <p>Saya percaya teknologi yang berkesan selalu lahir dari rasa ingin tahu yang tenang: bagaimana membuat data bekerja dengan jujur, dan bagaimana kode dapat menyelesaikan persoalan nyata tanpa kehilangan sentuhan manusianya.</p>
       <div class="diary-personal-note">
-        ☕ <span>Catatan Pribadi: Menyeduh teh hangat saat malam sepi adalah ritual terbaik saat menelaah arsitektur AI.</span>
+        🍜 <span>Catatan Pribadi: Menyeduh ramen & teh hangat saat malam sepi adalah ritual terbaik saat menelaah arsitektur AI.</span>
       </div>
     `
   },
   qualification: {
-    title: '📖 Catatan 02: Kayu Machiya & Sambungan Tanpa Paku',
+    title: '📖 Catatan 02: Pabrik Kuno Sake Brewery',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #02</div>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #02 (Sake Brewery)</div>
       <div class="diary-story-quote">
-        "Rumah kayu Machiya bertahan berabad-abad tanpa paku besi, hanya sambungan kayu presisi. Begitu juga prinsip saya dalam berkarya."
+        "Pabrik Sake kuno bertahan berabad-abad lewat proses fermentasi dan penyulingan yang penuh kesabaran. Begitu juga prinsip saya dalam berkarya."
       </div>
-      <p>Perjalanan saya di dunia Informatika tidak dibangun lewat jalan lintas serba instan. Dari mengasah fondasi Laravel, merancang pipa data medis di Royal Medicalink Pharmalab, hingga menyelami riset kecerdasan buatan di Maranatha Christian University — setiap pengalaman adalah pahatan sambungan kayu yang menguatkan satu sama lain.</p>
+      <p>Perjalanan saya di dunia Informatika tidak dibangun lewat jalan lintas serba instan. Dari mengasah fondasi Laravel, merancang pipa data medis di Royal Medicalink Pharmalab, hingga menyelami riset kecerdasan buatan di Maranatha Christian University — setiap pengalaman adalah penyulingan logika yang menguatkan satu sama lain.</p>
       <p>Saya belajar bahwa kode yang tangguh bukanlah yang paling rumit, melainkan yang paling rapi, mudah dirawat, dan dibangun untuk bertahan lama.</p>
       <div class="diary-personal-note">
-        🪵 <span>Catatan Pribadi: Code like Machiya joinery — neat, resilient, and built to last.</span>
+        🍶 <span>Catatan Pribadi: Code like traditional brewing — patient, refined, and built to last.</span>
       </div>
     `
   },
   portfolio: {
-    title: '📖 Catatan 03: Kedai Arcade di Antara Pohon Pinus',
+    title: '📖 Catatan 03: Toko Roti Tradisional Jepang',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #03</div>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #03 (Traditional Bakery)</div>
       <div class="diary-story-quote">
-        "Kombinasi antara ketenangan alam dan kilau mesin arcade. Di sinilah eksperimen-eksperimen paling kreatif saya lahir."
+        "Aroma roti tradisional yang baru matang selalu memberi kehangatan. Di sinilah eksperimen-eksperimen paling kreatif saya lahir."
       </div>
-      <p>Saya tidak pernah puas hanya dengan aplikasi yang sekadar 'bisa jalan'. Ketika merancang <strong>S-SPARC</strong> (sistem kontrol prompt AI yang berhasil meraih <em>Merit Award AIREA 2026</em>) hingga portal 3D WebGL interaktif ini, impian saya selalu sama: memberi kejutan yang berkesan bagi siapa pun yang mencobanya.</p>
+      <p>Saya tidak pernah puas hanya dengan aplikasi yang sekadar 'bisa jalan'. Ketika merancang <strong>S-SPARC</strong> (sistem kontrol prompt AI yang berhasil meraih <em>Merit Award AIREA 2026</em>) hingga portal 3D WebGL interaktif ini, impian saya selalu sama: memberi kehangatan kejutan yang berkesan bagi siapa pun yang mencobanya.</p>
       <p>Setiap proyek adalah kanvas tempat kecerdasan logika dan estetika visual bertemu dalam harmoni.</p>
       <div class="diary-personal-note">
-        🕹️ <span>Catatan Pribadi: Di balik setiap algoritma presisi, harus ada sentuhan yang membuat orang tersenyum.</span>
+        🍞 <span>Catatan Pribadi: Di balik setiap algoritma presisi, harus ada sentuhan hangat yang membuat orang tersenyum.</span>
       </div>
     `
   },
   research: {
-    title: '📖 Catatan 04: Tangga Torii Merah & Hutan Bambu',
+    title: '📖 Catatan 04: Kuil Shinto & Tangga Torii',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #04</div>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #04 (Shinto Shrine)</div>
       <div class="diary-story-quote">
-        "Melangkah melewati gerbang torii ini mengingatkan saya pada proses riset skripsi LLM Synthetic Data — penuh jalan bercabang, namun indah di puncaknya."
+        "Melangkah melewati gerbang kuil Shinto ini mengingatkan saya pada proses riset skripsi LLM Synthetic Data — penuh jalan bercabang, namun indah di puncaknya."
       </div>
       <p>Dunia riset AI dan evaluasi data sintetik adalah ruang jelajah favorit saya. Dalam skripsi dan eksplorasi akademis, saya mendalami bagaimana LLM dapat dilatih dan dievaluasi secara etis serta efisien untuk generasi kode otomatis.</p>
       <p>Ada puluhan hipotesis yang sempat patah, namun ketekunan menelusuri data selalu membawa ke penemuan pola yang presisi.</p>
@@ -704,14 +705,14 @@ const modalContentMap = {
     `
   },
   reach: {
-    title: '📖 Catatan 05: Lentera Merah & Menara Puncak Langit',
+    title: '📖 Catatan 05: Vending Machine Lentera Merah',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #05</div>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #05 (Vending Machine)</div>
       <div class="diary-story-quote">
-        "Lentera merah ini menyala untuk menyambut siapa saja yang ingin bertukar pikiran dan menciptakan masa depan."
+        "Lentera merah dan vending machine di sudut jalan ini selalu menyala untuk menyambut siapa saja yang ingin bertukar pikiran."
       </div>
       <p>Terima kasih telah berjalan jauh mengelilingi jurnal 3D ini. Baik Anda seorang <strong>recruiter</strong> yang mencari partner berpikir, sesama engineer, atau kawan berdiskusi soal masa depan AI — pintu komunikasi saya selalu terbuka lebar.</p>
-      <p>Mari duduk sejenak, seduh kopi, dan kita wujudkan ide-ide hebat berikutnya bersama.</p>
+      <p>Mari duduk sejenak, ambil minuman segar, dan kita wujudkan ide-ide hebat berikutnya bersama.</p>
       <ul style="margin-top: 14px; padding-left: 0; list-style: none;">
         <li style="margin-bottom: 8px;">📧 <strong>Email:</strong> <a href="mailto:yehezkieldavid2006@gmail.com" style="color: #b85c40; font-weight: 700;">yehezkieldavid2006@gmail.com</a></li>
         <li style="margin-bottom: 8px;">💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ydavids/" target="_blank" style="color: #b85c40; font-weight: 700;">linkedin.com/in/ydavids/</a></li>
@@ -719,7 +720,7 @@ const modalContentMap = {
         <li style="margin-bottom: 8px;">📱 <strong>WhatsApp:</strong> <a href="https://wa.me/6289507647137" target="_blank" style="color: #b85c40; font-weight: 700;">+62 895-0764-7137</a></li>
       </ul>
       <div class="diary-personal-note">
-        🏮 <span>Catatan Pribadi: Siap untuk diskusi hebat dan tantangan teknologi berikutnya!</span>
+        🧃 <span>Catatan Pribadi: Siap untuk diskusi hebat dan tantangan teknologi berikutnya!</span>
       </div>
     `
   },
