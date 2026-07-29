@@ -200,6 +200,14 @@ function animate() {
   if (controls) controls.update();
   updateRain();
 
+  // Floating & rotation animation for 3D diamond pins
+  interactiveObjects.forEach((obj) => {
+    if (obj.userData && obj.userData.basePos) {
+      obj.rotation.y += 0.025;
+      obj.position.y = obj.userData.basePos[1] + Math.sin(Date.now() * 0.003 + obj.userData.idx) * 0.12;
+    }
+  });
+
   if (renderer && scene && camera) {
     renderer.render(scene, camera);
   }
@@ -249,7 +257,7 @@ function updateRain() {
 
 // Load Pure 3D Kyoto GLTF Model from Mathias Tossens Sketchfab
 function loadKyotoModel() {
-  interactiveObjects = [];
+  createInteractiveHotspots();
 
   const modelPath = './assets/models/kyoto.glb';
   if (typeof THREE.GLTFLoader === 'function') {
@@ -275,7 +283,6 @@ function loadKyotoModel() {
         model.position.y = -box.min.y * targetScale;
         model.position.z = -center.z * targetScale;
 
-        let gltfMeshes = [];
         model.traverse((child) => {
           if (child.isMesh) {
             child.castShadow = true;
@@ -283,13 +290,11 @@ function loadKyotoModel() {
             if (child.material) {
               child.material.side = THREE.DoubleSide;
             }
-            gltfMeshes.push(child);
           }
         });
 
         scene.add(model);
-        interactiveObjects = gltfMeshes;
-        showToast('🏯 Kyoto Midnight City Scene Loaded! Click any 3D landmark to explore.');
+        showToast('🏯 Kyoto Midnight City Scene Loaded! Click floating pins to explore.');
       },
       (xhr) => {
         if (xhr.lengthComputable && xhr.total > 0) {
@@ -306,6 +311,38 @@ function loadKyotoModel() {
       }
     );
   }
+}
+
+// Create 5 Sleek 3D Floating Landmark Pins
+function createInteractiveHotspots() {
+  interactiveObjects = [];
+
+  const pinGeo = new THREE.OctahedronGeometry(0.35, 0);
+
+  const pins = [
+    { pos: [-5.5, 4.2, -2], color: 0xf59e0b, id: 'about', title: '🍜 Kyoto Machiya & Teahouse (About Me)' },
+    { pos: [5.5, 4.2, -2], color: 0x06b6d4, id: 'qualification', title: '🚉 Kyoto Station Platform (Qualifications & Journey)' },
+    { pos: [-3.2, 4.2, -6], color: 0xa855f7, id: 'portfolio', title: '🕹️ Neon Arcade Room (Featured Projects)' },
+    { pos: [3.2, 4.2, -6], color: 0x22c55e, id: 'research', title: '📚 Torii Shrine & Desk (Research & Thesis)' },
+    { pos: [0, 7.2, -8], color: 0xef4444, id: 'reach', title: '🏮 Rooftop Neon Billboard (Reach Me / Contact)' }
+  ];
+
+  pins.forEach((p, idx) => {
+    const mat = new THREE.MeshBasicMaterial({ color: p.color, wireframe: false });
+    const mesh = new THREE.Mesh(pinGeo, mat);
+    mesh.position.set(...p.pos);
+    mesh.userData = { id: p.id, title: p.title, basePos: [...p.pos], idx: idx };
+
+    // Outer glowing ring
+    const ringGeo = new THREE.RingGeometry(0.45, 0.55, 16);
+    const ringMat = new THREE.MeshBasicMaterial({ color: p.color, side: THREE.DoubleSide });
+    const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+    ringMesh.rotation.x = Math.PI / 2;
+    mesh.add(ringMesh);
+
+    scene.add(mesh);
+    interactiveObjects.push(mesh);
+  });
 }
 
 // Create Fallback Procedural Scenery if GLTF fails or missing
