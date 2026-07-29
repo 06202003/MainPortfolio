@@ -150,52 +150,24 @@ function initThreeWorld() {
     });
   }
 
-  // Bright Lighting Setup (Vivid Sky + Full Ambient)
-  const hemiLight = new THREE.HemisphereLight(0x38bdf8, 0x1e1b4b, 4.0);
+  // Natural Contrast Lighting Setup
+  const hemiLight = new THREE.HemisphereLight(0x38bdf8, 0x1e1b4b, 1.8);
   scene.add(hemiLight);
 
-  const ambientLight = new THREE.AmbientLight(0xffffff, 3.5);
+  const ambientLight = new THREE.AmbientLight(0xffffff, 2.0);
   scene.add(ambientLight);
 
-  const mainDirLight = new THREE.DirectionalLight(0xffffff, 4.0);
+  const mainDirLight = new THREE.DirectionalLight(0xffffff, 2.0);
   mainDirLight.position.set(15, 30, 20);
   mainDirLight.castShadow = true;
   scene.add(mainDirLight);
 
-  // Warm Japanese Lantern Light & Neon Accents
-  const lanternLight1 = new THREE.PointLight(0xff7700, 8, 40);
+  // Warm Japanese Lantern Light
+  const lanternLight1 = new THREE.PointLight(0xff7700, 3, 30);
   lanternLight1.position.set(-6, 5, 2);
   scene.add(lanternLight1);
 
-  const neonBlueLight = new THREE.PointLight(0x00f0ff, 8, 45);
-  neonBlueLight.position.set(6, 7, -3);
-  scene.add(neonBlueLight);
-
-  const neonPurpleLight = new THREE.PointLight(0xf0abfc, 8, 40);
-  neonPurpleLight.position.set(-6, 8, -8);
-  scene.add(neonPurpleLight);
-
-  // Lit Stone/Asphalt Floor Ground
-  const floorGeo = new THREE.PlaneGeometry(120, 120);
-  const floorMat = new THREE.MeshStandardMaterial({
-    color: 0x334155,
-    roughness: 0.2,
-    metalness: 0.3,
-    emissive: 0x1e293b,
-    emissiveIntensity: 0.6
-  });
-  const floorMesh = new THREE.Mesh(floorGeo, floorMat);
-  floorMesh.rotation.x = -Math.PI / 2;
-  floorMesh.position.y = 0;
-  floorMesh.receiveShadow = true;
-  scene.add(floorMesh);
-
-  // Grid helper overlay for futuristic cyberpunk street effect
-  const gridHelper = new THREE.GridHelper(120, 40, 0x00f0ff, 0x475569);
-  gridHelper.position.y = 0.01;
-  scene.add(gridHelper);
-
-  // Rain Particle System
+  // Rain Particle System (Retained)
   createRainParticles();
 
   // Raycasting Setup
@@ -275,90 +247,15 @@ function updateRain() {
   rainParticles.geometry.attributes.position.needsUpdate = true;
 }
 
-let fallbackGroup = null;
-
-// Create Fallback Procedural Scenery if GLTF fails or loading
+// Create Scenery (Pure GLB Model + Interactive Hotspots)
 function createFallbackScenery() {
   interactiveObjects = [];
-  fallbackGroup = new THREE.Group();
 
-  // Ground Floor Plane (Slate Gray Street)
-  const floorGeo = new THREE.PlaneGeometry(100, 100);
-  const floorMat = new THREE.MeshBasicMaterial({ color: 0x334155 });
-  const floorMesh = new THREE.Mesh(floorGeo, floorMat);
-  floorMesh.rotation.x = -Math.PI / 2;
-  floorMesh.position.y = 0;
-  fallbackGroup.add(floorMesh);
-
-  // Grid
-  const gridHelper = new THREE.GridHelper(100, 20, 0x00f0ff, 0x94a3b8);
-  gridHelper.position.y = 0.02;
-  fallbackGroup.add(gridHelper);
-
-  // 1. Ramen Shop / Teahouse (About Me)
-  const shopGeo = new THREE.BoxGeometry(7, 5, 6);
-  const shopMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b });
-  const shopMesh = new THREE.Mesh(shopGeo, shopMat);
-  shopMesh.position.set(-5, 2.5, -3);
-  shopMesh.userData = { id: 'about', title: '🍜 Ramen Shop (About Me)' };
-
-  const roofGeo = new THREE.ConeGeometry(6, 2, 4);
-  const roofMat = new THREE.MeshBasicMaterial({ color: 0xd97706 });
-  const roofMesh = new THREE.Mesh(roofGeo, roofMat);
-  roofMesh.position.set(-5, 6, -3);
-  roofMesh.rotation.y = Math.PI / 4;
-
-  fallbackGroup.add(shopMesh);
-  fallbackGroup.add(roofMesh);
-  interactiveObjects.push(shopMesh);
-
-  // 2. Train Station (Qualifications)
-  const stationGeo = new THREE.BoxGeometry(6, 4.5, 5);
-  const stationMat = new THREE.MeshBasicMaterial({ color: 0x06b6d4 });
-  const stationMesh = new THREE.Mesh(stationGeo, stationMat);
-  stationMesh.position.set(5, 2.25, -3);
-  stationMesh.userData = { id: 'qualification', title: '🚉 Train Station (Qualifications)' };
-
-  fallbackGroup.add(stationMesh);
-  interactiveObjects.push(stationMesh);
-
-  // 3. Arcade Machine (Projects)
-  const arcadeGeo = new THREE.BoxGeometry(3.5, 5, 3.5);
-  const arcadeMat = new THREE.MeshBasicMaterial({ color: 0xa855f7 });
-  const arcadeMesh = new THREE.Mesh(arcadeGeo, arcadeMat);
-  arcadeMesh.position.set(-3, 2.5, -7);
-  arcadeMesh.userData = { id: 'portfolio', title: '🕹️ Arcade Room (Projects Portfolio)' };
-
-  fallbackGroup.add(arcadeMesh);
-  interactiveObjects.push(arcadeMesh);
-
-  // 4. Shrine Library Desk (Research)
-  const libGeo = new THREE.BoxGeometry(5, 4, 4);
-  const libMat = new THREE.MeshBasicMaterial({ color: 0x22c55e });
-  const libMesh = new THREE.Mesh(libGeo, libMat);
-  libMesh.position.set(3, 2, -7);
-  libMesh.userData = { id: 'research', title: '📚 Shrine Library (Research & Thesis)' };
-
-  fallbackGroup.add(libMesh);
-  interactiveObjects.push(libMesh);
-
-  // 5. Contact Neon Billboard (Reach Me)
-  const billboardGeo = new THREE.BoxGeometry(8, 4, 0.8);
-  const billboardMat = new THREE.MeshBasicMaterial({ color: 0xef4444 });
-  const billboardMesh = new THREE.Mesh(billboardGeo, billboardMat);
-  billboardMesh.position.set(0, 6.5, -9);
-  billboardMesh.userData = { id: 'reach', title: '🏮 Neon Rooftop (Reach Me / Contact)' };
-
-  fallbackGroup.add(billboardMesh);
-  interactiveObjects.push(billboardMesh);
-
-  scene.add(fallbackGroup);
-
-  // Create Interactive Hotspots
+  // Create Interactive Hotspots on 3D Model
   createInteractiveHotspots();
 }
 
-// Load Kyoto GLTF Model with Auto-scaling and Progress Toast
+// Load Kyoto GLTF Model
 function loadKyotoModel() {
   createFallbackScenery();
 
@@ -392,20 +289,11 @@ function loadKyotoModel() {
             child.receiveShadow = true;
             if (child.material) {
               child.material.side = THREE.DoubleSide;
-              if (child.material.emissive && child.material.emissiveIntensity !== undefined) {
-                child.material.emissiveIntensity = 0.6;
-              }
             }
           }
         });
 
         scene.add(model);
-
-        // Hide fallback boxes once 3D city scene model is loaded!
-        if (fallbackGroup) {
-          fallbackGroup.visible = false;
-        }
-
         showToast('🏯 Kyoto Midnight City Scene Model Loaded!');
       },
       (xhr) => {
@@ -419,7 +307,7 @@ function loadKyotoModel() {
       },
       (error) => {
         console.error('GLTF load error:', error);
-        showToast('⚠️ Note: Using procedural scenery (' + (error.message || 'GLB load') + ')');
+        showToast('⚠️ GLTF Load Note: ' + (error.message || '82MB Model processing'));
       }
     );
   }
