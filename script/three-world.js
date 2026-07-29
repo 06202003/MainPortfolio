@@ -132,14 +132,16 @@ function initThreeWorld() {
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  // Orbit Controls targeting center of Japanese street
-  controls = new THREE.OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.05;
-  controls.maxPolarAngle = Math.PI / 2 - 0.01;
-  controls.minDistance = 3;
-  controls.maxDistance = 60;
-  controls.target.set(0, 2.5, -4);
+  // Orbit Controls targeting center of Japanese street (Safely guarded)
+  if (typeof THREE.OrbitControls === 'function') {
+    controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.maxPolarAngle = Math.PI / 2 - 0.01;
+    controls.minDistance = 3;
+    controls.maxDistance = 60;
+    controls.target.set(0, 2.5, -4);
+  }
 
   // Bright Lighting Setup (Vivid Sky + Full Ambient)
   const hemiLight = new THREE.HemisphereLight(0x38bdf8, 0x1e1b4b, 4.0);
