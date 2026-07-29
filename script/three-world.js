@@ -578,21 +578,33 @@ function exit3DWorld() {
   }, 800);
 }
 
-// DOM Setup on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
+// Make globally accessible
+window.enter3DWorld = enter3DWorld;
+window.exit3DWorld = exit3DWorld;
+
+function initEventListeners() {
   const doorTrigger = document.getElementById('secret-door-trigger');
   if (doorTrigger) {
-    doorTrigger.addEventListener('click', enter3DWorld);
+    doorTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      enter3DWorld();
+    });
   }
 
   const exitBtn = document.getElementById('btn-exit-3d');
   if (exitBtn) {
-    exitBtn.addEventListener('click', exit3DWorld);
+    exitBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      exit3DWorld();
+    });
   }
 
   const audioBtn = document.getElementById('btn-audio-toggle');
   if (audioBtn) {
-    audioBtn.addEventListener('click', toggleLofiMusic);
+    audioBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleLofiMusic();
+    });
   }
 
   const modalClose = document.getElementById('three-modal-close');
@@ -605,4 +617,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initEventListeners);
+} else {
+  initEventListeners();
+}
