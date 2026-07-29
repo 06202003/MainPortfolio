@@ -393,158 +393,7 @@ function loadKyotoModel() {
   }
 }
 
-// Create Fallback Procedural Scenery if GLTF fails or missing
-function createFallbackScenery() {
-  interactiveObjects = [];
 
-  // Ground Floor Plane (Slate Gray Street)
-  const floorGeo = new THREE.PlaneGeometry(100, 100);
-  const floorMat = new THREE.MeshBasicMaterial({ color: 0x334155 });
-  const floorMesh = new THREE.Mesh(floorGeo, floorMat);
-  floorMesh.rotation.x = -Math.PI / 2;
-  floorMesh.position.y = 0;
-  scene.add(floorMesh);
-
-  // Grid
-  const gridHelper = new THREE.GridHelper(100, 20, 0x00f0ff, 0x94a3b8);
-  gridHelper.position.y = 0.02;
-  scene.add(gridHelper);
-
-  // 1. Ramen Shop / Teahouse (About Me)
-  const shopGeo = new THREE.BoxGeometry(7, 5, 6);
-  const shopMat = new THREE.MeshBasicMaterial({ color: 0xf59e0b });
-  const shopMesh = new THREE.Mesh(shopGeo, shopMat);
-  shopMesh.position.set(-5, 2.5, -3);
-
-  const roofGeo = new THREE.ConeGeometry(6, 2, 4);
-  const roofMat = new THREE.MeshBasicMaterial({ color: 0xd97706 });
-  const roofMesh = new THREE.Mesh(roofGeo, roofMat);
-  roofMesh.position.set(-5, 6, -3);
-  roofMesh.rotation.y = Math.PI / 4;
-
-  const signGeo = new THREE.BoxGeometry(4, 1.2, 0.4);
-  const signMat = new THREE.MeshBasicMaterial({ color: 0xfacc15 });
-  const signMesh = new THREE.Mesh(signGeo, signMat);
-  signMesh.position.set(-5, 4.5, -0.2);
-  signMesh.userData = { id: 'about', title: '🍜 Ramen Shop (About Me)' };
-
-  scene.add(shopMesh);
-  scene.add(roofMesh);
-  scene.add(signMesh);
-  interactiveObjects.push(shopMesh, signMesh);
-
-  // 2. Train Station (Qualifications)
-  const stationGeo = new THREE.BoxGeometry(6, 4.5, 5);
-  const stationMat = new THREE.MeshBasicMaterial({ color: 0x06b6d4 });
-  const stationMesh = new THREE.Mesh(stationGeo, stationMat);
-  stationMesh.position.set(5, 2.25, -3);
-  stationMesh.userData = { id: 'qualification', title: '🚉 Train Station (Qualifications)' };
-
-  const stationSignGeo = new THREE.BoxGeometry(4, 1, 0.4);
-  const stationSignMat = new THREE.MeshBasicMaterial({ color: 0x67e8f9 });
-  const stationSignMesh = new THREE.Mesh(stationSignGeo, stationSignMat);
-  stationSignMesh.position.set(5, 4.2, -0.5);
-
-  scene.add(stationMesh);
-  scene.add(stationSignMesh);
-  interactiveObjects.push(stationMesh, stationSignMesh);
-
-  // 3. Arcade Machine (Projects)
-  const arcadeGeo = new THREE.BoxGeometry(3.5, 5, 3.5);
-  const arcadeMat = new THREE.MeshBasicMaterial({ color: 0xa855f7 });
-  const arcadeMesh = new THREE.Mesh(arcadeGeo, arcadeMat);
-  arcadeMesh.position.set(-3, 2.5, -7);
-  arcadeMesh.userData = { id: 'portfolio', title: '🕹️ Arcade Room (Projects Portfolio)' };
-
-  const arcadeScreenGeo = new THREE.PlaneGeometry(2.5, 2);
-  const arcadeScreenMat = new THREE.MeshBasicMaterial({ color: 0xe879f9 });
-  const arcadeScreenMesh = new THREE.Mesh(arcadeScreenGeo, arcadeScreenMat);
-  arcadeScreenMesh.position.set(-3, 3.2, -5.2);
-
-  scene.add(arcadeMesh);
-  scene.add(arcadeScreenMesh);
-  interactiveObjects.push(arcadeMesh);
-
-  // 4. Shrine Library Desk (Research)
-  const libGeo = new THREE.BoxGeometry(5, 4, 4);
-  const libMat = new THREE.MeshBasicMaterial({ color: 0x22c55e });
-  const libMesh = new THREE.Mesh(libGeo, libMat);
-  libMesh.position.set(3, 2, -7);
-  libMesh.userData = { id: 'research', title: '📚 Shrine Library (Research & Thesis)' };
-
-  scene.add(libMesh);
-  interactiveObjects.push(libMesh);
-
-  // 5. Contact Neon Billboard (Reach Me)
-  const billboardGeo = new THREE.BoxGeometry(8, 4, 0.8);
-  const billboardMat = new THREE.MeshBasicMaterial({ color: 0xef4444 });
-  const billboardMesh = new THREE.Mesh(billboardGeo, billboardMat);
-  billboardMesh.position.set(0, 6.5, -9);
-  billboardMesh.userData = { id: 'reach', title: '🏮 Neon Rooftop (Reach Me / Contact)' };
-
-  scene.add(billboardMesh);
-  interactiveObjects.push(billboardMesh);
-
-  // Create Interactive Hotspots
-  createInteractiveHotspots();
-}
-
-// Create Hotspots on the Loaded 3D Scene
-function createInteractiveHotspots() {
-  const hotspotGeo = new THREE.SphereGeometry(0.8, 16, 16);
-
-  const hotspots = [
-    { pos: [-5, 3.5, -1], color: 0xf59e0b, id: 'about', title: '🍜 Teahouse & Laptop (About Me)' },
-    { pos: [5, 3.5, -1], color: 0x06b6d4, id: 'qualification', title: '🚉 Station Platform (Qualifications)' },
-    { pos: [-3, 3.5, -5], color: 0xa855f7, id: 'portfolio', title: '🕹️ Arcade Cabinet (Projects Portfolio)' },
-    { pos: [3, 3.5, -5], color: 0x22c55e, id: 'research', title: '📚 Shrine Desk (Research Papers)' },
-    { pos: [0, 6.5, -7], color: 0xef4444, id: 'reach', title: '🏮 Neon Rooftop (Reach Me / Contact)' },
-    { pos: [-1, 1.2, 0], color: 0xf97316, id: 'cat', title: '🐱 Alley Stray Cat (Easter Egg)' },
-    { pos: [-3.5, 2.2, 0], color: 0x3b82f6, id: 'vending', title: '🥤 Japanese Vending Machine (Easter Egg)' },
-    { pos: [1, 1.5, 0], color: 0xec4899, id: 'radio', title: '📻 Lo-Fi Vintage Radio (Audio Player)' }
-  ];
-
-  hotspots.forEach(h => {
-    const mat = new THREE.MeshBasicMaterial({ color: h.color });
-    const mesh = new THREE.Mesh(hotspotGeo, mat);
-    mesh.position.set(...h.pos);
-    mesh.userData = { id: h.id, title: h.title };
-    scene.add(mesh);
-    interactiveObjects.push(mesh);
-  });
-}
-
-// Resolve 3D Mesh Target Category from Clicked Point in Kyoto City
-function getMeshTargetInfo(intersect) {
-  if (!intersect) return { id: 'about', title: '🍜 Kyoto City Archive' };
-
-  const point = intersect.point;
-  const x = point ? point.x : 0;
-  const y = point ? point.y : 0;
-  const z = point ? point.z : 0;
-
-  let categoryId = 'about';
-  let title = '🍜 Kyoto Machiya & Teahouse (About Me)';
-
-  if (y > 4.2) {
-    categoryId = 'reach';
-    title = '🏮 Rooftop Neon & Socials (Reach Me / Contact)';
-  } else if (x < -2.0) {
-    categoryId = 'about';
-    title = '🍜 Kyoto Machiya & Teahouse (About Me)';
-  } else if (x > 2.0) {
-    categoryId = 'qualification';
-    title = '🚉 Kyoto Station Platform (Qualifications & Journey)';
-  } else if (z < -3.5) {
-    categoryId = 'portfolio';
-    title = '🕹️ Neon Arcade Room (Featured Projects)';
-  } else {
-    categoryId = 'research';
-    title = '📚 Shrine Desk & Library (Research & Thesis)';
-  }
-
-  return { id: categoryId, title: title };
-}
 
 // Raycasting Mouse Hover
 function onMouseMove(event) {
@@ -558,16 +407,23 @@ function onMouseMove(event) {
     const hint = document.getElementById('hud-interaction-hint');
     if (intersects.length > 0) {
       document.body.style.cursor = 'pointer';
-      const info = getMeshTargetInfo(intersects[0]);
+      let obj = intersects[0].object;
+      while (obj && !obj.userData.title && obj.parent) {
+        obj = obj.parent;
+      }
+      const title = obj.userData ? obj.userData.title : 'Kyoto Landmark';
       if (hint) {
         hint.style.display = 'flex';
-        hint.innerHTML = `<span>✨ Click to Explore: <strong>${info.title}</strong></span>`;
+        hint.innerHTML = `<span>✨ Click Pin: <strong>${title}</strong></span>`;
       }
     } else {
       document.body.style.cursor = 'default';
       if (hint) {
         hint.style.display = 'none';
-// Smooth Camera Zoom-In to Clicked Annotation Landmark (Sketchfab Feature!)
+      }
+    }
+  }
+}
 function zoomToAnnotation(sprite, targetId) {
   if (!sprite || !camera || !controls) return;
 
