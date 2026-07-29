@@ -3,10 +3,6 @@
  * Loaded dynamically when clicking the mysterious navbar door.
  */
 
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/controls/OrbitControls.js';
-import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/loaders/GLTFLoader.js';
-
 // State Variables
 let scene, camera, renderer, controls;
 let rainParticles, rainCount = 1200;
@@ -145,7 +141,7 @@ function initThreeWorld() {
   container.appendChild(renderer.domElement);
 
   // Orbit Controls
-  controls = new OrbitControls(camera, renderer.domElement);
+  controls = new THREE.OrbitControls(camera, renderer.domElement);
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
   controls.maxPolarAngle = Math.PI / 2 + 0.05; // Prevent camera clipping below floor
@@ -256,7 +252,7 @@ function loadKyotoModel() {
   const statusText = document.getElementById('loader-status');
 
   const modelPath = 'assets/models/tanabata_evening_-_kyoto_inspired_city_scene.glb';
-  const loader = new GLTFLoader();
+  const loader = new THREE.GLTFLoader();
 
   if (statusText) statusText.textContent = 'Loading Kyoto Midnight Alley (82MB)...';
 
