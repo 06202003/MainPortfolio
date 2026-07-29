@@ -562,73 +562,92 @@ function onSceneClick(event) {
   }
 }
 
-// Content Modals Map
+// Content Modals Map — Yehezkiel's Personal Kyoto Travel Journal & Memories
 const modalContentMap = {
   about: {
-    title: '🍜 About Me — Yehezkiel David Setiawan',
+    title: '📖 Catatan 01: Teh Hangat di Pinggir Sungai',
     html: `
-      <p><strong>AI Engineer & LLM Researcher</strong> | Fresh Graduate in Informatics Engineering.</p>
-      <p>Specializing in large language models, code intelligence systems, and data engineering. Passionate about building intelligent systems through curiosity.</p>
-      <h4>Core Strengths:</h4>
-      <ul>
-        <li>Advanced Code Intelligence & LLM Prompting</li>
-        <li>Data Analytics & Machine Learning Pipeline Development</li>
-        <li>Full Stack Development (Laravel, Python, React, JavaScript, Go)</li>
-      </ul>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #01</div>
+      <div class="diary-story-quote">
+        "Bagi saya, membangun AI bukan tentang menggantikan manusia, melainkan menciptakan jembatan antara ide rumit dan kemudahan yang hangat."
+      </div>
+      <p>Selamat datang di sudut tenang saya. Di balik baris-baris kode dan arsitektur LLM, saya adalah <strong>Yehezkiel David Setiawan</strong> — seorang pembelajar seumur hidup yang lebih suka mendengarkan alur logika daripada sekadar mengetik sintaks.</p>
+      <p>Saya percaya teknologi yang berkesan selalu lahir dari rasa ingin tahu yang tenang: bagaimana membuat data bekerja dengan jujur, dan bagaimana kode dapat menyelesaikan persoalan nyata tanpa kehilangan sentuhan manusianya.</p>
+      <div class="diary-personal-note">
+        ☕ <span>Catatan Pribadi: Menyeduh teh hangat saat malam sepi adalah ritual terbaik saat menelaah arsitektur AI.</span>
+      </div>
     `
   },
   qualification: {
-    title: '🚉 Qualifications & Career Journey',
+    title: '📖 Catatan 02: Kayu Machiya & Sambungan Tanpa Paku',
     html: `
-      <h4>Career Milestones:</h4>
-      <ul>
-        <li><strong>2025:</strong> AI Research & LLM Code Intelligence Engineering</li>
-        <li><strong>2024:</strong> Full Stack Web & Data Analytics Specialist</li>
-        <li><strong>2023:</strong> Laravel & Data Engineering Projects at Royal Medicalink Pharmalab & Maranatha Christian University</li>
-      </ul>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #02</div>
+      <div class="diary-story-quote">
+        "Rumah kayu Machiya bertahan berabad-abad tanpa paku besi, hanya sambungan kayu presisi. Begitu juga prinsip saya dalam berkarya."
+      </div>
+      <p>Perjalanan saya di dunia Informatika tidak dibangun lewat jalan lintas serba instan. Dari mengasah fondasi Laravel, merancang pipa data medis di Royal Medicalink Pharmalab, hingga menyelami riset kecerdasan buatan di Maranatha Christian University — setiap pengalaman adalah pahatan sambungan kayu yang menguatkan satu sama lain.</p>
+      <p>Saya belajar bahwa kode yang tangguh bukanlah yang paling rumit, melainkan yang paling rapi, mudah dirawat, dan dibangun untuk bertahan lama.</p>
+      <div class="diary-personal-note">
+        🪵 <span>Catatan Pribadi: Code like Machiya joinery — neat, resilient, and built to last.</span>
+      </div>
     `
   },
   portfolio: {
-    title: '🕹️ Featured Projects Showcase',
+    title: '📖 Catatan 03: Kedai Arcade di Antara Pohon Pinus',
     html: `
-      <h4>Highlighted Work:</h4>
-      <ul>
-        <li><strong>AI Code Intelligence System:</strong> Automated evaluation and LLM-driven feedback platform.</li>
-        <li><strong>Data Analytics Platform:</strong> Comprehensive analytics dashboard for pharmaceutical distribution metrics.</li>
-        <li><strong>Beyond The Door 3D World:</strong> Immersive WebGL portfolio experience built with Three.js.</li>
-      </ul>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #03</div>
+      <div class="diary-story-quote">
+        "Kombinasi antara ketenangan alam dan kilau mesin arcade. Di sinilah eksperimen-eksperimen paling kreatif saya lahir."
+      </div>
+      <p>Saya tidak pernah puas hanya dengan aplikasi yang sekadar 'bisa jalan'. Ketika merancang <strong>S-SPARC</strong> (sistem kontrol prompt AI yang berhasil meraih <em>Merit Award AIREA 2026</em>) hingga portal 3D WebGL interaktif ini, impian saya selalu sama: memberi kejutan yang berkesan bagi siapa pun yang mencobanya.</p>
+      <p>Setiap proyek adalah kanvas tempat kecerdasan logika dan estetika visual bertemu dalam harmoni.</p>
+      <div class="diary-personal-note">
+        🕹️ <span>Catatan Pribadi: Di balik setiap algoritma presisi, harus ada sentuhan yang membuat orang tersenyum.</span>
+      </div>
     `
   },
   research: {
-    title: '📚 Research & Publications',
+    title: '📖 Catatan 04: Tangga Torii Merah & Hutan Bambu',
     html: `
-      <h4>Academic Contributions:</h4>
-      <ul>
-        <li><strong>Thesis:</strong> Synthetic Data Generation and Evaluation in LLMs for Code Generation.</li>
-        <li><strong>AI in Education:</strong> LLM-Assisted feedback mechanisms for informatics students.</li>
-        <li><strong>Machine Learning Pipelines:</strong> Scalable feature extraction in medical and academic data.</li>
-      </ul>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #04</div>
+      <div class="diary-story-quote">
+        "Melangkah melewati gerbang torii ini mengingatkan saya pada proses riset skripsi LLM Synthetic Data — penuh jalan bercabang, namun indah di puncaknya."
+      </div>
+      <p>Dunia riset AI dan evaluasi data sintetik adalah ruang jelajah favorit saya. Dalam skripsi dan eksplorasi akademis, saya mendalami bagaimana LLM dapat dilatih dan dievaluasi secara etis serta efisien untuk generasi kode otomatis.</p>
+      <p>Ada puluhan hipotesis yang sempat patah, namun ketekunan menelusuri data selalu membawa ke penemuan pola yang presisi.</p>
+      <div class="diary-personal-note">
+        ⛩️ <span>Catatan Pribadi: Meneliti AI bukan sekadar angka akurasi, tapi memahami bagaimana kecerdasan berkembang.</span>
+      </div>
     `
   },
   reach: {
-    title: '🏮 Reach Me! — Contact & Socials',
+    title: '📖 Catatan 05: Lentera Merah & Menara Puncak Langit',
     html: `
-      <p>Feel free to get in touch for collaborations, research inquiries, or engineering roles!</p>
-      <ul>
-        <li>📧 <strong>Email:</strong> <a href="mailto:yehezkieldavid2006@gmail.com" style="color: #38bdf8;">yehezkieldavid2006@gmail.com</a></li>
-        <li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ydavids/" target="_blank" style="color: #38bdf8;">linkedin.com/in/ydavids/</a></li>
-        <li>💻 <strong>GitHub:</strong> <a href="https://github.com/06202003/" target="_blank" style="color: #38bdf8;">github.com/06202003/</a></li>
-        <li>📱 <strong>WhatsApp:</strong> <a href="https://wa.me/6289507647137" target="_blank" style="color: #38bdf8;">+62 895-0764-7137</a></li>
+      <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #05</div>
+      <div class="diary-story-quote">
+        "Lentera merah ini menyala untuk menyambut siapa saja yang ingin bertukar pikiran dan menciptakan masa depan."
+      </div>
+      <p>Terima kasih telah berjalan jauh mengelilingi jurnal 3D ini. Baik Anda seorang <strong>recruiter</strong> yang mencari partner berpikir, sesama engineer, atau kawan berdiskusi soal masa depan AI — pintu komunikasi saya selalu terbuka lebar.</p>
+      <p>Mari duduk sejenak, seduh kopi, dan kita wujudkan ide-ide hebat berikutnya bersama.</p>
+      <ul style="margin-top: 14px; padding-left: 0; list-style: none;">
+        <li style="margin-bottom: 8px;">📧 <strong>Email:</strong> <a href="mailto:yehezkieldavid2006@gmail.com" style="color: #b85c40; font-weight: 700;">yehezkieldavid2006@gmail.com</a></li>
+        <li style="margin-bottom: 8px;">💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ydavids/" target="_blank" style="color: #b85c40; font-weight: 700;">linkedin.com/in/ydavids/</a></li>
+        <li style="margin-bottom: 8px;">💻 <strong>GitHub:</strong> <a href="https://github.com/06202003/" target="_blank" style="color: #b85c40; font-weight: 700;">github.com/06202003/</a></li>
+        <li style="margin-bottom: 8px;">📱 <strong>WhatsApp:</strong> <a href="https://wa.me/6289507647137" target="_blank" style="color: #b85c40; font-weight: 700;">+62 895-0764-7137</a></li>
       </ul>
+      <div class="diary-personal-note">
+        🏮 <span>Catatan Pribadi: Siap untuk diskusi hebat dan tantangan teknologi berikutnya!</span>
+      </div>
     `
   },
   credits: {
     title: '🎨 3D Model Artwork Attribution',
     html: `
-      <p><strong>"Tanabata evening - Kyoto inspired city scene"</strong></p>
-      <p>3D Artwork by <strong>Mathias Tossens</strong> on Sketchfab.</p>
-      <p>Licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" style="color: #38bdf8;">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
-      <p style="margin-top: 14px;"><a href="https://sketchfab.com/3d-models/tanabata-evening-kyoto-inspired-city-scene-04dc9402b74d43ef86c4795311c0e4bb" target="_blank" style="color: #38bdf8; text-decoration: underline;">🔗 View Original 3D Model on Sketchfab</a></p>
+      <div class="diary-stamp-badge">📍 Sketchfab License • CC BY 4.0</div>
+      <p style="margin-top: 10px;"><strong>"Tanabata evening - Kyoto inspired city scene"</strong></p>
+      <p>3D Artwork created by <strong>Mathias Tossens</strong> on Sketchfab.</p>
+      <p>Licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" style="color: #b85c40; font-weight: 700;">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
+      <p style="margin-top: 14px;"><a href="https://sketchfab.com/3d-models/tanabata-evening-kyoto-inspired-city-scene-04dc9402b74d43ef86c4795311c0e4bb" target="_blank" style="color: #b85c40; font-weight: 700; text-decoration: underline;">🔗 View Original 3D Model on Sketchfab</a></p>
     `
   }
 };

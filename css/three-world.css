@@ -595,21 +595,54 @@
   pointer-events: auto;
 }
 
+/* 📜 Vintage Kyoto Travel Diary Modal Theme (Kertas Diary Estetis) */
 .three-modal-card {
   width: 90%;
-  max-width: 680px;
-  max-height: 80vh;
-  background: rgba(10, 16, 32, 0.92);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 157, 66, 0.35);
-  border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 120, 40, 0.2);
-  color: #f8fafc;
+  max-width: 650px;
+  max-height: 82vh;
+  background: #fdfbf7;
+  background-image: 
+    linear-gradient(rgba(235, 225, 210, 0.45) 1px, transparent 1px),
+    radial-gradient(circle at 12px 12px, rgba(180, 150, 120, 0.12) 2px, transparent 2px);
+  background-size: 100% 28px, 100% 100%;
+  border: 2px solid #d4b896;
+  border-radius: 14px;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.85), inset 0 0 40px rgba(210, 180, 140, 0.25);
+  color: #2c2416;
   overflow-y: auto;
-  padding: 28px;
+  padding: 32px 32px 32px 48px;
   position: relative;
   transform: scale(0.9) translateY(20px);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Vintage Diary Red/Gold Left Margin Line */
+.three-modal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 36px;
+  width: 2px;
+  height: 100%;
+  background: rgba(220, 100, 80, 0.3);
+}
+
+/* Decorative Stamp Ribbon */
+.diary-stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(180, 80, 60, 0.12);
+  border: 1.5px dashed #b85c40;
+  color: #9e4328;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
 }
 
 .three-modal-backdrop.active .three-modal-card {
@@ -620,56 +653,70 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 14px;
+  border-bottom: 2px dashed rgba(180, 150, 120, 0.4);
+  padding-bottom: 12px;
   margin-bottom: 18px;
 }
 
 .three-modal-title {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.35rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #ff9d42;
+  color: #5c3a1e;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
 .three-modal-close {
-  background: rgba(255, 255, 255, 0.08);
-  border: none;
-  color: #94a3b8;
+  background: rgba(180, 150, 120, 0.18);
+  border: 1px solid rgba(180, 150, 120, 0.4);
+  color: #5c3a1e;
   font-size: 1.2rem;
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .three-modal-close:hover {
-  background: rgba(244, 63, 94, 0.3);
+  background: #b85c40;
   color: #ffffff;
 }
 
 .three-modal-body {
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
-  line-height: 1.6;
-  color: #cbd5e1;
+  line-height: 1.7;
+  color: #3d3122;
 }
 
-.three-modal-body h4 {
-  color: #38bdf8;
-  margin-top: 14px;
-  margin-bottom: 6px;
+/* Handwritten Narrative Highlight Quote Box */
+.diary-story-quote {
+  background: rgba(255, 250, 240, 0.95);
+  border-left: 4px solid #b85c40;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 18px;
+  margin: 14px 0 18px 0;
+  font-family: 'Caveat', cursive;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #4a2c11;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.06);
 }
 
-.three-modal-body ul {
-  padding-left: 20px;
-}
-
-.three-modal-body li {
-  margin-bottom: 6px;
+.diary-personal-note {
+  font-family: 'Caveat', cursive;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #8c4a27;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(180, 150, 120, 0.35);
 }
 
 /* 🍞 Toast Notification */
