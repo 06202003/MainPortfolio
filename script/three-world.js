@@ -646,73 +646,73 @@ function onSceneClick(event) {
   }
 }
 
-// Content Modals Map — Yehezkiel's Personal Kyoto Travel Journal & Memories
+// Content Modals Map — Yehezkiel's Personal Kyoto Travel Journal & Stories
 const modalContentMap = {
   about: {
-    title: '📖 Catatan 01: Kedai Ramen Yatai',
+    title: '📖 Catatan 01: Kedai Ramen Yatai di Sudut Malam',
     html: `
       <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #01 (Ramen Yatai)</div>
       <div class="diary-story-quote">
-        "Bagi saya, membangun AI bukan tentang menggantikan manusia, melainkan menciptakan jembatan antara ide rumit dan kemudahan yang hangat."
+        "Kuah hangat ramen Yatai di larut malam selalu mengajarkan satu hal: karya yang berkesan butuh ketelitian meracik bumbu dasar hingga menjadi satu sajian yang utuh."
       </div>
-      <p>Selamat datang di sudut tenang saya. Di balik baris-baris kode dan arsitektur LLM, saya adalah <strong>Yehezkiel David Setiawan</strong> — seorang pembelajar seumur hidup yang lebih suka mendengarkan alur logika daripada sekadar mengetik sintaks.</p>
-      <p>Saya percaya teknologi yang berkesan selalu lahir dari rasa ingin tahu yang tenang: bagaimana membuat data bekerja dengan jujur, dan bagaimana kode dapat menyelesaikan persoalan nyata tanpa kehilangan sentuhan manusianya.</p>
+      <p>Selamat datang di kedai Ramen Yatai saya. Di sini, di tengah kepulan uap hangat di pinggir jalan Kyoto, saya menemukan analogi terbaik tentang diri saya. Saya <strong>Yehezkiel David Setiawan</strong> — seorang AI Engineer & Researcher yang memandang kode seperti racikan kuah ramen: bukan tentang berapa banyak bahan yang dimasukkan, melainkan tentang keseimbangan logika yang pas.</p>
+      <p>Bagi saya, merancang model AI atau arsitektur LLM adalah tentang menciptakan pengalaman yang tidak hanya pintar, tapi juga memberi rasa nyaman dan kemudahan nyata bagi penggunanya.</p>
       <div class="diary-personal-note">
-        🍜 <span>Catatan Pribadi: Menyeduh ramen & teh hangat saat malam sepi adalah ritual terbaik saat menelaah arsitektur AI.</span>
+        🍜 <span>Catatan Pribadi: Menikmati semangkuk ramen hangat sambil menelaah arsitektur prompt AI di larut malam adalah ritual favorit saya.</span>
       </div>
     `
   },
   qualification: {
-    title: '📖 Catatan 02: Pabrik Kuno Sake Brewery',
+    title: '📖 Catatan 02: Tungku Kuno Sake Brewery & Waktu',
     html: `
       <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #02 (Sake Brewery)</div>
       <div class="diary-story-quote">
-        "Pabrik Sake kuno bertahan berabad-abad lewat proses fermentasi dan penyulingan yang penuh kesabaran. Begitu juga prinsip saya dalam berkarya."
+        "Proses penyulingan Sake terbaik butuh fermentasi panjang, kesabaran, dan kontrol suhu yang presisi. Tidak ada jalan pintas untuk kualitas sejati."
       </div>
-      <p>Perjalanan saya di dunia Informatika tidak dibangun lewat jalan lintas serba instan. Dari mengasah fondasi Laravel, merancang pipa data medis di Royal Medicalink Pharmalab, hingga menyelami riset kecerdasan buatan di Maranatha Christian University — setiap pengalaman adalah penyulingan logika yang menguatkan satu sama lain.</p>
-      <p>Saya belajar bahwa kode yang tangguh bukanlah yang paling rumit, melainkan yang paling rapi, mudah dirawat, dan dibangun untuk bertahan lama.</p>
+      <p>Di pabrik penyulingan Sake kuno ini, waktu bekerja dengan caranya sendiri. Perjalanan karier dan keahlian saya di dunia Informatika dibangun dengan prinsip yang sama. Dari menggembleng fondasi Laravel, merancang pipa data medis berkapasitas besar di Royal Medicalink Pharmalab, hingga mengeksplorasi riset kecerdasan buatan di Universitas Kristen Maranatha — tidak ada langkah yang saya lewati secara instan.</p>
+      <p>Setiap error yang dipecahkan dan setiap arsitektur data yang dirancang adalah proses fermentasi pengalaman yang membentuk cara berpikir saya agar tetap matang, rapi, dan tahan diuji waktu.</p>
       <div class="diary-personal-note">
-        🍶 <span>Catatan Pribadi: Code like traditional brewing — patient, refined, and built to last.</span>
+        🍶 <span>Catatan Pribadi: Engineering is like traditional brewing — patient, meticulous, and built to stand the test of time.</span>
       </div>
     `
   },
   portfolio: {
-    title: '📖 Catatan 03: Toko Roti Tradisional Jepang',
+    title: '📖 Catatan 03: Aroma Toko Roti Tradisional Jepang',
     html: `
       <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #03 (Traditional Bakery)</div>
       <div class="diary-story-quote">
-        "Aroma roti tradisional yang baru matang selalu memberi kehangatan. Di sinilah eksperimen-eksperimen paling kreatif saya lahir."
+        "Aroma roti manis tradisional yang baru matang selalu membawa kehangatan dan senyuman. Begitu juga setiap eksperimen aplikasi yang saya ciptakan."
       </div>
-      <p>Saya tidak pernah puas hanya dengan aplikasi yang sekadar 'bisa jalan'. Ketika merancang <strong>S-SPARC</strong> (sistem kontrol prompt AI yang berhasil meraih <em>Merit Award AIREA 2026</em>) hingga portal 3D WebGL interaktif ini, impian saya selalu sama: memberi kehangatan kejutan yang berkesan bagi siapa pun yang mencobanya.</p>
-      <p>Setiap proyek adalah kanvas tempat kecerdasan logika dan estetika visual bertemu dalam harmoni.</p>
+      <p>Toko roti tradisional ini selalu penuh dengan kreativitas dan kehangatan. Di sinilah tempat eksperimen-eksperimen terbaik saya lahir. Saat merancang <strong>S-SPARC</strong> (sistem kontrol prompt AI yang berhasil meraih <em>Merit Award AIREA 2026</em>) hingga portal 3D WebGL interaktif ini, impian saya sederhana: ingin 'memanggang' aplikasi yang tidak sekadar berfungsi, tapi memberikan kehangatan dan kejutan manis bagi siapa pun yang mencobanya.</p>
+      <p>Bagi saya, perpaduan antara kecanggihan algoritma dan desain visual yang estetik adalah resep utama menciptakan karya digital yang dicintai penggunanya.</p>
       <div class="diary-personal-note">
-        🍞 <span>Catatan Pribadi: Di balik setiap algoritma presisi, harus ada sentuhan hangat yang membuat orang tersenyum.</span>
+        🍞 <span>Catatan Pribadi: Di balik setiap algoritma yang dingin dan presisi, harus selalu ada kehangatan yang membuat orang tersenyum.</span>
       </div>
     `
   },
   research: {
-    title: '📖 Catatan 04: Kuil Shinto & Tangga Torii',
+    title: '📖 Catatan 04: Tangga Kuil Shinto & Gerbang Torii',
     html: `
       <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #04 (Shinto Shrine)</div>
       <div class="diary-story-quote">
-        "Melangkah melewati gerbang kuil Shinto ini mengingatkan saya pada proses riset skripsi LLM Synthetic Data — penuh jalan bercabang, namun indah di puncaknya."
+        "Melangkah menaiki tangga kuil Shinto melewati deretan torii merah mengingatkan saya pada perjalanan meneliti AI — sunyi, penuh dedikasi, namun indah di puncaknya."
       </div>
-      <p>Dunia riset AI dan evaluasi data sintetik adalah ruang jelajah favorit saya. Dalam skripsi dan eksplorasi akademis, saya mendalami bagaimana LLM dapat dilatih dan dievaluasi secara etis serta efisien untuk generasi kode otomatis.</p>
-      <p>Ada puluhan hipotesis yang sempat patah, namun ketekunan menelusuri data selalu membawa ke penemuan pola yang presisi.</p>
+      <p>Suasana hening di kuil Shinto ini adalah ruang jelajah favorit untuk pikiran saya. Dalam skripsi dan eksplorasi akademis mengenai LLM Synthetic Data Generation & Evaluation, saya menyelami bagaimana kecerdasan buatan dapat dilatih dan dievaluasi secara etis, efisien, dan objektif untuk generasi kode otomatis.</p>
+      <p>Proses riset adalah ibarat meniti ribuan anak tangga kuil: ada puluhan hipotesis yang patah di tengah jalan, namun ketekunan menelusuri data selalu membawa saya menemukan kebenaran pola yang terang.</p>
       <div class="diary-personal-note">
-        ⛩️ <span>Catatan Pribadi: Meneliti AI bukan sekadar angka akurasi, tapi memahami bagaimana kecerdasan berkembang.</span>
+        ⛩️ <span>Catatan Pribadi: Meneliti AI bukan sekadar mengejar angka akurasi di atas kertas, tapi memahami bagaimana kecerdasan berkembang.</span>
       </div>
     `
   },
   reach: {
-    title: '📖 Catatan 05: Vending Machine Lentera Merah',
+    title: '📖 Catatan 05: Vending Machine & Lentera Jalan',
     html: `
       <div class="diary-stamp-badge">📍 Kyoto Journal • Lembar #05 (Vending Machine)</div>
       <div class="diary-story-quote">
-        "Lentera merah dan vending machine di sudut jalan ini selalu menyala untuk menyambut siapa saja yang ingin bertukar pikiran."
+        "Vending machine yang menyala hangat di sudut jalan malam Kyoto selalu siap melayani siapa saja yang lewat. Begitu juga pintu diskusi saya."
       </div>
-      <p>Terima kasih telah berjalan jauh mengelilingi jurnal 3D ini. Baik Anda seorang <strong>recruiter</strong> yang mencari partner berpikir, sesama engineer, atau kawan berdiskusi soal masa depan AI — pintu komunikasi saya selalu terbuka lebar.</p>
-      <p>Mari duduk sejenak, ambil minuman segar, dan kita wujudkan ide-ide hebat berikutnya bersama.</p>
+      <p>Terima kasih telah menelusuri perjalanan 3D ini sampai ke sudut vending machine dan lentera merah ini. Baik Anda seorang <strong>recruiter</strong> yang mencari engineer penuh inisiatif, sesama developer, atau rekan bertukar pikiran tentang masa depan AI — saya selalu menyambut komunikasi Anda dengan terbuka.</p>
+      <p>Mari ambil minuman segar, duduk sejenak, dan kita diskusikan bagaimana kita bisa menciptakan inovasi berkesan berikutnya bersama.</p>
       <ul style="margin-top: 14px; padding-left: 0; list-style: none;">
         <li style="margin-bottom: 8px;">📧 <strong>Email:</strong> <a href="mailto:yehezkieldavid2006@gmail.com" style="color: #b85c40; font-weight: 700;">yehezkieldavid2006@gmail.com</a></li>
         <li style="margin-bottom: 8px;">💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ydavids/" target="_blank" style="color: #b85c40; font-weight: 700;">linkedin.com/in/ydavids/</a></li>
@@ -720,7 +720,7 @@ const modalContentMap = {
         <li style="margin-bottom: 8px;">📱 <strong>WhatsApp:</strong> <a href="https://wa.me/6289507647137" target="_blank" style="color: #b85c40; font-weight: 700;">+62 895-0764-7137</a></li>
       </ul>
       <div class="diary-personal-note">
-        🧃 <span>Catatan Pribadi: Siap untuk diskusi hebat dan tantangan teknologi berikutnya!</span>
+        🧃 <span>Catatan Pribadi: Selalu siap untuk kolaborasi hebat dan tantangan teknologi berikutnya!</span>
       </div>
     `
   },
