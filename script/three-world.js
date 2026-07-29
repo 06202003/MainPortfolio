@@ -459,6 +459,88 @@ function onMouseMove(event) {
 
 let kyotoGltfModel = null;
 
+// Smooth Camera Zoom-In to Clicked Annotation Landmark (Sketchfab Feature!)
+function zoomToAnnotation(sprite, targetId) {
+  if (!sprite || !camera || !controls) return;
+
+  const targetWorldPos = sprite.position.clone();
+  const targetCamPos = new THREE.Vector3(
+    targetWorldPos.x * 0.6,
+    targetWorldPos.y + 1.8,
+    targetWorldPos.z + 6.5
+  );
+
+  if (controls) controls.autoRotate = false;
+  playSound('click');
+
+  if (typeof gsap !== 'undefined') {
+    gsap.killTweensOf(camera.position);
+    gsap.killTweensOf(controls.target);
+
+    gsap.to(camera.position, {
+      x: targetCamPos.x,
+      y: targetCamPos.y,
+      z: targetCamPos.z,
+      duration: 1.2,
+      ease: 'power2.inOut',
+      onUpdate: () => {
+        controls.update();
+      }
+    });
+
+    gsap.to(controls.target, {
+      x: targetWorldPos.x,
+      y: targetWorldPos.y,
+      z: targetWorldPos.z,
+      duration: 1.2,
+      ease: 'power2.inOut',
+      onUpdate: () => {
+        controls.update();
+      },
+      onComplete: () => {
+        openContentModal(targetId);
+      }
+    });
+  } else {
+    camera.position.copy(targetCamPos);
+    controls.target.copy(targetWorldPos);
+    controls.update();
+    openContentModal(targetId);
+  }
+}
+
+// Reset Camera Back to Overview View When Modal Closes
+function resetCameraView() {
+  if (!camera || !controls) return;
+
+  const defaultCamPos = new THREE.Vector3(0, 7, 18);
+  const defaultTarget = new THREE.Vector3(0, 2.5, -2);
+
+  if (typeof gsap !== 'undefined') {
+    gsap.to(camera.position, {
+      x: defaultCamPos.x,
+      y: defaultCamPos.y,
+      z: defaultCamPos.z,
+      duration: 1.0,
+      ease: 'power2.out',
+      onUpdate: () => controls.update()
+    });
+
+    gsap.to(controls.target, {
+      x: defaultTarget.x,
+      y: defaultTarget.y,
+      z: defaultTarget.z,
+      duration: 1.0,
+      ease: 'power2.out',
+      onUpdate: () => controls.update()
+    });
+  } else {
+    camera.position.copy(defaultCamPos);
+    controls.target.copy(defaultTarget);
+    controls.update();
+  }
+}
+
 // Handle Raycast Scene Clicks (Pin Annotations Zoom-In)
 function onSceneClick(event) {
   if (!raycaster || !camera || interactiveObjects.length === 0) return;

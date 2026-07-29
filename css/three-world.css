@@ -246,10 +246,10 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* 🎨 3D Model Credits Button */
+/* 🎨 3D Model Credits Button (Indigo Neon Pill) */
 .hud-btn-credits {
-  background: rgba(99, 102, 241, 0.2);
-  border-color: rgba(129, 140, 248, 0.4);
+  background: rgba(99, 102, 241, 0.18);
+  border-color: rgba(129, 140, 248, 0.35);
   color: #c7d2fe;
 }
 
@@ -257,7 +257,23 @@
   background: rgba(99, 102, 241, 0.5);
   border-color: #818cf8;
   color: #ffffff;
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+  box-shadow: 0 0 24px rgba(99, 102, 241, 0.7), 0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* 🚪 Exit 3D Button (Crimson Neon Pill) */
+.hud-btn-exit {
+  background: rgba(225, 29, 72, 0.18);
+  border-color: rgba(244, 63, 94, 0.4);
+  color: #fecdd3;
+}
+
+.hud-btn-exit:hover {
+  background: rgba(225, 29, 72, 0.55);
+  border-color: #f43f5e;
+  color: #ffffff;
+  box-shadow: 0 0 24px rgba(244, 63, 94, 0.7), 0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px) scale(1.03);
 }
 
 /* 💭 Random Thoughts, Quotes & Jokes Floating Pop-up Card */
@@ -326,18 +342,6 @@
   color: #e2e8f0;
 }
 
-.hud-btn-exit {
-  background: rgba(225, 29, 72, 0.2);
-  border-color: rgba(244, 63, 94, 0.5);
-  color: #fecdd3;
-}
-
-.hud-btn-exit:hover {
-  background: rgba(225, 29, 72, 0.5);
-  border-color: #f43f5e;
-  color: #ffffff;
-  box-shadow: 0 0 20px rgba(244, 63, 94, 0.6);
-}
 
 /* 🎵 Spotify-Style Glassmorphic Radio Player Widget */
 .hud-spotify-player {
