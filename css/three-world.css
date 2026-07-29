@@ -659,7 +659,8 @@
 }
 
 .three-modal-title {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Google Sans', sans-serif;
+  font-optical-sizing: auto;
   font-size: 1.4rem;
   font-weight: 700;
   color: #5c3a1e;
@@ -686,7 +687,8 @@
 }
 
 .three-modal-body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Google Sans', sans-serif;
+  font-optical-sizing: auto;
   font-size: 0.95rem;
   line-height: 1.7;
   color: #3d3122;
