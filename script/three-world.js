@@ -115,7 +115,7 @@ function showToast(message) {
 
 // Initialize 3D World Scene
 function initThreeWorld() {
-  const container = document.getElementById('three-canvas-container');
+  const container = document.getElementById('three-viewport') || document.getElementById('three-canvas-container');
   if (!container) return;
 
   // Scene & Fog
@@ -136,7 +136,7 @@ function initThreeWorld() {
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.toneMappingExposure = 1.1;
 
-  // Clear existing canvas if any
+  // Clear existing canvas inside viewport
   container.innerHTML = '';
   container.appendChild(renderer.domElement);
 
@@ -346,6 +346,9 @@ function createFallbackScenery() {
   signMesh.userData = { id: 'reach', title: '🏮 Neon Rooftop (Reach Me / Contact)' };
   scene.add(signMesh);
   interactiveObjects.push(signMesh);
+
+  // Create Interactive Hotspots
+  createInteractiveHotspots();
 }
 
 // Create Hotspots on the Loaded 3D Scene
@@ -536,6 +539,7 @@ function animate() {
 // Open 3D Portal Entry
 function enter3DWorld() {
   playSound('doorCreak');
+  document.body.style.overflow = 'hidden';
   const overlay = document.getElementById('portal-overlay');
   const canvasContainer = document.getElementById('three-canvas-container');
 
@@ -566,6 +570,7 @@ function exit3DWorld() {
     if (animFrameId) cancelAnimationFrame(animFrameId);
     if (canvasContainer) canvasContainer.classList.remove('visible');
     if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
     
     // Clean up Three.js WebGL context
     if (renderer) {
