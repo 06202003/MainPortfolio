@@ -464,11 +464,11 @@ function zoomToAnnotation(sprite, targetId) {
   if (!sprite || !camera || !controls) return;
 
   const targetWorldPos = sprite.position.clone();
-  const targetCamPos = new THREE.Vector3(
-    targetWorldPos.x * 0.6,
-    targetWorldPos.y + 1.8,
-    targetWorldPos.z + 6.5
-  );
+  
+  // Smart Front-Facing Camera Angle Calculation (Always faces landmark from front view!)
+  const frontDir = new THREE.Vector3(0, 0.4, 1.0).normalize();
+  const targetCamPos = targetWorldPos.clone().add(frontDir.multiplyScalar(6.5));
+  targetCamPos.y += 0.8;
 
   if (controls) controls.autoRotate = false;
   playSound('click');
