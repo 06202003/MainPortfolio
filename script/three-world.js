@@ -216,6 +216,85 @@ function initThreeWorld() {
   mainDirLight.castShadow = true;
   scene.add(mainDirLight);
 
+let cloudGroup = null;
+
+// Create Soft Floating 3D Cloud Texture
+function createCloudTexture() {
+  const canvas = document.createElement('canvas');
+  canvas.width = 256;
+  canvas.height = 256;
+  const ctx = canvas.getContext('2d');
+
+  const grad = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+  grad.addColorStop(0, 'rgba(255, 255, 255, 0.45)');
+  grad.addColorStop(0.3, 'rgba(200, 220, 255, 0.25)');
+  grad.addColorStop(0.7, 'rgba(120, 150, 200, 0.08)');
+  grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, 256, 256);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.needsUpdate = true;
+  return texture;
+}
+
+// Create Floating Cloud Sea Under the Kyoto Sky Island
+function createFloatingCloudSea() {
+  cloudGroup = new THREE.Group();
+  const cloudTex = createCloudTexture();
+  const cloudCount = 45;
+
+  const cloudGeo = new THREE.PlaneGeometry(18, 18);
+  const cloudMat = new THREE.MeshBasicMaterial({
+    map: cloudTex,
+    transparent: true,
+    opacity: 0.65,
+    depthWrite: false,
+    blending: THREE.AdditiveBlending
+  });
+
+  for (let i = 0; i < cloudCount; i++) {
+    const cloud = new THREE.Mesh(cloudGeo, cloudMat);
+    const angle = (i / cloudCount) * Math.PI * 2 + Math.random() * 0.5;
+    const radius = 5 + Math.random() * 18;
+
+    cloud.position.x = Math.cos(angle) * radius;
+    cloud.position.y = -1.8 + (Math.random() - 0.5) * 1.2;
+    cloud.position.z = Math.sin(angle) * radius;
+
+    cloud.rotation.x = -Math.PI / 2;
+    cloud.rotation.z = Math.random() * Math.PI * 2;
+    cloud.scale.setScalar(1.2 + Math.random() * 1.5);
+
+    cloud.userData = {
+      rotSpeed: (Math.random() - 0.5) * 0.001
+    };
+
+    cloudGroup.add(cloud);
+  }
+
+  scene.add(cloudGroup);
+}
+
+// Animate Clouds & Gentle Island Levitation
+function updateCloudsAndLevitation() {
+  const time = Date.now();
+
+  // 1. Gently bob the entire Kyoto Island up and down like a floating sky island
+  if (kyotoGltfModel) {
+    kyotoGltfModel.position.y = Math.sin(time * 0.001) * 0.15;
+  }
+
+  // 2. Slow organic drift & roll of the cloud sea
+  if (cloudGroup) {
+    cloudGroup.rotation.y += 0.0003;
+    cloudGroup.children.forEach((cloud) => {
+      cloud.rotation.z += cloud.userData.rotSpeed;
+    });
+  }
+}
+
   // Warm Japanese Lantern Light
   const lanternLight1 = new THREE.PointLight(0xff7700, 3, 30);
   lanternLight1.position.set(-6, 5, 2);
@@ -223,6 +302,9 @@ function initThreeWorld() {
 
   // Rain Particle System (Retained)
   createRainParticles();
+
+  // ☁️ 3D Floating Cloud Sea (Floating Sky Island Atmosphere)
+  createFloatingCloudSea();
 
   // Raycasting Setup
   raycaster = new THREE.Raycaster();
@@ -253,6 +335,7 @@ function animate() {
 
   if (controls) controls.update();
   updateRain();
+  updateCloudsAndLevitation();
 
   // Floating bobbing animation for Sketchfab numbered badges 1, 2, 3, 4, 5
   interactiveObjects.forEach((obj) => {
