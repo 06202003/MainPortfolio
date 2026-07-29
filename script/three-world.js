@@ -72,6 +72,8 @@ let lofiStreamAudio = null;
 // Toggle 24/7 Live Lo-Fi Radio Stream
 function toggleLofiMusic() {
   const btn = document.getElementById('btn-audio-toggle');
+  const dot = document.getElementById('radio-wave-dot');
+  const statusText = document.getElementById('radio-status-text');
 
   if (!lofiStreamAudio) {
     lofiStreamAudio = new Audio();
@@ -101,20 +103,28 @@ function toggleLofiMusic() {
   if (isLofiPlaying) {
     lofiStreamAudio.pause();
     isLofiPlaying = false;
-    if (btn) btn.innerHTML = '🎵 Play Live Lo-Fi Radio';
+    if (btn) btn.innerHTML = '🎵 Play Radio';
+    if (dot) dot.classList.remove('active');
+    if (statusText) statusText.textContent = 'Paused';
     showToast('📻 Lo-Fi Radio Stream Paused');
   } else {
     showToast('📻 Connecting to 24/7 Live Lo-Fi Radio Stream...');
+    if (statusText) statusText.textContent = 'Connecting...';
+
     const playPromise = lofiStreamAudio.play();
     if (playPromise !== undefined) {
       playPromise.then(() => {
         isLofiPlaying = true;
-        if (btn) btn.innerHTML = '📻 Lo-Fi Live 🟢';
+        if (btn) btn.innerHTML = '⏸️ Pause';
+        if (dot) dot.classList.add('active');
+        if (statusText) statusText.textContent = 'Live 🟢 Chillhop Beats';
         showToast('🎶 24/7 Live Lo-Fi Chillhop Radio Playing!');
       }).catch(err => {
         console.warn('Lo-Fi radio stream play error:', err);
         isLofiPlaying = false;
-        if (btn) btn.innerHTML = '🎵 Play Live Lo-Fi Radio';
+        if (btn) btn.innerHTML = '🎵 Play Radio';
+        if (dot) dot.classList.remove('active');
+        if (statusText) statusText.textContent = 'Click to Retry';
         showToast('⚠️ Click again to start 24/7 Lo-Fi Radio Stream');
       });
     }
@@ -313,11 +323,11 @@ function createSketchfabAnnotationsInScene() {
   interactiveObjects = [];
 
   const annotations = [
-    { num: 1, pos: [-0.8, 2.8, 2.2], colorStr: '#f59e0b', id: 'about', title: '🍜 1. Teahouse & River Bridge (About Me)' },
-    { num: 2, pos: [-3.8, 4.2, -1.5], colorStr: '#06b6d4', id: 'qualification', title: '🚉 2. Machiya Building (Qualifications & Journey)' },
-    { num: 3, pos: [3.8, 3.8, 1.0], colorStr: '#a855f7', id: 'portfolio', title: '🕹️ 3. Arcade & Pine Garden (Featured Projects)' },
-    { num: 4, pos: [-4.2, 2.8, 1.5], colorStr: '#10b981', id: 'research', title: '⛩️ 4. Torii Shrine & Steps (Research & Thesis)' },
-    { num: 5, pos: [0.0, 6.8, -2.2], colorStr: '#ef4444', id: 'reach', title: '🏮 5. Rooftop Sky Tower (Reach Me / Contact)' }
+    { num: 1, pos: [0.0, 1.8, 1.2], colorStr: '#f59e0b', id: 'about', title: '🍜 1. Teahouse & River Bridge (About Me)' },
+    { num: 2, pos: [-2.5, 3.2, -1.8], colorStr: '#06b6d4', id: 'qualification', title: '🚉 2. Machiya Building (Qualifications & Journey)' },
+    { num: 3, pos: [2.8, 3.0, 0.8], colorStr: '#a855f7', id: 'portfolio', title: '🕹️ 3. Arcade & Pine Garden (Featured Projects)' },
+    { num: 4, pos: [-3.2, 2.2, 1.8], colorStr: '#10b981', id: 'research', title: '⛩️ 4. Torii Shrine & Steps (Research & Thesis)' },
+    { num: 5, pos: [0.0, 5.2, -2.0], colorStr: '#ef4444', id: 'reach', title: '🏮 5. Rooftop Sky Tower (Reach Me / Contact)' }
   ];
 
   annotations.forEach((anno) => {

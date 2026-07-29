@@ -2684,7 +2684,15 @@
               <span>Kyoto Midnight Archive</span>
             </div>
             <div class="hud-actions">
-              <button id="btn-audio-toggle" class="hud-btn">🎵 Play Lo-Fi</button>
+              <!-- 📻 Glassmorphic Lo-Fi Radio Widget -->
+              <div class="hud-radio-card">
+                <div class="radio-wave-dot" id="radio-wave-dot"></div>
+                <div class="radio-details">
+                  <span class="radio-header-text">📻 24/7 Lo-Fi Radio</span>
+                  <span class="radio-song-text" id="radio-status-text">Click Play to Stream</span>
+                </div>
+                <button id="btn-audio-toggle" class="hud-btn">🎵 Play Radio</button>
+              </div>
               <button id="btn-exit-3d" class="hud-btn hud-btn-exit">🚪 Exit 3D</button>
             </div>
           </div>
@@ -2711,7 +2719,7 @@
       </div>
 
       <!-- 3D Engine JS Script -->
-      <script src="script/three-world.js?v=24"></script>
+      <script src="script/three-world.js?v=25"></script>
 </body>
 
 </html>
