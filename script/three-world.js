@@ -245,59 +245,51 @@ function updateRain() {
   rainParticles.geometry.attributes.position.needsUpdate = true;
 }
 
-// Load Kyoto GLTF Model
+// Load Kyoto GLTF Model with Instant Scenery Fallback
 function loadKyotoModel() {
   const loadingScreen = document.getElementById('three-loading-screen');
   const progressBar = document.getElementById('loader-progress-bar');
   const statusText = document.getElementById('loader-status');
 
-  const modelPath = 'assets/models/tanabata_evening_-_kyoto_inspired_city_scene.glb';
-  const loader = new THREE.GLTFLoader();
+  // Always create interactive scenery immediately so the world renders INSTANTLY!
+  createFallbackScenery();
 
-  if (statusText) statusText.textContent = 'Loading Kyoto Midnight Alley (82MB)...';
-
-  loader.load(
-    modelPath,
-    (gltf) => {
-      const model = gltf.scene;
-      model.position.set(0, 0, 0);
-      model.scale.set(1, 1, 1);
-      
-      model.traverse((child) => {
-        if (child.isMesh) {
-          child.castShadow = true;
-          child.receiveShadow = true;
-        }
-      });
-
-      scene.add(model);
-
-      // Create Interactive Hotspot Anchor Meshes
-      createInteractiveHotspots();
-
-      // Hide Loading Screen
-      if (loadingScreen) {
-        loadingScreen.classList.add('hidden');
-      }
-
-      showToast('🏮 Welcome to Yehezkiel\'s Midnight Archive! Click around to explore.');
-    },
-    (xhr) => {
-      if (xhr.lengthComputable) {
-        const percent = Math.round((xhr.loaded / xhr.total) * 100);
-        if (progressBar) progressBar.style.width = percent + '%';
-        if (statusText) statusText.textContent = `Loading 3D Assets... ${percent}%`;
-      }
-    },
-    (error) => {
-      console.warn('Failed to load GLTF model, rendering procedural scenery fallback.', error);
-      if (statusText) statusText.textContent = 'Creating fallback 3D scene...';
-      createFallbackScenery();
-      if (loadingScreen) {
-        setTimeout(() => loadingScreen.classList.add('hidden'), 500);
-      }
+  // Auto hide loading screen after 800ms max so user is NEVER stuck on loading screen
+  setTimeout(() => {
+    if (loadingScreen) {
+      loadingScreen.classList.add('hidden');
     }
-  );
+    showToast('🏮 Welcome to Yehezkiel\'s Midnight Archive! Click around to explore.');
+  }, 800);
+
+  const modelPath = 'assets/models/tanabata_evening_-_kyoto_inspired_city_scene.glb';
+  if (typeof THREE.GLTFLoader === 'function') {
+    const loader = new THREE.GLTFLoader();
+    loader.load(
+      modelPath,
+      (gltf) => {
+        const model = gltf.scene;
+        model.position.set(0, 0, 0);
+        model.scale.set(1, 1, 1);
+        model.traverse((child) => {
+          if (child.isMesh) {
+            child.castShadow = true;
+            child.receiveShadow = true;
+          }
+        });
+        scene.add(model);
+      },
+      (xhr) => {
+        if (xhr.lengthComputable && progressBar) {
+          const percent = Math.round((xhr.loaded / xhr.total) * 100);
+          progressBar.style.width = percent + '%';
+        }
+      },
+      (error) => {
+        console.warn('GLTF background load note:', error);
+      }
+    );
+  }
 }
 
 // Create Fallback Procedural Scenery if GLTF fails or missing
