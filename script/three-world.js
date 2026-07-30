@@ -410,7 +410,7 @@ function createSketchfabNumberBadgeTexture(num, hexColorStr) {
   ctx.stroke();
 
   // White Number (1, 2, 3, 4, 5)
-  ctx.font = 'bold 52px Arial, sans-serif';
+  ctx.font = 'bold 52px "Space Grotesk", sans-serif';
   ctx.fillStyle = '#ffffff';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';

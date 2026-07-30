@@ -56,7 +56,7 @@
 }
 
 .secret-door-btn .door-label {
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code), 'JetBrains Mono', monospace;
   font-size: 0.8rem;
   font-weight: 600;
   color: #ffd8a8;
@@ -127,7 +127,7 @@
   justify-content: center;
   z-index: 100001;
   color: #ffffff;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code), 'JetBrains Mono', monospace;
   transition: opacity 0.6s ease;
 }
 
@@ -220,7 +220,7 @@
   padding: 8px 16px;
   border-radius: 20px;
   color: #ffb870;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code), 'JetBrains Mono', monospace;
   font-size: 0.85rem;
   display: flex;
   align-items: center;
@@ -251,7 +251,7 @@
   padding: 6px 14px;
   border-radius: 20px;
   color: #38bdf8;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code), 'JetBrains Mono', monospace;
   font-size: 0.78rem;
   font-weight: 600;
   display: flex;
@@ -266,7 +266,7 @@
   padding: 8px 18px !important;
   margin: 0 4px !important;
   border-radius: 25px !important;
-  font-family: 'Roboto Mono', monospace !important;
+  font-family: var(--font-code), 'JetBrains Mono', monospace !important;
   font-size: 0.8rem !important;
   font-weight: 700 !important;
   cursor: pointer;
@@ -329,7 +329,7 @@
   border-radius: 18px;
   padding: 14px 18px;
   color: #f1f5f9;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body), 'Inter', sans-serif;
   box-shadow: 0 10px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(168, 85, 247, 0.2);
   opacity: 0;
   transform: translateY(20px) scale(0.95);
@@ -352,7 +352,7 @@
 .thought-category-tag {
   font-size: 0.7rem;
   font-weight: 700;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code), 'JetBrains Mono', monospace;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   padding: 2px 8px;
@@ -445,13 +445,13 @@
   font-size: 0.75rem;
   font-weight: 700;
   color: #38bdf8;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code), 'JetBrains Mono', monospace;
 }
 
 .spotify-song-title {
   font-size: 0.68rem;
   color: #94a3b8;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code), 'JetBrains Mono', monospace;
 }
 
 .spotify-controls {
@@ -535,7 +535,7 @@
   padding: 10px 24px;
   border-radius: 30px;
   color: #e0f2fe;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code), 'JetBrains Mono', monospace;
   font-size: 0.9rem;
   pointer-events: auto;
   box-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
@@ -562,7 +562,7 @@
   padding: 4px 10px;
   border-radius: 12px;
   color: #00f0ff;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code), 'JetBrains Mono', monospace;
   font-size: 0.72rem;
   font-weight: 700;
   box-shadow: 0 4px 20px rgba(0, 240, 255, 0.4);
@@ -635,7 +635,7 @@
   background: rgba(180, 80, 60, 0.12);
   border: 1.5px dashed #b85c40;
   color: #9e4328;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code), 'JetBrains Mono', monospace;
   font-size: 0.72rem;
   font-weight: 700;
   padding: 3px 10px;
@@ -659,7 +659,7 @@
 }
 
 .three-modal-title {
-  font-family: 'Google Sans', sans-serif;
+  font-family: var(--font-heading), 'Space Grotesk', sans-serif;
   font-optical-sizing: auto;
   font-size: 1.4rem;
   font-weight: 700;
@@ -687,7 +687,7 @@
 }
 
 .three-modal-body {
-  font-family: 'Google Sans', sans-serif;
+  font-family: var(--font-body), 'Inter', sans-serif;
   font-optical-sizing: auto;
   font-size: 0.95rem;
   line-height: 1.7;
@@ -732,7 +732,7 @@
   border-radius: 12px;
   padding: 12px 20px;
   color: #ecfdf5;
-  font-family: 'Roboto Mono', monospace;
+  font-family: var(--font-code), 'JetBrains Mono', monospace;
   font-size: 0.85rem;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(16, 185, 129, 0.3);
   transform: translateX(120%);

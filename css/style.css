@@ -1,10 +1,10 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto Mono', monospace;
-}
-
 :root {
+  /* Typography Design Tokens */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-subheading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+
   --theme-navy: #0f2a43;
   --theme-navy-deep: #07131f;
   --theme-slate: #334155;
@@ -27,6 +27,58 @@
   --btn-dark: #2e8b57;
   --btn-dark-hover: #257246;
   --btn-light: #dff3e8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global Typography Rules */
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* Headings: Space Grotesk 700 */
+h1, h2, h3,
+.h1, .h2, .h3,
+.font-heading,
+.heading-font,
+.section-title,
+.hero-title,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+}
+
+/* Subheadings: Inter 600 */
+h4, h5, h6,
+.h4, .h5, .h6,
+.font-subheading,
+.subheading-font,
+.subheading,
+.subtitle,
+.lead,
+.card-subtitle,
+.card-title {
+  font-family: var(--font-subheading) !important;
+  font-weight: 600 !important;
+}
+
+/* Body Text: Inter 400 */
+p, span, li, a, td, th, div, label, input, button, textarea, blockquote {
+  font-family: var(--font-body);
+}
+
+/* Code & Monospace: JetBrains Mono */
+code, pre, kbd, samp,
+.font-mono,
+.code-font,
+.tech-badge,
+.badge-code,
+.font-code {
+  font-family: var(--font-code) !important;
 }
 
 .putih {
