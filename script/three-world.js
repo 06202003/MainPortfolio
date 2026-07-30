@@ -216,84 +216,84 @@ function initThreeWorld() {
   mainDirLight.castShadow = true;
   scene.add(mainDirLight);
 
-let cloudGroup = null;
+  let cloudGroup = null;
 
-// Create Soft Floating 3D Cloud Texture
-function createCloudTexture() {
-  const canvas = document.createElement('canvas');
-  canvas.width = 256;
-  canvas.height = 256;
-  const ctx = canvas.getContext('2d');
+  // Create Soft Floating 3D Cloud Texture
+  function createCloudTexture() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 256;
+    canvas.height = 256;
+    const ctx = canvas.getContext('2d');
 
-  const grad = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
-  grad.addColorStop(0, 'rgba(255, 255, 255, 0.45)');
-  grad.addColorStop(0.3, 'rgba(200, 220, 255, 0.25)');
-  grad.addColorStop(0.7, 'rgba(120, 150, 200, 0.08)');
-  grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
+    const grad = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
+    grad.addColorStop(0, 'rgba(255, 255, 255, 0.45)');
+    grad.addColorStop(0.3, 'rgba(200, 220, 255, 0.25)');
+    grad.addColorStop(0.7, 'rgba(120, 150, 200, 0.08)');
+    grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
 
-  ctx.fillStyle = grad;
-  ctx.fillRect(0, 0, 256, 256);
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 256, 256);
 
-  const texture = new THREE.CanvasTexture(canvas);
-  texture.needsUpdate = true;
-  return texture;
-}
-
-// Create Floating Cloud Sea Under the Kyoto Sky Island
-function createFloatingCloudSea() {
-  cloudGroup = new THREE.Group();
-  const cloudTex = createCloudTexture();
-  const cloudCount = 45;
-
-  const cloudGeo = new THREE.PlaneGeometry(18, 18);
-  const cloudMat = new THREE.MeshBasicMaterial({
-    map: cloudTex,
-    transparent: true,
-    opacity: 0.65,
-    depthWrite: false,
-    blending: THREE.AdditiveBlending
-  });
-
-  for (let i = 0; i < cloudCount; i++) {
-    const cloud = new THREE.Mesh(cloudGeo, cloudMat);
-    const angle = (i / cloudCount) * Math.PI * 2 + Math.random() * 0.5;
-    const radius = 5 + Math.random() * 18;
-
-    cloud.position.x = Math.cos(angle) * radius;
-    cloud.position.y = -1.8 + (Math.random() - 0.5) * 1.2;
-    cloud.position.z = Math.sin(angle) * radius;
-
-    cloud.rotation.x = -Math.PI / 2;
-    cloud.rotation.z = Math.random() * Math.PI * 2;
-    cloud.scale.setScalar(1.2 + Math.random() * 1.5);
-
-    cloud.userData = {
-      rotSpeed: (Math.random() - 0.5) * 0.001
-    };
-
-    cloudGroup.add(cloud);
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.needsUpdate = true;
+    return texture;
   }
 
-  scene.add(cloudGroup);
-}
+  // Create Floating Cloud Sea Under the Kyoto Sky Island
+  function createFloatingCloudSea() {
+    cloudGroup = new THREE.Group();
+    const cloudTex = createCloudTexture();
+    const cloudCount = 45;
 
-// Animate Clouds & Gentle Island Levitation
-function updateCloudsAndLevitation() {
-  const time = Date.now();
-
-  // 1. Gently bob the entire Kyoto Island up and down like a floating sky island
-  if (kyotoGltfModel) {
-    kyotoGltfModel.position.y = Math.sin(time * 0.001) * 0.15;
-  }
-
-  // 2. Slow organic drift & roll of the cloud sea
-  if (cloudGroup) {
-    cloudGroup.rotation.y += 0.0003;
-    cloudGroup.children.forEach((cloud) => {
-      cloud.rotation.z += cloud.userData.rotSpeed;
+    const cloudGeo = new THREE.PlaneGeometry(18, 18);
+    const cloudMat = new THREE.MeshBasicMaterial({
+      map: cloudTex,
+      transparent: true,
+      opacity: 0.65,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending
     });
+
+    for (let i = 0; i < cloudCount; i++) {
+      const cloud = new THREE.Mesh(cloudGeo, cloudMat);
+      const angle = (i / cloudCount) * Math.PI * 2 + Math.random() * 0.5;
+      const radius = 5 + Math.random() * 18;
+
+      cloud.position.x = Math.cos(angle) * radius;
+      cloud.position.y = -1.8 + (Math.random() - 0.5) * 1.2;
+      cloud.position.z = Math.sin(angle) * radius;
+
+      cloud.rotation.x = -Math.PI / 2;
+      cloud.rotation.z = Math.random() * Math.PI * 2;
+      cloud.scale.setScalar(1.2 + Math.random() * 1.5);
+
+      cloud.userData = {
+        rotSpeed: (Math.random() - 0.5) * 0.001
+      };
+
+      cloudGroup.add(cloud);
+    }
+
+    scene.add(cloudGroup);
   }
-}
+
+  // Animate Clouds & Gentle Island Levitation
+  function updateCloudsAndLevitation() {
+    const time = Date.now();
+
+    // 1. Gently bob the entire Kyoto Island up and down like a floating sky island
+    if (kyotoGltfModel) {
+      kyotoGltfModel.position.y = Math.sin(time * 0.001) * 0.15;
+    }
+
+    // 2. Slow organic drift & roll of the cloud sea
+    if (cloudGroup) {
+      cloudGroup.rotation.y += 0.0003;
+      cloudGroup.children.forEach((cloud) => {
+        cloud.rotation.z += cloud.userData.rotSpeed;
+      });
+    }
+  }
 
   // Warm Japanese Lantern Light
   const lanternLight1 = new THREE.PointLight(0xff7700, 3, 30);
@@ -363,7 +363,7 @@ function createRainParticles() {
   }
 
   rainGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-  
+
   const rainMat = new THREE.PointsMaterial({
     color: 0x88ccff,
     size: 0.12,
@@ -454,7 +454,7 @@ function loadKyotoModel() {
   if (typeof THREE.GLTFLoader === 'function') {
     showToast('⏳ Fetching 3D Kyoto City Scene (82 MB)...');
     console.log('Starting GLTFLoader fetch for:', modelPath);
-    
+
     const loader = new THREE.GLTFLoader();
     loader.load(
       modelPath,
@@ -548,11 +548,11 @@ function zoomToAnnotation(sprite, targetId) {
   if (!sprite || !camera || !controls) return;
 
   const targetWorldPos = sprite.position.clone();
-  
+
   // Calculate vector pointing from target pin BACK along the user's current line of sight
   const viewDir = camera.position.clone().sub(targetWorldPos).normalize();
   const targetCamPos = targetWorldPos.clone().add(viewDir.multiplyScalar(5.5));
-  
+
   if (targetCamPos.y < targetWorldPos.y + 0.8) {
     targetCamPos.y = targetWorldPos.y + 0.8;
   }
@@ -820,16 +820,89 @@ function fetchLiveWeatherAndSetAtmosphere() {
 
 // 💭 Random Thoughts, Tech Quotes & Jokes Pop-up Engine
 const popupContentList = [
+  // =========================
+  // Random Thoughts
+  // =========================
   { tag: '💭 Random Thought', text: 'Did you know? Code intelligence models process syntax trees like natural language grammar.' },
-  { tag: '💭 Random Thought', text: 'Kyoto traditional Machiya architecture uses wooden joinery without a single metal nail!' },
-  { tag: '💭 Random Thought', text: 'Synthetic data generation in LLMs reduces human labeling costs by up to 90%.' },
+  { tag: '💭 Random Thought', text: 'Synthetic data generation can dramatically reduce annotation costs.' },
+  { tag: '💭 Random Thought', text: 'Kyoto traditional Machiya houses use wooden joinery instead of nails.' },
+  { tag: '💭 Random Thought', text: 'The average developer spends more time reading code than writing it.' },
+  { tag: '💭 Random Thought', text: 'A clean architecture often saves more time than faster hardware.' },
+  { tag: '💭 Random Thought', text: 'Many AI models learn patterns—not facts.' },
+  { tag: '💭 Random Thought', text: 'Every optimization begins with a measurement.' },
+  { tag: '💭 Random Thought', text: 'Most bugs are introduced long before deployment.' },
+  { tag: '💭 Random Thought', text: 'The shortest code is not always the most maintainable.' },
+  { tag: '💭 Random Thought', text: 'Data without context is just noise.' },
+
+  // =========================
+  // Tech Quotes
+  // =========================
   { tag: '💡 Tech Quote', text: '"Simplicity is prerequisite for reliability." — Edsger W. Dijkstra' },
-  { tag: '💡 Tech Quote', text: '"First, solve the problem. Then, write the code." — John Johnson' },
+  { tag: '💡 Tech Quote', text: '"Programs must be written for people to read." — Harold Abelson' },
+  { tag: '💡 Tech Quote', text: '"Talk is cheap. Show me the code." — Linus Torvalds' },
   { tag: '💡 Tech Quote', text: '"Artificial Intelligence is the new electricity." — Andrew Ng' },
-  { tag: '☕ Dev Joke', text: 'There are 10 types of people in the world: those who understand binary, and those who don\'t.' },
+  { tag: '💡 Tech Quote', text: '"Code never lies, comments sometimes do." — Ron Jeffries' },
+  { tag: '💡 Tech Quote', text: '"Premature optimization is the root of all evil." — Donald Knuth' },
+  { tag: '💡 Tech Quote', text: '"Good code is its own best documentation." — Steve McConnell' },
+  { tag: '💡 Tech Quote', text: '"Any fool can write code that a computer can understand." — Martin Fowler' },
+
+  // =========================
+  // Dev Jokes
+  // =========================
+  { tag: '☕ Dev Joke', text: 'There are 10 types of people: those who understand binary and those who don’t.' },
   { tag: '☕ Dev Joke', text: 'Why do programmers prefer dark mode? Because light attracts bugs!' },
-  { tag: '☕ Dev Joke', text: 'A SQL query walks into a bar, walks up to two tables and asks: "Can I join you?"' },
-  { tag: '☕ Dev Joke', text: 'Hardware: The part of a computer that you can kick when software crashes.' }
+  { tag: '☕ Dev Joke', text: 'A SQL query walks into a bar and asks: "Can I JOIN you?"' },
+  { tag: '☕ Dev Joke', text: 'Debugging: Being the detective in a crime movie where you are also the murderer.' },
+  { tag: '☕ Dev Joke', text: '99 little bugs in the code, 99 bugs in the code...' },
+  { tag: '☕ Dev Joke', text: 'Programmer: "It works on my machine."' },
+  { tag: '☕ Dev Joke', text: 'My code doesn’t have bugs. It develops random features.' },
+  { tag: '☕ Dev Joke', text: 'I changed one line of code. Everything broke. Success!' },
+  { tag: '☕ Dev Joke', text: 'The best thing about Boolean values? Even if you’re wrong, you’re only off by a bit.' },
+  { tag: '☕ Dev Joke', text: 'Hardware: The part you can kick when software crashes.' },
+
+  // =========================
+  // AI Facts
+  // =========================
+  { tag: '🤖 AI Fact', text: 'Transformer models were introduced in 2017 with the paper "Attention Is All You Need".' },
+  { tag: '🤖 AI Fact', text: 'Embedding vectors allow semantic search beyond exact keyword matching.' },
+  { tag: '🤖 AI Fact', text: 'Retrieval-Augmented Generation (RAG) helps reduce hallucinations.' },
+  { tag: '🤖 AI Fact', text: 'Fine-tuning is only one way to adapt LLMs; prompting often works surprisingly well.' },
+  { tag: '🤖 AI Fact', text: 'LLMs predict the next token—not the next idea.' },
+  { tag: '🤖 AI Fact', text: 'Knowledge graphs complement LLMs by providing structured relationships.' },
+  { tag: '🤖 AI Fact', text: 'Caching repeated prompts can reduce cost and environmental impact.' },
+  { tag: '🤖 AI Fact', text: 'Semantic similarity enables efficient response reuse.' },
+
+  // =========================
+  // Data Science
+  // =========================
+  { tag: '📊 Data Tip', text: 'Correlation does not imply causation.' },
+  { tag: '📊 Data Tip', text: 'Always visualize your data before building a model.' },
+  { tag: '📊 Data Tip', text: 'Missing data often tells a story.' },
+  { tag: '📊 Data Tip', text: 'A simple baseline model is better than no baseline.' },
+  { tag: '📊 Data Tip', text: 'Outliers may be valuable insights—not just errors.' },
+  { tag: '📊 Data Tip', text: 'Feature engineering often beats complex algorithms.' },
+  { tag: '📊 Data Tip', text: 'Garbage in, garbage out.' },
+
+  // =========================
+  // Japanese
+  // =========================
+  { tag: '🇯🇵 Japan Fact', text: 'Shinkansen trains average delays measured in seconds per year.' },
+  { tag: '🇯🇵 Japan Fact', text: 'Torii gates symbolize the transition from the ordinary to the sacred.' },
+  { tag: '🇯🇵 Japan Fact', text: 'The word "Kaizen" means continuous improvement.' },
+  { tag: '🇯🇵 Japan Fact', text: 'Hanami is the Japanese tradition of enjoying cherry blossoms.' },
+  { tag: '🇯🇵 Japan Fact', text: 'Tokyo has more Michelin-starred restaurants than any other city.' },
+  { tag: '🇯🇵 Japan Fact', text: 'Many Japanese gardens are designed to represent miniature landscapes.' },
+
+  // =========================
+  // Motivation
+  // =========================
+  { tag: '🚀 Motivation', text: 'Small commits lead to big projects.' },
+  { tag: '🚀 Motivation', text: 'Every expert was once a beginner.' },
+  { tag: '🚀 Motivation', text: 'Keep shipping. Keep learning.' },
+  { tag: '🚀 Motivation', text: 'Progress beats perfection.' },
+  { tag: '🚀 Motivation', text: 'Consistency compounds faster than talent.' },
+  { tag: '🚀 Motivation', text: 'Your next breakthrough starts with one more experiment.' },
+
 ];
 
 let thoughtIntervalId = null;
@@ -948,7 +1021,7 @@ function exit3DWorld() {
     if (canvasContainer) canvasContainer.classList.remove('visible');
     if (overlay) overlay.classList.remove('active');
     document.body.style.overflow = '';
-    
+
     // Clean up Three.js WebGL context
     if (renderer) {
       renderer.dispose();
