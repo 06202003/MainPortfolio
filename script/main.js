@@ -128,9 +128,101 @@ fetch('galer.json')
 
   let quote = document.querySelector('#quotes');
   let author = document.querySelector('#author');
-  fetch('https://dummyjson.com/quotes/random')
-    .then((res) => res.json())
-    .then((data) => {
-      quote.innerHTML = '" ' + data.quote + ' "';
-      author.innerHTML = '~ ' + data.author + ' ~';
+  if (quote && author) {
+    fetch('https://dummyjson.com/quotes/random')
+      .then((res) => res.json())
+      .then((data) => {
+        quote.innerHTML = '" ' + data.quote + ' "';
+        author.innerHTML = '~ ' + data.author + ' ~';
+      })
+      .catch(() => {});
+  }
+
+/* ==========================================================================
+   S-SPARC Token Usage Chart, Publications Carousel, and PDF Lazy-loader
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', function () {
+  // S-SPARC Token Usage Chart (Strictly Sessions P1 to P7)
+  const chartCanvas = document.getElementById('sparcTokenChart');
+  if (chartCanvas && typeof Chart !== 'undefined') {
+    const ctx = chartCanvas.getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7'],
+        datasets: [
+          {
+            label: 'Retrieval Tokens (S-SPARC)',
+            data: [218692, 144054, 266641, 230285, 121327, 257685, 542581],
+            backgroundColor: '#10b981',
+            borderRadius: 4
+          },
+          {
+            label: 'LLM Inference Tokens',
+            data: [39163, 21458, 44010, 40558, 23761, 46278, 125800],
+            backgroundColor: '#f59e0b',
+            borderRadius: 4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: true,
+            position: 'top',
+            labels: { color: '#cbd5e1', font: { size: 10 } }
+          },
+          tooltip: {
+            callbacks: {
+              label: function (context) {
+                return context.dataset.label + ': ' + context.raw.toLocaleString() + ' tokens';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            ticks: { color: '#94a3b8' },
+            grid: { display: false }
+          },
+          y: {
+            ticks: { color: '#94a3b8', font: { size: 9 } },
+            grid: { color: 'rgba(255, 255, 255, 0.05)' }
+          }
+        }
+      }
     });
+  }
+
+  // Publications Owl Carousel Initialization
+  if (typeof $ !== 'undefined' && $('.publications-carousel').length) {
+    $('.publications-carousel').owlCarousel({
+      loop: true,
+      margin: 16,
+      nav: true,
+      dots: false,
+      autoplay: true,
+      autoplayTimeout: 6000,
+      autoplayHoverPause: true,
+      responsive: {
+        0: { items: 1 },
+        600: { items: 2 },
+        1000: { items: 3 },
+        1300: { items: 4 }
+      }
+    });
+  }
+
+  // Poster PDF Modal Lazy Loading
+  const posterModal = document.getElementById('modalPosterPdf');
+  if (posterModal) {
+    posterModal.addEventListener('show.bs.modal', function () {
+      const iframe = document.getElementById('posterPdfFrame');
+      if (iframe && (!iframe.src || iframe.src === 'about:blank' || iframe.src.indexOf('S-SPARC_IMPACT_EDU') === -1)) {
+        iframe.src = 'data/S-SPARC_IMPACT_EDU.pdf';
+      }
+    });
+  }
+});
