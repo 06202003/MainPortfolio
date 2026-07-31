@@ -139,32 +139,70 @@ fetch('galer.json')
   }
 
 /* ==========================================================================
-   S-SPARC Token Usage Chart, Publications Carousel, and PDF Lazy-loader
+   S-SPARC Token Usage Chart, Publications Carousel, YZ.AI CTA, & Analytics
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', function () {
-  // S-SPARC Token Usage Chart (Strictly Sessions P1 to P7)
+  // Safe Umami Event Tracking Helper
+  function trackEvent(eventName, eventData) {
+    if (typeof window.umami !== 'undefined' && typeof window.umami.track === 'function') {
+      window.umami.track(eventName, eventData);
+    }
+  }
+
+  // S-SPARC Token Usage Chart (Interactive Per-Session vs Cumulative Savings)
   const chartCanvas = document.getElementById('sparcTokenChart');
+  const toggleBtn = document.getElementById('toggleChartMode');
+  const chartTitle = document.getElementById('sparcChartTitle');
+
   if (chartCanvas && typeof Chart !== 'undefined') {
     const ctx = chartCanvas.getContext('2d');
-    new Chart(ctx, {
+    
+    // Per-Session Data (Strictly Sessions P1 to P7, exact poster metrics)
+    const perSessionData = {
+      labels: ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7'],
+      datasets: [
+        {
+          label: 'Retrieval Tokens (S-SPARC)',
+          data: [218692, 144054, 266641, 230285, 121327, 257685, 542581],
+          backgroundColor: '#10b981',
+          borderRadius: 4
+        },
+        {
+          label: 'LLM Inference Tokens',
+          data: [39163, 21458, 44010, 40558, 23761, 46278, 125800],
+          backgroundColor: '#f59e0b',
+          borderRadius: 4
+        }
+      ]
+    };
+
+    // Cumulative Retrieval Savings Data (Accumulating up to 1,781,845 tokens)
+    const cumulativeData = {
+      labels: ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7'],
+      datasets: [
+        {
+          label: 'Cumulative Retrieval Tokens Saved',
+          data: [218692, 362746, 629387, 859672, 980999, 1238684, 1781845],
+          backgroundColor: 'rgba(52, 211, 153, 0.2)',
+          borderColor: '#10b981',
+          borderWidth: 3,
+          fill: true,
+          tension: 0.3,
+          pointBackgroundColor: '#34d399',
+          pointRadius: 5,
+          type: 'line'
+        }
+      ]
+    };
+
+    // Savings percentages per session for clear tooltips
+    const savingsPercentages = [84.8, 87.0, 85.8, 85.0, 83.6, 84.8, 81.2];
+
+    let isCumulative = false;
+
+    const sparcChart = new Chart(ctx, {
       type: 'bar',
-      data: {
-        labels: ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'P7'],
-        datasets: [
-          {
-            label: 'Retrieval Tokens (S-SPARC)',
-            data: [218692, 144054, 266641, 230285, 121327, 257685, 542581],
-            backgroundColor: '#10b981',
-            borderRadius: 4
-          },
-          {
-            label: 'LLM Inference Tokens',
-            data: [39163, 21458, 44010, 40558, 23761, 46278, 125800],
-            backgroundColor: '#f59e0b',
-            borderRadius: 4
-          }
-        ]
-      },
+      data: perSessionData,
       options: {
         responsive: true,
         maintainAspectRatio: false,
@@ -177,7 +215,16 @@ document.addEventListener('DOMContentLoaded', function () {
           tooltip: {
             callbacks: {
               label: function (context) {
-                return context.dataset.label + ': ' + context.raw.toLocaleString() + ' tokens';
+                const index = context.dataIndex;
+                if (isCumulative) {
+                  return 'Cumulative Saved: ' + context.raw.toLocaleString() + ' tokens (Session ' + (index + 1) + ')';
+                }
+                const pct = savingsPercentages[index];
+                if (context.datasetIndex === 0) {
+                  return 'Retrieval Saved: ' + context.raw.toLocaleString() + ' tokens (' + pct + '% saved via S-SPARC)';
+                } else {
+                  return 'LLM Inference: ' + context.raw.toLocaleString() + ' tokens (' + (100 - pct).toFixed(1) + '% external API)';
+                }
               }
             }
           }
@@ -192,6 +239,42 @@ document.addEventListener('DOMContentLoaded', function () {
             grid: { color: 'rgba(255, 255, 255, 0.05)' }
           }
         }
+      }
+    });
+
+    // Toggle Button Handler
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function () {
+        isCumulative = !isCumulative;
+        if (isCumulative) {
+          sparcChart.config.type = 'line';
+          sparcChart.data = cumulativeData;
+          toggleBtn.innerHTML = '<i class="fa-solid fa-chart-column me-1"></i> Show Per-Session Tokens';
+          if (chartTitle) {
+            chartTitle.innerHTML = '<i class="fa-solid fa-chart-line me-2 text-success"></i> Cumulative Tokens Saved (P1–P7)';
+          }
+          trackEvent('Toggle Chart View', { mode: 'Cumulative' });
+        } else {
+          sparcChart.config.type = 'bar';
+          sparcChart.data = perSessionData;
+          toggleBtn.innerHTML = '<i class="fa-solid fa-chart-line me-1"></i> Show Cumulative Savings';
+          if (chartTitle) {
+            chartTitle.innerHTML = '<i class="fa-solid fa-chart-column me-2 text-success"></i> Token Usage (P1–P7)';
+          }
+          trackEvent('Toggle Chart View', { mode: 'Per-Session' });
+        }
+        sparcChart.update();
+      });
+    }
+  }
+
+  // Ask YZ.AI CTA Button Click Handler
+  const askSparcBtn = document.getElementById('btn-ask-sparc-ai');
+  if (askSparcBtn) {
+    askSparcBtn.addEventListener('click', function () {
+      trackEvent('Ask YZ.AI S-SPARC Click', { source: 'S-SPARC Spotlight CTA' });
+      if (typeof window.askYZAI === 'function') {
+        window.askYZAI('Tell me more about the S-SPARC research.');
       }
     });
   }
@@ -215,14 +298,31 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Poster PDF Modal Lazy Loading
+  // Poster PDF Modal Lazy Loading & Event Tracking
   const posterModal = document.getElementById('modalPosterPdf');
   if (posterModal) {
     posterModal.addEventListener('show.bs.modal', function () {
+      trackEvent('View Poster Modal Open', { title: 'S-SPARC Poster PDF' });
       const iframe = document.getElementById('posterPdfFrame');
       if (iframe && (!iframe.src || iframe.src === 'about:blank' || iframe.src.indexOf('S-SPARC_IMPACT_EDU') === -1)) {
         iframe.src = 'data/S-SPARC_IMPACT_EDU.pdf';
       }
     });
   }
-});
+
+  // Track External Paper & Details Clicks
+  document.querySelectorAll('.btn-pub-paper').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const href = btn.getAttribute('href') || 'modal';
+      trackEvent('Read Paper Click', { target: href });
+    });
+  });
+
+  document.querySelectorAll('.btn-pub-details').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const targetModal = btn.getAttribute('data-bs-target') || 'unknown';
+      trackEvent('Publication Details Click', { modal: targetModal });
+    });
+  });
+});
+
