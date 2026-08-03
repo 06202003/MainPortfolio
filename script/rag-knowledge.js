@@ -38,7 +38,13 @@ window.YEHEZKIEL_KNOWLEDGE_BASE = [
     id: "publications_summary",
     title: "Academic Publications & Research",
     keywords: ["publications", "papers", "journals", "conferences", "scopus", "ieee", "elsevier", "springer", "researcher"],
-    content: "Yehezkiel has co-authored multiple top international journal and conference papers: 1) Applied Computer Science 2026 (GAI-disguised plagiarism detection), 2) Elsevier Software Impact 2026 (E-STRANGE platform), 3) MDPI IOCES 2026 (LLM sustainability), 4) Springer Nature Discover Computing 2025, 5) IEEE ICALT 2025 (Taiwan), 6) IEEE TALE 2023 (New Zealand), 7) ICICL 2025 (Hungary), 8) ICSTHE 2024 (ParkSphere), 9) JAIC 2024 (ChatGPT API testing), 10) KONSTELASI 2024 (Laravel Super App)."
+    content: "Yehezkiel has co-authored multiple top international journal and conference papers: 1) Applied Computer Science 2026 (GAI-disguised plagiarism detection), 2) Elsevier Software Impact 2026 (E-STRANGE platform), 3) MDPI IOCES 2026 (LLM sustainability), 4) Springer Nature Discover Computing 2025, 5) Springer Nature ICICL 2026 ('How Unique and Accurate Is GenAI Generated Code in Introductory Programming?'), 6) IEEE ICALT 2025 (Taiwan), 7) IEEE TALE 2023 (New Zealand), 8) ICSTHE 2024 (ParkSphere), 9) JAIC 2024 (ChatGPT API testing), 10) KONSTELASI 2024 (Laravel Super App)."
+  },
+  {
+    id: "pub_genai_uniqueness",
+    title: "How Unique and Accurate Is GenAI Generated Code in Introductory Programming? (Springer Nature)",
+    keywords: ["how unique and accurate", "genai generated code", "introductory programming", "springer", "10.1007/978-3-032-20381-6_50", "uniqueness", "correctness", "accuracy", "plagiarism", "500-510"],
+    content: "Paper Title: 'How Unique and Accurate Is GenAI Generated Code in Introductory Programming?' published in Springer Nature (First Online: 02 August 2026, pp 500–510, DOI: 10.1007/978-3-032-20381-6_50). Research finding: GenAI-generated programs were found to be 80% unique and 81% accurate for introductory programming assignment tasks. They could be more unique yet less accurate on advanced or uncommon assignment tasks. Highlights the urgency of GenAI policies, literacy, and automated plagiarism detectors."
   },
   {
     id: "sstrange_thesis",
