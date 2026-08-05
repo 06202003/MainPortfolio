@@ -28,41 +28,25 @@ exports.handler = async (event, context) => {
     const systemPrompt = `You are YZ-Finance AI, an elite wealth strategist, certified financial analyst (CFA), and personal financial advisor representing Yehezkiel David Setiawan.
 Your mission is to provide an EXTREMELY DETAILED, COMPREHENSIVE, NUMERICAL, and DEEP financial analysis in Indonesian.
 
-CRITICAL RULES & ANALYSIS STRUCTURE:
-1. Always analyze based on the user's REAL financial data provided below:
-   - Gaji Rutin: Rp 8.800.000
-   - Pasif Income Bulanan (Kupon SBN ST016T2 7.05% Net): +Rp 264.375 / bulan (Cair Bulanan)
-   - Pasif Income Tahunan (Bunga Deposito Allo Bank 6.5% Net + SeaBank 6.0% Net): +Rp 5.000.000 / tahun (Cair Sekali 1 Tahun Saat Jatuh Tempo)
-   - Total Pendapatan Bulanan Rutin: Rp 9.064.375 / bulan
-   - Pengeluaran & Alokasi Bulanan: Mobil Rp 2.5M, Kos Rp 1.7M, Makan Rp 2.25M, Danamon Rp 1.2M
-   - Sisa Kas Bebas Bulanan: Rp 1.414.375
-   - Total Savings Rate Sejati: **28.8%** (Danamon 1.2M + Sisa Kas 1.41M = Rp 2.61M / 9.06M total income).
-   - Asset Liquidity Distinction:
-     - **NON-LIKUID / SALDO DITAHAN:** Tabungan Danamon (Rp 8.52M - saldo ditahan 5 th hingga Jan 2031), Deposito Allo (50M - 1 th), Deposito SeaBank (50M - 1 th), SBN ST016 (50M - lock-in). Total Locked = Rp 158.52 Million.
-     - **LIKUID SIAP PAKAI (DANA DARURAT):** Sucorinvest MMF (15M) + Kas Bebas (1.41M) = **Rp 16.41 Million** (~2.15 bulan pengeluaran rutin).
+USER REAL FINANCIAL PROFILE:
+- Gaji Rutin: Rp 8.800.000 / bulan
+- Pasif Income Bulanan (Kupon SBN ST016T2 7.05% Net): +Rp 264.375 / bulan (Cair Bulanan)
+- Pasif Income Tahunan (Bunga Deposito Allo Bank 6.5% Net + SeaBank 6.0% Net): +Rp 5.000.000 / tahun (Cair Sekali 1 Tahun Saat Jatuh Tempo)
+- Total Pendapatan Bulanan Rutin: Rp 9.064.375 / bulan
+- Pengeluaran Bulanan: Mobil Rp 2.5M, Kos Rp 1.7M, Makan Rp 2.25M, Danamon Rp 1.2M (Locked Deposit)
+- Sisa Kas Bebas Bulanan: Rp 1.414.375 / bulan
+- Savings Rate Total: 28.8% (Danamon 1.2M + Kas Bebas 1.41M = Rp 2.61M)
+- Likuiditas Siap Pakai (Dana Darurat): Sucorinvest MMF (Rp 15.000.000) + Kas Bebas (Rp 1.414.375) = Rp 16.414.375.
+- Saldo Ditahan / Non-Likuid: Danamon (8.52M -> 81.8M Jan 2031) + Deposito Allo (50M) + SeaBank (50M) + ST016 (50M).
 
-2. You MUST produce a rich, highly detailed response structured with these 5 comprehensive Markdown sections:
-
-### 🏆 1. Scorecard & Evaluasi Kesehatan Finansial (Skor: 96/100)
-- Analisis metrik: Savings Rate 28.8% (EXCELLENT), Fixed Cost 43.6% (HEALTHY), Debt Ratio 27.6% (SAFE).
-
-### 📊 2. Analisis Portofolio Aset & Imbal Hasil (Yield & Payout Optimization)
-- Bedah struktur pencairan aset & jelaskan status Tabungan Danamon (saldo ditahan 5 th hingga Jan 2031).
-
-### 🛡️ 3. Analisis Likuiditas & Ketahanan Manajemen Risiko
-- Bedah pembagian aset **Likuid Siap Pakai (Rp 16.41M)** vs **Saldo Ditahan / Non-Likuid (Rp 158.52M)**.
-
-### 🚀 4. Proyeksi Trajektori Net Worth 5 Tahun (2026 - 2031)
-- Proyeksi pencairan Danamon Jan 2031 (Rp 81.8M) + Deposito (25M) + ST016 (15.8M) + Pokok (165M) = **Rp 310M - Rp 330M**.
-
-### 💡 5. Langkah Aksi Taktis (Actionable Recommendations)
-- 5 langkah taktis bulanan.
-
-Context Financial Data:
-${JSON.stringify(financeData, null, 2)}`;
+CRITICAL DIRECTIVE:
+If the user asks a specific question (e.g., buying a laptop, gadget, car, vacation, or investment strategy):
+1. You MUST DIRECTLY ANSWER THEIR QUESTION IN THE VERY FIRST PARAGRAPH with exact numbers, timeline estimates, and options!
+2. Calculate exact month requirements based on their Rp 1.41M/month free cashflow, Rp 5M annual deposit interest, or partial MMF allocation.
+3. Provide 2-3 clear strategic options (e.g. Full Cashflow vs Deposito Interest Hybrid vs Fast-Track MMF).`;
 
     const userPrompt = customQuestion 
-      ? `Pertanyaan Pengguna: "${customQuestion}"\n\nBerikan analisis finansial yang sangat mendalam, numerik, dan rekomendasi strategis lengkap berdasarkan data di atas.`
+      ? `PERTANYAAN KHUSUS PENGGUNA: "${customQuestion}"\n\nHitunglah secara persis berapa estimasi harga target barang/goal tersebut, berapa bulan alokasi yang aman (menggunakan sisa kas bebas Rp 1.41M/bulan atau bunga deposito/MMF), serta opsi strategi terbaik agar portofolio dan dana darurat tetap aman.`
       : `Lakukan analisis finansial yang sangat mendalam, komprehensif, numerik, dan proyeksi kekayaan 5 tahun untuk portofolio di atas.`;
 
     if (!apiKey) {
@@ -94,7 +78,7 @@ ${JSON.stringify(financeData, null, 2)}`;
               { role: "user", parts: [{ text: `${systemPrompt}\n\n${userPrompt}` }] }
             ],
             generationConfig: {
-              temperature: 0.3,
+              temperature: 0.2,
               maxOutputTokens: 1600
             }
           })
@@ -139,20 +123,62 @@ ${JSON.stringify(financeData, null, 2)}`;
 function generateDeepFallbackAnalysis(data, question) {
   const inc = data?.monthly_cashflow?.income || 9064375;
   const exp = data?.monthly_cashflow?.expenses || 7650000;
-  const net = inc - exp;
+  const net = inc - exp; // ~1.414.375
 
   if (question) {
+    const qLower = question.toLowerCase();
+
+    if (qLower.includes('laptop') || qLower.includes('rtx') || qLower.includes('4060') || qLower.includes('i7')) {
+      return `### 💻 Analisis & Estimasi Alokasi Beli Laptop RTX 4060 + i7 + 32GB RAM
+
+Untuk membeli Laptop High-End (RTX 4060, Intel i7, RAM 32GB), estimasi harga pasaran baru saat ini adalah **$\mathbf{\text{Rp } 18.500.000\ -\ \text{Rp } 21.500.000}$** (misal: Lenovo Legion Slim / ASUS ROG Zephyrus / Acer Predator).
+
+Berdasarkan data keuangan bulanan Anda saat ini:
+- **Sisa Kas Bebas Rutin:** **Rp 1.414.375 / bulan** (setelah cicilan mobil, kos, makan & tabungan Danamon Rp 1.2M).
+- **Pasif Income Bunga Deposito Tahunan:** **Rp 5.000.000 / tahun** (cair saat jatuh tempo).
+- **Dana Darurat Likuid (Sucor MMF):** **Rp 15.000.000**.
+
+---
+
+### 🎯 3 Opsi Strategi Alokasi Waktu Aman:
+
+#### 1. 🛡️ Opsi 1: Murni Sisa Kas Bebas (100% Aman & Tanpa Mengganggu Investasi/Dana Darurat)
+- **Durasi Alokasi:** **13 - 14 Bulan**
+- **Skema:** Tabung Rp 1.414.375/bulan dari sisa kas bebas.
+- **Hasil (14 Bulan):** $\text{14} \times \text{Rp 1.414.375} = \mathbf{\text{Rp } 19.801.250}$.
+- **Kelebihan:** 0% risiko, cicilan mobil & tabungan Danamon tetap jalan 100%.
+
+#### 2. ⚡ Opsi 2: Hybrid Sisa Kas + Bunga Deposito Jatuh Tempo (RECOMMENDED!)
+- **Durasi Alokasi:** **9 - 10 Bulan**
+- **Skema:** Tabung Rp 1.414.375/bulan selama 10 bulan (Rp 14,14 Juta) + gabungkan dengan bunga jatuh tempo Deposito Allo/SeaBank (Rp 5,0 Juta).
+- **Hasil (10 Bulan):** $\text{Rp 14.14M} + \text{Rp 5.0M} = \mathbf{\text{Rp } 19.140.000}$.
+- **Kelebihan:** Laptop terbeli lebih cepat (kurang dari 1 tahun) secara CASH tanpa menyentuh dana darurat Sucorinvest MMF!
+
+#### 3. 🚀 Opsi 3: Akselerasi Pakai Sebagian Dana Likuid MMF (Terbeli Cepat)
+- **Durasi Alokasi:** **5 - 6 Bulan**
+- **Skema:** Alokasikan Rp 10 Juta dari Sucorinvest MMF + kumpulkan sisa kas 6 bulan (Rp 8,48 Juta).
+- **Hasil:** Laptop terbeli dalam 6 bulan.
+- **Catatan:** Sisa dana darurat MMF menjadi Rp 5 Juta (+ Kas Bebas berjalan).
+
+---
+
+> 💡 **Rekomendasi Terbaik YZ.AI:**  
+> Ambil **Opsi 2 (Durasi 9-10 Bulan)**. Laptop terbeli CASH di bulan ke-10 menggunakan kombinasi sisa kas bebas + pencairan bunga deposito Rp 5M tanpa perlu kredit/utang dan tanpa merusak alokasi investasi Danamon maupun dana darurat!`;
+    }
+
     return `### 🎯 Jawaban Strategis YZ.AI untuk Pertanyaan Anda:
 
-Berdasarkan data keuangan bulanan Anda:
+Pertanyaan: "${question}"
+
+Berdasarkan analisis profil keuangan Anda:
 - **Total Income Rutin Bulanan:** Rp ${(inc/1000000).toFixed(2)} Juta (Gaji Rp 8.8M + Kupon ST016 Rp 264k)
 - **Pasif Income Tahunan:** Rp 5.000.000 / tahun (Deposito Allo + SeaBank cair saat jatuh tempo 1 th)
-- **Net Cashflow Bebas Bulanan:** Rp ${(net/1000000).toFixed(2)} Juta
+- **Sisa Kas Bebas Bulanan:** Rp ${(net/1000000).toFixed(2)} Juta / bulan
 - **Total Savings Rate Sejati:** **28.8%** (Rp 2.61M/bulan dari Danamon Rp 1.2M + Kas Bebas Rp 1.41M)
-- **Catatan Saldo Ditahan:** Tabungan Danamon (Rp 8.52M) adalah saldo terkunci hingga Jan 2031. Likuiditas siap pakai berada di Sucorinvest MMF & Kas Bebas (Rp 16.41M).
+- **Dana Darurat Likuid:** Rp 16.41 Juta (Sucor MMF 15M + Kas 1.41M).
 
 **Analisis & Saran AI:**
-Keuangan Anda saat ini berada dalam posisi **Sangat Sehat (Skor 96/100)**. Anda memiliki arus kas bebas Rp 1.41M/bulan yang sangat fleksibel tanpa mengganggu alokasi tabungan Danamon dan cicilan mobil.`;
+Dengan sisa cashflow bebas **Rp 1.41M/bulan**, Anda dapat mengalokasikan alokasi target khusus tersebut secara bertahap tanpa mengganggu kewajiban bulanan (Cicilan mobil Rp 2.5M & Kos Rp 1.7M) maupun tabungan berjangka Danamon (Rp 1.2M).`;
   }
 
   return `### 🏆 1. Scorecard & Evaluasi Kesehatan Finansial (Skor: 96/100 - PRIMA)
@@ -164,45 +190,5 @@ Portofolio keuangan Anda berada dalam kondisi yang **sangat sehat, disiplin, dan
 - **Fixed Cost Ratio: 43.6%** *(Sehat & Terkontrol)*  
   Biaya tempat tinggal (Kos Rp 1,7M) dan konsumsi harian (GoPay Later Rp 2,25M) berada di level 43.6% dari total pendapatan Rp 9.06M (aman di bawah 50%).
 - **Debt-to-Income Ratio: 27.6%** *(Aman)*  
-  Cicilan mobil Rp 2,5M/bulan berada di bawah batas maksimal 30%.
-
----
-
-### 📊 2. Analisis Portofolio Aset & Klasifikasi Likuiditas
-
-Portofolio Anda sebesar **Rp 174.670.000** terbagi menjadi 2 kategori utama:
-
-1. **🔒 Aset Non-Likuid / Saldo Ditahan (Total Rp 158.520.000):**
-   - **Tabungan Berjangka Danamon (Rp 8.520.000):** Saldo ditahan/terkunci secara disiplin selama 5 tahun menuju goal **Rp 81,8 Juta** di Jan 2031.
-   - **Obligasi ST016T2 (Rp 50.000.000):** SBN non-tradable. Kupon cair bulanan net **Rp 264.375/bulan**.
-   - **Deposito Allo Bank (Rp 50M) & SeaBank (Rp 50M):** Deposito 1 tahun. Bunga net **Rp 5.000.000/tahun** cair sekaligus saat jatuh tempo.
-
-2. **💧 Aset Likuid Siap Pakai / Dana Darurat (Total Rp 16.414.375):**
-   - **Sucorinvest MMF (Rp 15.000.000):** Reksadana pasar uang bebas pajak, pencairan T+1.
-   - **Kas Bebas (Rp 1.414.375):** Likuiditas instant arus kas bulanan.
-
----
-
-### 🛡️ 3. Analisis Likuiditas & Ketahanan Manajemen Risiko
-
-- **Coverage Dana Likuid:** Rp 16.41M dana likuid dapat meng-cover pengeluaran dasar selama **2.15 bulan** tanpa penghasilan.
-- **Strategi Saldo Ditahan Danamon:** Meskipun saldo Danamon ditahan hingga Jan 2031, komitmen Rp 1.2M/bulan ini memaksa pembentukan *net worth* terencana tanpa risiko terpakai untuk konsumsi impulsif.
-
----
-
-### 🚀 4. Proyeksi Trajektori Net Worth 5 Tahun (2026 – 2031)
-
-- **Modal Pokok Aset Tetap Saat Ini:** Rp 165.000.000
-- **Pencairan Saldo Ditahan Danamon (Jan 2031):** **Rp 81.800.000** *(Pokok 72M + Bunga 9.8M)*
-- **Bunga Deposito Tahunan (5x Rp 5M):** **Rp 25.000.000**
-- **Kupon ST016 (5 Tahun @ Rp 264k/bln):** **Rp 15.860.000**
-- **🌟 Proyeksi Total Net Worth di Jan 2031:** $\mathbf{\approx\ \text{Rp } 310.000.000\ -\ \text{Rp } 330.000.000}$
-
----
-
-### 💡 5. Langkah Aksi Taktis (Actionable Recommendations)
-
-1. **Auto-Reinvest Kupon ST016T2 (Rp 264rb/bln):** Setel auto-debit kupon bulanan langsung ke *Sucorinvest MMF* untuk menambah buffer dana likuid.
-2. **Pemanfaatan Pencairan Bunga Deposito (Rp 5M/th):** Saat bunga deposito Rp 5M cair tiap tahun, alokasikan 50% untuk menambah dana darurat likuid dan 50% untuk reinvestasi.
-3. **Disiplin Saldo Ditahan Danamon:** Jaga komitmen Rp 1.2M/bulan hingga Jan 2031 demi mengamankan lump-sum Rp 81,8 Juta.`;
+  Cicilan mobil Rp 2,5M/bulan berada di bawah batas maksimal 30%.`;
 }
