@@ -511,21 +511,31 @@
     const expenses = cf.expenses || 0;
     const net = income - expenses;
 
-    document.getElementById('val-income').textContent = formatCurrency(income, cf.currency);
-    document.getElementById('val-expenses').textContent = formatCurrency(expenses, cf.currency);
-
+    const incEl = document.getElementById('val-income');
+    const expEl = document.getElementById('val-expenses');
     const netEl = document.getElementById('val-net');
     const netBadge = document.getElementById('badge-net');
-    netEl.textContent = formatCurrency(net, cf.currency);
 
-    if (net >= 0) {
-      netEl.className = 'amount-val amount-profit';
-      netBadge.className = 'status-badge badge-ok';
-      netBadge.innerHTML = '<i class="fa-solid fa-arrow-trend-up"></i> Surplus';
-    } else {
-      netEl.className = 'amount-val amount-deficit';
-      netBadge.className = 'status-badge badge-danger';
-      netBadge.innerHTML = '<i class="fa-solid fa-arrow-trend-down"></i> Defisit';
+    if (incEl) incEl.textContent = formatCurrency(income, cf.currency);
+    if (expEl) expEl.textContent = formatCurrency(expenses, cf.currency);
+
+    if (netEl) {
+      netEl.textContent = formatCurrency(net, cf.currency);
+      if (net >= 0) {
+        netEl.className = 'amount-val amount-profit';
+      } else {
+        netEl.className = 'amount-val amount-deficit';
+      }
+    }
+
+    if (netBadge) {
+      if (net >= 0) {
+        netBadge.className = 'status-badge badge-ok';
+        netBadge.innerHTML = '<i class="fa-solid fa-arrow-trend-up"></i> Surplus';
+      } else {
+        netBadge.className = 'status-badge badge-danger';
+        netBadge.innerHTML = '<i class="fa-solid fa-arrow-trend-down"></i> Defisit';
+      }
     }
   }
 
@@ -535,39 +545,52 @@
     // Savings Rate
     if (ratios.savings_rate) {
       const sr = ratios.savings_rate;
-      document.getElementById('num-savings-rate').textContent = `${sr.value}%`;
-      document.getElementById('target-savings-rate').textContent = `Target: ≥ ${sr.target}%`;
-      
-      const isOk = sr.value >= sr.target;
+      const numEl = document.getElementById('num-savings-rate');
+      const targetEl = document.getElementById('target-savings-rate');
       const badge = document.getElementById('badge-savings-rate');
-      badge.className = `status-badge ${isOk ? 'badge-ok' : 'badge-warning'}`;
-      badge.textContent = isOk ? 'OK' : 'Cek';
+
+      if (numEl) numEl.textContent = `${sr.value}%`;
+      if (targetEl) targetEl.textContent = `Target: ≥ ${sr.target}% (Danamon 1.2M + Kas 1.41M)`;
+      if (badge) {
+        const isOk = sr.value >= sr.target;
+        badge.className = `status-badge ${isOk ? 'badge-ok' : 'badge-warning'}`;
+        badge.textContent = isOk ? 'OK' : 'Cek';
+      }
     }
 
     // Fixed Cost Ratio
     if (ratios.fixed_cost_ratio) {
       const fc = ratios.fixed_cost_ratio;
-      document.getElementById('num-fixed-cost').textContent = `${fc.value}%`;
-      document.getElementById('target-fixed-cost').textContent = `Target: ≤ ${fc.target}%`;
-
-      const isOk = fc.value <= fc.target;
+      const numEl = document.getElementById('num-fixed-cost');
+      const targetEl = document.getElementById('target-fixed-cost');
       const badge = document.getElementById('badge-fixed-cost');
-      badge.className = `status-badge ${isOk ? 'badge-ok' : 'badge-danger'}`;
-      badge.textContent = isOk ? 'OK' : 'Cek';
+
+      if (numEl) numEl.textContent = `${fc.value}%`;
+      if (targetEl) targetEl.textContent = `Target: ≤ ${fc.target}% (Kos Rp 1.7M + Makan Rp 2.25M)`;
+      if (badge) {
+        const isOk = fc.value <= fc.target;
+        badge.className = `status-badge ${isOk ? 'badge-ok' : 'badge-danger'}`;
+        badge.textContent = isOk ? 'OK' : 'Cek';
+      }
     }
 
     // Debt to Income
     if (ratios.debt_to_income_ratio) {
       const dti = ratios.debt_to_income_ratio;
-      document.getElementById('num-dti').textContent = `${dti.value}%`;
-      document.getElementById('target-dti').textContent = `Target: ≤ ${dti.target}%`;
-
-      const isOk = dti.value <= dti.target;
+      const numEl = document.getElementById('num-dti');
+      const targetEl = document.getElementById('target-dti');
       const badge = document.getElementById('badge-dti');
-      badge.className = `status-badge ${isOk ? 'badge-ok' : 'badge-danger'}`;
-      badge.textContent = isOk ? 'OK' : 'Cek';
+
+      if (numEl) numEl.textContent = `${dti.value}%`;
+      if (targetEl) targetEl.textContent = `Target: ≤ ${dti.target}% (Cicilan Mobil Rp 2.500.000)`;
+      if (badge) {
+        const isOk = dti.value <= dti.target;
+        badge.className = `status-badge ${isOk ? 'badge-ok' : 'badge-danger'}`;
+        badge.textContent = isOk ? 'OK' : 'Cek';
+      }
     }
   }
+
 
   function renderNetWorthChart(trendData) {
     if (!trendData || !Array.isArray(trendData)) return;
