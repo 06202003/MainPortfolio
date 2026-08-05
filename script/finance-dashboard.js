@@ -572,15 +572,19 @@
   function renderNetWorthChart(trendData) {
     if (!trendData || !Array.isArray(trendData)) return;
 
-    const ctx = document.getElementById('netWorthChart').getContext('2d');
+    const canvas = document.getElementById('netWorthChart');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
     const labels = trendData.map(item => item.month);
     const values = trendData.map(item => item.amount);
 
     if (lineChartInstance) lineChartInstance.destroy();
 
-    // Create Gradient fill
-    const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-    gradient.addColorStop(0, 'rgba(16, 185, 129, 0.3)');
+    // TradingView Neon Gradient Fill
+    const gradient = ctx.createLinearGradient(0, 0, 0, 320);
+    gradient.addColorStop(0, 'rgba(16, 185, 129, 0.45)');
+    gradient.addColorStop(0.5, 'rgba(16, 185, 129, 0.1)');
     gradient.addColorStop(1, 'rgba(16, 185, 129, 0.0)');
 
     lineChartInstance = new Chart(ctx, {
@@ -591,45 +595,57 @@
           label: 'Net Worth',
           data: values,
           borderColor: '#10b981',
-          borderWidth: 3,
+          borderWidth: 3.5,
           backgroundColor: gradient,
           fill: true,
-          tension: 0.35,
+          tension: 0.4, // Smooth TradingView Bezier curve
           pointBackgroundColor: '#10b981',
-          pointBorderColor: '#07131f',
-          pointBorderWidth: 2,
-          pointRadius: 5,
-          pointHoverRadius: 7
+          pointBorderColor: '#030712',
+          pointBorderWidth: 3,
+          pointRadius: 6,
+          pointHoverRadius: 9,
+          pointHoverBackgroundColor: '#38bdf8',
+          pointHoverBorderColor: '#ffffff'
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        animation: {
+          duration: 1600,
+          easing: 'easeInOutQuart'
+        },
+        interaction: {
+          mode: 'index',
+          intersect: false
+        },
         plugins: {
           legend: { display: false },
           tooltip: {
-            backgroundColor: '#0f2a43',
-            titleColor: '#f8fafc',
+            backgroundColor: '#090d16',
+            titleColor: '#ffffff',
             bodyColor: '#10b981',
-            borderColor: 'rgba(255,255,255,0.1)',
-            borderWidth: 1,
-            padding: 12,
+            borderColor: 'rgba(16, 185, 129, 0.4)',
+            borderWidth: 1.5,
+            padding: 14,
             displayColors: false,
+            titleFont: { size: 13, weight: 'bold' },
+            bodyFont: { size: 14, family: "'JetBrains Mono', monospace" },
             callbacks: {
-              label: (context) => 'Net Worth: ' + formatCurrency(context.parsed.y, 'IDR')
+              label: (context) => ' Net Worth: ' + formatCurrency(context.parsed.y, 'IDR')
             }
           }
         },
         scales: {
           x: {
-            grid: { color: 'rgba(255, 255, 255, 0.05)' },
-            ticks: { color: '#94a3b8', font: { size: 12 } }
+            grid: { color: 'rgba(255, 255, 255, 0.04)', drawBorder: false },
+            ticks: { color: '#94a3b8', font: { size: 12, family: "'Inter', sans-serif" } }
           },
           y: {
-            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+            grid: { color: 'rgba(255, 255, 255, 0.04)', drawBorder: false },
             ticks: {
               color: '#94a3b8',
-              font: { size: 12 },
+              font: { size: 12, family: "'JetBrains Mono', monospace" },
               callback: (val) => (val / 1000000).toFixed(0) + ' Jt'
             }
           }
@@ -641,45 +657,53 @@
   function renderAssetAllocationChart(assetData) {
     if (!assetData || !Array.isArray(assetData)) return;
 
-    const ctx = document.getElementById('assetAllocationChart').getContext('2d');
+    const canvas = document.getElementById('assetAllocationChart');
+    if (!canvas) return;
+
     const labels = assetData.map(item => item.category);
     const values = assetData.map(item => item.amount);
     const colors = assetData.map((item, idx) => item.color || getDefaultColor(idx));
 
     if (donutChartInstance) donutChartInstance.destroy();
 
-    donutChartInstance = new Chart(ctx, {
+    donutChartInstance = new Chart(canvas.getContext('2d'), {
       type: 'doughnut',
       data: {
         labels: labels,
         datasets: [{
           data: values,
           backgroundColor: colors,
-          borderColor: '#07131f',
-          borderWidth: 2,
-          hoverOffset: 6
+          borderColor: '#030712',
+          borderWidth: 3,
+          hoverOffset: 10
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        animation: {
+          animateScale: true,
+          animateRotate: true,
+          duration: 1500,
+          easing: 'easeOutQuart'
+        },
         plugins: {
           legend: {
             position: 'bottom',
             labels: {
-              color: '#cbd5e1',
-              font: { size: 12 },
+              color: '#e2e8f0',
+              font: { size: 11.5, family: "'Inter', sans-serif" },
               padding: 14,
               usePointStyle: true,
               pointStyle: 'circle'
             }
           },
           tooltip: {
-            backgroundColor: '#0f2a43',
-            titleColor: '#f8fafc',
-            bodyColor: '#cbd5e1',
-            borderColor: 'rgba(255,255,255,0.1)',
-            borderWidth: 1,
+            backgroundColor: '#090d16',
+            titleColor: '#ffffff',
+            bodyColor: '#e2e8f0',
+            borderColor: 'rgba(255,255,255,0.15)',
+            borderWidth: 1.5,
             padding: 12,
             callbacks: {
               label: (context) => {
@@ -699,16 +723,16 @@
   // --- CHART 3: Cashflow Breakdown Bar Chart ---
   let barChartInstance = null;
   function renderCashflowBarChart(cf) {
-    const ctx = document.getElementById('cashflowBarChart');
-    if (!ctx) return;
+    const canvas = document.getElementById('cashflowBarChart');
+    if (!canvas) return;
 
     if (barChartInstance) barChartInstance.destroy();
 
-    const labels = ['Gaji Rutin', 'Passive Income', 'Cicilan Mobil', 'Sewa Kos', 'Makan (GoPay)', 'Danamon', 'Kas Bebas'];
-    const values = [8800000, 681042, 2500000, 1700000, 2250000, 1200000, 1150000];
+    const labels = ['Gaji Rutin', 'Kupon ST016', 'Cicilan Mobil', 'Sewa Kos', 'Makan (GoPay)', 'Danamon', 'Kas Bebas'];
+    const values = [8800000, 264375, 2500000, 1700000, 2250000, 1200000, 1414375];
     const colors = [
       '#10b981', // Gaji - Green
-      '#3b82f6', // Passive - Blue
+      '#3b82f6', // ST016 - Blue
       '#ef4444', // Mobil - Red
       '#f59e0b', // Kos - Amber
       '#8b5cf6', // Makan - Purple
@@ -716,7 +740,7 @@
       '#ec4899'  // Kas - Pink
     ];
 
-    barChartInstance = new Chart(ctx.getContext('2d'), {
+    barChartInstance = new Chart(canvas.getContext('2d'), {
       type: 'bar',
       data: {
         labels: labels,
@@ -724,21 +748,25 @@
           label: 'Nominal (Rp)',
           data: values,
           backgroundColor: colors,
-          borderRadius: 8,
+          borderRadius: 10,
           borderWidth: 0
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        animation: {
+          duration: 1400,
+          easing: 'easeOutBounce'
+        },
         plugins: {
           legend: { display: false },
           tooltip: {
             backgroundColor: '#090d16',
             titleColor: '#ffffff',
             bodyColor: '#10b981',
-            borderColor: 'rgba(255,255,255,0.1)',
-            borderWidth: 1,
+            borderColor: 'rgba(255,255,255,0.15)',
+            borderWidth: 1.5,
             padding: 12,
             callbacks: {
               label: (context) => ' Nominal: ' + formatCurrency(context.parsed.y, 'IDR')
@@ -751,10 +779,10 @@
             ticks: { color: '#94a3b8', font: { size: 11 } }
           },
           y: {
-            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+            grid: { color: 'rgba(255, 255, 255, 0.04)', drawBorder: false },
             ticks: {
               color: '#94a3b8',
-              font: { size: 11 },
+              font: { size: 11, family: "'JetBrains Mono', monospace" },
               callback: (val) => (val / 1000000).toFixed(1) + ' Jt'
             }
           }
@@ -766,48 +794,54 @@
   // --- CHART 4: Financial Health Radar Chart ---
   let radarChartInstance = null;
   function renderHealthRadarChart(ratios) {
-    const ctx = document.getElementById('radarHealthChart');
-    if (!ctx) return;
+    const canvas = document.getElementById('radarHealthChart');
+    if (!canvas) return;
 
     if (radarChartInstance) radarChartInstance.destroy();
 
     const labels = [
-      'Savings Rate (24.8%)',
-      'Fixed Cost (41.7%)',
-      'Debt Ratio (26.4%)',
-      'Yield Aset (6.4%)',
-      'Likuiditas (16M)',
+      'Savings Rate (28.8%)',
+      'Fixed Cost (43.6%)',
+      'Debt Ratio (27.6%)',
+      'Yield SBN (7.05%)',
+      'Likuiditas (16.4M)',
       'Disiplin Danamon (100%)'
     ];
 
-    const scores = [92, 88, 90, 95, 82, 100]; // Financial Scores out of 100
+    const scores = [96, 90, 92, 98, 85, 100]; // Financial Scores out of 100
 
-    radarChartInstance = new Chart(ctx.getContext('2d'), {
+    radarChartInstance = new Chart(canvas.getContext('2d'), {
       type: 'radar',
       data: {
         labels: labels,
         datasets: [{
-          label: 'Skor Kesehatan (%)',
+          label: 'Skor Evaluasi (%)',
           data: scores,
           backgroundColor: 'rgba(168, 85, 247, 0.25)',
           borderColor: '#a855f7',
-          borderWidth: 2,
+          borderWidth: 2.5,
           pointBackgroundColor: '#a855f7',
-          pointBorderColor: '#030712',
-          pointHoverRadius: 6
+          pointBorderColor: '#ffffff',
+          pointBorderWidth: 2,
+          pointRadius: 5,
+          pointHoverRadius: 8
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        animation: {
+          duration: 1600,
+          easing: 'easeOutElastic'
+        },
         plugins: {
           legend: { display: false },
           tooltip: {
             backgroundColor: '#090d16',
             titleColor: '#ffffff',
             bodyColor: '#c084fc',
-            borderColor: 'rgba(255,255,255,0.1)',
-            borderWidth: 1,
+            borderColor: 'rgba(168, 85, 247, 0.4)',
+            borderWidth: 1.5,
             padding: 12,
             callbacks: {
               label: (context) => ' Skor Evaluasi: ' + context.parsed.r + ' / 100'
@@ -818,13 +852,14 @@
           r: {
             angleLines: { color: 'rgba(255, 255, 255, 0.08)' },
             grid: { color: 'rgba(255, 255, 255, 0.08)' },
-            pointLabels: { color: '#cbd5e1', font: { size: 11 } },
+            pointLabels: { color: '#e2e8f0', font: { size: 11, family: "'Inter', sans-serif" } },
             ticks: { display: false, min: 0, max: 100 }
           }
         }
       }
     });
   }
+
 
   // --- UTILS ---
 

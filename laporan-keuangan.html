@@ -10,7 +10,7 @@
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
   <meta name="googlebot" content="noindex, nofollow, noarchive" />
 
-  <meta name="theme-color" content="#07131f" />
+  <meta name="theme-color" content="#030712" />
 
   <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,8 +20,8 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Dashboard Stylesheet -->
-  <link rel="stylesheet" href="css/finance-dashboard.css?v=2" />
+  <!-- Dashboard Bento Stylesheet -->
+  <link rel="stylesheet" href="css/finance-dashboard.css?v=3" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/david2.png" />
@@ -65,7 +65,7 @@
     </div>
   </div>
 
-  <!-- MAIN FINANCIAL DASHBOARD CONTAINER -->
+  <!-- MAIN FINANCIAL DASHBOARD CONTAINER (BENTO GRID ARCHITECTURE) -->
   <div id="dashboard-container" class="dashboard-container">
     
     <!-- Header Navbar -->
@@ -74,7 +74,7 @@
         <img src="img/david2.png" alt="Yehezkiel David" class="dash-avatar" />
         <div class="dash-title-group">
           <h1>Financial Dashboard & AI Insights</h1>
-          <p>Yehezkiel David Setiawan • Confidential Personal Wealth Tracker</p>
+          <p>Yehezkiel David Setiawan • Personal Wealth Bento Tracker</p>
         </div>
       </a>
 
@@ -89,272 +89,244 @@
       </div>
     </header>
 
-    <!-- PASSIVE INCOME HIGHLIGHT BANNER -->
-    <div class="passive-income-banner">
-      <div class="passive-income-left">
-        <div class="passive-icon-circle">
-          <i class="fa-solid fa-coins"></i>
-        </div>
-        <div class="passive-income-text">
-          <h3>Pasif Income Bulanan (Kupon ST016T2 & Bunga Deposito)</h3>
-          <p>Pendapatan otomatis dari instrumen bebas risiko tanpa mengurangi sisa gaji</p>
-        </div>
-      </div>
-      <div id="val-passive-income" class="passive-income-amount">+Rp 681.042 / bln</div>
-    </div>
+    <!-- BENTO GRID CONTAINER -->
+    <div class="bento-grid">
 
-    <!-- SECTION 1: MONTHLY CASH FLOW SUMMARY -->
-    <div class="section-title-wrapper">
-      <h2><i class="fa-solid fa-wallet"></i> Ringkasan Arus Kas Bulanan</h2>
-    </div>
-
-    <div class="grid-cashflow">
-      <!-- Income Card -->
-      <div class="fin-card">
-        <div class="card-top">
-          <span class="card-label">Total Pemasukan</span>
-          <div class="card-icon-box card-icon-income">
-            <i class="fa-solid fa-arrow-down"></i>
+      <!-- BENTO 1: HERO PASSIVE INCOME TICKER (Span 12) -->
+      <div class="bento-card bento-col-12 bento-passive-hero">
+        <div class="passive-income-left">
+          <div class="passive-icon-circle">
+            <i class="fa-solid fa-coins"></i>
+          </div>
+          <div class="passive-income-text">
+            <h3>Portofolio Pasif Income & Imbal Hasil</h3>
+            <p>Pencairan Kupon SBN Bulanan & Bunga Deposito Perbankan Tahunan</p>
           </div>
         </div>
-        <div id="val-income" class="amount-val amount-profit">Rp 0</div>
-        <div class="card-subtext">Gaji Rutin (8.8M) + Passive Income (681k)</div>
-      </div>
 
-      <!-- Expense Card -->
-      <div class="fin-card">
-        <div class="card-top">
-          <span class="card-label">Total Pengeluaran & Alokasi</span>
-          <div class="card-icon-box card-icon-expense">
-            <i class="fa-solid fa-arrow-up"></i>
+        <div class="passive-items-group">
+          <!-- Monthly Coupon Pill -->
+          <div class="passive-item-pill">
+            <i class="fa-solid fa-calendar-days" style="color: #10b981;"></i>
+            <div class="pill-text">
+              <p>Pasif Income Bulanan (ST016T2)</p>
+              <span>+Rp 264.375 / bln</span>
+            </div>
+          </div>
+
+          <!-- Annual Deposit Interest Pill -->
+          <div class="passive-item-pill">
+            <i class="fa-solid fa-vault" style="color: #3b82f6;"></i>
+            <div class="pill-text">
+              <p>Pasif Income Tahunan (Deposito Allo & SeaBank)</p>
+              <span>+Rp 5.000.000 / th (Jatuh Tempo)</span>
+            </div>
           </div>
         </div>
-        <div id="val-expenses" class="amount-val amount-deficit">Rp 0</div>
-        <div class="card-subtext">Mobil (2.5M) + Kos (1.7M) + Danamon (1.2M) + Gopay</div>
       </div>
 
-      <!-- Net Cash Flow Card -->
-      <div class="fin-card">
-        <div class="card-top">
-          <span class="card-label">Sisa Kas Bebas (Cashflow)</span>
-          <div class="card-icon-box card-icon-net">
-            <i class="fa-solid fa-scale-balanced"></i>
-          </div>
+      <!-- BENTO 2: TRADINGVIEW NET WORTH PRO LINE CHART (Span 8) -->
+      <div class="bento-card bento-col-8">
+        <div class="bento-card-header">
+          <h3><i class="fa-solid fa-chart-line" style="color: #10b981;"></i> Pro Tren Pertumbuhan Net Worth (TradingView Curve)</h3>
+          <span class="bento-tag">PRO CHART</span>
         </div>
-        <div id="val-net" class="amount-val">Rp 0</div>
-        <div class="card-subtext">
-          Status: <span id="badge-net" class="status-badge badge-ok">Surplus</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION 2: FINANCIAL RATIOS -->
-    <div class="section-title-wrapper">
-      <h2><i class="fa-solid fa-chart-pie"></i> Rasio & Kesehatan Keuangan</h2>
-    </div>
-
-    <div class="grid-ratios">
-      <!-- Savings Rate Card -->
-      <div class="fin-card">
-        <div class="card-top">
-          <span class="card-label">Savings Rate</span>
-          <span id="badge-savings-rate" class="status-badge badge-ok">OK</span>
-        </div>
-        <div class="ratio-value-group">
-          <span id="num-savings-rate" class="ratio-num">0%</span>
-          <span id="target-savings-rate" class="ratio-target">Target: ≥ 30%</span>
-        </div>
-        <div class="card-subtext">Persentase pendapatan disisihkan untuk tabungan Danamon</div>
-      </div>
-
-      <!-- Fixed Cost Ratio Card -->
-      <div class="fin-card">
-        <div class="card-top">
-          <span class="card-label">Fixed Cost Ratio</span>
-          <span id="badge-fixed-cost" class="status-badge badge-ok">OK</span>
-        </div>
-        <div class="ratio-value-group">
-          <span id="num-fixed-cost" class="ratio-num">0%</span>
-          <span id="target-fixed-cost" class="ratio-target">Target: ≤ 50%</span>
-        </div>
-        <div class="card-subtext">Persentase biaya hidup (Kos + Makan) vs Total Income</div>
-      </div>
-
-      <!-- Debt to Income Ratio Card -->
-      <div class="fin-card">
-        <div class="card-top">
-          <span class="card-label">Debt-to-Income</span>
-          <span id="badge-dti" class="status-badge badge-ok">OK</span>
-        </div>
-        <div class="ratio-value-group">
-          <span id="num-dti" class="ratio-num">0%</span>
-          <span id="target-dti" class="ratio-target">Target: ≤ 30%</span>
-        </div>
-        <div class="card-subtext">Beban cicilan bulanan (Mobil) dibanding total income</div>
-      </div>
-    </div>
-
-    <!-- SECTION 3: YZ.AI LIVE FINANCIAL ADVISOR -->
-    <div class="section-title-wrapper">
-      <h2><i class="fa-solid fa-brain"></i> Live AI Wealth Strategist (YZ.AI Engine)</h2>
-    </div>
-
-    <div class="fin-card ai-advisor-card" style="margin-bottom: 32px;">
-      <div class="ai-header-group">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <div class="ai-badge">
-            <i class="fa-solid fa-wand-magic-sparkles"></i>
-            <span>YZ.AI Finance Engine</span>
-          </div>
-          <span id="ai-model-used" style="font-size: 0.78rem; color: #94a3b8;">Gemini Live</span>
-        </div>
-
-        <button id="btn-generate-ai" class="ai-btn-analyze">
-          <i class="fa-solid fa-rotate-right"></i> Analisis Ulang AI
-        </button>
-      </div>
-
-      <div id="ai-response-container" class="ai-response-box">
-        <div style="text-align: center; padding: 20px; color: #94a3b8;">
-          <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
-          <p style="margin-top: 10px;">Memuat analisis AI real-time untuk portofolio Anda...</p>
-        </div>
-      </div>
-
-      <form id="ai-custom-prompt-form" class="ai-prompt-form">
-        <input type="text" id="ai-prompt-input" class="ai-prompt-input" placeholder="Tanyakan saran finansial khusus (misal: 'Berapa persen alokasi terbaik untuk beli gadget bulan depan?')" />
-        <button type="submit" id="btn-ask-ai" class="ai-btn-analyze">
-          <i class="fa-solid fa-paper-plane"></i> Tanya AI
-        </button>
-      </form>
-    </div>
-
-    <!-- SECTION 4: DETAILED ASSET BREAKDOWN -->
-    <div class="section-title-wrapper">
-      <h2><i class="fa-solid fa-vault"></i> Detail Portofolio Aset & Investasi</h2>
-    </div>
-
-    <div class="grid-assets-detail">
-      <div class="asset-item-card">
-        <div class="asset-badge-icon" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6;">
-          <i class="fa-solid fa-building-columns"></i>
-        </div>
-        <div class="asset-info">
-          <h4>Obligasi Negara ST016T2</h4>
-          <div class="asset-val-text">Rp 50.000.000</div>
-          <div class="asset-meta">Kupon 7.05% gross / th • Cair Bulanan</div>
-        </div>
-      </div>
-
-      <div class="asset-item-card">
-        <div class="asset-badge-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
-          <i class="fa-solid fa-landmark"></i>
-        </div>
-        <div class="asset-info">
-          <h4>Deposito Allo Bank</h4>
-          <div class="asset-val-text">Rp 50.000.000</div>
-          <div class="asset-meta">Tenor 1 Tahun • Bunga 6.5% p.a.</div>
-        </div>
-      </div>
-
-      <div class="asset-item-card">
-        <div class="asset-badge-icon" style="background: rgba(6, 182, 212, 0.15); color: #06b6d4;">
-          <i class="fa-solid fa-piggy-bank"></i>
-        </div>
-        <div class="asset-info">
-          <h4>Deposito SeaBank</h4>
-          <div class="asset-val-text">Rp 50.000.000</div>
-          <div class="asset-meta">Tenor 1 Tahun • Bunga 6.0% p.a.</div>
-        </div>
-      </div>
-
-      <div class="asset-item-card">
-        <div class="asset-badge-icon" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6;">
-          <i class="fa-solid fa-chart-line"></i>
-        </div>
-        <div class="asset-info">
-          <h4>Sucorinvest MMF</h4>
-          <div class="asset-val-text">Rp 15.000.000</div>
-          <div class="asset-meta">Reksadana Pasar Uang • Likuid</div>
-        </div>
-      </div>
-
-      <div class="asset-item-card">
-        <div class="asset-badge-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
-          <i class="fa-solid fa-calendar-check"></i>
-        </div>
-        <div class="asset-info">
-          <h4>Tabungan Danamon (Feb 26 - Jan 31)</h4>
-          <div id="danamon-val-display" class="asset-val-text">Rp 8.520.000</div>
-          <div id="danamon-meta-display" class="asset-meta">1.2M/bln • Bunga 5% p.a. • Goal 81.8M</div>
-        </div>
-      </div>
-
-
-      <div class="asset-item-card">
-        <div class="asset-badge-icon" style="background: rgba(236, 72, 153, 0.15); color: #ec4899;">
-          <i class="fa-solid fa-money-bill-transfer"></i>
-        </div>
-        <div class="asset-info">
-          <h4>Kas / Liquid Cash</h4>
-          <div class="asset-val-text">Rp 1.150.000</div>
-          <div class="asset-meta">Sisa Cashflow Bebas Operasional</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION 5: VISUALIZATIONS / CHARTS (4 CHARTS GRID) -->
-    <div class="section-title-wrapper">
-      <h2><i class="fa-solid fa-chart-line"></i> Visualisasi & Analisis Grafik Keuangan (4-Chart Analytics Grid)</h2>
-    </div>
-
-    <div class="grid-charts-4">
-      <!-- Chart 1: Net Worth Trend -->
-      <div class="fin-card">
-        <div class="chart-card-header">
-          <h3><i class="fa-solid fa-chart-line" style="color: #10b981;"></i> Tren Pertumbuhan Net Worth 5 Tahun</h3>
-        </div>
-        <div class="chart-wrapper">
+        <div class="tv-chart-wrapper">
           <canvas id="netWorthChart"></canvas>
         </div>
       </div>
 
-      <!-- Chart 2: Asset Allocation Donut -->
-      <div class="fin-card">
-        <div class="chart-card-header">
+      <!-- BENTO 3: ASSET ALLOCATION DONUT CHART (Span 4) -->
+      <div class="bento-card bento-col-4">
+        <div class="bento-card-header">
           <h3><i class="fa-solid fa-chart-pie" style="color: #3b82f6;"></i> Alokasi Portofolio Aset</h3>
+          <span class="bento-tag">ASSETS</span>
         </div>
-        <div class="chart-wrapper">
+        <div class="tv-chart-wrapper">
           <canvas id="assetAllocationChart"></canvas>
         </div>
       </div>
 
-      <!-- Chart 3: Cashflow Breakdown Bar -->
-      <div class="fin-card">
-        <div class="chart-card-header">
-          <h3><i class="fa-solid fa-chart-column" style="color: #f59e0b;"></i> Breakdown Pemasukan vs Pengeluaran</h3>
+      <!-- BENTO 4: MONTHLY CASHFLOW BAR CHART (Span 4) -->
+      <div class="bento-card bento-col-4">
+        <div class="bento-card-header">
+          <h3><i class="fa-solid fa-chart-column" style="color: #f59e0b;"></i> Breakdown Arus Kas Bulanan</h3>
+          <span class="bento-tag">CASHFLOW</span>
         </div>
-        <div class="chart-wrapper">
+        <div class="tv-chart-wrapper">
           <canvas id="cashflowBarChart"></canvas>
         </div>
       </div>
 
-      <!-- Chart 4: Radar Health Spider -->
-      <div class="fin-card">
-        <div class="chart-card-header">
-          <h3><i class="fa-solid fa-diagram-project" style="color: #a855f7;"></i> Radar Evaluasi Kesehatan Finansial</h3>
+      <!-- BENTO 5: HEALTH RADAR SPIDER CHART (Span 4) -->
+      <div class="bento-card bento-col-4">
+        <div class="bento-card-header">
+          <h3><i class="fa-solid fa-diagram-project" style="color: #a855f7;"></i> Radar Kesehatan Finansial</h3>
+          <span class="bento-tag">SCORES</span>
         </div>
-        <div class="chart-wrapper">
+        <div class="tv-chart-wrapper">
           <canvas id="radarHealthChart"></canvas>
         </div>
       </div>
-    </div>
 
+      <!-- BENTO 6: FINANCIAL RATIOS STACK (Span 4) -->
+      <div class="bento-card bento-col-4" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="bento-card-header">
+          <h3><i class="fa-solid fa-sliders" style="color: #06b6d4;"></i> Rasio Utang & Simpanan</h3>
+          <span class="bento-tag">METRICS</span>
+        </div>
+
+        <!-- Savings Rate Card -->
+        <div style="background: rgba(3, 7, 18, 0.6); padding: 14px; border-radius: 12px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.06);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <span style="font-size: 0.8rem; color: #94a3b8;">SAVINGS RATE (TOTAL)</span>
+            <span id="badge-savings-rate" class="status-badge badge-ok">OK</span>
+          </div>
+          <div style="font-family: var(--font-code); font-size: 1.6rem; font-weight: 700; color: #10b981;" id="num-savings-rate">28.8%</div>
+          <div style="font-size: 0.76rem; color: #94a3b8;" id="target-savings-rate">Target: ≥ 20.0% (Danamon 1.2M + Kas 1.41M)</div>
+        </div>
+
+        <!-- Fixed Cost Ratio Card -->
+        <div style="background: rgba(3, 7, 18, 0.6); padding: 14px; border-radius: 12px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.06);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <span style="font-size: 0.8rem; color: #94a3b8;">FIXED COST RATIO</span>
+            <span id="badge-fixed-cost" class="status-badge badge-ok">OK</span>
+          </div>
+          <div style="font-family: var(--font-code); font-size: 1.6rem; font-weight: 700; color: #ffffff;" id="num-fixed-cost">43.6%</div>
+          <div style="font-size: 0.76rem; color: #94a3b8;" id="target-fixed-cost">Target: ≤ 50.0% (Kos Rp 1.7M + Makan Rp 2.25M)</div>
+        </div>
+
+        <!-- Debt Ratio Card -->
+        <div style="background: rgba(3, 7, 18, 0.6); padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+            <span style="font-size: 0.8rem; color: #94a3b8;">DEBT-TO-INCOME</span>
+            <span id="badge-dti" class="status-badge badge-ok">OK</span>
+          </div>
+          <div style="font-family: var(--font-code); font-size: 1.6rem; font-weight: 700; color: #ffffff;" id="num-dti">27.6%</div>
+          <div style="font-size: 0.76rem; color: #94a3b8;" id="target-dti">Target: ≤ 30.0% (Cicilan Mobil Rp 2.500.000)</div>
+        </div>
+      </div>
+
+      <!-- BENTO 7: YZ.AI LIVE WEALTH STRATEGIST ENGINE (Span 12) -->
+      <div class="bento-card bento-col-12 bento-ai-card">
+        <div class="ai-header-group">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="ai-badge">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span>YZ.AI Wealth Engine</span>
+            </div>
+            <span id="ai-model-used" style="font-size: 0.8rem; color: #94a3b8;">Gemini Live</span>
+          </div>
+
+          <button id="btn-generate-ai" class="ai-btn-analyze">
+            <i class="fa-solid fa-rotate-right"></i> Analisis Ulang AI
+          </button>
+        </div>
+
+        <div id="ai-response-container" class="ai-response-box">
+          <div style="text-align: center; padding: 26px 20px; color: #94a3b8;">
+            <i class="fa-solid fa-brain fa-spin fa-2x" style="color: #a855f7;"></i>
+            <p style="margin-top: 12px; font-weight: 600; color: #e2e8f0;">YZ.AI Engine sedang memuat analisis keuangan mendalam...</p>
+          </div>
+        </div>
+
+        <form id="ai-custom-prompt-form" class="ai-prompt-form">
+          <input type="text" id="ai-prompt-input" class="ai-prompt-input" placeholder="Tanyakan saran finansial khusus (misal: 'Berapa alokasi aman buat beli gadget 5 juta bulan depan?')" />
+          <button type="submit" id="btn-ask-ai" class="ai-btn-analyze">
+            <i class="fa-solid fa-paper-plane"></i> Tanya AI
+          </button>
+        </form>
+      </div>
+
+      <!-- BENTO 8: DETAILED ASSET BREAKDOWN TILES (Span 12) -->
+      <div class="bento-card bento-col-12">
+        <div class="bento-card-header">
+          <h3><i class="fa-solid fa-vault" style="color: #10b981;"></i> Detail Portofolio Aset & Investasi</h3>
+          <span class="bento-tag">6 INSTRUMEN</span>
+        </div>
+
+        <div class="grid-assets-detail">
+          <!-- ST016 Card -->
+          <div class="asset-item-card">
+            <div class="asset-badge-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+            <div class="asset-info">
+              <h4>Obligasi Negara ST016T2</h4>
+              <div class="asset-val-text">Rp 50.000.000</div>
+              <div class="asset-meta">Kupon 7.05% gross/th • <strong>Cair Rp 264k/bln</strong></div>
+            </div>
+          </div>
+
+          <!-- Allo Bank Card -->
+          <div class="asset-item-card">
+            <div class="asset-badge-icon" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6;">
+              <i class="fa-solid fa-landmark"></i>
+            </div>
+            <div class="asset-info">
+              <h4>Deposito Allo Bank</h4>
+              <div class="asset-val-text">Rp 50.000.000</div>
+              <div class="asset-meta">Bunga 6.5% p.a. • <strong>Cair Rp 2.6M/th saat Jatuh Tempo</strong></div>
+            </div>
+          </div>
+
+          <!-- SeaBank Card -->
+          <div class="asset-item-card">
+            <div class="asset-badge-icon" style="background: rgba(6, 182, 212, 0.15); color: #06b6d4;">
+              <i class="fa-solid fa-piggy-bank"></i>
+            </div>
+            <div class="asset-info">
+              <h4>Deposito SeaBank</h4>
+              <div class="asset-val-text">Rp 50.000.000</div>
+              <div class="asset-meta">Bunga 6.0% p.a. • <strong>Cair Rp 2.4M/th saat Jatuh Tempo</strong></div>
+            </div>
+          </div>
+
+          <!-- Sucorinvest MMF -->
+          <div class="asset-item-card">
+            <div class="asset-badge-icon" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6;">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div class="asset-info">
+              <h4>Sucorinvest MMF</h4>
+              <div class="asset-val-text">Rp 15.000.000</div>
+              <div class="asset-meta">Reksadana Pasar Uang • Likuid</div>
+            </div>
+          </div>
+
+          <!-- Danamon Card -->
+          <div class="asset-item-card">
+            <div class="asset-badge-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
+              <i class="fa-solid fa-calendar-check"></i>
+            </div>
+            <div class="asset-info">
+              <h4>Tabungan Danamon</h4>
+              <div id="danamon-val-display" class="asset-val-text">Rp 8.520.000</div>
+              <div id="danamon-meta-display" class="asset-meta">1.2M/bln • Bunga 5% p.a. • Goal 81.8M (Jan 31)</div>
+            </div>
+          </div>
+
+          <!-- Cash Card -->
+          <div class="asset-item-card">
+            <div class="asset-badge-icon" style="background: rgba(236, 72, 153, 0.15); color: #ec4899;">
+              <i class="fa-solid fa-money-bill-transfer"></i>
+            </div>
+            <div class="asset-info">
+              <h4>Kas / Liquid Cash</h4>
+              <div class="asset-val-text">Rp 1.414.375</div>
+              <div class="asset-meta">Sisa Kas Bebas Operasional Bulanan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- END BENTO GRID -->
 
   </div>
 
   <!-- Dashboard Controller Script -->
-  <script src="script/finance-dashboard.js?v=2"></script>
+  <script src="script/finance-dashboard.js?v=3"></script>
 </body>
 
 </html>

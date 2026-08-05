@@ -1,36 +1,37 @@
 {
   "last_updated": "2026-08-05",
   "monthly_cashflow": {
-    "income": 9481042,
+    "income": 9064375,
     "salary": 8800000,
-    "passive_income": 681042,
+    "passive_monthly": 264375,
+    "passive_annual": 5000000,
     "expenses": 7650000,
     "currency": "IDR"
   },
   "ratios": {
     "savings_rate": {
       "name": "Savings Rate (Total)",
-      "value": 24.8,
+      "value": 28.8,
       "target": 20.0,
       "comparison": "gte",
       "unit": "%",
-      "description": "Total alokasi tabungan Danamon (Rp 1.2M) + Sisa Kas Bebas (Rp 1.15M) = Rp 2.35M"
+      "description": "Total alokasi tabungan Danamon (Rp 1.2M) + Sisa Kas Bebas (Rp 1.41M) = Rp 2.61M"
     },
     "fixed_cost_ratio": {
       "name": "Fixed Cost Ratio",
-      "value": 41.7,
+      "value": 43.6,
       "target": 50.0,
       "comparison": "lte",
       "unit": "%",
-      "description": "Biaya hidup (Kos Rp 1.7M + Makan Rp 2.25M) dibanding total pendapatan Rp 9.48M"
+      "description": "Biaya hidup (Kos Rp 1.7M + Makan Rp 2.25M) dibanding total pendapatan Rp 9.06M"
     },
     "debt_to_income_ratio": {
       "name": "Debt-to-Income Ratio",
-      "value": 26.4,
+      "value": 27.6,
       "target": 30.0,
       "comparison": "lte",
       "unit": "%",
-      "description": "Beban cicilan bulanan (Mobil Rp 2.500.000) dibanding total pendapatan Rp 9.48M"
+      "description": "Beban cicilan bulanan (Mobil Rp 2.500.000) dibanding total pendapatan Rp 9.06M"
     }
   },
   "net_worth_trend": [
@@ -38,16 +39,16 @@
     { "month": "Mar 2026", "amount": 168450000 },
     { "month": "Apr 2026", "amount": 169700000 },
     { "month": "Mei 2026", "amount": 170950000 },
-    { "month": "Jun 2026", "amount": 145000000 },
+    { "month": "Jun 2026", "amount": 172200000 },
     { "month": "Jul 2026", "amount": 173450000 },
     { "month": "Agu 2026", "amount": 174670000 }
   ],
   "asset_allocation": [
-    { "category": "Obligasi ST016T2 (7.05%)", "amount": 50000000, "color": "#3b82f6" },
-    { "category": "Deposito Allo Bank (6.5%)", "amount": 50000000, "color": "#10b981" },
+    { "category": "Obligasi ST016T2 (7.05%)", "amount": 50000000, "color": "#10b981" },
+    { "category": "Deposito Allo Bank (6.5%)", "amount": 50000000, "color": "#3b82f6" },
     { "category": "Deposito SeaBank (6.0%)", "amount": 50000000, "color": "#06b6d4" },
     { "category": "Reksadana Sucorinvest MMF", "amount": 15000000, "color": "#8b5cf6" },
     { "category": "Tabungan Berjangka Danamon", "amount": 8520000, "color": "#f59e0b" },
-    { "category": "Kas / Liquid Cash", "amount": 1150000, "color": "#ec4899" }
+    { "category": "Kas / Liquid Cash", "amount": 1414375, "color": "#ec4899" }
   ]
 }
