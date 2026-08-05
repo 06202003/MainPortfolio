@@ -60,14 +60,15 @@
       { "name": "Sewa Tempat Tinggal / Kos", "amount": 1700000, "budget": 1700000, "color": "#f59e0b" }
     ],
     "recurring_expenses": [
-      { "name": "Cicilan Mobil", "amount": 2500000, "due_date": "Setiap Tanggal 15", "type": "Kewajiban" },
-      { "name": "Sewa Kos", "amount": 1700000, "due_date": "Setiap Tanggal 1", "type": "Tempat Tinggal" },
-      { "name": "GoPay Later (Makan & Harian)", "amount": 2250000, "due_date": "Setiap Akhir Bulan", "type": "Konsumsi" }
+      { "name": "Setoran Danamon", "amount": 1200000, "due_date": "Setiap Tanggal 2", "type": "Saving" },
+      { "name": "Cicilan Mobil", "amount": 2500000, "due_date": "Setiap Tanggal 5", "type": "Kewajiban" },
+      { "name": "Sewa Kos", "amount": 1700000, "due_date": "Setiap Tanggal 28", "type": "Tempat Tinggal" },
+      { "name": "Makan & Harian (GoPay)", "amount": 2250000, "due_date": "Harian / Akhir Bulan", "type": "Konsumsi" }
     ],
     "largest_transaction": {
       "title": "Cicilan Mobil Bulanan",
       "amount": 2500000,
-      "date": "15 Jul 2026",
+      "date": "05 Jul 2026",
       "category": "Otomotif"
     }
   },
@@ -95,7 +96,7 @@
     {
       "id": 1,
       "title": "Auto-Reinvest Kupon Bulanan ST016T2 (Rp 264.375)",
-      "description": "Alokasikan pencairan kupon bulanan otomatis ke Sucorinvest Money Market Fund untuk menciptakan efek compound interest.",
+      "description": "Alokasikan pencairan kupon bulanan otomatis (Tgl 10) ke Sucorinvest Money Market Fund untuk menciptakan efek compound interest.",
       "expected_impact": "+Rp 16.8 Juta dalam 5 Tahun",
       "confidence": "98% High Confidence",
       "action_label": "Aktifkan Auto-Sweep",
@@ -104,7 +105,7 @@
     {
       "id": 2,
       "title": "Re-alokasi Bunga Jatuh Tempo Deposito (Rp 5.000.000 / th)",
-      "description": "Saat bunga deposito Allo Bank & SeaBank cair di jatuh tempo 1 tahun, alokasikan 50% ke Reksadana MMF dan 50% untuk SBN seri terbaru.",
+      "description": "Saat bunga deposito Allo Bank & SeaBank cair di jatuh tempo Feb 2027, alokasikan 50% ke Reksadana MMF dan 50% untuk SBN seri terbaru.",
       "expected_impact": "+Rp 25.0 Juta Tambahan Yield",
       "confidence": "95% Optimal",
       "action_label": "Jadwalkan Reinvestasi",
@@ -152,45 +153,45 @@
   ],
   "financial_timeline": [
     {
-      "date": "10 Setiap Bulan",
-      "title": "Pencairan Kupon SBN ST016T2",
-      "amount": "+Rp 264.375",
-      "type": "Income",
-      "badge_color": "#10b981"
+      "date": "Tanggal 02 Setiap Bulan",
+      "title": "Setoran Otomatis Tabungan Danamon",
+      "amount": "-Rp 1.200.000",
+      "type": "Saving (Locked Deposit)",
+      "badge_color": "#a855f7"
     },
     {
-      "date": "25 Setiap Bulan",
-      "title": "Penerimaan Gaji Rutin Utama",
-      "amount": "+Rp 8.800.000",
-      "type": "Salary",
-      "badge_color": "#3b82f6"
-    },
-    {
-      "date": "15 Setiap Bulan",
+      "date": "Tanggal 05 Setiap Bulan",
       "title": "Pembayaran Cicilan Mobil Bulanan",
       "amount": "-Rp 2.500.000",
-      "type": "Expense",
+      "type": "Expense (Kewajiban)",
       "badge_color": "#ef4444"
     },
     {
-      "date": "01 Setiap Bulan",
-      "title": "Pembayaran Sewa tempat Tinggal (Kos)",
+      "date": "Tanggal 10 Setiap Bulan",
+      "title": "Pencairan Kupon Obligasi ST016T2",
+      "amount": "+Rp 264.375",
+      "type": "Income (Cair Bulanan)",
+      "badge_color": "#10b981"
+    },
+    {
+      "date": "Tanggal 28 Setiap Bulan",
+      "title": "Pembayaran Sewa Tempat Tinggal (Kos)",
       "amount": "-Rp 1.700.000",
-      "type": "Expense",
+      "type": "Expense (Tempat Tinggal)",
       "badge_color": "#f59e0b"
     },
     {
-      "date": "28 Setiap Bulan",
-      "title": "Setoran Otomatis Tabungan Danamon",
-      "amount": "-Rp 1.200.000",
-      "type": "Saving",
-      "badge_color": "#a855f7"
+      "date": "Tanggal 30 Setiap Bulan",
+      "title": "Penerimaan Gaji Rutin Utama",
+      "amount": "+Rp 8.800.000",
+      "type": "Salary Income",
+      "badge_color": "#3b82f6"
     },
     {
       "date": "Februari 2027",
       "title": "Jatuh Tempo Bunga Deposito Allo Bank & SeaBank",
       "amount": "+Rp 5.000.000",
-      "type": "LumpSum Income",
+      "type": "LumpSum Income (Cair 1 Th)",
       "badge_color": "#06b6d4"
     }
   ]
