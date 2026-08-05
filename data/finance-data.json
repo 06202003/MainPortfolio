@@ -1,40 +1,42 @@
 {
   "last_updated": "2026-08-05",
+  "executive_kpis": {
+    "net_worth": 174670000,
+    "net_worth_trend": "+4.46%",
+    "total_assets": 174670000,
+    "total_liabilities": 0,
+    "monthly_income": 9064375,
+    "monthly_expense": 6450000,
+    "monthly_saving": 2614375,
+    "passive_income": 264375,
+    "passive_income_annual": 5000000,
+    "fi_progress": 34.9,
+    "fi_target": 500000000
+  },
   "monthly_cashflow": {
     "income": 9064375,
     "salary": 8800000,
     "passive_monthly": 264375,
     "passive_annual": 5000000,
-    "expenses": 7650000,
+    "expenses": 6450000,
+    "savings_danamon": 1200000,
+    "free_cashflow": 1414375,
     "currency": "IDR"
   },
-  "ratios": {
-    "savings_rate": {
-      "name": "Savings Rate (Total)",
-      "value": 28.8,
-      "target": 20.0,
-      "comparison": "gte",
-      "unit": "%",
-      "description": "Tabungan Danamon (Rp 1.2M locked) + Kas Bebas (Rp 1.41M liquid) = Rp 2.61M"
-    },
-    "fixed_cost_ratio": {
-      "name": "Fixed Cost Ratio",
-      "value": 43.6,
-      "target": 50.0,
-      "comparison": "lte",
-      "unit": "%",
-      "description": "Biaya hidup (Kos Rp 1.7M + Makan Rp 2.25M) dibanding total pendapatan Rp 9.06M"
-    },
-    "debt_to_income_ratio": {
-      "name": "Debt-to-Income Ratio",
-      "value": 27.6,
-      "target": 30.0,
-      "comparison": "lte",
-      "unit": "%",
-      "description": "Beban cicilan bulanan (Mobil Rp 2.500.000) dibanding total pendapatan Rp 9.06M"
-    }
-  },
-  "net_worth_trend": [
+  "cashflow_history": [
+    { "month": "Mar 26", "income": 9064375, "expense": 6450000, "saving": 2614375 },
+    { "month": "Apr 26", "income": 9064375, "expense": 6350000, "saving": 2714375 },
+    { "month": "Mei 26", "income": 9064375, "expense": 6500000, "saving": 2564375 },
+    { "month": "Jun 26", "income": 9064375, "expense": 6400000, "saving": 2664375 },
+    { "month": "Jul 26", "income": 9064375, "expense": 6450000, "saving": 2614375 },
+    { "month": "Agu 26", "income": 9064375, "expense": 6450000, "saving": 2614375 }
+  ],
+  "net_worth_history": [
+    { "month": "Sep 2025", "amount": 161000000 },
+    { "month": "Okt 2025", "amount": 162250000 },
+    { "month": "Nov 2025", "amount": 163500000 },
+    { "month": "Des 2025", "amount": 164750000 },
+    { "month": "Jan 2026", "amount": 166000000 },
     { "month": "Feb 2026", "amount": 167200000 },
     { "month": "Mar 2026", "amount": 168450000 },
     { "month": "Apr 2026", "amount": 169700000 },
@@ -44,11 +46,152 @@
     { "month": "Agu 2026", "amount": 174670000 }
   ],
   "asset_allocation": [
-    { "category": "Obligasi ST016T2 (🔒 Locked)", "amount": 50000000, "color": "#10b981" },
-    { "category": "Deposito Allo Bank (🔒 1 Th)", "amount": 50000000, "color": "#3b82f6" },
-    { "category": "Deposito SeaBank (🔒 1 Th)", "amount": 50000000, "color": "#06b6d4" },
-    { "category": "Reksadana Sucor MMF (💧 Likuid)", "amount": 15000000, "color": "#8b5cf6" },
-    { "category": "Danamon (🔒 Saldo Ditahan 2031)", "amount": 8520000, "color": "#f59e0b" },
-    { "category": "Kas Bebas (💧 Likuid Instant)", "amount": 1414375, "color": "#ec4899" }
+    { "category": "Obligasi ST016T2 (🔒 SBN)", "amount": 50000000, "color": "#10b981", "target_pct": 30.0, "current_pct": 28.6 },
+    { "category": "Deposito Allo Bank (🔒 6.5%)", "amount": 50000000, "color": "#3b82f6", "target_pct": 25.0, "current_pct": 28.6 },
+    { "category": "Deposito SeaBank (🔒 6.0%)", "amount": 50000000, "color": "#06b6d4", "target_pct": 25.0, "current_pct": 28.6 },
+    { "category": "Sucorinvest MMF (💧 Likuid)", "amount": 15000000, "color": "#8b5cf6", "target_pct": 10.0, "current_pct": 8.6 },
+    { "category": "Tabungan Danamon (🔒 2031)", "amount": 8520000, "color": "#f59e0b", "target_pct": 7.0, "current_pct": 4.9 },
+    { "category": "Kas Bebas (💧 Likuid Instant)", "amount": 1414375, "color": "#ec4899", "target_pct": 3.0, "current_pct": 0.8 }
+  ],
+  "expense_analytics": {
+    "by_category": [
+      { "name": "Cicilan Mobil", "amount": 2500000, "budget": 2500000, "color": "#ef4444" },
+      { "name": "Makan & Harian (GoPay)", "amount": 2250000, "budget": 2500000, "color": "#8b5cf6" },
+      { "name": "Sewa Tempat Tinggal / Kos", "amount": 1700000, "budget": 1700000, "color": "#f59e0b" }
+    ],
+    "recurring_expenses": [
+      { "name": "Cicilan Mobil", "amount": 2500000, "due_date": "Setiap Tanggal 15", "type": "Kewajiban" },
+      { "name": "Sewa Kos", "amount": 1700000, "due_date": "Setiap Tanggal 1", "type": "Tempat Tinggal" },
+      { "name": "GoPay Later (Makan & Harian)", "amount": 2250000, "due_date": "Setiap Akhir Bulan", "type": "Konsumsi" }
+    ],
+    "largest_transaction": {
+      "title": "Cicilan Mobil Bulanan",
+      "amount": 2500000,
+      "date": "15 Jul 2026",
+      "category": "Otomotif"
+    }
+  },
+  "financial_health_scorecard": {
+    "overall_score": 96,
+    "rating": "Prima & Sangat Solid",
+    "metrics": [
+      { "name": "Savings Rate", "score": 98, "status": "28.8% (Target ≥20%)", "grade": "Optimal" },
+      { "name": "Liquidity Buffer", "score": 88, "status": "Rp 16.41M (2.5x Exp)", "grade": "Sehat" },
+      { "name": "Debt-to-Income", "score": 92, "status": "27.6% (Target ≤30%)", "grade": "Aman" },
+      { "name": "Investment Yield", "score": 95, "status": "7.05% SBN & 6.5% Deposito", "grade": "Tinggi" },
+      { "name": "Emergency Reserve", "score": 90, "status": "Sucor MMF + Kas Bebas", "grade": "Cukup" },
+      { "name": "Financial Stability", "score": 99, "status": "Danamon Auto 2031", "grade": "Disiplin" }
+    ],
+    "score_trend": [
+      { "month": "Mar", "score": 92 },
+      { "month": "Apr", "score": 93 },
+      { "month": "Mei", "score": 94 },
+      { "month": "Jun", "score": 95 },
+      { "month": "Jul", "score": 95 },
+      { "month": "Agu", "score": 96 }
+    ]
+  },
+  "ai_recommendations": [
+    {
+      "id": 1,
+      "title": "Auto-Reinvest Kupon Bulanan ST016T2 (Rp 264.375)",
+      "description": "Alokasikan pencairan kupon bulanan otomatis ke Sucorinvest Money Market Fund untuk menciptakan efek compound interest.",
+      "expected_impact": "+Rp 16.8 Juta dalam 5 Tahun",
+      "confidence": "98% High Confidence",
+      "action_label": "Aktifkan Auto-Sweep",
+      "category": "Investment"
+    },
+    {
+      "id": 2,
+      "title": "Re-alokasi Bunga Jatuh Tempo Deposito (Rp 5.000.000 / th)",
+      "description": "Saat bunga deposito Allo Bank & SeaBank cair di jatuh tempo 1 tahun, alokasikan 50% ke Reksadana MMF dan 50% untuk SBN seri terbaru.",
+      "expected_impact": "+Rp 25.0 Juta Tambahan Yield",
+      "confidence": "95% Optimal",
+      "action_label": "Jadwalkan Reinvestasi",
+      "category": "Yield"
+    },
+    {
+      "id": 3,
+      "title": "Strategi Target Pembelian Laptop High-End (RTX 4060)",
+      "description": "Gunakan Opsi Hybrid (10 Bulan Sisa Kas + Bunga Deposito Rp 5M) untuk membeli laptop cash tanpa pinjaman.",
+      "expected_impact": "Laptop CASH di Bulan ke-10 (Rp 19.1M)",
+      "confidence": "92% Safe",
+      "action_label": "Mulai Alokasi Laptop",
+      "category": "Goal"
+    }
+  ],
+  "financial_goals": [
+    {
+      "title": "Target Net Worth Phase 1",
+      "target_amount": 200000000,
+      "current_amount": 174670000,
+      "category": "Wealth Building",
+      "estimated_completion": "Desember 2026"
+    },
+    {
+      "title": "Pencairan Tabungan Berjangka Danamon",
+      "target_amount": 81800000,
+      "current_amount": 8520000,
+      "category": "Locked Goal",
+      "estimated_completion": "Januari 2031"
+    },
+    {
+      "title": "Laptop High-End (RTX 4060 + i7)",
+      "target_amount": 19500000,
+      "current_amount": 4243125,
+      "category": "Gadget Goal",
+      "estimated_completion": "Mei 2027"
+    },
+    {
+      "title": "Dana Darurat Ideal 6x Pengeluaran",
+      "target_amount": 38700000,
+      "current_amount": 16414375,
+      "category": "Emergency Reserve",
+      "estimated_completion": "Agustus 2027"
+    }
+  ],
+  "financial_timeline": [
+    {
+      "date": "10 Setiap Bulan",
+      "title": "Pencairan Kupon SBN ST016T2",
+      "amount": "+Rp 264.375",
+      "type": "Income",
+      "badge_color": "#10b981"
+    },
+    {
+      "date": "25 Setiap Bulan",
+      "title": "Penerimaan Gaji Rutin Utama",
+      "amount": "+Rp 8.800.000",
+      "type": "Salary",
+      "badge_color": "#3b82f6"
+    },
+    {
+      "date": "15 Setiap Bulan",
+      "title": "Pembayaran Cicilan Mobil Bulanan",
+      "amount": "-Rp 2.500.000",
+      "type": "Expense",
+      "badge_color": "#ef4444"
+    },
+    {
+      "date": "01 Setiap Bulan",
+      "title": "Pembayaran Sewa tempat Tinggal (Kos)",
+      "amount": "-Rp 1.700.000",
+      "type": "Expense",
+      "badge_color": "#f59e0b"
+    },
+    {
+      "date": "28 Setiap Bulan",
+      "title": "Setoran Otomatis Tabungan Danamon",
+      "amount": "-Rp 1.200.000",
+      "type": "Saving",
+      "badge_color": "#a855f7"
+    },
+    {
+      "date": "Februari 2027",
+      "title": "Jatuh Tempo Bunga Deposito Allo Bank & SeaBank",
+      "amount": "+Rp 5.000.000",
+      "type": "LumpSum Income",
+      "badge_color": "#06b6d4"
+    }
   ]
 }

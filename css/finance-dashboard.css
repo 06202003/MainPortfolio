@@ -1,11 +1,11 @@
-/* Financial Dashboard Styling - Pro Bento Grid & TradingView Dark Mode */
+/* Financial Dashboard Styling - Premium Bloomberg / TradingView OLED Dark Theme */
 :root {
   --font-heading: 'Space Grotesk', sans-serif;
   --font-subheading: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-code: 'JetBrains Mono', monospace;
 
-  /* TradingView OLED Dark Theme Tokens */
+  /* OLED Dark Theme Color Tokens */
   --fin-bg-deep: #030712;
   --fin-bg-surface: #0b0f19;
   --fin-bg-bento: rgba(15, 23, 42, 0.7);
@@ -32,6 +32,7 @@
   --fin-blue: #3b82f6;
   --fin-purple: #a855f7;
   --fin-cyan: #06b6d4;
+  --fin-pink: #ec4899;
 }
 
 * {
@@ -66,8 +67,31 @@ body.finance-body {
   color: var(--fin-text-sub);
 }
 
-.finance-body .mono-text, .finance-body .amount-display {
+.finance-body .mono-text, .finance-body .amount-display, .finance-body .kpi-num {
   font-family: var(--font-code);
+}
+
+/* Section Title Dividers */
+.section-divider {
+  margin: 40px 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.section-divider h2 {
+  font-size: 1.35rem;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.section-divider .divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.02) 100%);
 }
 
 /* Password Gate Overlay */
@@ -183,12 +207,6 @@ body.finance-body {
   opacity: 0.95;
 }
 
-.gate-btn:disabled {
-  background: var(--fin-text-muted);
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
 .gate-error {
   margin-top: 14px;
   padding: 10px;
@@ -209,7 +227,7 @@ body.finance-body {
 
 /* App Main Container */
 .dashboard-container {
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 36px 24px 80px 24px;
   display: none; /* hidden until authenticated */
@@ -235,16 +253,16 @@ body.finance-body {
 }
 
 .dash-avatar {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   border: 2px solid #10b981;
-  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.35);
   object-fit: cover;
 }
 
 .dash-title-group h1 {
-  font-size: 1.55rem;
+  font-size: 1.6rem;
   line-height: 1.2;
   color: #ffffff;
 }
@@ -290,7 +308,117 @@ body.finance-body {
 }
 
 /* ==========================================================================
-   BENTO GRID LAYOUT SYSTEM (12-COLUMNS FLEXIBLE BENTO)
+   1. EXECUTIVE KPI CARDS GRID (WITH MINI SPARKLINES)
+   ========================================================================== */
+.executive-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-bottom: 32px;
+}
+
+.kpi-card {
+  background: var(--fin-bg-bento);
+  border: 1px solid var(--fin-bento-border);
+  border-radius: 18px;
+  padding: 20px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.1);
+}
+
+.kpi-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.kpi-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--fin-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.kpi-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.kpi-main-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.kpi-num {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.kpi-trend {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.kpi-trend.trend-up {
+  background: var(--fin-profit-bg);
+  color: var(--fin-profit);
+}
+
+.kpi-trend.trend-down {
+  background: var(--fin-deficit-bg);
+  color: var(--fin-deficit);
+}
+
+.kpi-sparkline-container {
+  width: 90px;
+  height: 34px;
+}
+
+/* Progress Bar inside KPI (FI Progress) */
+.kpi-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.kpi-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #06b6d4);
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+
+/* ==========================================================================
+   BENTO GRID LAYOUT SYSTEM
    ========================================================================== */
 .bento-grid {
   display: grid;
@@ -299,14 +427,12 @@ body.finance-body {
   margin-bottom: 32px;
 }
 
-/* Bento Spans */
 .bento-col-12 { grid-column: span 12; }
 .bento-col-8  { grid-column: span 8; }
 .bento-col-6  { grid-column: span 6; }
 .bento-col-4  { grid-column: span 4; }
 .bento-col-3  { grid-column: span 3; }
 
-/* Bento Card Surface */
 .bento-card {
   background: var(--fin-bg-bento);
   border: 1px solid var(--fin-bento-border);
@@ -326,56 +452,13 @@ body.finance-body {
   box-shadow: 0 15px 35px rgba(16, 185, 129, 0.12);
 }
 
-/* Hero Passive Income Ticker Bento */
-.bento-passive-hero {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.12) 0%, rgba(59, 130, 246, 0.12) 100%);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.passive-items-group {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.passive-item-pill {
-  background: rgba(3, 7, 18, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 12px 18px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.passive-item-pill i {
-  font-size: 1.3rem;
-}
-
-.passive-item-pill .pill-text p {
-  font-size: 0.78rem;
-  color: var(--fin-text-muted);
-}
-
-.passive-item-pill .pill-text span {
-  font-family: var(--font-code);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #10b981;
-}
-
-/* Bento Card Header */
 .bento-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .bento-card-header h3 {
@@ -398,232 +481,6 @@ body.finance-body {
   color: var(--fin-text-sub);
 }
 
-/* Metric Display Inside Bento */
-.bento-metric-val {
-  font-family: var(--font-code);
-  font-size: 1.9rem;
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 6px;
-}
-
-.bento-subtext {
-  font-size: 0.82rem;
-  color: var(--fin-text-muted);
-}
-
-/* Status Badges */
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.badge-ok {
-  background: var(--fin-profit-bg);
-  border: 1px solid var(--fin-profit-border);
-  color: var(--fin-profit);
-}
-
-.badge-warning {
-  background: var(--fin-warning-bg);
-  border: 1px solid var(--fin-warning-border);
-  color: var(--fin-warning);
-}
-
-.badge-danger {
-  background: var(--fin-deficit-bg);
-  border: 1px solid var(--fin-deficit-border);
-  color: var(--fin-deficit);
-}
-
-/* AI Advisory Bento Card */
-.bento-ai-card {
-  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%);
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  box-shadow: 0 20px 45px rgba(168, 85, 247, 0.15);
-}
-
-.bento-ai-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(90deg, #10b981, #3b82f6, #a855f7, #ec4899);
-}
-
-.ai-header-group {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 20px;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.ai-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(168, 85, 247, 0.2);
-  border: 1px solid rgba(168, 85, 247, 0.5);
-  color: #d8b4fe;
-  padding: 7px 16px;
-
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.ai-badge i {
-  color: #c084fc;
-  animation: pulse-glow 2s infinite alternate;
-}
-
-@keyframes pulse-glow {
-  0% { transform: scale(1); opacity: 0.8; }
-  100% { transform: scale(1.25); opacity: 1; filter: drop-shadow(0 0 8px #c084fc); }
-}
-
-.ai-response-box {
-  background: #030712;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  padding: 24px;
-  font-size: 0.96rem;
-  line-height: 1.75;
-  color: #e2e8f0;
-  min-height: 160px;
-  margin-bottom: 22px;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
-}
-
-.ai-response-box p { margin-bottom: 14px; }
-.ai-response-box ul, .ai-response-box ol { margin-left: 22px; margin-bottom: 14px; }
-.ai-response-box li { margin-bottom: 6px; }
-.ai-response-box strong { color: #38bdf8; }
-.ai-response-box h1, .ai-response-box h2, .ai-response-box h3, .ai-response-box h4 {
-  color: #ffffff;
-  margin-top: 18px;
-  margin-bottom: 10px;
-}
-
-.ai-prompt-form {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.ai-prompt-input {
-  flex: 1;
-  min-width: 280px;
-  background: #030712;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  padding: 14px 18px;
-  color: #ffffff;
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.ai-prompt-input:focus {
-  border-color: #a855f7;
-  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.25);
-}
-
-.ai-btn-analyze {
-  background: linear-gradient(135deg, #7c3aed, #2563eb);
-  border: none;
-  border-radius: 12px;
-  color: #ffffff;
-  padding: 14px 24px;
-  font-family: var(--font-heading);
-  font-size: 0.92rem;
-  font-weight: 700;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: transform 0.15s, opacity 0.2s;
-  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
-}
-
-.ai-btn-analyze:hover {
-  transform: translateY(-2px);
-  opacity: 0.95;
-}
-
-.ai-btn-analyze:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Bento Tile Items Grid (Asset Breakdown) */
-.grid-assets-detail {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 18px;
-}
-
-.asset-item-card {
-  background: var(--fin-bg-bento);
-  border: 1px solid var(--fin-bento-border);
-  border-radius: 16px;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  transition: transform 0.2s, border-color 0.2s;
-}
-
-.asset-item-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(16, 185, 129, 0.4);
-}
-
-.asset-badge-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  flex-shrink: 0;
-}
-
-.asset-info h4 {
-  font-size: 0.95rem;
-  margin-bottom: 2px;
-  color: #ffffff;
-}
-
-.asset-info .asset-val-text {
-  font-family: var(--font-code);
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #10b981;
-}
-
-.asset-info .asset-meta {
-  font-size: 0.8rem;
-  color: var(--fin-text-muted);
-}
-
-/* TradingView Chart Wrapper */
 .tv-chart-wrapper {
   position: relative;
   width: 100%;
@@ -631,11 +488,307 @@ body.finance-body {
 }
 
 /* ==========================================================================
-   RESPONSIVE BENTO BREAKPOINTS
+   2. SANKEY CASHFLOW PIPELINE & CASHFLOW FLOW
    ========================================================================== */
+.sankey-pipeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.sankey-node {
+  background: rgba(3, 7, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 18px;
+  position: relative;
+}
+
+.sankey-node-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: var(--fin-text-muted);
+}
+
+.sankey-node-val {
+  font-family: var(--font-code);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.sankey-arrow-down {
+  text-align: center;
+  color: #10b981;
+  font-size: 1.2rem;
+  margin: 8px 0;
+}
+
+/* ==========================================================================
+   3. EXPENSE ANALYTICS & GITHUB SPENDING HEATMAP
+   ========================================================================== */
+.expense-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.spending-heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  gap: 4px;
+  margin-top: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.heatmap-cell {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.heatmap-cell:hover {
+  transform: scale(1.25);
+  z-index: 10;
+}
+
+.heatmap-cell.level-0 { background: rgba(255, 255, 255, 0.05); }
+.heatmap-cell.level-1 { background: rgba(16, 185, 129, 0.25); }
+.heatmap-cell.level-2 { background: rgba(245, 158, 11, 0.45); }
+.heatmap-cell.level-3 { background: rgba(239, 68, 68, 0.65); }
+
+/* ==========================================================================
+   4. FINANCIAL HEALTH & AI SCORE (0-100 GAUGE)
+   ========================================================================== */
+.health-score-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.score-circle-badge {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, rgba(3, 7, 18, 0.8) 70%);
+  border: 3px solid #10b981;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.score-circle-badge .score-val {
+  font-family: var(--font-code);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #10b981;
+  line-height: 1;
+}
+
+.score-circle-badge .score-max {
+  font-size: 0.75rem;
+  color: var(--fin-text-muted);
+}
+
+.health-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+.health-metric-card {
+  background: rgba(3, 7, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.metric-bar-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.metric-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #06b6d4);
+  border-radius: 10px;
+}
+
+/* ==========================================================================
+   5. VISUAL AI RECOMMENDATION CARDS
+   ========================================================================== */
+.ai-recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.ai-recom-card {
+  background: rgba(3, 7, 18, 0.7);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.ai-recom-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(168, 85, 247, 0.6);
+}
+
+.ai-recom-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.ai-recom-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.ai-recom-desc {
+  font-size: 0.85rem;
+  color: var(--fin-text-muted);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.ai-recom-impact {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #10b981;
+  font-family: var(--font-code);
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  display: inline-block;
+}
+
+.ai-recom-action-btn {
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  padding: 10px 16px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: opacity 0.2s;
+}
+
+.ai-recom-action-btn:hover {
+  opacity: 0.9;
+}
+
+/* ==========================================================================
+   6. FINANCIAL GOAL TRACKER & TIMELINE SCHEDULE
+   ========================================================================== */
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+.goal-card {
+  background: var(--fin-bg-bento);
+  border: 1px solid var(--fin-bento-border);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.timeline-item {
+  background: rgba(3, 7, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.timeline-date-badge {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--fin-text-sub);
+  white-space: nowrap;
+}
+
+/* Toggle Scenario Switcher */
+.scenario-toggle-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(3, 7, 18, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 4px 6px;
+}
+
+.btn-scenario-toggle {
+  background: none;
+  border: none;
+  color: var(--fin-text-muted);
+  padding: 4px 12px;
+  border-radius: 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-scenario-toggle.active {
+  background: #10b981;
+  color: #ffffff;
+}
+
+/* Responsive Breakpoints */
 @media (max-width: 1100px) {
   .bento-col-8, .bento-col-6, .bento-col-4, .bento-col-3 {
     grid-column: span 12;
+  }
+  .expense-grid {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -643,37 +796,11 @@ body.finance-body {
   .dashboard-container {
     padding: 18px 14px 45px 14px;
   }
-
   .dash-header {
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .dash-actions {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .bento-metric-val {
-    font-size: 1.5rem;
-  }
-
   .tv-chart-wrapper {
     height: 260px;
-  }
-
-  .bento-passive-hero {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .passive-items-group {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-
-  .passive-item-pill {
-    width: 100%;
   }
 }

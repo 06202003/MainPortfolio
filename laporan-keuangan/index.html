@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-  <title>Laporan Keuangan Pribadi | Yehezkiel David Setiawan</title>
+  <title>Personal Wealth Management Platform | Yehezkiel David Setiawan</title>
   
   <!-- SEO & Search Engine Exclusion (CRITICAL) -->
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
@@ -20,19 +20,19 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Dashboard Bento Stylesheet -->
-  <link rel="stylesheet" href="../css/finance-dashboard.css?v=4" />
+  <!-- Dashboard Stylesheet -->
+  <link rel="stylesheet" href="../css/finance-dashboard.css?v=5" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../img/david2.png" />
 
-  <!-- TensorFlow.js CDN for Browser-Side Neural Network LSTM Time Series Prediction -->
+  <!-- TensorFlow.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.17.0/dist/tf.min.js"></script>
 
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-  <!-- Marked.js for markdown rendering -->
+  <!-- Marked.js for Markdown -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
@@ -68,7 +68,7 @@
     </div>
   </div>
 
-  <!-- MAIN FINANCIAL DASHBOARD CONTAINER (BENTO GRID ARCHITECTURE) -->
+  <!-- MAIN FINANCIAL DASHBOARD CONTAINER -->
   <div id="dashboard-container" class="dashboard-container">
     
     <!-- Header Navbar -->
@@ -76,8 +76,8 @@
       <a href="../index.html" class="dash-brand" title="Kembali ke Portofolio Utama">
         <img src="../img/david2.png" alt="Yehezkiel David" class="dash-avatar" />
         <div class="dash-title-group">
-          <h1>Financial Dashboard & AI Insights</h1>
-          <p>Yehezkiel David Setiawan • Personal Wealth Bento Tracker</p>
+          <h1>Personal Wealth Management Platform</h1>
+          <p>Yehezkiel David Setiawan • Institutional Grade Wealth Terminal</p>
         </div>
       </a>
 
@@ -92,130 +92,201 @@
       </div>
     </header>
 
-    <!-- BENTO GRID CONTAINER -->
+    <!-- SECTION 1: EXECUTIVE KPI CARDS GRID -->
+    <div class="section-divider">
+      <h2><i class="fa-solid fa-gauge-high" style="color: #10b981;"></i> Executive KPIs & Overview</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div id="executive-kpi-container" class="executive-kpi-grid">
+      <!-- Dynamically filled by JS -->
+    </div>
+
+    <!-- SECTION 2: PORTFOLIO & TARGET ALLOCATION -->
+    <div class="section-divider">
+      <h2><i class="fa-solid fa-pie-chart" style="color: #3b82f6;"></i> Portfolio & Target Asset Allocation</h2>
+      <div class="divider-line"></div>
+    </div>
     <div class="bento-grid">
-
-      <!-- BENTO 1: HERO PASSIVE INCOME TICKER (Span 12) -->
-      <div class="bento-card bento-col-12 bento-passive-hero">
-        <div class="passive-income-left">
-          <div class="passive-icon-circle">
-            <i class="fa-solid fa-coins"></i>
-          </div>
-          <div class="passive-income-text">
-            <h3>Portofolio Pasif Income & Imbal Hasil</h3>
-            <p>Pencairan Kupon SBN Bulanan & Bunga Deposito Perbankan Tahunan</p>
-          </div>
-        </div>
-
-        <div class="passive-items-group">
-          <!-- Monthly Coupon Pill -->
-          <div class="passive-item-pill">
-            <i class="fa-solid fa-calendar-days" style="color: #10b981;"></i>
-            <div class="pill-text">
-              <p>Pasif Income Bulanan (ST016T2)</p>
-              <span>+Rp 264.375 / bln</span>
-            </div>
-          </div>
-
-          <!-- Annual Deposit Interest Pill -->
-          <div class="passive-item-pill">
-            <i class="fa-solid fa-vault" style="color: #3b82f6;"></i>
-            <div class="pill-text">
-              <p>Pasif Income Tahunan (Deposito Allo & SeaBank)</p>
-              <span>+Rp 5.000.000 / th (Jatuh Tempo)</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- BENTO 2: TRADINGVIEW NET WORTH PRO LINE CHART WITH LSTM PREDICTION (Span 8) -->
-      <div class="bento-card bento-col-8">
-        <div class="bento-card-header">
-          <h3>
-            <i class="fa-solid fa-chart-line" style="color: #10b981;"></i> 
-            LSTM Neural Forecast: Proyeksi Net Worth 5 Tahun (2026 - 2031)
-          </h3>
-          <span id="lstm-status-badge" class="bento-tag" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); color: #10b981;">
-            <i class="fa-solid fa-brain fa-spin"></i> LSTM Neural Engine Active
-          </span>
-        </div>
-        <div class="tv-chart-wrapper">
-          <canvas id="netWorthChart"></canvas>
-        </div>
-      </div>
-
-      <!-- BENTO 3: ASSET ALLOCATION DONUT CHART (Span 4) -->
       <div class="bento-card bento-col-4">
         <div class="bento-card-header">
           <h3><i class="fa-solid fa-chart-pie" style="color: #3b82f6;"></i> Alokasi Portofolio Aset</h3>
-          <span class="bento-tag">ASSETS</span>
+          <span class="bento-tag">ACTUAL</span>
         </div>
         <div class="tv-chart-wrapper">
           <canvas id="assetAllocationChart"></canvas>
         </div>
       </div>
 
-      <!-- BENTO 4: MONTHLY CASHFLOW BAR CHART (Span 4) -->
       <div class="bento-card bento-col-4">
         <div class="bento-card-header">
-          <h3><i class="fa-solid fa-chart-column" style="color: #f59e0b;"></i> Breakdown Arus Kas Bulanan</h3>
-          <span class="bento-tag">CASHFLOW</span>
+          <h3><i class="fa-solid fa-sliders" style="color: #10b981;"></i> Actual vs Target Allocation</h3>
+          <span class="bento-tag">TARGET</span>
         </div>
         <div class="tv-chart-wrapper">
-          <canvas id="cashflowBarChart"></canvas>
+          <canvas id="targetAllocationChart"></canvas>
         </div>
       </div>
 
-      <!-- BENTO 5: HEALTH RADAR SPIDER CHART (Span 4) -->
       <div class="bento-card bento-col-4">
         <div class="bento-card-header">
-          <h3><i class="fa-solid fa-diagram-project" style="color: #a855f7;"></i> Radar Kesehatan Finansial</h3>
-          <span class="bento-tag">SCORES</span>
+          <h3><i class="fa-solid fa-chart-line" style="color: #f59e0b;"></i> Pertumbuhan Aset per Kategori</h3>
+          <span class="bento-tag">GROWTH</span>
         </div>
         <div class="tv-chart-wrapper">
-          <canvas id="radarHealthChart"></canvas>
+          <canvas id="assetGrowthChart"></canvas>
         </div>
       </div>
+    </div>
 
-      <!-- BENTO 6: FINANCIAL RATIOS STACK (Span 4) -->
-      <div class="bento-card bento-col-4" style="display: flex; flex-direction: column; justify-content: space-between;">
+    <!-- SECTION 3: NET WORTH HISTORY & FORECAST -->
+    <div class="section-divider">
+      <h2><i class="fa-solid fa-chart-area" style="color: #10b981;"></i> Net Worth History & LSTM Neural Forecast</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-card bento-col-12">
         <div class="bento-card-header">
-          <h3><i class="fa-solid fa-sliders" style="color: #06b6d4;"></i> Rasio Utang & Simpanan</h3>
-          <span class="bento-tag">METRICS</span>
-        </div>
-
-        <!-- Savings Rate Card -->
-        <div style="background: rgba(3, 7, 18, 0.6); padding: 14px; border-radius: 12px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.06);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-            <span style="font-size: 0.8rem; color: #94a3b8;">SAVINGS RATE (TOTAL)</span>
-            <span id="badge-savings-rate" class="status-badge badge-ok">OK</span>
+          <h3><i class="fa-solid fa-brain" style="color: #10b981;"></i> Multi-Scenario Net Worth Trajectory (2025 - 2031)</h3>
+          <div class="scenario-toggle-group">
+            <button class="btn-scenario-toggle active" data-scenario="all">Semua Skenario</button>
+            <button class="btn-scenario-toggle" data-scenario="expected">Actual + Forecast</button>
+            <button class="btn-scenario-toggle" data-scenario="optimistic">Optimis (+15%)</button>
+            <button class="btn-scenario-toggle" data-scenario="conservative">Konservatif (-10%)</button>
           </div>
-          <div style="font-family: var(--font-code); font-size: 1.6rem; font-weight: 700; color: #10b981;" id="num-savings-rate">28.8%</div>
-          <div style="font-size: 0.76rem; color: #94a3b8;" id="target-savings-rate">Target: ≥ 20.0% (Danamon 1.2M + Kas 1.41M)</div>
         </div>
-
-        <!-- Fixed Cost Ratio Card -->
-        <div style="background: rgba(3, 7, 18, 0.6); padding: 14px; border-radius: 12px; margin-bottom: 10px; border: 1px solid rgba(255,255,255,0.06);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-            <span style="font-size: 0.8rem; color: #94a3b8;">FIXED COST RATIO</span>
-            <span id="badge-fixed-cost" class="status-badge badge-ok">OK</span>
-          </div>
-          <div style="font-family: var(--font-code); font-size: 1.6rem; font-weight: 700; color: #ffffff;" id="num-fixed-cost">43.6%</div>
-          <div style="font-size: 0.76rem; color: #94a3b8;" id="target-fixed-cost">Target: ≤ 50.0% (Kos Rp 1.7M + Makan Rp 2.25M)</div>
+        <div class="tv-chart-wrapper" style="height: 360px;">
+          <canvas id="netWorthChart"></canvas>
         </div>
+      </div>
+    </div>
 
-        <!-- Debt Ratio Card -->
-        <div style="background: rgba(3, 7, 18, 0.6); padding: 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.06);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-            <span style="font-size: 0.8rem; color: #94a3b8;">DEBT-TO-INCOME</span>
-            <span id="badge-dti" class="status-badge badge-ok">OK</span>
-          </div>
-          <div style="font-family: var(--font-code); font-size: 1.6rem; font-weight: 700; color: #ffffff;" id="num-dti">27.6%</div>
-          <div style="font-size: 0.76rem; color: #94a3b8;" id="target-dti">Target: ≤ 30.0% (Cicilan Mobil Rp 2.500.000)</div>
+    <!-- SECTION 4: CASH FLOW & SANKEY PIPELINE -->
+    <div class="section-divider">
+      <h2><i class="fa-solid fa-arrows-split-up-and-left" style="color: #f59e0b;"></i> Cash Flow & Pipeline Flow</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-card bento-col-8">
+        <div class="bento-card-header">
+          <h3><i class="fa-solid fa-chart-column" style="color: #10b981;"></i> Monthly Income vs Expense vs Saving</h3>
+          <span class="bento-tag">HISTORICAL</span>
+        </div>
+        <div class="tv-chart-wrapper">
+          <canvas id="incExpSavingChart"></canvas>
         </div>
       </div>
 
-      <!-- BENTO 7: YZ.AI LIVE WEALTH STRATEGIST ENGINE (Span 12) -->
+      <div class="bento-card bento-col-4">
+        <div class="bento-card-header">
+          <h3><i class="fa-solid fa-diagram-project" style="color: #06b6d4;"></i> Visual Cashflow Flow Pipeline</h3>
+          <span class="bento-tag">SANKEY</span>
+        </div>
+        <div id="sankey-cashflow-container"></div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: EXPENSE ANALYTICS & HEATMAP -->
+    <div class="section-divider">
+      <h2><i class="fa-solid fa-receipt" style="color: #ef4444;"></i> Expense Analytics & Spending Heatmap</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-card bento-col-4">
+        <div class="bento-card-header">
+          <h3><i class="fa-solid fa-chart-pie" style="color: #ef4444;"></i> Expense by Category</h3>
+          <span class="bento-tag">CATEGORIES</span>
+        </div>
+        <div class="tv-chart-wrapper">
+          <canvas id="expenseCategoryChart"></canvas>
+        </div>
+      </div>
+
+      <div class="bento-card bento-col-8">
+        <div class="bento-card-header">
+          <h3><i class="fa-solid fa-calendar-days" style="color: #10b981;"></i> Spending Heatmap Calendar (30 Hari Terakhir)</h3>
+          <span class="bento-tag">INTENSITY</span>
+        </div>
+        <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 12px;">Intensitas transaksi harian: Hijau = Rendah, Kuning = Sedang, Merah = Beban Tinggi.</p>
+        <div id="spending-heatmap-grid" class="spending-heatmap-grid"></div>
+
+        <div style="margin-top: 20px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+          <div style="background: rgba(3, 7, 18, 0.6); padding: 12px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="font-size:0.75rem; color:#94a3b8;">TRANSAKSI TERBESAR</div>
+            <div style="font-family:var(--font-code); font-weight:700; color:#ef4444;">Cicilan Mobil (Rp 2.500.000)</div>
+          </div>
+          <div style="background: rgba(3, 7, 18, 0.6); padding: 12px 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="font-size:0.75rem; color:#94a3b8;">FIXED EXPENSES BULANAN</div>
+            <div style="font-family:var(--font-code); font-weight:700; color:#f59e0b;">Rp 6.450.000 / bln</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 6: FINANCIAL HEALTH & AI SCORE -->
+    <div class="section-divider">
+      <h2><i class="fa-solid fa-heart-pulse" style="color: #a855f7;"></i> Financial Health & AI Score (96/100)</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-card bento-col-12" id="financial-health-container">
+        <div class="health-score-container">
+          <div class="score-circle-badge">
+            <div class="score-val">96</div>
+            <div class="score-max">/ 100 AI Score</div>
+          </div>
+          <div style="flex: 1;">
+            <h3 style="font-size: 1.3rem; color: #ffffff; margin-bottom: 4px;">Status Keuangan: Prima & Sangat Solid</h3>
+            <p style="font-size: 0.88rem; color: #94a3b8;">Daya simpan tinggi (28.8% Savings Rate), bebas utang konsumtif, dan dilindungi dana darurat likuid Rp 16.4M.</p>
+          </div>
+        </div>
+
+        <div class="health-metrics-grid">
+          <div class="health-metric-card">
+            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:#e2e8f0; font-weight:600;">
+              <span>Savings Rate</span>
+              <span style="color:#10b981;">28.8% (Optimal)</span>
+            </div>
+            <div class="metric-bar-track"><div class="metric-bar-fill" style="width: 98%;"></div></div>
+          </div>
+
+          <div class="health-metric-card">
+            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:#e2e8f0; font-weight:600;">
+              <span>Liquidity Buffer</span>
+              <span style="color:#3b82f6;">Rp 16.41M (Likuid)</span>
+            </div>
+            <div class="metric-bar-track"><div class="metric-bar-fill" style="width: 88%;"></div></div>
+          </div>
+
+          <div class="health-metric-card">
+            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:#e2e8f0; font-weight:600;">
+              <span>Debt-to-Income</span>
+              <span style="color:#10b981;">27.6% (Aman)</span>
+            </div>
+            <div class="metric-bar-track"><div class="metric-bar-fill" style="width: 92%;"></div></div>
+          </div>
+
+          <div class="health-metric-card">
+            <div style="display:flex; justify-content:space-between; font-size:0.82rem; color:#e2e8f0; font-weight:600;">
+              <span>Investment Yield</span>
+              <span style="color:#f59e0b;">7.05% SBN / 6.5% Depo</span>
+            </div>
+            <div class="metric-bar-track"><div class="metric-bar-fill" style="width: 95%;"></div></div>
+          </div>
+        </div>
+
+        <div style="margin-top: 24px; height: 180px;">
+          <div style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 8px;">Tren Skor Kesehatan Finansial Bulanan:</div>
+          <canvas id="healthScoreTrendChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 7: AI ADVISOR & VISUAL RECOMMENDATION CARDS -->
+    <div class="section-divider">
+      <h2><i class="fa-solid fa-wand-magic-sparkles" style="color: #a855f7;"></i> AI Wealth Strategist & Recommendation Cards</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div class="bento-grid">
       <div class="bento-card bento-col-12 bento-ai-card">
         <div class="ai-header-group">
           <div style="display: flex; align-items: center; gap: 12px;">
@@ -223,14 +294,13 @@
               <i class="fa-solid fa-wand-magic-sparkles"></i>
               <span>YZ.AI Wealth Engine</span>
             </div>
-            <span id="ai-model-used" style="font-size: 0.8rem; color: #94a3b8;">Gemini Live</span>
+            <span id="ai-model-used" style="font-size: 0.8rem; color: #94a3b8;">Gemini 3.1 Flash Lite</span>
           </div>
 
           <button id="btn-generate-ai" class="ai-btn-analyze" style="margin-left: auto;">
             <i class="fa-solid fa-rotate-right"></i> Analisis Ulang AI
           </button>
         </div>
-
 
         <div id="ai-response-container" class="ai-response-box">
           <div style="text-align: center; padding: 26px 20px; color: #94a3b8;">
@@ -240,20 +310,44 @@
         </div>
 
         <form id="ai-custom-prompt-form" class="ai-prompt-form">
-          <input type="text" id="ai-prompt-input" class="ai-prompt-input" placeholder="Tanyakan saran finansial khusus (misal: 'Berapa alokasi aman buat beli gadget 5 juta bulan depan?')" />
+          <input type="text" id="ai-prompt-input" class="ai-prompt-input" placeholder="Tanyakan saran finansial khusus (misal: 'Berapa alokasi aman buat beli laptop RTX 4060?')" />
           <button type="submit" id="btn-ask-ai" class="ai-btn-analyze">
             <i class="fa-solid fa-paper-plane"></i> Tanya AI
           </button>
         </form>
       </div>
 
-      <!-- BENTO 8: DETAILED ASSET BREAKDOWN TILES (Span 12) -->
-      <div class="bento-card bento-col-12">
-        <div class="bento-card-header">
-          <h3><i class="fa-solid fa-vault" style="color: #10b981;"></i> Detail Portofolio Aset & Investasi</h3>
-          <span class="bento-tag">6 INSTRUMEN</span>
-        </div>
+      <div class="bento-col-12">
+        <h3 style="font-size: 1.1rem; color: #ffffff; margin-bottom: 12px;"><i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Visual Recommendation Cards</h3>
+        <div id="ai-recommendation-cards-container" class="ai-recommendation-grid"></div>
+      </div>
+    </div>
 
+    <!-- SECTION 8: FINANCIAL GOAL TRACKER -->
+    <div class="section-divider">
+      <h2><i class="fa-solid fa-bullseye" style="color: #10b981;"></i> Financial Goal Tracker</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div id="financial-goals-container" class="goals-grid"></div>
+
+    <!-- SECTION 9: FINANCIAL TIMELINE SCHEDULE -->
+    <div class="section-divider">
+      <h2><i class="fa-solid fa-calendar-check" style="color: #06b6d4;"></i> Financial Timeline & Cash Schedule</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-card bento-col-12">
+        <div id="financial-timeline-container" class="timeline-list"></div>
+      </div>
+    </div>
+
+    <!-- SECTION 10: PORTFOLIO DETAILS & ASSET TILES -->
+    <div class="section-divider">
+      <h2><i class="fa-solid fa-vault" style="color: #10b981;"></i> Portfolio Details & Asset Instruments</h2>
+      <div class="divider-line"></div>
+    </div>
+    <div class="bento-grid">
+      <div class="bento-card bento-col-12">
         <div class="grid-assets-detail">
           <!-- ST016 Card -->
           <div class="asset-item-card">
@@ -328,14 +422,12 @@
           </div>
         </div>
       </div>
-
     </div>
-    <!-- END BENTO GRID -->
 
   </div>
 
   <!-- Dashboard Controller Script -->
-  <script src="../script/finance-dashboard.js?v=4"></script>
+  <script src="../script/finance-dashboard.js?v=5"></script>
 </body>
 
 </html>
