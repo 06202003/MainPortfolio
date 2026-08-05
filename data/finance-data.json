@@ -1,0 +1,53 @@
+{
+  "last_updated": "2026-08-05",
+  "monthly_cashflow": {
+    "income": 9481042,
+    "salary": 8800000,
+    "passive_income": 681042,
+    "expenses": 7650000,
+    "currency": "IDR"
+  },
+  "ratios": {
+    "savings_rate": {
+      "name": "Savings Rate",
+      "value": 13.6,
+      "target": 30.0,
+      "comparison": "gte",
+      "unit": "%",
+      "description": "Persentase penghasilan disisihkan untuk tabungan Danamon (Rp 1.200.000/bln)"
+    },
+    "fixed_cost_ratio": {
+      "name": "Fixed Cost Ratio",
+      "value": 41.7,
+      "target": 50.0,
+      "comparison": "lte",
+      "unit": "%",
+      "description": "Biaya hidup (Kos Rp 1.7M + Makan Rp 2.25M) dibanding total pendapatan Rp 9.48M"
+    },
+    "debt_to_income_ratio": {
+      "name": "Debt-to-Income Ratio",
+      "value": 26.4,
+      "target": 30.0,
+      "comparison": "lte",
+      "unit": "%",
+      "description": "Beban cicilan bulanan (Mobil Rp 2.500.000) dibanding total pendapatan Rp 9.48M"
+    }
+  },
+  "net_worth_trend": [
+    { "month": "Feb 2026", "amount": 167200000 },
+    { "month": "Mar 2026", "amount": 168450000 },
+    { "month": "Apr 2026", "amount": 169700000 },
+    { "month": "Mei 2026", "amount": 170950000 },
+    { "month": "Jun 2026", "amount": 172200000 },
+    { "month": "Jul 2026", "amount": 173450000 },
+    { "month": "Agu 2026", "amount": 174670000 }
+  ],
+  "asset_allocation": [
+    { "category": "Obligasi ST016T2 (7.05%)", "amount": 50000000, "color": "#3b82f6" },
+    { "category": "Deposito Allo Bank (6.5%)", "amount": 50000000, "color": "#10b981" },
+    { "category": "Deposito SeaBank (6.0%)", "amount": 50000000, "color": "#06b6d4" },
+    { "category": "Reksadana Sucorinvest MMF", "amount": 15000000, "color": "#8b5cf6" },
+    { "category": "Tabungan Berjangka Danamon", "amount": 8520000, "color": "#f59e0b" },
+    { "category": "Kas / Liquid Cash", "amount": 1150000, "color": "#ec4899" }
+  ]
+}
