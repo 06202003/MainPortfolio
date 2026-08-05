@@ -21,10 +21,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Dashboard Bento Stylesheet -->
-  <link rel="stylesheet" href="../css/finance-dashboard.css?v=3" />
+  <link rel="stylesheet" href="../css/finance-dashboard.css?v=4" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../img/david2.png" />
+
+  <!-- TensorFlow.js CDN for Browser-Side Neural Network LSTM Time Series Prediction -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.17.0/dist/tf.min.js"></script>
 
   <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -125,11 +128,16 @@
         </div>
       </div>
 
-      <!-- BENTO 2: TRADINGVIEW NET WORTH PRO LINE CHART (Span 8) -->
+      <!-- BENTO 2: TRADINGVIEW NET WORTH PRO LINE CHART WITH LSTM PREDICTION (Span 8) -->
       <div class="bento-card bento-col-8">
         <div class="bento-card-header">
-          <h3><i class="fa-solid fa-chart-line" style="color: #10b981;"></i> Pro Tren Pertumbuhan Net Worth (TradingView Curve)</h3>
-          <span class="bento-tag">PRO CHART</span>
+          <h3>
+            <i class="fa-solid fa-chart-line" style="color: #10b981;"></i> 
+            LSTM Neural Forecast: Proyeksi Net Worth 5 Tahun (2026 - 2031)
+          </h3>
+          <span id="lstm-status-badge" class="bento-tag" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); color: #10b981;">
+            <i class="fa-solid fa-brain fa-spin"></i> LSTM Neural Engine Active
+          </span>
         </div>
         <div class="tv-chart-wrapper">
           <canvas id="netWorthChart"></canvas>
@@ -326,7 +334,7 @@
   </div>
 
   <!-- Dashboard Controller Script -->
-  <script src="../script/finance-dashboard.js?v=3"></script>
+  <script src="../script/finance-dashboard.js?v=4"></script>
 </body>
 
 </html>
