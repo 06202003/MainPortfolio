@@ -406,9 +406,16 @@
     // 6. Asset Allocation Donut Chart
     renderAssetAllocationChart(data.asset_allocation);
 
-    // 7. Trigger Live AI Analysis
+    // 7. Monthly Cashflow Bar Chart (NEW CHART 3)
+    renderCashflowBarChart(data.monthly_cashflow);
+
+    // 8. Financial Health Radar Chart (NEW CHART 4)
+    renderHealthRadarChart(data.ratios);
+
+    // 9. Trigger Live AI Analysis
     fetchAIAnalysis(data);
   }
+
 
   async function fetchAIAnalysis(financeData, customQuestion = '') {
     const aiContainer = document.getElementById('ai-response-container');
@@ -689,6 +696,136 @@
     });
   }
 
+  // --- CHART 3: Cashflow Breakdown Bar Chart ---
+  let barChartInstance = null;
+  function renderCashflowBarChart(cf) {
+    const ctx = document.getElementById('cashflowBarChart');
+    if (!ctx) return;
+
+    if (barChartInstance) barChartInstance.destroy();
+
+    const labels = ['Gaji Rutin', 'Passive Income', 'Cicilan Mobil', 'Sewa Kos', 'Makan (GoPay)', 'Danamon', 'Kas Bebas'];
+    const values = [8800000, 681042, 2500000, 1700000, 2250000, 1200000, 1150000];
+    const colors = [
+      '#10b981', // Gaji - Green
+      '#3b82f6', // Passive - Blue
+      '#ef4444', // Mobil - Red
+      '#f59e0b', // Kos - Amber
+      '#8b5cf6', // Makan - Purple
+      '#06b6d4', // Danamon - Cyan
+      '#ec4899'  // Kas - Pink
+    ];
+
+    barChartInstance = new Chart(ctx.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Nominal (Rp)',
+          data: values,
+          backgroundColor: colors,
+          borderRadius: 8,
+          borderWidth: 0
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#090d16',
+            titleColor: '#ffffff',
+            bodyColor: '#10b981',
+            borderColor: 'rgba(255,255,255,0.1)',
+            borderWidth: 1,
+            padding: 12,
+            callbacks: {
+              label: (context) => ' Nominal: ' + formatCurrency(context.parsed.y, 'IDR')
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: { color: '#94a3b8', font: { size: 11 } }
+          },
+          y: {
+            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+            ticks: {
+              color: '#94a3b8',
+              font: { size: 11 },
+              callback: (val) => (val / 1000000).toFixed(1) + ' Jt'
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // --- CHART 4: Financial Health Radar Chart ---
+  let radarChartInstance = null;
+  function renderHealthRadarChart(ratios) {
+    const ctx = document.getElementById('radarHealthChart');
+    if (!ctx) return;
+
+    if (radarChartInstance) radarChartInstance.destroy();
+
+    const labels = [
+      'Savings Rate (24.8%)',
+      'Fixed Cost (41.7%)',
+      'Debt Ratio (26.4%)',
+      'Yield Aset (6.4%)',
+      'Likuiditas (16M)',
+      'Disiplin Danamon (100%)'
+    ];
+
+    const scores = [92, 88, 90, 95, 82, 100]; // Financial Scores out of 100
+
+    radarChartInstance = new Chart(ctx.getContext('2d'), {
+      type: 'radar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Skor Kesehatan (%)',
+          data: scores,
+          backgroundColor: 'rgba(168, 85, 247, 0.25)',
+          borderColor: '#a855f7',
+          borderWidth: 2,
+          pointBackgroundColor: '#a855f7',
+          pointBorderColor: '#030712',
+          pointHoverRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#090d16',
+            titleColor: '#ffffff',
+            bodyColor: '#c084fc',
+            borderColor: 'rgba(255,255,255,0.1)',
+            borderWidth: 1,
+            padding: 12,
+            callbacks: {
+              label: (context) => ' Skor Evaluasi: ' + context.parsed.r + ' / 100'
+            }
+          }
+        },
+        scales: {
+          r: {
+            angleLines: { color: 'rgba(255, 255, 255, 0.08)' },
+            grid: { color: 'rgba(255, 255, 255, 0.08)' },
+            pointLabels: { color: '#cbd5e1', font: { size: 11 } },
+            ticks: { display: false, min: 0, max: 100 }
+          }
+        }
+      }
+    });
+  }
+
   // --- UTILS ---
 
   function formatCurrency(val, currency = 'IDR') {
@@ -715,3 +852,4 @@
   }
 
 })();
+

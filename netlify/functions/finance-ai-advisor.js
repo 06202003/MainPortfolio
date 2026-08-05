@@ -1,10 +1,9 @@
 /**
- * Netlify Serverless Function for AI Financial Analysis (YZ.AI Finance Engine)
+ * Netlify Serverless Function for Deep AI Financial Analysis (YZ.AI Wealth Strategist)
  * Uses process.env.GEMINI_API_KEY or GROQ_API_KEY (Same API key as YZ.AI)
  */
 
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
-const GROQ_API_KEY = process.env.GROQ_API_KEY || "";
 
 exports.handler = async (event, context) => {
   const headers = {
@@ -24,42 +23,61 @@ exports.handler = async (event, context) => {
 
   try {
     const { financeData, customQuestion } = JSON.parse(event.body || "{}");
-
     const apiKey = GEMINI_API_KEY || event.queryStringParameters?.key || "";
 
-    const systemPrompt = `You are YZ-Finance AI, an elite personal financial advisor and wealth strategist representing Yehezkiel David Setiawan.
-Your mission is to provide sharp, practical, encouraging, and data-backed financial analysis in Indonesian.
+    const systemPrompt = `You are YZ-Finance AI, an elite wealth strategist, certified financial analyst (CFA), and personal financial advisor representing Yehezkiel David Setiawan.
+Your mission is to provide an EXTREMELY DETAILED, COMPREHENSIVE, NUMERICAL, and DEEP financial analysis in Indonesian.
 
-System Rules:
-1. Always analyze based on the user's REAL financial data provided below.
-2. Savings Rate includes BOTH Danamon deposit (Rp 1.2M) and Free Liquid Cashflow (Rp 1.15M), giving a true Savings Rate of 24.8%, which is WELL WITHIN the healthy 20-30% target.
-3. Structure your analysis into 4 clean Markdown sections:
-   - 🎯 **Skor & Ringkasan Kesehatan Keuangan** (Berikan skor 1-100 dan alasannya secara singkat)
-   - 🟢 **Kekuatan Utama Portofolio** (Apresiasi passive income dari ST016T2 & Deposito, total savings rate 24.8%, fixed cost terkontrol)
-   - ⚠️ **Area Perhatian / Optimasi** (Misal strategi reinvestasi kupon ST016T2 & alokasi sisa cashflow bebas)
-   - 🚀 **Rekomendasi Aksi Nyata (Actionable Advice)** (Langkah taktis yang bisa dilakukan bulan ini)
-4. If the user asks a custom question, prioritize answering their question clearly using their financial data.
-5. Maintain a professional, supportive, high-energy, and friendly tone.
+CRITICAL RULES & ANALYSIS STRUCTURE:
+1. Always analyze based on the user's REAL financial data provided below:
+   - Total Income: Rp 9.481.042 (Salary Rp 8.8M + Passive Income Rp 681.042)
+   - Monthly Allocation: Mobil Rp 2.5M, Kos Rp 1.7M, Makan Rp 2.25M, Danamon Rp 1.2M, Free Cashflow Rp 1.15M
+   - Total Savings Rate Sejati: 24.8% (Danamon 1.2M + Free Cashflow 1.15M = Rp 2.35M / 9.48M total income). Target 20-30% IS FULFILLED (EXCELLENT!).
+   - Assets Total ~Rp 174.67 Million: ST016T2 (50M, 7.05%), Deposito Allo Bank (50M, 6.5%), Deposito SeaBank (50M, 6.0%), Sucorinvest MMF (15M), Tabungan Danamon (~8.5M), Liquid Cash (1.15M).
+
+2. You MUST produce a rich, highly detailed response structured with these 5 comprehensive Markdown sections:
+
+### 🏆 1. Scorecard & Evaluasi Kesehatan Finansial (Skor: 95/100)
+- Berikan analisis metrik secara angka dan persentase: Total Savings Rate (24.8% - EXCELLENT), Fixed Cost Ratio (41.7% - HEALTHY), Debt-to-Income (26.4% - SAFE).
+- Jelaskan mengapa skornya 95/100 dan berikan apresiasi pada manajemen cashflow.
+
+### 📊 2. Analisis Portofolio Aset & Imbal Hasil (Yield Optimization)
+- Bedah keunggulan pajak: Pajak SBN ST016T2 hanya 10% vs Pajak Deposito Perbankan 20%.
+- Hitung total passive income bulanan net (+Rp 681.042/bulan) dan tunjukkan persentase kontribusinya terhadap gaji rutin (7.7% tambahan daya beli gratis!).
+- Tinjau efisiensi Tabungan Berjangka Danamon (5% p.a., goal Rp 81.8 Juta pada Jan 2031).
+
+### 🛡️ 3. Analisis Likuiditas & Ketahanan Manajemen Risiko
+- Evaluasi rasio likuiditas: Reksadana Sucorinvest MMF (15M) + Kas Bebas (1.15M) = Rp 16.15M (~2.1 bulan biaya hidup dasar).
+- Berikan saran penguatan Dana Darurat hingga mencapai 3-6 bulan pengeluaran rutin (~Rp 23M).
+
+### 🚀 4. Proyeksi Trajektori Net Worth 5 Tahun (2026 - 2031)
+- Hitung proyeksi pertumbuhan aset 5 tahun mendatang jika alokasi Rp 2.35M/bulan konsisten dipertahankan:
+  - Tabungan Danamon pada Jan 2031: ~Rp 81.800.000
+  - Pokok SBN & Deposito (ST016 50M + Allo 50M + SeaBank 50M + Sucor 15M): Rp 165.000.000
+  - Bunga Compounding Passive Income (reinvestasi Rp 681rb/bln): ~Rp 50.000.000
+  - Total Net Worth Estimasi di 2031: **Rp 296.800.000 - Rp 320.000.000**!
+
+### 💡 5. Langkah Aksi Taktis (Actionable Recommendations)
+- Berikan 5 langkah konkret dan terstruktur yang bisa dieksekusi mulai bulan ini.
 
 Context Financial Data:
 ${JSON.stringify(financeData, null, 2)}`;
 
     const userPrompt = customQuestion 
-      ? `Pertanyaan Pengguna: "${customQuestion}"\n\nBerikan analisis mendalam dan saran berdasarkan data keuangan di atas.`
-      : `Lakukan analisis lengkap kesehatan keuangan dan berikan insight strategis untuk portofolio di atas.`;
+      ? `Pertanyaan Pengguna: "${customQuestion}"\n\nBerikan analisis finansial yang sangat mendalam, numerik, dan rekomendasi strategis lengkap berdasarkan data di atas.`
+      : `Lakukan analisis finansial yang sangat mendalam, komprehensif, numerik, dan proyeksi kekayaan 5 tahun untuk portofolio di atas.`;
 
     if (!apiKey) {
       return {
         statusCode: 200,
         headers,
         body: JSON.stringify({
-          answer: generateFallbackAnalysis(financeData, customQuestion),
-          modelUsed: "Local Smart Rules Engine (Set GEMINI_API_KEY on Netlify for Live Gemini AI)"
+          answer: generateDeepFallbackAnalysis(financeData, customQuestion),
+          modelUsed: "Local Deep Financial Engine"
         })
       };
     }
 
-    // Try Gemini Models
     const models = [
       "gemini-2.0-flash",
       "gemini-1.5-flash",
@@ -79,14 +97,12 @@ ${JSON.stringify(financeData, null, 2)}`;
             ],
             generationConfig: {
               temperature: 0.3,
-              maxOutputTokens: 1000
+              maxOutputTokens: 1600
             }
           })
         });
 
-        if (response.status === 429) {
-          continue;
-        }
+        if (response.status === 429) continue;
 
         const data = await response.json();
         if (data.candidates && data.candidates[0].content && data.candidates[0].content.parts[0].text) {
@@ -95,7 +111,7 @@ ${JSON.stringify(financeData, null, 2)}`;
             headers,
             body: JSON.stringify({
               answer: data.candidates[0].content.parts[0].text,
-              modelUsed: `Gemini (${model})`
+              modelUsed: `Gemini AI (${model})`
             })
           };
         }
@@ -108,8 +124,8 @@ ${JSON.stringify(financeData, null, 2)}`;
       statusCode: 200,
       headers,
       body: JSON.stringify({
-        answer: generateFallbackAnalysis(financeData, customQuestion),
-        modelUsed: "Local Fallback Rules Engine"
+        answer: generateDeepFallbackAnalysis(financeData, customQuestion),
+        modelUsed: "Local Deep Financial Engine"
       })
     };
 
@@ -122,14 +138,77 @@ ${JSON.stringify(financeData, null, 2)}`;
   }
 };
 
-function generateFallbackAnalysis(data, question) {
+function generateDeepFallbackAnalysis(data, question) {
   const inc = data?.monthly_cashflow?.income || 9481042;
   const exp = data?.monthly_cashflow?.expenses || 7650000;
   const net = inc - exp;
 
   if (question) {
-    return `🎯 **Jawaban AI untuk Pertanyaan Anda:**\n\nBerdasarkan data keuangan bulanan Anda (Pendapatan total Rp ${(inc/1000000).toFixed(2)} Jt dan sisa bersih Rp ${(net/1000000).toFixed(2)} Jt), keuangan Anda berada dalam kondisi **Sangat Sehat & Surplus**.\n\nDengan memperhitungkan Tabungan Danamon (Rp 1.2M) + Sisa Kas Bebas (Rp 1.15M), Total Savings Rate Anda berada di angka **24.8%**, yang sudah memenuhi target ideal 20-30%.`;
+    return `### 🎯 Jawaban Strategis YZ.AI untuk Pertanyaan Anda:
+
+Berdasarkan data keuangan bulanan Anda:
+- **Total Income Efektif:** Rp ${(inc/1000000).toFixed(2)} Juta (Gaji Rp 8.8M + Passive Income Rp 681k)
+- **Net Cashflow Bebas:** Rp ${(net/1000000).toFixed(2)} Juta
+- **Total Daya Simpan (Savings Rate):** **24.8%** (Rp 2.35M/bulan dari Danamon Rp 1.2M + Kas Bebas Rp 1.15M)
+
+**Analisis & Saran AI:**
+Pertanyakan setiap pengeluaran yang tidak memberikan nilai tambah jangka panjang. Keuangan Anda saat ini berada dalam posisi **Sangat Sehat (Skor 95/100)**. Anda memiliki ruang arus kas bebas Rp 1.15M/bulan yang bisa digunakan secara fleksibel tanpa mengganggu alokasi tabungan rutin Danamon dan cicilan mobil.`;
   }
 
-  return `🎯 **Skor & Ringkasan Kesehatan Keuangan: 95/100 (SANGAT SEHAT & PRIMA)**\n\nPortofolio keuangan Anda berada dalam posisi yang sangat solid! Dengan memperhitungkan setoran rutin Danamon (Rp 1.2M) plus sisa cashflow bebas (Rp 1.15M), **Total Savings Rate sejati Anda mencapai 24.8%**—masuk dalam zona ideal target finansial (20-30%).\n\n🟢 **Kekuatan Utama Portofolio:**\n- **Total Savings Rate Sejati 24.8%:** Kombinasi tabungan terikat Danamon + sisa kas bebas memberi daya simpan Rp 2.35M/bulan.\n- **Passive Income Aktif:** Anda menerima passive income bersih $\\approx$ **Rp 681.042/bulan** dari kupon ST016T2 & bunga deposito.\n- **Fixed Cost Terkontrol:** Biaya tempat tinggal dan konsumsi harian berada di level 41.7% (aman di bawah 50%).\n- **Rasio Utang Aman:** Cicilan mobil 26.4% di bawah ambang batas maksimal 30%.\n\n⚠️ **Area Perhatian / Optimasi:**\n- **Reinvestasi Passive Income:** Kupon bulanan ST016T2 (Rp 264rb) & bunga deposito sebaiknya otomatis di-reinvestasikan ke Reksadana Sucorinvest MMF agar terjadi *compound interest*.\n- **Pengalokasian Sisa Kas Bebas:** Alokasikan Rp 1.15M sisa kas bebas secara bertahap ke Dana Darurat atau Reksadana Pasar Uang.\n\n🚀 **Rekomendasi Aksi Nyata (Actionable Advice):**\n1. **Auto-Reinvest Kupon ST016T2:** Jadwalkan auto-debit kupon bulanan langsung masuk ke Reksadana Sucorinvest MMF.\n2. **Disiplin Tabungan Danamon:** Pertahankan tabungan berjangka Danamon hingga Jan 2031 untuk mencairkan Rp 81,8 Juta.\n3. **Optimasi Cashflow:** Pertahankan pola konsumsi saat ini agar sisa kas bebas Rp 1.15M dapat terus diputar ke instrumen produktif.`;
+  return `### 🏆 1. Scorecard & Evaluasi Kesehatan Finansial (Skor: 95/100 - PRIMA)
+
+Portofolio keuangan Anda berada dalam kondisi yang **sangat sehat, disiplin, dan terstruktur rapi**. 
+
+- **Total Savings Rate Sejati: 24.8%** *(Sangat Sehat)*  
+  Kombinasi tabungan berjangka Danamon (Rp 1,2M) dan sisa kas bebas (Rp 1,15M) menghasilkan total daya simpan **Rp 2.350.000/bulan**, yang secara sempurna memenuhi target ideal finansial (20% – 30%).
+- **Fixed Cost Ratio: 41.7%** *(Sehat & Terkontrol)*  
+  Biaya tempat tinggal (Kos Rp 1,7M) dan konsumsi harian (GoPay Later Rp 2,25M) berada di level 41.7% dari total pendapatan Rp 9,48M (aman di bawah ambang batas 50%).
+- **Debt-to-Income Ratio: 26.4%** *(Aman)*  
+  Cicilan mobil Rp 2,5M/bulan masih berada di bawah batas maksimal 30%.
+
+---
+
+### 📊 2. Analisis Portofolio Aset & Imbal Hasil (Yield Optimization)
+
+Portofolio Anda sebesar **Rp 174.670.000** terbagi dalam instrumen rendah risiko dengan yield kompetitif:
+
+1. **Obligasi Negara ST016T2 (Rp 50 Juta | 7.05% gross / th):**  
+   Menghasilkan kupon bersih $\\approx$ **Rp 264.375/bulan** setelah dipotong pajak SBN yang sangat rendah (hanya 10%). Ini adalah *anchor yield* terbaik di portofolio Anda.
+2. **Deposito Allo Bank (Rp 50 Juta | 6.5% p.a.) & SeaBank (Rp 50 Juta | 6.0% p.a.):**  
+   Menghasilkan bunga bersih gabungan $\\approx$ **Rp 416.667/bulan** (setelah pajak deposito 20%). 
+3. **Reksadana Sucorinvest MMF (Rp 15 Juta):**  
+   Berfungsi sebagai *secondary emergency fund* yang bebas pajak dan sangat likuid.
+4. **Tabungan Berjangka Danamon (Rp 1.2M / bulan | 5.0% p.a.):**  
+   Menjadi instrumen disiplin akumulasi modal 5 tahun menuju target **Rp 81,8 Juta** di Januari 2031.
+
+> 💰 **Total Passive Income Tanpa Kerja:** **+Rp 681.042 / bulan** (Menambah daya beli gaji rutin sebesar **+7.7%**).
+
+---
+
+### 🛡️ 3. Analisis Likuiditas & Manajemen Risiko
+
+- **Likuiditas Saat Ini:** Reksadana Sucorinvest MMF (Rp 15M) + Kas Bebas (Rp 1.15M) = **Rp 16.150.000**.
+- **Cakupan Dana Darurat:** Jumlah likuid saat ini dapat menopang pengeluaran rutin selama **2.1 bulan** tanpa gaji.
+- **Rekomendasi Risiko:** Secara bertahap tingkatkan dana likuid/dana darurat hingga mencapai 3 - 6 bulan pengeluaran (~Rp 23 Juta) menggunakan sisa kas bebas bulanan.
+
+---
+
+### 🚀 4. Proyeksi Trajektori Net Worth 5 Tahun (2026 – 2031)
+
+Jika disiplin alokasi Rp 2.35M/bulan dipertahankan konsisten dari Feb 2026 hingga Jan 2031:
+
+- **Modal Pokok Aset Tetap Saat Ini:** Rp 165.000.000 *(ST016 + Allo + SeaBank + Sucor)*
+- **Akumulasi Pencairan Danamon (Jan 2031):** **Rp 81.800.000** *(Pokok 72M + Bunga 9.8M)*
+- **Hasil Reinvestasi Passive Income (5 Tahun):** $\\approx$ **Rp 48.500.000**
+- **🌟 Proyeksi Total Net Worth di Jan 2031:** $\mathbf{\approx\ \text{Rp } 295.300.000\ -\ \text{Rp } 315.000.000}$ *(Mendekati Rp 300+ Juta!)*
+
+---
+
+### 💡 5. Langkah Aksi Taktis (Actionable Recommendations)
+
+1. **Auto-Reinvest Kupon ST016T2 (Rp 264rb/bln):** Setel auto-debit kupon bulanan agar langsung masuk ke *Sucorinvest Money Market Fund* untuk menciptakan efek *compound interest*.
+2. **Prioritas Sisa Kas Bebas (Rp 1.15M/bln):** Bagi alokasi kas bebas menjadi 2: **Rp 650rb** menambah Reksadana Pasar Uang (Dana Darurat) & **Rp 500rb** untuk dana tak terduga/hobby.
+3. **Pertahankan Kontrol Makan (GoPay Later):** Jaga pengeluaran makan di kisaran Rp 2.0M - Rp 2.25M untuk memastikan surplus kas tetap konsisten di atas Rp 1.1M/bulan.
+4. **Pertahankan Disiplin Danamon:** Jangan batalkan tabungan berjangka Danamon sebelum Jan 2031 agar terhindar dari pinalti dan bisa menikmati hasil bunga 5% p.a.
+5. **Evaluasi Re-investment Deposito (2027):** Saat Deposito Allo Bank & SeaBank jatuh tempo dalam 1 tahun, evaluasi apakah suku bunga SBN (seperti seri ST/ORI berikutnya) memberikan yield bersih yang lebih tinggi dibanding deposito perbankan.`;
 }
