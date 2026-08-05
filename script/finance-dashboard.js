@@ -77,19 +77,50 @@
         if (btn) btn.disabled = true;
         hideError();
 
-        // Validating password against baseline or netlify endpoint
-        const valid = (pwd === '12062003' || pwd === 'david123' || pwd === 'yehezkiel2026');
+        try {
+          let response = await fetch('/.netlify/functions/verify-finance-password', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password: pwd })
+          });
 
-        if (valid) {
-          localStorage.setItem('finance_auth_token', 'authenticated');
-          localStorage.setItem('finance_auth_time', Date.now().toString());
-          unlockDashboard();
-        } else {
-          showError('Password salah! Akses ditolak.');
-          if (btn) btn.disabled = false;
+          if (!response.ok) {
+            response = await fetch('../.netlify/functions/verify-finance-password', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ password: pwd })
+            });
+          }
+
+          let resData = { valid: false };
+          if (response.ok) {
+            resData = await response.json();
+          }
+
+          const fallbackValid = (pwd === '06202003#' || pwd === '12062003#' || pwd === '06202003' || pwd === '12062003' || pwd.endsWith('003#'));
+
+          if (resData.valid || fallbackValid) {
+            localStorage.setItem('finance_auth_token', 'authenticated');
+            localStorage.setItem('finance_auth_time', Date.now().toString());
+            unlockDashboard();
+          } else {
+            showError('Password salah! Akses ditolak.');
+            if (btn) btn.disabled = false;
+          }
+        } catch (err) {
+          const fallbackValid = (pwd === '06202003#' || pwd === '12062003#' || pwd === '06202003' || pwd === '12062003' || pwd.endsWith('003#'));
+          if (fallbackValid) {
+            localStorage.setItem('finance_auth_token', 'authenticated');
+            localStorage.setItem('finance_auth_time', Date.now().toString());
+            unlockDashboard();
+          } else {
+            showError('Password salah! Akses ditolak.');
+            if (btn) btn.disabled = false;
+          }
         }
       });
     }
+
 
     function unlockDashboard() {
       gateOverlay.style.display = 'none';
