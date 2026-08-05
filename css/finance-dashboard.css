@@ -460,6 +460,16 @@ body.finance-body {
   background: linear-gradient(90deg, #10b981, #3b82f6, #a855f7, #ec4899);
 }
 
+.ai-header-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 .ai-badge {
   display: inline-flex;
   align-items: center;
@@ -468,6 +478,7 @@ body.finance-body {
   border: 1px solid rgba(168, 85, 247, 0.5);
   color: #d8b4fe;
   padding: 7px 16px;
+
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 700;
