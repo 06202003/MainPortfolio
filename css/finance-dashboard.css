@@ -509,23 +509,24 @@ body.finance-body {
 .spending-heatmap-grid {
   display: grid;
   grid-template-columns: repeat(15, 1fr);
-  gap: 6px;
-  margin: 16px 0;
-  overflow-x: auto;
+  gap: 8px;
+  margin: 18px 0;
+  overflow: hidden;
+  width: 100%;
 }
 
 .heatmap-cell {
   width: 100%;
   aspect-ratio: 1;
-  border-radius: 6px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
   transition: transform 0.15s, box-shadow 0.15s;
   cursor: pointer;
 }
 
 .heatmap-cell:hover {
-  transform: scale(1.3);
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
   z-index: 10;
 }
 
@@ -533,6 +534,7 @@ body.finance-body {
 .heatmap-cell.level-1 { background: rgba(16, 185, 129, 0.35); }
 .heatmap-cell.level-2 { background: rgba(245, 158, 11, 0.55); }
 .heatmap-cell.level-3 { background: rgba(239, 68, 68, 0.75); }
+
 
 /* ==========================================================================
    4. FINANCIAL HEALTH & AI SCORE (0-100 GAUGE)
