@@ -3,7 +3,7 @@
  * Uses process.env.GEMINI_API_KEY or GROQ_API_KEY (Same API key as YZ.AI)
  */
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "";
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY || process.env.YZ_AI_API_KEY || process.env.API_KEY || "";
 
 exports.handler = async (event, context) => {
   const headers = {
@@ -23,7 +23,8 @@ exports.handler = async (event, context) => {
 
   try {
     const { financeData, customQuestion } = JSON.parse(event.body || "{}");
-    const apiKey = GEMINI_API_KEY || event.queryStringParameters?.key || "";
+    const apiKey = GEMINI_API_KEY || process.env.GEMINI_API_KEY || process.env.GROQ_API_KEY || event.queryStringParameters?.key || "";
+
 
     const systemPrompt = `You are YZ-Finance AI, an elite wealth strategist, certified financial analyst (CFA), and personal financial advisor representing Yehezkiel David Setiawan.
 Your mission is to provide an EXTREMELY DETAILED, COMPREHENSIVE, NUMERICAL, and DEEP financial analysis in Indonesian.
