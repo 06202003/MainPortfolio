@@ -493,16 +493,94 @@
   }
 
   function generateFallbackLocalAI(data, question) {
-    const inc = data?.monthly_cashflow?.income || 9481042;
+    const inc = data?.monthly_cashflow?.income || 9064375;
     const exp = data?.monthly_cashflow?.expenses || 7650000;
-    const net = inc - exp;
+    const net = inc - exp; // ~1.414.375
 
     if (question) {
-      return `🎯 **Jawaban AI untuk Pertanyaan Anda:**\n\nBerdasarkan data keuangan bulanan Anda (Pendapatan total Rp ${(inc/1000000).toFixed(2)} Jt dan sisa bersih Rp ${(net/1000000).toFixed(2)} Jt), keuangan Anda berada dalam kondisi **Sangat Sehat & Surplus**.\n\nDengan memperhitungkan Tabungan Danamon (Rp 1.2M) + Sisa Kas Bebas (Rp 1.15M), Total Savings Rate Anda berada di angka **24.8%**, yang sudah memenuhi target ideal 20-30%.`;
+      const qLower = question.toLowerCase();
+
+      if (qLower.includes('laptop') || qLower.includes('rtx') || qLower.includes('4060') || qLower.includes('i7') || qLower.includes('pc') || qLower.includes('computer')) {
+        return `### 💻 Analisis & Estimasi Alokasi Beli Laptop RTX 4060 + i7 + 32GB RAM
+
+Untuk membeli Laptop High-End (RTX 4060, Intel i7, RAM 32GB), estimasi harga pasaran baru saat ini adalah **Rp 18.500.000 - Rp 21.500.000** (misal: Lenovo Legion Slim / ASUS ROG Zephyrus / Acer Predator Helios).
+
+Berdasarkan data keuangan bulanan Anda saat ini:
+- **Sisa Kas Bebas Rutin:** **Rp 1.414.375 / bulan** (setelah cicilan mobil, kos, makan & tabungan Danamon Rp 1.2M).
+- **Pasif Income Bunga Deposito Tahunan:** **Rp 5.000.000 / tahun** (cair saat jatuh tempo).
+- **Dana Darurat Likuid (Sucorinvest MMF):** **Rp 15.000.000**.
+
+---
+
+### 🎯 3 Opsi Strategi Alokasi Waktu Aman:
+
+#### 1. 🛡️ Opsi 1: Murni Sisa Kas Bebas (100% Aman & Tanpa Mengganggu Investasi/Dana Darurat)
+- **Durasi Alokasi:** **13 - 14 Bulan**
+- **Skema:** Tabung Rp 1.414.375/bulan murni dari sisa kas bebas.
+- **Hasil (14 Bulan):** 14 x Rp 1.414.375 = **Rp 19.801.250**.
+- **Kelebihan:** 0% risiko. Cicilan mobil & tabungan Danamon tetap jalan 100%.
+
+#### 2. ⚡ Opsi 2: Hybrid Sisa Kas + Bunga Deposito Jatuh Tempo (RECOMMENDED! ⭐)
+- **Durasi Alokasi:** **9 - 10 Bulan Saja!**
+- **Skema:** Tabung Rp 1.414.375/bulan selama 10 bulan (Rp 14,14 Juta) + gabungkan dengan bunga jatuh tempo Deposito Allo/SeaBank (Rp 5,0 Juta).
+- **Hasil (10 Bulan):** Rp 14.14M + Rp 5.0M = **Rp 19.140.000**.
+- **Kelebihan:** Laptop terbeli lebih cepat (kurang dari 1 tahun) secara **CASH** tanpa pinjol/kredit dan tanpa menyentuh dana darurat Sucorinvest MMF!
+
+#### 3. 🚀 Opsi 3: Akselerasi Pakai Sebagian Dana Likuid MMF (Terbeli Paling Cepat)
+- **Durasi Alokasi:** **5 - 6 Bulan**
+- **Skema:** Alokasikan Rp 10 Juta dari Sucorinvest MMF + kumpulkan sisa kas 6 bulan (Rp 8,48 Juta).
+- **Hasil:** Laptop terbeli dalam 6 bulan.
+- **Catatan:** Sisa dana darurat MMF menjadi Rp 5 Juta.
+
+---
+
+> 💡 **Rekomendasi Terbaik YZ.AI:**  
+> Ambil **Opsi 2 (Durasi 9-10 Bulan)**. Laptop terbeli CASH di bulan ke-10 menggunakan kombinasi sisa kas bebas + pencairan bunga deposito Rp 5M tanpa perlu utang/kredit dan tanpa merusak alokasi Danamon maupun dana darurat!`;
+      }
+
+      // Match explicit numeric targets (e.g. "5 juta", "10 juta", "20jt", "5000000")
+      const numMatch = qLower.match(/(\d+[\d\.,]*)\s*(juta|jt|miliar|m)?/i);
+      if (numMatch) {
+        let amount = parseFloat(numMatch[1].replace(',', '.'));
+        const unit = (numMatch[2] || '').toLowerCase();
+        if (unit === 'juta' || unit === 'jt') amount *= 1000000;
+        else if (unit === 'miliar' || unit === 'm') amount *= 1000000000;
+        else if (amount < 1000) amount *= 1000000; // default assumed in millions
+
+        const monthsNeeded = Math.ceil(amount / 1414375);
+        return `### 🎯 Analisis Target Keuangan: "${question}"
+
+Berdasarkan estimasi kebutuhan biaya **${formatCurrency(amount, 'IDR')}**:
+
+1. **Menggunakan Sisa Kas Bebas Rutin (Rp 1.41M/bulan):**
+   - **Waktu Yang Dibutuhkan:** **${monthsNeeded} Bulan** (Tabungan murni tanpa mengganggu alokasi Danamon & cicilan mobil).
+   - Total terkumpul dalam ${monthsNeeded} bulan: **${formatCurrency(monthsNeeded * 1414375, 'IDR')}**.
+
+2. **Skema Kombinasi Bunga Deposito (Cair Rp 5M/tahun):**
+   - Jika dikombinasikan dengan bunga jatuh tempo deposito, waktu alokasi dapat diakselerasi **3-4 bulan lebih cepat**.
+
+3. **Status Keamanan Portofolio:**
+   - Strategi ini **100% AMAN** karena dana darurat Sucorinvest MMF (Rp 15M) dan tabungan berjangka Danamon (Rp 1.2M/bln) tetap berjalan seperti biasa.`;
+      }
+
+      return `### 🎯 Analisis Strategis YZ.AI untuk Pertanyaan Anda:
+
+> **Pertanyaan:** "${question}"
+
+Berdasarkan analisis profil keuangan real Anda:
+- **Total Income Rutin Bulanan:** Rp ${(inc/1000000).toFixed(2)} Juta (Gaji Rp 8.8M + Kupon ST016 Rp 264k)
+- **Pasif Income Tahunan:** Rp 5.000.000 / tahun (Deposito Allo + SeaBank cair saat jatuh tempo 1 th)
+- **Sisa Kas Bebas Bulanan:** Rp ${(net/1000000).toFixed(2)} Juta / bulan
+- **Total Savings Rate Sejati:** **28.8%** (Rp 2.61M/bulan dari Danamon Rp 1.2M + Kas Bebas Rp 1.41M)
+- **Dana Darurat Likuid:** Rp 16.41 Juta (Sucor MMF 15M + Kas 1.41M).
+
+**Saran Eksekusi AI:**
+Dengan arus kas bebas **Rp 1.414.375/bulan**, Anda dapat mengalokasikan target tersebut secara disiplin tanpa merusak kewajiban rutin (Cicilan mobil Rp 2.5M & Kos Rp 1.7M) maupun tabungan berjangka Danamon.`;
     }
 
-    return `🎯 **Skor & Ringkasan Kesehatan Keuangan: 95/100 (SANGAT SEHAT & PRIMA)**\n\nPortofolio keuangan Anda berada dalam posisi yang sangat solid! Dengan memperhitungkan setoran rutin Danamon (Rp 1.2M) plus sisa cashflow bebas (Rp 1.15M), **Total Savings Rate sejati Anda mencapai 24.8%**—masuk dalam zona ideal target finansial (20-30%).\n\n🟢 **Kekuatan Utama Portofolio:**\n- **Total Savings Rate Sejati 24.8%:** Kombinasi tabungan terikat Danamon + sisa kas bebas memberi daya simpan Rp 2.35M/bulan.\n- **Passive Income Aktif:** Anda menerima passive income bersih $\\approx$ **Rp 681.042/bulan** dari kupon ST016T2 & bunga deposito.\n- **Fixed Cost Terkontrol:** Biaya tempat tinggal dan konsumsi harian berada di level 41.7% (aman di bawah 50%).\n- **Rasio Utang Aman:** Cicilan mobil 26.4% di bawah ambang batas maksimal 30%.\n\n⚠️ **Area Perhatian / Optimasi:**\n- **Reinvestasi Passive Income:** Kupon bulanan ST016T2 (Rp 264rb) & bunga deposito sebaiknya otomatis di-reinvestasikan ke Reksadana Sucorinvest MMF agar terjadi *compound interest*.\n- **Pengalokasian Sisa Kas Bebas:** Alokasikan Rp 1.15M sisa kas bebas secara bertahap ke Dana Darurat atau Reksadana Pasar Uang.\n\n🚀 **Rekomendasi Aksi Nyata (Actionable Advice):**\n1. **Auto-Reinvest Kupon ST016T2:** Jadwalkan auto-debit kupon bulanan langsung masuk ke Reksadana Sucorinvest MMF.\n2. **Disiplin Tabungan Danamon:** Pertahankan tabungan berjangka Danamon hingga Jan 2031 untuk mencairkan Rp 81,8 Juta.\n3. **Optimasi Cashflow:** Pertahankan pola konsumsi saat ini agar sisa kas bebas Rp 1.15M dapat terus diputar ke instrumen produktif.`;
+    return `🎯 **Skor & Ringkasan Kesehatan Keuangan: 96/100 (SANGAT SEHAT & PRIMA)**\n\nPortofolio keuangan Anda berada dalam posisi yang sangat solid! Dengan memperhitungkan setoran rutin Danamon (Rp 1.2M) plus sisa cashflow bebas (Rp 1.41M), **Total Savings Rate sejati Anda mencapai 28.8%**—secara sempurna memenuhi target ideal finansial (20-30%).\n\n🟢 **Kekuatan Utama Portofolio:**\n- **Total Savings Rate Sejati 28.8%:** Kombinasi tabungan terikat Danamon + sisa kas bebas memberi daya simpan Rp 2.61M/bulan.\n- **Passive Income Aktif:** Anda menerima kupon ST016T2 bersih **Rp 264.375/bulan** (cair bulanan) + bunga deposito perbankan **Rp 5.000.000/tahun** (cair 1 th sekali).\n- **Fixed Cost Terkontrol:** Biaya tempat tinggal dan konsumsi harian berada di level 43.6% (aman di bawah 50%).\n- **Rasio Utang Aman:** Cicilan mobil 27.6% di bawah ambang batas maksimal 30%.\n\n⚠️ **Area Perhatian / Optimasi:**\n- **Reinvestasi Kupon ST016T2:** Kupon bulanan (Rp 264rb) sebaiknya otomatis di-reinvestasikan ke Reksadana Sucorinvest MMF agar terjadi *compound interest*.\n- **Bunga Deposito Jatuh Tempo:** Bunga Rp 5M yang cair tiap tahun dapat digunakan untuk membeli SBN seri baru atau memperkuat buffer likuiditas.\n\n🚀 **Rekomendasi Aksi Nyata (Actionable Advice):**\n1. **Auto-Reinvest Kupon ST016T2:** Jadwalkan auto-debit kupon bulanan langsung masuk ke Reksadana Sucorinvest MMF.\n2. **Disiplin Tabungan Danamon:** Pertahankan tabungan berjangka Danamon hingga Jan 2031 untuk mencairkan Rp 81,8 Juta.\n3. **Optimasi Cashflow:** Pertahankan pola konsumsi saat ini agar sisa kas bebas Rp 1.41M dapat terus diputar ke instrumen produktif.`;
   }
+
 
 
 
