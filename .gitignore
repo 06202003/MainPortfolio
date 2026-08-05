@@ -1,0 +1,10 @@
+# Private Financial Data
+data/finance-data.json
+finance-data.json
+
+# Environment & Serverless build files
+.env
+.env.local
+.netlify/
+node_modules/
+*.log

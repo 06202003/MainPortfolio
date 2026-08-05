@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+  <title>Laporan Keuangan Pribadi | Yehezkiel David Setiawan</title>
+  
+  <!-- SEO & Search Engine Exclusion (CRITICAL) -->
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
+  <meta name="googlebot" content="noindex, nofollow, noarchive" />
+
+  <meta name="theme-color" content="#07131f" />
+
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Dashboard Stylesheet -->
+  <link rel="stylesheet" href="../css/finance-dashboard.css?v=2" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../img/david2.png" />
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Marked.js for markdown rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body class="finance-body">
+
+  <!-- PASSWORD GATE OVERLAY -->
+  <div id="password-gate-overlay">
+    <div class="gate-card">
+      <div class="gate-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <h2 class="gate-title">Proteksi Akses</h2>
+      <p class="gate-desc">Halaman ini dilindungi. Masukkan password akses laporan keuangan pribadi Anda.</p>
+
+      <form id="gate-form">
+        <div class="gate-form-group">
+          <input type="password" id="gate-password" class="gate-input" placeholder="Masukkan Password" autocomplete="current-password" required />
+          <button type="button" id="toggle-password-btn" class="gate-toggle-pass" title="Tampilkan/Sembunyikan Password">
+            <i class="fa-solid fa-eye"></i>
+          </button>
+        </div>
+
+        <button type="submit" id="gate-submit-btn" class="gate-btn">
+          <i class="fa-solid fa-lock"></i> Buka Laporan
+        </button>
+
+        <div id="gate-error" class="gate-error"></div>
+      </form>
+
+      <p class="gate-notice">
+        <i class="fa-solid fa-circle-info"></i> Sesi login otomatis tersimpan selama 24 jam di browser ini.
+      </p>
+    </div>
+  </div>
+
+  <!-- MAIN FINANCIAL DASHBOARD CONTAINER -->
+  <div id="dashboard-container" class="dashboard-container">
+    
+    <!-- Header Navbar -->
+    <header class="dash-header">
+      <a href="../index.html" class="dash-brand" title="Kembali ke Portofolio Utama">
+        <img src="../img/david2.png" alt="Yehezkiel David" class="dash-avatar" />
+        <div class="dash-title-group">
+          <h1>Financial Dashboard & AI Insights</h1>
+          <p>Yehezkiel David Setiawan • Confidential Personal Wealth Tracker</p>
+        </div>
+      </a>
+
+      <div class="dash-actions">
+        <div class="last-updated-badge">
+          <i class="fa-regular fa-clock"></i>
+          <span>Diupdate: <strong id="last-updated-date">-</strong></span>
+        </div>
+        <button id="logout-btn" class="btn-logout">
+          <i class="fa-solid fa-right-from-bracket"></i> Keluar
+        </button>
+      </div>
+    </header>
+
+    <!-- PASSIVE INCOME HIGHLIGHT BANNER -->
+    <div class="passive-income-banner">
+      <div class="passive-income-left">
+        <div class="passive-icon-circle">
+          <i class="fa-solid fa-coins"></i>
+        </div>
+        <div class="passive-income-text">
+          <h3>Pasif Income Bulanan (Kupon ST016T2 & Bunga Deposito)</h3>
+          <p>Pendapatan otomatis dari instrumen bebas risiko tanpa mengurangi sisa gaji</p>
+        </div>
+      </div>
+      <div id="val-passive-income" class="passive-income-amount">+Rp 681.042 / bln</div>
+    </div>
+
+    <!-- SECTION 1: MONTHLY CASH FLOW SUMMARY -->
+    <div class="section-title-wrapper">
+      <h2><i class="fa-solid fa-wallet"></i> Ringkasan Arus Kas Bulanan</h2>
+    </div>
+
+    <div class="grid-cashflow">
+      <!-- Income Card -->
+      <div class="fin-card">
+        <div class="card-top">
+          <span class="card-label">Total Pemasukan</span>
+          <div class="card-icon-box card-icon-income">
+            <i class="fa-solid fa-arrow-down"></i>
+          </div>
+        </div>
+        <div id="val-income" class="amount-val amount-profit">Rp 0</div>
+        <div class="card-subtext">Gaji Rutin (8.8M) + Passive Income (681k)</div>
+      </div>
+
+      <!-- Expense Card -->
+      <div class="fin-card">
+        <div class="card-top">
+          <span class="card-label">Total Pengeluaran & Alokasi</span>
+          <div class="card-icon-box card-icon-expense">
+            <i class="fa-solid fa-arrow-up"></i>
+          </div>
+        </div>
+        <div id="val-expenses" class="amount-val amount-deficit">Rp 0</div>
+        <div class="card-subtext">Mobil (2.5M) + Kos (1.7M) + Danamon (1.2M) + Gopay</div>
+      </div>
+
+      <!-- Net Cash Flow Card -->
+      <div class="fin-card">
+        <div class="card-top">
+          <span class="card-label">Sisa Kas Bebas (Cashflow)</span>
+          <div class="card-icon-box card-icon-net">
+            <i class="fa-solid fa-scale-balanced"></i>
+          </div>
+        </div>
+        <div id="val-net" class="amount-val">Rp 0</div>
+        <div class="card-subtext">
+          Status: <span id="badge-net" class="status-badge badge-ok">Surplus</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: FINANCIAL RATIOS -->
+    <div class="section-title-wrapper">
+      <h2><i class="fa-solid fa-chart-pie"></i> Rasio & Kesehatan Keuangan</h2>
+    </div>
+
+    <div class="grid-ratios">
+      <!-- Savings Rate Card -->
+      <div class="fin-card">
+        <div class="card-top">
+          <span class="card-label">Savings Rate</span>
+          <span id="badge-savings-rate" class="status-badge badge-ok">OK</span>
+        </div>
+        <div class="ratio-value-group">
+          <span id="num-savings-rate" class="ratio-num">0%</span>
+          <span id="target-savings-rate" class="ratio-target">Target: ≥ 30%</span>
+        </div>
+        <div class="card-subtext">Persentase pendapatan disisihkan untuk tabungan Danamon</div>
+      </div>
+
+      <!-- Fixed Cost Ratio Card -->
+      <div class="fin-card">
+        <div class="card-top">
+          <span class="card-label">Fixed Cost Ratio</span>
+          <span id="badge-fixed-cost" class="status-badge badge-ok">OK</span>
+        </div>
+        <div class="ratio-value-group">
+          <span id="num-fixed-cost" class="ratio-num">0%</span>
+          <span id="target-fixed-cost" class="ratio-target">Target: ≤ 50%</span>
+        </div>
+        <div class="card-subtext">Persentase biaya hidup (Kos + Makan) vs Total Income</div>
+      </div>
+
+      <!-- Debt to Income Ratio Card -->
+      <div class="fin-card">
+        <div class="card-top">
+          <span class="card-label">Debt-to-Income</span>
+          <span id="badge-dti" class="status-badge badge-ok">OK</span>
+        </div>
+        <div class="ratio-value-group">
+          <span id="num-dti" class="ratio-num">0%</span>
+          <span id="target-dti" class="ratio-target">Target: ≤ 30%</span>
+        </div>
+        <div class="card-subtext">Beban cicilan bulanan (Mobil) dibanding total income</div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: YZ.AI LIVE FINANCIAL ADVISOR -->
+    <div class="section-title-wrapper">
+      <h2><i class="fa-solid fa-brain"></i> Live AI Wealth Strategist (YZ.AI Engine)</h2>
+    </div>
+
+    <div class="fin-card ai-advisor-card" style="margin-bottom: 32px;">
+      <div class="ai-header-group">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div class="ai-badge">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>YZ.AI Finance Engine</span>
+          </div>
+          <span id="ai-model-used" style="font-size: 0.78rem; color: #94a3b8;">Gemini Live</span>
+        </div>
+
+        <button id="btn-generate-ai" class="ai-btn-analyze">
+          <i class="fa-solid fa-rotate-right"></i> Analisis Ulang AI
+        </button>
+      </div>
+
+      <div id="ai-response-container" class="ai-response-box">
+        <div style="text-align: center; padding: 20px; color: #94a3b8;">
+          <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+          <p style="margin-top: 10px;">Memuat analisis AI real-time untuk portofolio Anda...</p>
+        </div>
+      </div>
+
+      <form id="ai-custom-prompt-form" class="ai-prompt-form">
+        <input type="text" id="ai-prompt-input" class="ai-prompt-input" placeholder="Tanyakan saran finansial khusus (misal: 'Berapa persen alokasi terbaik untuk beli gadget bulan depan?')" />
+        <button type="submit" id="btn-ask-ai" class="ai-btn-analyze">
+          <i class="fa-solid fa-paper-plane"></i> Tanya AI
+        </button>
+      </form>
+    </div>
+
+    <!-- SECTION 4: DETAILED ASSET BREAKDOWN -->
+    <div class="section-title-wrapper">
+      <h2><i class="fa-solid fa-vault"></i> Detail Portofolio Aset & Investasi</h2>
+    </div>
+
+    <div class="grid-assets-detail">
+      <div class="asset-item-card">
+        <div class="asset-badge-icon" style="background: rgba(59, 130, 246, 0.15); color: #3b82f6;">
+          <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <div class="asset-info">
+          <h4>Obligasi Negara ST016T2</h4>
+          <div class="asset-val-text">Rp 50.000.000</div>
+          <div class="asset-meta">Kupon 7.05% gross / th • Cair Bulanan</div>
+        </div>
+      </div>
+
+      <div class="asset-item-card">
+        <div class="asset-badge-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
+          <i class="fa-solid fa-landmark"></i>
+        </div>
+        <div class="asset-info">
+          <h4>Deposito Allo Bank</h4>
+          <div class="asset-val-text">Rp 50.000.000</div>
+          <div class="asset-meta">Tenor 1 Tahun • Bunga 6.5% p.a.</div>
+        </div>
+      </div>
+
+      <div class="asset-item-card">
+        <div class="asset-badge-icon" style="background: rgba(6, 182, 212, 0.15); color: #06b6d4;">
+          <i class="fa-solid fa-piggy-bank"></i>
+        </div>
+        <div class="asset-info">
+          <h4>Deposito SeaBank</h4>
+          <div class="asset-val-text">Rp 50.000.000</div>
+          <div class="asset-meta">Tenor 1 Tahun • Bunga 6.0% p.a.</div>
+        </div>
+      </div>
+
+      <div class="asset-item-card">
+        <div class="asset-badge-icon" style="background: rgba(139, 92, 246, 0.15); color: #8b5cf6;">
+          <i class="fa-solid fa-chart-line"></i>
+        </div>
+        <div class="asset-info">
+          <h4>Sucorinvest MMF</h4>
+          <div class="asset-val-text">Rp 15.000.000</div>
+          <div class="asset-meta">Reksadana Pasar Uang • Likuid</div>
+        </div>
+      </div>
+
+      <div class="asset-item-card">
+        <div class="asset-badge-icon" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">
+          <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <div class="asset-info">
+          <h4>Tabungan Danamon (Feb 26 - Jan 31)</h4>
+          <div class="asset-val-text">Rp 8.520.000</div>
+          <div class="asset-meta">1.2M/bln • Bunga 5% p.a. • Goal 81.8M</div>
+        </div>
+      </div>
+
+      <div class="asset-item-card">
+        <div class="asset-badge-icon" style="background: rgba(236, 72, 153, 0.15); color: #ec4899;">
+          <i class="fa-solid fa-money-bill-transfer"></i>
+        </div>
+        <div class="asset-info">
+          <h4>Kas / Liquid Cash</h4>
+          <div class="asset-val-text">Rp 1.150.000</div>
+          <div class="asset-meta">Sisa Cashflow Bebas Operasional</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 5: VISUALIZATIONS / CHARTS -->
+    <div class="grid-charts">
+      <!-- Line Chart: Net Worth Trend -->
+      <div class="fin-card">
+        <div class="chart-card-header">
+          <h3><i class="fa-solid fa-chart-line"></i> Tren Pertumbuhan Net Worth</h3>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="netWorthChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Donut Chart: Asset Allocation Breakdown -->
+      <div class="fin-card">
+        <div class="chart-card-header">
+          <h3><i class="fa-solid fa-chart-pie"></i> Alokasi Portofolio Aset</h3>
+        </div>
+        <div class="chart-wrapper">
+          <canvas id="assetAllocationChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Dashboard Controller Script -->
+  <script src="../script/finance-dashboard.js?v=2"></script>
+</body>
+
+</html>

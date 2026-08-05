@@ -1,0 +1,49 @@
+{
+  "last_updated": "2026-08-01",
+  "monthly_cashflow": {
+    "income": 15000000,
+    "expenses": 8500000,
+    "currency": "IDR"
+  },
+  "ratios": {
+    "savings_rate": {
+      "name": "Savings Rate",
+      "value": 43.3,
+      "target": 30.0,
+      "comparison": "gte",
+      "unit": "%",
+      "description": "Persentase penghasilan yang disisihkan untuk tabungan & investasi"
+    },
+    "fixed_cost_ratio": {
+      "name": "Fixed Cost Ratio",
+      "value": 38.0,
+      "target": 50.0,
+      "comparison": "lte",
+      "unit": "%",
+      "description": "Persentase pengeluaran tetap dibanding total pendapatan"
+    },
+    "debt_to_income_ratio": {
+      "name": "Debt-to-Income Ratio",
+      "value": 12.5,
+      "target": 30.0,
+      "comparison": "lte",
+      "unit": "%",
+      "description": "Beban cicilan bulanan dibanding total pendapatan"
+    }
+  },
+  "net_worth_trend": [
+    { "month": "Feb 2026", "amount": 120000000 },
+    { "month": "Mar 2026", "amount": 126500000 },
+    { "month": "Apr 2026", "amount": 131000000 },
+    { "month": "Mei 2026", "amount": 139500000 },
+    { "month": "Jun 2026", "amount": 145000000 },
+    { "month": "Jul 2026", "amount": 152000000 },
+    { "month": "Agu 2026", "amount": 158500000 }
+  ],
+  "asset_allocation": [
+    { "category": "Tabungan & Deposito", "amount": 45000000, "color": "#10b981" },
+    { "category": "Reksadana & Saham", "amount": 68000000, "color": "#3b82f6" },
+    { "category": "Kripto & Digital Asset", "amount": 25000000, "color": "#8b5cf6" },
+    { "category": "Dana Darurat", "amount": 20500000, "color": "#f59e0b" }
+  ]
+}

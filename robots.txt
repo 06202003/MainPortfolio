@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /laporan-keuangan
+Disallow: /laporan-keuangan.html
+Disallow: /laporan-keuangan/
+Disallow: /data/finance-data.json
