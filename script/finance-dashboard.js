@@ -390,8 +390,9 @@
       danamonValEl.textContent = formatCurrency(window.currentDanamonBalance, 'IDR');
     }
     if (danamonMetaEl && window.currentElapsedMonths) {
-      danamonMetaEl.textContent = `Setoran Bulan ke-${window.currentElapsedMonths} / 60 • Bunga 5% p.a. • Goal 81.8M`;
+      danamonMetaEl.textContent = `🔒 Saldo Ditahan (Bulan ke-${window.currentElapsedMonths} / 60) • Bunga 5% p.a. • Goal 81.8M (Jan 31)`;
     }
+
 
 
     // 3. Cashflow Cards

@@ -36,34 +36,27 @@ CRITICAL RULES & ANALYSIS STRUCTURE:
    - Total Pendapatan Bulanan Rutin: Rp 9.064.375 / bulan
    - Pengeluaran & Alokasi Bulanan: Mobil Rp 2.5M, Kos Rp 1.7M, Makan Rp 2.25M, Danamon Rp 1.2M
    - Sisa Kas Bebas Bulanan: Rp 1.414.375
-   - Total Savings Rate Sejati: **28.8%** (Danamon 1.2M + Sisa Kas 1.41M = Rp 2.61M / 9.06M total income). FULFILLS 20-30% TARGET PERFECTLY!
-   - Total Assets ~Rp 174.67 Million: ST016T2 (50M), Deposito Allo (50M), Deposito SeaBank (50M), Sucor MMF (15M), Tabungan Danamon (~8.5M), Liquid Cash (1.41M).
+   - Total Savings Rate Sejati: **28.8%** (Danamon 1.2M + Sisa Kas 1.41M = Rp 2.61M / 9.06M total income).
+   - Asset Liquidity Distinction:
+     - **NON-LIKUID / SALDO DITAHAN:** Tabungan Danamon (Rp 8.52M - saldo ditahan 5 th hingga Jan 2031), Deposito Allo (50M - 1 th), Deposito SeaBank (50M - 1 th), SBN ST016 (50M - lock-in). Total Locked = Rp 158.52 Million.
+     - **LIKUID SIAP PAKAI (DANA DARURAT):** Sucorinvest MMF (15M) + Kas Bebas (1.41M) = **Rp 16.41 Million** (~2.15 bulan pengeluaran rutin).
 
 2. You MUST produce a rich, highly detailed response structured with these 5 comprehensive Markdown sections:
 
 ### 🏆 1. Scorecard & Evaluasi Kesehatan Finansial (Skor: 96/100)
-- Berikan analisis metrik secara angka dan persentase: Total Savings Rate (28.8% - PERFECT), Fixed Cost Ratio (43.6% - HEALTHY), Debt-to-Income (27.6% - SAFE).
-- Highlight daya simpan Rp 2.61M/bulan yang sangat impresif.
+- Analisis metrik: Savings Rate 28.8% (EXCELLENT), Fixed Cost 43.6% (HEALTHY), Debt Ratio 27.6% (SAFE).
 
 ### 📊 2. Analisis Portofolio Aset & Imbal Hasil (Yield & Payout Optimization)
-- Bedah struktur pencairan aset:
-  - **SBN ST016T2 (50M, 7.05%):** Menghasilkan pasif income bulanan net **Rp 264.375/bulan** (Pajak SBN 10%).
-  - **Deposito Allo Bank (50M, 6.5%) & SeaBank (50M, 6.0%):** Menghasilkan pasif income tahunan net **Rp 5.000.000/tahun** (Pajak Deposito 20%) yang cair sekaligus saat jatuh tempo 1 tahun.
-  - **Tabungan Berjangka Danamon (Rp 1.2M/bln, 5% p.a.):** Akumulasi modal 5 tahun menuju goal Rp 81.8 Juta di Jan 2031.
+- Bedah struktur pencairan aset & jelaskan status Tabungan Danamon (saldo ditahan 5 th hingga Jan 2031).
 
 ### 🛡️ 3. Analisis Likuiditas & Ketahanan Manajemen Risiko
-- Evaluasi dana likuid: Sucorinvest MMF (15M) + Kas Bebas (1.41M) = Rp 16.41M.
-- Jelaskan ketahanan dana saat jatuh tempo deposito tiba (akan ada suntikan likuiditas Rp 5 Juta sekaligus).
+- Bedah pembagian aset **Likuid Siap Pakai (Rp 16.41M)** vs **Saldo Ditahan / Non-Likuid (Rp 158.52M)**.
 
 ### 🚀 4. Proyeksi Trajektori Net Worth 5 Tahun (2026 - 2031)
-- Hitung proyeksi pertumbuhan aset 5 tahun jika alokasi Rp 2.61M/bulan konsisten dipertahankan:
-  - Pencairan Danamon Jan 2031: ~Rp 81.800.000
-  - Pokok SBN & Deposito (165M): Rp 165.000.000
-  - Accumulation of Annual Deposito Interest (5x 5M): Rp 25.000.000
-  - Total Net Worth Estimasi di Jan 2031: **Rp 310.000.000 - Rp 335.000.000**!
+- Proyeksi pencairan Danamon Jan 2031 (Rp 81.8M) + Deposito (25M) + ST016 (15.8M) + Pokok (165M) = **Rp 310M - Rp 330M**.
 
 ### 💡 5. Langkah Aksi Taktis (Actionable Recommendations)
-- Berikan 5 langkah konkret dan terstruktur yang bisa dieksekusi mulai bulan ini.
+- 5 langkah taktis bulanan.
 
 Context Financial Data:
 ${JSON.stringify(financeData, null, 2)}`;
@@ -156,6 +149,7 @@ Berdasarkan data keuangan bulanan Anda:
 - **Pasif Income Tahunan:** Rp 5.000.000 / tahun (Deposito Allo + SeaBank cair saat jatuh tempo 1 th)
 - **Net Cashflow Bebas Bulanan:** Rp ${(net/1000000).toFixed(2)} Juta
 - **Total Savings Rate Sejati:** **28.8%** (Rp 2.61M/bulan dari Danamon Rp 1.2M + Kas Bebas Rp 1.41M)
+- **Catatan Saldo Ditahan:** Tabungan Danamon (Rp 8.52M) adalah saldo terkunci hingga Jan 2031. Likuiditas siap pakai berada di Sucorinvest MMF & Kas Bebas (Rp 16.41M).
 
 **Analisis & Saran AI:**
 Keuangan Anda saat ini berada dalam posisi **Sangat Sehat (Skor 96/100)**. Anda memiliki arus kas bebas Rp 1.41M/bulan yang sangat fleksibel tanpa mengganggu alokasi tabungan Danamon dan cicilan mobil.`;
@@ -174,48 +168,41 @@ Portofolio keuangan Anda berada dalam kondisi yang **sangat sehat, disiplin, dan
 
 ---
 
-### 📊 2. Analisis Portofolio Aset & Struktur Pencairan (Yield & Payout Optimization)
+### 📊 2. Analisis Portofolio Aset & Klasifikasi Likuiditas
 
-Portofolio Anda sebesar **Rp 174.670.000** terbagi dalam instrumen rendah risiko dengan struktur pencairan sebagai berikut:
+Portofolio Anda sebesar **Rp 174.670.000** terbagi menjadi 2 kategori utama:
 
-1. **Obligasi Negara ST016T2 (Rp 50 Juta | 7.05% gross / th):**  
-   Menghasilkan pasif income bulanan net **Rp 264.375 / bulan** (Pajak SBN 10%). Kupon cair rutin setiap bulan ke rekening.
-2. **Deposito Allo Bank (Rp 50 Juta | 6.5% p.a.) & SeaBank (Rp 50 Juta | 6.0% p.a.):**  
-   Menghasilkan bunga tahunan net **Rp 5.000.000 / tahun** (setelah pajak deposito 20%). Bunga ini cair sekaligus saat jatuh tempo 1 tahun.
-3. **Reksadana Sucorinvest MMF (Rp 15 Juta):**  
-   Secondary emergency fund yang bebas pajak dan sangat likuid.
-4. **Tabungan Berjangka Danamon (Rp 1.2M / bulan | 5.0% p.a.):**  
-   Instrumen disiplin akumulasi modal 5 tahun menuju target **Rp 81,8 Juta** di Januari 2031.
+1. **🔒 Aset Non-Likuid / Saldo Ditahan (Total Rp 158.520.000):**
+   - **Tabungan Berjangka Danamon (Rp 8.520.000):** Saldo ditahan/terkunci secara disiplin selama 5 tahun menuju goal **Rp 81,8 Juta** di Jan 2031.
+   - **Obligasi ST016T2 (Rp 50.000.000):** SBN non-tradable. Kupon cair bulanan net **Rp 264.375/bulan**.
+   - **Deposito Allo Bank (Rp 50M) & SeaBank (Rp 50M):** Deposito 1 tahun. Bunga net **Rp 5.000.000/tahun** cair sekaligus saat jatuh tempo.
 
-> 💡 **Rangkuman Pasif Income:**  
-> - **Cair Bulanan:** **+Rp 264.375 / bulan** *(ST016T2)*  
-> - **Cair Tahunan:** **+Rp 5.000.000 / tahun** *(Deposito Allo & SeaBank)*
+2. **💧 Aset Likuid Siap Pakai / Dana Darurat (Total Rp 16.414.375):**
+   - **Sucorinvest MMF (Rp 15.000.000):** Reksadana pasar uang bebas pajak, pencairan T+1.
+   - **Kas Bebas (Rp 1.414.375):** Likuiditas instant arus kas bulanan.
 
 ---
 
 ### 🛡️ 3. Analisis Likuiditas & Ketahanan Manajemen Risiko
 
-- **Likuiditas Saat Ini:** Reksadana Sucorinvest MMF (Rp 15M) + Kas Bebas (Rp 1.41M) = **Rp 16.410.000**.
-- **Injeksi Tahunan:** Saat Deposito Allo Bank & SeaBank jatuh tempo dalam 1 tahun, Anda akan menerima pencairan bunga tunai sebesar **Rp 5.000.000**, yang langsung bisa di-reinvestasikan atau memperkuat Dana Darurat.
+- **Coverage Dana Likuid:** Rp 16.41M dana likuid dapat meng-cover pengeluaran dasar selama **2.15 bulan** tanpa penghasilan.
+- **Strategi Saldo Ditahan Danamon:** Meskipun saldo Danamon ditahan hingga Jan 2031, komitmen Rp 1.2M/bulan ini memaksa pembentukan *net worth* terencana tanpa risiko terpakai untuk konsumsi impulsif.
 
 ---
 
 ### 🚀 4. Proyeksi Trajektori Net Worth 5 Tahun (2026 – 2031)
 
-Jika alokasi Rp 2.61M/bulan dipertahankan konsisten dari Feb 2026 hingga Jan 2031:
-
-- **Modal Pokok Aset Tetap Saat Ini:** Rp 165.000.000 *(ST016 + Allo + SeaBank + Sucor)*
-- **Akumulasi Pencairan Danamon (Jan 2031):** **Rp 81.800.000** *(Pokok 72M + Bunga 9.8M)*
-- **Hasil Bunga Deposito Tahunan (5x Rp 5M):** **Rp 25.000.000**
+- **Modal Pokok Aset Tetap Saat Ini:** Rp 165.000.000
+- **Pencairan Saldo Ditahan Danamon (Jan 2031):** **Rp 81.800.000** *(Pokok 72M + Bunga 9.8M)*
+- **Bunga Deposito Tahunan (5x Rp 5M):** **Rp 25.000.000**
 - **Kupon ST016 (5 Tahun @ Rp 264k/bln):** **Rp 15.860.000**
-- **🌟 Proyeksi Total Net Worth di Jan 2031:** $\mathbf{\approx\ \text{Rp } 310.000.000\ -\ \text{Rp } 330.000.000}$ *(Mendekati Rp 330+ Juta!)*
+- **🌟 Proyeksi Total Net Worth di Jan 2031:** $\mathbf{\approx\ \text{Rp } 310.000.000\ -\ \text{Rp } 330.000.000}$
 
 ---
 
 ### 💡 5. Langkah Aksi Taktis (Actionable Recommendations)
 
-1. **Auto-Reinvest Kupon ST016T2 (Rp 264rb/bln):** Setel auto-debit kupon bulanan langsung ke *Sucorinvest Money Market Fund* untuk menciptakan efek *compound interest*.
-2. **Perencanaan Bunga Deposito Jatuh Tempo (Rp 5M):** Alokasikan bunga deposito Rp 5 Juta tahunan untuk reksadana pasar uang atau membeli SBN seri terbaru.
-3. **Prioritas Sisa Kas Bebas (Rp 1.41M/bln):** Sisihkan Rp 800rb menambah Dana Darurat & Rp 614rb untuk kas fleksibel.
-4. **Pertahankan Disiplin Danamon:** Biarkan tabungan berjangka Danamon berjalan hingga Jan 2031 untuk mencairkan Rp 81,8 Juta.`;
+1. **Auto-Reinvest Kupon ST016T2 (Rp 264rb/bln):** Setel auto-debit kupon bulanan langsung ke *Sucorinvest MMF* untuk menambah buffer dana likuid.
+2. **Pemanfaatan Pencairan Bunga Deposito (Rp 5M/th):** Saat bunga deposito Rp 5M cair tiap tahun, alokasikan 50% untuk menambah dana darurat likuid dan 50% untuk reinvestasi.
+3. **Disiplin Saldo Ditahan Danamon:** Jaga komitmen Rp 1.2M/bulan hingga Jan 2031 demi mengamankan lump-sum Rp 81,8 Juta.`;
 }
