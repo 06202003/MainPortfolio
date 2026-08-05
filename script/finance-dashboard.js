@@ -281,12 +281,90 @@
       }
 
       const data = await response.json();
-      renderDashboard(data);
+      
+      // Auto-Apply Monthly Rollover & Interest Compounding Engine
+      const updatedData = applyAutoMonthlyRollover(data);
+
+      renderDashboard(updatedData);
     } catch (err) {
       console.error('Error loading finance data:', err);
       alert('Gagal memuat data laporan keuangan: ' + err.message);
     }
   }
+
+  /**
+   * Automatic Monthly Rollover & Interest Engine
+   * Calculates elapsed months since Feb 2026, auto-compounds Danamon deposits (1.2M/mo at 5% p.a.),
+   * and auto-projects Net Worth growth month-by-month so the dashboard is ALWAYS up-to-date automatically!
+   */
+  function applyAutoMonthlyRollover(data) {
+    if (!data) return data;
+
+    const now = new Date();
+    const startYear = 2026;
+    const startMonth = 1; // 0-indexed: Feb = 1
+
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth();
+
+    // Calculate months elapsed since Feb 2026 (1 to 60 months)
+    let elapsedMonths = (currentYear - startYear) * 12 + (currentMonth - startMonth) + 1;
+    if (elapsedMonths < 1) elapsedMonths = 1;
+    if (elapsedMonths > 60) elapsedMonths = 60; // 5 years max (Feb 2026 - Jan 2031)
+
+    // Formula for Future Value of Monthly Annuity (Danamon Tabungan Berjangka)
+    // Deposit P = 1,200,000, monthly rate r = 0.05 / 12
+    const depositPerMonth = 1200000;
+    const monthlyRate = 0.05 / 12;
+    let danamonBalance = 0;
+    for (let i = 1; i <= elapsedMonths; i++) {
+      danamonBalance = (danamonBalance + depositPerMonth) * (1 + monthlyRate);
+    }
+    danamonBalance = Math.round(danamonBalance);
+
+    // Auto-update Danamon item in asset_allocation
+    if (data.asset_allocation && Array.isArray(data.asset_allocation)) {
+      const danamonItem = data.asset_allocation.find(item => 
+        item.category && item.category.toLowerCase().includes('danamon')
+      );
+      if (danamonItem) {
+        danamonItem.amount = danamonBalance;
+      }
+    }
+
+    // Dynamic Net Worth Trend Generator (Feb 2026 up to current month)
+    const monthNamesIndo = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+    const baseNetWorth = 165000000; // Fixed Assets (ST016 50M + Allo 50M + Sea 50M + Sucor 15M)
+    const trend = [];
+
+    for (let i = 0; i < elapsedMonths; i++) {
+      const mDate = new Date(startYear, startMonth + i, 1);
+      const mLabel = `${monthNamesIndo[mDate.getMonth()]} ${mDate.getFullYear()}`;
+
+      // Danamon balance at month i+1
+      let mDanamon = 0;
+      for (let k = 1; k <= (i + 1); k++) {
+        mDanamon = (mDanamon + depositPerMonth) * (1 + monthlyRate);
+      }
+
+      // Net Worth = Base Fixed Assets (165M) + Accumulated Danamon + Monthly Liquid Cash
+      const totalNW = Math.round(baseNetWorth + mDanamon + 1150000);
+      trend.push({ month: mLabel, amount: totalNW });
+    }
+
+    data.net_worth_trend = trend;
+
+    // Auto-update last_updated date to current date
+    const todayStr = now.toISOString().split('T')[0];
+    data.last_updated = todayStr;
+
+    // Save elapsed months for UI meta rendering
+    window.currentElapsedMonths = elapsedMonths;
+    window.currentDanamonBalance = danamonBalance;
+
+    return data;
+  }
+
 
 
   function renderDashboard(data) {
@@ -304,6 +382,17 @@
         passEl.textContent = `+${formatCurrency(data.monthly_cashflow.passive_income, 'IDR')} / bln`;
       }
     }
+
+    // Dynamic Danamon Asset Card update
+    const danamonValEl = document.getElementById('danamon-val-display');
+    const danamonMetaEl = document.getElementById('danamon-meta-display');
+    if (danamonValEl && window.currentDanamonBalance) {
+      danamonValEl.textContent = formatCurrency(window.currentDanamonBalance, 'IDR');
+    }
+    if (danamonMetaEl && window.currentElapsedMonths) {
+      danamonMetaEl.textContent = `Setoran Bulan ke-${window.currentElapsedMonths} / 60 • Bunga 5% p.a. • Goal 81.8M`;
+    }
+
 
     // 3. Cashflow Cards
     renderCashflow(data.monthly_cashflow);
