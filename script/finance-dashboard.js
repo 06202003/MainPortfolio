@@ -245,13 +245,8 @@
             <i class="fa-solid fa-chart-line"></i>
           </div>
         </div>
-        <div class="kpi-main-row">
-          <div>
-            <div class="kpi-num">${formatCurrency(netWorth)}</div>
-            <span class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +4.5%</span>
-          </div>
-          <div class="kpi-sparkline-container"><canvas id="sparkline-networth"></canvas></div>
-        </div>
+        <div class="kpi-num">${formatCurrency(netWorth)}</div>
+        <span class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +4.5% 5-Yr Growth</span>
       </div>
 
       <!-- KPI 2: Total Assets -->
@@ -262,13 +257,8 @@
             <i class="fa-solid fa-vault"></i>
           </div>
         </div>
-        <div class="kpi-main-row">
-          <div>
-            <div class="kpi-num">${formatCurrency(totalAssets)}</div>
-            <span class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +100% Cash Covered</span>
-          </div>
-          <div class="kpi-sparkline-container"><canvas id="sparkline-assets"></canvas></div>
-        </div>
+        <div class="kpi-num">${formatCurrency(totalAssets)}</div>
+        <span class="kpi-trend trend-up"><i class="fa-solid fa-shield-check"></i> 100% Cash Covered</span>
       </div>
 
       <!-- KPI 3: Total Liabilities -->
@@ -279,13 +269,8 @@
             <i class="fa-solid fa-shield-xmark"></i>
           </div>
         </div>
-        <div class="kpi-main-row">
-          <div>
-            <div class="kpi-num">${formatCurrency(totalLiabilities)}</div>
-            <span class="kpi-trend trend-up"><i class="fa-solid fa-check"></i> Bebas Utang Konsumtif</span>
-          </div>
-          <div class="kpi-sparkline-container"><canvas id="sparkline-liabilities"></canvas></div>
-        </div>
+        <div class="kpi-num">${formatCurrency(totalLiabilities)}</div>
+        <span class="kpi-trend trend-up"><i class="fa-solid fa-check"></i> Bebas Utang Konsumtif</span>
       </div>
 
       <!-- KPI 4: Monthly Income -->
@@ -296,13 +281,8 @@
             <i class="fa-solid fa-wallet"></i>
           </div>
         </div>
-        <div class="kpi-main-row">
-          <div>
-            <div class="kpi-num">${formatCurrency(monthlyIncome)}</div>
-            <span class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> Gaji + Kupon ST016</span>
-          </div>
-          <div class="kpi-sparkline-container"><canvas id="sparkline-income"></canvas></div>
-        </div>
+        <div class="kpi-num">${formatCurrency(monthlyIncome)}</div>
+        <span class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> Gaji + Kupon ST016</span>
       </div>
 
       <!-- KPI 5: Monthly Expense -->
@@ -313,13 +293,8 @@
             <i class="fa-solid fa-credit-card"></i>
           </div>
         </div>
-        <div class="kpi-main-row">
-          <div>
-            <div class="kpi-num">${formatCurrency(monthlyExpense)}</div>
-            <span class="kpi-trend trend-up"><i class="fa-solid fa-shield"></i> Terkontrol (43.6%)</span>
-          </div>
-          <div class="kpi-sparkline-container"><canvas id="sparkline-expense"></canvas></div>
-        </div>
+        <div class="kpi-num">${formatCurrency(monthlyExpense)}</div>
+        <span class="kpi-trend trend-up"><i class="fa-solid fa-shield"></i> Terkontrol (43.6%)</span>
       </div>
 
       <!-- KPI 6: Monthly Saving -->
@@ -330,13 +305,8 @@
             <i class="fa-solid fa-piggy-bank"></i>
           </div>
         </div>
-        <div class="kpi-main-row">
-          <div>
-            <div class="kpi-num">${formatCurrency(monthlySaving)}</div>
-            <span class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> 28.8% Savings Rate</span>
-          </div>
-          <div class="kpi-sparkline-container"><canvas id="sparkline-saving"></canvas></div>
-        </div>
+        <div class="kpi-num">${formatCurrency(monthlySaving)}</div>
+        <span class="kpi-trend trend-up"><i class="fa-solid fa-arrow-trend-up"></i> 28.8% Savings Rate</span>
       </div>
 
       <!-- KPI 7: Passive Income -->
@@ -347,13 +317,8 @@
             <i class="fa-solid fa-coins"></i>
           </div>
         </div>
-        <div class="kpi-main-row">
-          <div>
-            <div class="kpi-num">${formatCurrency(passiveMonthly)}<span style="font-size:0.75rem; color:#94a3b8;">/bln</span></div>
-            <span class="kpi-trend trend-up"><i class="fa-solid fa-building-columns"></i> +Rp 5M/th Deposito</span>
-          </div>
-          <div class="kpi-sparkline-container"><canvas id="sparkline-passive"></canvas></div>
-        </div>
+        <div class="kpi-num">${formatCurrency(passiveMonthly)}<span style="font-size:0.75rem; color:#94a3b8;">/bln</span></div>
+        <span class="kpi-trend trend-up"><i class="fa-solid fa-building-columns"></i> +Rp 5M/th Deposito</span>
       </div>
 
       <!-- KPI 8: Financial Independence Progress -->
@@ -364,48 +329,16 @@
             <i class="fa-solid fa-flag-checkered"></i>
           </div>
         </div>
-        <div>
-          <div class="kpi-num">${fiProgress}% <span style="font-size:0.75rem; color:#94a3b8;">(Goal 500M)</span></div>
-          <div class="kpi-progress-bar">
-            <div class="kpi-progress-fill" style="width: ${fiProgress}%;"></div>
-          </div>
+        <div class="kpi-num">${fiProgress}% <span style="font-size:0.75rem; color:#94a3b8;">(Goal 500M)</span></div>
+        <div class="kpi-progress-bar">
+          <div class="kpi-progress-fill" style="width: ${fiProgress}%;"></div>
         </div>
       </div>
     `;
-
-    // Render Mini Sparklines
-    renderSparklines();
   }
 
-  function renderSparklines() {
-    const sparkData = [161, 163, 166, 168, 171, 174.67];
-    const canvasIds = ['sparkline-networth', 'sparkline-assets', 'sparkline-liabilities', 'sparkline-income', 'sparkline-expense', 'sparkline-saving', 'sparkline-passive'];
+  function renderSparklines() {}
 
-    canvasIds.forEach((id) => {
-      const cv = document.getElementById(id);
-      if (!cv) return;
-      const ctx = cv.getContext('2d');
-      new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ['1', '2', '3', '4', '5', '6'],
-          datasets: [{
-            data: sparkData,
-            borderColor: '#10b981',
-            borderWidth: 2,
-            pointRadius: 0,
-            tension: 0.35
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          plugins: { legend: { display: false }, tooltip: { enabled: false } },
-          scales: { x: { display: false }, y: { display: false } }
-        }
-      });
-    });
-  }
 
   // --- 2. PORTFOLIO & TARGET ALLOCATION ---
 
@@ -748,9 +681,6 @@
   // --- 5. EXPENSE ANALYTICS & SPENDING HEATMAP ---
 
   function renderExpenseAnalytics(expenseData) {
-    const container = document.getElementById('expense-analytics-container');
-    if (!container) return;
-
     // Render Expense Category Donut
     const cvCat = document.getElementById('expenseCategoryChart');
     if (cvCat) {
@@ -759,12 +689,20 @@
         type: 'doughnut',
         data: {
           labels: ['Cicilan Mobil', 'Makan & Harian (GoPay)', 'Sewa Kos'],
-          datasets: [{ data: [2500000, 2250000, 1700000], backgroundColor: ['#ef4444', '#8b5cf6', '#f59e0b'], borderWidth: 2 }]
+          datasets: [{
+            data: [2500000, 2250000, 1700000],
+            backgroundColor: ['#ef4444', '#8b5cf6', '#f59e0b'],
+            borderColor: '#030712',
+            borderWidth: 2
+          }]
         },
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: { legend: { position: 'bottom', labels: { color: '#e2e8f0', font: { size: 11 } } } }
+          plugins: {
+            legend: { position: 'bottom', labels: { color: '#e2e8f0', font: { size: 11 } } }
+          },
+          cutout: '65%'
         }
       });
     }
@@ -775,11 +713,12 @@
       let cells = '';
       for (let i = 1; i <= 30; i++) {
         const lvl = (i % 7 === 0) ? 'level-3' : (i % 3 === 0) ? 'level-2' : (i % 2 === 0) ? 'level-1' : 'level-0';
-        cells += `<div class="heatmap-cell ${lvl}" title="Tgl ${i} Aug: Transaksi terkelola"></div>`;
+        cells += `<div class="heatmap-cell ${lvl}" title="Tanggal ${i} Aug: Transaksi terkelola"></div>`;
       }
       heatmapContainer.innerHTML = cells;
     }
   }
+
 
   // --- 6. FINANCIAL HEALTH & AI SCORE ---
 

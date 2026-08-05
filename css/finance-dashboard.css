@@ -1,14 +1,14 @@
-/* Financial Dashboard Styling - Premium Bloomberg / TradingView OLED Dark Theme */
+/* Financial Dashboard Styling - Institutional Grade Bloomberg / TradingView Dark Theme */
 :root {
   --font-heading: 'Space Grotesk', sans-serif;
   --font-subheading: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-code: 'JetBrains Mono', monospace;
 
-  /* OLED Dark Theme Color Tokens */
+  /* OLED Dark Theme Tokens */
   --fin-bg-deep: #030712;
   --fin-bg-surface: #0b0f19;
-  --fin-bg-bento: rgba(15, 23, 42, 0.7);
+  --fin-bg-bento: rgba(15, 23, 42, 0.75);
   --fin-bento-border: rgba(255, 255, 255, 0.08);
   --fin-bento-hover: rgba(16, 185, 129, 0.35);
 
@@ -71,16 +71,16 @@ body.finance-body {
   font-family: var(--font-code);
 }
 
-/* Section Title Dividers */
+/* Section Dividers */
 .section-divider {
-  margin: 40px 0 20px 0;
+  margin: 36px 0 18px 0;
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
 .section-divider h2 {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -183,10 +183,6 @@ body.finance-body {
   font-size: 1.1rem;
 }
 
-.gate-toggle-pass:hover {
-  color: #ffffff;
-}
-
 .gate-btn {
   width: 100%;
   padding: 15px;
@@ -229,7 +225,7 @@ body.finance-body {
 .dashboard-container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 36px 24px 80px 24px;
+  padding: 32px 24px 80px 24px;
   display: none; /* hidden until authenticated */
 }
 
@@ -238,9 +234,9 @@ body.finance-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 24px;
+  padding-bottom: 22px;
   border-bottom: 1px solid var(--fin-bento-border);
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   flex-wrap: wrap;
   gap: 16px;
 }
@@ -262,7 +258,7 @@ body.finance-body {
 }
 
 .dash-title-group h1 {
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   line-height: 1.2;
   color: #ffffff;
 }
@@ -308,13 +304,13 @@ body.finance-body {
 }
 
 /* ==========================================================================
-   1. EXECUTIVE KPI CARDS GRID (WITH MINI SPARKLINES)
+   1. EXECUTIVE KPI CARDS GRID (CLEAN & BOLD)
    ========================================================================== */
 .executive-kpi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
-  margin-bottom: 32px;
+  gap: 16px;
+  margin-bottom: 28px;
 }
 
 .kpi-card {
@@ -325,7 +321,6 @@ body.finance-body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   position: relative;
-  overflow: hidden;
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
@@ -333,7 +328,7 @@ body.finance-body {
 .kpi-card:hover {
   transform: translateY(-2px);
   border-color: rgba(16, 185, 129, 0.4);
-  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.12);
 }
 
 .kpi-top-row {
@@ -345,62 +340,52 @@ body.finance-body {
 
 .kpi-label {
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--fin-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .kpi-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-}
-
-.kpi-main-row {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 12px;
+  font-size: 1.15rem;
 }
 
 .kpi-num {
-  font-size: 1.45rem;
+  font-size: 1.55rem;
   font-weight: 700;
   color: #ffffff;
-  line-height: 1.2;
+  line-height: 1.25;
+  margin-bottom: 8px;
 }
 
 .kpi-trend {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   font-size: 0.78rem;
   font-weight: 700;
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: 12px;
 }
 
 .kpi-trend.trend-up {
   background: var(--fin-profit-bg);
+  border: 1px solid var(--fin-profit-border);
   color: var(--fin-profit);
 }
 
 .kpi-trend.trend-down {
   background: var(--fin-deficit-bg);
+  border: 1px solid var(--fin-deficit-border);
   color: var(--fin-deficit);
 }
 
-.kpi-sparkline-container {
-  width: 90px;
-  height: 34px;
-}
-
-/* Progress Bar inside KPI (FI Progress) */
 .kpi-progress-bar {
   width: 100%;
   height: 6px;
@@ -414,7 +399,6 @@ body.finance-body {
   height: 100%;
   background: linear-gradient(90deg, #10b981, #06b6d4);
   border-radius: 10px;
-  transition: width 1s ease-in-out;
 }
 
 /* ==========================================================================
@@ -423,8 +407,8 @@ body.finance-body {
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 20px;
-  margin-bottom: 32px;
+  gap: 18px;
+  margin-bottom: 28px;
 }
 
 .bento-col-12 { grid-column: span 12; }
@@ -437,7 +421,7 @@ body.finance-body {
   background: var(--fin-bg-bento);
   border: 1px solid var(--fin-bento-border);
   border-radius: 20px;
-  padding: 24px;
+  padding: 22px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
@@ -456,13 +440,13 @@ body.finance-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   flex-wrap: wrap;
   gap: 10px;
 }
 
 .bento-card-header h3 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -484,7 +468,7 @@ body.finance-body {
 .tv-chart-wrapper {
   position: relative;
   width: 100%;
-  height: 320px;
+  height: 280px;
 }
 
 /* ==========================================================================
@@ -492,17 +476,16 @@ body.finance-body {
    ========================================================================== */
 .sankey-pipeline-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  margin-top: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
 }
 
 .sankey-node {
   background: rgba(3, 7, 18, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  padding: 18px;
-  position: relative;
+  padding: 16px;
 }
 
 .sankey-node-header {
@@ -510,59 +493,46 @@ body.finance-body {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 8px;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   color: var(--fin-text-muted);
 }
 
 .sankey-node-val {
   font-family: var(--font-code);
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 700;
-}
-
-.sankey-arrow-down {
-  text-align: center;
-  color: #10b981;
-  font-size: 1.2rem;
-  margin: 8px 0;
 }
 
 /* ==========================================================================
    3. EXPENSE ANALYTICS & GITHUB SPENDING HEATMAP
    ========================================================================== */
-.expense-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 20px;
-}
-
 .spending-heatmap-grid {
   display: grid;
-  grid-template-columns: repeat(30, 1fr);
-  gap: 4px;
-  margin-top: 14px;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 6px;
+  margin: 16px 0;
   overflow-x: auto;
-  padding-bottom: 8px;
 }
 
 .heatmap-cell {
+  width: 100%;
   aspect-ratio: 1;
-  border-radius: 4px;
+  border-radius: 6px;
   background: rgba(255, 255, 255, 0.04);
-  position: relative;
+  transition: transform 0.15s, box-shadow 0.15s;
   cursor: pointer;
-  transition: transform 0.15s;
 }
 
 .heatmap-cell:hover {
-  transform: scale(1.25);
+  transform: scale(1.3);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
   z-index: 10;
 }
 
 .heatmap-cell.level-0 { background: rgba(255, 255, 255, 0.05); }
-.heatmap-cell.level-1 { background: rgba(16, 185, 129, 0.25); }
-.heatmap-cell.level-2 { background: rgba(245, 158, 11, 0.45); }
-.heatmap-cell.level-3 { background: rgba(239, 68, 68, 0.65); }
+.heatmap-cell.level-1 { background: rgba(16, 185, 129, 0.35); }
+.heatmap-cell.level-2 { background: rgba(245, 158, 11, 0.55); }
+.heatmap-cell.level-3 { background: rgba(239, 68, 68, 0.75); }
 
 /* ==========================================================================
    4. FINANCIAL HEALTH & AI SCORE (0-100 GAUGE)
@@ -571,7 +541,7 @@ body.finance-body {
   display: flex;
   align-items: center;
   gap: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
   flex-wrap: wrap;
 }
 
@@ -579,7 +549,7 @@ body.finance-body {
   width: 110px;
   height: 110px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, rgba(3, 7, 18, 0.8) 70%);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.25) 0%, rgba(3, 7, 18, 0.9) 75%);
   border: 3px solid #10b981;
   box-shadow: 0 0 25px rgba(16, 185, 129, 0.35);
   display: flex;
@@ -632,8 +602,127 @@ body.finance-body {
 }
 
 /* ==========================================================================
-   5. VISUAL AI RECOMMENDATION CARDS
+   5. AI WEALTH STRATEGIST & RICH MARKDOWN STYLING
    ========================================================================== */
+.bento-ai-card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(9, 13, 22, 0.98) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 20px 45px rgba(168, 85, 247, 0.15);
+}
+
+.bento-ai-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #3b82f6, #a855f7, #ec4899);
+}
+
+.ai-header-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.5);
+  color: #d8b4fe;
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.ai-response-box {
+  background: #030712;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 24px;
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: #e2e8f0;
+  min-height: 160px;
+  margin-bottom: 22px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Rich AI Output Styling */
+.ai-response-box p { margin-bottom: 14px; }
+.ai-response-box ul, .ai-response-box ol { margin-left: 22px; margin-bottom: 16px; }
+.ai-response-box li { margin-bottom: 6px; }
+.ai-response-box strong { color: #38bdf8; font-weight: 700; }
+.ai-response-box h1, .ai-response-box h2, .ai-response-box h3, .ai-response-box h4 {
+  color: #ffffff;
+  font-family: var(--font-heading);
+  margin-top: 20px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 6px;
+}
+.ai-response-box hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(168, 85, 247, 0.4) 0%, rgba(16, 185, 129, 0.4) 100%);
+  margin: 20px 0;
+}
+
+.ai-prompt-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ai-prompt-input {
+  flex: 1;
+  min-width: 280px;
+  background: #030712;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.ai-prompt-input:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.25);
+}
+
+.ai-btn-analyze {
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  padding: 14px 24px;
+  font-family: var(--font-heading);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.15s, opacity 0.2s;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+
+.ai-btn-analyze:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
 .ai-recommendation-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -706,13 +795,67 @@ body.finance-body {
   transition: opacity 0.2s;
 }
 
-.ai-recom-action-btn:hover {
-  opacity: 0.9;
+/* ==========================================================================
+   6. PORTFOLIO DETAILS & ASSET CARDS GRID (SLEEK 3-COLUMN CARDS)
+   ========================================================================== */
+.grid-assets-detail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 18px;
 }
 
-/* ==========================================================================
-   6. FINANCIAL GOAL TRACKER & TIMELINE SCHEDULE
-   ========================================================================== */
+.asset-item-card {
+  background: var(--fin-bg-bento);
+  border: 1px solid var(--fin-bento-border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.2s, border-color 0.2s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.asset-item-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.asset-badge-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.asset-info {
+  flex: 1;
+}
+
+.asset-info h4 {
+  font-size: 0.95rem;
+  margin-bottom: 2px;
+  color: #ffffff;
+}
+
+.asset-info .asset-val-text {
+  font-family: var(--font-code);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #10b981;
+  margin-bottom: 2px;
+}
+
+.asset-info .asset-meta {
+  font-size: 0.8rem;
+  color: var(--fin-text-muted);
+}
+
+/* Goals & Timeline */
 .goals-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -754,11 +897,10 @@ body.finance-body {
   white-space: nowrap;
 }
 
-/* Toggle Scenario Switcher */
 .scenario-toggle-group {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: rgba(3, 7, 18, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
@@ -787,9 +929,6 @@ body.finance-body {
   .bento-col-8, .bento-col-6, .bento-col-4, .bento-col-3 {
     grid-column: span 12;
   }
-  .expense-grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }
 
 @media (max-width: 576px) {
@@ -801,6 +940,9 @@ body.finance-body {
     align-items: flex-start;
   }
   .tv-chart-wrapper {
-    height: 260px;
+    height: 250px;
+  }
+  .spending-heatmap-grid {
+    grid-template-columns: repeat(10, 1fr);
   }
 }
