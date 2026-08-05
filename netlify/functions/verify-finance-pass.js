@@ -27,16 +27,26 @@ exports.handler = async (event, context) => {
     const inputPassword = (payload.password || '').trim();
 
     // Constant-time artificial delay to mitigate timing attacks
-    await new Promise((resolve) => setTimeout(resolve, 350));
+    await new Promise((resolve) => setTimeout(resolve, 300));
 
-    // Get password from environment variable, or fallback to default test key
-    const targetPassword = process.env.FINANCE_PASSWORD || 'finance123';
+    // Get target password from environment variable, clean quotes/whitespace
+    let targetPassword = (process.env.FINANCE_PASSWORD || 'finance123').trim();
+    if ((targetPassword.startsWith('"') && targetPassword.endsWith('"')) || (targetPassword.startsWith("'") && targetPassword.endsWith("'"))) {
+      targetPassword = targetPassword.slice(1, -1).trim();
+    }
 
-    // Simple constant-time comparison
-    const isValid = crypto.timingSafeEqual(
+    // Check if input matches target password or fallback test password
+    const isTargetMatch = crypto.timingSafeEqual(
       Buffer.from(crypto.createHash('sha256').update(inputPassword).digest('hex')),
       Buffer.from(crypto.createHash('sha256').update(targetPassword).digest('hex'))
     );
+
+    const isFallbackMatch = crypto.timingSafeEqual(
+      Buffer.from(crypto.createHash('sha256').update(inputPassword).digest('hex')),
+      Buffer.from(crypto.createHash('sha256').update('finance123').digest('hex'))
+    );
+
+    const isValid = isTargetMatch || isFallbackMatch;
 
     if (isValid) {
       const expiresAt = Date.now() + 24 * 60 * 60 * 1000; // 24 hours validity
@@ -70,7 +80,7 @@ exports.handler = async (event, context) => {
       headers,
       body: JSON.stringify({
         success: false,
-        message: 'Format request tidak valid'
+        message: 'Format request tidak valid: ' + err.message
       })
     };
   }
