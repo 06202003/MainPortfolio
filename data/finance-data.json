@@ -9,12 +9,12 @@
   },
   "ratios": {
     "savings_rate": {
-      "name": "Savings Rate",
-      "value": 13.6,
-      "target": 30.0,
+      "name": "Savings Rate (Total)",
+      "value": 24.8,
+      "target": 20.0,
       "comparison": "gte",
       "unit": "%",
-      "description": "Persentase penghasilan disisihkan untuk tabungan Danamon (Rp 1.200.000/bln)"
+      "description": "Total alokasi tabungan Danamon (Rp 1.2M) + Sisa Kas Bebas (Rp 1.15M) = Rp 2.35M"
     },
     "fixed_cost_ratio": {
       "name": "Fixed Cost Ratio",
@@ -38,7 +38,7 @@
     { "month": "Mar 2026", "amount": 168450000 },
     { "month": "Apr 2026", "amount": 169700000 },
     { "month": "Mei 2026", "amount": 170950000 },
-    { "month": "Jun 2026", "amount": 172200000 },
+    { "month": "Jun 2026", "amount": 145000000 },
     { "month": "Jul 2026", "amount": 173450000 },
     { "month": "Agu 2026", "amount": 174670000 }
   ],

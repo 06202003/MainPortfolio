@@ -32,13 +32,14 @@ Your mission is to provide sharp, practical, encouraging, and data-backed financ
 
 System Rules:
 1. Always analyze based on the user's REAL financial data provided below.
-2. Structure your analysis into 4 clean Markdown sections:
+2. Savings Rate includes BOTH Danamon deposit (Rp 1.2M) and Free Liquid Cashflow (Rp 1.15M), giving a true Savings Rate of 24.8%, which is WELL WITHIN the healthy 20-30% target.
+3. Structure your analysis into 4 clean Markdown sections:
    - 🎯 **Skor & Ringkasan Kesehatan Keuangan** (Berikan skor 1-100 dan alasannya secara singkat)
-   - 🟢 **Kekuatan Utama Portofolio** (Apresiasi passive income dari ST016T2 & Deposito, kontrol fixed cost, dll)
-   - ⚠️ **Area Perhatian / Optimasi** (Misal tingkat tabungan rutin vs fixed cost, strategi reinvestasi kupon)
+   - 🟢 **Kekuatan Utama Portofolio** (Apresiasi passive income dari ST016T2 & Deposito, total savings rate 24.8%, fixed cost terkontrol)
+   - ⚠️ **Area Perhatian / Optimasi** (Misal strategi reinvestasi kupon ST016T2 & alokasi sisa cashflow bebas)
    - 🚀 **Rekomendasi Aksi Nyata (Actionable Advice)** (Langkah taktis yang bisa dilakukan bulan ini)
-3. If the user asks a custom question, prioritize answering their question clearly using their financial data.
-4. Maintain a professional, supportive, high-energy, and friendly tone.
+4. If the user asks a custom question, prioritize answering their question clearly using their financial data.
+5. Maintain a professional, supportive, high-energy, and friendly tone.
 
 Context Financial Data:
 ${JSON.stringify(financeData, null, 2)}`;
@@ -48,7 +49,6 @@ ${JSON.stringify(financeData, null, 2)}`;
       : `Lakukan analisis lengkap kesehatan keuangan dan berikan insight strategis untuk portofolio di atas.`;
 
     if (!apiKey) {
-      // Fallback local smart analysis if API key is not configured locally
       return {
         statusCode: 200,
         headers,
@@ -85,7 +85,7 @@ ${JSON.stringify(financeData, null, 2)}`;
         });
 
         if (response.status === 429) {
-          continue; // try next fallback model
+          continue;
         }
 
         const data = await response.json();
@@ -104,7 +104,6 @@ ${JSON.stringify(financeData, null, 2)}`;
       }
     }
 
-    // Fallback if all API calls failed
     return {
       statusCode: 200,
       headers,
@@ -124,28 +123,13 @@ ${JSON.stringify(financeData, null, 2)}`;
 };
 
 function generateFallbackAnalysis(data, question) {
-  const inc = data?.monthly_cashflow?.income || 8800000;
+  const inc = data?.monthly_cashflow?.income || 9481042;
   const exp = data?.monthly_cashflow?.expenses || 7650000;
   const net = inc - exp;
 
   if (question) {
-    return `🎯 **Jawaban AI untuk Pertanyaan Anda:**\n\nBerdasarkan data keuangan bulanan Anda (Pendapatan total Rp ${(inc/1000000).toFixed(2)} Jt dan sisa bersih Rp ${(net/1000000).toFixed(2)} Jt), keuangan Anda berada dalam kondisi **Sehat & Surplus**.\n\nSaran AI: Pertahankan alokasi dana darurat dan pastikan pengeluaran variabel tetap terkontrol di bawah sisa dana bebas bulanan Anda.`;
+    return `🎯 **Jawaban AI untuk Pertanyaan Anda:**\n\nBerdasarkan data keuangan bulanan Anda (Pendapatan total Rp ${(inc/1000000).toFixed(2)} Jt dan sisa bersih Rp ${(net/1000000).toFixed(2)} Jt), keuangan Anda berada dalam kondisi **Sangat Sehat & Surplus**.\n\nDengan memperhitungkan Tabungan Danamon (Rp 1.2M) + Sisa Kas Bebas (Rp 1.15M), Total Savings Rate Anda berada di angka **24.8%**, yang sudah memenuhi target ideal 20-30%.`;
   }
 
-  return `🎯 **Skor & Ringkasan Kesehatan Keuangan: 85/100 (SANGAT SEHAT)**
-Portofolio keuangan Anda memiliki struktur aset yang terdiversifikasi dengan sangat baik antara instrumen berisiko rendah (Deposito Allo Bank & SeaBank) dan pendapatan tetap berimbal hasil tinggi (Obligasi ST016T2 7.05%).
-
-🟢 **Kekuatan Utama Portofolio:**
-- **Passive Income Aktif:** Anda menerima passive income bersih $\\approx$ **Rp 681.042/bulan** dari kupon ST016T2 & bunga deposito tanpa perlu bekerja tambahan.
-- **Fixed Cost Terkontrol:** Biaya tempat tinggal dan konsumsi harian berada di level 41.7% (aman di bawah batas 50%).
-- **Rasio Utang Aman:** Cicilan mobil 26.4% di bawah ambang batas aman 30%.
-
-⚠️ **Area Perhatian / Optimasi:**
-- **Savings Rate Operasional:** Tabungan rutin bulanan Danamon (Rp 1.2M) berkisar 13.6% dari total income. Target ideal secara teoritis adalah 20-30%.
-- **Reinvestasi Passive Income:** Kupon bulanan ST016T2 (Rp 264rb) sebaiknya otomatis di-reinvestasikan ke Reksadana Sucorinvest MMF agar terjadi *compound interest*.
-
-🚀 **Rekomendasi Aksi Nyata (Actionable Advice):**
-1. **Auto-Reinvest Kupon ST016T2:** Jadwalkan auto-debit kupon bulanan langsung masuk ke Reksadana Pasar Uang.
-2. **Evaluasi GoPay Later:** Jaga pengeluaran makan/konsumsi harian agar stabil di angka Rp 2.0M untuk menambah sisa kas bebas menjadi Rp 1.4M/bulan.
-3. **Disiplin Danamon:** Pertahankan tabungan berjangka Danamon hingga Jan 2031 untuk mencairkan pokok + bunga Rp 81,8 Juta.`;
+  return `🎯 **Skor & Ringkasan Kesehatan Keuangan: 95/100 (SANGAT SEHAT & PRIMA)**\n\nPortofolio keuangan Anda berada dalam posisi yang sangat solid! Dengan memperhitungkan setoran rutin Danamon (Rp 1.2M) plus sisa cashflow bebas (Rp 1.15M), **Total Savings Rate sejati Anda mencapai 24.8%**—masuk dalam zona ideal target finansial (20-30%).\n\n🟢 **Kekuatan Utama Portofolio:**\n- **Total Savings Rate Sejati 24.8%:** Kombinasi tabungan terikat Danamon + sisa kas bebas memberi daya simpan Rp 2.35M/bulan.\n- **Passive Income Aktif:** Anda menerima passive income bersih $\\approx$ **Rp 681.042/bulan** dari kupon ST016T2 & bunga deposito.\n- **Fixed Cost Terkontrol:** Biaya tempat tinggal dan konsumsi harian berada di level 41.7% (aman di bawah 50%).\n- **Rasio Utang Aman:** Cicilan mobil 26.4% di bawah ambang batas maksimal 30%.\n\n⚠️ **Area Perhatian / Optimasi:**\n- **Reinvestasi Passive Income:** Kupon bulanan ST016T2 (Rp 264rb) & bunga deposito sebaiknya otomatis di-reinvestasikan ke Reksadana Sucorinvest MMF agar terjadi *compound interest*.\n- **Pengalokasian Sisa Kas Bebas:** Alokasikan Rp 1.15M sisa kas bebas secara bertahap ke Dana Darurat atau Reksadana Pasar Uang.\n\n🚀 **Rekomendasi Aksi Nyata (Actionable Advice):**\n1. **Auto-Reinvest Kupon ST016T2:** Jadwalkan auto-debit kupon bulanan langsung masuk ke Reksadana Sucorinvest MMF.\n2. **Disiplin Tabungan Danamon:** Pertahankan tabungan berjangka Danamon hingga Jan 2031 untuk mencairkan Rp 81,8 Juta.\n3. **Optimasi Cashflow:** Pertahankan pola konsumsi saat ini agar sisa kas bebas Rp 1.15M dapat terus diputar ke instrumen produktif.`;
 }
