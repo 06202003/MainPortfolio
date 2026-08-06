@@ -1133,50 +1133,146 @@ i[style*='#198754'] {
   box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
 }
 
-.sparc-spotlight-zone {
-  min-height: 65vh;
+/* S-SPARC Action Buttons Equalized Grid & Solid Themes */
+.sparc-btn-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.btn-sparc-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none !important;
+  color: #ffffff !important;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.btn-sparc-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+  color: #ffffff !important;
+}
+
+.btn-sparc-solid:active {
+  transform: translateY(0);
+}
+
+.btn-sparc-green {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35) !important;
+}
+
+.btn-sparc-green:hover {
+  background: linear-gradient(135deg, #047857 0%, #059669 100%) !important;
+  box-shadow: 0 8px 22px rgba(16, 185, 129, 0.5) !important;
+}
+
+.btn-sparc-blue {
+  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%) !important;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.35) !important;
+}
+
+.btn-sparc-blue:hover {
+  background: linear-gradient(135deg, #1d4ed8 0%, #3730a3 100%) !important;
+  box-shadow: 0 8px 22px rgba(59, 130, 246, 0.5) !important;
+}
+
+.btn-sparc-red {
+  background: linear-gradient(135deg, #dc2626 0%, #e11d48 100%) !important;
+  box-shadow: 0 4px 15px rgba(225, 29, 72, 0.35) !important;
+}
+
+.btn-sparc-red:hover {
+  background: linear-gradient(135deg, #b91c1c 0%, #be123c 100%) !important;
+  box-shadow: 0 8px 22px rgba(225, 29, 72, 0.5) !important;
+}
+
+.btn-sparc-gold {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%) !important;
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35) !important;
+}
+
+.btn-sparc-gold:hover {
+  background: linear-gradient(135deg, #b45309 0%, #d97706 100%) !important;
+  box-shadow: 0 8px 22px rgba(245, 158, 11, 0.5) !important;
+}
+
+/* S-SPARC Media Switcher & Video Showcase */
+.sparc-media-nav {
+  display: flex;
+  background: rgba(15, 23, 42, 0.85);
+  border-radius: 12px;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 16px;
+  gap: 4px;
+}
+
+.sparc-media-tab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 8px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
 }
 
-.sparc-card-glow {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+.sparc-media-tab.active,
+.sparc-media-tab:hover {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
 }
 
-.sparc-card-glow:hover {
-  border-color: rgba(52, 211, 153, 0.3);
+.sparc-video-wrapper {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(52, 211, 153, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  background: #090d16;
 }
 
-.stat-box {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 12px 16px;
-  text-align: center;
-  flex: 1;
-}
-
-.stat-num {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 700;
+.sparc-video-wrapper video {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
   display: block;
-  line-height: 1.2;
+  border-radius: 12px;
 }
 
-.stat-lbl {
-  font-size: 0.75rem;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.sparc-media-pane {
+  display: none;
+}
+
+.sparc-media-pane.active {
+  display: block;
+  animation: fadeInSparc 0.3s ease-in-out;
+}
+
+@keyframes fadeInSparc {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Research Cycle Nodes */

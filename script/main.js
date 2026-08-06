@@ -279,6 +279,60 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // S-SPARC Media Showcase Tab Switcher
+  const sparcTabs = document.querySelectorAll('.sparc-media-tab');
+  const sparcHeroVideo = document.getElementById('sparcHeroVideo');
+  const sparcModalVideo = document.getElementById('sparcModalVideo');
+
+  sparcTabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      const targetTab = this.getAttribute('data-tab');
+      
+      // Deactivate all tabs & panes
+      sparcTabs.forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.sparc-media-pane').forEach(p => p.classList.remove('active'));
+
+      // Activate clicked tab & corresponding pane
+      this.classList.add('active');
+      const targetPane = document.getElementById('sparc-pane-' + targetTab);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      }
+
+      // Auto pause hero video if switching away from video tab
+      if (targetTab !== 'video' && sparcHeroVideo && !sparcHeroVideo.paused) {
+        sparcHeroVideo.pause();
+      }
+
+      trackEvent('S-SPARC Media Tab Switch', { tab: targetTab });
+    });
+  });
+
+  // "Watch Video" CTA Button Handler
+  const watchVideoBtn = document.getElementById('btn-sparc-watch-video');
+  if (watchVideoBtn) {
+    watchVideoBtn.addEventListener('click', function () {
+      const videoTabBtn = document.querySelector('.sparc-media-tab[data-tab="video"]');
+      if (videoTabBtn) {
+        videoTabBtn.click();
+      }
+      if (sparcHeroVideo) {
+        sparcHeroVideo.play().catch(e => console.log('Autoplay prevented:', e));
+      }
+      trackEvent('Watch AIREA Video Click', { source: 'S-SPARC Hero CTA' });
+    });
+  }
+
+  // Auto pause modal video when AIREA 2026 modal is hidden
+  const aireaModal = document.getElementById('modalAIREA2026');
+  if (aireaModal) {
+    aireaModal.addEventListener('hidden.bs.modal', function () {
+      if (sparcModalVideo && !sparcModalVideo.paused) {
+        sparcModalVideo.pause();
+      }
+    });
+  }
+
   // Publications Owl Carousel Initialization
   if (typeof $ !== 'undefined' && $('.publications-carousel').length) {
     $('.publications-carousel').owlCarousel({

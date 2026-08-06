@@ -1166,60 +1166,83 @@
                   </p>
                 </div>
 
-                <!-- Action Buttons -->
-                <div class="d-flex gap-2 flex-wrap">
-                  <button type="button" class="btn btn-success btn-lg shadow-sm" data-bs-toggle="modal"
+                <!-- Action Buttons (Equalized & Solid Non-Transparent) -->
+                <div class="sparc-btn-grid mb-3">
+                  <button type="button" class="btn-sparc-solid btn-sparc-green" data-bs-toggle="modal"
                     data-bs-target="#modalPosterPdf">
                     <i class="fa-solid fa-file-pdf me-2"></i> View Poster PDF
                   </button>
-                  <button type="button" class="btn btn-outline-success btn-lg shadow-sm" id="btn-ask-sparc-ai">
-                    <i class="fa-solid fa-robot me-2"></i> Ask YZ.AI about S-SPARC
+                  <button type="button" class="btn-sparc-solid btn-sparc-blue" id="btn-ask-sparc-ai">
+                    <i class="fa-solid fa-robot me-2"></i> Ask YZ.AI AI
                   </button>
-                  <a href="https://youtu.be/s41cY0YNGBE" target="_blank" rel="noopener noreferrer"
-                    class="btn btn-outline-light btn-lg">
-                    <i class="fa-solid fa-circle-play me-2 text-danger"></i> Watch Video Demo
-                  </a>
-                  <button type="button" class="btn btn-outline-info btn-lg" data-bs-toggle="modal"
+                  <button type="button" class="btn-sparc-solid btn-sparc-red" id="btn-sparc-watch-video">
+                    <i class="fa-solid fa-film me-2"></i> AIREA 2026 Video
+                  </button>
+                  <button type="button" class="btn-sparc-solid btn-sparc-gold" data-bs-toggle="modal"
                     data-bs-target="#modalAIREA2026">
-                    <i class="fa-solid fa-trophy me-2 text-warning"></i> Competition Details
+                    <i class="fa-solid fa-trophy me-2"></i> Award Details
                   </button>
                 </div>
               </div>
 
-              <!-- Right Column: Interactive Token Chart & Poster Thumbnail -->
+              <!-- Right Column: Interactive Multi-Media Showcase (Video, Chart, Poster) -->
               <div class="col-lg-5" id="pub-card-sparc">
                 <div class="sparc-card-glow text-center">
-                  <h6 class="fw-bold text-white mb-2 d-flex align-items-center justify-content-between flex-wrap gap-1">
-                    <span id="sparcChartTitle"><i class="fa-solid fa-chart-column me-2 text-success"></i> Token Usage (P1–P7)</span>
-                    <button id="toggleChartMode" class="btn btn-sm btn-outline-success py-0 px-2" style="font-size: 0.75rem;">
-                      <i class="fa-solid fa-chart-line me-1"></i> Show Cumulative Savings
+                  
+                  <!-- Tab Navigation Pills -->
+                  <div class="sparc-media-nav">
+                    <button class="sparc-media-tab active" data-tab="video">
+                      <i class="fa-solid fa-circle-play text-danger"></i> AIREA 2026 Video
                     </button>
-                  </h6>
-
-                  <!-- Canvas for Chart.js -->
-                  <div style="position: relative; height: 200px; width: 100%;">
-                    <canvas id="sparcTokenChart"></canvas>
+                    <button class="sparc-media-tab" data-tab="chart">
+                      <i class="fa-solid fa-chart-column text-success"></i> Token Savings
+                    </button>
+                    <button class="sparc-media-tab" data-tab="poster">
+                      <i class="fa-solid fa-file-image text-info"></i> Poster Preview
+                    </button>
                   </div>
 
-                  <hr style="border-color: rgba(255,255,255,0.1);" />
-
-                  <!-- Poster Thumbnail Link -->
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center gap-2">
-                      <div class="poster-preview-thumb" style="width: 55px; height: 75px;" data-bs-toggle="modal"
-                        data-bs-target="#modalPosterPdf">
-                        <img src="img/S-SPARC_IMPACT_EDU.png" alt="S-SPARC Poster Thumbnail" class="w-100 h-100"
-                          style="object-fit: cover;" />
-                        <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus text-white"></i></div>
-                      </div>
-                      <div class="text-start">
-                        <span class="d-block text-white fw-bold small">Research Poster</span>
-                        <span class="d-block text-muted" style="font-size: 0.75rem;">Interactive PDF Viewer</span>
-                      </div>
+                  <!-- Pane 1: Video Documentation -->
+                  <div id="sparc-pane-video" class="sparc-media-pane active">
+                    <div class="sparc-video-wrapper mb-2">
+                      <video id="sparcHeroVideo" controls poster="img/airea.jpeg" preload="metadata">
+                        <source src="media/Airea.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                      </video>
                     </div>
-                    <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal"
-                      data-bs-target="#modalPosterPdf">
-                      Expand Poster <i class="fa-solid fa-expand ms-1"></i>
+                    <div class="d-flex align-items-center justify-content-between text-start px-1 mt-2">
+                      <div>
+                        <span class="d-block text-white fw-bold small"><i class="fa-solid fa-award text-warning me-1"></i> AIREA 2026 Merit Award Documentation</span>
+                        <span class="text-muted" style="font-size: 0.75rem;">The Education University of Hong Kong</span>
+                      </div>
+                      <button class="btn btn-sm btn-sparc-solid btn-sparc-gold py-1 px-2" style="width: auto; font-size: 0.8rem;" data-bs-toggle="modal" data-bs-target="#modalAIREA2026">
+                        Details <i class="fa-solid fa-arrow-right ms-1"></i>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Pane 2: Token Analytics Chart -->
+                  <div id="sparc-pane-chart" class="sparc-media-pane">
+                    <h6 class="fw-bold text-white mb-2 d-flex align-items-center justify-content-between flex-wrap gap-1">
+                      <span id="sparcChartTitle"><i class="fa-solid fa-chart-column me-2 text-success"></i> Token Usage (P1–P7)</span>
+                      <button id="toggleChartMode" class="btn btn-sm btn-sparc-solid btn-sparc-green py-0 px-2" style="width: auto; font-size: 0.75rem;">
+                        <i class="fa-solid fa-chart-line me-1"></i> Toggle Savings
+                      </button>
+                    </h6>
+                    <div style="position: relative; height: 210px; width: 100%;">
+                      <canvas id="sparcTokenChart"></canvas>
+                    </div>
+                  </div>
+
+                  <!-- Pane 3: Poster PDF Preview -->
+                  <div id="sparc-pane-poster" class="sparc-media-pane text-center py-2">
+                    <div class="poster-preview-thumb mx-auto mb-2" style="width: 140px; height: 185px; max-width: 100%;" data-bs-toggle="modal" data-bs-target="#modalPosterPdf">
+                      <img src="img/S-SPARC_IMPACT_EDU.png" alt="S-SPARC Poster Thumbnail" class="w-100 h-100" style="object-fit: cover;" />
+                      <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus text-white fs-3"></i></div>
+                    </div>
+                    <span class="d-block text-white fw-bold small mb-2">S-SPARC Master's Thesis Research Poster</span>
+                    <button class="btn btn-sm btn-sparc-solid btn-sparc-green py-2 px-3 mx-auto" style="width: auto; font-size: 0.85rem;" data-bs-toggle="modal" data-bs-target="#modalPosterPdf">
+                      <i class="fa-solid fa-expand me-1"></i> Open PDF Interactive Viewer
                     </button>
                   </div>
 
@@ -1530,12 +1553,12 @@
                       prompting. Won Merit Award among 212 international teams.
                     </p>
                     <div class="mt-auto d-flex gap-2">
-                      <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                      <button class="btn-sparc-solid btn-sparc-gold py-1 px-2" style="font-size: 0.82rem;" data-bs-toggle="modal"
                         data-bs-target="#modalAIREA2026">
-                        <i class="fa-solid fa-circle-info"></i> Details
+                        <i class="fa-solid fa-circle-info me-1"></i> Details
                       </button>
                       <a href="https://news.maranatha.edu/inovasi-ai-mahasiswa-informatika-maranatha-raih-penghargaan-internasional-di-hong-kong/"
-                        target="_blank" rel="noopener noreferrer" class="btn btn-outline-success btn-sm">Read News <i
+                        target="_blank" rel="noopener noreferrer" class="btn-sparc-solid btn-sparc-green py-1 px-2" style="font-size: 0.82rem;">Read News <i
                           class="fa-solid fa-arrow-right ms-1"></i></a>
                     </div>
                   </div>
@@ -2472,15 +2495,36 @@
                 aria-label="Close"></button>
             </div>
             <div class="modal-body text-start">
-              <img src="img/airea.jpeg" alt="AIREA 2026 Merit Award Ceremony" class="img-fluid rounded mb-3 w-100"
-                style="max-height: 350px; object-fit: cover;">
-              <p><strong><i class="fa-solid fa-trophy text-warning"></i> Award:</strong> Merit Award (Prize ~41
-                Million IDR / ~HKD 20,000)</p>
-              <p><strong><i class="fa-solid fa-building-columns"></i> Organizer:</strong> The Education University of
-                Hong Kong (July 15, 2026)</p>
-              <p><strong><i class="fa-solid fa-earth-asia"></i> Participants:</strong> 212 teams from 13 countries (1
-                of only 2 Indonesian finalist teams alongside BRIN)</p>
-              <p><strong><i class="fa-solid fa-users"></i> Maranatha Delegation Team:</strong></p>
+              <!-- Video Documentation Section -->
+              <div class="mb-4">
+                <h6 class="fw-bold mb-2 text-success d-flex align-items-center">
+                  <i class="fa-solid fa-circle-play text-danger me-2 fs-5"></i> Video Dokumentasi AIREA 2026 Merit Award
+                </h6>
+                <div class="sparc-video-wrapper">
+                  <video id="sparcModalVideo" controls poster="img/airea.jpeg" preload="metadata" style="max-height: 360px;">
+                    <source src="media/Airea.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutaran video HTML5.
+                  </video>
+                </div>
+              </div>
+
+              <!-- Award Photo & Info Grid -->
+              <div class="row g-3 mb-3 align-items-center">
+                <div class="col-md-5">
+                  <img src="img/airea.jpeg" alt="AIREA 2026 Merit Award Ceremony" class="img-fluid rounded shadow-sm w-100"
+                    style="max-height: 220px; object-fit: cover; border: 1px solid rgba(255,255,255,0.2);">
+                </div>
+                <div class="col-md-7">
+                  <p class="mb-2"><strong><i class="fa-solid fa-trophy text-warning me-1"></i> Award:</strong> Merit Award (Prize ~41
+                    Million IDR / ~HKD 20,000)</p>
+                  <p class="mb-2"><strong><i class="fa-solid fa-building-columns text-info me-1"></i> Organizer:</strong> The Education University of
+                    Hong Kong (July 15, 2026)</p>
+                  <p class="mb-2"><strong><i class="fa-solid fa-earth-asia text-emerald-400 me-1"></i> Participants:</strong> 212 teams from 13 countries (1
+                    of only 2 Indonesian finalist teams alongside BRIN)</p>
+                </div>
+              </div>
+
+              <p><strong><i class="fa-solid fa-users text-primary me-1"></i> Maranatha Delegation Team:</strong></p>
               <ul>
                 <li><strong>Yehezkiel David Setiawan</strong> (Team Leader - Master of Computer Science & B.S. in
                   Informatics Engineering Alumnus)</li>
@@ -2505,10 +2549,10 @@
             </div>
             <div class="modal-footer">
               <a href="https://news.maranatha.edu/inovasi-ai-mahasiswa-informatika-maranatha-raih-penghargaan-internasional-di-hong-kong/"
-                target="_blank" rel="noopener noreferrer" class="btn btn-success">
+                target="_blank" rel="noopener noreferrer" class="btn-sparc-solid btn-sparc-green py-2 px-3" style="width: auto;">
                 <i class="fa-solid fa-newspaper me-1"></i> Read Full News Article
               </a>
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn-sparc-solid btn-sparc-solid py-2 px-3" style="width: auto; background: #334155 !important;" data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
