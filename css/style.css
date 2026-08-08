@@ -917,99 +917,99 @@ i[style*='#198754'] {
   color: #2e8b57 !important;
   transition: transform 0.3s ease;
 }
-
-.about-feature-icon:hover {
-  transform: scale(1.2);
+.text-danger {
+  background-color: transparent !important;
+  color: var(--theme-maroon) !important;
 }
 
-/* ==========================================================================
-   Publications Spotlight Section & 100vh Split Layout (Task 2)
-   ========================================================================== */
-.publications-section {
-  background: linear-gradient(135deg, #0b1329 0%, #151d36 50%, #0d1b2a 100%);
-  color: #f8fafc;
-  min-height: 100vh;
-  padding: 40px 0 20px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+.btn-outline-danger:hover,
+.btn-danger:hover {
+  background-color: #361521 !important;
+  border-color: #361521 !important;
+  color: #ffffff !important;
 }
 
-.sparc-spotlight-zone {
-  min-height: 65vh;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+.bg-secondary,
+.btn-secondary,
+.btn-outline-secondary,
+.text-secondary,
+.border-secondary,
+.badge.bg-secondary {
+  background-color: var(--theme-graphite) !important;
+  border-color: var(--theme-graphite) !important;
+  color: #ffffff !important;
 }
 
-.sparc-card-glow {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+.btn-outline-secondary,
+.text-secondary {
+  background-color: transparent !important;
+  color: var(--theme-graphite) !important;
 }
 
-.sparc-card-glow:hover {
-  border-color: rgba(52, 211, 153, 0.3);
+.btn-outline-secondary:hover,
+.btn-secondary:hover {
+  background-color: #334155 !important;
+  border-color: #334155 !important;
+  color: #ffffff !important;
 }
 
-.stat-box {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 12px 16px;
-  text-align: center;
-  flex: 1;
+i[style*='#198754'] {
+  color: var(--theme-navy) !important;
 }
 
-.stat-num {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  display: block;
-  line-height: 1.2;
+#vanta-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.darkmode--activated .projects-title,
+.darkmode--activated .projects-name,
+.darkmode--activated .projects-asal,
+.darkmode--activated .projects-desc,
+.darkmode--activated .projects-hasil,
+.darkmode--activated .warnachev {
+  color: white;
+}
+.buttonkagok2 {
+  width: auto;
+  font-size: 1em;
+}
+.img-aboutii {
+  width: 100%;
+  max-width: 400px;
+  height: 275px;
 }
 
-.stat-lbl {
-  font-size: 0.75rem;
-  color: #94a3b8;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
+@media only screen and (max-width: 767px) {
+  .hidden {
+    display: none;
+  }
+  .img-aboutii {
+    width: 100%;
+    max-width: 200px;
+    height: 150px;
+    margin-bottom: 3rem;
+  }
 
-/* Research Cycle Nodes */
-.cycle-node {
-  background: rgba(30, 41, 59, 0.8);
-  border: 1px solid rgba(52, 211, 153, 0.2);
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: #cbd5e1;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-}
-
-.cycle-node:hover {
-  background: rgba(16, 185, 129, 0.15);
-  border-color: #10b981;
-  color: #34d399;
-}
-
-.poster-preview-thumb {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 2px solid rgba(52, 211, 153, 0.3);
+  .foto-hero {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+    margin: 2em;
+    filter: grayscale(100%);
+  }
+  .buttonkagok {
+    width: 100%;
+  }
+  .buttonkagok2 {
+    width: 100%;
+    margin-top: 1em;
+  }
+  .product-image {
     margin-bottom: 1em;
     width: 100%;
     height: auto;
@@ -1117,6 +1117,24 @@ i[style*='#198754'] {
   transform: scale(1.2);
 }
 
+/* Global Smooth Scroll & Anchor Offset for Sticky Navbar */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+#publications,
+.publications-section,
+#about,
+#qualification,
+#skills,
+#portfolio,
+#reach,
+#home,
+section[id] {
+  scroll-margin-top: 80px;
+}
+
 /* ==========================================================================
    Publications Spotlight Section & 100vh Split Layout (Task 2)
    ========================================================================== */
@@ -1124,13 +1142,14 @@ i[style*='#198754'] {
   background: linear-gradient(135deg, #0b1329 0%, #151d36 50%, #0d1b2a 100%);
   color: #f8fafc;
   min-height: 100vh;
-  padding: 40px 0 20px 0;
+  padding: 48px 0 24px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   overflow: hidden;
   box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+  scroll-margin-top: 80px;
 }
 
 /* S-SPARC Action Buttons Equalized Grid & Solid Themes */
