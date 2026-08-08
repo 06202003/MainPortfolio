@@ -1139,7 +1139,7 @@ section[id] {
    Publications Spotlight Section & 100vh Split Layout (Task 2)
    ========================================================================== */
 .publications-section {
-  background: linear-gradient(135deg, #0b1329 0%, #151d36 50%, #0d1b2a 100%);
+  background: #212529;
   color: #f8fafc;
   min-height: 100vh;
   padding: 48px 0 24px 0;
