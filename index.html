@@ -138,6 +138,7 @@
   <link rel="stylesheet" href="css/custom-carousel.css" />
   <link rel="stylesheet" href="css/chatbot.css?v=46" />
   <link rel="stylesheet" href="css/three-world.css?v=3" />
+  <link rel="stylesheet" href="css/peer-review.css?v=2" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!-- 3D Three.js & Controls Core Scripts -->
@@ -268,6 +269,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#publications">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#peer-review">Peer Review</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#portfolio">Portfolio</a>
@@ -538,6 +542,10 @@
                   <div class="text-center">
                     <i class="fa-solid fa-code fa-2x mb-2 about-feature-icon"></i>
                     <p class="mb-0 fw-semibold">LLM Deployment</p>
+                  </div>
+                  <div class="text-center">
+                    <i class="fa-solid fa-shield-halved fa-2x mb-2 about-feature-icon text-success"></i>
+                    <p class="mb-0 fw-semibold">Peer Reviewer</p>
                   </div>
                 </div>
 
@@ -1492,6 +1500,136 @@
                 </div>
               </div>
 
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Peer Review & Editorial Service Section -->
+      <section id="peer-review" class="peer-review-section" aria-label="Peer review and editorial contribution">
+        <div class="container">
+          <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+            <div>
+              <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                <span class="badge bg-success bg-gradient text-white px-3 py-2" style="border-radius: 20px;">
+                  <i class="fa-solid fa-shield-halved text-warning me-1"></i> Verified Scholarly Service
+                </span>
+                <span class="badge bg-outline-light text-emerald-300 border border-success px-3 py-2"
+                  style="border-radius: 20px; color: #34d399;">
+                  <i class="fa-solid fa-award me-1"></i> Springer Nature &bull; Nature Portfolio &bull; Taylor & Francis
+                </span>
+              </div>
+              <h2 class="display-5 fw-bold text-white mb-1" style="font-family: 'Space Grotesk', sans-serif;">
+                Peer Review & Editorial Service
+              </h2>
+              <p class="text-slate-300 mb-0" style="color: #cbd5e1; font-size: 0.95rem;">
+                Official manuscript evaluation and quality assurance for top-tier indexed international scientific journals.
+              </p>
+            </div>
+            <div>
+              <a href="peer-review.html" class="btn btn-sparc-solid btn-sparc-green px-4 py-2 text-decoration-none shadow" style="display: inline-flex; align-items: center; gap: 8px;">
+                <span>Explore Full Review Page</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Review Highlights Cards Grid -->
+          <div class="row g-4 pt-2">
+            <!-- 1. Scientific Data (Nature Portfolio) -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="pr-review-card">
+                <div class="pr-card-img-wrap" data-bs-toggle="modal" data-bs-target="#modalScientificData">
+                  <span class="pr-publisher-chip chip-nature"><i class="fa-solid fa-dna me-1"></i> Nature Portfolio</span>
+                  <span class="pr-year-chip"><i class="fa-solid fa-calendar-check me-1"></i> 27 Jul 2026</span>
+                  <img src="img/Reviewer Certificate 27 July 2026 (1)_page-0001.jpg" alt="Reviewer Certificate Scientific Data - Nature Portfolio" class="pr-card-img" />
+                  <div class="pr-card-overlay">
+                    <span class="pr-zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate</span>
+                  </div>
+                </div>
+                <div class="pr-card-body">
+                  <h4 class="pr-journal-name">Scientific Data</h4>
+                  <div class="pr-journal-meta">
+                    <span class="pr-ranking-badge rank-q1"><i class="fa-solid fa-star me-1"></i> Scopus Q1</span>
+                    <span class="pr-ranking-badge rank-if"><i class="fa-solid fa-bolt me-1"></i> IF: ~9.8</span>
+                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">Springer Nature</span>
+                  </div>
+                  <p class="small text-slate-300 mb-3" style="color: #cbd5e1;">
+                    Evaluated research dataset descriptions, experimental reproducibility, and computational integrity.
+                  </p>
+                  <div class="pr-card-footer">
+                    <button class="btn-pr-view" data-bs-toggle="modal" data-bs-target="#modalScientificData">
+                      <i class="fa-solid fa-certificate me-1"></i> View Certificate
+                    </button>
+                    <a href="peer-review.html" class="btn-pr-info" title="Detailed Record">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Research Integrity and Peer Review (Springer Nature / BMC) -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+              <div class="pr-review-card">
+                <div class="pr-card-img-wrap" data-bs-toggle="modal" data-bs-target="#modalRIPR">
+                  <span class="pr-publisher-chip chip-springer"><i class="fa-solid fa-book-open me-1"></i> Springer Nature / BMC</span>
+                  <span class="pr-year-chip"><i class="fa-solid fa-calendar-check me-1"></i> 13 Sep 2026</span>
+                  <img src="img/RIPR_Springer.jpeg" alt="Reviewer Certificate Research Integrity and Peer Review - Springer Nature" class="pr-card-img" />
+                  <div class="pr-card-overlay">
+                    <span class="pr-zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> View Certificate</span>
+                  </div>
+                </div>
+                <div class="pr-card-body">
+                  <h4 class="pr-journal-name">Research Integrity and Peer Review</h4>
+                  <div class="pr-journal-meta">
+                    <span class="pr-ranking-badge rank-q1"><i class="fa-solid fa-star me-1"></i> Scopus Q1 / Q2</span>
+                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">BMC / Springer</span>
+                  </div>
+                  <p class="small text-slate-300 mb-3" style="color: #cbd5e1;">
+                    Technical peer review evaluating publication ethics, peer review standards, and transparency in scholarly research.
+                  </p>
+                  <div class="pr-card-footer">
+                    <button class="btn-pr-view" data-bs-toggle="modal" data-bs-target="#modalRIPR">
+                      <i class="fa-solid fa-certificate me-1"></i> View Certificate
+                    </button>
+                    <a href="peer-review.html" class="btn-pr-info" title="Detailed Record">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Applied Artificial Intelligence (Taylor & Francis) -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+              <div class="pr-review-card">
+                <div class="pr-card-img-wrap" data-bs-toggle="modal" data-bs-target="#modalTaylorFrancis">
+                  <span class="pr-publisher-chip chip-tf"><i class="fa-solid fa-microchip me-1"></i> Taylor & Francis</span>
+                  <span class="pr-year-chip"><i class="fa-solid fa-calendar-check me-1"></i> 13 Sep 2026</span>
+                  <img src="img/taylor fracis Applied Artificial Intelligence.jpeg" alt="Reviewer Certificate Applied Artificial Intelligence - Taylor & Francis" class="pr-card-img" />
+                  <div class="pr-card-overlay">
+                    <span class="pr-zoom-badge"><i class="fa-solid fa-magnifying-glass-plus"></i> View Review Detail</span>
+                  </div>
+                </div>
+                <div class="pr-card-body">
+                  <h4 class="pr-journal-name">Applied Artificial Intelligence</h4>
+                  <div class="pr-journal-meta">
+                    <span class="pr-ranking-badge rank-q2"><i class="fa-solid fa-star me-1"></i> Scopus Q2</span>
+                    <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">Taylor & Francis</span>
+                  </div>
+                  <p class="small text-slate-300 mb-3" style="color: #cbd5e1;">
+                    Manuscript ID: <code class="text-success">UAAI-S-2026-0865</code> &bull; Blockchain Integration, Federated Learning, and Semantic Verification.
+                  </p>
+                  <div class="pr-card-footer">
+                    <button class="btn-pr-view" data-bs-toggle="modal" data-bs-target="#modalTaylorFrancis">
+                      <i class="fa-solid fa-certificate me-1"></i> Review Record
+                    </button>
+                    <a href="peer-review.html" class="btn-pr-info" title="Detailed Record">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -2592,6 +2730,121 @@
             </div>
           </div>
         </div>
+      <!-- Peer Review Certificate Modals -->
+      <!-- Modal 1: Scientific Data (Nature Portfolio) -->
+      <div class="modal fade" id="modalScientificData" tabindex="-1" aria-labelledby="modalScientificDataLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content modal-pr-content">
+            <div class="modal-header modal-pr-header d-flex justify-content-between align-items-center">
+              <div>
+                <h5 class="modal-title fw-bold text-white mb-0" id="modalScientificDataLabel">
+                  <i class="fa-solid fa-certificate text-success me-2"></i> Scientific Data — Reviewer Certificate
+                </h5>
+                <small class="text-muted">Springer Nature &bull; Nature Portfolio</small>
+              </div>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-pr-body text-center">
+              <img src="img/Reviewer Certificate 27 July 2026 (1)_page-0001.jpg" alt="Reviewer Certificate Scientific Data" class="pr-cert-full-view mb-3" />
+              <div class="text-start p-3 rounded-3" style="background: rgba(2, 6, 23, 0.7); border: 1px solid rgba(255,255,255,0.08);">
+                <h6 class="text-success fw-bold mb-2"><i class="fa-solid fa-circle-info me-1"></i> Certificate Information</h6>
+                <div class="row g-2 small text-muted">
+                  <div class="col-sm-6"><strong>Awarded To:</strong> <span class="text-white">Yehezkiel Setiawan</span></div>
+                  <div class="col-sm-6"><strong>Journal:</strong> <span class="text-white">Scientific Data (Nature Portfolio)</span></div>
+                  <div class="col-sm-6"><strong>Date Awarded:</strong> <span class="text-white">27 July 2026</span></div>
+                  <div class="col-sm-6"><strong>Contribution:</strong> <span class="text-white">1 Manuscript Reviewed in 2026</span></div>
+                  <div class="col-12 mt-2">
+                    <strong>Publisher:</strong> <span class="text-white">Springer Nature, Nature Portfolio, BMC, Discover, Palgrave Macmillan</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer modal-pr-footer d-flex justify-content-between">
+              <a href="peer-review.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> View Full Peer Review Page
+              </a>
+              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 2: RIPR (Springer Nature / BMC) -->
+      <div class="modal fade" id="modalRIPR" tabindex="-1" aria-labelledby="modalRIPRLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content modal-pr-content">
+            <div class="modal-header modal-pr-header d-flex justify-content-between align-items-center">
+              <div>
+                <h5 class="modal-title fw-bold text-white mb-0" id="modalRIPRLabel">
+                  <i class="fa-solid fa-certificate text-success me-2"></i> Research Integrity and Peer Review Certificate
+                </h5>
+                <small class="text-muted">Springer Nature &bull; BioMed Central (BMC)</small>
+              </div>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-pr-body text-center">
+              <img src="img/RIPR_Springer.jpeg" alt="Reviewer Certificate Research Integrity and Peer Review" class="pr-cert-full-view mb-3" />
+              <div class="text-start p-3 rounded-3" style="background: rgba(2, 6, 23, 0.7); border: 1px solid rgba(255,255,255,0.08);">
+                <h6 class="text-success fw-bold mb-2"><i class="fa-solid fa-circle-info me-1"></i> Certificate Information</h6>
+                <div class="row g-2 small text-muted">
+                  <div class="col-sm-6"><strong>Awarded To:</strong> <span class="text-white">Yehezkiel Setiawan</span></div>
+                  <div class="col-sm-6"><strong>Journal:</strong> <span class="text-white">Research Integrity and Peer Review</span></div>
+                  <div class="col-sm-6"><strong>Date Awarded:</strong> <span class="text-white">13 September 2026</span></div>
+                  <div class="col-sm-6"><strong>Contribution:</strong> <span class="text-white">1 Manuscript Reviewed in 2026</span></div>
+                  <div class="col-12 mt-2">
+                    <strong>Publisher:</strong> <span class="text-white">Springer Nature, BMC, Nature Portfolio, Palgrave Macmillan, Birkhäuser</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer modal-pr-footer d-flex justify-content-between">
+              <a href="peer-review.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> View Full Peer Review Page
+              </a>
+              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal 3: Applied Artificial Intelligence (Taylor & Francis) -->
+      <div class="modal fade" id="modalTaylorFrancis" tabindex="-1" aria-labelledby="modalTaylorFrancisLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content modal-pr-content">
+            <div class="modal-header modal-pr-header d-flex justify-content-between align-items-center">
+              <div>
+                <h5 class="modal-title fw-bold text-white mb-0" id="modalTaylorFrancisLabel">
+                  <i class="fa-solid fa-certificate text-success me-2"></i> Applied Artificial Intelligence — Peer Review Record
+                </h5>
+                <small class="text-muted">Taylor & Francis Group &bull; Manuscript Review</small>
+              </div>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-pr-body text-center">
+              <img src="img/taylor fracis Applied Artificial Intelligence.jpeg" alt="Reviewer Record Applied Artificial Intelligence" class="pr-cert-full-view mb-3" />
+              <div class="text-start p-3 rounded-3" style="background: rgba(2, 6, 23, 0.7); border: 1px solid rgba(255,255,255,0.08);">
+                <h6 class="text-success fw-bold mb-2"><i class="fa-solid fa-circle-info me-1"></i> Manuscript & Review Metadata</h6>
+                <div class="row g-2 small text-muted">
+                  <div class="col-sm-6"><strong>Journal:</strong> <span class="text-white">Applied Artificial Intelligence</span></div>
+                  <div class="col-sm-6"><strong>Publisher:</strong> <span class="text-white">Taylor & Francis Group</span></div>
+                  <div class="col-sm-6"><strong>Manuscript ID:</strong> <span class="text-success font-mono">UAAI-S-2026-0865</span></div>
+                  <div class="col-sm-6"><strong>Type:</strong> <span class="text-white">Research Article</span></div>
+                  <div class="col-sm-6"><strong>Assigned:</strong> <span class="text-white">13-Sep-2026</span></div>
+                  <div class="col-sm-6"><strong>Returned:</strong> <span class="text-white">13-Sep-2026</span></div>
+                  <div class="col-12"><strong>Reviewer Affiliation:</strong> <span class="text-white">Maranatha Christian University</span></div>
+                  <div class="col-12"><strong>Authors:</strong> <span class="text-white">S, Sendhilkumar; G. S., Mahalakshmi; R, Vinitha Kumari</span></div>
+                  <div class="col-12"><strong>Keywords:</strong> <span class="text-white">Blockchain Integration, Federated Learning, Transfer Learning, Adaptive Semantic Verification Algorithm (ASVA), Decentralized Verification</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer modal-pr-footer d-flex justify-content-between">
+              <a href="peer-review.html" class="btn btn-success btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> View Full Peer Review Page
+              </a>
+              <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
 
     </section>
@@ -2791,8 +3044,13 @@
       <!-- Grid container -->
 
       <!-- Copyright -->
-      <div class="text-center text-white py-1" style="background-color: #212529; font-size: 16px; line-height: 1">
-        <p><em>Ad Maiora Natus Sum</em> <br />&copy; 2026 Copyright: Yehezkiel David Setiawan</p>
+      <div class="text-center text-white py-2" style="background-color: #212529; font-size: 15px; line-height: 1.5">
+        <p class="mb-1"><em>Ad Maiora Natus Sum</em> &bull; &copy; 2026 Copyright: Yehezkiel David Setiawan</p>
+        <p class="small text-muted mb-0">
+          <a href="peer-review.html" class="text-decoration-none text-success me-3"><i class="fa-solid fa-shield-halved me-1"></i> Peer Review & Editorial Record</a>
+          <a href="#publications" class="text-decoration-none text-info me-3"><i class="fa-solid fa-book-journal-whills me-1"></i> Publications</a>
+          <a href="#portfolio" class="text-decoration-none text-light"><i class="fa-solid fa-laptop-code me-1"></i> Portfolio</a>
+        </p>
       </div>
       <!-- Copyright -->
     </footer>
