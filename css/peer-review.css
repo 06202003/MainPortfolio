@@ -1,514 +1,451 @@
-/* ===================================================
-   PEER REVIEW & EDITORIAL SERVICE STYLESHEET
-   Yehezkiel David Setiawan Portfolio
-   =================================================== */
+/* ==========================================================================
+   PEER REVIEW & EDITORIAL DOSSIER STYLESHEET
+   Aesthetics: Academic Archival, Sharp Engineering, Exact #212529 Background
+   ========================================================================== */
 
-:root {
-  --pr-bg-dark: #07131f;
-  --pr-card-bg: rgba(15, 23, 42, 0.75);
-  --pr-card-border: rgba(255, 255, 255, 0.08);
-  --pr-card-hover-border: rgba(16, 185, 129, 0.4);
-  --pr-accent-emerald: #10b981;
-  --pr-accent-cyan: #06b6d4;
-  --pr-accent-amber: #f59e0b;
-  --pr-accent-blue: #3b82f6;
-  --pr-text-muted: #94a3b8;
-  --pr-glow-emerald: 0 0 25px rgba(16, 185, 129, 0.2);
-}
-
-.peer-review-page {
-  background-color: var(--pr-bg-dark);
-  color: #e2e8f0;
-  min-height: 100vh;
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-  background-image: 
-    radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 85% 60%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 50% 90%, rgba(59, 130, 246, 0.06) 0%, transparent 45%);
-  background-attachment: fixed;
-}
-
-/* Glassmorphic Navbar */
-.pr-navbar {
-  background: rgba(7, 19, 31, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  z-index: 1050;
-  transition: all 0.3s ease;
-}
-
-.pr-brand-badge {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 182, 212, 0.2));
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  color: #34d399;
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 20px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* Hero Section */
-.pr-hero {
-  padding: 100px 0 50px;
+/* Section Container - Exact Match to Publications Section */
+.peer-review-section {
+  background: #212529 !important;
+  color: #f8fafc;
+  padding: 60px 0 70px 0;
   position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  scroll-margin-top: 80px;
 }
 
-.pr-hero-badge {
+/* Category & Title Header */
+.pr-dossier-tag {
+  font-family: var(--font-code, 'JetBrains Mono', monospace);
+  font-size: 0.78rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(52, 211, 153, 0.35);
+  padding: 5px 12px;
+  border-radius: 4px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 16px;
-  border-radius: 30px;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  color: #34d399;
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 18px;
 }
 
-.pr-title {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
+.pr-dossier-tag::before {
+  content: "●";
+  color: #10b981;
+  font-size: 0.65rem;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.pr-section-title {
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
   font-weight: 700;
-  line-height: 1.15;
-  background: linear-gradient(135deg, #ffffff 40%, #cbd5e1 70%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 20px;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  margin-top: 10px;
+  margin-bottom: 12px;
 }
 
-.pr-title-gradient {
-  background: linear-gradient(135deg, #34d399 0%, #38bdf8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.pr-lead {
-  font-size: 1.15rem;
+.pr-section-desc {
   color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.6;
   max-width: 800px;
-  line-height: 1.7;
 }
 
-/* Stats Counter Grid */
-.pr-stats-container {
-  margin-top: 40px;
-  margin-bottom: 30px;
+/* Archival Stats Metric Row */
+.pr-metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin: 32px 0 44px 0;
 }
 
-.pr-stat-card {
-  background: var(--pr-card-bg);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--pr-card-border);
-  border-radius: 16px;
-  padding: 24px 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.pr-stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #10b981, #06b6d4);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.pr-stat-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--pr-card-hover-border);
-  box-shadow: var(--pr-glow-emerald);
-}
-
-.pr-stat-card:hover::before {
-  opacity: 1;
-}
-
-.pr-stat-num {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  display: block;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.pr-stat-label {
-  font-size: 0.85rem;
-  color: var(--pr-text-muted);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-/* Filter Buttons */
-.pr-filter-btn {
-  background: rgba(255, 255, 255, 0.05);
+.pr-metric-cell {
+  background: rgba(15, 23, 42, 0.65);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #cbd5e1;
-  font-size: 0.88rem;
-  font-weight: 600;
-  padding: 8px 18px;
-  border-radius: 30px;
+  border-left: 3px solid #10b981;
+  border-radius: 6px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   transition: all 0.25s ease;
 }
 
-.pr-filter-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
+.pr-metric-cell:hover {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(52, 211, 153, 0.4);
+  border-left-color: #34d399;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-.pr-filter-btn.active {
-  background: linear-gradient(135deg, #10b981, #059669);
-  border-color: #10b981;
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+.pr-metric-val {
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
 }
 
-/* Journal / Review Cards */
-.pr-review-card {
-  background: var(--pr-card-bg);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--pr-card-border);
-  border-radius: 20px;
+.pr-metric-sub {
+  font-family: var(--font-code, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+/* Dossier Cards - Sharp Technical Academic Layout */
+.pr-card-dossier {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
   overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   height: 100%;
   display: flex;
   flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
 
-.pr-review-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(16, 185, 129, 0.45);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 30px rgba(16, 185, 129, 0.15);
+.pr-card-dossier:hover {
+  border-color: #34d399;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(52, 211, 153, 0.15);
 }
 
-.pr-card-img-wrap {
+/* Dossier Top Bar (Catalog Code & Timestamp) */
+.pr-dossier-topbar {
+  background: #111827;
+  padding: 10px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-code, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+}
+
+.pr-doc-code {
+  color: #34d399;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pr-doc-date {
+  color: #94a3b8;
+}
+
+/* Card Visual Frame */
+.pr-frame-box {
   position: relative;
-  height: 240px;
-  background: #020617;
+  height: 210px;
+  background: #090d16;
   overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   cursor: pointer;
 }
 
-.pr-card-img {
+.pr-frame-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top center;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
+  filter: brightness(0.92) contrast(1.05);
 }
 
-.pr-review-card:hover .pr-card-img {
-  transform: scale(1.05);
+.pr-card-dossier:hover .pr-frame-box img {
+  transform: scale(1.04);
+  filter: brightness(1);
 }
 
-.pr-card-overlay {
+.pr-frame-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(7, 19, 31, 0.1) 0%, rgba(7, 19, 31, 0.85) 100%);
+  background: rgba(9, 13, 22, 0.65);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
+  backdrop-filter: blur(2px);
 }
 
-.pr-card-img-wrap:hover .pr-card-overlay {
+.pr-frame-box:hover .pr-frame-overlay {
   opacity: 1;
 }
 
-.pr-zoom-badge {
-  background: rgba(16, 185, 129, 0.9);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.85rem;
+.pr-inspect-trigger {
+  background: #10b981;
+  color: #061e14;
+  font-family: var(--font-code, 'JetBrains Mono', monospace);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
   padding: 8px 16px;
-  border-radius: 30px;
+  border-radius: 4px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-  transform: translateY(10px);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
 }
 
-.pr-card-img-wrap:hover .pr-zoom-badge {
-  transform: translateY(0);
-}
-
-.pr-publisher-chip {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  backdrop-filter: blur(8px);
-  z-index: 2;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.chip-nature {
-  background: rgba(225, 29, 72, 0.9);
-  color: #fff;
-}
-
-.chip-springer {
-  background: rgba(37, 99, 235, 0.9);
-  color: #fff;
-}
-
-.chip-tf {
-  background: rgba(217, 119, 6, 0.9);
-  color: #fff;
-}
-
-.pr-year-chip {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  padding: 5px 10px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #34d399;
-  z-index: 2;
-}
-
-.pr-card-body {
-  padding: 24px;
+/* Dossier Content Body */
+.pr-dossier-body {
+  padding: 20px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
-.pr-journal-name {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #f8fafc;
-  line-height: 1.3;
-  margin-bottom: 8px;
-}
-
-.pr-journal-meta {
-  display: flex;
+.pr-publisher-stamp {
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 16px;
+  gap: 6px;
+  font-family: var(--font-code, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 6px;
 }
 
-.pr-ranking-badge {
-  font-size: 0.75rem;
+.pr-journal-heading {
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: 1.25rem;
   font-weight: 700;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+/* Metadata Chips (Sharp Rectangular Tech Badges) */
+.pr-tag-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.pr-tech-tag {
+  font-family: var(--font-code, 'JetBrains Mono', monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
   padding: 3px 8px;
-  border-radius: 6px;
+  border-radius: 3px;
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  border: 1px solid transparent;
 }
 
-.rank-q1 {
-  background: linear-gradient(135deg, #10b981, #059669);
-  color: #fff;
+.tag-q1 {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(52, 211, 153, 0.4);
+  color: #34d399;
 }
 
-.rank-q2 {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-  color: #fff;
+.tag-q2 {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(96, 165, 250, 0.4);
+  color: #60a5fa;
 }
 
-.rank-if {
+.tag-metric {
   background: rgba(245, 158, 11, 0.15);
-  border: 1px solid rgba(245, 158, 11, 0.4);
+  border-color: rgba(251, 191, 36, 0.4);
   color: #fbbf24;
 }
 
-.pr-detail-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 20px;
-  font-size: 0.88rem;
+.tag-publisher {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
   color: #cbd5e1;
 }
 
-.pr-detail-list li {
+.pr-brief-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.pr-kw-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 18px;
+}
+
+.pr-kw-item {
+  font-family: var(--font-code, 'JetBrains Mono', monospace);
+  font-size: 0.7rem;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+/* Dossier Action Trigger */
+.btn-dossier-inspect {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-family: var(--font-subheading, 'Inter', sans-serif);
+  font-size: 0.84rem;
+  font-weight: 600;
+  padding: 9px 14px;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-dossier-inspect:hover {
+  background: #10b981;
+  border-color: #10b981;
+  color: #061e14;
+  font-weight: 700;
+}
+
+/* Bottom Archival Standard Strip */
+.pr-standards-dossier {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 36px;
+}
+
+.pr-standards-header {
+  font-family: var(--font-heading, 'Space Grotesk', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 8px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
 }
 
-.pr-detail-list li i {
-  color: #34d399;
-  margin-top: 4px;
-  font-size: 0.85rem;
-}
-
-.pr-keywords-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 20px;
-}
-
-.pr-kw-tag {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.pr-standards-desc {
+  font-size: 0.86rem;
   color: #94a3b8;
-  font-size: 0.72rem;
-  padding: 3px 8px;
+  line-height: 1.5;
+}
+
+.pr-spec-card {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 6px;
-  font-family: var(--font-code);
-}
-
-.pr-card-footer {
-  margin-top: auto;
-  display: flex;
-  gap: 10px;
-}
-
-.btn-pr-view {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 9px 14px;
-  border-radius: 10px;
-  border: none;
-  flex-grow: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
-}
-
-.btn-pr-view:hover {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45);
-}
-
-.btn-pr-info {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #cbd5e1;
-  font-weight: 600;
-  font-size: 0.85rem;
-  padding: 9px 14px;
-  border-radius: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-}
-
-.btn-pr-info:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-}
-
-/* Ethics & Philosophy Section */
-.pr-ethics-card {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 24px;
+  padding: 12px 14px;
   height: 100%;
-  transition: all 0.3s ease;
 }
 
-.pr-ethics-card:hover {
-  border-color: rgba(16, 185, 129, 0.35);
-  background: rgba(15, 23, 42, 0.85);
-  transform: translateY(-4px);
-}
-
-.pr-ethics-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+.pr-spec-title {
+  font-family: var(--font-code, 'JetBrains Mono', monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
   color: #34d399;
+  text-transform: uppercase;
+  margin-bottom: 4px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  margin-bottom: 16px;
+  gap: 6px;
 }
 
-/* Modal Custom Styling */
+.pr-spec-detail {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Modal Custom Styling - Architectural & Sharp */
 .modal-pr-content {
-  background: #0b1523;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 20px;
+  background: #111827;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
   color: #e2e8f0;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
 }
 
 .modal-pr-header {
-  background: #07101a;
+  background: #090d16;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 18px 24px;
+  padding: 16px 20px;
 }
 
 .modal-pr-body {
-  padding: 24px;
-  background: #091320;
+  padding: 20px;
+  background: #0f172a;
 }
 
 .modal-pr-footer {
-  background: #07101a;
+  background: #090d16;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 16px 24px;
+  padding: 14px 20px;
 }
 
 .pr-cert-full-view {
   width: 100%;
-  max-height: 75vh;
+  max-height: 70vh;
   object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   background: #020617;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* Section inside main portfolio index.html */
-.peer-review-section {
-  background-color: #07131f;
-  padding: 90px 0;
-  position: relative;
+.pr-meta-table {
+  width: 100%;
+  font-size: 0.84rem;
+  margin-top: 14px;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
-.peer-review-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+.pr-meta-table tr td {
+  padding: 6px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pr-meta-table tr:last-child td {
+  border-bottom: none;
+}
+
+.pr-meta-label {
+  font-family: var(--font-code, 'JetBrains Mono', monospace);
+  color: #94a3b8;
+  width: 32%;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.pr-meta-value {
+  color: #ffffff;
+  font-weight: 500;
 }
