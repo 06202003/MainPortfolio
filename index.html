@@ -187,17 +187,6 @@
     }
   </script>
 
-  <script>
-    const emojis = ['😃', '😎', '⚡', '💻', '🚀', '✨'];
-    function changeEmoji() {
-      if (!document.hidden) {
-        const randomIndex = Math.floor(Math.random() * emojis.length);
-        document.title = 'Yehezkiel David S. ' + emojis[randomIndex];
-      }
-    }
-    setInterval(changeEmoji, 3000);
-  </script>
-
   <!-- Open Graph Meta Tags for Video -->
   <meta property="og:video" content="https://yehezkiel.netlify.app/media/LULUSBRO.mp4">
   <meta property="og:video:secure_url" content="https://yehezkiel.netlify.app/media/LULUSBRO.mp4">
@@ -492,9 +481,9 @@
               aria-controls="offcanvasBottom" aria-label="Open video and quotes gallery">
               <div class="card border-0 mx-auto" style="width: 100%;">
                 <div class="card-body">
-                  <video class="rounded-5" autoplay muted style="width: 100%; height: 100%; width: 100%"
-                    aria-label="Profile video introduction">
-                    <source src="media/video.mp4" type="video/mp4" />
+                  <video class="rounded-5" id="aboutProfileVideo" playsinline muted loop poster="img/david_hero.webp" preload="none"
+                    style="width: 100%; height: 100%; object-fit: cover;" aria-label="Profile video introduction">
+                    <source data-src="media/video.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
@@ -1187,7 +1176,7 @@
                   <!-- Pane 1: Video Documentation -->
                   <div id="sparc-pane-video" class="sparc-media-pane active">
                     <div class="sparc-video-wrapper mb-2">
-                      <video id="sparcHeroVideo" controls poster="img/airea.jpeg" preload="metadata">
+                      <video id="sparcHeroVideo" controls poster="img/airea.jpeg" preload="none">
                         <source src="media/Airea.mp4" type="video/mp4">
                         Your browser does not support HTML5 video.
                       </video>
@@ -3488,10 +3477,42 @@
           });
         }
 
-        // GSAP Text Plugin Animation
-        if (window.gsap && window.TextPlugin) {
-          gsap.registerPlugin(TextPlugin);
+        // Lazy-load Profile Video via IntersectionObserver (saves 20MB payload on load)
+        const profileVideo = document.getElementById('aboutProfileVideo');
+        if (profileVideo) {
+          if ('IntersectionObserver' in window) {
+            const videoObserver = new IntersectionObserver(function (entries, observer) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  const srcEl = profileVideo.querySelector('source[data-src]');
+                  if (srcEl && !srcEl.src) {
+                    srcEl.src = srcEl.getAttribute('data-src');
+                    profileVideo.load();
+                    profileVideo.play().catch(function () {});
+                  }
+                  observer.unobserve(profileVideo);
+                }
+              });
+            }, { rootMargin: '200px' });
+            videoObserver.observe(profileVideo);
+          } else {
+            const srcEl = profileVideo.querySelector('source[data-src]');
+            if (srcEl) {
+              srcEl.src = srcEl.getAttribute('data-src');
+              profileVideo.load();
+            }
+          }
         }
+
+        // Title emoji cycler (deferred)
+        const emojis = ['😃', '😎', '⚡', '💻', '🚀', '✨'];
+        function changeEmoji() {
+          if (!document.hidden) {
+            const randomIndex = Math.floor(Math.random() * emojis.length);
+            document.title = 'Yehezkiel David S. ' + emojis[randomIndex];
+          }
+        }
+        setInterval(changeEmoji, 4000);
       });
     </script>
 
