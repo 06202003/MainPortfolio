@@ -3409,10 +3409,27 @@
             }
           });
         }
+
+        // AOS Scroll Animation (Immediate initialization on DOM ready)
+        if (typeof AOS !== 'undefined') {
+          AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: false,
+            mirror: true,
+            offset: 60,
+            delay: 50,
+          });
+        }
       });
 
       // Deferred Effects Initialization
       window.addEventListener('load', function () {
+        // Refresh AOS layout calculations after full asset load
+        if (typeof AOS !== 'undefined') {
+          AOS.refresh();
+        }
+
         // Vanta Birds Background (Non-blocking)
         if (window.VANTA && window.VANTA.BIRDS && document.getElementById('home')) {
           try {
@@ -3439,18 +3456,6 @@
           } catch (e) {
             console.warn('Vanta Birds init:', e);
           }
-        }
-
-        // AOS Scroll Animation
-        if (window.AOS) {
-          AOS.init({
-            duration: 800,
-            easing: 'ease-out-cubic',
-            once: false,
-            mirror: true,
-            offset: 60,
-            delay: 50,
-          });
         }
 
         // Lazy-load Profile Video via IntersectionObserver (saves 20MB payload on load)
