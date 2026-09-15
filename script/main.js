@@ -307,6 +307,7 @@ document.addEventListener('DOMContentLoaded', function () {
       autoplay: true,
       autoplayTimeout: 6000,
       autoplayHoverPause: true,
+      navText: ['<i class="fa-solid fa-chevron-left"></i>', '<i class="fa-solid fa-chevron-right"></i>'],
       responsive: {
         0: { items: 1 },
         600: { items: 2 },

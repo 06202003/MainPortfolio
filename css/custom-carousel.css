@@ -152,63 +152,90 @@
   background: rgba(51, 65, 85, 0.5);
 }
 
-/* Owl Carousel Custom Navigation - Modern Style */
+/* Side gutters for carousel so navigation buttons never overlap cards */
+.publications-carousel,
+.portfolio-carousel {
+  position: relative;
+  padding: 0 46px;
+}
+
+/* Owl Carousel Custom Navigation - Modern Clean Style */
 .owl-carousel .owl-nav button.owl-prev,
 .owl-carousel .owl-nav button.owl-next {
-  width: 55px;
-  height: 55px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.95) !important;
-  color: #ffffff !important;
-  font-size: 24px;
   position: absolute;
-  top: 40%;
+  top: 50%;
   transform: translateY(-50%);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  border: 2px solid rgba(46, 139, 87, 0.3);
+  transition: all 0.25s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
+  cursor: pointer;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .owl-carousel .owl-nav button.owl-prev {
-  left: 10px;
+  left: 0;
 }
 
 .owl-carousel .owl-nav button.owl-next {
-  right: 10px;
-}
-
-.owl-carousel .owl-nav button.owl-prev:hover,
-.owl-carousel .owl-nav button.owl-next:hover {
-  background: linear-gradient(135deg, #2e8b57 0%, #257246 100%) !important;
-  color: #ffffff !important;
-  transform: translateY(-50%) scale(1.15);
-  box-shadow: 0 6px 25px rgba(46, 139, 87, 0.42);
-  border-color: transparent;
+  right: 0;
 }
 
 .owl-carousel .owl-nav button.owl-prev i,
 .owl-carousel .owl-nav button.owl-next i {
-  font-size: 20px;
-  font-weight: 900;
+  font-size: 15px;
+  line-height: 1;
+  color: inherit !important;
+}
+
+/* Portfolio Carousel Nav Buttons (Light Theme) */
+.portfolio-carousel .owl-nav button.owl-prev,
+.portfolio-carousel .owl-nav button.owl-next {
+  background: #ffffff !important;
+  color: #1e293b !important;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-carousel .owl-nav button.owl-prev:hover,
+.portfolio-carousel .owl-nav button.owl-next:hover {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #10b981;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+}
+
+/* Publications Carousel Nav Buttons (Dark Academic Dossier Theme) */
+.publications-carousel .owl-nav button.owl-prev,
+.publications-carousel .owl-nav button.owl-next {
+  background: rgba(15, 23, 42, 0.95) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.publications-carousel .owl-nav button.owl-prev:hover,
+.publications-carousel .owl-nav button.owl-next:hover {
+  background: #10b981 !important;
+  color: #061e14 !important;
+  border-color: #10b981;
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.4);
 }
 
 .owl-carousel .owl-nav button:disabled {
   opacity: 0.3;
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* Owl Dots - Simple & Clean */
-.owl-carousel .owl-dots {
-  text-align: center;
-  margin-top: 50px;
-  padding: 15px 0;
-}
-
-/* Hide dots navigation */
 .owl-carousel .owl-dots {
   display: none !important;
 }
@@ -226,11 +253,27 @@
     height: auto;
   }
 
+  .publications-carousel,
+  .portfolio-carousel {
+    padding: 0 36px;
+  }
+
+  .owl-carousel .owl-nav button.owl-prev,
+  .owl-carousel .owl-nav button.owl-next {
+    width: 34px;
+    height: 34px;
+  }
+
+  .owl-carousel .owl-nav button.owl-prev i,
+  .owl-carousel .owl-nav button.owl-next i {
+    font-size: 13px;
+  }
+
   .owl-carousel .owl-nav button.owl-prev {
-    left: 10px;
+    left: 0;
   }
 
   .owl-carousel .owl-nav button.owl-next {
-    right: 10px;
+    right: 0;
   }
 }
