@@ -1379,7 +1379,7 @@ section[id] {
   border-radius: 12px;
   padding: 18px;
   width: 100%;
-  min-height: 235px;
+  min-height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1394,16 +1394,24 @@ section[id] {
   box-shadow: 0 10px 25px rgba(52, 211, 153, 0.25);
 }
 
+.pub-card-mini .badge,
+.pub-card-mini .sjr-badge {
+  white-space: nowrap;
+  font-size: 0.72rem;
+}
+
 .pub-card-title {
   color: #ffffff !important;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: 1.35;
+  margin-top: 4px;
   margin-bottom: 8px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  min-height: 3.8em;
 }
 
 .pub-card-author {
@@ -1418,10 +1426,16 @@ section[id] {
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: #ffffff !important;
   font-weight: 600;
-  font-size: 0.8rem;
-  padding: 6px 10px;
+  font-size: 0.75rem;
+  height: 36px;
+  padding: 6px 8px;
   border-radius: 6px;
   transition: all 0.2s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .btn-pub-details:hover {
@@ -1435,11 +1449,17 @@ section[id] {
   border: none;
   color: #ffffff !important;
   font-weight: 700;
-  font-size: 0.8rem;
-  padding: 6px 10px;
+  font-size: 0.75rem;
+  height: 36px;
+  padding: 6px 8px;
   border-radius: 6px;
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 }
 
 .btn-pub-paper:hover {
@@ -1452,13 +1472,14 @@ section[id] {
 .sjr-badge {
   background: linear-gradient(135deg, #059669 0%, #10b981 100%);
   color: #ffffff;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   padding: 4px 8px;
   border-radius: 6px;
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  white-space: nowrap;
 }
 
 .category-header {
