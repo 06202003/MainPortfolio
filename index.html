@@ -1169,11 +1169,15 @@
                 <!-- Action Buttons (Equalized & Solid Non-Transparent) -->
                 <div class="sparc-btn-grid mb-3">
                   <button type="button" class="btn-sparc-solid btn-sparc-green" data-bs-toggle="modal"
-                    data-bs-target="#modalPosterPdf">
-                    <i class="fa-solid fa-file-pdf me-2"></i> View Poster PDF
+                    data-bs-target="#modalPosterPdf" data-sparc-doc="poster">
+                    <i class="fa-solid fa-file-lines me-2"></i> View Poster PDF
+                  </button>
+                  <button type="button" class="btn-sparc-solid btn-sparc-gold" data-bs-toggle="modal"
+                    data-bs-target="#modalPosterPdf" data-sparc-doc="deck">
+                    <i class="fa-solid fa-presentation-screen me-2"></i> Pitch Deck PDF
                   </button>
                   <button type="button" class="btn-sparc-solid btn-sparc-blue" id="btn-ask-sparc-ai">
-                    <i class="fa-solid fa-robot me-2"></i> Ask YZ.AI AI
+                    <i class="fa-solid fa-robot me-2"></i> Ask YZ.AI
                   </button>
                 </div>
               </div>
@@ -2098,29 +2102,44 @@
           </div>
         </div>
       </section>
-      <!-- S-SPARC Poster PDF Modal (Task 4) -->
+      <!-- S-SPARC Documentation & Pitch Deck PDF Modal -->
       <div class="modal fade" id="modalPosterPdf" tabindex="-1" aria-labelledby="modalPosterPdfLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered" style="max-width: 92vw;">
           <div class="modal-content bg-dark text-white border-secondary shadow-lg">
-            <div class="modal-header border-secondary bg-black bg-gradient">
-              <h5 class="modal-title fw-bold" id="modalPosterPdfLabel">
-                <i class="fa-solid fa-file-pdf text-danger me-2"></i> S-SPARC Research Poster (AIREA 2026 / Master
-                Thesis Showcase)
-              </h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+            <div class="modal-header border-secondary bg-black bg-gradient d-flex flex-wrap align-items-center justify-content-between gap-2">
+              <div class="d-flex align-items-center gap-2">
+                <h5 class="modal-title fw-bold m-0" id="modalPosterPdfLabel">
+                  <i class="fa-solid fa-file-pdf text-danger me-2"></i> <span id="sparcModalTitle">S-SPARC Research Poster</span>
+                </h5>
+              </div>
+
+              <!-- Document Switcher Tabs -->
+              <div class="d-flex gap-1" id="sparcDocSwitcher">
+                <button type="button" class="btn btn-sm btn-success px-3 fw-semibold active" id="btnSwitchPoster" onclick="window.switchSparcDoc('poster')">
+                  <i class="fa-solid fa-file-lines me-1"></i> Research Poster
+                </button>
+                <button type="button" class="btn btn-sm btn-outline-warning px-3 fw-semibold" id="btnSwitchDeck" onclick="window.switchSparcDoc('deck')">
+                  <i class="fa-solid fa-presentation-screen me-1"></i> Pitch Deck
+                </button>
+              </div>
+
+              <button type="button" class="btn-close btn-close-white m-0" data-bs-dismiss="modal"
                 aria-label="Close"></button>
             </div>
             <div class="modal-body p-0" style="height: 82vh;">
               <iframe id="posterPdfFrame" src="" style="width: 100%; height: 100%; border: none;"
-                title="S-SPARC Poster PDF Viewer"></iframe>
+                title="S-SPARC Document PDF Viewer"></iframe>
             </div>
-            <div class="modal-footer border-secondary bg-black justify-content-between">
+            <div class="modal-footer border-secondary bg-black justify-content-between flex-wrap gap-2">
               <span class="text-muted small"><i class="fa-solid fa-circle-info text-info me-1"></i> Interactive PDF
                 Viewer (Scroll & Zoom enabled)</span>
-              <div>
-                <a href="data/S-SPARC_IMPACT_EDU.pdf" download class="btn btn-outline-success btn-sm me-2">
-                  <i class="fa-solid fa-download me-1"></i> Download Poster PDF
+              <div class="d-flex gap-2 flex-wrap">
+                <a href="data/S-SPARC_IMPACT_EDU.pdf" download id="btnDownloadPoster" class="btn btn-outline-success btn-sm">
+                  <i class="fa-solid fa-download me-1"></i> Download Poster
+                </a>
+                <a href="data/S-SPARC Pitch Deck.pdf" download id="btnDownloadDeck" class="btn btn-outline-warning btn-sm">
+                  <i class="fa-solid fa-download me-1"></i> Download Pitch Deck
                 </a>
                 <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
               </div>

@@ -352,15 +352,46 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Poster PDF Modal Lazy Loading & Event Tracking
+  // S-SPARC Documentation & Pitch Deck PDF Modal Handler
+  window.switchSparcDoc = function (docType) {
+    const iframe = document.getElementById('posterPdfFrame');
+    const title = document.getElementById('sparcModalTitle');
+    const btnPoster = document.getElementById('btnSwitchPoster');
+    const btnDeck = document.getElementById('btnSwitchDeck');
+
+    if (docType === 'deck') {
+      if (iframe) iframe.src = 'data/S-SPARC%20Pitch%20Deck.pdf';
+      if (title) title.textContent = 'S-SPARC Pitch Deck Presentation (AIREA 2026 / Master Thesis)';
+      if (btnPoster) {
+        btnPoster.classList.remove('btn-success', 'active');
+        btnPoster.classList.add('btn-outline-success');
+      }
+      if (btnDeck) {
+        btnDeck.classList.remove('btn-outline-warning');
+        btnDeck.classList.add('btn-warning', 'text-dark', 'active');
+      }
+      trackEvent('View S-SPARC Doc Switch', { type: 'Pitch Deck' });
+    } else {
+      if (iframe) iframe.src = 'data/S-SPARC_IMPACT_EDU.pdf';
+      if (title) title.textContent = 'S-SPARC Research Poster (AIREA 2026 / Master Thesis)';
+      if (btnPoster) {
+        btnPoster.classList.remove('btn-outline-success');
+        btnPoster.classList.add('btn-success', 'active');
+      }
+      if (btnDeck) {
+        btnDeck.classList.remove('btn-warning', 'text-dark', 'active');
+        btnDeck.classList.add('btn-outline-warning');
+      }
+      trackEvent('View S-SPARC Doc Switch', { type: 'Research Poster' });
+    }
+  };
+
   const posterModal = document.getElementById('modalPosterPdf');
   if (posterModal) {
-    posterModal.addEventListener('show.bs.modal', function () {
-      trackEvent('View Poster Modal Open', { title: 'S-SPARC Poster PDF' });
-      const iframe = document.getElementById('posterPdfFrame');
-      if (iframe && (!iframe.src || iframe.src === 'about:blank' || iframe.src.indexOf('S-SPARC_IMPACT_EDU') === -1)) {
-        iframe.src = 'data/S-SPARC_IMPACT_EDU.pdf';
-      }
+    posterModal.addEventListener('show.bs.modal', function (event) {
+      const triggerBtn = event.relatedTarget;
+      const requestedDoc = triggerBtn ? triggerBtn.getAttribute('data-sparc-doc') : 'poster';
+      window.switchSparcDoc(requestedDoc === 'deck' ? 'deck' : 'poster');
     });
   }
 
