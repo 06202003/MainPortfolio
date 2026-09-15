@@ -90,47 +90,6 @@ form.addEventListener('submit', (e) => {
   form1.reset();
 });
 
-// getting .product-container html
-const productContainer = document.querySelector('.product-container');
-
-let div;
-// fetching JSON
-fetch('product.json')
-  .then((response) => response.json())
-  .then((data) => {
-    for (let i = 0; i < data.length; i++) {
-      div = document.createElement('div');
-      div.innerHTML = `
-      <div class="col-md-12 d-flex justify-content-around">
-        <img class="product-image " src="${data[i].image}" />
-      </div>
-      `;
-      // console.log(data);
-      productContainer.appendChild(div);
-    }
-  });
-
-// getting .galer-container html
-const galerContainer = document.querySelector('.galer-container');
-
-let div1;
-// fetching JSON
-fetch('galer.json')
-  .then((response) => response.json())
-  .then((data) => {
-    for (let i = 0; i < data.length; i++) {
-      div1 = document.createElement('div');
-      div1.innerHTML = `
-      <div class="col-md-12 d-flex justify-content-around">
-        <img class="galer-image " src="${data[i].image}" />
-      </div>
-
-      `;
-      // console.log(data);
-      galerContainer.appendChild(div1);
-    }
-  });
-
   let quote = document.querySelector('#quotes');
   let author = document.querySelector('#author');
   if (quote && author) {
