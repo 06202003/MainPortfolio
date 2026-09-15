@@ -66,6 +66,11 @@ buttons.forEach((button) => {
 
     const targetDiv = document.querySelector(`#${target}`);
     targetDiv.style.display = 'block';
+    if (window.AOS) {
+      setTimeout(() => {
+        window.AOS.refresh();
+      }, 50);
+    }
   });
 });
 
