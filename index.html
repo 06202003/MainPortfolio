@@ -1508,33 +1508,56 @@
       <!-- Peer Review & Editorial Service Section -->
       <section id="peer-review" class="peer-review-section" aria-label="Peer review and editorial contribution">
         <div class="container">
-          <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
-            <div>
-              <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
-                <span class="badge bg-success bg-gradient text-white px-3 py-2" style="border-radius: 20px;">
-                  <i class="fa-solid fa-shield-halved text-warning me-1"></i> Verified Scholarly Service
-                </span>
-                <span class="badge bg-outline-light text-emerald-300 border border-success px-3 py-2"
-                  style="border-radius: 20px; color: #34d399;">
-                  <i class="fa-solid fa-award me-1"></i> Springer Nature &bull; Nature Portfolio &bull; Taylor & Francis
-                </span>
-              </div>
-              <h2 class="display-5 fw-bold text-white mb-1" style="font-family: 'Space Grotesk', sans-serif;">
-                Peer Review & Editorial Service
-              </h2>
-              <p class="text-slate-300 mb-0" style="color: #cbd5e1; font-size: 0.95rem;">
-                Official manuscript evaluation and quality assurance for top-tier indexed international scientific journals.
-              </p>
+          
+          <!-- Section Header -->
+          <div class="text-center mb-5" data-aos="fade-up">
+            <div class="d-inline-flex align-items-center gap-2 mb-3">
+              <span class="badge bg-success bg-gradient text-white px-3 py-2" style="border-radius: 20px;">
+                <i class="fa-solid fa-shield-halved text-warning me-1"></i> Verified Scholarly Service
+              </span>
+              <span class="badge bg-outline-light text-emerald-300 border border-success px-3 py-2"
+                style="border-radius: 20px; color: #34d399;">
+                <i class="fa-solid fa-award me-1"></i> Springer Nature &bull; Nature Portfolio &bull; Taylor & Francis
+              </span>
             </div>
-            <div>
-              <a href="peer-review.html" class="btn btn-sparc-solid btn-sparc-green px-4 py-2 text-decoration-none shadow" style="display: inline-flex; align-items: center; gap: 8px;">
-                <span>Explore Full Review Page</span> <i class="fa-solid fa-arrow-right"></i>
-              </a>
+            <h2 class="display-4 fw-bold text-white mb-2" style="font-family: 'Space Grotesk', sans-serif;">
+              Peer Review & Editorial Contribution
+            </h2>
+            <p class="text-slate-300 mx-auto" style="color: #cbd5e1; font-size: 1.05rem; max-width: 820px; line-height: 1.6;">
+              Evaluating manuscripts and advancing methodological rigor for top-tier international scientific journals published by <strong>Springer Nature</strong>, <strong>Nature Portfolio</strong>, and <strong>Taylor & Francis</strong>.
+            </p>
+          </div>
+
+          <!-- Metrik Ringkas Grid -->
+          <div class="row g-3 mb-5" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-6 col-md-3">
+              <div class="pr-stat-card">
+                <span class="pr-stat-num text-success">3+</span>
+                <span class="pr-stat-label">Verified Reviews</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="pr-stat-card">
+                <span class="pr-stat-num text-info">9.8</span>
+                <span class="pr-stat-label">Max Journal IF</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="pr-stat-card">
+                <span class="pr-stat-num text-warning">Q1 / Q2</span>
+                <span class="pr-stat-label">Scopus Quartiles</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="pr-stat-card">
+                <span class="pr-stat-num text-light">100%</span>
+                <span class="pr-stat-label">On-Time Turnaround</span>
+              </div>
             </div>
           </div>
 
-          <!-- Review Highlights Cards Grid -->
-          <div class="row g-4 pt-2">
+          <!-- Review Highlights Cards Grid (Click to open Popup Modal) -->
+          <div class="row g-4">
             <!-- 1. Scientific Data (Nature Portfolio) -->
             <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
               <div class="pr-review-card">
@@ -1556,13 +1579,15 @@
                   <p class="small text-slate-300 mb-3" style="color: #cbd5e1;">
                     Evaluated research dataset descriptions, experimental reproducibility, and computational integrity.
                   </p>
+                  <div class="pr-keywords-wrap mb-3">
+                    <span class="pr-kw-tag">Dataset Validation</span>
+                    <span class="pr-kw-tag">Open Science</span>
+                    <span class="pr-kw-tag">Reproducibility</span>
+                  </div>
                   <div class="pr-card-footer">
-                    <button class="btn-pr-view" data-bs-toggle="modal" data-bs-target="#modalScientificData">
-                      <i class="fa-solid fa-certificate me-1"></i> View Certificate
+                    <button class="btn-pr-view w-100" data-bs-toggle="modal" data-bs-target="#modalScientificData">
+                      <i class="fa-solid fa-expand me-1"></i> View Full Certificate Modal
                     </button>
-                    <a href="peer-review.html" class="btn-pr-info" title="Detailed Record">
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
                   </div>
                 </div>
               </div>
@@ -1588,13 +1613,15 @@
                   <p class="small text-slate-300 mb-3" style="color: #cbd5e1;">
                     Technical peer review evaluating publication ethics, peer review standards, and transparency in scholarly research.
                   </p>
+                  <div class="pr-keywords-wrap mb-3">
+                    <span class="pr-kw-tag">Research Ethics</span>
+                    <span class="pr-kw-tag">Peer Standards</span>
+                    <span class="pr-kw-tag">AI Transparency</span>
+                  </div>
                   <div class="pr-card-footer">
-                    <button class="btn-pr-view" data-bs-toggle="modal" data-bs-target="#modalRIPR">
-                      <i class="fa-solid fa-certificate me-1"></i> View Certificate
+                    <button class="btn-pr-view w-100" data-bs-toggle="modal" data-bs-target="#modalRIPR">
+                      <i class="fa-solid fa-expand me-1"></i> View Full Certificate Modal
                     </button>
-                    <a href="peer-review.html" class="btn-pr-info" title="Detailed Record">
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
                   </div>
                 </div>
               </div>
@@ -1618,20 +1645,65 @@
                     <span class="badge bg-secondary text-white" style="font-size: 0.72rem;">Taylor & Francis</span>
                   </div>
                   <p class="small text-slate-300 mb-3" style="color: #cbd5e1;">
-                    Manuscript ID: <code class="text-success">UAAI-S-2026-0865</code> &bull; Blockchain Integration, Federated Learning, and Semantic Verification.
+                    Manuscript ID: <code class="text-success">UAAI-S-2026-0865</code> &bull; Blockchain Integration, Federated Learning, and ASVA Algorithm.
                   </p>
+                  <div class="pr-keywords-wrap mb-3">
+                    <span class="pr-kw-tag">Federated Learning</span>
+                    <span class="pr-kw-tag">Blockchain</span>
+                    <span class="pr-kw-tag">ASVA Algorithm</span>
+                  </div>
                   <div class="pr-card-footer">
-                    <button class="btn-pr-view" data-bs-toggle="modal" data-bs-target="#modalTaylorFrancis">
-                      <i class="fa-solid fa-certificate me-1"></i> Review Record
+                    <button class="btn-pr-view w-100" data-bs-toggle="modal" data-bs-target="#modalTaylorFrancis">
+                      <i class="fa-solid fa-expand me-1"></i> View Full Review Record Modal
                     </button>
-                    <a href="peer-review.html" class="btn-pr-info" title="Detailed Record">
-                      <i class="fa-solid fa-arrow-right"></i>
-                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Review Domains & Ethics Feature Strip -->
+          <div class="mt-5 p-4 rounded-4" style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255, 255, 255, 0.08);" data-aos="fade-up">
+            <div class="row g-4 align-items-center">
+              <div class="col-lg-4">
+                <h5 class="text-white fw-bold mb-2 d-flex align-items-center">
+                  <i class="fa-solid fa-scale-balanced text-success me-2"></i> Review Scope & Standards
+                </h5>
+                <p class="text-muted small mb-0">
+                  Reviews are executed in strict alignment with <strong>COPE (Committee on Publication Ethics)</strong> guidelines, prioritizing statistical rigor, reproducibility, and constructive editorial feedback.
+                </p>
+              </div>
+              <div class="col-lg-8">
+                <div class="row g-2">
+                  <div class="col-sm-6">
+                    <div class="p-3 rounded-3" style="background: rgba(2, 6, 23, 0.6); border: 1px solid rgba(255,255,255,0.05);">
+                      <div class="fw-semibold text-white small mb-1"><i class="fa-solid fa-brain text-success me-1"></i> LLMs & Semantic Efficiency</div>
+                      <div class="text-muted" style="font-size: 0.78rem;">Prompt optimization, token reduction, and GenAI detection.</div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="p-3 rounded-3" style="background: rgba(2, 6, 23, 0.6); border: 1px solid rgba(255,255,255,0.05);">
+                      <div class="fw-semibold text-white small mb-1"><i class="fa-solid fa-network-wired text-info me-1"></i> Federated & Transfer Learning</div>
+                      <div class="text-muted" style="font-size: 0.78rem;">Decentralized AI architectures, privacy, and ASVA verification.</div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="p-3 rounded-3" style="background: rgba(2, 6, 23, 0.6); border: 1px solid rgba(255,255,255,0.05);">
+                      <div class="fw-semibold text-white small mb-1"><i class="fa-solid fa-shield-virus text-warning me-1"></i> Code Integrity & Plagiarism</div>
+                      <div class="text-muted" style="font-size: 0.78rem;">AST structural comparisons and disguised code detection.</div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="p-3 rounded-3" style="background: rgba(2, 6, 23, 0.6); border: 1px solid rgba(255,255,255,0.05);">
+                      <div class="fw-semibold text-white small mb-1"><i class="fa-solid fa-database text-emerald-400 me-1"></i> Open Datasets & FAIR Principles</div>
+                      <div class="text-muted" style="font-size: 0.78rem;">Dataset validation, benchmark soundness, and reproducibility.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -2760,8 +2832,8 @@
               </div>
             </div>
             <div class="modal-footer modal-pr-footer d-flex justify-content-between">
-              <a href="peer-review.html" class="btn btn-success btn-sm">
-                <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> View Full Peer Review Page
+              <a href="img/Reviewer Certificate 27 July 2026 (1)_page-0001.jpg" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Open Full-Res Image
               </a>
               <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
             </div>
@@ -2798,8 +2870,8 @@
               </div>
             </div>
             <div class="modal-footer modal-pr-footer d-flex justify-content-between">
-              <a href="peer-review.html" class="btn btn-success btn-sm">
-                <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> View Full Peer Review Page
+              <a href="img/RIPR_Springer.jpeg" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Open Full-Res Image
               </a>
               <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
             </div>
@@ -2838,8 +2910,8 @@
               </div>
             </div>
             <div class="modal-footer modal-pr-footer d-flex justify-content-between">
-              <a href="peer-review.html" class="btn btn-success btn-sm">
-                <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> View Full Peer Review Page
+              <a href="img/taylor fracis Applied Artificial Intelligence.jpeg" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm">
+                <i class="fa-solid fa-arrow-up-right-from-square me-1"></i> Open Full-Res Image
               </a>
               <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Close</button>
             </div>
@@ -3047,7 +3119,7 @@
       <div class="text-center text-white py-2" style="background-color: #212529; font-size: 15px; line-height: 1.5">
         <p class="mb-1"><em>Ad Maiora Natus Sum</em> &bull; &copy; 2026 Copyright: Yehezkiel David Setiawan</p>
         <p class="small text-muted mb-0">
-          <a href="peer-review.html" class="text-decoration-none text-success me-3"><i class="fa-solid fa-shield-halved me-1"></i> Peer Review & Editorial Record</a>
+          <a href="#peer-review" class="text-decoration-none text-success me-3"><i class="fa-solid fa-shield-halved me-1"></i> Peer Review & Editorial Record</a>
           <a href="#publications" class="text-decoration-none text-info me-3"><i class="fa-solid fa-book-journal-whills me-1"></i> Publications</a>
           <a href="#portfolio" class="text-decoration-none text-light"><i class="fa-solid fa-laptop-code me-1"></i> Portfolio</a>
         </p>
