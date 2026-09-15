@@ -35,8 +35,8 @@
 }
 
 html {
-  overflow-x: hidden;
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 /* Global Typography Rules */
@@ -44,6 +44,7 @@ body {
   overflow-x: hidden;
   font-family: var(--font-body);
   font-weight: 400;
+  min-height: 100vh;
 }
 
 /* Headings: Space Grotesk 700 */
