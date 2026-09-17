@@ -1,0 +1,496 @@
+/* ==========================================================================
+   PORTFOLIO UNIQUE & FUTURISTIC ENHANCEMENTS
+   Styles for Command Palette, Bento Grid, Simulator, Filters, and HUD
+   ========================================================================== */
+
+/* 1. Hero Dynamic Role & Glitch Typography */
+.hero-role-wrapper {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-typewriter-text {
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #10b981 0%, #38bdf8 50%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+  letter-spacing: -0.5px;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  color: #38bdf8;
+  font-weight: 300;
+  animation: cursorBlink 0.9s infinite;
+  margin-left: 2px;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Hero Quick Stats Pill Strip */
+.hero-stats-strip {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.hero-stat-pill {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 8px 16px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.hero-stat-pill:hover {
+  transform: translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.5);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.2);
+  color: #ffffff;
+}
+
+.hero-stat-pill .stat-highlight {
+  font-weight: 800;
+  color: #38bdf8;
+}
+
+/* 2. Bento Credentials Grid in About Section */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.bento-card {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.85) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #38bdf8, #f59e0b);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.45);
+}
+
+.bento-card:hover::before {
+  opacity: 1;
+}
+
+.bento-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.bento-card-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 6px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.bento-card-desc {
+  font-size: 0.84rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* 3. Interactive S-SPARC Token & Eco Simulator */
+.sparc-simulator-box {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(2, 6, 23, 0.98) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(16, 185, 129, 0.05);
+  margin-top: 24px;
+}
+
+.sim-slider-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 8px;
+}
+
+.sim-slider-val {
+  color: #34d399;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+}
+
+.custom-sim-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #334155;
+  outline: none;
+  transition: opacity .2s;
+}
+
+.custom-sim-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #10b981;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.8);
+  border: 2px solid #ffffff;
+}
+
+.sim-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.sim-result-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+}
+
+.sim-result-card .sim-num {
+  font-size: 1.35rem;
+  font-weight: 800;
+  font-family: 'JetBrains Mono', monospace;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.sim-result-card .sim-lbl {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 4. Publication Filter Buttons */
+.pub-filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pub-filter-btn {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.pub-filter-btn:hover {
+  background: rgba(51, 65, 85, 0.9);
+  color: #ffffff;
+  border-color: rgba(56, 189, 248, 0.5);
+}
+
+.pub-filter-btn.active {
+  background: linear-gradient(135deg, #059669, #10b981);
+  color: #ffffff;
+  border-color: #34d399;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+}
+
+/* 5. 1-Click Citation Copy Buttons */
+.btn-citation-copy {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.btn-citation-copy:hover {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+
+/* 6. Command Palette (Raycast / Spotlight style) */
+.cmd-palette-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 10050;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 12vh;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.cmd-palette-backdrop.active {
+  display: flex;
+  opacity: 1;
+}
+
+.cmd-palette-modal {
+  width: 90%;
+  max-width: 640px;
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  animation: cmdPop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cmdPop {
+  0% { transform: scale(0.95) translateY(-10px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+.cmd-search-box {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 12px;
+}
+
+.cmd-search-box i {
+  color: #38bdf8;
+  font-size: 1.2rem;
+}
+
+.cmd-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f8fafc;
+  font-size: 1.1rem;
+  font-family: 'Space Grotesk', -apple-system, sans-serif;
+}
+
+.cmd-input::placeholder {
+  color: #64748b;
+}
+
+.cmd-results-list {
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.cmd-group-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: #64748b;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  padding: 8px 12px 4px 12px;
+}
+
+.cmd-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #e2e8f0;
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cmd-item:hover, .cmd-item.selected {
+  background: rgba(56, 189, 248, 0.15);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+.cmd-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cmd-item-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.cmd-item-shortcut {
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #94a3b8;
+}
+
+.cmd-footer {
+  padding: 10px 18px;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #64748b;
+}
+
+/* Floating HUD Quick Action Trigger */
+.floating-hud-dock {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 9999px;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 10000;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(56, 189, 248, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.floating-hud-dock:hover {
+  transform: translateX(-50%) translateY(-2px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 30px rgba(56, 189, 248, 0.3);
+}
+
+.hud-btn {
+  background: transparent;
+  border: none;
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.hud-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.hud-kbd-badge {
+  background: rgba(255, 255, 255, 0.15);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #38bdf8;
+}
+
+/* Toast Feedback Notification */
+.port-toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  border: 1px solid #10b981;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  z-index: 10060;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.port-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}

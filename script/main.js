@@ -57,6 +57,9 @@ const buttons = document.querySelectorAll('[data-target]');
 
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
+    buttons.forEach((b) => b.classList.remove('active'));
+    button.classList.add('active');
+
     const target = button.getAttribute('data-target');
 
     const divs = document.querySelectorAll('div[id^="div"]');
@@ -65,7 +68,9 @@ buttons.forEach((button) => {
     });
 
     const targetDiv = document.querySelector(`#${target}`);
-    targetDiv.style.display = 'block';
+    if (targetDiv) {
+      targetDiv.style.display = 'block';
+    }
     if (window.AOS) {
       setTimeout(() => {
         window.AOS.refresh();
@@ -317,35 +322,91 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // S-SPARC Documentation & Pitch Deck PDF Modal Handler
+  // S-SPARC Documentation, Pitch Deck & Certificate Modal Handler
   window.switchSparcDoc = function (docType) {
     const iframe = document.getElementById('posterPdfFrame');
+    const certFrame = document.getElementById('posterCertFrame');
+    const certImg = document.getElementById('sparcCertImg');
     const title = document.getElementById('sparcModalTitle');
     const btnPoster = document.getElementById('btnSwitchPoster');
     const btnDeck = document.getElementById('btnSwitchDeck');
+    const btnAireaCert = document.getElementById('btnSwitchAireaCert');
+    const btnImpactCert = document.getElementById('btnSwitchImpactCert');
+    const btnDownloadCert = document.getElementById('btnDownloadCert');
+
+    // Reset buttons active state
+    [btnPoster, btnDeck, btnAireaCert, btnImpactCert].forEach(function(btn) {
+      if (btn) {
+        btn.classList.remove('active', 'btn-success', 'btn-warning', 'btn-info', 'btn-primary');
+        if (btn.id === 'btnSwitchPoster') btn.classList.add('btn-outline-success');
+        if (btn.id === 'btnSwitchDeck') btn.classList.add('btn-outline-warning');
+        if (btn.id === 'btnSwitchAireaCert') btn.classList.add('btn-outline-info');
+        if (btn.id === 'btnSwitchImpactCert') btn.classList.add('btn-outline-primary');
+      }
+    });
 
     if (docType === 'deck') {
-      if (iframe) iframe.src = 'data/S-SPARC%20Pitch%20Deck.pdf';
-      if (title) title.textContent = 'S-SPARC Pitch Deck Presentation (AIREA 2026 / Master Thesis)';
-      if (btnPoster) {
-        btnPoster.classList.remove('btn-success', 'active');
-        btnPoster.classList.add('btn-outline-success');
+      if (iframe) {
+        iframe.classList.remove('d-none');
+        iframe.src = 'data/S-SPARC%20Pitch%20Deck.pdf';
       }
+      if (certFrame) certFrame.classList.add('d-none');
+      if (title) title.textContent = 'S-SPARC Pitch Deck Presentation (AIREA 2026 / Master Thesis)';
       if (btnDeck) {
         btnDeck.classList.remove('btn-outline-warning');
         btnDeck.classList.add('btn-warning', 'text-dark', 'active');
       }
       trackEvent('View S-SPARC Doc Switch', { type: 'Pitch Deck' });
+    } else if (docType === 'airea-cert' || docType === 'airea') {
+      if (iframe) {
+        iframe.classList.add('d-none');
+        iframe.src = '';
+      }
+      if (certFrame) certFrame.classList.remove('d-none');
+      if (certImg) {
+        certImg.src = 'img/S2-4130-e-cert-2nd_AIREA_Competition_2026 (1)_page-0001.jpg';
+        certImg.alt = 'AIREA 2026 Merit Award Certificate (Hong Kong)';
+      }
+      if (btnDownloadCert) {
+        btnDownloadCert.href = 'img/S2-4130-e-cert-2nd_AIREA_Competition_2026 (1)_page-0001.jpg';
+        btnDownloadCert.download = 'AIREA_2026_Merit_Award_Certificate.jpg';
+      }
+      if (title) title.textContent = 'AIREA 2026 Merit Award Certificate (The Education University of Hong Kong)';
+      if (btnAireaCert) {
+        btnAireaCert.classList.remove('btn-outline-info');
+        btnAireaCert.classList.add('btn-info', 'text-dark', 'active');
+      }
+      trackEvent('View S-SPARC Doc Switch', { type: 'AIREA Certificate' });
+    } else if (docType === 'impact-cert' || docType === 'cert' || docType === 'certificate') {
+      if (iframe) {
+        iframe.classList.add('d-none');
+        iframe.src = '';
+      }
+      if (certFrame) certFrame.classList.remove('d-none');
+      if (certImg) {
+        certImg.src = 'img/SL Yehezkiel David Setiawan_page-0001.jpg';
+        certImg.alt = 'Impact-Edu 2026 Most Favorite Poster Certificate (Telkom University)';
+      }
+      if (btnDownloadCert) {
+        btnDownloadCert.href = 'img/SL Yehezkiel David Setiawan_page-0001.jpg';
+        btnDownloadCert.download = 'ImpactEdu2026_Most_Favorite_Poster_Certificate.jpg';
+      }
+      if (title) title.textContent = 'Impact-Edu 2026 Most Favorite Poster Certificate (Telkom University)';
+      if (btnImpactCert) {
+        btnImpactCert.classList.remove('btn-outline-primary');
+        btnImpactCert.classList.add('btn-primary', 'active');
+      }
+      trackEvent('View S-SPARC Doc Switch', { type: 'Impact-Edu Certificate' });
     } else {
-      if (iframe) iframe.src = 'data/S-SPARC_IMPACT_EDU.pdf';
-      if (title) title.textContent = 'S-SPARC Research Poster (AIREA 2026 / Master Thesis)';
+      if (iframe) {
+        iframe.classList.remove('d-none');
+        iframe.src = 'data/S-SPARC_IMPACT_EDU.pdf';
+      }
+      if (certFrame) certFrame.classList.add('d-none');
+      if (title) title.textContent = 'S-SPARC Research Poster (Impact-Edu 2026 / Master Thesis)';
       if (btnPoster) {
         btnPoster.classList.remove('btn-outline-success');
         btnPoster.classList.add('btn-success', 'active');
-      }
-      if (btnDeck) {
-        btnDeck.classList.remove('btn-warning', 'text-dark', 'active');
-        btnDeck.classList.add('btn-outline-warning');
       }
       trackEvent('View S-SPARC Doc Switch', { type: 'Research Poster' });
     }
@@ -356,7 +417,7 @@ document.addEventListener('DOMContentLoaded', function () {
     posterModal.addEventListener('show.bs.modal', function (event) {
       const triggerBtn = event.relatedTarget;
       const requestedDoc = triggerBtn ? triggerBtn.getAttribute('data-sparc-doc') : 'poster';
-      window.switchSparcDoc(requestedDoc === 'deck' ? 'deck' : 'poster');
+      window.switchSparcDoc(requestedDoc || 'poster');
     });
   }
 

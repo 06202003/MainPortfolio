@@ -29,6 +29,12 @@ window.YEHEZKIEL_KNOWLEDGE_BASE = [
     content: "In 2026, Yehezkiel led the Maranatha delegation team to win the Merit Award (~41 Million IDR / ~HKD 20,000) at the 2nd International Competition on AI in Education (AIREA 2026) hosted by The Education University of Hong Kong among 212 international teams. They created 'S-SPARC' (The Next Level of Eco-Conscious AI for Education), an AI companion encouraging responsible AI use through mindful prompt interval controls, response reuse recommendations, and gamified points."
   },
   {
+    id: "award_impact_edu",
+    title: "Impact-Edu 2026 Most Favorite Poster Award & S-SPARC",
+    keywords: ["impact-edu", "impact edu", "impact-edu 2026", "poster competition", "favorite poster", "most favorite poster", "telkom university", "s-sparc", "poster award", "sustainable impact"],
+    content: "On September 9, 2026, Yehezkiel David Setiawan won the 'Most Favorite Poster' award in the Student Learning Innovation Poster Competition category at Impact-Edu 2026 ('Sustainable Impact in Teaching and Learning through Pentahelix Collaboration') organized by Telkom University, Bandung (Certificate No: 1343/AKD10/AKD-BPA/2026). The winning research poster presented S-SPARC (Smart Personal Assistant for Responsible Consumption) showcasing 83.94% token reduction and responsible AI education."
+  },
+  {
     id: "award_brics",
     title: "BRICS Industrial Innovation Contest 2026",
     keywords: ["brics", "brics 2026", "cold chain", "spoilage", "green technology", "jakarta", "borobudur", "industrial innovation"],

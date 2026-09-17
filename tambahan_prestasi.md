@@ -51,3 +51,18 @@ Oscar Karnalim yang mendampingi tim dalam kompetisi tersebut dikenal sebagai aka
 Pada beberapa kesempatan, Oscar aktif mendorong penggunaan generative AI (GenAI) dalam dunia pendidikan. Namun, ia juga mengingatkan bahwa AI berfungsi sebagai alat bantu pembelajaran, bukan pengganti proses berpikir. “Salah satunya adalah menerapkan responsible prompting,” ujarnya (21/7/2026).
 
 Melalui inovasi dan pencapaian ini, UK Maranatha menunjukkan bahwa pengembangan di bidang kecerdasan buatan tidak hanya berorientasi pada peningkatan kemampuan teknologi, tetapi juga pada pembentukan budaya penggunaan AI yang etis, kritis, dan bertanggung jawab, khususnya dalam dunia pendidikan. (is/hum)
+
+---
+
+# Most Favorite Poster — Impact-Edu 2026 (Telkom University)
+- **Award**: MOST FAVORITE POSTER
+- **Certificate No**: 1343/AKD10/AKD-BPA/2026
+- **Date**: Bandung, 9 September 2026
+- **Organizer**: Telkom University (Direktorat Akademik, Direktorat Pascasarjana dan Kantor Internasional, DL2C)
+- **Category**: Student Learning Innovation Poster Competition category of Impact-Edu 2026
+- **Theme**: "Sustainable Impact in Teaching and Learning through Pentahelix Collaboration"
+- **Recipient**: Yehezkiel David Setiawan
+- **Project**: S-SPARC (Smart Personal Assistant for Responsible Consumption)
+- **Signed by**: Parman Sukarno, Ph.D. (Vice Rector for Academic Affairs and Strategic Planning, Telkom University)
+- **Certificate File**: `img/SL Yehezkiel David Setiawan_page-0001.jpg`
+- **Poster File**: `data/S-SPARC_IMPACT_EDU.pdf`
