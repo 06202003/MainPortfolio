@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <!-- Meta Tags for SEO & Accessibility -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+  <title>Building S-SPARC: From a Paper Sketch to a Hong Kong Merit Award | Yehezkiel David Setiawan</title>
+  <meta name="description"
+    content="How S-SPARC went from a handwritten paper sketch in March 2025 to winning the AIREA 2026 Merit Award in Hong Kong and Impact-Edu 2026 Most Favorite Poster." />
+  <meta name="keywords"
+    content="S-SPARC, AI in Education, Eco-Conscious AI, Sustainable LLM, AIREA 2026, Impact-Edu 2026, Semantic Caching, FAISS, Yehezkiel David Setiawan" />
+  <meta name="author" content="Yehezkiel David Setiawan" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0f2a43" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Yehezkiel David S." />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yehezkiel.netlify.app/blog-s-sparc.html" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://yehezkiel.netlify.app/blog-s-sparc.html" />
+  <meta property="og:title" content="Building S-SPARC: From a Paper Sketch to a Hong Kong Merit Award" />
+  <meta property="og:description"
+    content="How S-SPARC went from an informal campus brainstorming session to 83.94% token savings, a Master's thesis, and international awards in Hong Kong and Indonesia." />
+  <meta property="og:image" content="https://yehezkiel.netlify.app/img/sketch-21-maret-2025.jpeg" />
+  <meta property="article:published_time" content="2026-09-18T00:00:00+07:00" />
+  <meta property="article:author" content="Yehezkiel David Setiawan" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Building S-SPARC: From a Paper Sketch to a Hong Kong Merit Award" />
+  <meta name="twitter:description"
+    content="How S-SPARC went from a handwritten paper sketch in March 2025 to winning the AIREA 2026 Merit Award in Hong Kong." />
+  <meta name="twitter:image" content="https://yehezkiel.netlify.app/img/sketch-21-maret-2025.jpeg" />
+
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Core Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/three-world.css?v=3" />
+  <link rel="stylesheet" href="css/blog.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/david2.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/david2.png" />
+  <link rel="shortcut icon" href="img/david2.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="img/david2.png" />
+
+  <!-- Schema.org Structured Data (JSON-LD) for BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "From a Scrap of Paper to a Hong Kong Merit Award: The Story of S-SPARC",
+    "image": [
+      "https://yehezkiel.netlify.app/img/sketch-21-maret-2025.jpeg",
+      "https://yehezkiel.netlify.app/img/environmental-impact.jpg",
+      "https://yehezkiel.netlify.app/img/token-usage-chart.jpg",
+      "https://yehezkiel.netlify.app/img/academic-performance.jpg"
+    ],
+    "datePublished": "2026-09-18T00:00:00+07:00",
+    "dateModified": "2026-09-18T00:00:00+07:00",
+    "author": {
+      "@type": "Person",
+      "name": "Yehezkiel David Setiawan",
+      "url": "https://yehezkiel.netlify.app/"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Yehezkiel David Setiawan"
+    },
+    "description": "How S-SPARC evolved from an informal campus discussion into an award-winning eco-conscious AI learning system achieving 83.94% token savings.",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://yehezkiel.netlify.app/blog-s-sparc.html"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <!-- Reading Progress Bar -->
+  <div id="reading-progress-bar" aria-hidden="true"></div>
+
+  <!-- Navigation (Identical structure and classes to index.html) -->
+  <nav class="navbar navbar-expand-lg bg-dark text-white sticky-top" aria-label="Main Navigation">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center">
+        <button id="secret-door-trigger" class="secret-door-btn"
+          onclick="window.location.href='index.html';" title="Back to Portfolio"
+          aria-label="Back to portfolio">
+          <span class="door-icon">🚪</span>
+          <span class="door-label">Beyond The Door</span>
+        </button>
+        <a class="navbar-brand m-0" href="index.html#home" aria-label="Yehezkiel David Setiawan - Portfolio Home">
+          <span class="visually-hidden">Yehezkiel David Setiawan Portfolio</span>
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="text-white collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#qualification">Qualification</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#publications">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#peer-review">Peer Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog-s-sparc.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#reach">Reach Me!</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <a href="https://wa.me/6289507647137" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-3 py-2 fw-semibold shadow-sm"
+            aria-label="Contact via WhatsApp">
+            Contact Me! <i class="fa-brands fa-whatsapp ms-1 fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content" style="background-color: #212529; color: #cbd5e1; min-height: 100vh;">
+    
+    <!-- Hero / Title Header -->
+    <header class="py-5 text-white" style="background: radial-gradient(circle at 50% 10%, #0f2a43 0%, #1e293b 60%, #212529 100%); border-bottom: 1px solid rgba(255,255,255,0.08);">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 col-xl-8">
+            
+            <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+              <a href="index.html#publications" class="text-decoration-none small fw-semibold" style="color: #34d399 !important;">
+                <i class="fa-solid fa-arrow-left me-1"></i> Back to Portfolio
+              </a>
+              <span class="badge bg-secondary">March 21, 2025 - September 9, 2026</span>
+            </div>
+
+            <h1 class="font-heading display-5 fw-bold text-white mb-3" style="letter-spacing: -0.5px; line-height: 1.25; text-wrap: balance;">
+              Building <span class="text-nowrap" style="white-space: nowrap;">S&#8209;SPARC</span>: From a Paper Sketch to a Hong Kong Merit Award
+            </h1>
+
+            <div class="d-flex align-items-center gap-3 pt-2 text-muted small">
+              <img src="img/david2.png" alt="Yehezkiel David Setiawan" width="38" height="38" class="rounded-circle border border-secondary" />
+              <div>
+                <span class="text-white fw-semibold">Yehezkiel David Setiawan</span> &bull; <span>6 min read</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Blog Post Article Body -->
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <article class="col-lg-10 col-xl-8" style="font-size: 1.1rem; line-height: 1.8;">
+
+          <p>
+            I still remember the date clearly: <strong>March 21, 2025, at 10 AM</strong>. I was called into the faculty office to meet three people that immediately made me think, <em>"Okay, this isn't going to be small talk"</em>: <strong>Prof. Hapnes Toba</strong>, <strong>Ko Oscar Karnalim</strong>, and <strong>Ci Maresha Caroline</strong>.
+          </p>
+
+          <p>
+            The topic turned out to be something few people were seriously talking about at the time: the <strong>personal behavior</strong> behind <em>"unnecessary prompting"</em> to AI. Here's what I mean: lots of people (including students) ask ChatGPT questions that have already been answered before, or prompt without thinking first just because <em>"it's easy, just ask the AI."</em> It sounds harmless, but in aggregate, it piles up into massive compute loads, creating a real environmental footprint.
+          </p>
+
+          <p>
+            That discussion quickly turned into an intense brainstorming session. I still have the photo of our handwritten notes on paper from that morning:
+          </p>
+
+          <!-- Figure 1 -->
+          <figure class="my-4 p-2 rounded-3" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+            <img src="img/sketch-21-maret-2025.jpeg"
+              alt="Handwritten paper sketch from March 21, 2025 session"
+              class="img-fluid rounded w-100"
+              loading="lazy" />
+            <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
+              Original notes from our first discussion session: mapping out the flow of <code>prompt &rarr; LLM &rarr; IR (Information Retrieval) &rarr; carbon</code>, notes on code reusability, all the way to open questions like "GDPR?", "ethics?", and gamification ideas using a "saving" and point system. Messy, but this was where the core framework of S-SPARC first took shape.
+            </figcaption>
+          </figure>
+
+          <!-- Section: MVP -->
+          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+            First MVP: 77% Token Savings
+          </h2>
+
+          <p>
+            From those notes, I built the <strong>MVP</strong> and tested it right away through a <strong>pre-post controlled experiment</strong> with 20 IT lab staff. The results beat our expectations: we saw a <strong>77% token savings</strong>. This early result became the foundation for my Master's thesis.
+          </p>
+
+          <p>
+            We didn't stop there. At the start of the even semester in 2026, I tested the idea again, this time in Prof. Hapnes Toba's Machine Learning class on a larger, more mature scale. That was where <strong>S-SPARC</strong> (Smart Personal Assistant for Responsible Consumption) as we know it today really took shape, tested with dozens of students and hitting much higher token savings through semantic knowledge reuse.
+          </p>
+
+          <!-- Section: Turning Point -->
+          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+            The Turning Point: After the Thesis Defense, June 30, 2026
+          </h2>
+
+          <p>
+            The real turning point actually came after my thesis defense on <strong>June 30, 2026</strong>. The feedback and critique from the defense became the fuel to take S-SPARC from a "classroom research project" to a "real, scalable AI application."
+          </p>
+
+          <p>
+            One thing that made me take this even more seriously: a single prompt to a large model can draw up to <strong>29 Wh of energy</strong>. Globally, that equals the annual power consumption of <strong>35,000 households</strong>. That's not even counting the model training itself, which can reach <strong>493 metric tons of CO₂ emissions</strong> and <strong>2.7 million liters of water</strong>.
+          </p>
+
+          <!-- Figure 2 -->
+          <figure class="my-4 p-2 rounded-3" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+            <img src="img/environmental-impact.jpg"
+              alt="Environmental impact of LLM inference"
+              class="img-fluid rounded w-100"
+              loading="lazy" />
+            <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
+              The data that convinced me: the problem isn't just "wasting tokens"; there is a real environmental cost that rarely gets noticed on the surface.
+            </figcaption>
+          </figure>
+
+          <p>From there, several major technical changes came to life:</p>
+
+          <ul class="mb-4 ps-3" style="line-height: 1.8;">
+            <li class="mb-2">
+              <strong>Diagnostic gate</strong> (validating C-I-O-E: Context, Input, Output, Error Trace) before the AI agrees to answer: no more instant answers for lazy questions.
+            </li>
+            <li class="mb-2">
+              <strong>Semantic caching with FAISS</strong>, using a multi-model embedding pipeline (weighted, double-normalized): if similarity is &ge;0.90, the answer is served straight from the cache in milliseconds, without calling the LLM at all.
+            </li>
+            <li class="mb-2">
+              <strong>LLM fallback to local Ollama</strong> when the cloud LLM is offline.
+            </li>
+            <li class="mb-2">
+              <strong>3-tier hint progression</strong>: hint 1 points to where the bug is, hint 2 gives a solution outline, and only on attempt 3 is the full solution revealed.
+            </li>
+            <li class="mb-2">
+              <strong>Automated evaluation with F-Score</strong> (combining alignment, logical correctness, semantic similarity, code quality, and static analysis, calibrated to ISO/IEC 25010) to make sure reused knowledge stays valid.
+            </li>
+            <li class="mb-2">
+              <strong>Gamification with dynamic thresholds</strong>: points are deducted proportionally if usage goes over the weekly threshold, and the scoring formula is kept private so no one can "game" the system to farm points.
+            </li>
+          </ul>
+
+          <p>
+            Everything was wrapped in pedagogical theory (Bloom's Taxonomy, Vygotsky's Zone of Proximal Development, and Bruner's scaffolding), so S-SPARC wasn't just about saving tokens, but about helping students learn how to think before asking.
+          </p>
+
+          <!-- Section: Numbers Speak -->
+          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+            The Numbers Speak
+          </h2>
+
+          <!-- Figure 3 -->
+          <figure class="my-4 p-2 rounded-3" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+            <img src="img/token-usage-chart.jpg"
+              alt="Token usage per practical session"
+              class="img-fluid rounded w-100"
+              loading="lazy" />
+            <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
+              Across all seven lab sessions, most of the token volume was handled locally without calling external LLMs, averaging 83.94% savings.
+            </figcaption>
+          </figure>
+
+          <p>
+            What made me confident this wasn't just beginner's luck: the reduction rate stayed steady from the early weeks to the final week of the semester (<strong>85.8% vs 86.9%</strong>, no statistically significant difference, <em>p = 0.273</em>). The computational load also dropped <strong>6.2x lower</strong>.
+          </p>
+
+          <p>
+            And most importantly, this wasn't just about technical efficiency. Compared to the student cohort before S-SPARC was used (control, <em>N=52</em>) vs. those who used S-SPARC (intervention, <em>N=68</em>):
+          </p>
+
+          <!-- Figure 4 -->
+          <figure class="my-4 p-2 rounded-3" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
+            <img src="img/academic-performance.jpg"
+              alt="Student academic performance comparison"
+              class="img-fluid rounded w-100"
+              loading="lazy" />
+            <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
+              Midterm exam scores rose significantly (effect size <em>d=1.54</em>, +33.7%), and the overall class average jumped from the C+/B- range up to B+/A- (<em>p &lt; .001</em>).
+            </figcaption>
+          </figure>
+
+          <!-- Section: Awards -->
+          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+            Three Awards in Under 3 Months
+          </h2>
+
+          <p>Once the thesis defense was done, I started taking S-SPARC beyond campus:</p>
+
+          <ol class="mb-4 ps-3" style="line-height: 1.8;">
+            <li class="mb-2">
+              <strong>IOCES 2026</strong> (June): Submitted our research poster to the 1st International Online Conference on Education Sciences.
+            </li>
+            <li class="mb-2">
+              <strong>AIREA 2026</strong> (July 15, Hong Kong): Signing up was honestly a bit on a whim, but we ended up making it to the finals and pitching live in front of an international jury. The whole thing was far from easy, but in the end we brought home the <strong>Merit Award</strong>, out of 212 teams from 13 countries, and becoming 1 of only 2 Indonesian teams to reach the finals (alongside BRIN).
+            </li>
+            <li class="mb-2">
+              <strong>Impact-Edu 2026</strong> (September 9, Telkom University): S-SPARC reached the finals and won <strong>Most Favorite Poster</strong> in the Student Learning Innovation category.
+            </li>
+          </ol>
+
+          <p>
+            All of this (IOCES, the AIREA Merit Award in Hong Kong, and Most Favorite Poster at Impact-Edu) happened in <strong>less than 3 months after finishing my thesis defense</strong>.
+          </p>
+
+          <!-- Section: Closing -->
+          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+            Closing Thoughts
+          </h2>
+
+          <p>
+            It all started with a single scrap of paper and a one-hour morning chat on campus on March 21, 2025. Right now, I'm rewriting this whole story into a formal research paper. The funny thing is, the process of writing that paper made me realize: an idea that started as a casual conversation in a faculty room can actually grow into something with real impact, both for students' digital habits and for the environment.
+          </p>
+
+          <!-- Quote Callout -->
+          <blockquote class="p-4 my-4 rounded-3 text-center" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(52, 211, 153, 0.35);">
+            <p class="fs-4 fw-bold text-white mb-2 font-heading">
+              &ldquo;The problem is not the AI, it's how we use it.&rdquo;
+            </p>
+            <span class="fs-6 fw-bold" style="color: #34d399 !important; letter-spacing: 0.5px;">S-SPARC changes that.</span>
+          </blockquote>
+
+          <!-- Action Buttons -->
+          <div class="d-flex flex-wrap gap-3 justify-content-center my-4">
+            <a href="data/S-SPARC_IMPACT_EDU.pdf" download class="btn-sparc-solid btn-sparc-green px-4 py-2" style="border-radius: 50px; font-size: 0.95rem; width: auto; color: #ffffff !important; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);">
+              <i class="fa-solid fa-file-pdf me-2"></i> Research Poster PDF
+            </a>
+            <a href="data/S-SPARC Pitch Deck.pdf" download class="btn-sparc-solid btn-sparc-gold px-4 py-2" style="border-radius: 50px; font-size: 0.95rem; width: auto; color: #ffffff !important; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);">
+              <i class="fa-solid fa-presentation-screen me-2"></i> Pitch Deck PDF
+            </a>
+            <a href="index.html#publications" class="btn-sparc-solid btn-sparc-blue px-4 py-2" style="border-radius: 50px; font-size: 0.95rem; width: auto; color: #ffffff !important; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
+              <i class="fa-solid fa-arrow-left me-2"></i> Back to Main Portfolio
+            </a>
+          </div>
+
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer (Identical to index.html) -->
+  <footer class="text-center text-white" style="background-color: rgba(0, 0, 0, 0.2)" aria-label="Site footer">
+    <div class="container pt-1">
+      <section class="mb-1" aria-label="Social media links">
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://discordapp.com/users/705312106488135681" target="_blank" rel="noopener noreferrer" aria-label="Connect on Discord">
+          <i class="fab fa-discord" aria-hidden="true"></i>
+        </a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=yehezkieldavid2006@gmail.com&tf=1" target="_blank" rel="noopener noreferrer" aria-label="Contact via Gmail">
+          <i class="fab fa-google" aria-hidden="true"></i>
+        </a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/yz.jsx/" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.linkedin.com/in/ydavids/" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/06202003/" target="_blank" rel="noopener noreferrer" aria-label="View GitHub profile">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
+      </section>
+    </div>
+
+    <div class="text-center text-white py-2" style="background-color: #212529; font-size: 15px; line-height: 1.5">
+      <p class="mb-1"><em>Ad Maiora Natus Sum</em> &bull; &copy; 2026 Copyright: Yehezkiel David Setiawan</p>
+      <p class="small text-muted mb-0">
+        <a href="index.html#peer-review" class="text-decoration-none me-3" style="color: #34d399 !important;"><i class="fa-solid fa-shield-halved me-1"></i> Peer Review &amp; Editorial Record</a>
+        <a href="index.html#publications" class="text-decoration-none me-3" style="color: #38bdf8 !important;"><i class="fa-solid fa-book-journal-whills me-1"></i> Publications</a>
+        <a href="index.html#portfolio" class="text-decoration-none text-light me-3"><i class="fa-solid fa-laptop-code me-1"></i> Portfolio</a>
+        <a href="blog-s-sparc.html" class="text-decoration-none" style="color: #34d399 !important;"><i class="fa-solid fa-newspaper me-1"></i> Blog</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script>
+    // Reading Progress Bar
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress-bar');
+      if (bar) bar.style.width = scrolled + '%';
+    });
+  </script>
+</body>
+
+</html>
