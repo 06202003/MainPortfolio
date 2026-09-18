@@ -1,0 +1,47 @@
+[
+  {
+    "id": "s-sparc-journey",
+    "slug": "blog-s-sparc.html",
+    "title": "Building S-SPARC: From a Paper Sketch to a Hong Kong Merit Award",
+    "description": "How an informal campus discussion on unnecessary AI prompting led to an eco-conscious learning companion that achieved 83.94% token savings, a Master's thesis, and the AIREA 2026 Merit Award in Hong Kong.",
+    "category": "green-ai",
+    "categoryName": "Green AI & LLMs",
+    "date": "Sep 18, 2026",
+    "readTime": "6 min read",
+    "image": "img/sketch-21-maret-2025.jpeg",
+    "badge": "Featured Research",
+    "claps": 342,
+    "tags": ["Green AI", "LLM Efficiency", "FAISS Caching", "AIREA 2026"],
+    "featured": true
+  },
+  {
+    "id": "peer-review-insights",
+    "slug": "blog-peer-review.html",
+    "title": "Behind the Peer Review Desk: Evaluating AI Manuscripts for Nature Scientific Data and Springer",
+    "description": "First-hand reflections on methodological rigor, machine learning reproducibility, and what top-tier Q1 journals look for when evaluating AI and data engineering papers.",
+    "category": "peer-review",
+    "categoryName": "Academic & Peer Review",
+    "date": "Aug 24, 2026",
+    "readTime": "5 min read",
+    "image": "img/Reviewer Certificate 27 July 2026 (1)_page-0001.jpg",
+    "badge": "Nature & Springer",
+    "claps": 189,
+    "tags": ["Peer Review", "Nature Scientific Data", "Springer", "Reproducibility"],
+    "featured": false
+  },
+  {
+    "id": "enterprise-super-app",
+    "slug": "blog-super-app.html",
+    "title": "Architecting Enterprise Super Apps: Scaling High-Concurrency Systems in Pharmaceutical Logistics",
+    "description": "Lessons learned architecting a production digital office ecosystem at PT. Royal Medicalink Pharmalab: automated authorization pipelines, database indexing, and offline-first mobile sync.",
+    "category": "system-arch",
+    "categoryName": "System Architecture",
+    "date": "Jul 10, 2026",
+    "readTime": "7 min read",
+    "image": "img/konstelasi.png",
+    "badge": "Enterprise Architecture",
+    "claps": 215,
+    "tags": ["System Architecture", "Concurrency", "Offline-First", "KONSTELASI 2024"],
+    "featured": false
+  }
+]

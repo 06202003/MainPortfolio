@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+  <title>Architecting Enterprise Super Apps: Scaling High-Concurrency Systems in Pharmaceutical Operations | Yehezkiel David Setiawan</title>
+  <meta name="description"
+    content="Lessons learned architecting a production digital office ecosystem at PT. Royal Medicalink Pharmalab: automated authorization pipelines and offline-first mobile sync." />
+  <meta name="keywords"
+    content="Super App, Enterprise Architecture, High Concurrency, Pharmaceutical Logistics, Laravel, Go, Yehezkiel David Setiawan" />
+  <meta name="author" content="Yehezkiel David Setiawan" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0f2a43" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Yehezkiel David S." />
+
+  <link rel="canonical" href="https://yehezkiel.netlify.app/blog-super-app.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://yehezkiel.netlify.app/blog-super-app.html" />
+  <meta property="og:title" content="Architecting Enterprise Super Apps: Scaling High-Concurrency Systems in Pharmaceutical Operations" />
+  <meta property="og:description"
+    content="Lessons learned architecting a production digital office ecosystem at PT. Royal Medicalink Pharmalab: automated authorization pipelines and offline-first mobile sync." />
+  <meta property="og:image" content="https://yehezkiel.netlify.app/img/konstelasi.png" />
+  <meta property="article:published_time" content="2026-07-10T00:00:00+07:00" />
+  <meta property="article:author" content="Yehezkiel David Setiawan" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Architecting Enterprise Super Apps: Scaling High-Concurrency Systems in Pharmaceutical Operations" />
+  <meta name="twitter:description"
+    content="Lessons learned architecting a production digital office ecosystem at PT. Royal Medicalink Pharmalab." />
+  <meta name="twitter:image" content="https://yehezkiel.netlify.app/img/konstelasi.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/three-world.css?v=3" />
+  <link rel="stylesheet" href="css/blog.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="img/david2.png" />
+  <link rel="shortcut icon" href="img/david2.png" type="image/x-icon" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Architecting Enterprise Super Apps: Scaling High-Concurrency Systems in Pharmaceutical Operations",
+    "datePublished": "2026-07-10T00:00:00+07:00",
+    "author": {
+      "@type": "Person",
+      "name": "Yehezkiel David Setiawan",
+      "url": "https://yehezkiel.netlify.app/"
+    }
+  }
+  </script>
+</head>
+
+<body class="blog-body-bg">
+  <div id="reading-progress-bar" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg bg-dark text-white sticky-top" aria-label="Main Navigation">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center">
+        <button id="secret-door-trigger" class="secret-door-btn"
+          onclick="window.location.href='index.html';" title="Back to Portfolio"
+          aria-label="Back to portfolio">
+          <span class="door-icon">🚪</span>
+          <span class="door-label">Beyond The Door</span>
+        </button>
+        <a class="navbar-brand m-0" href="index.html#home" aria-label="Yehezkiel David Setiawan - Portfolio Home">
+          <span class="visually-hidden">Yehezkiel David Setiawan Portfolio</span>
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="text-white collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#qualification">Qualification</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#publications">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#peer-review">Peer Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#reach">Reach Me!</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <a href="https://wa.me/6289507647137" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-3 py-2 fw-semibold shadow-sm"
+            aria-label="Contact via WhatsApp">
+            Contact Me! <i class="fa-brands fa-whatsapp ms-1 fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="article-header-wrapper text-white">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-11 col-xl-10">
+          
+          <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+            <a href="blog.html" class="text-decoration-none small fw-semibold" style="color: #34d399 !important;">
+              <i class="fa-solid fa-arrow-left me-1"></i> Back to Blog Hub
+            </a>
+            <span class="article-category-badge" style="color: #a855f7; background: rgba(168, 85, 247, 0.12); border-color: rgba(168, 85, 247, 0.3);">
+              <i class="fa-solid fa-server me-1"></i> System Architecture &bull; KONSTELASI 2024
+            </span>
+          </div>
+
+          <h1 class="article-main-title">
+            Architecting Enterprise Super Apps: Scaling High-Concurrency Systems in Pharmaceutical Operations
+          </h1>
+
+          <p class="article-lead-subtitle">
+            Lessons learned architecting a production digital office ecosystem at PT. Royal Medicalink Pharmalab: automated authorization pipelines, database indexing, and offline-first mobile sync.
+          </p>
+
+          <div class="article-author-row">
+            <div class="d-flex align-items-center gap-3">
+              <img src="img/david2.png" alt="Yehezkiel David Setiawan" class="article-author-avatar" style="border-color: #a855f7; box-shadow: 0 0 12px rgba(168, 85, 247, 0.25);" />
+              <div>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="article-author-name">Yehezkiel David Setiawan</span>
+                  <a href="https://www.linkedin.com/in/ydavids/" target="_blank" rel="noopener noreferrer" class="badge bg-secondary bg-opacity-50 text-white border border-secondary py-1 px-2 text-decoration-none small">
+                    <i class="fab fa-linkedin me-1"></i> Follow
+                  </a>
+                </div>
+                <div class="article-author-subline">
+                  <span>7 min read</span> &bull; <span>Jul 10, 2026</span> &bull; <span class="text-muted">Lead System Architect</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2 flex-wrap">
+              <a href="index.html#portfolio" class="article-action-pill pill-calculator" style="color: #c084fc !important; border-color: #a855f7 !important; background: rgba(168, 85, 247, 0.15) !important;">
+                <i class="fa-solid fa-layer-group"></i> View Portfolio Showcase
+              </a>
+            </div>
+          </div>
+
+          <!-- Medium-Style Interaction Bar (Top) -->
+          <div class="medium-action-bar">
+            <div class="medium-action-group">
+              <button type="button" class="medium-btn-action btn-clap-trigger" title="Clap for this story">
+                <span class="clap-icon">👏</span>
+                <span class="clap-count-label">215</span>
+                <span class="small text-muted d-none d-sm-inline">claps</span>
+              </button>
+              <button type="button" class="medium-btn-action" onclick="document.getElementById('reach-author').scrollIntoView({behavior:'smooth'});" title="Discuss / Contact architect">
+                <i class="fa-regular fa-comment"></i>
+                <span>Discuss</span>
+              </button>
+            </div>
+            <div class="medium-action-group">
+              <button type="button" class="medium-btn-action btn-bookmark-trigger" title="Save story to reading list">
+                <i class="fa-regular fa-bookmark"></i>
+                <span class="d-none d-sm-inline">Save</span>
+              </button>
+              <button type="button" class="medium-btn-action" onclick="shareStory('copy')" title="Copy story link">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span class="d-none d-sm-inline">Share</span>
+              </button>
+              <button type="button" class="medium-btn-action" onclick="toggleStoryFont()" title="Adjust reading font size">
+                <i class="fa-solid fa-font"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content with TOC -->
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      
+      <aside class="col-lg-3 d-none d-lg-block">
+        <nav class="toc-sidebar" aria-label="Table of contents">
+          <div class="toc-title">
+            <i class="fa-solid fa-list-ul text-success"></i> Contents
+          </div>
+          <ul class="toc-list">
+            <li class="toc-item"><a href="#context" class="toc-link active">1. The Operational Bottleneck</a></li>
+            <li class="toc-item"><a href="#architecture" class="toc-link">2. Unified Micro-Service Core</a></li>
+            <li class="toc-item"><a href="#offline-sync" class="toc-link">3. Offline-First Warehouse Sync</a></li>
+            <li class="toc-item"><a href="#results" class="toc-link">4. Empirical Production Impact</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <article class="col-lg-8 col-xl-8" style="font-size: 1.08rem; line-height: 1.8;">
+
+        <section id="context">
+          <p>
+            In large pharmaceutical manufacturing operations like PT. Royal Medicalink Pharmalab, disconnected legacy tools create severe administrative drag. When procurement approvals, quality control sign-offs, and warehouse dispatch receipts are spread across separate silos, operational turnaround slows down exponentially.
+          </p>
+
+          <p>
+            As Lead Engineer and System Analyst, I led the architectural overhaul that consolidated these fragmented workflows into an integrated Enterprise Super App ecosystem. The goal was straightforward: a unified interface with real-time transactional integrity, sub-second latency, and seamless offline functionality for floor staff.
+          </p>
+
+          <!-- Figure: Super App Paper / Architecture -->
+          <figure class="my-4 p-2 rounded-3 position-relative" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); cursor: zoom-in;" onclick="openLightbox('img/konstelasi.png', 'Enterprise Super App Digital Ecosystem Architecture')">
+            <img src="img/konstelasi.png"
+              alt="Enterprise Super App Architecture Diagram"
+              class="img-fluid rounded w-100"
+              loading="lazy" />
+            <div class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus me-1"></i> Click to Zoom</div>
+            <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
+              Published in KONSTELASI 2024: Architecture breakdown of the Enterprise Super App implementing role-based state machines, optimistic concurrency control, and automated approval pipelines.
+            </figcaption>
+          </figure>
+        </section>
+
+        <section id="architecture">
+          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+            Unified Micro-Service Core &amp; Optimistic Locking
+          </h2>
+
+          <p>
+            When multiple supervisors review purchase orders and inventory manifests simultaneously, database race conditions and double-approvals are catastrophic. We resolved this by implementing optimistic locking with monotonic sequence versioning across our transactional endpoints.
+          </p>
+
+          <div class="code-block-wrapper">
+            <div class="code-block-header">
+              <span><i class="fa-brands fa-php text-primary me-1"></i> ApprovalPipelineService.php (Concurrency Guard)</span>
+            </div>
+            <pre class="code-content"><code>public function approveTransaction(string $orderId, int $expectedVersion, User $approver): TransactionResult
+{
+    return DB::transaction(function () use ($orderId, $expectedVersion, $approver) {
+        $order = PurchaseOrder::where('id', $orderId)
+            ->where('version', $expectedVersion)
+            ->lockForUpdate()
+            ->first();
+
+        if (!$order) {
+            throw new ConcurrencyException("Record state modified by another supervisor. Please refresh.");
+        }
+
+        $order->status = OrderStatus::APPROVED;
+        $order->version += 1;
+        $order->approved_by = $approver->id;
+        $order->save();
+
+        Event::dispatch(new OrderApprovedEvent($order));
+        return new TransactionResult(success: true, order: $order);
+    });
+}</code></pre>
+          </div>
+        </section>
+
+        <section id="offline-sync">
+          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+            Offline-First Warehouse Synchronization
+          </h2>
+
+          <p>
+            Pharmaceutical warehouses with heavy cold-storage insulation frequently suffer from intermittent Wi-Fi coverage. Floor workers cannot afford dropped forms while logging temperature-sensitive vaccine batches.
+          </p>
+
+          <p>
+            We engineered an offline-first indexed client queue with idempotent background sync. When network reconnects, transactions replay in exact chronological batches with UUID reconciliation, guaranteeing zero duplicate inventory adjustments.
+          </p>
+        </section>
+
+        <section id="results">
+          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+            Empirical Production Impact
+          </h2>
+
+          <p>
+            Following deployment across corporate headquarters and pharmaceutical logistics facilities:
+          </p>
+
+          <ul class="mb-4 ps-3" style="line-height: 1.8;">
+            <li class="mb-2"><strong>Approval turnaround dropped by 68%</strong>: Routine document sign-offs shrank from 2.5 business days to under 4 hours.</li>
+            <li class="mb-2"><strong>100% paperless auditing</strong>: Complete immutable audit logs satisfying regulatory compliance standards.</li>
+            <li class="mb-2"><strong>Zero data loss in low-connectivity zones</strong>: Handled over 50,000 monthly warehouse scans reliably.</li>
+          </ul>
+
+          <div class="medium-pullquote my-4">
+            <i class="fa-solid fa-quote-left quote-icon"></i>
+            &ldquo;Enterprise software architecture is not about choosing the trendiest framework; it is about engineering dependable, fault-tolerant pipelines that never fail under production pressure.&rdquo;
+          </div>
+
+          <div class="d-flex flex-wrap gap-3 justify-content-center my-4">
+            <a href="index.html#portfolio" class="btn-sparc-solid btn-sparc-green px-4 py-2" style="border-radius: 50px; font-size: 0.95rem; width: auto; color: #ffffff !important;">
+              <i class="fa-solid fa-laptop-code me-2"></i> View Portfolio Showcase
+            </a>
+            <a href="blog.html" class="btn-sparc-solid btn-sparc-blue px-4 py-2" style="border-radius: 50px; font-size: 0.95rem; width: auto; color: #ffffff !important;">
+              <i class="fa-solid fa-book-open me-2"></i> All Blog Articles
+            </a>
+          </div>
+        </section>
+
+        <!-- Medium Author Bio Card -->
+        <div class="medium-author-card" id="reach-author">
+          <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+            <img src="img/david2.png" alt="Yehezkiel David Setiawan" class="medium-author-avatar" />
+            <div>
+              <span class="small text-muted text-uppercase tracking-wider" style="font-size: 0.72rem; letter-spacing: 1.5px;">Written by</span>
+              <h4 class="text-white fw-bold mb-1 font-heading" style="font-size: 1.25rem;">Yehezkiel David Setiawan</h4>
+              <p class="small mb-0" style="color: #38bdf8; font-weight: 600;">
+                <i class="fa-solid fa-layer-group me-1"></i> Enterprise System Architect &amp; AI Engineer
+              </p>
+            </div>
+          </div>
+          <p class="text-muted small mb-0" style="line-height: 1.7; font-size: 0.92rem; color: #cbd5e1 !important;">
+            Master of Computer Science &bull; Enterprise system architect. Specializing in mission-critical high-concurrency architectures, offline-first sync protocols, and automated corporate workflow pipelines.
+          </p>
+          <div class="author-card-actions">
+            <div class="d-flex gap-2 align-items-center flex-wrap">
+              <a href="https://www.linkedin.com/in/ydavids/" target="_blank" rel="noopener noreferrer" class="author-pill-btn primary" aria-label="LinkedIn Follow">
+                <i class="fab fa-linkedin-in"></i> Follow
+              </a>
+              <a href="https://github.com/06202003/" target="_blank" rel="noopener noreferrer" class="author-pill-btn" aria-label="GitHub">
+                <i class="fab fa-github"></i> GitHub
+              </a>
+              <a href="https://wa.me/6289507647137" target="_blank" rel="noopener noreferrer" class="author-pill-btn" aria-label="WhatsApp Connect">
+                <i class="fa-brands fa-whatsapp text-success"></i> Connect
+              </a>
+            </div>
+            <button type="button" class="author-clap-btn btn-clap-trigger" aria-label="Clap for this article">
+              <span class="clap-icon">👏</span> Clap (<span class="clap-count-label">215</span>)
+            </button>
+          </div>
+        </div>
+
+        <!-- Medium-Style Recommended Stories -->
+        <div class="medium-recommended-section">
+          <div class="recommended-title">
+            <span><i class="fa-solid fa-sparkles text-success me-2"></i>More from Yehezkiel David</span>
+            <a href="blog.html" class="small text-decoration-none" style="color: #34d399 !important; font-size: 0.88rem;">See all stories &rarr;</a>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="blog-card p-3 h-100">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="badge bg-success">Green AI &amp; LLM</span>
+                  <span class="small text-muted">6 min read</span>
+                </div>
+                <h5 class="fw-bold text-white mb-2 fs-6">
+                  <a href="blog-s-sparc.html" class="text-white text-decoration-none">
+                    Building S-SPARC: From a Paper Sketch to a Hong Kong Merit Award
+                  </a>
+                </h5>
+                <p class="small text-muted mb-3 flex-grow-1" style="line-height: 1.5;">
+                  How an eco-conscious learning companion achieved 83.94% token savings and won the AIREA 2026 Merit Award in Hong Kong.
+                </p>
+                <a href="blog-s-sparc.html" class="small text-decoration-none fw-semibold" style="color: #34d399 !important;">Read story &rarr;</a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="blog-card p-3 h-100">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="badge bg-info text-dark">Peer Review</span>
+                  <span class="small text-muted">5 min read</span>
+                </div>
+                <h5 class="fw-bold text-white mb-2 fs-6">
+                  <a href="blog-peer-review.html" class="text-white text-decoration-none">
+                    Behind the Peer Review Desk: Evaluating AI Manuscripts for Nature Scientific Data &amp; Springer
+                  </a>
+                </h5>
+                <p class="small text-muted mb-3 flex-grow-1" style="line-height: 1.5;">
+                  Methodological rigor, reproducibility audit checklists, and prompt leakage evaluation in top Q1 journals.
+                </p>
+                <a href="blog-peer-review.html" class="small text-decoration-none fw-semibold" style="color: #34d399 !important;">Read story &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </div>
+
+  <!-- Medium-Style Floating Action Pill Bar (Sticky on Scroll) -->
+  <div class="medium-floating-bar" id="medium-floating-bar" aria-label="Article actions">
+    <button type="button" class="medium-btn-action btn-clap-trigger" title="Clap for this story">
+      <span class="clap-icon">👏</span>
+      <span class="clap-count-label">215</span>
+    </button>
+    <div class="floating-divider"></div>
+    <button type="button" class="medium-btn-action" onclick="document.getElementById('reach-author').scrollIntoView({behavior:'smooth'});" title="Jump to comments">
+      <i class="fa-regular fa-comment"></i>
+    </button>
+    <button type="button" class="medium-btn-action btn-bookmark-trigger" title="Save story">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
+    <div class="floating-divider"></div>
+    <button type="button" class="medium-btn-action" onclick="shareStory('copy')" title="Copy link">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </button>
+    <button type="button" class="medium-btn-action" onclick="window.scrollTo({top:0, behavior:'smooth'});" title="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-overlay" onclick="closeLightbox(event)">
+    <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+    <img id="lightbox-image" class="lightbox-img" src="" alt="Zoomed view" onclick="event.stopPropagation()" />
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center text-white py-3" style="background-color: #070d19; font-size: 14px; border-top: 1px solid rgba(255,255,255,0.08);">
+    <p class="mb-1"><em>Ad Maiora Natus Sum</em> &bull; &copy; 2026 Copyright: Yehezkiel David Setiawan</p>
+    <p class="small text-muted mb-0">
+      <a href="index.html#publications" class="text-decoration-none text-info me-3"><i class="fa-solid fa-book-journal-whills me-1"></i> Publications</a>
+      <a href="index.html#peer-review" class="text-decoration-none text-success me-3"><i class="fa-solid fa-shield-halved me-1"></i> Peer Review</a>
+      <a href="blog.html" class="text-decoration-none" style="color: #34d399;"><i class="fa-solid fa-newspaper me-1"></i> Blog Hub</a>
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script>
+    window.addEventListener('scroll', () => {
+      const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      const bar = document.getElementById('reading-progress-bar');
+      if (bar) bar.style.width = scrolled + '%';
+    });
+
+    const sections = document.querySelectorAll('article section');
+    const tocLinks = document.querySelectorAll('.toc-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (pageYOffset >= s.offsetTop - 150) current = s.getAttribute('id');
+      });
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+      });
+    });
+
+    function openLightbox(src, alt) {
+      const overlay = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-image');
+      img.src = src;
+      img.alt = alt;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      const overlay = document.getElementById('lightbox-modal');
+      overlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  </script>
+
+  <!-- Medium Interactions Engine (Claps, Bookmarks, Floating Bar, Toast) -->
+  <script src="script/medium-blog.js"></script>
+</body>
+
+</html>

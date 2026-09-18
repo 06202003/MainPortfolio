@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
   <title>Building S-SPARC: From a Paper Sketch to a Hong Kong Merit Award | Yehezkiel David Setiawan</title>
   <meta name="description"
-    content="How S-SPARC went from a handwritten paper sketch in March 2025 to winning the AIREA 2026 Merit Award in Hong Kong and Impact-Edu 2026 Most Favorite Poster." />
+    content="How S-SPARC went from a handwritten paper sketch in March 2025 to achieving 83.94% token savings, a Master's thesis, and winning the AIREA 2026 Merit Award in Hong Kong." />
   <meta name="keywords"
-    content="S-SPARC, AI in Education, Eco-Conscious AI, Sustainable LLM, AIREA 2026, Impact-Edu 2026, Semantic Caching, FAISS, Yehezkiel David Setiawan" />
+    content="S-SPARC, AI in Education, Eco-Conscious AI, Sustainable LLM, AIREA 2026, Impact-Edu 2026, Semantic Caching, FAISS, Yehezkiel David Setiawan, Machine Learning" />
   <meta name="author" content="Yehezkiel David Setiawan" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="theme-color" content="#0f2a43" />
@@ -25,7 +25,7 @@
   <meta property="og:url" content="https://yehezkiel.netlify.app/blog-s-sparc.html" />
   <meta property="og:title" content="Building S-SPARC: From a Paper Sketch to a Hong Kong Merit Award" />
   <meta property="og:description"
-    content="How S-SPARC went from an informal campus brainstorming session to 83.94% token savings, a Master's thesis, and international awards in Hong Kong and Indonesia." />
+    content="Behind the scenes: How an informal campus discussion on unnecessary AI prompting led to 83.94% token savings, a Master's thesis, and international awards in Hong Kong and Indonesia." />
   <meta property="og:image" content="https://yehezkiel.netlify.app/img/sketch-21-maret-2025.jpeg" />
   <meta property="article:published_time" content="2026-09-18T00:00:00+07:00" />
   <meta property="article:author" content="Yehezkiel David Setiawan" />
@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet" />
 
   <!-- Core Stylesheets -->
@@ -61,12 +61,13 @@
   <link rel="shortcut icon" href="img/david2.png" type="image/x-icon" />
   <link rel="apple-touch-icon" href="img/david2.png" />
 
-  <!-- Schema.org Structured Data (JSON-LD) for BlogPosting -->
+  <!-- Schema.org Structured Data (JSON-LD) for ScholarlyArticle & BlogPosting -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "From a Scrap of Paper to a Hong Kong Merit Award: The Story of S-SPARC",
+    "@type": "ScholarlyArticle",
+    "headline": "Building S-SPARC: From a Paper Sketch to a Hong Kong Merit Award",
+    "name": "S-SPARC: Sustainable Prompting and Tiered Semantic Knowledge Retrieval in Education",
     "image": [
       "https://yehezkiel.netlify.app/img/sketch-21-maret-2025.jpeg",
       "https://yehezkiel.netlify.app/img/environmental-impact.jpg",
@@ -78,7 +79,11 @@
     "author": {
       "@type": "Person",
       "name": "Yehezkiel David Setiawan",
-      "url": "https://yehezkiel.netlify.app/"
+      "url": "https://yehezkiel.netlify.app/",
+      "sameAs": [
+        "https://github.com/06202003/",
+        "https://www.linkedin.com/in/ydavids/"
+      ]
     },
     "publisher": {
       "@type": "Person",
@@ -93,11 +98,11 @@
   </script>
 </head>
 
-<body>
+<body class="blog-body-bg">
   <!-- Reading Progress Bar -->
   <div id="reading-progress-bar" aria-hidden="true"></div>
 
-  <!-- Navigation (Identical structure and classes to index.html) -->
+  <!-- Navigation (Identical structure to index.html) -->
   <nav class="navbar navbar-expand-lg bg-dark text-white sticky-top" aria-label="Main Navigation">
     <div class="container-fluid">
       <div class="d-flex align-items-center">
@@ -136,7 +141,7 @@
             <a class="nav-link" href="index.html#portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="blog-s-sparc.html">Blog</a>
+            <a class="nav-link active" href="blog.html">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="index.html#reach">Reach Me!</a>
@@ -153,29 +158,82 @@
   </nav>
 
   <!-- Main Content -->
-  <main id="main-content" style="background-color: #212529; color: #cbd5e1; min-height: 100vh;">
+  <main id="main-content">
     
     <!-- Hero / Title Header -->
-    <header class="py-5 text-white" style="background: radial-gradient(circle at 50% 10%, #0f2a43 0%, #1e293b 60%, #212529 100%); border-bottom: 1px solid rgba(255,255,255,0.08);">
+    <header class="article-header-wrapper text-white">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-10 col-xl-8">
+          <div class="col-lg-11 col-xl-10">
             
             <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
-              <a href="index.html#publications" class="text-decoration-none small fw-semibold" style="color: #34d399 !important;">
-                <i class="fa-solid fa-arrow-left me-1"></i> Back to Portfolio
+              <a href="blog.html" class="text-decoration-none small fw-semibold" style="color: #34d399 !important;">
+                <i class="fa-solid fa-arrow-left me-1"></i> Back to Blog Hub
               </a>
-              <span class="badge bg-secondary">March 21, 2025 - September 9, 2026</span>
+              <span class="article-category-badge">
+                <i class="fa-solid fa-leaf me-1"></i> Green AI &amp; LLMs &bull; AIREA 2026
+              </span>
             </div>
 
-            <h1 class="font-heading display-5 fw-bold text-white mb-3" style="letter-spacing: -0.5px; line-height: 1.25; text-wrap: balance;">
+            <h1 class="article-main-title">
               Building <span class="text-nowrap" style="white-space: nowrap;">S&#8209;SPARC</span>: From a Paper Sketch to a Hong Kong Merit Award
             </h1>
 
-            <div class="d-flex align-items-center gap-3 pt-2 text-muted small">
-              <img src="img/david2.png" alt="Yehezkiel David Setiawan" width="38" height="38" class="rounded-circle border border-secondary" />
-              <div>
-                <span class="text-white fw-semibold">Yehezkiel David Setiawan</span> &bull; <span>6 min read</span>
+            <p class="article-lead-subtitle">
+              How an informal campus brainstorm on LLM compute waste led to an eco-conscious learning companion that achieved 83.94% token reduction, a Master's thesis, and the AIREA 2026 Merit Award in Hong Kong.
+            </p>
+
+            <div class="article-author-row">
+              <div class="d-flex align-items-center gap-3">
+                <img src="img/david2.png" alt="Yehezkiel David Setiawan" class="article-author-avatar" />
+                <div>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="article-author-name">Yehezkiel David Setiawan</span>
+                    <a href="https://www.linkedin.com/in/ydavids/" target="_blank" rel="noopener noreferrer" class="badge bg-success bg-opacity-25 text-success border border-success border-opacity-50 py-1 px-2 text-decoration-none small">
+                      <i class="fab fa-linkedin me-1"></i> Follow
+                    </a>
+                  </div>
+                  <div class="article-author-subline">
+                    <span>6 min read</span> &bull; <span>Sep 18, 2026</span> &bull; <span class="text-muted">Lead Researcher &amp; AI Engineer</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex gap-2 flex-wrap">
+                <button type="button" class="article-action-pill pill-calculator" onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'});">
+                  <i class="fa-solid fa-calculator"></i> Try Carbon Calculator
+                </button>
+                <button type="button" class="article-action-pill pill-citation" onclick="document.getElementById('citation').scrollIntoView({behavior:'smooth'});">
+                  <i class="fa-solid fa-quote-left"></i> Cite Paper
+                </button>
+              </div>
+            </div>
+
+            <!-- Medium-Style Interaction Bar (Top) -->
+            <div class="medium-action-bar">
+              <div class="medium-action-group">
+                <button type="button" class="medium-btn-action btn-clap-trigger" title="Clap for this story">
+                  <span class="clap-icon">👏</span>
+                  <span class="clap-count-label">342</span>
+                  <span class="small text-muted d-none d-sm-inline">claps</span>
+                </button>
+                <button type="button" class="medium-btn-action" onclick="document.getElementById('reach-author').scrollIntoView({behavior:'smooth'});" title="Discuss / Contact author">
+                  <i class="fa-regular fa-comment"></i>
+                  <span>Discuss</span>
+                </button>
+              </div>
+              <div class="medium-action-group">
+                <button type="button" class="medium-btn-action btn-bookmark-trigger" title="Save story to reading list">
+                  <i class="fa-regular fa-bookmark"></i>
+                  <span class="d-none d-sm-inline">Save</span>
+                </button>
+                <button type="button" class="medium-btn-action" onclick="shareStory('copy')" title="Copy story link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  <span class="d-none d-sm-inline">Share</span>
+                </button>
+                <button type="button" class="medium-btn-action" onclick="toggleStoryFont()" title="Adjust reading font size">
+                  <i class="fa-solid fa-font"></i>
+                </button>
               </div>
             </div>
 
@@ -184,184 +242,505 @@
       </div>
     </header>
 
-    <!-- Blog Post Article Body -->
+    <!-- Main Container with Sticky TOC Sidebar -->
     <div class="container py-5">
       <div class="row justify-content-center">
-        <article class="col-lg-10 col-xl-8" style="font-size: 1.1rem; line-height: 1.8;">
+        
+        <!-- Desktop Sticky TOC Sidebar (col-lg-3) -->
+        <aside class="col-lg-3 d-none d-lg-block">
+          <nav class="toc-sidebar" aria-label="Table of contents">
+            <div class="toc-title">
+              <i class="fa-solid fa-list-ul text-success"></i> Contents
+            </div>
+            <ul class="toc-list">
+              <li class="toc-item"><a href="#story" class="toc-link active">1. The Morning Brainstorm</a></li>
+              <li class="toc-item"><a href="#mvp" class="toc-link">2. First MVP (77% Savings)</a></li>
+              <li class="toc-item"><a href="#turning-point" class="toc-link">3. The Turning Point</a></li>
+              <li class="toc-item"><a href="#architecture" class="toc-link">4. Interactive Architecture</a></li>
+              <li class="toc-item"><a href="#code-snippets" class="toc-link">5. Engineered Pipeline Code</a></li>
+              <li class="toc-item"><a href="#calculator" class="toc-link">6. Interactive Calculator</a></li>
+              <li class="toc-item"><a href="#numbers" class="toc-link">7. The Numbers Speak</a></li>
+              <li class="toc-item"><a href="#awards" class="toc-link">8. Three Awards in 3 Months</a></li>
+              <li class="toc-item"><a href="#closing" class="toc-link">9. Closing Thoughts</a></li>
+              <li class="toc-item"><a href="#citation" class="toc-link">10. How to Cite</a></li>
+            </ul>
+          </nav>
+        </aside>
 
-          <p>
-            I still remember the date clearly: <strong>March 21, 2025, at 10 AM</strong>. I was called into the faculty office to meet three people that immediately made me think, <em>"Okay, this isn't going to be small talk"</em>: <strong>Prof. Hapnes Toba</strong>, <strong>Ko Oscar Karnalim</strong>, and <strong>Ci Maresha Caroline</strong>.
-          </p>
+        <!-- Article Content (col-lg-8) -->
+        <article class="col-lg-8 col-xl-8" style="font-size: 1.08rem; line-height: 1.8;">
 
-          <p>
-            The topic turned out to be something few people were seriously talking about at the time: the <strong>personal behavior</strong> behind <em>"unnecessary prompting"</em> to AI. Here's what I mean: lots of people (including students) ask ChatGPT questions that have already been answered before, or prompt without thinking first just because <em>"it's easy, just ask the AI."</em> It sounds harmless, but in aggregate, it piles up into massive compute loads, creating a real environmental footprint.
-          </p>
+          <!-- Mobile Collapsible TOC Drawer -->
+          <div class="d-lg-none mobile-toc-drawer">
+            <details>
+              <summary class="fw-bold text-white cursor-pointer" style="cursor: pointer;">
+                <i class="fa-solid fa-list-ul text-success me-2"></i> Jump to Section (Table of Contents)
+              </summary>
+              <div class="pt-3">
+                <a href="#story" class="d-block py-1 text-muted text-decoration-none">&bull; 1. The Morning Brainstorm</a>
+                <a href="#mvp" class="d-block py-1 text-muted text-decoration-none">&bull; 2. First MVP (77% Savings)</a>
+                <a href="#turning-point" class="d-block py-1 text-muted text-decoration-none">&bull; 3. The Turning Point</a>
+                <a href="#architecture" class="d-block py-1 text-muted text-decoration-none">&bull; 4. Interactive Architecture</a>
+                <a href="#code-snippets" class="d-block py-1 text-muted text-decoration-none">&bull; 5. Engineered Pipeline Code</a>
+                <a href="#calculator" class="d-block py-1 text-muted text-decoration-none">&bull; 6. Interactive Calculator</a>
+                <a href="#numbers" class="d-block py-1 text-muted text-decoration-none">&bull; 7. The Numbers Speak</a>
+                <a href="#awards" class="d-block py-1 text-muted text-decoration-none">&bull; 8. Three Awards in 3 Months</a>
+                <a href="#citation" class="d-block py-1 text-muted text-decoration-none">&bull; 10. How to Cite</a>
+              </div>
+            </details>
+          </div>
 
-          <p>
-            That discussion quickly turned into an intense brainstorming session. I still have the photo of our handwritten notes on paper from that morning:
-          </p>
-
-          <!-- Figure 1 -->
-          <figure class="my-4 p-2 rounded-3" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
-            <img src="img/sketch-21-maret-2025.jpeg"
-              alt="Handwritten paper sketch from March 21, 2025 session"
-              class="img-fluid rounded w-100"
-              loading="lazy" />
-            <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
-              Original notes from our first discussion session: mapping out the flow of <code>prompt &rarr; LLM &rarr; IR (Information Retrieval) &rarr; carbon</code>, notes on code reusability, all the way to open questions like "GDPR?", "ethics?", and gamification ideas using a "saving" and point system. Messy, but this was where the core framework of S-SPARC first took shape.
-            </figcaption>
-          </figure>
-
-          <!-- Section: MVP -->
-          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
-            First MVP: 77% Token Savings
-          </h2>
-
-          <p>
-            From those notes, I built the <strong>MVP</strong> and tested it right away through a <strong>pre-post controlled experiment</strong> with 20 IT lab staff. The results beat our expectations: we saw a <strong>77% token savings</strong>. This early result became the foundation for my Master's thesis.
-          </p>
-
-          <p>
-            We didn't stop there. At the start of the even semester in 2026, I tested the idea again, this time in Prof. Hapnes Toba's Machine Learning class on a larger, more mature scale. That was where <strong>S-SPARC</strong> (Smart Personal Assistant for Responsible Consumption) as we know it today really took shape, tested with dozens of students and hitting much higher token savings through semantic knowledge reuse.
-          </p>
-
-          <!-- Section: Turning Point -->
-          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
-            The Turning Point: After the Thesis Defense, June 30, 2026
-          </h2>
-
-          <p>
-            The real turning point actually came after my thesis defense on <strong>June 30, 2026</strong>. The feedback and critique from the defense became the fuel to take S-SPARC from a "classroom research project" to a "real, scalable AI application."
-          </p>
-
-          <p>
-            One thing that made me take this even more seriously: a single prompt to a large model can draw up to <strong>29 Wh of energy</strong>. Globally, that equals the annual power consumption of <strong>35,000 households</strong>. That's not even counting the model training itself, which can reach <strong>493 metric tons of CO₂ emissions</strong> and <strong>2.7 million liters of water</strong>.
-          </p>
-
-          <!-- Figure 2 -->
-          <figure class="my-4 p-2 rounded-3" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
-            <img src="img/environmental-impact.jpg"
-              alt="Environmental impact of LLM inference"
-              class="img-fluid rounded w-100"
-              loading="lazy" />
-            <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
-              The data that convinced me: the problem isn't just "wasting tokens"; there is a real environmental cost that rarely gets noticed on the surface.
-            </figcaption>
-          </figure>
-
-          <p>From there, several major technical changes came to life:</p>
-
-          <ul class="mb-4 ps-3" style="line-height: 1.8;">
-            <li class="mb-2">
-              <strong>Diagnostic gate</strong> (validating C-I-O-E: Context, Input, Output, Error Trace) before the AI agrees to answer: no more instant answers for lazy questions.
-            </li>
-            <li class="mb-2">
-              <strong>Semantic caching with FAISS</strong>, using a multi-model embedding pipeline (weighted, double-normalized): if similarity is &ge;0.90, the answer is served straight from the cache in milliseconds, without calling the LLM at all.
-            </li>
-            <li class="mb-2">
-              <strong>LLM fallback to local Ollama</strong> when the cloud LLM is offline.
-            </li>
-            <li class="mb-2">
-              <strong>3-tier hint progression</strong>: hint 1 points to where the bug is, hint 2 gives a solution outline, and only on attempt 3 is the full solution revealed.
-            </li>
-            <li class="mb-2">
-              <strong>Automated evaluation with F-Score</strong> (combining alignment, logical correctness, semantic similarity, code quality, and static analysis, calibrated to ISO/IEC 25010) to make sure reused knowledge stays valid.
-            </li>
-            <li class="mb-2">
-              <strong>Gamification with dynamic thresholds</strong>: points are deducted proportionally if usage goes over the weekly threshold, and the scoring formula is kept private so no one can "game" the system to farm points.
-            </li>
-          </ul>
-
-          <p>
-            Everything was wrapped in pedagogical theory (Bloom's Taxonomy, Vygotsky's Zone of Proximal Development, and Bruner's scaffolding), so S-SPARC wasn't just about saving tokens, but about helping students learn how to think before asking.
-          </p>
-
-          <!-- Section: Numbers Speak -->
-          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
-            The Numbers Speak
-          </h2>
-
-          <!-- Figure 3 -->
-          <figure class="my-4 p-2 rounded-3" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
-            <img src="img/token-usage-chart.jpg"
-              alt="Token usage per practical session"
-              class="img-fluid rounded w-100"
-              loading="lazy" />
-            <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
-              Across all seven lab sessions, most of the token volume was handled locally without calling external LLMs, averaging 83.94% savings.
-            </figcaption>
-          </figure>
-
-          <p>
-            What made me confident this wasn't just beginner's luck: the reduction rate stayed steady from the early weeks to the final week of the semester (<strong>85.8% vs 86.9%</strong>, no statistically significant difference, <em>p = 0.273</em>). The computational load also dropped <strong>6.2x lower</strong>.
-          </p>
-
-          <p>
-            And most importantly, this wasn't just about technical efficiency. Compared to the student cohort before S-SPARC was used (control, <em>N=52</em>) vs. those who used S-SPARC (intervention, <em>N=68</em>):
-          </p>
-
-          <!-- Figure 4 -->
-          <figure class="my-4 p-2 rounded-3" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);">
-            <img src="img/academic-performance.jpg"
-              alt="Student academic performance comparison"
-              class="img-fluid rounded w-100"
-              loading="lazy" />
-            <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
-              Midterm exam scores rose significantly (effect size <em>d=1.54</em>, +33.7%), and the overall class average jumped from the C+/B- range up to B+/A- (<em>p &lt; .001</em>).
-            </figcaption>
-          </figure>
-
-          <!-- Section: Awards -->
-          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
-            Three Awards in Under 3 Months
-          </h2>
-
-          <p>Once the thesis defense was done, I started taking S-SPARC beyond campus:</p>
-
-          <ol class="mb-4 ps-3" style="line-height: 1.8;">
-            <li class="mb-2">
-              <strong>IOCES 2026</strong> (June): Submitted our research poster to the 1st International Online Conference on Education Sciences.
-            </li>
-            <li class="mb-2">
-              <strong>AIREA 2026</strong> (July 15, Hong Kong): Signing up was honestly a bit on a whim, but we ended up making it to the finals and pitching live in front of an international jury. The whole thing was far from easy, but in the end we brought home the <strong>Merit Award</strong>, out of 212 teams from 13 countries, and becoming 1 of only 2 Indonesian teams to reach the finals (alongside BRIN).
-            </li>
-            <li class="mb-2">
-              <strong>Impact-Edu 2026</strong> (September 9, Telkom University): S-SPARC reached the finals and won <strong>Most Favorite Poster</strong> in the Student Learning Innovation category.
-            </li>
-          </ol>
-
-          <p>
-            All of this (IOCES, the AIREA Merit Award in Hong Kong, and Most Favorite Poster at Impact-Edu) happened in <strong>less than 3 months after finishing my thesis defense</strong>.
-          </p>
-
-          <!-- Section: Closing -->
-          <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
-            Closing Thoughts
-          </h2>
-
-          <p>
-            It all started with a single scrap of paper and a one-hour morning chat on campus on March 21, 2025. Right now, I'm rewriting this whole story into a formal research paper. The funny thing is, the process of writing that paper made me realize: an idea that started as a casual conversation in a faculty room can actually grow into something with real impact, both for students' digital habits and for the environment.
-          </p>
-
-          <!-- Quote Callout -->
-          <blockquote class="p-4 my-4 rounded-3 text-center" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(52, 211, 153, 0.35);">
-            <p class="fs-4 fw-bold text-white mb-2 font-heading">
-              &ldquo;The problem is not the AI, it's how we use it.&rdquo;
+          <!-- Section 1: Story -->
+          <section id="story">
+            <p>
+              I still remember the date clearly: <strong>March 21, 2025, at 10 AM</strong>. I was called into the faculty office to meet three people that immediately made me think, <em>"Okay, this isn't going to be small talk"</em>: <strong>Prof. Hapnes Toba</strong>, <strong>Ko Oscar Karnalim</strong>, and <strong>Ci Maresha Caroline</strong>.
             </p>
-            <span class="fs-6 fw-bold" style="color: #34d399 !important; letter-spacing: 0.5px;">S-SPARC changes that.</span>
-          </blockquote>
 
-          <!-- Action Buttons -->
-          <div class="d-flex flex-wrap gap-3 justify-content-center my-4">
-            <a href="data/S-SPARC_IMPACT_EDU.pdf" download class="btn-sparc-solid btn-sparc-green px-4 py-2" style="border-radius: 50px; font-size: 0.95rem; width: auto; color: #ffffff !important; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);">
-              <i class="fa-solid fa-file-pdf me-2"></i> Research Poster PDF
-            </a>
-            <a href="data/S-SPARC Pitch Deck.pdf" download class="btn-sparc-solid btn-sparc-gold px-4 py-2" style="border-radius: 50px; font-size: 0.95rem; width: auto; color: #ffffff !important; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);">
-              <i class="fa-solid fa-presentation-screen me-2"></i> Pitch Deck PDF
-            </a>
-            <a href="index.html#publications" class="btn-sparc-solid btn-sparc-blue px-4 py-2" style="border-radius: 50px; font-size: 0.95rem; width: auto; color: #ffffff !important; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
-              <i class="fa-solid fa-arrow-left me-2"></i> Back to Main Portfolio
-            </a>
+            <p>
+              The topic turned out to be something few people were seriously talking about at the time: the <strong>personal behavior</strong> behind <em>"unnecessary prompting"</em> to AI. Here's what I mean: lots of people (including students) ask ChatGPT questions that have already been answered before, or prompt without thinking first just because <em>"it's easy, just ask the AI."</em> It sounds harmless, but in aggregate, it piles up into massive compute loads, creating a real environmental footprint.
+            </p>
+
+            <p>
+              That discussion quickly turned into an intense brainstorming session. I still have the photo of our handwritten notes on paper from that morning:
+            </p>
+
+            <!-- Figure 1 (with Lightbox Zoom) -->
+            <figure class="my-4 p-2 rounded-3 position-relative" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); cursor: zoom-in;" onclick="openLightbox('img/sketch-21-maret-2025.jpeg', 'Original handwritten sketch from the March 21, 2025 session')">
+              <img src="img/sketch-21-maret-2025.jpeg"
+                alt="Handwritten paper sketch from March 21, 2025 session"
+                class="img-fluid rounded w-100"
+                loading="lazy" />
+              <div class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus me-1"></i> Click to Zoom</div>
+              <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
+                Original notes from our first discussion session: mapping out the flow of <code>prompt &rarr; LLM &rarr; IR (Information Retrieval) &rarr; carbon</code>, notes on code reusability, all the way to open questions like "GDPR?", "ethics?", and gamification ideas using a "saving" and point system. Messy, but this was where the core framework of S-SPARC first took shape.
+              </figcaption>
+            </figure>
+          </section>
+
+          <!-- Section 2: MVP -->
+          <section id="mvp">
+            <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+              First MVP: 77% Token Savings
+            </h2>
+
+            <p>
+              From those notes, I built the <strong>MVP</strong> and tested it right away through a <strong>pre-post controlled experiment</strong> with 20 IT lab staff. The results beat our expectations: we saw a <strong>77% token savings</strong>. This early result became the foundation for my Master's thesis.
+            </p>
+
+            <p>
+              We didn't stop there. At the start of the even semester in 2026, I tested the idea again, this time in Prof. Hapnes Toba's Machine Learning class on a larger, more mature scale. That was where <strong>S-SPARC</strong> (Smart Personal Assistant for Responsible Consumption) as we know it today really took shape, tested with dozens of students and hitting much higher token savings through semantic knowledge reuse.
+            </p>
+          </section>
+
+          <!-- Section 3: Turning Point -->
+          <section id="turning-point">
+            <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+              The Turning Point: After the Thesis Defense, June 30, 2026
+            </h2>
+
+            <p>
+              The real turning point actually came after my thesis defense on <strong>June 30, 2026</strong>. The feedback and critique from the defense became the fuel to take S-SPARC from a "classroom research project" to a "real, scalable AI application."
+            </p>
+
+            <p>
+              One thing that made me take this even more seriously: a single prompt to a large model can draw up to <strong>29 Wh of energy</strong>. Globally, that equals the annual power consumption of <strong>35,000 households</strong>. That's not even counting the model training itself, which can reach <strong>493 metric tons of CO₂ emissions</strong> and <strong>2.7 million liters of water</strong>.
+            </p>
+
+            <!-- Figure 2 (with Lightbox Zoom) -->
+            <figure class="my-4 p-2 rounded-3 position-relative" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); cursor: zoom-in;" onclick="openLightbox('img/environmental-impact.jpg', 'Environmental impact of LLM inference & training')">
+              <img src="img/environmental-impact.jpg"
+                alt="Environmental impact of LLM inference"
+                class="img-fluid rounded w-100"
+                loading="lazy" />
+              <div class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus me-1"></i> Click to Zoom</div>
+              <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
+                The data that convinced me: the problem isn't just "wasting tokens"; there is a real environmental cost that rarely gets noticed on the surface.
+              </figcaption>
+            </figure>
+          </section>
+
+          <!-- Section 4: Interactive Architecture Diagram -->
+          <section id="architecture">
+            <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+              <i class="fa-solid fa-diagram-project text-success me-2"></i> System Architecture Pipeline
+            </h2>
+            <p class="text-muted small mb-3">Click on any module node in the pipeline below to inspect its operational logic:</p>
+
+            <!-- Interactive Architecture Card -->
+            <div class="arch-diagram-card">
+              <div class="arch-node-grid">
+                <div class="arch-node active" id="node-cioe" onclick="selectArchNode('cioe')">
+                  <div class="arch-node-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                  <div class="arch-node-title">1. Diagnostic Gate</div>
+                  <div class="arch-node-badge">C-I-O-E Validation</div>
+                </div>
+
+                <div class="arch-node" id="node-faiss" onclick="selectArchNode('faiss')">
+                  <div class="arch-node-icon"><i class="fa-solid fa-bolt text-warning"></i></div>
+                  <div class="arch-node-title">2. Semantic Cache</div>
+                  <div class="arch-node-badge">FAISS &ge; 0.90 Cosine</div>
+                </div>
+
+                <div class="arch-node" id="node-ollama" onclick="selectArchNode('ollama')">
+                  <div class="arch-node-icon"><i class="fa-solid fa-server text-info"></i></div>
+                  <div class="arch-node-title">3. Local Fallback</div>
+                  <div class="arch-node-badge">Ollama Edge LLM</div>
+                </div>
+
+                <div class="arch-node" id="node-scaffold" onclick="selectArchNode('scaffold')">
+                  <div class="arch-node-icon"><i class="fa-solid fa-stairs text-primary"></i></div>
+                  <div class="arch-node-title">4. 3-Tier Scaffold</div>
+                  <div class="arch-node-badge">Bloom / Vygotsky</div>
+                </div>
+
+                <div class="arch-node" id="node-fscore" onclick="selectArchNode('fscore')">
+                  <div class="arch-node-icon"><i class="fa-solid fa-award text-success"></i></div>
+                  <div class="arch-node-title">5. F-Score Gate</div>
+                  <div class="arch-node-badge">ISO/IEC 25010</div>
+                </div>
+              </div>
+
+              <!-- Node Dynamic Detail Box -->
+              <div id="arch-detail-text" class="arch-detail-box">
+                <strong class="text-success"><i class="fa-solid fa-shield-halved me-1"></i> Module 1: Diagnostic Gate (C-I-O-E Validation)</strong><br />
+                Enforces cognitive accountability before AI processing. Requires students to structure their request with Context (C), Input (I), Expected Output (O), and Error Trace (E). Incomplete or zero-effort questions are rejected locally before invoking compute.
+              </div>
+            </div>
+
+            <ul class="mb-4 ps-3" style="line-height: 1.8;">
+              <li class="mb-2">
+                <strong>Diagnostic gate</strong> (validating C-I-O-E: Context, Input, Output, Error Trace) before the AI agrees to answer: no more instant answers for lazy questions.
+              </li>
+              <li class="mb-2">
+                <strong>Semantic caching with FAISS</strong>, using a multi-model embedding pipeline (weighted, double-normalized): if similarity is &ge;0.90, the answer is served straight from the cache in milliseconds, without calling the LLM at all.
+              </li>
+              <li class="mb-2">
+                <strong>LLM fallback to local Ollama</strong> when the cloud LLM is offline.
+              </li>
+              <li class="mb-2">
+                <strong>3-tier hint progression</strong>: hint 1 points to where the bug is, hint 2 gives a solution outline, and only on attempt 3 is the full solution revealed.
+              </li>
+              <li class="mb-2">
+                <strong>Automated evaluation with F-Score</strong> (combining alignment, logical correctness, semantic similarity, code quality, and static analysis, calibrated to ISO/IEC 25010) to make sure reused knowledge stays valid.
+              </li>
+              <li class="mb-2">
+                <strong>Gamification with dynamic thresholds</strong>: points are deducted proportionally if usage goes over the weekly threshold, and the scoring formula is kept private so no one can "game" the system to farm points.
+              </li>
+            </ul>
+
+            <p>
+              Everything was wrapped in pedagogical theory (Bloom's Taxonomy, Vygotsky's Zone of Proximal Development, and Bruner's scaffolding), so S-SPARC wasn't just about saving tokens, but about helping students learn how to think before asking.
+            </p>
+          </section>
+
+          <!-- Section 5: Engineered Pipeline Code Snippets -->
+          <section id="code-snippets">
+            <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+              <i class="fa-solid fa-code text-info me-2"></i> Engineered Pipeline Code Snippets
+            </h2>
+            <p class="text-muted small">Sanitized core implementation logic extracted from S-SPARC's backend pipeline:</p>
+
+            <!-- Snippet 1: C-I-O-E Diagnostic Validation -->
+            <div class="code-block-wrapper">
+              <div class="code-block-header">
+                <span><i class="fa-brands fa-python text-warning me-1"></i> diagnostic_gate.py (C-I-O-E Structural Validation)</span>
+                <button class="btn-copy-code" onclick="copySnippet('code-cioe', this)"><i class="fa-regular fa-copy me-1"></i> Copy</button>
+              </div>
+              <pre class="code-content"><code id="code-cioe">class DiagnosticGate:
+    """Validates Context, Input, Output, and Error Trace before inference."""
+    REQUIRED_FIELDS = ["context", "input_data", "expected_output", "error_trace"]
+
+    def evaluate_query(self, student_payload: dict) -> tuple[bool, str]:
+        for field in self.REQUIRED_FIELDS:
+            if not student_payload.get(field) or len(student_payload[field].strip()) < 8:
+                return False, f"Cognitive Gate Blocked: Missing or insufficient '{field}'."
+        
+        # Static check: Prevent raw code dumping without explanation
+        if len(student_payload["context"].split()) < 5:
+            return False, "Please articulate what concept you are trying to solve."
+            
+        return True, "Diagnostic gate passed: Ready for semantic lookup."</code></pre>
+            </div>
+
+            <!-- Snippet 2: FAISS Dual-Normalized Semantic Cache -->
+            <div class="code-block-wrapper">
+              <div class="code-block-header">
+                <span><i class="fa-brands fa-python text-warning me-1"></i> semantic_cache.py (FAISS Vector Retrieval &ge; 0.90)</span>
+                <button class="btn-copy-code" onclick="copySnippet('code-faiss', this)"><i class="fa-regular fa-copy me-1"></i> Copy</button>
+              </div>
+              <pre class="code-content"><code id="code-faiss">import faiss
+import numpy as np
+
+def query_semantic_cache(query_vector: np.ndarray, index: faiss.IndexFlatIP, threshold: float = 0.90):
+    # Dual-L2 normalization for strict cosine similarity
+    faiss.normalize_L2(query_vector)
+    distances, indices = index.search(query_vector, k=1)
+    
+    similarity_score = distances[0][0]
+    matched_idx = indices[0][0]
+    
+    if similarity_score >= threshold:
+        # Cache hit: Instant retrieval in &lt; 4ms, zero external LLM tokens spent
+        return {"hit": True, "score": float(similarity_score), "cache_id": int(matched_idx)}
+    
+    # Cache miss: Fallback to local Ollama inference / scaffold engine
+    return {"hit": False, "score": float(similarity_score), "cache_id": None}</code></pre>
+            </div>
+          </section>
+
+          <!-- Section 6: Interactive Calculator -->
+          <section id="calculator">
+            <div class="calc-card">
+              <div class="calc-title">
+                <i class="fa-solid fa-leaf text-success"></i> S-SPARC Environmental Savings Calculator
+              </div>
+              <p class="text-muted small mb-4">
+                Simulate how much energy, tokens, and CO₂ emissions are saved when deploying S-SPARC's 83.94% semantic knowledge reuse across an educational cohort:
+              </p>
+
+              <!-- Slider 1: Prompts per day -->
+              <div class="calc-slider-group">
+                <div class="calc-slider-label">
+                  <span>Daily Prompts per Student:</span>
+                  <span id="val-prompts" class="calc-slider-val">25 prompts</span>
+                </div>
+                <input type="range" id="slider-prompts" class="calc-range" min="5" max="100" step="5" value="25" oninput="updateCalculator()" />
+              </div>
+
+              <!-- Slider 2: Students cohort -->
+              <div class="calc-slider-group">
+                <div class="calc-slider-label">
+                  <span>Student Cohort Size:</span>
+                  <span id="val-students" class="calc-slider-val">120 students</span>
+                </div>
+                <input type="range" id="slider-students" class="calc-range" min="20" max="1000" step="20" value="120" oninput="updateCalculator()" />
+              </div>
+
+              <!-- Slider 3: Weeks -->
+              <div class="calc-slider-group">
+                <div class="calc-slider-label">
+                  <span>Semester Duration (Weeks):</span>
+                  <span id="val-weeks" class="calc-slider-val">14 weeks</span>
+                </div>
+                <input type="range" id="slider-weeks" class="calc-range" min="4" max="24" step="2" value="14" oninput="updateCalculator()" />
+              </div>
+
+              <!-- Metric Output Grid -->
+              <div class="calc-metric-grid">
+                <div class="calc-metric-card">
+                  <div id="calc-tokens-saved" class="calc-metric-val text-success">25.38 M</div>
+                  <div class="calc-metric-lbl">Workload Tokens Saved</div>
+                </div>
+                <div class="calc-metric-card">
+                  <div id="calc-kwh-saved" class="calc-metric-val text-info">3,651 kWh</div>
+                  <div class="calc-metric-lbl">Energy Conserved (29 Wh/p)</div>
+                </div>
+                <div class="calc-metric-card">
+                  <div id="calc-co2-saved" class="calc-metric-val text-warning">1,770 kg</div>
+                  <div class="calc-metric-lbl">CO₂e Avoided (485 g/kWh)</div>
+                </div>
+                <div class="calc-metric-card">
+                  <div id="calc-trees-equiv" class="calc-metric-val text-white">84 Trees</div>
+                  <div class="calc-metric-lbl">Annual Tree Equivalent</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Section 7: Numbers Speak -->
+          <section id="numbers">
+            <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+              The Numbers Speak
+            </h2>
+
+            <!-- Figure 3 (with Lightbox Zoom) -->
+            <figure class="my-4 p-2 rounded-3 position-relative" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); cursor: zoom-in;" onclick="openLightbox('img/token-usage-chart.jpg', 'Token usage per practical session across seven laboratory runs')">
+              <img src="img/token-usage-chart.jpg"
+                alt="Token usage per practical session"
+                class="img-fluid rounded w-100"
+                loading="lazy" />
+              <div class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus me-1"></i> Click to Zoom</div>
+              <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
+                Across all seven lab sessions, most of the token volume was handled locally without calling external LLMs, averaging 83.94% savings.
+              </figcaption>
+            </figure>
+
+            <p>
+              What made me confident this wasn't just beginner's luck: the reduction rate stayed steady from the early weeks to the final week of the semester (<strong>85.8% vs 86.9%</strong>, no statistically significant difference, <em>p = 0.273</em>). The computational load also dropped <strong>6.2x lower</strong>.
+            </p>
+
+            <p>
+              And most importantly, this wasn't just about technical efficiency. Compared to the student cohort before S-SPARC was used (control, <em>N=52</em>) vs. those who used S-SPARC (intervention, <em>N=68</em>):
+            </p>
+
+            <!-- Figure 4 (with Lightbox Zoom) -->
+            <figure class="my-4 p-2 rounded-3 position-relative" style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); cursor: zoom-in;" onclick="openLightbox('img/academic-performance.jpg', 'Student academic performance comparison (Control vs. Intervention)')">
+              <img src="img/academic-performance.jpg"
+                alt="Student academic performance comparison"
+                class="img-fluid rounded w-100"
+                loading="lazy" />
+              <div class="zoom-badge"><i class="fa-solid fa-magnifying-glass-plus me-1"></i> Click to Zoom</div>
+              <figcaption class="p-3 text-muted small fst-italic" style="line-height: 1.5;">
+                Midterm exam scores rose significantly (effect size <em>d=1.54</em>, +33.7%), and the overall class average jumped from the C+/B- range up to B+/A- (<em>p &lt; .001</em>).
+              </figcaption>
+            </figure>
+          </section>
+
+          <!-- Section 8: Awards -->
+          <section id="awards">
+            <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+              Three Awards in Under 3 Months
+            </h2>
+
+            <p>Once the thesis defense was done, I started taking S-SPARC beyond campus:</p>
+
+            <ol class="mb-4 ps-3" style="line-height: 1.8;">
+              <li class="mb-2">
+                <strong>IOCES 2026</strong> (June): Submitted our research poster to the 1st International Online Conference on Education Sciences.
+              </li>
+              <li class="mb-2">
+                <strong>AIREA 2026</strong> (July 15, Hong Kong): Signing up was honestly a bit on a whim, but we ended up making it to the finals and pitching live in front of an international jury. The whole thing was far from easy, but in the end we brought home the <strong>Merit Award</strong>, out of 212 teams from 13 countries, and becoming 1 of only 2 Indonesian teams to reach the finals (alongside BRIN).
+              </li>
+              <li class="mb-2">
+                <strong>Impact-Edu 2026</strong> (September 9, Telkom University): S-SPARC reached the finals and won <strong>Most Favorite Poster</strong> in the Student Learning Innovation category.
+              </li>
+            </ol>
+
+            <p>
+              All of this (IOCES, the AIREA Merit Award in Hong Kong, and Most Favorite Poster at Impact-Edu) happened in <strong>less than 3 months after finishing my thesis defense</strong>.
+            </p>
+          </section>
+
+          <!-- Section 9: Closing -->
+          <section id="closing">
+            <h2 class="font-heading text-white fw-bold mt-5 mb-3 fs-3" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+              Closing Thoughts
+            </h2>
+
+            <p>
+              It all started with a single scrap of paper and a one-hour morning chat on campus on March 21, 2025. Right now, I'm rewriting this whole story into a formal research paper. The funny thing is, the process of writing that paper made me realize: an idea that started as a casual conversation in a faculty room can actually grow into something with real impact, both for students' digital habits and for the environment.
+            </p>
+
+            <!-- Quote Callout -->
+            <blockquote class="p-4 my-4 rounded-3 text-center" style="background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(52, 211, 153, 0.35);">
+              <p class="fs-4 fw-bold text-white mb-2 font-heading">
+                &ldquo;The problem is not the AI, it's how we use it.&rdquo;
+              </p>
+              <span class="fs-6 fw-bold" style="color: #34d399 !important; letter-spacing: 0.5px;">S-SPARC changes that.</span>
+            </blockquote>
+
+            <!-- Action Buttons -->
+            <div class="d-flex flex-wrap gap-3 justify-content-center my-4">
+              <a href="data/S-SPARC_IMPACT_EDU.pdf" download class="btn-sparc-solid btn-sparc-green px-4 py-2" style="border-radius: 50px; font-size: 0.95rem; width: auto; color: #ffffff !important; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);">
+                <i class="fa-solid fa-file-pdf me-2"></i> Research Poster PDF
+              </a>
+              <a href="data/S-SPARC Pitch Deck.pdf" download class="btn-sparc-solid btn-sparc-gold px-4 py-2" style="border-radius: 50px; font-size: 0.95rem; width: auto; color: #ffffff !important; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);">
+                <i class="fa-solid fa-presentation-screen me-2"></i> Pitch Deck PDF
+              </a>
+              <a href="index.html#publications" class="btn-sparc-solid btn-sparc-blue px-4 py-2" style="border-radius: 50px; font-size: 0.95rem; width: auto; color: #ffffff !important; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);">
+                <i class="fa-solid fa-arrow-left me-2"></i> Back to Main Portfolio
+              </a>
+            </div>
+          </section>
+
+          <!-- Section 10: Academic Citation Widget -->
+          <section id="citation">
+            <div class="citation-box">
+              <div class="citation-header">
+                <span class="text-white fw-bold font-heading"><i class="fa-solid fa-quote-left text-success me-2"></i> How to Cite This Work</span>
+                <button class="btn-copy-code" onclick="copyBibtex(this)"><i class="fa-regular fa-copy me-1"></i> Copy BibTeX</button>
+              </div>
+              <p class="small text-muted mb-2">APA Reference:</p>
+              <p class="small text-white fst-italic mb-3" style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 6px;">
+                Setiawan, Y. D., &amp; Karnalim, O. (2026). <em>Promoting Sustainable Use of LLM Through Mindful Prompting and Gamification (S-SPARC)</em>. In Proceedings of the 1st International Online Conference on Education Sciences (IOCES 2026). MDPI.
+              </p>
+              <pre id="bibtex-code" class="citation-pre">@inproceedings{setiawan2026sparc,
+  title     = {Promoting Sustainable Use of LLM Through Mindful Prompting and Gamification (S-SPARC)},
+  author    = {Setiawan, Yehezkiel David and Karnalim, Oscar},
+  booktitle = {Proceedings of the 1st International Online Conference on Education Sciences},
+  series    = {IOCES 2026},
+  publisher = {MDPI Switzerland},
+  year      = {2026},
+  note      = {AIREA 2026 Merit Award Winner, Impact-Edu 2026 Most Favorite Poster}
+}</pre>
+            </div>
+          </section>
+
+          <!-- Medium Author Bio Card -->
+          <div class="medium-author-card" id="reach-author">
+            <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+              <img src="img/david2.png" alt="Yehezkiel David Setiawan" class="medium-author-avatar" />
+              <div>
+                <span class="small text-muted text-uppercase tracking-wider" style="font-size: 0.72rem; letter-spacing: 1.5px;">Written by</span>
+                <h4 class="text-white fw-bold mb-1 font-heading" style="font-size: 1.25rem;">Yehezkiel David Setiawan</h4>
+                <p class="small mb-0" style="color: #34d399; font-weight: 600;">
+                  <i class="fa-solid fa-circle-check me-1"></i> AI Engineer &amp; LLM Researcher
+                </p>
+              </div>
+            </div>
+            <p class="text-muted small mb-0" style="line-height: 1.7; font-size: 0.92rem; color: #cbd5e1 !important;">
+              Author of S-SPARC (AIREA Hong Kong Merit Award). Master of Computer Science specializing in sustainable Large Language Models (LLMs), semantic code intelligence, and high-concurrency enterprise engineering. Verified reviewer for Nature Scientific Data &amp; Springer Nature.
+            </p>
+            <div class="author-card-actions">
+              <div class="d-flex gap-2 align-items-center flex-wrap">
+                <a href="https://www.linkedin.com/in/ydavids/" target="_blank" rel="noopener noreferrer" class="author-pill-btn primary" aria-label="LinkedIn Follow">
+                  <i class="fab fa-linkedin-in"></i> Follow
+                </a>
+                <a href="https://github.com/06202003/" target="_blank" rel="noopener noreferrer" class="author-pill-btn" aria-label="GitHub">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://wa.me/6289507647137" target="_blank" rel="noopener noreferrer" class="author-pill-btn" aria-label="WhatsApp Say Hello">
+                  <i class="fa-brands fa-whatsapp text-success"></i> Say Hello
+                </a>
+              </div>
+              <button type="button" class="author-clap-btn btn-clap-trigger" aria-label="Clap for this article">
+                <span class="clap-icon">👏</span> Clap (<span class="clap-count-label">342</span>)
+              </button>
+            </div>
+          </div>
+
+          <!-- Medium-Style Recommended Stories (More from Yehezkiel David) -->
+          <div class="medium-recommended-section">
+            <div class="recommended-title">
+              <span><i class="fa-solid fa-sparkles text-success me-2"></i>More from Yehezkiel David</span>
+              <a href="blog.html" class="small text-decoration-none" style="color: #34d399 !important; font-size: 0.88rem;">See all stories &rarr;</a>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="blog-card p-3 h-100">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="badge bg-info text-dark">Peer Review</span>
+                    <span class="small text-muted">5 min read</span>
+                  </div>
+                  <h5 class="fw-bold text-white mb-2 fs-6">
+                    <a href="blog-peer-review.html" class="text-white text-decoration-none">
+                      Behind the Peer Review Desk: Evaluating AI Manuscripts for Nature Scientific Data &amp; Springer
+                    </a>
+                  </h5>
+                  <p class="small text-muted mb-3 flex-grow-1" style="line-height: 1.5;">
+                    Methodological rigor, reproducibility audit checklists, and prompt leakage evaluation in top Q1 journals.
+                  </p>
+                  <a href="blog-peer-review.html" class="small text-decoration-none fw-semibold" style="color: #34d399 !important;">Read story &rarr;</a>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="blog-card p-3 h-100">
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="badge bg-secondary">System Architecture</span>
+                    <span class="small text-muted">7 min read</span>
+                  </div>
+                  <h5 class="fw-bold text-white mb-2 fs-6">
+                    <a href="blog-super-app.html" class="text-white text-decoration-none">
+                      Architecting Enterprise Super Apps: High-Throughput Workflows in Pharmaceutical Logistics
+                    </a>
+                  </h5>
+                  <p class="small text-muted mb-3 flex-grow-1" style="line-height: 1.5;">
+                    Production digital office systems, concurrency locking, and offline-first synchronization protocols.
+                  </p>
+                  <a href="blog-super-app.html" class="small text-decoration-none fw-semibold" style="color: #34d399 !important;">Read story &rarr;</a>
+                </div>
+              </div>
+            </div>
           </div>
 
         </article>
@@ -369,24 +748,52 @@
     </div>
   </main>
 
+  <!-- Medium-Style Floating Action Pill Bar (Sticky on Scroll) -->
+  <div class="medium-floating-bar" id="medium-floating-bar" aria-label="Article actions">
+    <button type="button" class="medium-btn-action btn-clap-trigger" title="Clap for this story">
+      <span class="clap-icon">👏</span>
+      <span class="clap-count-label">342</span>
+    </button>
+    <div class="floating-divider"></div>
+    <button type="button" class="medium-btn-action" onclick="document.getElementById('reach-author').scrollIntoView({behavior:'smooth'});" title="Jump to comments">
+      <i class="fa-regular fa-comment"></i>
+    </button>
+    <button type="button" class="medium-btn-action btn-bookmark-trigger" title="Save story">
+      <i class="fa-regular fa-bookmark"></i>
+    </button>
+    <div class="floating-divider"></div>
+    <button type="button" class="medium-btn-action" onclick="shareStory('copy')" title="Copy link">
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </button>
+    <button type="button" class="medium-btn-action" onclick="window.scrollTo({top:0, behavior:'smooth'});" title="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- Lightbox Modal Component -->
+  <div id="lightbox-modal" class="lightbox-overlay" onclick="closeLightbox(event)">
+    <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+    <img id="lightbox-image" class="lightbox-img" src="" alt="Zoomed view" onclick="event.stopPropagation()" />
+  </div>
+
   <!-- Site Footer (Identical to index.html) -->
   <footer class="text-center text-white" style="background-color: rgba(0, 0, 0, 0.2)" aria-label="Site footer">
     <div class="container pt-1">
       <section class="mb-1" aria-label="Social media links">
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://discordapp.com/users/705312106488135681" target="_blank" rel="noopener noreferrer" aria-label="Connect on Discord">
-          <i class="fab fa-discord" aria-hidden="true"></i>
+          <i class="fab fa-discord"></i>
         </a>
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=yehezkieldavid2006@gmail.com&tf=1" target="_blank" rel="noopener noreferrer" aria-label="Contact via Gmail">
-          <i class="fab fa-google" aria-hidden="true"></i>
+          <i class="fab fa-google"></i>
         </a>
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/yz.jsx/" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram">
-          <i class="fab fa-instagram" aria-hidden="true"></i>
+          <i class="fab fa-instagram"></i>
         </a>
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.linkedin.com/in/ydavids/" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
+          <i class="fab fa-linkedin"></i>
         </a>
         <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/06202003/" target="_blank" rel="noopener noreferrer" aria-label="View GitHub profile">
-          <i class="fab fa-github" aria-hidden="true"></i>
+          <i class="fab fa-github"></i>
         </a>
       </section>
     </div>
@@ -397,7 +804,7 @@
         <a href="index.html#peer-review" class="text-decoration-none me-3" style="color: #34d399 !important;"><i class="fa-solid fa-shield-halved me-1"></i> Peer Review &amp; Editorial Record</a>
         <a href="index.html#publications" class="text-decoration-none me-3" style="color: #38bdf8 !important;"><i class="fa-solid fa-book-journal-whills me-1"></i> Publications</a>
         <a href="index.html#portfolio" class="text-decoration-none text-light me-3"><i class="fa-solid fa-laptop-code me-1"></i> Portfolio</a>
-        <a href="blog-s-sparc.html" class="text-decoration-none" style="color: #34d399 !important;"><i class="fa-solid fa-newspaper me-1"></i> Blog</a>
+        <a href="blog.html" class="text-decoration-none" style="color: #34d399 !important;"><i class="fa-solid fa-newspaper me-1"></i> Blog Hub</a>
       </p>
     </div>
   </footer>
@@ -405,8 +812,10 @@
   <!-- Bootstrap Script -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+  <!-- Interactive Features Script (TOC Spy, Calculator, Lightbox, Copy) -->
   <script>
-    // Reading Progress Bar
+    // 1. Reading Progress Bar
     window.addEventListener('scroll', () => {
       const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
       const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -414,7 +823,118 @@
       const bar = document.getElementById('reading-progress-bar');
       if (bar) bar.style.width = scrolled + '%';
     });
+
+    // 2. Active Scroll Spy for TOC
+    const sections = document.querySelectorAll('article section');
+    const tocLinks = document.querySelectorAll('.toc-link');
+
+    window.addEventListener('scroll', () => {
+      let currentSectionId = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (pageYOffset >= sectionTop) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + currentSectionId) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // 3. Interactive Architecture Diagram Detail Switcher
+    const archDetails = {
+      cioe: '<strong class="text-success"><i class="fa-solid fa-shield-halved me-1"></i> Module 1: Diagnostic Gate (C-I-O-E Validation)</strong><br />Enforces cognitive accountability before AI processing. Requires students to structure their request with Context (C), Input (I), Expected Output (O), and Error Trace (E). Incomplete or zero-effort questions are rejected locally before invoking compute.',
+      faiss: '<strong class="text-warning"><i class="fa-solid fa-bolt me-1"></i> Module 2: Tiered Semantic Caching (FAISS &ge; 0.90)</strong><br />Vectorizes queries with weighted multi-embeddings. When cosine similarity reaches &ge; 0.90, the verified solution is served from the local index in &lt; 4ms, bypassing external cloud LLM inference completely and eliminating 100% of marginal token cost.',
+      ollama: '<strong class="text-info"><i class="fa-solid fa-server me-1"></i> Module 3: Local LLM Fallback (Ollama Edge Engine)</strong><br />Provides high availability and data sovereignty. If cloud LLM latency exceeds 1.5s or network cuts out, queries failover to quantized local open-source models running on university servers.',
+      scaffold: '<strong class="text-primary"><i class="fa-solid fa-stairs me-1"></i> Module 4: 3-Tier Hint Progression (Pedagogical Engine)</strong><br />Prevents dependency loops: Hint 1 highlights bug location; Hint 2 provides structural scaffolding; only attempt 3 unlocks complete code. Aligned with Vygotsky\'s Zone of Proximal Development.',
+      fscore: '<strong class="text-success"><i class="fa-solid fa-award me-1"></i> Module 5: Automated Evaluation Gate (ISO/IEC 25010 F-Score)</strong><br />Calculates mathematical quality score synthesizing semantic correctness, static analysis, code security, and adherence to requirements before new entries can be added to the reusable cache.'
+    };
+
+    function selectArchNode(nodeKey) {
+      document.querySelectorAll('.arch-node').forEach(n => n.classList.remove('active'));
+      const activeNode = document.getElementById('node-' + nodeKey);
+      if (activeNode) activeNode.classList.add('active');
+      const detailBox = document.getElementById('arch-detail-text');
+      if (detailBox && archDetails[nodeKey]) {
+        detailBox.innerHTML = archDetails[nodeKey];
+      }
+    }
+
+    // 4. Interactive Carbon & Token Calculator
+    function updateCalculator() {
+      const prompts = parseInt(document.getElementById('slider-prompts').value);
+      const students = parseInt(document.getElementById('slider-students').value);
+      const weeks = parseInt(document.getElementById('slider-weeks').value);
+
+      document.getElementById('val-prompts').innerText = prompts + ' prompts';
+      document.getElementById('val-students').innerText = students + ' students';
+      document.getElementById('val-weeks').innerText = weeks + ' weeks';
+
+      const totalPrompts = prompts * students * (weeks * 5); // 5 working days/week
+      const baselineTokens = totalPrompts * 800; // avg 800 tokens per full roundtrip
+      const tokenSavingsRate = 0.8394; // S-SPARC empirical savings
+
+      const tokensSaved = baselineTokens * tokenSavingsRate;
+      const energySavedWh = (totalPrompts * tokenSavingsRate) * 29; // 29 Wh per unconstrained LLM prompt
+      const energySavedKWh = energySavedWh / 1000;
+      const co2AvoidedKg = energySavedKWh * 0.485; // ~485g CO2 per kWh grid average
+      const treeEquiv = Math.round(co2AvoidedKg / 21); // 1 mature tree absorbs ~21kg CO2/year
+
+      document.getElementById('calc-tokens-saved').innerText = (tokensSaved / 1000000).toFixed(2) + ' M';
+      document.getElementById('calc-kwh-saved').innerText = Math.round(energySavedKWh).toLocaleString() + ' kWh';
+      document.getElementById('calc-co2-saved').innerText = Math.round(co2AvoidedKg).toLocaleString() + ' kg';
+      document.getElementById('calc-trees-equiv').innerText = treeEquiv + ' Trees';
+    }
+
+    // 5. Code Copying
+    function copySnippet(elementId, btn) {
+      const code = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check text-success me-1"></i> Copied!';
+        setTimeout(() => { btn.innerHTML = orig; }, 2000);
+      });
+    }
+
+    function copyBibtex(btn) {
+      const bibtex = document.getElementById('bibtex-code').innerText;
+      navigator.clipboard.writeText(bibtex).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<i class="fa-solid fa-check text-success me-1"></i> Copied BibTeX!';
+        setTimeout(() => { btn.innerHTML = orig; }, 2000);
+      });
+    }
+
+    // 6. Lightbox Zoom
+    function openLightbox(src, alt) {
+      const overlay = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-image');
+      img.src = src;
+      img.alt = alt;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      const overlay = document.getElementById('lightbox-modal');
+      overlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Run calculator on initial load
+    updateCalculator();
   </script>
+
+  <!-- Medium Interactions Engine (Claps, Bookmarks, Floating Bar, Toast) -->
+  <script src="script/medium-blog.js"></script>
 </body>
 
 </html>

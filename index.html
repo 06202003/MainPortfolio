@@ -49,6 +49,7 @@
   <link rel="stylesheet" href="css/chatbot.css?v=46" />
   <link rel="stylesheet" href="css/three-world.css?v=3" />
   <link rel="stylesheet" href="css/peer-review.css?v=2" />
+  <link rel="stylesheet" href="css/blog.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" />
@@ -253,7 +254,7 @@
             <a class="nav-link" href="#portfolio">Portfolio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="blog-s-sparc.html">Blog</a>
+            <a class="nav-link" href="blog.html">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#reach">Reach Me!</a>
@@ -271,46 +272,55 @@
 
   <!-- Home Section -->
   <main id="main-content">
-    <section class="bg-dark" aria-label="Hero section">
-      <div id="home" style="width: 100%">
-        <div class="container text-white" style="height: auto">
-          <div class="row d-flex justify-content-center align-items-center" style="min-height: 100vh">
-            <div class="col-md-4 order-sm-1 text-center" data-aos="fade-right" data-aos-duration="800">
-              <img id="fotoHero" src="img/david_hero.webp" class="foto-hero rounded-5"
-                alt="Yehezkiel David Setiawan - AI Engineer portrait" width="400" height="400" fetchpriority="high" decoding="async" />
+    <section class="bg-dark" aria-label="Hero section" style="background-color: #212529 !important;">
+      <div id="home" style="width: 100%; background-color: #212529;">
+        <div class="container text-white py-5" style="height: auto">
+          <div class="row d-flex justify-content-center align-items-center" style="min-height: 90vh">
+            <div class="col-lg-4 col-md-5 order-sm-1 text-center mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="800">
+              <img id="fotoHero" src="img/david_hero.webp" class="foto-hero rounded-5 shadow-lg border border-secondary border-opacity-50"
+                alt="Yehezkiel David Setiawan - AI Engineer portrait" width="380" height="380" fetchpriority="high" decoding="async" />
             </div>
 
-            <div class="col-md-7 order-sm-0 px-5" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
-              <h3 class="asepanaaa mb-1">Hi, I am</h3>
-              <h1 class="my-2 asepanaa" style="font-size: 2.9em; letter-spacing: -0.5px;">Yehezkiel David Setiawan</h1>
-              <p class="fs-4 fw-bold mb-2 asep" style="color: #34d399; min-height: 38px;"></p>
+            <div class="col-lg-7 col-md-6 order-sm-0 px-lg-5" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+              <div class="d-inline-flex align-items-center gap-2 mb-2 px-3 py-1 rounded-pill" style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(52, 211, 153, 0.3);">
+                <i class="fa-solid fa-microchip text-success"></i>
+                <span class="small fw-semibold" style="color: #34d399;">AI Engineer &amp; LLM Researcher</span>
+              </div>
+
+              <h1 class="my-2 font-heading fw-bold" style="font-size: clamp(2.4rem, 4vw, 3.4rem); letter-spacing: -0.5px; line-height: 1.15;">
+                Yehezkiel David Setiawan
+              </h1>
+
+              <div class="d-flex align-items-center mb-3" style="min-height: 36px;">
+                <span class="fs-4 fw-bold asep" style="color: #34d399 !important;" id="heroTypewriter">AI Engineer &amp; LLM Researcher</span>
+              </div>
               
-              <p class="fs-5 asepan mt-2 mb-3" style="text-align: justify; color: #cbd5e1; line-height: 1.6; min-height: 80px;">
-                Computer Science Master's graduate from Maranatha Christian University with a Bachelor's degree in Informatics Engineering. Specializing in Large Language Model (LLM) innovation, semantic code intelligence, and production-grade ML systems.
+              <p class="fs-6 text-muted mt-2 mb-4" style="line-height: 1.7; max-width: 600px;">
+                Computer Science Master's graduate from Maranatha Christian University. Specializing in sustainable Large Language Model (LLM) architectures, semantic code intelligence, and high-concurrency enterprise ecosystems. Lead researcher of S-SPARC (AIREA Hong Kong Merit Award).
               </p>
 
-              <!-- Sleek Subtle Badges (No tacky colors) -->
-              <div class="d-flex flex-wrap gap-2 my-3 align-items-center">
+              <!-- Sleek Subtle Badges -->
+              <div class="d-flex flex-wrap gap-2 mb-4 align-items-center">
                 <span class="hero-badge-pill">
-                  <i class="fa-solid fa-graduation-cap text-info me-1"></i> Master of Computer Science (2026)
+                  <i class="fa-solid fa-graduation-cap text-info me-1"></i> M.Comp.Sc (2026)
                 </span>
                 <span class="hero-badge-pill">
-                  <i class="fa-solid fa-award text-success me-1"></i> AIREA 2026 Merit Award Winner
+                  <i class="fa-solid fa-award text-success me-1"></i> AIREA 2026 Merit Award
                 </span>
                 <span class="hero-badge-pill">
-                  <i class="fa-solid fa-trophy text-warning me-1"></i> Most Favorite Poster (Impact-Edu 2026)
+                  <i class="fa-solid fa-shield-halved text-warning me-1"></i> Verified Nature &amp; Springer Reviewer
                 </span>
               </div>
 
-              <!-- Hero Actions (Clean single CTA) -->
-              <div class="d-flex flex-wrap gap-3 align-items-center mt-4">
-                <a href="#about" class="btn btn-success rounded-pill px-4 py-2 fw-semibold shadow-sm text-decoration-none">
+              <!-- Hero Actions -->
+              <div class="d-flex flex-wrap gap-2 align-items-center mt-2">
+                <a href="#about" class="btn-hero-primary">
                   <i class="fa-solid fa-arrow-down me-2"></i> Read more about Me
                 </a>
               </div>
             </div>
 
-            <div class="col-md-1 hidden order-sm-2" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="200"
+            <div class="col-lg-1 col-md-1 hidden order-sm-2" data-aos="zoom-in" data-aos-duration="700" data-aos-delay="200"
               aria-label="Social media links">
               <div class="tengah d-flex flex-column align-items-center gap-3 py-2">
                 <a href="https://github.com/06202003/" target="_blank" rel="noopener noreferrer"
@@ -398,15 +408,17 @@
             <!-- Subtle Quote -->
             <blockquote class="fst-italic text-secondary border-start border-3 ps-3 text-start mb-4"
               style="font-size: 0.95em;">
-              “Bridging research and real-world systems — because intelligence is only meaningful when it scales.”
+              “Bridging research and real-world systems, because intelligence is only meaningful when it scales.”
             </blockquote>
 
             <div class="mt-4 mb-4">
               <a href="data/Yehezkiel.pdf" download="Yehezkiel_David_Setiawan_CV.pdf" data-aos="fade-up"
                 data-aos-delay="300" data-aos-duration="600" class="text-decoration-none d-block"
                 aria-label="Download CV in PDF format">
-                <button class="btn btn-success btn-lg w-100 rounded-pill fw-semibold shadow-sm py-3 d-flex align-items-center justify-content-center gap-2">
-                  Download CV <i class="fa-solid fa-file-arrow-down"></i>
+                <button class="btn btn-success btn-lg w-100 rounded-pill fw-semibold shadow-sm py-3 d-flex align-items-center justify-content-center gap-2 flex-wrap">
+                  <span>Download Curriculum Vitae</span>
+                  <span class="badge bg-dark text-white fw-normal px-2 py-1" style="font-size: 0.78rem;">Updated Sep 2026 &bull; PDF 1.2MB</span>
+                  <i class="fa-solid fa-file-arrow-down"></i>
                 </button>
               </a>
             </div>
@@ -695,7 +707,7 @@
                 <!-- Behind the Paper Narrative Box -->
                 <div class="sparc-card-glow mb-3" style="border-left: 4px solid #10b981;">
                   <h6 class="fw-bold mb-2 text-white d-flex align-items-center">
-                    <i class="fa-solid fa-quote-left text-success me-2"></i> Behind the Paper — S-SPARC
+                    <i class="fa-solid fa-quote-left text-success me-2"></i> Behind the Paper: S-SPARC
                   </h6>
                   <p class="small mb-0" style="color: #cbd5e1; line-height: 1.6; font-style: italic;">
                     A single LLM prompt emits 4× more CO₂ than a search query. S-SPARC tackles "lazy prompting" and
@@ -713,23 +725,23 @@
                   </a>
                 </div>
 
-                <!-- Action Buttons (Equalized & Solid Non-Transparent) -->
+                <!-- Action Buttons (Equalized 1-Row Solid Buttons) -->
                 <div class="sparc-btn-grid mb-3">
                   <button type="button" class="btn-sparc-solid btn-sparc-green" data-bs-toggle="modal"
-                    data-bs-target="#modalPosterPdf" data-sparc-doc="poster">
-                    <i class="fa-solid fa-file-pdf me-2"></i> Research Poster PDF
+                    data-bs-target="#modalPosterPdf" data-sparc-doc="poster" title="View Research Poster PDF">
+                    <i class="fa-solid fa-file-pdf me-1"></i> Poster PDF
                   </button>
                   <button type="button" class="btn-sparc-solid btn-sparc-gold" data-bs-toggle="modal"
-                    data-bs-target="#modalPosterPdf" data-sparc-doc="deck">
-                    <i class="fa-solid fa-presentation-screen me-2"></i> Pitch Deck PDF
+                    data-bs-target="#modalPosterPdf" data-sparc-doc="deck" title="View Pitch Deck Presentation">
+                    <i class="fa-solid fa-presentation-screen me-1"></i> Pitch Deck
                   </button>
                   <button type="button" class="btn-sparc-solid btn-sparc-blue" data-bs-toggle="modal"
-                    data-bs-target="#modalPosterPdf" data-sparc-doc="airea-cert">
-                    <i class="fa-solid fa-award me-2"></i> AIREA Certificate
+                    data-bs-target="#modalPosterPdf" data-sparc-doc="airea-cert" title="View AIREA Merit Award Certificate">
+                    <i class="fa-solid fa-award me-1"></i> AIREA Cert
                   </button>
                   <button type="button" class="btn-sparc-solid btn-sparc-cyan" data-bs-toggle="modal"
-                    data-bs-target="#modalPosterPdf" data-sparc-doc="impact-cert">
-                    <i class="fa-solid fa-certificate me-2"></i> Impact-Edu Cert
+                    data-bs-target="#modalPosterPdf" data-sparc-doc="impact-cert" title="View Impact-Edu Certificate">
+                    <i class="fa-solid fa-certificate me-1"></i> Impact Cert
                   </button>
                 </div>
               </div>
@@ -1117,6 +1129,17 @@
               Formal technical peer reviews conducted for high-impact journals published by <strong>Springer
                 Nature</strong>, <strong>Nature Portfolio</strong>, and <strong>Taylor & Francis</strong>.
             </p>
+            <div class="d-flex gap-2 flex-wrap mt-2">
+              <a href="https://orcid.org/0009-0004-9840-7565" target="_blank" rel="noopener noreferrer" class="hero-badge-pill text-decoration-none" style="font-size: 0.8rem;">
+                <i class="fa-brands fa-orcid text-success me-1"></i> ORCID iD
+              </a>
+              <a href="https://scholar.google.com/citations?user=YehezkielDavid" target="_blank" rel="noopener noreferrer" class="hero-badge-pill text-decoration-none" style="font-size: 0.8rem;">
+                <i class="fa-solid fa-graduation-cap text-info me-1"></i> Google Scholar
+              </a>
+              <a href="https://www.webofscience.com/" target="_blank" rel="noopener noreferrer" class="hero-badge-pill text-decoration-none" style="font-size: 0.8rem;">
+                <i class="fa-solid fa-certificate text-warning me-1"></i> Web of Science Verified
+              </a>
+            </div>
           </div>
 
           <!-- Archival Metrics Bar -->
@@ -1867,7 +1890,7 @@
                   <p style="text-align: justify; font-style: italic;" class="text-dark">
                     "I co-authored this research because standard plagiarism detectors completely failed when students
                     used LLMs to disguise stolen code through structural rewrites. The biggest challenge was isolating
-                    GenAI coding signatures—like specific recursion choices or list comprehension patterns—from natural
+                    GenAI coding signatures (like specific recursion choices or list comprehension patterns) from natural
                     human variation. The most surprising insight: our Stacking Classifier achieved an 89.17% accuracy,
                     outperforming traditional similarity baselines by a factor of 2 without requiring deep neural
                     network training."
@@ -2457,7 +2480,7 @@
           <div class="modal-content">
             <div class="modal-header bg-dark text-white">
               <h5 class="modal-title" id="modalImpactEdu2026Label">
-                <i class="fa-solid fa-trophy text-warning me-2"></i> Most Favorite Poster — Impact-Edu 2026
+                <i class="fa-solid fa-trophy text-warning me-2"></i> Most Favorite Poster: Impact-Edu 2026
               </h5>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                 aria-label="Close"></button>
@@ -2488,7 +2511,7 @@
               <hr />
               <h6 class="fw-bold"><i class="fa-solid fa-lightbulb text-warning me-2"></i>Event Theme & S-SPARC Innovation</h6>
               <p class="mb-2">
-                <strong>Event:</strong> Impact-Edu 2026 — <em>"Sustainable Impact in Teaching and Learning through Pentahelix Collaboration"</em>
+                <strong>Event:</strong> Impact-Edu 2026: <em>"Sustainable Impact in Teaching and Learning through Pentahelix Collaboration"</em>
               </p>
               <p style="text-align: justify;">
                 The poster showcased <strong>S-SPARC (Smart Personal Assistant for Responsible Consumption)</strong>, highlighting how tiered semantic knowledge retrieval mitigates computational strain (achieving <strong>83.94% token reduction</strong> across 2.1M+ workload tokens) and nurtures mindful, reflective prompting habits among higher education learners. The project received widespread acclaim and was voted <strong>Most Favorite Poster</strong> in the Student Learning Innovation category.
@@ -2572,7 +2595,7 @@
             <div class="modal-header modal-pr-header d-flex justify-content-between align-items-center">
               <div>
                 <h5 class="modal-title fw-bold text-white mb-0" id="modalScientificDataLabel">
-                  <i class="fa-solid fa-certificate text-success me-2"></i> Scientific Data — Reviewer Certificate
+                  <i class="fa-solid fa-certificate text-success me-2"></i> Scientific Data: Reviewer Certificate
                 </h5>
                 <small class="text-muted">Springer Nature &bull; Nature Portfolio</small>
               </div>
@@ -2633,7 +2656,7 @@
             <div class="modal-header modal-pr-header d-flex justify-content-between align-items-center">
               <div>
                 <h5 class="modal-title fw-bold text-white mb-0" id="modalRIPRLabel">
-                  <i class="fa-solid fa-certificate text-success me-2"></i> Research Integrity and Peer Review —
+                  <i class="fa-solid fa-certificate text-success me-2"></i> Research Integrity and Peer Review:
                   Certificate
                 </h5>
                 <small class="text-muted">Springer Nature &bull; BioMed Central (BMC)</small>
@@ -2697,7 +2720,7 @@
             <div class="modal-header modal-pr-header d-flex justify-content-between align-items-center">
               <div>
                 <h5 class="modal-title fw-bold text-white mb-0" id="modalTaylorFrancisLabel">
-                  <i class="fa-solid fa-certificate text-success me-2"></i> Applied Artificial Intelligence — Peer
+                  <i class="fa-solid fa-certificate text-success me-2"></i> Applied Artificial Intelligence: Peer
                   Review Record
                 </h5>
                 <small class="text-muted">Taylor & Francis Group &bull; Manuscript Evaluation</small>
@@ -2888,8 +2911,8 @@
               class="fa-solid fa-book-journal-whills me-1"></i> Publications</a>
           <a href="#portfolio" class="text-decoration-none text-light me-3"><i class="fa-solid fa-laptop-code me-1"></i>
             Portfolio</a>
-          <a href="blog-s-sparc.html" class="text-decoration-none text-emerald" style="color: #34d399;"><i class="fa-solid fa-newspaper me-1"></i>
-            Blog</a>
+          <a href="blog.html" class="text-decoration-none text-emerald" style="color: #34d399;"><i class="fa-solid fa-newspaper me-1"></i>
+            Blog Hub</a>
         </p>
       </div>
       <!-- Copyright -->
@@ -3139,7 +3162,7 @@
           AOS.refresh();
         }
 
-        // Vanta Birds Background (Non-blocking)
+        // Vanta Birds Background (3D Interactive Flying Birds)
         if (window.VANTA && window.VANTA.BIRDS && document.getElementById('home')) {
           try {
             VANTA.BIRDS({

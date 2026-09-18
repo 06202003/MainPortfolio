@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <!-- Meta Tags for SEO & Accessibility -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+  <title>Engineering &amp; AI Research Blog | Yehezkiel David Setiawan</title>
+  <meta name="description"
+    content="Articles, technical deep-dives, and research stories on Sustainable AI, Large Language Models, and Code Intelligence by Yehezkiel David Setiawan." />
+  <meta name="keywords"
+    content="AI Blog, LLM Research, Sustainable AI, Green Computing, Yehezkiel David Setiawan, S-SPARC, Machine Learning, Peer Review, Nature Scientific Data" />
+  <meta name="author" content="Yehezkiel David Setiawan" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#0f2a43" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Yehezkiel David Blog" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yehezkiel.netlify.app/blog.html" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yehezkiel.netlify.app/blog.html" />
+  <meta property="og:title" content="Engineering &amp; AI Research Blog | Yehezkiel David Setiawan" />
+  <meta property="og:description"
+    content="Articles, technical deep-dives, and research stories on Sustainable AI, Large Language Models, and Code Intelligence." />
+  <meta property="og:image" content="https://yehezkiel.netlify.app/img/david_hero.webp" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Engineering &amp; AI Research Blog | Yehezkiel David Setiawan" />
+  <meta name="twitter:description"
+    content="Articles, technical deep-dives, and research stories on Sustainable AI and LLM architectures." />
+  <meta name="twitter:image" content="https://yehezkiel.netlify.app/img/david_hero.webp" />
+
+  <!-- Google Fonts: Space Grotesk, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Core Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/three-world.css?v=3" />
+  <link rel="stylesheet" href="css/blog.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/david2.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/david2.png" />
+  <link rel="shortcut icon" href="img/david2.png" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="img/david2.png" />
+</head>
+
+<body class="blog-body-bg">
+
+  <!-- Navigation (Identical structure to index.html) -->
+  <nav class="navbar navbar-expand-lg bg-dark text-white sticky-top" aria-label="Main Navigation">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center">
+        <button id="secret-door-trigger" class="secret-door-btn"
+          onclick="window.location.href='index.html';" title="Back to Portfolio"
+          aria-label="Back to portfolio">
+          <span class="door-icon">🚪</span>
+          <span class="door-label">Beyond The Door</span>
+        </button>
+        <a class="navbar-brand m-0" href="index.html#home" aria-label="Yehezkiel David Setiawan - Portfolio Home">
+          <span class="visually-hidden">Yehezkiel David Setiawan Portfolio</span>
+        </a>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="text-white collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#qualification">Qualification</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#publications">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#peer-review">Peer Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#portfolio">Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#reach">Reach Me!</a>
+          </li>
+        </ul>
+        <div class="d-flex align-items-center gap-2">
+          <a href="https://wa.me/6289507647137" target="_blank" rel="noopener noreferrer" class="btn btn-success rounded-pill px-3 py-2 fw-semibold shadow-sm"
+            aria-label="Contact via WhatsApp">
+            Contact Me! <i class="fa-brands fa-whatsapp ms-1 fa-lg"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Hub Hero -->
+  <header class="blog-hub-hero text-white">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-9">
+          <span class="badge bg-success mb-2 px-3 py-2 rounded-pill" style="background-color: #059669 !important;">
+            <i class="fa-solid fa-feather me-1"></i> Technical Writing &amp; Research Notes
+          </span>
+          <h1 class="font-heading display-4 fw-bold text-white mb-3" style="letter-spacing: -0.5px;">
+            AI Research, Engineering &amp; Stories
+          </h1>
+          <p class="fs-5 text-muted mb-4" style="max-width: 680px; margin: 0 auto; line-height: 1.6;">
+            First-hand reflections on building production ML systems, advancing sustainable Large Language Models (LLMs), and publishing peer-reviewed research.
+          </p>
+
+          <!-- Live Search Bar -->
+          <div class="position-relative mx-auto mb-4" style="max-width: 540px;">
+            <i class="fa-solid fa-magnifying-glass position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+            <input type="text" id="blog-search-input" class="form-control rounded-pill ps-5 pe-4 py-2 border-0 shadow-lg text-white"
+              style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(255, 255, 255, 0.15) !important;"
+              placeholder="Search articles, keywords, or topics..." aria-label="Search articles" oninput="handleSearch()" />
+          </div>
+
+          <!-- Tag Filters -->
+          <div class="d-flex gap-2 justify-content-center flex-wrap" id="category-filters">
+            <button type="button" class="blog-tag-pill active" onclick="filterBlog('all', this)">All Articles</button>
+            <button type="button" class="blog-tag-pill" onclick="filterBlog('green-ai', this)">Green AI &amp; LLMs</button>
+            <button type="button" class="blog-tag-pill" onclick="filterBlog('system-arch', this)">System Architecture</button>
+            <button type="button" class="blog-tag-pill" onclick="filterBlog('peer-review', this)">Academic &amp; Peer Review</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Articles Count & Status -->
+  <section class="container pt-4 pb-2">
+    <div class="d-flex align-items-center justify-content-between border-bottom pb-2" style="border-color: rgba(255, 255, 255, 0.08) !important;">
+      <div class="small text-muted" id="articles-count-label">
+        <i class="fa-solid fa-layer-group me-1 text-success"></i> Loading articles...
+      </div>
+      <div class="small text-muted d-none d-md-block">
+        <i class="fa-solid fa-bolt me-1" style="color: #34d399;"></i> Real-time generated feed
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Articles Grid (Populated dynamically) -->
+  <main class="container py-4">
+    <div class="row g-4 justify-content-center" id="blog-grid">
+      <!-- Generated Cards will render here -->
+    </div>
+  </main>
+
+  <!-- Site Footer (Identical to index.html) -->
+  <footer class="text-center text-white" style="background-color: rgba(0, 0, 0, 0.2)" aria-label="Site footer">
+    <div class="container pt-1">
+      <section class="mb-1" aria-label="Social media links">
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://discordapp.com/users/705312106488135681" target="_blank" rel="noopener noreferrer" aria-label="Connect on Discord">
+          <i class="fab fa-discord"></i>
+        </a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://mail.google.com/mail/u/1/?view=cm&fs=1&to=yehezkieldavid2006@gmail.com&tf=1" target="_blank" rel="noopener noreferrer" aria-label="Contact via Gmail">
+          <i class="fab fa-google"></i>
+        </a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.instagram.com/yz.jsx/" target="_blank" rel="noopener noreferrer" aria-label="Follow on Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.linkedin.com/in/ydavids/" target="_blank" rel="noopener noreferrer" aria-label="Connect on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/06202003/" target="_blank" rel="noopener noreferrer" aria-label="View GitHub profile">
+          <i class="fab fa-github"></i>
+        </a>
+      </section>
+    </div>
+
+    <div class="text-center text-white py-2" style="background-color: #212529; font-size: 15px; line-height: 1.5">
+      <p class="mb-1"><em>Ad Maiora Natus Sum</em> &bull; &copy; 2026 Copyright: Yehezkiel David Setiawan</p>
+      <p class="small text-muted mb-0">
+        <a href="index.html#peer-review" class="text-decoration-none me-3" style="color: #34d399 !important;"><i class="fa-solid fa-shield-halved me-1"></i> Peer Review &amp; Editorial Record</a>
+        <a href="index.html#publications" class="text-decoration-none me-3" style="color: #38bdf8 !important;"><i class="fa-solid fa-book-journal-whills me-1"></i> Publications</a>
+        <a href="index.html#portfolio" class="text-decoration-none text-light me-3"><i class="fa-solid fa-laptop-code me-1"></i> Portfolio</a>
+        <a href="blog.html" class="text-decoration-none" style="color: #34d399 !important;"><i class="fa-solid fa-newspaper me-1"></i> Blog Hub</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+  <!-- Blog Generator & Search Engine -->
+  <script>
+    const fallbackPosts = [
+      {
+        id: "s-sparc-journey",
+        slug: "blog-s-sparc.html",
+        title: "Building S-SPARC: From a Paper Sketch to a Hong Kong Merit Award",
+        description: "How an informal campus discussion on unnecessary AI prompting led to an eco-conscious learning companion that achieved 83.94% token savings, a Master's thesis, and the AIREA 2026 Merit Award in Hong Kong.",
+        category: "green-ai",
+        categoryName: "Green AI & LLMs",
+        date: "Sep 18, 2026",
+        readTime: "6 min read",
+        image: "img/sketch-21-maret-2025.jpeg",
+        badge: "Featured Research",
+        featured: true
+      },
+      {
+        id: "peer-review-insights",
+        slug: "blog-peer-review.html",
+        title: "Behind the Peer Review Desk: Evaluating AI Manuscripts for Nature Scientific Data and Springer",
+        description: "First-hand reflections on methodological rigor, machine learning reproducibility, and what top-tier Q1 journals look for when evaluating AI and data engineering papers.",
+        category: "peer-review",
+        categoryName: "Academic & Peer Review",
+        date: "Aug 24, 2026",
+        readTime: "5 min read",
+        image: "img/Reviewer Certificate 27 July 2026 (1)_page-0001.jpg",
+        badge: "Nature & Springer",
+        featured: false
+      },
+      {
+        id: "enterprise-super-app",
+        slug: "blog-super-app.html",
+        title: "Architecting Enterprise Super Apps: Scaling High-Concurrency Systems in Pharmaceutical Logistics",
+        description: "Lessons learned architecting a production digital office ecosystem at PT. Royal Medicalink Pharmalab: automated authorization pipelines, database indexing, and offline-first mobile sync.",
+        category: "system-arch",
+        categoryName: "System Architecture",
+        date: "Jul 10, 2026",
+        readTime: "7 min read",
+        image: "img/konstelasi.png",
+        badge: "Enterprise Architecture",
+        featured: false
+      }
+    ];
+
+    let allPosts = [];
+    let currentCategory = 'all';
+    let searchQuery = '';
+
+    async function initBlog() {
+      try {
+        const res = await fetch('data/posts.json');
+        if (res.ok) {
+          allPosts = await res.json();
+        } else {
+          allPosts = fallbackPosts;
+        }
+      } catch (err) {
+        allPosts = fallbackPosts;
+      }
+      renderBlog();
+    }
+
+    function renderBlog() {
+      const grid = document.getElementById('blog-grid');
+      const countLabel = document.getElementById('articles-count-label');
+
+      const filtered = allPosts.filter(post => {
+        const matchesCat = currentCategory === 'all' || post.category === currentCategory;
+        const q = searchQuery.toLowerCase().trim();
+        const matchesSearch = !q ||
+          post.title.toLowerCase().includes(q) ||
+          post.description.toLowerCase().includes(q) ||
+          post.categoryName.toLowerCase().includes(q);
+        return matchesCat && matchesSearch;
+      });
+
+      countLabel.innerHTML = `<i class="fa-solid fa-layer-group me-1" style="color: #34d399;"></i> Showing <strong>${filtered.length}</strong> of <strong>${allPosts.length}</strong> published articles`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-12 text-center py-5">
+            <div class="p-5 rounded-4" style="background: rgba(15, 23, 42, 0.6); border: 1px dashed rgba(255, 255, 255, 0.15);">
+              <i class="fa-solid fa-newspaper fs-1 text-muted mb-3"></i>
+              <h4 class="text-white fw-bold">No articles found</h4>
+              <p class="text-muted mb-3">No matching articles for "${searchQuery}". Try selecting another category or clearing search terms.</p>
+              <button class="btn-sparc-solid btn-sparc-green px-4 py-2" onclick="resetFilters()">Reset All Filters</button>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      let html = '';
+      filtered.forEach(post => {
+        const badgeBg = post.category === 'green-ai' ? 'bg-success' : post.category === 'peer-review' ? 'bg-info text-dark' : 'bg-secondary';
+        const tagsHtml = (post.tags || []).map(t => `<span class="badge bg-dark border border-secondary text-muted me-1 mb-1 font-monospace" style="font-size: 0.7rem;">#${t}</span>`).join('');
+        const clapsCount = post.claps || 200;
+
+        if (post.featured) {
+          html += `
+            <div class="col-lg-10 blog-card-item" data-category="${post.category}">
+              <div class="blog-card" style="border-left: 4px solid #10b981;">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-5">
+                    <div class="blog-card-img-wrap h-100" style="min-height: 270px;">
+                      <a href="${post.slug}">
+                        <img src="${post.image}" alt="${post.title}" />
+                      </a>
+                      <span class="badge bg-warning text-dark position-absolute top-0 start-0 m-3 fw-bold">
+                        <i class="fa-solid fa-star me-1"></i> ${post.badge || 'Featured'}
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="blog-card-body">
+                      <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                        <span class="badge ${badgeBg}">${post.categoryName}</span>
+                        <span class="small text-muted"><i class="fa-regular fa-clock me-1"></i> ${post.readTime}</span>
+                        <span class="small text-muted ms-auto">${post.date}</span>
+                      </div>
+                      <h3 class="font-heading fw-bold text-white mb-2 fs-4">
+                        <a href="${post.slug}" class="text-white text-decoration-none">
+                          ${post.title}
+                        </a>
+                      </h3>
+                      <p class="small text-muted mb-2" style="line-height: 1.6;">
+                        ${post.description}
+                      </p>
+                      <div class="mb-3 d-flex flex-wrap">
+                        ${tagsHtml}
+                      </div>
+                      <div class="mt-auto d-flex align-items-center justify-content-between flex-wrap gap-2 pt-2 border-top" style="border-color: rgba(255, 255, 255, 0.08) !important;">
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="d-flex align-items-center gap-2">
+                            <img src="img/david2.png" alt="Yehezkiel David" width="30" height="30" class="rounded-circle border border-secondary" />
+                            <span class="small text-white fw-semibold">Yehezkiel David</span>
+                          </div>
+                          <span class="small text-muted"><span class="clap-icon">👏</span> ${clapsCount}</span>
+                        </div>
+                        <a href="${post.slug}" class="btn-sparc-solid btn-sparc-green py-1 px-3" style="width: auto; font-size: 0.85rem; border-radius: 50px;">
+                          Read Story &rarr;
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        } else {
+          html += `
+            <div class="col-lg-5 blog-card-item" data-category="${post.category}">
+              <div class="blog-card">
+                <div class="blog-card-img-wrap" style="height: 200px;">
+                  <a href="${post.slug}">
+                    <img src="${post.image}" alt="${post.title}" />
+                  </a>
+                  <span class="badge bg-dark bg-opacity-75 border border-secondary text-white position-absolute top-0 end-0 m-3 small">
+                    ${post.badge}
+                  </span>
+                </div>
+                <div class="blog-card-body">
+                  <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                    <span class="badge ${badgeBg}">${post.categoryName}</span>
+                    <span class="small text-muted"><i class="fa-regular fa-clock me-1"></i> ${post.readTime}</span>
+                    <span class="small text-muted ms-auto">${post.date}</span>
+                  </div>
+                  <h4 class="font-heading fw-bold text-white mb-2 fs-5">
+                    <a href="${post.slug}" class="text-white text-decoration-none">
+                      ${post.title}
+                    </a>
+                  </h4>
+                  <p class="small text-muted mb-2 flex-grow-1" style="line-height: 1.6;">
+                    ${post.description}
+                  </p>
+                  <div class="mb-3 d-flex flex-wrap">
+                    ${tagsHtml}
+                  </div>
+                  <div class="mt-auto d-flex align-items-center justify-content-between pt-2 border-top" style="border-color: rgba(255, 255, 255, 0.08) !important;">
+                    <span class="small text-muted"><span class="clap-icon">👏</span> ${clapsCount}</span>
+                    <a href="${post.slug}" class="btn-sparc-solid btn-sparc-green py-1 px-3" style="width: auto; font-size: 0.82rem; border-radius: 50px;">
+                      Read Story &rarr;
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          `;
+        }
+      });
+
+      grid.innerHTML = html;
+    }
+
+    function filterBlog(category, btn) {
+      currentCategory = category;
+      document.querySelectorAll('.blog-tag-pill').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderBlog();
+    }
+
+    function handleSearch() {
+      searchQuery = document.getElementById('blog-search-input').value;
+      renderBlog();
+    }
+
+    function resetFilters() {
+      currentCategory = 'all';
+      searchQuery = '';
+      document.getElementById('blog-search-input').value = '';
+      const pills = document.querySelectorAll('.blog-tag-pill');
+      pills.forEach(b => b.classList.remove('active'));
+      if (pills[0]) pills[0].classList.add('active');
+      renderBlog();
+    }
+
+    document.addEventListener('DOMContentLoaded', initBlog);
+  </script>
+
+  <!-- Medium Interactions Engine -->
+  <script src="script/medium-blog.js"></script>
+</body>
+
+</html>
