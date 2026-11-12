@@ -1,5 +1,51 @@
+# Robots.txt for Yehezkiel David Setiawan Portfolio
+# Optimized for Search Engine Optimization (SEO) & Generative Engine Optimization (GEO)
+
+# Default crawler rules
 User-agent: *
+Allow: /
 Disallow: /laporan-keuangan
 Disallow: /laporan-keuangan.html
 Disallow: /laporan-keuangan/
 Disallow: /data/finance-data.json
+
+# Explicit rules for AI Search Engines & LLM scrapers (GEO: Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+Disallow: /laporan-keuangan
+Disallow: /laporan-keuangan.html
+Disallow: /data/finance-data.json
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /laporan-keuangan
+Disallow: /laporan-keuangan.html
+Disallow: /data/finance-data.json
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /laporan-keuangan
+Disallow: /laporan-keuangan.html
+Disallow: /data/finance-data.json
+
+User-agent: CCBot
+Allow: /
+Disallow: /laporan-keuangan
+Disallow: /laporan-keuangan.html
+Disallow: /data/finance-data.json
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Canonical Sitemaps & LLM Context Endpoints
+Sitemap: https://yehezkiel.netlify.app/sitemap.xml
+# LLMs Context Standard: https://yehezkiel.netlify.app/llms.txt

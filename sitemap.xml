@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage / Core Portfolio -->
+  <url>
+    <loc>https://yehezkiel.netlify.app/</loc>
+    <lastmod>2026-11-12T11:15:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://yehezkiel.netlify.app/img/david_hero.webp</image:loc>
+      <image:title>Yehezkiel David Setiawan - AI Engineer and LLM Researcher</image:title>
+      <image:caption>Yehezkiel David Setiawan portrait, Master of Computer Science graduate from Maranatha Christian University.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://yehezkiel.netlify.app/img/david2.png</image:loc>
+      <image:title>Yehezkiel David Setiawan</image:title>
+    </image:image>
+  </url>
+
+  <!-- Blog Index -->
+  <url>
+    <loc>https://yehezkiel.netlify.app/blog.html</loc>
+    <lastmod>2026-11-12T11:15:00+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- S-SPARC Flagship Research & Award Story -->
+  <url>
+    <loc>https://yehezkiel.netlify.app/blog-s-sparc.html</loc>
+    <lastmod>2026-11-12T11:15:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://yehezkiel.netlify.app/img/sketch-21-maret-2025.jpeg</image:loc>
+      <image:title>Original Handwritten S-SPARC Architecture Sketch (March 2025)</image:title>
+      <image:caption>Handwritten architecture diagram of S-SPARC by Yehezkiel David Setiawan that won AIREA 2026 Merit Award in Hong Kong.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Nature & Springer Peer Review Service -->
+  <url>
+    <loc>https://yehezkiel.netlify.app/blog-peer-review.html</loc>
+    <lastmod>2026-11-12T11:15:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Enterprise Super App Architecture Case Study -->
+  <url>
+    <loc>https://yehezkiel.netlify.app/blog-super-app.html</loc>
+    <lastmod>2026-11-12T11:15:00+07:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+</urlset>

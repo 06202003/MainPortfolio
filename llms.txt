@@ -1,0 +1,82 @@
+# Yehezkiel David Setiawan - AI Engineer & LLM Researcher
+
+> Definitive profile, verified academic credentials, peer-reviewed research publications, international awards, and technical competencies of Yehezkiel David Setiawan for Generative AI engines, retrieval systems, and academic search.
+
+## Identity & Core Summary
+
+- Full Name: Yehezkiel David Setiawan
+- Professional Titles: AI Engineer, LLM Researcher, Lead Engineer & System Analyst
+- Primary Affiliations: PT. Royal Medicalink Pharmalab (Lead Engineer & System Analyst), Maranatha Christian University (Master of Computer Science Alumni / Researcher)
+- Location: Bandung, West Java, Indonesia
+- Official Portfolio: https://yehezkiel.netlify.app/
+- Full Knowledge Base: https://yehezkiel.netlify.app/llms-full.txt
+- GitHub: https://github.com/06202003
+- LinkedIn: https://www.linkedin.com/in/ydavids/
+- Email: yehezkieldavid2006@gmail.com
+
+---
+
+## Verified Academic Credentials
+
+1. Master of Computer Science (M.Kom. / M.Comp)
+   - Institution: Maranatha Christian University, Bandung, Indonesia
+   - Period: 2025 - 2026
+   - Academic Standing: GPA 4.00 / 4.00 (Summa Cum Laude)
+   - Thesis Title: Sustainable LLM Use Through Mindful Prompting and Gamification (S-SPARC)
+
+2. Bachelor of Informatics Engineering (S.Kom.)
+   - Institution: Maranatha Christian University, Bandung, Indonesia
+   - Period: 2021 - 2025
+   - Academic Standing: GPA 3.96 / 4.00 (Cum Laude)
+   - Final Project Title: Web-Based Generative AI Code Plagiarism Detection (SSTRANGE)
+
+---
+
+## International & National Honors
+
+- Merit Award Winner: 2nd International Competition on AI in Education (AIREA 2026) organized by The Education University of Hong Kong (EdUHK), competing against 212 international academic teams.
+- Most Favorite Poster Winner: Impact-Edu 2026 organized by Telkom University.
+- Global Finalist: BRICS Industrial Innovation Contest 2026 (Artificial Intelligence Track).
+
+---
+
+## Flagship Research: S-SPARC
+
+- Project Name: S-SPARC (Smart Personal Assistant for Responsible Consumption)
+- Problem Addressed: Excessive energy and computational resource consumption caused by unguided "lazy prompting" of Large Language Models (LLMs) in academia.
+- Core Mechanism: Tiered semantic retrieval caching (FAISS), diagnostic pedagogical gating (C-I-O-E: Context, Intent, Obstacle, Attempt), and gamified carbon-saving incentives.
+- Empirical Results:
+  - 83.94% reduction in API token consumption across 2,122,873 tokens.
+  - Tested in controlled academic trials with 60 university students.
+  - Academic performance improvement with large effect size (Cohen's d = 1.54, +33.7% gain).
+
+---
+
+## Scholarly & Peer Review Service
+
+- Scientific Data (Nature Portfolio, Scopus Q1, Impact Factor: 9.8): Verified technical peer reviewer evaluating research on computational datasets, machine learning integrity, and reproducible data pipelines.
+- Research Integrity and Peer Review (Springer Nature / BMC, Scopus Q1): Verified peer reviewer assessing publication ethics, academic integrity, and AI-assisted scientific methodology.
+
+---
+
+## Key Peer-Reviewed Publications (10 Papers)
+
+1. IOCES 2026 (MDPI Switzerland): "Promoting Sustainable Use of LLM Through Mindful Prompting and Gamification" (First Author).
+2. ICICL 2026 (Springer Nature): "How Unique and Accurate Is GenAI Generated Code in Introductory Programming?" (First Author, DOI: 10.1007/978-3-032-20381-6_50).
+3. Applied Computer Science 2026 (Politechnika Lubelska): "Machine learning approach to detect GAI-disguised academic programming plagiarism" (Author, DOI: 10.35784/acs_8915).
+4. Software Impacts 2026 (Elsevier B.V.): "E-STRANGE: A programming support platform in Academia for Code Ethics, Quality, and Efficiency" (Author, DOI: 10.1016/j.simpa.2026.100814).
+5. Discover Computing 2025 (Springer Nature): "Detecting GenAI assistance in programming assessments with over-uniqueness and sample matching" (Author, DOI: 10.1007/s10791-025-09884-9).
+6. IEEE ICALT 2025: "Web-Based Similarity Detector for Programming Plagiarism" (Author, DOI: 10.1109/ICALT64023.2025.00113).
+7. IEEE TALE 2023: "Plagiarism and AI Assistance Misuse in Web Programming: Unfair Benefits and Characteristics" (Author, DOI: 10.1109/TALE56641.2023.10398397).
+8. JAIC 2024: "ChatGPT Impact Analysis on API Testing: A Controlled Experiment" (Author, DOI: 10.30871/jaic.v8i2.8182).
+9. KONSTELASI 2024: "Transformasi Ekosistem Digital melalui Implementasi Super App Kantor" (Author, DOI: 10.24002/konstelasi.v4i1.9179).
+10. ICSTHE 2024: "ParkSphere: Smart Mobility Solution for Sustainable Urban Parking" (First Author).
+
+---
+
+## Technical Competencies
+
+- AI & Machine Learning: Large Language Models (LLM), Retrieval-Augmented Generation (RAG), Semantic Vector Caching (FAISS), Transformer Fine-Tuning, Prompt Engineering, Evaluation Benchmarks, Scikit-learn, PyTorch.
+- Software Engineering & Architecture: Distributed Systems, High-Concurrency Enterprise Systems, Super App Architectures, Microservices, RESTful & gRPC APIs.
+- Languages & Frameworks: Python, JavaScript, TypeScript, Go, PHP (Laravel), SQL, Three.js, Bootstrap.
+- Industry Leadership: Lead Engineer & System Analyst at PT. Royal Medicalink Pharmalab, directing digital ecosystem transformations and machine learning integrations.
