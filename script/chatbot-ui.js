@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Play response audio on bot answer ONLY if it's NOT a Guardrail Notice or Rest Notice
     if (sender === 'bot') {
-      const isGuardrail = text.includes('Guardrail Notice') || text.includes('️') || text.includes("I don't have relevant information") || text.includes('Rest Notice');
+      const isGuardrail = text.includes('Guardrail Notice') || text.includes("I don't have relevant information") || text.includes('Rest Notice');
       if (!isGuardrail) {
         playResponseAudio();
       }
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (err && (err.isRateLimited || err.message === 'RATE_LIMIT_EXHAUSTED')) {
         activateRestMode();
       } else {
-        addMessage('bot', '️ Sorry, an error occurred while processing your request. Please try again.');
+        addMessage('bot', 'Sorry, an error occurred while processing your request. Please try again.');
       }
       console.error(err);
     }

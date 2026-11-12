@@ -426,11 +426,11 @@ function createSketchfabAnnotationsInScene() {
   interactiveObjects = [];
 
   const annotations = [
-    { num: 1, pos: [12.74, 6.26, 4.05], colorStr: '#f59e0b', id: 'about', title: ' 1. Ramen Yatai (About Me)' },
-    { num: 2, pos: [7.96, 10.40, 8.50], colorStr: '#06b6d4', id: 'qualification', title: ' 2. Sake Brewery (Qualifications & Journey)' },
-    { num: 3, pos: [6.96, 6.50, -6.80], colorStr: '#a855f7', id: 'portfolio', title: ' 3. Japanese Traditional Bakery (Featured Projects)' },
-    { num: 4, pos: [-4.36, 4.35, 10.63], colorStr: '#10b981', id: 'research', title: '️ 4. Shinto Shrine (Research & Thesis)' },
-    { num: 5, pos: [-8.58, 3.65, -8.95], colorStr: '#ef4444', id: 'reach', title: ' 5. Vending Machine (Reach Me / Contact)' }
+    { num: 1, pos: [12.74, 6.26, 4.05], colorStr: '#f59e0b', id: 'about', title: '1. Ramen Yatai (About Me)' },
+    { num: 2, pos: [7.96, 10.40, 8.50], colorStr: '#06b6d4', id: 'qualification', title: '2. Sake Brewery (Qualifications & Journey)' },
+    { num: 3, pos: [6.96, 6.50, -6.80], colorStr: '#a855f7', id: 'portfolio', title: '3. Japanese Traditional Bakery (Featured Projects)' },
+    { num: 4, pos: [-4.36, 4.35, 10.63], colorStr: '#10b981', id: 'research', title: '4. Shinto Shrine (Research & Thesis)' },
+    { num: 5, pos: [-8.58, 3.65, -8.95], colorStr: '#ef4444', id: 'reach', title: '5. Vending Machine (Reach Me / Contact)' }
   ];
 
   annotations.forEach((anno) => {

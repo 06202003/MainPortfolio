@@ -529,7 +529,7 @@
 
     if (activeScenario === 'all' || activeScenario === 'conservative') {
       datasets.push({
-        label: '️ Skenario Konservatif (-10% Safety Buffer)',
+        label: 'Skenario Konservatif (-10% Safety Buffer)',
         data: conservativeValues,
         borderColor: '#a855f7',
         borderWidth: 2,

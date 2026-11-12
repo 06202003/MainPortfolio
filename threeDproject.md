@@ -129,7 +129,7 @@ The website consists of two seamlessly integrated tiers:
 
 ---
 
-## ⚡ Performance & Optimization Guidelines
+## [Lightning] Performance & Optimization Guidelines
 
 1. **Lazy Loading Execution:**
    - Three.js library and GLTF assets MUST NOT load on `DOMContentLoaded`.

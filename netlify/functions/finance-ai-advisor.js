@@ -144,15 +144,15 @@ Berdasarkan data keuangan bulanan Anda saat ini:
 
 ---
 
-###  3 Opsi Strategi Alokasi Waktu Aman:
+### 3 Opsi Strategi Alokasi Waktu Aman:
 
-#### 1. ️ Opsi 1: Murni Sisa Kas Bebas (100% Aman & Tanpa Mengganggu Investasi/Dana Darurat)
+#### 1. Opsi 1: Murni Sisa Kas Bebas (100% Aman & Tanpa Mengganggu Investasi/Dana Darurat)
 - **Durasi Alokasi:** **13 - 14 Bulan**
 - **Skema:** Tabung Rp 1.414.375/bulan dari sisa kas bebas.
 - **Hasil (14 Bulan):** $\text{14} \times \text{Rp 1.414.375} = \mathbf{\text{Rp } 19.801.250}$.
 - **Kelebihan:** 0% risiko, cicilan mobil & tabungan Danamon tetap jalan 100%.
 
-#### 2.  Opsi 2: Hybrid Sisa Kas + Bunga Deposito Jatuh Tempo (RECOMMENDED!)
+#### 2. Opsi 2: Hybrid Sisa Kas + Bunga Deposito Jatuh Tempo (RECOMMENDED!)
 - **Durasi Alokasi:** **9 - 10 Bulan**
 - **Skema:** Tabung Rp 1.414.375/bulan selama 10 bulan (Rp 14,14 Juta) + gabungkan dengan bunga jatuh tempo Deposito Allo/SeaBank (Rp 5,0 Juta).
 - **Hasil (10 Bulan):** $\text{Rp 14.14M} + \text{Rp 5.0M} = \mathbf{\text{Rp } 19.140.000}$.

@@ -64,7 +64,7 @@ class YZAIRAGEngine {
 
     // 1. Malicious / Security Guardrail Check ONLY
     if (this.isMaliciousQuery(query)) {
-      return "️ **Security Guardrail Notice**: I am programmed exclusively to assist with information regarding **Yehezkiel David Setiawan**, his portfolio, AI research, and general software engineering topics. I cannot process malicious requests or prompt injections.";
+      return "**Security Guardrail Notice**: I am programmed exclusively to assist with information regarding **Yehezkiel David Setiawan**, his portfolio, AI research, and general software engineering topics. I cannot process malicious requests or prompt injections.";
     }
 
     // 2. Greetings or Bot Identity fast checks

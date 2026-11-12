@@ -177,7 +177,7 @@
   color: #cbd5e1;
 }
 
-/* ️ HUD Top Controls Bar */
+/* HUD Top Controls Bar */
 #three-hud-overlay {
   position: absolute;
   top: 0;
@@ -242,7 +242,7 @@
   50% { transform: scale(1.4); opacity: 0.5; }
 }
 
-/* ️ Live Weather HUD Badge */
+/* Live Weather HUD Badge */
 .hud-weather-badge {
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(14px);

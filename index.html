@@ -5,6 +5,7 @@
   <!-- Meta Tags for SEO & Accessibility -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+  <title>Yehezkiel David Setiawan | AI Engineer &amp; LLM Researcher</title>
   <meta name="description"
     content="Yehezkiel David Setiawan - AI Engineer & LLM Researcher. Master of Computer Science (M.Kom., Perfect GPA 4.00 / Summa Cum Laude) & Bachelor of Informatics (S.Kom., IPK 3.96 / Cum Laude) from Maranatha Christian University. AI Engineer & LLM Researcher specializing in sustainable AI and code intelligence." />
   <meta name="keywords"
@@ -3116,65 +3117,6 @@
     <!-- Visual Interactive Initialization Script -->
     <script>
       $(document).ready(function () {
-        // GSAP Dynamic Cycling Typewriter
-        if (typeof gsap !== 'undefined' && typeof TextPlugin !== 'undefined') {
-          gsap.registerPlugin(TextPlugin);
-
-          gsap.to('.asepanaaa', {
-            duration: 0.8,
-            text: 'Hi, I am',
-            ease: 'none'
-          });
-
-          gsap.to('.asepanaa', {
-            duration: 1.8,
-            delay: 0.6,
-            text: 'Yehezkiel David Setiawan',
-            ease: 'none'
-          });
-
-          // Dynamic rotating subtitle
-          const dynamicRoles = [
-            "AI Engineer & LLM Researcher",
-            "Master of Computer Science (2026)",
-            "Specializing in LLM Innovation & Code Intelligence",
-            "Lead Engineer & System Analyst at Royal Medicalink"
-          ];
-
-          let roleIndex = 0;
-          function typeNextRole() {
-            const role = dynamicRoles[roleIndex];
-            roleIndex = (roleIndex + 1) % dynamicRoles.length;
-
-            gsap.to('.asep', {
-              duration: 1.4,
-              text: role,
-              ease: 'none',
-              onComplete: function () {
-                setTimeout(function () {
-                  gsap.to('.asep', {
-                    duration: 0.6,
-                    text: '',
-                    ease: 'none',
-                    onComplete: function () {
-                      setTimeout(typeNextRole, 250);
-                    }
-                  });
-                }, 2800);
-              }
-            });
-          }
-
-          setTimeout(typeNextRole, 1600);
-
-          gsap.to('.asepan', {
-            duration: 3.2,
-            delay: 2.0,
-            text: "Computer Science Master's graduate from Maranatha Christian University with a Bachelor's degree in Informatics Engineering. Specializing in Large Language Model (LLM) innovation, semantic code intelligence, and production-grade ML systems.",
-            ease: 'none'
-          });
-        }
-
         // 3D Photo Follow Mouse Effect
         const fotoHero = document.getElementById('fotoHero');
         if (fotoHero) {
@@ -3294,15 +3236,14 @@
           }
         }
 
-        // Title emoji cycler (deferred)
-        const emojis = [];
-        function changeEmoji() {
-          if (!document.hidden) {
-            const randomIndex = Math.floor(Math.random() * emojis.length);
-            document.title = 'Yehezkiel David S. ' + emojis[randomIndex];
+        // Page visibility title handler (clean, professional, zero emojis)
+        document.addEventListener('visibilitychange', function () {
+          if (document.hidden) {
+            document.title = 'Yehezkiel David Setiawan | AI Portfolio';
+          } else {
+            document.title = 'Yehezkiel David Setiawan | AI Engineer & LLM Researcher';
           }
-        }
-        setInterval(changeEmoji, 4000);
+        });
       });
     </script>
 
