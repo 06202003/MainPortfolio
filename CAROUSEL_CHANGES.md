@@ -1,6 +1,6 @@
 # Portfolio & Publications Carousel Upgrade
 
-## 🎯 Perubahan yang Dilakukan
+##  Perubahan yang Dilakukan
 
 ### 1. **Struktur Portfolio Section**
 
@@ -48,7 +48,7 @@
 - ✅ Removed custom hover effect listeners
 - ✅ Backup created: `index.html.backup`
 
-## 📁 Files Modified
+##  Files Modified
 
 1. **index.html**
    - Line 39-40: Added custom-carousel.css link
@@ -63,7 +63,7 @@
    - Dots indicator styling
    - Responsive media queries
 
-## 🎨 Technical Details
+##  Technical Details
 
 ### Owl Carousel Configuration
 
@@ -86,7 +86,7 @@ touchDrag: true,       // Enable touch drag
 - **768-1023px** (Tablet): 2 cards, 15px margin
 - **1024px+** (Desktop): 3 cards, 20px margin
 
-## 📊 Publications Abstract Expansion
+##  Publications Abstract Expansion
 
 Semua 6 publication abstracts sudah diperluas dari yang sebelumnya dipersingkat:
 
@@ -97,7 +97,7 @@ Semua 6 publication abstracts sudah diperluas dari yang sebelumnya dipersingkat:
 5. **KONSTELASI 2024**: 17 words → 78 words ✅
 6. **TALE 2023**: 21 words → 89 words ✅
 
-## 🚀 How to Test
+##  How to Test
 
 1. Open `index.html` in browser
 2. Scroll to Portfolio section - should auto-play with 3 cards visible

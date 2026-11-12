@@ -752,153 +752,113 @@ code, pre, kbd, samp,
   color: white;
 }
 
-/* Masculine theme overrides for Bootstrap variants used across the site */
-.bg-success,
-.btn-success,
-.btn-outline-success,
+/* High-Contrast Accessible Colors for Dark Theme */
 .text-success,
-.border-success,
-.badge.bg-success {
-  background-color: var(--theme-navy) !important;
-  border-color: var(--theme-navy) !important;
-  color: #ffffff !important;
-}
-
-.btn-outline-success,
-.text-success {
-  background-color: transparent !important;
-  color: var(--theme-navy) !important;
-}
-
-.btn-outline-success:hover,
-.btn-success:hover {
-  background-color: var(--theme-navy-deep) !important;
-  border-color: var(--theme-navy-deep) !important;
-  color: #ffffff !important;
-}
-
-.bg-primary,
-.btn-primary,
-.btn-outline-primary,
-.text-primary,
-.border-primary,
-.badge.bg-primary {
-  background-color: #1d4ed8 !important;
-  border-color: #1d4ed8 !important;
-  color: #ffffff !important;
-}
-
-.btn-outline-primary,
-.text-primary {
-  background-color: transparent !important;
-  color: #1d4ed8 !important;
-}
-
-.btn-outline-primary:hover,
-.btn-primary:hover {
-  background-color: #163ea6 !important;
-  border-color: #163ea6 !important;
-  color: #ffffff !important;
-}
-
-.bg-info,
-.btn-info,
-.btn-outline-info,
-.text-info,
-.border-info,
-.badge.bg-info {
-  background-color: var(--theme-slate) !important;
-  border-color: var(--theme-slate) !important;
-  color: #ffffff !important;
-}
-
-.btn-outline-info,
-.text-info {
-  background-color: transparent !important;
-  color: var(--theme-slate) !important;
-}
-
-.btn-outline-info:hover,
-.btn-info:hover {
-  background-color: var(--theme-graphite) !important;
-  border-color: var(--theme-graphite) !important;
-  color: #ffffff !important;
-}
-
-.bg-warning,
-.btn-warning,
-.btn-outline-warning,
-.text-warning,
-.border-warning,
-.badge.bg-warning {
-  background-color: var(--theme-bronze) !important;
-  border-color: var(--theme-bronze) !important;
-  color: #ffffff !important;
-}
-
-.btn-outline-warning,
-.text-warning {
-  background-color: transparent !important;
-  color: var(--theme-bronze) !important;
-}
-
-.btn-outline-warning:hover,
-.btn-warning:hover {
-  background-color: #614824 !important;
-  border-color: #614824 !important;
-  color: #ffffff !important;
-}
-
-.bg-danger,
-.btn-danger,
-.btn-outline-danger,
-.text-danger,
-.border-danger,
-.badge.bg-danger {
-  background-color: var(--theme-maroon) !important;
-  border-color: var(--theme-maroon) !important;
-  color: #ffffff !important;
-}
-
-.btn-outline-danger,
-.text-danger {
-  background-color: transparent !important;
-  color: var(--theme-maroon) !important;
-}
-
-.btn-outline-danger:hover,
-.btn-danger:hover {
-  background-color: #361521 !important;
-  border-color: #361521 !important;
-  color: #ffffff !important;
-}
-
-.bg-secondary,
-.btn-secondary,
-.btn-outline-secondary,
-.text-secondary,
-.border-secondary,
-.badge.bg-secondary {
-  background-color: var(--theme-graphite) !important;
-  border-color: var(--theme-graphite) !important;
-  color: #ffffff !important;
-}
-
-.btn-outline-secondary,
-.text-secondary {
-  background-color: transparent !important;
-  color: var(--theme-graphite) !important;
-}
-
-.btn-outline-secondary:hover,
-.btn-secondary:hover {
-  background-color: #334155 !important;
-  border-color: #334155 !important;
-  color: #ffffff !important;
-}
-
 i[style*='#198754'] {
-  color: var(--theme-navy) !important;
+  color: #34d399 !important;
+}
+
+.text-info {
+  color: #38bdf8 !important;
+}
+
+.text-primary {
+  color: #60a5fa !important;
+}
+
+.text-warning {
+  color: #fbbf24 !important;
+}
+
+.text-danger {
+  color: #f87171 !important;
+}
+
+.text-muted {
+  color: #94a3b8 !important;
+}
+
+.text-white-50 {
+  color: #cbd5e1 !important;
+}
+
+.border-success {
+  border-color: rgba(52, 211, 153, 0.45) !important;
+}
+
+.border-secondary {
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* Badge High-Contrast Glass Treatments */
+.badge.bg-success,
+.badge.bg-success-subtle {
+  background-color: rgba(16, 185, 129, 0.18) !important;
+  color: #34d399 !important;
+  border: 1px solid rgba(52, 211, 153, 0.5) !important;
+}
+
+.badge.bg-primary,
+.badge.bg-primary-subtle {
+  background-color: rgba(59, 130, 246, 0.18) !important;
+  color: #60a5fa !important;
+  border: 1px solid rgba(96, 165, 250, 0.5) !important;
+}
+
+.badge.bg-info,
+.badge.bg-info-subtle {
+  background-color: rgba(14, 165, 233, 0.18) !important;
+  color: #38bdf8 !important;
+  border: 1px solid rgba(56, 189, 248, 0.5) !important;
+}
+
+.badge.bg-warning,
+.badge.bg-warning-subtle {
+  background-color: rgba(245, 158, 11, 0.18) !important;
+  color: #fbbf24 !important;
+  border: 1px solid rgba(251, 191, 36, 0.5) !important;
+}
+
+.badge.bg-secondary {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #e2e8f0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.badge.bg-dark {
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  color: #e2e8f0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+/* Education Cards & University Crest */
+.education-card {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.education-card:hover {
+  border-color: rgba(52, 211, 153, 0.5) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.marnat-logo-badge {
+  background: #ffffff !important;
+  padding: 8px 18px !important;
+  border-radius: 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35) !important;
+}
+
+.marnat-logo-img {
+  height: 65px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
 }
 
 #vanta-container {

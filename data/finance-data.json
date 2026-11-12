@@ -46,12 +46,12 @@
     { "month": "Agu 2026", "amount": 174670000 }
   ],
   "asset_allocation": [
-    { "category": "Obligasi ST016T2 (🔒 SBN)", "amount": 50000000, "color": "#10b981", "target_pct": 30.0, "current_pct": 28.6 },
-    { "category": "Deposito Allo Bank (🔒 6.5%)", "amount": 50000000, "color": "#3b82f6", "target_pct": 25.0, "current_pct": 28.6 },
-    { "category": "Deposito SeaBank (🔒 6.0%)", "amount": 50000000, "color": "#06b6d4", "target_pct": 25.0, "current_pct": 28.6 },
-    { "category": "Sucorinvest MMF (💧 Likuid)", "amount": 15000000, "color": "#8b5cf6", "target_pct": 10.0, "current_pct": 8.6 },
-    { "category": "Tabungan Danamon (🔒 2031)", "amount": 8520000, "color": "#f59e0b", "target_pct": 7.0, "current_pct": 4.9 },
-    { "category": "Kas Bebas (💧 Likuid Instant)", "amount": 1414375, "color": "#ec4899", "target_pct": 3.0, "current_pct": 0.8 }
+    { "category": "Obligasi ST016T2 ( SBN)", "amount": 50000000, "color": "#10b981", "target_pct": 30.0, "current_pct": 28.6 },
+    { "category": "Deposito Allo Bank ( 6.5%)", "amount": 50000000, "color": "#3b82f6", "target_pct": 25.0, "current_pct": 28.6 },
+    { "category": "Deposito SeaBank ( 6.0%)", "amount": 50000000, "color": "#06b6d4", "target_pct": 25.0, "current_pct": 28.6 },
+    { "category": "Sucorinvest MMF ( Likuid)", "amount": 15000000, "color": "#8b5cf6", "target_pct": 10.0, "current_pct": 8.6 },
+    { "category": "Tabungan Danamon ( 2031)", "amount": 8520000, "color": "#f59e0b", "target_pct": 7.0, "current_pct": 4.9 },
+    { "category": "Kas Bebas ( Likuid Instant)", "amount": 1414375, "color": "#ec4899", "target_pct": 3.0, "current_pct": 0.8 }
   ],
   "expense_analytics": {
     "by_category": [

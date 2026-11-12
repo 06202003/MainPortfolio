@@ -14,13 +14,13 @@ window.YEHEZKIEL_KNOWLEDGE_BASE = [
     id: "bio_summary",
     title: "General Bio & Summary",
     keywords: ["who is", "yehezkiel", "david", "bio", "summary", "about", "profile", "role", "location", "bandung"],
-    content: "Yehezkiel David Setiawan is an AI Engineer and LLM Researcher from Bandung, Indonesia. He graduated with a Master of Computer Science (M.Kom.) with a perfect GPA 4.00 / 4.00 (Summa Cum Laude) and a Bachelor of Informatics (S.Kom., Cum Laude) from Maranatha Christian University. He specializes in large language model (LLM) innovation, data engineering, code intelligence systems, and production-grade ML deployment."
+    content: "Yehezkiel David Setiawan is an AI Engineer and LLM Researcher from Bandung, Indonesia. He graduated with a Master of Computer Science (M.Kom.) with a perfect GPA 4.00 / 4.00 (Summa Cum Laude) and a Bachelor of Informatics (S.Kom., IPK 3.96 / 4.00, Cum Laude) from Maranatha Christian University. He specializes in large language model (LLM) innovation, data engineering, code intelligence systems, and production-grade ML deployment."
   },
   {
     id: "education",
     title: "Education Background",
     keywords: ["education", "degree", "university", "maranatha", "bachelor", "master", "gpa", "informatics", "computer science", "ipk", "cum laude"],
-    content: "Yehezkiel graduated with his Master's degree in Computer Science (Magister Ilmu Komputer / M.Kom., 2025-2026) with a perfect GPA 4.00 / 4.00 (Summa Cum Laude) and completed his Bachelor's degree in Informatics Engineering (S.Kom., 2021-2025, Cum Laude) at Maranatha Christian University, Bandung. His master's thesis focused on sustainable LLM usage and knowledge reuse (S-SPARC), while his bachelor's thesis developed AI-driven code plagiarism detection (SSTRANGE)."
+    content: "Yehezkiel graduated with his Master's degree in Computer Science (Magister Ilmu Komputer / M.Kom., 2025-2026) with a perfect GPA 4.00 / 4.00 (Summa Cum Laude) and completed his Bachelor's degree in Informatics Engineering (S.Kom., 2021-2025, IPK 3.96 / 4.00, Cum Laude) at Maranatha Christian University, Bandung. His master's thesis focused on sustainable LLM usage and knowledge reuse (S-SPARC), while his bachelor's thesis developed AI-driven code plagiarism detection (SSTRANGE)."
   },
   {
     id: "award_airea",

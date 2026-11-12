@@ -5,7 +5,7 @@
 
 ---
 
-## 🎯 Role & System Mission
+##  Role & System Mission
 
 You are an expert **Senior Creative Web Developer** and **Three.js / WebGL Architect**. 
 Your goal is to build a high-performance, visually stunning, two-tier portfolio web application for **Yehezkiel** (Developer, Data Analyst, Researcher).
@@ -17,7 +17,7 @@ The website consists of two seamlessly integrated tiers:
 
 ---
 
-## 🏗️ Technical Stack & Project Structure
+## ️ Technical Stack & Project Structure
 
 ### Recommended Stack:
 - **Core:** Vanilla HTML5, CSS3, JavaScript (ES6+ Modules) or Vite + Vanilla JS
@@ -58,7 +58,7 @@ The website consists of two seamlessly integrated tiers:
 
 ---
 
-## 🚪 Tier 1: HTML Portfolio & Secret Door Entry Point
+##  Tier 1: HTML Portfolio & Secret Door Entry Point
 
 ### Landing Page Requirements:
 - Clean, minimalist aesthetic with dark-mode elegance, refined typography (Inter / Outfit font), and generous whitespace.
@@ -66,7 +66,7 @@ The website consists of two seamlessly integrated tiers:
 - Fast initial page load: **ZERO 3D assets or Three.js bundles loaded initially.**
 
 ### Mysterious Navbar Door:
-- **Location:** Top-left of the main navigation bar (`🚪` icon or SVG custom wooden door icon).
+- **Location:** Top-left of the main navigation bar (`` icon or SVG custom wooden door icon).
 - **Idle State:** Subtle glow animation (`box-shadow` or CSS keyframe pulse).
 - **Hover State:** Tooltip popup: *"Open another world"* or *"Enter my hidden archive"*.
 - **Click Action:** Triggers `portalTransition.js`.
@@ -78,7 +78,7 @@ The website consists of two seamlessly integrated tiers:
 
 ---
 
-## 🌃 Tier 2: 3D Midnight Alley Blueprint
+##  Tier 2: 3D Midnight Alley Blueprint
 
 ### Atmosphere & Environment Settings:
 - **Setting:** Japanese-inspired narrow midnight alley (Tokyo lo-fi night aesthetic).
@@ -99,7 +99,7 @@ The website consists of two seamlessly integrated tiers:
 
 ---
 
-## 📍 Interactive Locations Matrix
+##  Interactive Locations Matrix
 
 | Location ID | 3D Props / Scene Setup | Target Portfolio Content | Interactive Action & UI Overlay |
 | :--- | :--- | :--- | :--- |
@@ -112,7 +112,7 @@ The website consists of two seamlessly integrated tiers:
 
 ---
 
-## 🎁 Hidden Easter Eggs
+##  Hidden Easter Eggs
 
 1. **Stray Alley Cat:**
    - **Prop:** Small low-poly cat sitting near vending machine.
@@ -148,7 +148,7 @@ The website consists of two seamlessly integrated tiers:
 
 ---
 
-## 🚀 Step-by-Step Implementation Roadmap for AI Agent
+##  Step-by-Step Implementation Roadmap for AI Agent
 
 When generating code, execute in this order:
 
