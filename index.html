@@ -342,118 +342,86 @@
     <!-- End Home Section -->
 
     <!-- About Section -->
-    <section id="about" aria-label="About Yehezkiel" style="scroll-margin-top: 80px; padding-bottom: 95px; position: relative; z-index: 2;">
-      <div class="container pt-5" style="height: auto">
-        <div class="row d-flex justify-content-center align-items-center" style="min-height: 90vh">
-          <div class="col-md-4" data-aos="fade-right" data-aos-duration="800">
-            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
-              aria-controls="offcanvasBottom" aria-label="Open video and quotes gallery">
-              <div class="card border-0 mx-auto" style="width: 100%;">
-                <div class="card-body">
-                  <video class="rounded-5" id="aboutProfileVideo" playsinline muted loop poster="img/david_hero.webp" preload="none"
-                    style="width: 100%; height: 100%; object-fit: cover;" aria-label="Profile video introduction">
-                    <source data-src="media/video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              </div>
+    <section id="about" aria-label="About Yehezkiel" style="scroll-margin-top: 80px; padding-bottom: 80px; position: relative; z-index: 2;">
+      <div class="container pt-5">
+        <div class="row d-flex justify-content-center align-items-center">
+          <div class="col-lg-4 col-md-5 mb-4 mb-md-0" data-aos="fade-right" data-aos-duration="800">
+            <button class="btn p-0 border-0 shadow-sm" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"
+              aria-controls="offcanvasBottom" aria-label="Open video and quotes gallery" style="border-radius: 16px; overflow: hidden; width: 100%;">
+              <video class="w-100 d-block" id="aboutProfileVideo" playsinline muted loop poster="img/david_hero.webp" preload="none"
+                style="object-fit: cover; aspect-ratio: 4/5; border-radius: 16px;" aria-label="Profile video introduction">
+                <source data-src="media/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </button>
           </div>
-          <div class="col-md-8 px-5" data-aos="fade-left" data-aos-duration="800">
-            <h1>About Me</h1>
-            <p style="text-align: justify;font-size: 1em;">
-              Yehezkiel David Setiawan is an AI engineer and researcher from Bandung, Indonesia, specializing in large language model
-              (LLM) innovation, data engineering, and code intelligence systems. He combines rigorous academic research with production
-              system development to architect machine learning ecosystems that scale reliably. He graduated with his Master of Computer
-              Science (M.Kom.) from Maranatha Christian University with a perfect <strong>GPA 4.00 / 4.00 (Summa Cum Laude)</strong>, alongside
-              his Bachelor of Informatics Engineering (S.Kom., Cum Laude). His flagship research project, <strong>S-SPARC</strong>, won the
-              international AIREA 2026 Merit Award in Hong Kong and Most Favorite Poster at Impact-Edu 2026.
+          <div class="col-lg-8 col-md-7 ps-lg-5" data-aos="fade-left" data-aos-duration="800">
+            <span class="text-uppercase text-muted fw-bold small" style="letter-spacing: 1.5px; font-size: 0.8rem;">Profile &amp; Background</span>
+            <h2 class="display-6 fw-bold text-dark mb-3" style="font-family: 'Space Grotesk', sans-serif;">
+              About Me
+            </h2>
+            
+            <p class="text-dark mb-3" style="font-size: 1.02rem; line-height: 1.7; text-align: justify;">
+              I am an AI engineer and LLM researcher from Bandung, Indonesia. I graduated with a <strong>Master of Computer Science (M.Kom.) with a perfect GPA of 4.00 / 4.00 (Summa Cum Laude)</strong> and a Bachelor of Informatics Engineering (S.Kom., Cum Laude) from Maranatha Christian University.
             </p>
 
-            <!-- Executive Credentials Dossier (Human-Crafted Editorial Layout) -->
-            <div class="exec-dossier" data-aos="fade-up" data-aos-delay="200">
-              <div class="exec-item">
-                <div class="exec-icon">
-                  <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-                <div class="exec-content">
-                  <div class="exec-heading">
-                    <span>Master of Computer Science (M.Kom.)</span>
-                    <span class="exec-tag exec-tag-honor">IPK 4.00 / 4.00 &bull; Summa Cum Laude</span>
-                    <span class="exec-tag">2025–2026</span>
+            <p class="text-secondary mb-4" style="font-size: 0.95rem; line-height: 1.7; text-align: justify;">
+              My work bridges theoretical AI research and production system architecture. As Lead Engineer &amp; System Analyst at PT. Royal Medicalink Pharmalab, I architect scalable software solutions, automated data intelligence pipelines, and machine learning models. My flagship research platform, <strong>S-SPARC</strong>, won the international <strong>Merit Award at AIREA 2026 in Hong Kong</strong> and <strong>Most Favorite Poster at Impact-Edu 2026</strong>. I also serve as a verified technical peer reviewer for <em>Scientific Data</em> (Nature Portfolio, IF: 9.8) and Springer Nature.
+            </p>
+
+            <!-- Minimalist Editorial Highlights (Clean Two-Column Grid, Zero Box Slop) -->
+            <div class="row g-3 mb-4 pt-3 border-top">
+              <div class="col-sm-6">
+                <div class="d-flex align-items-baseline gap-2">
+                  <span class="text-success fw-bold">&bull;</span>
+                  <div>
+                    <span class="d-block text-dark fw-bold small">Dual Academic Degrees</span>
+                    <span class="text-muted small">M.Kom. (IPK 4.00 Summa Cum Laude) &bull; S.Kom. (Cum Laude)</span>
                   </div>
-                  <p class="exec-desc">
-                    Maranatha Christian University. Graduated with perfect 4.0 GPA. Bachelor of Informatics Engineering (S.Kom., Cum Laude, 2021–2025).
-                  </p>
                 </div>
               </div>
-
-              <div class="exec-item">
-                <div class="exec-icon">
-                  <i class="fa-solid fa-award"></i>
-                </div>
-                <div class="exec-content">
-                  <div class="exec-heading">
-                    <span>International &amp; National Honors</span>
-                    <span class="exec-tag">AIREA Hong Kong</span>
-                    <span class="exec-tag">Impact-Edu</span>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-baseline gap-2">
+                  <span class="text-success fw-bold">&bull;</span>
+                  <div>
+                    <span class="d-block text-dark fw-bold small">International Honors</span>
+                    <span class="text-muted small">AIREA 2026 Merit Award (Hong Kong) &bull; Impact-Edu Winner</span>
                   </div>
-                  <p class="exec-desc">
-                    Merit Award Winner at the 2nd International Competition on AI in Education (Hong Kong, 212 international teams) &amp; Most Favorite Poster Winner at Impact-Edu 2026 (Telkom University).
-                  </p>
                 </div>
               </div>
-
-              <div class="exec-item">
-                <div class="exec-icon">
-                  <i class="fa-solid fa-stamp"></i>
-                </div>
-                <div class="exec-content">
-                  <div class="exec-heading">
-                    <span>Scholarly &amp; Peer Review Service</span>
-                    <span class="exec-tag">Nature Portfolio (IF: 9.8)</span>
-                    <span class="exec-tag">Springer Nature</span>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-baseline gap-2">
+                  <span class="text-success fw-bold">&bull;</span>
+                  <div>
+                    <span class="d-block text-dark fw-bold small">Editorial Service</span>
+                    <span class="text-muted small">Verified Reviewer &bull; Nature Scientific Data (IF: 9.8)</span>
                   </div>
-                  <p class="exec-desc">
-                    Verified technical peer reviewer for <em>Scientific Data</em> (Nature Portfolio, Scopus Q1) and <em>Research Integrity and Peer Review</em> (Springer Nature / BMC).
-                  </p>
                 </div>
               </div>
-
-              <div class="exec-item">
-                <div class="exec-icon">
-                  <i class="fa-solid fa-code-merge"></i>
-                </div>
-                <div class="exec-content">
-                  <div class="exec-heading">
-                    <span>Engineering Leadership &amp; AI Systems</span>
-                    <span class="exec-tag">PT. Royal Medicalink Pharmalab</span>
+              <div class="col-sm-6">
+                <div class="d-flex align-items-baseline gap-2">
+                  <span class="text-success fw-bold">&bull;</span>
+                  <div>
+                    <span class="d-block text-dark fw-bold small">Industry Leadership</span>
+                    <span class="text-muted small">Lead Engineer &amp; System Analyst @ Royal Medicalink</span>
                   </div>
-                  <p class="exec-desc">
-                    Lead Engineer &amp; System Analyst. Architecting enterprise digital ecosystems, semantic code intelligence pipelines, and production machine learning deployments.
-                  </p>
                 </div>
               </div>
             </div>
 
-            <!-- Subtle Quote -->
-            <blockquote class="fst-italic text-secondary border-start border-3 ps-3 text-start mb-4"
-              style="font-size: 0.95em;">
-              “Bridging research and real-world systems, because intelligence is only meaningful when it scales.”
-            </blockquote>
-
-            <!-- Actions Row: Download CV & Graduation Photos -->
-            <div class="d-flex gap-3 align-items-center flex-wrap mt-3 mb-2" data-aos="fade-up" data-aos-delay="300">
+            <!-- Single Clean Action Row: Download CV & Graduation Photos -->
+            <div class="d-flex gap-3 align-items-center flex-wrap pt-2">
               <a href="data/Yehezkiel.pdf" download="Yehezkiel_David_Setiawan_CV.pdf"
-                class="btn-cv-download flex-grow-1"
+                class="btn btn-dark rounded-pill px-4 py-2 fw-semibold shadow-sm d-inline-flex align-items-center gap-2"
                 aria-label="Download Curriculum Vitae in PDF format">
                 <i class="fa-solid fa-file-arrow-down"></i>
                 <span>Download Curriculum Vitae (PDF)</span>
-                <span class="badge bg-light text-dark fw-semibold ms-2 px-2 py-1" style="font-size: 0.74rem;">Updated Sep 2026 &bull; 1.2MB</span>
+                <span class="badge bg-secondary text-white fw-normal ms-1" style="font-size: 0.72rem;">1.2 MB</span>
               </a>
-              <button type="button" class="btn-wisuda-trigger" data-bs-toggle="modal" data-bs-target="#modalWisudaGallery">
-                <i class="fa-solid fa-images"></i>
-                <span>Graduation Photos (S1 &amp; S2)</span>
+              <button type="button" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2"
+                data-bs-toggle="modal" data-bs-target="#modalWisudaGallery">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>Graduation Photos</span>
               </button>
             </div>
           </div>
@@ -606,67 +574,36 @@
           <div class="row d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="150">
             <div id="div1">
               <div class="container">
-                <div class="row g-4 my-3 justify-content-center align-items-stretch">
+                <div class="row my-4 d-flex justify-content-center align-items-center" style="height: auto">
                   
-                  <!-- S2: Master of Computer Science -->
-                  <div class="col-lg-5 col-md-6">
-                    <div class="edu-card-pro">
-                      <img src="img/wisuda/wisuda-s2-master-studio.webp"
-                        alt="Yehezkiel David Setiawan - Master of Computer Science Graduation Photo"
-                        class="edu-photo-thumb"
-                        data-bs-toggle="modal" data-bs-target="#modalWisudaGallery"
-                        title="Click to view full graduation gallery" />
-                      <div class="d-flex justify-content-between align-items-start mb-2">
-                        <span class="edu-honor-badge">
-                          <i class="fa-solid fa-medal me-1"></i> Perfect GPA 4.00 / 4.00 &bull; Summa Cum Laude
-                        </span>
-                        <span class="text-muted small" style="font-family: var(--font-mono);">2025–2026</span>
-                      </div>
-                      <h4 class="edu-degree-title">Master of Computer Science (M.Kom.)</h4>
-                      <p class="text-white-50 small mb-2">Maranatha Christian University, Bandung</p>
-                      <p class="text-slate-300 small flex-grow-1" style="color: #cbd5e1; font-size: 0.85rem; line-height: 1.5;">
-                        Specialized in Large Language Models, Sustainable AI architectures, and Code Intelligence. Thesis: <em>S-SPARC &mdash; Sustainable LLM Use Through Mindful Prompting and Gamification</em>.
-                      </p>
-                      <div class="d-flex gap-2 pt-2 border-top border-secondary mt-auto">
-                        <button type="button" class="btn btn-sm btn-outline-light w-100" data-bs-toggle="modal" data-bs-target="#modalWisudaGallery">
-                          <i class="fa-solid fa-expand me-1"></i> View S2 Graduation Photos
-                        </button>
-                      </div>
-                    </div>
+                  <div class="col-md-5 px-3 py-2">
+                    <span class="badge bg-success mb-2 px-2 py-1" style="font-size: 0.75rem;">IPK 4.00 / 4.00 &bull; Summa Cum Laude</span>
+                    <h3 class="fw-bold mb-1 text-white">Master of Computer Science (M.Kom.)</h3>
+                    <h5 class="text-white-50 mb-1">Maranatha Christian University, Bandung</h5>
+                    <p class="text-muted small mb-2"><i class="fa-solid fa-calendar-days me-1"></i> 2025&ndash;2026</p>
+                    <p class="text-light small mb-3" style="line-height: 1.5; color: #cbd5e1;">
+                      Thesis: <em>Sustainable LLM Use Through Mindful Prompting and Gamification (S-SPARC)</em>.
+                    </p>
+                    <button type="button" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1" data-bs-toggle="modal" data-bs-target="#modalWisudaGallery" style="font-size: 0.78rem;">
+                      <i class="fa-solid fa-images me-1"></i> Lihat Foto Wisuda S2
+                    </button>
                   </div>
 
-                  <!-- S1: Bachelor of Informatics -->
-                  <div class="col-lg-5 col-md-6">
-                    <div class="edu-card-pro">
-                      <img src="img/wisuda/wisuda-s1-cumlaude.webp"
-                        alt="Yehezkiel David Setiawan - Bachelor of Informatics Cum Laude Graduation Photo"
-                        class="edu-photo-thumb"
-                        data-bs-toggle="modal" data-bs-target="#modalWisudaGallery"
-                        title="Click to view full graduation gallery" />
-                      <div class="d-flex justify-content-between align-items-start mb-2">
-                        <span class="edu-honor-badge" style="background: rgba(59, 130, 246, 0.15); border-color: #3b82f6; color: #60a5fa;">
-                          <i class="fa-solid fa-award me-1"></i> Graduated Cum Laude
-                        </span>
-                        <span class="text-muted small" style="font-family: var(--font-mono);">2021–2025</span>
-                      </div>
-                      <h4 class="edu-degree-title">Bachelor of Informatics Engineering (S.Kom.)</h4>
-                      <p class="text-white-50 small mb-2">Maranatha Christian University, Bandung</p>
-                      <p class="text-slate-300 small flex-grow-1" style="color: #cbd5e1; font-size: 0.85rem; line-height: 1.5;">
-                        Graduated Cum Laude. Final Project: <em>SSTRANGE &mdash; Web Application Integrating Generative AI for Academic Code Plagiarism Detection</em>.
-                      </p>
-                      <div class="d-flex gap-2 pt-2 border-top border-secondary mt-auto">
-                        <button type="button" class="btn btn-sm btn-outline-light w-100" data-bs-toggle="modal" data-bs-target="#modalWisudaGallery">
-                          <i class="fa-solid fa-expand me-1"></i> View S1 Graduation Photos
-                        </button>
-                      </div>
-                    </div>
+                  <div class="col-md-5 px-3 py-2 border-start border-secondary">
+                    <span class="badge bg-primary mb-2 px-2 py-1" style="font-size: 0.75rem;">Graduated Cum Laude</span>
+                    <h3 class="fw-bold mb-1 text-white">Informatics Engineering (S.Kom.)</h3>
+                    <h5 class="text-white-50 mb-1">Maranatha Christian University, Bandung</h5>
+                    <p class="text-muted small mb-2"><i class="fa-solid fa-calendar-days me-1"></i> 2021&ndash;2025</p>
+                    <p class="text-light small mb-3" style="line-height: 1.5; color: #cbd5e1;">
+                      Final Project: <em>Web-Based Generative AI Code Plagiarism Detection (SSTRANGE)</em>.
+                    </p>
+                    <button type="button" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1" data-bs-toggle="modal" data-bs-target="#modalWisudaGallery" style="font-size: 0.78rem;">
+                      <i class="fa-solid fa-images me-1"></i> Lihat Foto Wisuda S1
+                    </button>
                   </div>
 
-                  <!-- University Badge & Accreditation -->
-                  <div class="col-lg-2 col-md-12 d-flex flex-column align-items-center justify-content-center text-center">
-                    <img src="img/marnat.png" alt="Maranatha Christian University Logo" class="marnat mb-2" style="max-height: 90px; width: auto;" />
-                    <span class="small text-white-50 d-block">Maranatha Christian University</span>
-                    <span class="badge bg-dark border border-secondary text-secondary mt-2 px-2 py-1" style="font-size: 0.72rem;">FTRC</span>
+                  <div class="col-md-2 px-2 py-2 text-center">
+                    <img src="img/marnat.png" alt="Maranatha Christian University Logo" class="marnat" style="max-height: 90px; width: auto;" />
                   </div>
 
                 </div>
@@ -740,107 +677,103 @@
       <!-- Publications Spotlight & Carousel Section (100vh Split Layout) -->
       <section id="publications" class="publications-section" aria-label="Academic publications and research showcase">
         <!-- Top Zone: 70vh S-SPARC Spotlight Hero -->
-        <div class="sparc-spotlight-zone">
+        <div class="sparc-spotlight-zone" style="padding: 40px 0;">
           <div class="container">
             <div class="row align-items-center g-4">
-              <!-- Left Column: Architectural Title, Metadata, Metrics & Story -->
+              <!-- Left Column: Crisp Typography, Clean Data Strip & Just 2 Actions -->
               <div class="col-lg-7" data-aos="fade-right" data-aos-duration="800">
-                <div class="sparc-meta-strip">
-                  <span class="sparc-meta-badge highlight">Flagship Research &bull; Master's Thesis (GPA 4.00)</span>
-                  <span class="sparc-meta-badge">AIREA 2026 Merit Award &bull; Hong Kong</span>
-                  <span class="sparc-meta-badge">Impact-Edu 2026 Most Favorite Poster</span>
+                <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+                  <span class="badge bg-success-subtle text-success border border-success px-2 py-1 small fw-semibold" style="font-size: 0.76rem;">
+                    Master's Thesis Research &bull; IPK 4.00
+                  </span>
+                  <span class="badge bg-dark border border-secondary text-light px-2 py-1 small" style="font-size: 0.76rem;">
+                    AIREA 2026 Merit Award (Hong Kong)
+                  </span>
+                  <span class="badge bg-dark border border-secondary text-warning px-2 py-1 small" style="font-size: 0.76rem;">
+                    Impact-Edu Most Favorite Poster
+                  </span>
                 </div>
 
-                <h1 class="display-4 fw-bold text-white mb-1"
-                  style="font-family: 'Space Grotesk', sans-serif; letter-spacing: -1px;">
+                <h1 class="display-4 fw-bold text-white mb-1" style="font-family: 'Space Grotesk', sans-serif; letter-spacing: -1px;">
                   S-SPARC
                 </h1>
-                <p class="fs-5 mb-3" style="color: #34d399; font-weight: 600;">
+                <p class="fs-5 mb-3 text-success fw-semibold">
                   Smart Personal Assistant for Responsible Consumption
                 </p>
-                <p class="text-slate-300 mb-3" style="color: #cbd5e1; font-size: 0.95rem; line-height: 1.5;">
-                  Eco-conscious AI learning system engineered to mitigate environmental computational costs and "lazy prompting" in academia through <strong>tiered semantic retrieval knowledge reuse</strong>, <strong>diagnostic gating</strong>, and <strong>pedagogical gamification</strong>.
+
+                <p class="text-slate-300 mb-4" style="color: #cbd5e1; font-size: 0.96rem; line-height: 1.7; text-align: justify;">
+                  An eco-conscious AI learning system designed to mitigate environmental computational costs and "lazy prompting" in academia. Through <strong>tiered semantic retrieval caching (FAISS)</strong>, <strong>diagnostic gating (C-I-O-E)</strong>, and <strong>gamification</strong>, S-SPARC achieved an <strong>83.94% token reduction</strong> across 2,122,873 tokens in controlled trials with 60 students &mdash; saving computational energy while significantly improving academic performance (effect size <em>d</em> = 1.54, +33.7%).
                 </p>
 
-                <!-- Precision Metrics Strip -->
-                <div class="sparc-metrics-strip">
-                  <div class="sparc-metric-item">
-                    <div class="sparc-metric-val green">83.94%</div>
-                    <p class="sparc-metric-label">Token Reduction via Local Reuse</p>
+                <!-- Minimalist Precision Metric Strip (No Clunky Boxes) -->
+                <div class="d-flex align-items-center gap-4 py-3 mb-4 border-top border-bottom border-secondary flex-wrap">
+                  <div>
+                    <div class="fs-3 fw-bold text-success font-monospace mb-0" style="line-height: 1.1;">83.94%</div>
+                    <span class="text-muted small text-uppercase" style="font-size: 0.72rem; letter-spacing: 0.5px;">Token Reduction</span>
                   </div>
-                  <div class="sparc-metric-item">
-                    <div class="sparc-metric-val">60</div>
-                    <p class="sparc-metric-label">Students in Controlled Experiment</p>
+                  <div class="vr bg-secondary d-none d-sm-block" style="height: 36px;"></div>
+                  <div>
+                    <div class="fs-3 fw-bold text-white font-monospace mb-0" style="line-height: 1.1;">60</div>
+                    <span class="text-muted small text-uppercase" style="font-size: 0.72rem; letter-spacing: 0.5px;">Students Tested</span>
                   </div>
-                  <div class="sparc-metric-item">
-                    <div class="sparc-metric-val">2,122,873</div>
-                    <p class="sparc-metric-label">Total Workload Tokens Processed</p>
+                  <div class="vr bg-secondary d-none d-sm-block" style="height: 36px;"></div>
+                  <div>
+                    <div class="fs-3 fw-bold text-white font-monospace mb-0" style="line-height: 1.1;">2.12M</div>
+                    <span class="text-muted small text-uppercase" style="font-size: 0.72rem; letter-spacing: 0.5px;">Workload Tokens</span>
+                  </div>
+                  <div class="vr bg-secondary d-none d-sm-block" style="height: 36px;"></div>
+                  <div>
+                    <div class="fs-3 fw-bold text-info font-monospace mb-0" style="line-height: 1.1;">+33.7%</div>
+                    <span class="text-muted small text-uppercase" style="font-size: 0.72rem; letter-spacing: 0.5px;">Academic Gain</span>
                   </div>
                 </div>
 
-                <!-- Behind the Paper Narrative Box -->
-                <div class="sparc-narrative-box">
-                  <div class="sparc-narrative-title">Behind the Research &mdash; Environmental &amp; Cognitive Cost of AI</div>
-                  <p class="sparc-narrative-text">
-                    A single LLM prompt emits 4&times; more CO₂ than a traditional search query. S-SPARC tackles "lazy prompting" and compute costs through tiered semantic knowledge reuse. In trials with 60 students over 7 laboratory sessions (2.1M+ tokens), <strong>83.94%</strong> of queries were answered purely through knowledge reuse without invoking external generative LLMs.
-                  </p>
-                </div>
-
-                <!-- Unified Action Bar (No Rainbow Candy Buttons) -->
-                <div class="sparc-action-toolbar">
-                  <a href="blog-s-sparc.html" class="sparc-btn-primary">
-                    <i class="fa-solid fa-book-open me-1"></i> Read Full Story: Building S-SPARC &mdash; From Paper Sketch to Hong Kong Award &rarr;
+                <!-- Clean, Unified Two-Button Action Group (No Rainbow Button Spam) -->
+                <div class="d-flex gap-3 align-items-center flex-wrap">
+                  <a href="blog-s-sparc.html" class="btn btn-success rounded-pill px-4 py-2 fw-semibold shadow-sm d-inline-flex align-items-center gap-2">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Read Research Story</span>
+                    <i class="fa-solid fa-arrow-right small ms-1"></i>
                   </a>
-                  <div class="sparc-doc-group">
-                    <button type="button" class="sparc-doc-btn" data-bs-toggle="modal" data-bs-target="#modalPosterPdf" data-sparc-doc="poster" title="View Research Poster PDF">
-                      <i class="fa-solid fa-file-pdf"></i> Poster PDF
-                    </button>
-                    <button type="button" class="sparc-doc-btn" data-bs-toggle="modal" data-bs-target="#modalPosterPdf" data-sparc-doc="deck" title="View Pitch Deck Presentation">
-                      <i class="fa-solid fa-chalkboard-user"></i> Pitch Deck
-                    </button>
-                    <button type="button" class="sparc-doc-btn" data-bs-toggle="modal" data-bs-target="#modalPosterPdf" data-sparc-doc="airea-cert" title="View AIREA Merit Award Certificate">
-                      <i class="fa-solid fa-award"></i> AIREA Cert
-                    </button>
-                    <button type="button" class="sparc-doc-btn" data-bs-toggle="modal" data-bs-target="#modalPosterPdf" data-sparc-doc="impact-cert" title="View Impact-Edu Certificate">
-                      <i class="fa-solid fa-certificate"></i> Impact Cert
-                    </button>
-                  </div>
+                  <button type="button" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2"
+                    data-bs-toggle="modal" data-bs-target="#modalPosterPdf" data-sparc-doc="poster">
+                    <i class="fa-solid fa-file-pdf text-danger"></i>
+                    <span>View Poster &amp; Pitch Deck</span>
+                  </button>
                 </div>
               </div>
 
               <!-- Right Column: Interactive Multi-Media Showcase (Video, Chart, Poster) -->
               <div class="col-lg-5" id="pub-card-sparc" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
-                <div class="sparc-card-glow text-center">
+                <div class="p-3 bg-dark border border-secondary rounded-4 shadow-lg text-center" style="background-color: #111827 !important;">
 
-                  <!-- Tab Navigation Bar -->
-                  <div class="sparc-media-nav">
+                  <!-- Segmented Tab Navigation -->
+                  <div class="sparc-media-nav mb-3">
                     <button class="sparc-media-tab active" data-tab="video">
-                      <i class="fa-solid fa-circle-play text-danger me-1"></i> AIREA Video
+                      <i class="fa-solid fa-circle-play text-danger me-1"></i> Video
                     </button>
                     <button class="sparc-media-tab" data-tab="chart">
                       <i class="fa-solid fa-chart-column text-success me-1"></i> Token Savings
                     </button>
                     <button class="sparc-media-tab" data-tab="poster">
-                      <i class="fa-solid fa-award text-warning me-1"></i> Poster &amp; Award
+                      <i class="fa-solid fa-certificate text-warning me-1"></i> Poster &amp; Award
                     </button>
                   </div>
 
                   <!-- Pane 1: Video Documentation -->
                   <div id="sparc-pane-video" class="sparc-media-pane active">
-                    <div class="sparc-video-wrapper mb-2">
-                      <video id="sparcHeroVideo" controls poster="img/airea.jpeg" preload="none">
+                    <div class="sparc-video-wrapper mb-2 rounded-3 overflow-hidden border border-secondary">
+                      <video id="sparcHeroVideo" controls poster="img/airea.jpeg" preload="none" class="w-100 d-block" style="max-height: 240px; object-fit: cover;">
                         <source src="media/Airea.mp4" type="video/mp4">
                         Your browser does not support HTML5 video.
                       </video>
                     </div>
                     <div class="d-flex align-items-center justify-content-between text-start px-1 mt-2">
                       <div>
-                        <span class="d-block text-white fw-bold small"><i
-                            class="fa-solid fa-award text-warning me-1"></i> AIREA 2026 Merit Award Documentation</span>
-                        <span class="text-muted" style="font-size: 0.75rem;">The Education University of Hong
-                          Kong</span>
+                        <span class="d-block text-white fw-bold small">AIREA 2026 Merit Award Documentation</span>
+                        <span class="text-muted" style="font-size: 0.75rem;">The Education University of Hong Kong</span>
                       </div>
-                      <button class="sparc-doc-btn py-1 px-2" style="font-size: 0.8rem;" data-bs-toggle="modal" data-bs-target="#modalAIREA2026">
+                      <button class="btn btn-sm btn-outline-light rounded-pill px-3 py-1" style="font-size: 0.78rem;" data-bs-toggle="modal" data-bs-target="#modalAIREA2026">
                         Details <i class="fa-solid fa-arrow-right ms-1"></i>
                       </button>
                     </div>
@@ -848,15 +781,14 @@
 
                   <!-- Pane 2: Token Analytics Chart -->
                   <div id="sparc-pane-chart" class="sparc-media-pane">
-                    <h6
-                      class="fw-bold text-white mb-2 d-flex align-items-center justify-content-between flex-wrap gap-1">
-                      <span id="sparcChartTitle"><i class="fa-solid fa-chart-column me-2 text-success"></i> Token Usage
-                        (P1–P7)</span>
-                      <button id="toggleChartMode" class="btn btn-sm btn-outline-success py-0 px-2"
-                        style="width: auto; font-size: 0.75rem;">
-                        <i class="fa-solid fa-chart-line me-1"></i> Toggle Savings
+                    <div class="d-flex align-items-center justify-content-between mb-2">
+                      <span id="sparcChartTitle" class="text-white small fw-bold">
+                        <i class="fa-solid fa-chart-column me-1 text-success"></i> Token Usage per Practical Session (P1&ndash;P7)
+                      </span>
+                      <button id="toggleChartMode" class="btn btn-sm btn-outline-success rounded-pill py-0 px-2" style="font-size: 0.72rem;">
+                        Toggle Savings
                       </button>
-                    </h6>
+                    </div>
                     <div style="position: relative; height: 210px; width: 100%;">
                       <canvas id="sparcTokenChart"></canvas>
                     </div>
@@ -864,29 +796,18 @@
 
                   <!-- Pane 3: Poster PDF Preview -->
                   <div id="sparc-pane-poster" class="sparc-media-pane text-center py-2">
-                    <div class="d-flex justify-content-center align-items-center gap-1 mb-2 flex-wrap">
-                      <span class="badge bg-warning text-dark fw-bold px-2 py-1" style="font-size: 0.75rem;">
-                        <i class="fa-solid fa-certificate me-1"></i> Most Favorite Poster
-                      </span>
-                      <span class="badge bg-secondary text-white px-2 py-1" style="font-size: 0.75rem;">
-                        Telkom University
-                      </span>
-                    </div>
-                    <div class="poster-preview-thumb mx-auto mb-2" style="width: 140px; height: 185px; max-width: 100%;"
+                    <div class="poster-preview-thumb mx-auto mb-2" style="width: 140px; height: 185px; max-width: 100%; cursor: pointer;"
                       data-bs-toggle="modal" data-bs-target="#modalPosterPdf" data-sparc-doc="poster">
-                      <img src="img/S-SPARC_IMPACT_EDU_thumb.webp" alt="S-SPARC Impact-Edu 2026 Poster Thumbnail" class="w-100 h-100"
+                      <img src="img/S-SPARC_IMPACT_EDU_thumb.webp" alt="S-SPARC Impact-Edu 2026 Poster Thumbnail" class="w-100 h-100 rounded-2"
                         style="object-fit: cover;" loading="lazy" decoding="async" width="140" height="185" />
-                      <div class="overlay"><i class="fa-solid fa-magnifying-glass-plus text-white fs-3"></i></div>
                     </div>
-                    <span class="d-block text-white fw-bold small mb-2">Impact-Edu 2026 Research Poster &amp; Award</span>
-                    <div class="d-flex justify-content-center gap-2 flex-wrap">
-                      <button class="sparc-doc-btn py-1 px-3"
-                        style="font-size: 0.8rem;" data-bs-toggle="modal" data-bs-target="#modalPosterPdf" data-sparc-doc="poster">
-                        <i class="fa-solid fa-expand me-1"></i> View Poster PDF
+                    <span class="d-block text-white fw-bold small mb-2">Impact-Edu 2026 Most Favorite Poster</span>
+                    <div class="d-flex justify-content-center gap-2">
+                      <button class="btn btn-sm btn-success rounded-pill px-3 py-1" style="font-size: 0.8rem;" data-bs-toggle="modal" data-bs-target="#modalPosterPdf" data-sparc-doc="poster">
+                        <i class="fa-solid fa-expand me-1"></i> View Full Poster PDF
                       </button>
-                      <button class="sparc-doc-btn py-1 px-3"
-                        style="font-size: 0.8rem;" data-bs-toggle="modal" data-bs-target="#modalImpactEdu2026">
-                        <i class="fa-solid fa-award me-1"></i> Certificate Details
+                      <button class="btn btn-sm btn-outline-light rounded-pill px-3 py-1" style="font-size: 0.8rem;" data-bs-toggle="modal" data-bs-target="#modalImpactEdu2026">
+                        Certificate
                       </button>
                     </div>
                   </div>
