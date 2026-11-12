@@ -409,8 +409,8 @@
               </div>
             </div>
 
-            <!-- Single Clean Action Row: Download CV & Graduation Photos -->
-            <div class="d-flex gap-3 align-items-center flex-wrap pt-2">
+            <!-- Single Clean Action: Download CV -->
+            <div class="pt-2">
               <a href="data/Yehezkiel.pdf" download="Yehezkiel_David_Setiawan_CV.pdf"
                 class="btn btn-dark rounded-pill px-4 py-2 fw-semibold shadow-sm d-inline-flex align-items-center gap-2"
                 aria-label="Download Curriculum Vitae in PDF format">
@@ -418,11 +418,6 @@
                 <span>Download Curriculum Vitae (PDF)</span>
                 <span class="badge bg-secondary text-white fw-normal ms-1" style="font-size: 0.72rem;">1.2 MB</span>
               </a>
-              <button type="button" class="btn btn-outline-dark rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2"
-                data-bs-toggle="modal" data-bs-target="#modalWisudaGallery">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>Graduation Photos</span>
-              </button>
             </div>
           </div>
         </div>
@@ -574,36 +569,49 @@
           <div class="row d-flex justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="150">
             <div id="div1">
               <div class="container">
-                <div class="row my-4 d-flex justify-content-center align-items-center" style="height: auto">
+                <div class="row my-4 g-4 justify-content-center align-items-start" style="height: auto">
                   
-                  <div class="col-md-5 px-3 py-2">
+                  <div class="col-md-5 px-3">
+                    <div class="mb-3 overflow-hidden rounded-3 shadow-sm border border-secondary border-opacity-50">
+                      <img src="img/wisuda/wisuda-s2-master-studio.webp"
+                        alt="Yehezkiel David Setiawan - Master of Computer Science Studio Graduation Photo"
+                        class="w-100 d-block"
+                        style="height: 230px; object-fit: cover; object-position: top center; cursor: pointer;"
+                        data-bs-toggle="modal" data-bs-target="#modalWisudaGallery"
+                        title="Click to view full graduation gallery" />
+                    </div>
                     <span class="badge bg-success mb-2 px-2 py-1" style="font-size: 0.75rem;">IPK 4.00 / 4.00 &bull; Summa Cum Laude</span>
                     <h3 class="fw-bold mb-1 text-white">Master of Computer Science (M.Kom.)</h3>
                     <h5 class="text-white-50 mb-1">Maranatha Christian University, Bandung</h5>
                     <p class="text-muted small mb-2"><i class="fa-solid fa-calendar-days me-1"></i> 2025&ndash;2026</p>
-                    <p class="text-light small mb-3" style="line-height: 1.5; color: #cbd5e1;">
+                    <p class="text-light small mb-0" style="line-height: 1.6; color: #cbd5e1;">
                       Thesis: <em>Sustainable LLM Use Through Mindful Prompting and Gamification (S-SPARC)</em>.
                     </p>
-                    <button type="button" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1" data-bs-toggle="modal" data-bs-target="#modalWisudaGallery" style="font-size: 0.78rem;">
-                      <i class="fa-solid fa-images me-1"></i> Lihat Foto Wisuda S2
-                    </button>
                   </div>
 
-                  <div class="col-md-5 px-3 py-2 border-start border-secondary">
+                  <div class="col-md-5 px-3 border-start border-secondary">
+                    <div class="mb-3 overflow-hidden rounded-3 shadow-sm border border-secondary border-opacity-50">
+                      <img src="img/wisuda/wisuda-s1-cumlaude.webp"
+                        alt="Yehezkiel David Setiawan - Bachelor of Informatics Cum Laude Graduation Photo"
+                        class="w-100 d-block"
+                        style="height: 230px; object-fit: cover; object-position: center; cursor: pointer;"
+                        data-bs-toggle="modal" data-bs-target="#modalWisudaGallery"
+                        title="Click to view full graduation gallery" />
+                    </div>
                     <span class="badge bg-primary mb-2 px-2 py-1" style="font-size: 0.75rem;">Graduated Cum Laude</span>
                     <h3 class="fw-bold mb-1 text-white">Informatics Engineering (S.Kom.)</h3>
                     <h5 class="text-white-50 mb-1">Maranatha Christian University, Bandung</h5>
                     <p class="text-muted small mb-2"><i class="fa-solid fa-calendar-days me-1"></i> 2021&ndash;2025</p>
-                    <p class="text-light small mb-3" style="line-height: 1.5; color: #cbd5e1;">
+                    <p class="text-light small mb-0" style="line-height: 1.6; color: #cbd5e1;">
                       Final Project: <em>Web-Based Generative AI Code Plagiarism Detection (SSTRANGE)</em>.
                     </p>
-                    <button type="button" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1" data-bs-toggle="modal" data-bs-target="#modalWisudaGallery" style="font-size: 0.78rem;">
-                      <i class="fa-solid fa-images me-1"></i> Lihat Foto Wisuda S1
-                    </button>
                   </div>
 
-                  <div class="col-md-2 px-2 py-2 text-center">
-                    <img src="img/marnat.png" alt="Maranatha Christian University Logo" class="marnat" style="max-height: 90px; width: auto;" />
+                  <div class="col-md-2 px-2 py-2 text-center d-flex flex-column align-items-center justify-content-center">
+                    <img src="img/marnat.png" alt="Maranatha Christian University Logo" class="marnat mb-3" style="max-height: 90px; width: auto;" />
+                    <button type="button" class="btn btn-sm btn-outline-light rounded-pill px-3 py-1" data-bs-toggle="modal" data-bs-target="#modalWisudaGallery" style="font-size: 0.75rem;">
+                      <i class="fa-solid fa-images me-1"></i> Galeri Foto
+                    </button>
                   </div>
 
                 </div>
