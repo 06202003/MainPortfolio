@@ -43,7 +43,7 @@
 ## Flagship Research: S-SPARC
 
 - Project Name: S-SPARC (Smart Personal Assistant for Responsible Consumption)
-- Delegation Team: Yehezkiel David Setiawan (Lead Researcher), MAS RUSDI BARBER (Co-Developer), Archangela Sheilla Haryanto, advised by Dr. Oscar Karnalim.
+- Delegation Team: Yehezkiel David Setiawan (Lead Researcher), Johanes Mario Pranata, Archangela Sheilla Haryanto, advised by Dr. Oscar Karnalim.
 - Problem Addressed: Excessive energy and computational resource consumption caused by unguided "lazy prompting" of Large Language Models (LLMs) in academia.
 - Core Mechanism: Tiered semantic retrieval caching (FAISS), diagnostic pedagogical gating (C-I-O-E: Context, Intent, Obstacle, Attempt), and gamified carbon-saving incentives.
 - Empirical Results:

@@ -169,8 +169,8 @@
     },
     sparc_poster: {
       title: 'S-SPARC: Smart Personal Assistant for Responsible Consumption',
-      bibtex: `@misc{setiawan2026sparc,\n  title={S-SPARC: Smart Personal Assistant for Responsible Consumption (Impact-Edu 2026 Most Favorite Poster)},\n  author={Setiawan, Yehezkiel David and MAS RUSDI BARBER and Haryanto, Archangela Sheilla and Karnalim, Oscar},\n  howpublished={Impact-Edu 2026 Poster Competition, Telkom University},\n  year={2026}\n}`,
-      apa: 'Setiawan, Y. D., MAS RUSDI BARBER, Haryanto, A. S., & Karnalim, O. (2026). S-SPARC: Smart Personal Assistant for Responsible Consumption. Impact-Edu 2026 Student Learning Innovation Poster Competition, Telkom University.'
+      bibtex: `@misc{setiawan2026sparc,\n  title={S-SPARC: Smart Personal Assistant for Responsible Consumption (Impact-Edu 2026 Most Favorite Poster)},\n  author={Setiawan, Yehezkiel David and Pranata, Johanes Mario and Haryanto, Archangela Sheilla and Karnalim, Oscar},\n  howpublished={Impact-Edu 2026 Poster Competition, Telkom University},\n  year={2026}\n}`,
+      apa: 'Setiawan, Y. D., Pranata, J. M., Haryanto, A. S., & Karnalim, O. (2026). S-SPARC: Smart Personal Assistant for Responsible Consumption. Impact-Edu 2026 Student Learning Innovation Poster Competition, Telkom University.'
     }
   };
 
