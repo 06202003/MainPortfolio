@@ -181,71 +181,89 @@ code, pre, kbd, samp,
   line-height: 1.3;
 }
 
-/* Hero Action Buttons */
+/* Hero Action Buttons - Premium Glassmorphism */
 .btn-hero-primary {
-  background: #10b981 !important;
-  color: #ffffff !important;
+  background: rgba(16, 185, 129, 0.14) !important;
+  backdrop-filter: blur(16px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(180%) !important;
+  border: 1px solid rgba(52, 211, 153, 0.5) !important;
+  color: #34d399 !important;
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 10px 24px;
+  padding: 11px 26px;
   border-radius: 50px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
-  transition: all 0.2s ease;
-  border: none;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-hero-primary:hover {
-  background: #059669 !important;
+  background: rgba(16, 185, 129, 0.26) !important;
+  border-color: rgba(52, 211, 153, 0.85) !important;
   color: #ffffff !important;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+  box-shadow: 0 12px 36px rgba(16, 185, 129, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.4);
 }
 
 .btn-hero-secondary {
   background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
   border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  color: #ffffff !important;
+  color: #e2e8f0 !important;
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 10px 22px;
+  padding: 11px 24px;
   border-radius: 50px;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  transition: all 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .btn-hero-secondary:hover {
   background: rgba(255, 255, 255, 0.15) !important;
-  border-color: #34d399 !important;
-  color: #34d399 !important;
+  border-color: rgba(255, 255, 255, 0.38) !important;
+  color: #ffffff !important;
   transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
-/* Subtle, Elegant Badge Pills (No tacky/norak colors) */
+/* Hero Badges Glassmorphism */
+.hero-top-badge {
+  background: rgba(16, 185, 129, 0.1) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(52, 211, 153, 0.35) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
 .hero-badge-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   color: #e2e8f0;
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: 9999px;
   font-size: 0.88rem;
   font-weight: 500;
-  backdrop-filter: blur(8px);
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transition: all 0.25s ease;
 }
 
 .hero-badge-pill:hover {
   background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.32);
   color: #ffffff;
   transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
 /* S-SPARC Subtle Badge Pills */
@@ -2070,4 +2088,264 @@ section[id] {
   padding: 12px 14px;
   color: #cbd5e1;
   font-size: 0.85rem;
+}
+
+
+/* ==========================================================================
+   COMPREHENSIVE GLASSMORPHISM BUTTON SYSTEM
+   ========================================================================== */
+
+/* Universal Glass Class */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(14px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(160%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Navbar Contact Me Button -> Glass Emerald */
+.navbar .btn-success {
+  background: rgba(16, 185, 129, 0.14) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(52, 211, 153, 0.45) !important;
+  color: #34d399 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.navbar .btn-success:hover {
+  background: rgba(16, 185, 129, 0.28) !important;
+  border-color: rgba(52, 211, 153, 0.8) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+/* About Section Download CV Button -> Dark Glass */
+#about .btn-dark,
+.btn-cv-glass {
+  background: rgba(15, 23, 42, 0.88) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+  transition: all 0.25s ease !important;
+}
+
+#about .btn-dark:hover,
+.btn-cv-glass:hover {
+  background: rgba(15, 23, 42, 0.98) !important;
+  border-color: rgba(52, 211, 153, 0.6) !important;
+  color: #34d399 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Qualification Tab Buttons Glass */
+.qual-tab-btn {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  color: #cbd5e1 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+.qual-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.qual-tab-btn.active {
+  background: rgba(16, 185, 129, 0.18) !important;
+  color: #34d399 !important;
+  border-color: rgba(52, 211, 153, 0.6) !important;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+/* S-SPARC Spotlight Buttons Glass */
+.sparc-spotlight-zone .btn-success {
+  background: rgba(16, 185, 129, 0.16) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(52, 211, 153, 0.45) !important;
+  color: #34d399 !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.25s ease !important;
+}
+
+.sparc-spotlight-zone .btn-success:hover {
+  background: rgba(16, 185, 129, 0.28) !important;
+  border-color: rgba(52, 211, 153, 0.8) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+}
+
+.sparc-spotlight-zone .btn-outline-light {
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+  transition: all 0.25s ease !important;
+}
+
+.sparc-spotlight-zone .btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+.sparc-media-tab {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #94a3b8 !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.sparc-media-tab.active,
+.sparc-media-tab:hover {
+  background: rgba(16, 185, 129, 0.2) !important;
+  border-color: rgba(52, 211, 153, 0.5) !important;
+  color: #34d399 !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Publication Card Buttons Glass */
+.btn-pub-details {
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #cbd5e1 !important;
+}
+
+.btn-pub-details:hover {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.btn-pub-paper {
+  background: rgba(16, 185, 129, 0.16) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(52, 211, 153, 0.45) !important;
+  color: #34d399 !important;
+  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-pub-paper:hover {
+  background: rgba(16, 185, 129, 0.28) !important;
+  border-color: rgba(52, 211, 153, 0.75) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35) !important;
+  transform: translateY(-1px);
+}
+
+/* Portfolio Card Glass Buttons */
+.btn-sparc-solid {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-radius: 50px !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-sparc-green {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border: 1px solid rgba(52, 211, 153, 0.45) !important;
+  color: #34d399 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-sparc-green:hover {
+  background: rgba(16, 185, 129, 0.28) !important;
+  border-color: rgba(52, 211, 153, 0.8) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35) !important;
+}
+
+.btn-sparc-gold {
+  background: rgba(245, 158, 11, 0.15) !important;
+  border: 1px solid rgba(251, 191, 36, 0.45) !important;
+  color: #fbbf24 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-sparc-gold:hover {
+  background: rgba(245, 158, 11, 0.28) !important;
+  border-color: rgba(251, 191, 36, 0.8) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35) !important;
+}
+
+.btn-sparc-blue {
+  background: rgba(59, 130, 246, 0.15) !important;
+  border: 1px solid rgba(96, 165, 250, 0.45) !important;
+  color: #60a5fa !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-sparc-blue:hover {
+  background: rgba(59, 130, 246, 0.28) !important;
+  border-color: rgba(96, 165, 250, 0.8) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.35) !important;
+}
+
+.btn-sparc-cyan {
+  background: rgba(6, 182, 212, 0.15) !important;
+  border: 1px solid rgba(34, 211, 238, 0.45) !important;
+  color: #22d3ee !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-sparc-cyan:hover {
+  background: rgba(6, 182, 212, 0.28) !important;
+  border-color: rgba(34, 211, 238, 0.8) !important;
+  color: #ffffff !important;
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.35) !important;
+}
+
+/* General Dark Outline Glass */
+.bg-dark .btn-outline-light,
+.bg-dark .btn-outline-success,
+section.bg-dark .btn-outline-light,
+section.bg-dark .btn-outline-success {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+.bg-dark .btn-outline-light:hover,
+.bg-dark .btn-outline-success:hover,
+section.bg-dark .btn-outline-light:hover,
+section.bg-dark .btn-outline-success:hover {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
 }
