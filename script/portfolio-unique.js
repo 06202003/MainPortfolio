@@ -62,8 +62,9 @@
   // --- 3. Hero Typewriter Role Rotator ---
   const roles = [
     'AI Engineer & LLM Researcher',
-    'Most Favorite Poster Winner (Impact-Edu 2026)',
+    'Master of Computer Science (GPA 4.00)',
     'AIREA 2026 Merit Award Winner (Hong Kong)',
+    'Most Favorite Poster Winner (Impact-Edu 2026)',
     'Scopus Author (10+ Top Journal & IEEE Papers)',
     'Technical Lead @ Royal Medicalink Pharmalab',
     'Certified Reviewer for Nature & Springer Nature'

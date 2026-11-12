@@ -67,12 +67,12 @@ function playSound(type) {
   }
 }
 
-// 🎵 Spotify-Style Multi-Channel Live Radio Engine
+//  Spotify-Style Multi-Channel Live Radio Engine
 const radioStations = [
-  { name: '☕ Kyoto Midnight', subtitle: '24/7 Lofi Girl Beats', icon: '🎧', url: 'https://stream.zeno.fm/f3vkgmy1ahuvv' },
-  { name: '🌧️ Rainy Day Lofi', subtitle: 'Rain & Chillhop Vibes', icon: '☕', url: 'https://lofi.stream.laut.fm/lofi' },
-  { name: '🌙 Tokyo Synthwave', subtitle: 'Cyberpunk Night Beats', icon: '🌙', url: 'https://streams.ilovemusic.de/iloveradio/lofigirl.mp3' },
-  { name: '🎮 8-Bit Chiptune', subtitle: 'Retro Arcade Radio', icon: '🎮', url: 'https://stream.zeno.fm/s0822u8yq8uvv' }
+  { name: 'Kyoto Midnight', subtitle: '24/7 Lofi Girl Beats', icon: '', url: 'https://stream.zeno.fm/f3vkgmy1ahuvv' },
+  { name: 'Rainy Day Lofi', subtitle: 'Rain & Chillhop Vibes', icon: '', url: 'https://lofi.stream.laut.fm/lofi' },
+  { name: 'Tokyo Synthwave', subtitle: 'Cyberpunk Night Beats', icon: '', url: 'https://streams.ilovemusic.de/iloveradio/lofigirl.mp3' },
+  { name: '8-Bit Chiptune', subtitle: 'Retro Arcade Radio', icon: '', url: 'https://stream.zeno.fm/s0822u8yq8uvv' }
 ];
 
 let activeStationIdx = 0;
@@ -88,7 +88,7 @@ function updateSpotifyUI() {
 
   if (artElem) artElem.textContent = station.icon;
   if (titleElem) titleElem.textContent = station.name;
-  if (subtitleElem) subtitleElem.textContent = isLofiPlaying ? 'Playing Live 🟢' : station.subtitle;
+  if (subtitleElem) subtitleElem.textContent = isLofiPlaying ? 'Playing Live' : station.subtitle;
   if (playIcon) playIcon.className = isLofiPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play';
   if (eqElem) {
     if (isLofiPlaying) eqElem.classList.add('playing');
@@ -104,7 +104,7 @@ function switchStation(direction) {
   }
 
   const station = radioStations[activeStationIdx];
-  showToast(`📻 Switched Station: ${station.name}`);
+  showToast(`Switched Station: ${station.name}`);
 
   if (!lofiStreamAudio) {
     lofiStreamAudio = new Audio();
@@ -137,18 +137,18 @@ function toggleLofiMusic() {
   if (isLofiPlaying) {
     lofiStreamAudio.pause();
     isLofiPlaying = false;
-    showToast('📻 Radio Paused');
+    showToast('Radio Paused');
   } else {
-    showToast(`📻 Connecting to ${radioStations[activeStationIdx].name}...`);
+    showToast(`Connecting to ${radioStations[activeStationIdx].name}...`);
     const playPromise = lofiStreamAudio.play();
     if (playPromise !== undefined) {
       playPromise.then(() => {
         isLofiPlaying = true;
-        showToast(`🎶 Playing: ${radioStations[activeStationIdx].name}`);
+        showToast(`Playing: ${radioStations[activeStationIdx].name}`);
       }).catch(err => {
         console.warn('Lo-Fi radio stream play error:', err);
         isLofiPlaying = false;
-        showToast('⚠️ Click play again to start radio stream');
+        showToast('Click play again to start radio stream');
       });
     }
   }
@@ -303,7 +303,7 @@ function initThreeWorld() {
   // Rain Particle System (Retained)
   createRainParticles();
 
-  // ☁️ 3D Floating Cloud Sea (Floating Sky Island Atmosphere)
+  //  3D Floating Cloud Sea (Floating Sky Island Atmosphere)
   createFloatingCloudSea();
 
   // Raycasting Setup
@@ -426,11 +426,11 @@ function createSketchfabAnnotationsInScene() {
   interactiveObjects = [];
 
   const annotations = [
-    { num: 1, pos: [12.74, 6.26, 4.05], colorStr: '#f59e0b', id: 'about', title: '🍜 1. Ramen Yatai (About Me)' },
-    { num: 2, pos: [7.96, 10.40, 8.50], colorStr: '#06b6d4', id: 'qualification', title: '🍶 2. Sake Brewery (Qualifications & Journey)' },
-    { num: 3, pos: [6.96, 6.50, -6.80], colorStr: '#a855f7', id: 'portfolio', title: '🍞 3. Japanese Traditional Bakery (Featured Projects)' },
-    { num: 4, pos: [-4.36, 4.35, 10.63], colorStr: '#10b981', id: 'research', title: '⛩️ 4. Shinto Shrine (Research & Thesis)' },
-    { num: 5, pos: [-8.58, 3.65, -8.95], colorStr: '#ef4444', id: 'reach', title: '🧃 5. Vending Machine (Reach Me / Contact)' }
+    { num: 1, pos: [12.74, 6.26, 4.05], colorStr: '#f59e0b', id: 'about', title: ' 1. Ramen Yatai (About Me)' },
+    { num: 2, pos: [7.96, 10.40, 8.50], colorStr: '#06b6d4', id: 'qualification', title: ' 2. Sake Brewery (Qualifications & Journey)' },
+    { num: 3, pos: [6.96, 6.50, -6.80], colorStr: '#a855f7', id: 'portfolio', title: ' 3. Japanese Traditional Bakery (Featured Projects)' },
+    { num: 4, pos: [-4.36, 4.35, 10.63], colorStr: '#10b981', id: 'research', title: '️ 4. Shinto Shrine (Research & Thesis)' },
+    { num: 5, pos: [-8.58, 3.65, -8.95], colorStr: '#ef4444', id: 'reach', title: ' 5. Vending Machine (Reach Me / Contact)' }
   ];
 
   annotations.forEach((anno) => {
@@ -452,7 +452,7 @@ function createSketchfabAnnotationsInScene() {
 function loadKyotoModel() {
   const modelPath = './assets/models/kyoto.glb';
   if (typeof THREE.GLTFLoader === 'function') {
-    showToast('⏳ Fetching 3D Kyoto City Scene (82 MB)...');
+    showToast('Fetching 3D Kyoto City Scene (82 MB)...');
     console.log('Starting GLTFLoader fetch for:', modelPath);
 
     const loader = new THREE.GLTFLoader();
@@ -490,20 +490,20 @@ function loadKyotoModel() {
         createSketchfabAnnotationsInScene();
 
         scene.add(model);
-        showToast('🏯 Kyoto Midnight City Loaded! Click any surface to inspect 3D coordinates or click pins 1-5.');
+        showToast('Kyoto Midnight City Loaded! Click any surface to inspect 3D coordinates or click pins 1-5.');
       },
       (xhr) => {
         if (xhr.lengthComputable && xhr.total > 0) {
           const percent = Math.round((xhr.loaded / xhr.total) * 100);
-          showToast(`⏳ Downloading Kyoto 3D City: ${percent}%`);
+          showToast(`Downloading Kyoto 3D City: ${percent}%`);
         } else if (xhr.loaded) {
           const mb = (xhr.loaded / (1024 * 1024)).toFixed(1);
-          showToast(`⏳ Downloading Kyoto 3D City: ${mb} MB / 82.9 MB`);
+          showToast(`Downloading Kyoto 3D City: ${mb} MB / 82.9 MB`);
         }
       },
       (error) => {
         console.error('GLTF load error:', error);
-        showToast('⚠️ GLTF Load Note: ' + (error.message || 'GLB load'));
+        showToast('GLTF Load Note: ' + (error.message || 'GLB load'));
       }
     );
   }
@@ -530,7 +530,7 @@ function onMouseMove(event) {
       const title = obj.userData ? obj.userData.title : 'Kyoto Landmark';
       if (hint) {
         hint.style.display = 'flex';
-        hint.innerHTML = `<span>✨ Click Pin: <strong>${title}</strong></span>`;
+        hint.innerHTML = `<span>Click Pin: <strong>${title}</strong></span>`;
       }
     } else {
       document.body.style.cursor = 'default';
@@ -649,115 +649,115 @@ function onSceneClick(event) {
 // Content Modals Map — Yehezkiel's Personal Kyoto Travel Journal & Stories (English Edition)
 const modalContentMap = {
   about: {
-    title: '📖 Entry 01: Late Night at the Ramen Yatai',
+    title: 'Entry 01: Late Night at the Ramen Yatai',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Entry #01 (Ramen Yatai)</div>
+      <div class="diary-stamp-badge">Kyoto Journal • Entry #01 (Ramen Yatai)</div>
       <div class="diary-story-quote">
         "A bowl of late-night Yatai ramen teaches one thing: memorable work comes from meticulously blending base ingredients into a cohesive whole."
       </div>
       <p>Welcome to my quiet corner. Here, amidst the warm steam of a midnight Kyoto ramen stand, I find the best analogy for my engineering mindset. I am <strong>Yehezkiel David Setiawan</strong> — an AI Engineer & Researcher who views code like a broth recipe: it’s not about how many ingredients you throw in, but about achieving a harmonious logical balance.</p>
       <p>For me, crafting AI models and LLM architectures is about creating experiences that aren't just intelligent, but feel intuitive, warm, and genuinely helpful for people.</p>
       <div class="diary-personal-note">
-        🍜 <span>Personal Note: Sipping warm ramen while analyzing LLM prompt architectures late at night is my favorite ritual.</span>
+        <span>Personal Note: Sipping warm ramen while analyzing LLM prompt architectures late at night is my favorite ritual.</span>
       </div>
     `
   },
   qualification: {
-    title: '📖 Entry 02: Aged Vats at the Sake Brewery',
+    title: 'Entry 02: Aged Vats at the Sake Brewery',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Entry #02 (Sake Brewery)</div>
+      <div class="diary-stamp-badge">Kyoto Journal • Entry #02 (Sake Brewery)</div>
       <div class="diary-story-quote">
         "Brewing fine Sake requires patient fermentation, time, and precise thermal control. There are no shortcuts to true craftsmanship."
       </div>
       <p>In this traditional Sake distillery, time works on its own terms. My journey in Informatics was built on the exact same principle. From mastering Laravel fundamentals, engineering high-throughput medical data pipelines at Royal Medicalink Pharmalab, to diving into artificial intelligence research at Maranatha Christian University — no milestone was rushed.</p>
       <p>Every debugged edge case and every data pipeline designed is a fermentation of experience, shaping my problem-solving mindset to remain refined, resilient, and built to last.</p>
       <div class="diary-personal-note">
-        🍶 <span>Personal Note: Engineering is like traditional brewing — patient, meticulous, and built to stand the test of time.</span>
+        <span>Personal Note: Engineering is like traditional brewing — patient, meticulous, and built to stand the test of time.</span>
       </div>
     `
   },
   portfolio: {
-    title: '📖 Entry 03: Aromas from the Traditional Bakery',
+    title: 'Entry 03: Aromas from the Traditional Bakery',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Entry #03 (Traditional Bakery)</div>
+      <div class="diary-stamp-badge">Kyoto Journal • Entry #03 (Traditional Bakery)</div>
       <div class="diary-story-quote">
         "The scent of freshly baked artisan bread brings warmth and smiles. So should every digital product I create."
       </div>
       <p>This traditional bakery is filled with warmth and creative spirit. This is where my best experimental projects were born. When designing <strong>S-SPARC</strong> (an AI prompt control system awarded the <em>Merit Award at AIREA 2026</em>) to this interactive 3D WebGL portal, my ambition has always been simple: to 'bake' applications that don't just function, but bring delight and a memorable warm surprise to everyone who tries them.</p>
       <p>To me, combining algorithmic precision with aesthetic visual design is the secret recipe for digital products people love.</p>
       <div class="diary-personal-note">
-        🍞 <span>Personal Note: Behind every cold, precise algorithm, there should always be a human touch that brings a smile.</span>
+        <span>Personal Note: Behind every cold, precise algorithm, there should always be a human touch that brings a smile.</span>
       </div>
     `
   },
   research: {
-    title: '📖 Entry 04: Torii Gates at the Shinto Shrine',
+    title: 'Entry 04: Torii Gates at the Shinto Shrine',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Entry #04 (Shinto Shrine)</div>
+      <div class="diary-stamp-badge">Kyoto Journal • Entry #04 (Shinto Shrine)</div>
       <div class="diary-story-quote">
         "Walking up the shrine steps through crimson torii gates mirrors my journey in AI research — quiet, dedicated, but rewarding at the peak."
       </div>
       <p>The serene atmosphere of this Shinto shrine is my favorite space for deep focus. In my <strong>Master's Thesis (Postgraduate Research)</strong> and academic exploration of LLM Synthetic Data Generation & Evaluation, I investigate how artificial intelligence can be trained and evaluated ethically, efficiently, and objectively for automated code generation.</p>
 
-      <!-- 🎬 Embedded YouTube Master's / Postgraduate Thesis Showcase Video -->
+      <!--  Embedded YouTube Master's / Postgraduate Thesis Showcase Video -->
       <div style="margin: 16px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.2); position: relative; padding-bottom: 56.25%; height: 0;">
         <iframe src="https://www.youtube.com/embed/s41cY0YNGBE" title="Master's Thesis AI Video Showcase" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px;"></iframe>
       </div>
 
       <p>Research is like climbing thousands of shrine steps: dozens of hypotheses may fall along the way, but relentless data inquiry always reveals the clear truth of underlying patterns.</p>
       <div class="diary-personal-note">
-        ⛩️ <span>Personal Note: Watch my Master's Thesis video presentation above! AI research isn't just about chasing accuracy metrics on paper; it's about understanding how intelligence evolves.</span>
+        <span>Personal Note: Watch my Master's Thesis video presentation above! AI research isn't just about chasing accuracy metrics on paper; it's about understanding how intelligence evolves.</span>
       </div>
     `
   },
   reach: {
-    title: '📖 Entry 05: Vending Machine & Red Lanterns',
+    title: 'Entry 05: Vending Machine & Red Lanterns',
     html: `
-      <div class="diary-stamp-badge">📍 Kyoto Journal • Entry #05 (Vending Machine)</div>
+      <div class="diary-stamp-badge">Kyoto Journal • Entry #05 (Vending Machine)</div>
       <div class="diary-story-quote">
         "The glowing vending machine under red lanterns is always ready to serve travelers. So is my door for meaningful conversations."
       </div>
       <p>Thank you for journeying through this 3D travel journal to this cozy lantern-lit corner. Whether you are a <strong>recruiter</strong> seeking a proactive engineer, a fellow developer, or someone eager to discuss the future of AI — my line of communication is always open.</p>
       <p>Grab a fresh drink, sit back for a moment, and let’s discuss how we can build the next remarkable innovation together.</p>
       <ul style="margin-top: 14px; padding-left: 0; list-style: none;">
-        <li style="margin-bottom: 8px;">📧 <strong>Email:</strong> <a href="mailto:yehezkieldavid2006@gmail.com" style="color: #b85c40; font-weight: 700;">yehezkieldavid2006@gmail.com</a></li>
-        <li style="margin-bottom: 8px;">💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ydavids/" target="_blank" style="color: #b85c40; font-weight: 700;">linkedin.com/in/ydavids/</a></li>
-        <li style="margin-bottom: 8px;">💻 <strong>GitHub:</strong> <a href="https://github.com/06202003/" target="_blank" style="color: #b85c40; font-weight: 700;">github.com/06202003/</a></li>
-        <li style="margin-bottom: 8px;">📱 <strong>WhatsApp:</strong> <a href="https://wa.me/6289507647137" target="_blank" style="color: #b85c40; font-weight: 700;">+62 895-0764-7137</a></li>
+        <li style="margin-bottom: 8px;"><strong>Email:</strong> <a href="mailto:yehezkieldavid2006@gmail.com" style="color: #b85c40; font-weight: 700;">yehezkieldavid2006@gmail.com</a></li>
+        <li style="margin-bottom: 8px;"><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ydavids/" target="_blank" style="color: #b85c40; font-weight: 700;">linkedin.com/in/ydavids/</a></li>
+        <li style="margin-bottom: 8px;"><strong>GitHub:</strong> <a href="https://github.com/06202003/" target="_blank" style="color: #b85c40; font-weight: 700;">github.com/06202003/</a></li>
+        <li style="margin-bottom: 8px;"><strong>WhatsApp:</strong> <a href="https://wa.me/6289507647137" target="_blank" style="color: #b85c40; font-weight: 700;">+62 895-0764-7137</a></li>
       </ul>
       <div class="diary-personal-note">
-        🧃 <span>Personal Note: Always ready for great conversations and the next technological challenge!</span>
+        <span>Personal Note: Always ready for great conversations and the next technological challenge!</span>
       </div>
     `
   },
   credits: {
-    title: '🎨 3D Model Artwork Attribution',
+    title: '3D Model Artwork Attribution',
     html: `
-      <div class="diary-stamp-badge">📍 Sketchfab License • CC BY 4.0</div>
+      <div class="diary-stamp-badge">Sketchfab License • CC BY 4.0</div>
       <p style="margin-top: 10px;"><strong>"Tanabata evening - Kyoto inspired city scene"</strong></p>
       <p>3D Artwork created by <strong>Mathias Tossens</strong> on Sketchfab.</p>
       <p>Licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" style="color: #b85c40; font-weight: 700;">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
-      <p style="margin-top: 14px;"><a href="https://sketchfab.com/3d-models/tanabata-evening-kyoto-inspired-city-scene-04dc9402b74d43ef86c4795311c0e4bb" target="_blank" style="color: #b85c40; font-weight: 700; text-decoration: underline;">🔗 View Original 3D Model on Sketchfab</a></p>
+      <p style="margin-top: 14px;"><a href="https://sketchfab.com/3d-models/tanabata-evening-kyoto-inspired-city-scene-04dc9402b74d43ef86c4795311c0e4bb" target="_blank" style="color: #b85c40; font-weight: 700; text-decoration: underline;"> View Original 3D Model on Sketchfab</a></p>
     `
   }
 };
 
-// 🌤️ Live Real-Time User Location Weather API Integration
+//  Live Real-Time User Location Weather API Integration
 function fetchLiveWeatherAndSetAtmosphere() {
   const weatherBadge = document.getElementById('hud-weather-badge');
 
   const updateWeatherUI = (cityName, temp, code, isRainy) => {
-    let weatherIcon = '🌤️';
+    let weatherIcon = '';
     let weatherLabel = 'Clear Sky';
 
     if (code >= 51 && code <= 99) {
-      weatherIcon = '🌧️';
+      weatherIcon = '';
       weatherLabel = 'Rainy';
     } else if (code >= 1 && code <= 3) {
-      weatherIcon = '☁️';
+      weatherIcon = '';
       weatherLabel = 'Cloudy';
     } else if (code >= 71 && code <= 77) {
-      weatherIcon = '❄️';
+      weatherIcon = '';
       weatherLabel = 'Snowy';
     }
 
@@ -818,90 +818,90 @@ function fetchLiveWeatherAndSetAtmosphere() {
   }
 }
 
-// 💭 Random Thoughts, Tech Quotes & Jokes Pop-up Engine
+// Insights, Tech Quotes & Jokes Pop-up Engine
 const popupContentList = [
   // =========================
   // Random Thoughts
   // =========================
-  { tag: '💭 Random Thought', text: 'Did you know? Code intelligence models process syntax trees like natural language grammar.' },
-  { tag: '💭 Random Thought', text: 'Synthetic data generation can dramatically reduce annotation costs.' },
-  { tag: '💭 Random Thought', text: 'Kyoto traditional Machiya houses use wooden joinery instead of nails.' },
-  { tag: '💭 Random Thought', text: 'The average developer spends more time reading code than writing it.' },
-  { tag: '💭 Random Thought', text: 'A clean architecture often saves more time than faster hardware.' },
-  { tag: '💭 Random Thought', text: 'Many AI models learn patterns—not facts.' },
-  { tag: '💭 Random Thought', text: 'Every optimization begins with a measurement.' },
-  { tag: '💭 Random Thought', text: 'Most bugs are introduced long before deployment.' },
-  { tag: '💭 Random Thought', text: 'The shortest code is not always the most maintainable.' },
-  { tag: '💭 Random Thought', text: 'Data without context is just noise.' },
+  { tag: 'Insight', text: 'Did you know? Code intelligence models process syntax trees like natural language grammar.' },
+  { tag: 'Insight', text: 'Synthetic data generation can dramatically reduce annotation costs.' },
+  { tag: 'Insight', text: 'Kyoto traditional Machiya houses use wooden joinery instead of nails.' },
+  { tag: 'Insight', text: 'The average developer spends more time reading code than writing it.' },
+  { tag: 'Insight', text: 'A clean architecture often saves more time than faster hardware.' },
+  { tag: 'Insight', text: 'Many AI models learn patterns—not facts.' },
+  { tag: 'Insight', text: 'Every optimization begins with a measurement.' },
+  { tag: 'Insight', text: 'Most bugs are introduced long before deployment.' },
+  { tag: 'Insight', text: 'The shortest code is not always the most maintainable.' },
+  { tag: 'Insight', text: 'Data without context is just noise.' },
 
   // =========================
   // Tech Quotes
   // =========================
-  { tag: '💡 Tech Quote', text: '"Simplicity is prerequisite for reliability." — Edsger W. Dijkstra' },
-  { tag: '💡 Tech Quote', text: '"Programs must be written for people to read." — Harold Abelson' },
-  { tag: '💡 Tech Quote', text: '"Talk is cheap. Show me the code." — Linus Torvalds' },
-  { tag: '💡 Tech Quote', text: '"Artificial Intelligence is the new electricity." — Andrew Ng' },
-  { tag: '💡 Tech Quote', text: '"Code never lies, comments sometimes do." — Ron Jeffries' },
-  { tag: '💡 Tech Quote', text: '"Premature optimization is the root of all evil." — Donald Knuth' },
-  { tag: '💡 Tech Quote', text: '"Good code is its own best documentation." — Steve McConnell' },
-  { tag: '💡 Tech Quote', text: '"Any fool can write code that a computer can understand." — Martin Fowler' },
+  { tag: 'Tech Quote', text: '"Simplicity is prerequisite for reliability." — Edsger W. Dijkstra' },
+  { tag: 'Tech Quote', text: '"Programs must be written for people to read." — Harold Abelson' },
+  { tag: 'Tech Quote', text: '"Talk is cheap. Show me the code." — Linus Torvalds' },
+  { tag: 'Tech Quote', text: '"Artificial Intelligence is the new electricity." — Andrew Ng' },
+  { tag: 'Tech Quote', text: '"Code never lies, comments sometimes do." — Ron Jeffries' },
+  { tag: 'Tech Quote', text: '"Premature optimization is the root of all evil." — Donald Knuth' },
+  { tag: 'Tech Quote', text: '"Good code is its own best documentation." — Steve McConnell' },
+  { tag: 'Tech Quote', text: '"Any fool can write code that a computer can understand." — Martin Fowler' },
 
   // =========================
   // Dev Jokes
   // =========================
-  { tag: '☕ Dev Joke', text: 'There are 10 types of people: those who understand binary and those who don’t.' },
-  { tag: '☕ Dev Joke', text: 'Why do programmers prefer dark mode? Because light attracts bugs!' },
-  { tag: '☕ Dev Joke', text: 'A SQL query walks into a bar and asks: "Can I JOIN you?"' },
-  { tag: '☕ Dev Joke', text: 'Debugging: Being the detective in a crime movie where you are also the murderer.' },
-  { tag: '☕ Dev Joke', text: '99 little bugs in the code, 99 bugs in the code...' },
-  { tag: '☕ Dev Joke', text: 'Programmer: "It works on my machine."' },
-  { tag: '☕ Dev Joke', text: 'My code doesn’t have bugs. It develops random features.' },
-  { tag: '☕ Dev Joke', text: 'I changed one line of code. Everything broke. Success!' },
-  { tag: '☕ Dev Joke', text: 'The best thing about Boolean values? Even if you’re wrong, you’re only off by a bit.' },
-  { tag: '☕ Dev Joke', text: 'Hardware: The part you can kick when software crashes.' },
+  { tag: 'Engineering Note', text: 'There are 10 types of people: those who understand binary and those who don’t.' },
+  { tag: 'Engineering Note', text: 'Why do programmers prefer dark mode? Because light attracts bugs!' },
+  { tag: 'Engineering Note', text: 'A SQL query walks into a bar and asks: "Can I JOIN you?"' },
+  { tag: 'Engineering Note', text: 'Debugging: Being the detective in a crime movie where you are also the murderer.' },
+  { tag: 'Engineering Note', text: '99 little bugs in the code, 99 bugs in the code...' },
+  { tag: 'Engineering Note', text: 'Programmer: "It works on my machine."' },
+  { tag: 'Engineering Note', text: 'My code doesn’t have bugs. It develops random features.' },
+  { tag: 'Engineering Note', text: 'I changed one line of code. Everything broke. Success!' },
+  { tag: 'Engineering Note', text: 'The best thing about Boolean values? Even if you’re wrong, you’re only off by a bit.' },
+  { tag: 'Engineering Note', text: 'Hardware: The part you can kick when software crashes.' },
 
   // =========================
   // AI Facts
   // =========================
-  { tag: '🤖 AI Fact', text: 'Transformer models were introduced in 2017 with the paper "Attention Is All You Need".' },
-  { tag: '🤖 AI Fact', text: 'Embedding vectors allow semantic search beyond exact keyword matching.' },
-  { tag: '🤖 AI Fact', text: 'Retrieval-Augmented Generation (RAG) helps reduce hallucinations.' },
-  { tag: '🤖 AI Fact', text: 'Fine-tuning is only one way to adapt LLMs; prompting often works surprisingly well.' },
-  { tag: '🤖 AI Fact', text: 'LLMs predict the next token—not the next idea.' },
-  { tag: '🤖 AI Fact', text: 'Knowledge graphs complement LLMs by providing structured relationships.' },
-  { tag: '🤖 AI Fact', text: 'Caching repeated prompts can reduce cost and environmental impact.' },
-  { tag: '🤖 AI Fact', text: 'Semantic similarity enables efficient response reuse.' },
+  { tag: 'AI Architecture', text: 'Transformer models were introduced in 2017 with the paper "Attention Is All You Need".' },
+  { tag: 'AI Architecture', text: 'Embedding vectors allow semantic search beyond exact keyword matching.' },
+  { tag: 'AI Architecture', text: 'Retrieval-Augmented Generation (RAG) helps reduce hallucinations.' },
+  { tag: 'AI Architecture', text: 'Fine-tuning is only one way to adapt LLMs; prompting often works surprisingly well.' },
+  { tag: 'AI Architecture', text: 'LLMs predict the next token—not the next idea.' },
+  { tag: 'AI Architecture', text: 'Knowledge graphs complement LLMs by providing structured relationships.' },
+  { tag: 'AI Architecture', text: 'Caching repeated prompts can reduce cost and environmental impact.' },
+  { tag: 'AI Architecture', text: 'Semantic similarity enables efficient response reuse.' },
 
   // =========================
   // Data Science
   // =========================
-  { tag: '📊 Data Tip', text: 'Correlation does not imply causation.' },
-  { tag: '📊 Data Tip', text: 'Always visualize your data before building a model.' },
-  { tag: '📊 Data Tip', text: 'Missing data often tells a story.' },
-  { tag: '📊 Data Tip', text: 'A simple baseline model is better than no baseline.' },
-  { tag: '📊 Data Tip', text: 'Outliers may be valuable insights—not just errors.' },
-  { tag: '📊 Data Tip', text: 'Feature engineering often beats complex algorithms.' },
-  { tag: '📊 Data Tip', text: 'Garbage in, garbage out.' },
+  { tag: 'Data Engineering', text: 'Correlation does not imply causation.' },
+  { tag: 'Data Engineering', text: 'Always visualize your data before building a model.' },
+  { tag: 'Data Engineering', text: 'Missing data often tells a story.' },
+  { tag: 'Data Engineering', text: 'A simple baseline model is better than no baseline.' },
+  { tag: 'Data Engineering', text: 'Outliers may be valuable insights—not just errors.' },
+  { tag: 'Data Engineering', text: 'Feature engineering often beats complex algorithms.' },
+  { tag: 'Data Engineering', text: 'Garbage in, garbage out.' },
 
   // =========================
   // Japanese
   // =========================
-  { tag: '🇯🇵 Japan Fact', text: 'Shinkansen trains average delays measured in seconds per year.' },
-  { tag: '🇯🇵 Japan Fact', text: 'Torii gates symbolize the transition from the ordinary to the sacred.' },
-  { tag: '🇯🇵 Japan Fact', text: 'The word "Kaizen" means continuous improvement.' },
-  { tag: '🇯🇵 Japan Fact', text: 'Hanami is the Japanese tradition of enjoying cherry blossoms.' },
-  { tag: '🇯🇵 Japan Fact', text: 'Tokyo has more Michelin-starred restaurants than any other city.' },
-  { tag: '🇯🇵 Japan Fact', text: 'Many Japanese gardens are designed to represent miniature landscapes.' },
+  { tag: 'Cultural Note', text: 'Shinkansen trains average delays measured in seconds per year.' },
+  { tag: 'Cultural Note', text: 'Torii gates symbolize the transition from the ordinary to the sacred.' },
+  { tag: 'Cultural Note', text: 'The word "Kaizen" means continuous improvement.' },
+  { tag: 'Cultural Note', text: 'Hanami is the Japanese tradition of enjoying cherry blossoms.' },
+  { tag: 'Cultural Note', text: 'Tokyo has more Michelin-starred restaurants than any other city.' },
+  { tag: 'Cultural Note', text: 'Many Japanese gardens are designed to represent miniature landscapes.' },
 
   // =========================
   // Motivation
   // =========================
-  { tag: '🚀 Motivation', text: 'Small commits lead to big projects.' },
-  { tag: '🚀 Motivation', text: 'Every expert was once a beginner.' },
-  { tag: '🚀 Motivation', text: 'Keep shipping. Keep learning.' },
-  { tag: '🚀 Motivation', text: 'Progress beats perfection.' },
-  { tag: '🚀 Motivation', text: 'Consistency compounds faster than talent.' },
-  { tag: '🚀 Motivation', text: 'Your next breakthrough starts with one more experiment.' },
+  { tag: 'Perspective', text: 'Small commits lead to big projects.' },
+  { tag: 'Perspective', text: 'Every expert was once a beginner.' },
+  { tag: 'Perspective', text: 'Keep shipping. Keep learning.' },
+  { tag: 'Perspective', text: 'Progress beats perfection.' },
+  { tag: 'Perspective', text: 'Consistency compounds faster than talent.' },
+  { tag: 'Perspective', text: 'Your next breakthrough starts with one more experiment.' },
 
 ];
 

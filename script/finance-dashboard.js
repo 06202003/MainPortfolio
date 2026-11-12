@@ -499,7 +499,7 @@
 
     // Default: Actual + Expected Forecast
     datasets.push({
-      label: '🤖 Actual + LSTM Forecast (Expected Path)',
+      label: ' Actual + LSTM Forecast (Expected Path)',
       data: expectedValues,
       borderColor: '#10b981',
       borderWidth: 3.5,
@@ -515,7 +515,7 @@
 
     if (activeScenario === 'all' || activeScenario === 'optimistic') {
       datasets.push({
-        label: '🚀 Skenario Optimis (+15% Reinvested)',
+        label: ' Skenario Optimis (+15% Reinvested)',
         data: optimisticValues,
         borderColor: '#06b6d4',
         borderWidth: 2,
@@ -529,7 +529,7 @@
 
     if (activeScenario === 'all' || activeScenario === 'conservative') {
       datasets.push({
-        label: '🛡️ Skenario Konservatif (-10% Safety Buffer)',
+        label: '️ Skenario Konservatif (-10% Safety Buffer)',
         data: conservativeValues,
         borderColor: '#a855f7',
         borderWidth: 2,
@@ -919,12 +919,12 @@
     if (question) {
       const qLower = question.toLowerCase();
       if (qLower.includes('laptop') || qLower.includes('rtx') || qLower.includes('4060') || qLower.includes('i7')) {
-        return `### 💻 Analisis Beli Laptop RTX 4060 + i7 + 32GB RAM\n\nHarga Target: **Rp 18.5M - Rp 21.5M**\n- **Opsi 1 (Sisa Kas Murni):** **13 - 14 Bulan** (Rp 1.41M/bln)\n- **Opsi 2 (Hybrid Bunga Deposito):** **9 - 10 Bulan Saja** (RECOMMENDED ⭐)\n- **Opsi 3 (Akselerasi Partial MMF):** **5 - 6 Bulan**`;
+        return `###  Analisis Beli Laptop RTX 4060 + i7 + 32GB RAM\n\nHarga Target: **Rp 18.5M - Rp 21.5M**\n- **Opsi 1 (Sisa Kas Murni):** **13 - 14 Bulan** (Rp 1.41M/bln)\n- **Opsi 2 (Hybrid Bunga Deposito):** **9 - 10 Bulan Saja** (RECOMMENDED )\n- **Opsi 3 (Akselerasi Partial MMF):** **5 - 6 Bulan**`;
       }
-      return `### 🎯 Analisis Target Keuangan: "${question}"\n\nDengan sisa kas bebas **Rp 1.41M/bulan**, Anda dapat mengalokasikan alokasi target tersebut secara disiplin tanpa mengganggu kewajiban bulanan maupun tabungan Danamon.`;
+      return `###  Analisis Target Keuangan: "${question}"\n\nDengan sisa kas bebas **Rp 1.41M/bulan**, Anda dapat mengalokasikan alokasi target tersebut secara disiplin tanpa mengganggu kewajiban bulanan maupun tabungan Danamon.`;
     }
 
-    return `🎯 **Skor & Ringkasan Kesehatan Keuangan: 96/100 (SANGAT SEHAT & PRIMA)**\n\nPortofolio keuangan Anda berada dalam posisi yang sangat solid! Savings Rate sejati Anda mencapai **28.8%** dengan passive income rutin dari kupon ST016 & bunga deposito.`;
+    return ` **Skor & Ringkasan Kesehatan Keuangan: 96/100 (SANGAT SEHAT & PRIMA)**\n\nPortofolio keuangan Anda berada dalam posisi yang sangat solid! Savings Rate sejati Anda mencapai **28.8%** dengan passive income rutin dari kupon ST016 & bunga deposito.`;
   }
 
   // --- UTILS ---

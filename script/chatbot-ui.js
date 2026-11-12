@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Disable inputs & buttons
     if (chatInput) {
       chatInput.disabled = true;
-      chatInput.placeholder = "😴 YZ.AI is taking a rest (Quota limit reached)...";
+      chatInput.placeholder = " YZ.AI is taking a rest (Quota limit reached)...";
     }
     if (sendBtn) {
       sendBtn.disabled = true;
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Append Rest Notice Bubble
-    addMessage('bot', '☕ **YZ.AI Rest Notice**: The AI LLM model has reached its hourly/daily request quota limit. YZ.AI is currently taking a short rest to recharge its API quota. Please check back in a little while!');
+    addMessage('bot', ' **YZ.AI Rest Notice**: The AI LLM model has reached its hourly/daily request quota limit. YZ.AI is currently taking a short rest to recharge its API quota. Please check back in a little while!');
   }
 
   // Expose global helper to open chatbot and send pre-filled prompt
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Play response audio on bot answer ONLY if it's NOT a Guardrail Notice or Rest Notice
     if (sender === 'bot') {
-      const isGuardrail = text.includes('Guardrail Notice') || text.includes('🛡️') || text.includes("I don't have relevant information") || text.includes('Rest Notice');
+      const isGuardrail = text.includes('Guardrail Notice') || text.includes('️') || text.includes("I don't have relevant information") || text.includes('Rest Notice');
       if (!isGuardrail) {
         playResponseAudio();
       }
@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (err && (err.isRateLimited || err.message === 'RATE_LIMIT_EXHAUSTED')) {
         activateRestMode();
       } else {
-        addMessage('bot', '⚠️ Sorry, an error occurred while processing your request. Please try again.');
+        addMessage('bot', '️ Sorry, an error occurred while processing your request. Please try again.');
       }
       console.error(err);
     }

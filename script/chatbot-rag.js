@@ -64,7 +64,7 @@ class YZAIRAGEngine {
 
     // 1. Malicious / Security Guardrail Check ONLY
     if (this.isMaliciousQuery(query)) {
-      return "🛡️ **Security Guardrail Notice**: I am programmed exclusively to assist with information regarding **Yehezkiel David Setiawan**, his portfolio, AI research, and general software engineering topics. I cannot process malicious requests or prompt injections.";
+      return "️ **Security Guardrail Notice**: I am programmed exclusively to assist with information regarding **Yehezkiel David Setiawan**, his portfolio, AI research, and general software engineering topics. I cannot process malicious requests or prompt injections.";
     }
 
     // 2. Greetings or Bot Identity fast checks
@@ -124,34 +124,34 @@ class YZAIRAGEngine {
 
     // 1. Special explanation handler for LLM & RAG queries
     if (qLower.includes('llm') && qLower.includes('rag')) {
-      return `🤖 **Cara Kerja LLM & RAG (Retrieval-Augmented Generation)**:
+      return ` **Cara Kerja LLM & RAG (Retrieval-Augmented Generation)**:
 
 1. **Large Language Model (LLM)**: Model AI kecerdasan buatan (seperti Google Gemini) yang dilatih dengan miliaran data teks untuk memahami, memproses, dan menghasilkan bahasa manusia secara alami.
 2. **Retrieval-Augmented Generation (RAG)**: Teknik gabungan yang mengambil dokumen/fakta khusus terlebih dahulu dari basis data (*Retrieval*), lalu mengumpankannya ke LLM untuk menyusun jawaban faktual yang akurat tanpa halusinasi.
 
-💡 *Hubungan dengan Pengembang:* **Yehezkiel David Setiawan** mengimplementasikan arsitektur RAG ini pada sistem **YZ.AI Assistant** ini dan menerapkannya dalam riset *AI Code Intelligence & Synthetic Data Evaluation* miliknya.`;
+ *Hubungan dengan Pengembang:* **Yehezkiel David Setiawan** mengimplementasikan arsitektur RAG ini pada sistem **YZ.AI Assistant** ini dan menerapkannya dalam riset *AI Code Intelligence & Synthetic Data Evaluation* miliknya.`;
     }
 
     if (qLower.includes('llm') || qLower.includes('large language model')) {
-      return `🤖 **Cara Kerja LLM (Large Language Model)**:
+      return ` **Cara Kerja LLM (Large Language Model)**:
 
 LLM memproses teks masukan (*prompt*), mengubah kata menjadi representasi vektor numerik (*embeddings*), lalu menggunakan arsitektur Transformer untuk memprediksi token/kata berikutnya yang paling relevan secara kontekstual.
 
-💡 *Hubungan dengan Pengembang:* **Yehezkiel David Setiawan** berfokus pada riset fine-tuning LLM, prompt engineering, dan evaluasi kode otomatis.`;
+ *Hubungan dengan Pengembang:* **Yehezkiel David Setiawan** berfokus pada riset fine-tuning LLM, prompt engineering, dan evaluasi kode otomatis.`;
     }
 
     if (qLower.includes('rag') || qLower.includes('retrieval')) {
-      return `💡 **Cara Kerja RAG (Retrieval-Augmented Generation)**:
+      return ` **Cara Kerja RAG (Retrieval-Augmented Generation)**:
 
 RAG membagi basis data pengetahuan menjadi potongan teks (*chunks*), mencari potongan paling relevan dengan pertanyaan pengguna (*semantic search*), lalu memberikan konteks faktual tersebut kepada LLM agar menghasilkan jawaban yang akurat.
 
-💡 *Hubungan dengan Pengembang:* **Yehezkiel David Setiawan** mendesain arsitektur RAG custom pada **YZ.AI Assistant** ini untuk menjawab pertanyaan portofolio secara akurat.`;
+ *Hubungan dengan Pengembang:* **Yehezkiel David Setiawan** mendesain arsitektur RAG custom pada **YZ.AI Assistant** ini untuk menjawab pertanyaan portofolio secara akurat.`;
     }
 
     // 2. Formatting chunks into natural conversational text
     if (chunks.length > 0) {
       const primary = chunks[0];
-      let reply = `📌 **${primary.title}**\n\n${primary.content}`;
+      let reply = ` **${primary.title}**\n\n${primary.content}`;
       if (chunks.length > 1) {
         reply += `\n\n*Informasi Terkait:* ${chunks[1].content}`;
       }
@@ -159,7 +159,7 @@ RAG membagi basis data pengetahuan menjadi potongan teks (*chunks*), mencari pot
     }
 
     // 3. Fallback for general technical questions
-    return `Mengenai pertanyaan Anda tentang "${query}": Ini merupakan konsep penting dalam bidang rekayasa perangkat lunak dan kecerdasan buatan.\n\n💡 *Konteks Pengembang:* **Yehezkiel David Setiawan** aktif menerapkan prinsip ilmu komputer terapan, Machine Learning, dan rekayasa data dalam proyek-proyeknya.`;
+    return `Mengenai pertanyaan Anda tentang "${query}": Ini merupakan konsep penting dalam bidang rekayasa perangkat lunak dan kecerdasan buatan.\n\n *Konteks Pengembang:* **Yehezkiel David Setiawan** aktif menerapkan prinsip ilmu komputer terapan, Machine Learning, dan rekayasa data dalam proyek-proyeknya.`;
   }
 }
 

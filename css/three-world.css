@@ -2,7 +2,7 @@
    BEYOND THE DOOR: 3D MIDNIGHT ARCHIVE STYLES
    ========================================================================== */
 
-/* ⚪ Navbar Text Color White */
+/*  Navbar Text Color White */
 .navbar .nav-link,
 .navbar-nav .nav-link {
   color: #ffffff !important;
@@ -18,7 +18,7 @@
   opacity: 1;
 }
 
-/* 🚪 Mysterious Navbar Door Button */
+/*  Mysterious Navbar Door Button */
 .secret-door-btn {
   background: rgba(255, 120, 40, 0.15);
   border: 1px solid rgba(255, 140, 50, 0.4);
@@ -64,7 +64,7 @@
   text-transform: uppercase;
 }
 
-/* 🌀 Portal Vignette Overlay Transition */
+/*  Portal Vignette Overlay Transition */
 #portal-overlay {
   position: fixed;
   top: 0;
@@ -84,7 +84,7 @@
   backdrop-filter: blur(15px);
 }
 
-/* 🌌 3D Canvas Viewport Container */
+/*  3D Canvas Viewport Container */
 #three-canvas-container {
   position: fixed;
   top: 0;
@@ -113,7 +113,7 @@
   display: block;
 }
 
-/* ⏳ 3D Scene Loading Screen */
+/*  3D Scene Loading Screen */
 #three-loading-screen {
   position: absolute;
   top: 0;
@@ -177,7 +177,7 @@
   color: #cbd5e1;
 }
 
-/* 🕹️ HUD Top Controls Bar */
+/* ️ HUD Top Controls Bar */
 #three-hud-overlay {
   position: absolute;
   top: 0;
@@ -242,7 +242,7 @@
   50% { transform: scale(1.4); opacity: 0.5; }
 }
 
-/* 🌤️ Live Weather HUD Badge */
+/* ️ Live Weather HUD Badge */
 .hud-weather-badge {
   background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(14px);
@@ -260,7 +260,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* 🔘 Base HUD Glassmorphic Pill Buttons */
+/*  Base HUD Glassmorphic Pill Buttons */
 .hud-btn {
   height: 38px !important;
   padding: 8px 18px !important;
@@ -279,7 +279,7 @@
   pointer-events: auto;
 }
 
-/* 🎨 3D Model Credits Button (Indigo Neon Pill) */
+/*  3D Model Credits Button (Indigo Neon Pill) */
 .hud-btn-credits {
   background: rgba(99, 102, 241, 0.22) !important;
   border: 1px solid rgba(129, 140, 248, 0.45) !important;
@@ -297,7 +297,7 @@
   transform: translateY(-2px) scale(1.04) !important;
 }
 
-/* 🚪 Exit 3D Button (Crimson Neon Pill) */
+/*  Exit 3D Button (Crimson Neon Pill) */
 .hud-btn-exit {
   background: rgba(225, 29, 72, 0.22) !important;
   border: 1px solid rgba(244, 63, 94, 0.45) !important;
@@ -315,7 +315,7 @@
   transform: translateY(-2px) scale(1.04) !important;
 }
 
-/* 💭 Random Thoughts, Quotes & Jokes Floating Pop-up Card */
+/*  Random Thoughts, Quotes & Jokes Floating Pop-up Card */
 .hud-thought-card {
   position: fixed;
   bottom: 30px;
@@ -382,7 +382,7 @@
 }
 
 
-/* 🎵 Spotify-Style Glassmorphic Radio Player Widget */
+/*  Spotify-Style Glassmorphic Radio Player Widget */
 .hud-spotify-player {
   background: rgba(15, 23, 42, 0.88);
   backdrop-filter: blur(16px);
@@ -523,7 +523,7 @@
   box-shadow: 0 0 6px #38bdf8;
 }
 
-/* 🎯 Bottom Center Interaction Prompt */
+/*  Bottom Center Interaction Prompt */
 .hud-interaction-hint {
   position: absolute;
   bottom: 30px;
@@ -550,7 +550,7 @@
   50% { transform: translate(-50%, -6px); }
 }
 
-/* 📍 Floating Mouse Cursor 3D Coordinate Badge */
+/*  Floating Mouse Cursor 3D Coordinate Badge */
 #cursor-coord-badge {
   position: fixed;
   pointer-events: none;
@@ -572,7 +572,7 @@
   transition: opacity 0.15s ease;
 }
 
-/* 🪟 Interactive Content Modals (Glassmorphism) */
+/*  Interactive Content Modals (Glassmorphism) */
 .three-modal-backdrop {
   position: absolute;
   top: 0;
@@ -595,7 +595,7 @@
   pointer-events: auto;
 }
 
-/* 📜 Vintage Kyoto Travel Diary Modal Theme (Kertas Diary Estetis) */
+/*  Vintage Kyoto Travel Diary Modal Theme (Kertas Diary Estetis) */
 .three-modal-card {
   width: 90%;
   max-width: 650px;
@@ -721,7 +721,7 @@
   border-top: 1px dashed rgba(180, 150, 120, 0.35);
 }
 
-/* 🍞 Toast Notification */
+/*  Toast Notification */
 .three-toast {
   position: absolute;
   top: 80px;
@@ -745,7 +745,7 @@
   transform: translateX(0);
 }
 
-/* 📱 Responsive Mobile Tweaks */
+/*  Responsive Mobile Tweaks */
 @media (max-width: 768px) {
   .hud-top-bar {
     top: 12px;

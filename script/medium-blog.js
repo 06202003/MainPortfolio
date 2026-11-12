@@ -50,7 +50,7 @@
 
   function handleClap(btn) {
     if (userClaps >= 50) {
-      showToast('You reached the max 50 claps for this story! Thank you! 👏');
+      showToast('You reached the max 50 claps for this story! Thank you! <i class="fa-solid fa-hands-clapping"></i>');
       return;
     }
 

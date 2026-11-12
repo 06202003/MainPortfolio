@@ -722,7 +722,7 @@ code, pre, kbd, samp,
 }
 .aaaa {
   background-color: #212529;
-  margin-top: -8rem;
+  margin-top: 0;
 }
 .heheaa {
   padding: 0 10rem 0 10rem;
@@ -1681,4 +1681,393 @@ section[id] {
     min-height: auto;
     margin-top: 30px;
   }
+}
+
+
+/* ==========================================================================
+   ACADEMIC & PROFESSIONAL REFINEMENTS (NON-AI-SLOP DESIGN SYSTEM)
+   ========================================================================== */
+
+/* Executive Credentials Dossier (Human-Crafted Editorial Design) */
+.exec-dossier {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.exec-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 3px solid #0f172a;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.exec-item:hover {
+  border-left-color: #10b981;
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.exec-icon {
+  font-size: 1.15rem;
+  color: #0f172a;
+  margin-top: 3px;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.exec-content {
+  flex: 1;
+}
+
+.exec-heading {
+  font-family: var(--font-heading) !important;
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.exec-desc {
+  font-size: 0.88rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.exec-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #f1f5f9;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+}
+
+.exec-tag-honor {
+  background: #ecfdf5;
+  color: #065f46;
+  border-color: #a7f3d0;
+}
+
+/* Sharp Executive Download CV Button */
+.btn-cv-download {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #0f172a !important;
+  color: #ffffff !important;
+  border: 1px solid #334155 !important;
+  border-radius: 6px !important;
+  padding: 14px 22px !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.2px;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12) !important;
+  cursor: pointer;
+}
+
+.btn-cv-download:hover {
+  background: #1e293b !important;
+  border-color: #10b981 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.2) !important;
+}
+
+/* Graduation Action Trigger Button */
+.btn-wisuda-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 13px 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-wisuda-trigger:hover {
+  background: #f1f5f9;
+  border-color: #0f172a;
+  color: #0f172a;
+}
+
+/* S-SPARC Academic Editorial Showcase (No AI Slop) */
+.sparc-academic-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+}
+
+.sparc-meta-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.sparc-meta-badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+}
+
+.sparc-meta-badge.highlight {
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(52, 211, 153, 0.4);
+  color: #34d399;
+}
+
+/* Precision Metrics Bar */
+.sparc-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 576px) {
+  .sparc-metrics-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sparc-metric-item {
+  background: #0b121e;
+  padding: 12px 14px;
+  text-align: left;
+}
+
+.sparc-metric-val {
+  font-family: var(--font-mono);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.sparc-metric-val.green {
+  color: #34d399;
+}
+
+.sparc-metric-label {
+  font-size: 0.74rem;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin: 0;
+}
+
+/* Editorial Behind-the-Paper Box */
+.sparc-narrative-box {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 3px solid #10b981;
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+
+.sparc-narrative-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #34d399;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  font-family: var(--font-mono);
+}
+
+.sparc-narrative-text {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Unified Action Bar (No Rainbow Buttons) */
+.sparc-action-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sparc-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #10b981;
+  color: #042f2e !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 11px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid #34d399;
+}
+
+.sparc-btn-primary:hover {
+  background: #059669;
+  color: #ffffff !important;
+}
+
+.sparc-doc-group {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 576px) {
+  .sparc-doc-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.sparc-doc-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: #e2e8f0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 9px 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.sparc-doc-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #34d399;
+  color: #ffffff;
+}
+
+/* Wisuda & Education Showcase Styling */
+.edu-card-pro {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.edu-card-pro:hover {
+  border-color: #34d399;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.edu-photo-thumb {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.edu-photo-thumb:hover {
+  transform: scale(1.02);
+}
+
+.edu-degree-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.edu-honor-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid #10b981;
+  color: #34d399;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.wisuda-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .wisuda-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wisuda-gallery-item {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: #0f172a;
+}
+
+.wisuda-gallery-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.wisuda-gallery-caption {
+  padding: 12px 14px;
+  color: #cbd5e1;
+  font-size: 0.85rem;
 }

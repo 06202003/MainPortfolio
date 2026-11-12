@@ -133,7 +133,7 @@ function generateDeepFallbackAnalysis(data, question) {
     const qLower = question.toLowerCase();
 
     if (qLower.includes('laptop') || qLower.includes('rtx') || qLower.includes('4060') || qLower.includes('i7')) {
-      return `### 💻 Analisis & Estimasi Alokasi Beli Laptop RTX 4060 + i7 + 32GB RAM
+      return `###  Analisis & Estimasi Alokasi Beli Laptop RTX 4060 + i7 + 32GB RAM
 
 Untuk membeli Laptop High-End (RTX 4060, Intel i7, RAM 32GB), estimasi harga pasaran baru saat ini adalah **$\mathbf{\text{Rp } 18.500.000\ -\ \text{Rp } 21.500.000}$** (misal: Lenovo Legion Slim / ASUS ROG Zephyrus / Acer Predator).
 
@@ -144,21 +144,21 @@ Berdasarkan data keuangan bulanan Anda saat ini:
 
 ---
 
-### 🎯 3 Opsi Strategi Alokasi Waktu Aman:
+###  3 Opsi Strategi Alokasi Waktu Aman:
 
-#### 1. 🛡️ Opsi 1: Murni Sisa Kas Bebas (100% Aman & Tanpa Mengganggu Investasi/Dana Darurat)
+#### 1. ️ Opsi 1: Murni Sisa Kas Bebas (100% Aman & Tanpa Mengganggu Investasi/Dana Darurat)
 - **Durasi Alokasi:** **13 - 14 Bulan**
 - **Skema:** Tabung Rp 1.414.375/bulan dari sisa kas bebas.
 - **Hasil (14 Bulan):** $\text{14} \times \text{Rp 1.414.375} = \mathbf{\text{Rp } 19.801.250}$.
 - **Kelebihan:** 0% risiko, cicilan mobil & tabungan Danamon tetap jalan 100%.
 
-#### 2. ⚡ Opsi 2: Hybrid Sisa Kas + Bunga Deposito Jatuh Tempo (RECOMMENDED!)
+#### 2.  Opsi 2: Hybrid Sisa Kas + Bunga Deposito Jatuh Tempo (RECOMMENDED!)
 - **Durasi Alokasi:** **9 - 10 Bulan**
 - **Skema:** Tabung Rp 1.414.375/bulan selama 10 bulan (Rp 14,14 Juta) + gabungkan dengan bunga jatuh tempo Deposito Allo/SeaBank (Rp 5,0 Juta).
 - **Hasil (10 Bulan):** $\text{Rp 14.14M} + \text{Rp 5.0M} = \mathbf{\text{Rp } 19.140.000}$.
 - **Kelebihan:** Laptop terbeli lebih cepat (kurang dari 1 tahun) secara CASH tanpa menyentuh dana darurat Sucorinvest MMF!
 
-#### 3. 🚀 Opsi 3: Akselerasi Pakai Sebagian Dana Likuid MMF (Terbeli Cepat)
+#### 3.  Opsi 3: Akselerasi Pakai Sebagian Dana Likuid MMF (Terbeli Cepat)
 - **Durasi Alokasi:** **5 - 6 Bulan**
 - **Skema:** Alokasikan Rp 10 Juta dari Sucorinvest MMF + kumpulkan sisa kas 6 bulan (Rp 8,48 Juta).
 - **Hasil:** Laptop terbeli dalam 6 bulan.
@@ -166,11 +166,11 @@ Berdasarkan data keuangan bulanan Anda saat ini:
 
 ---
 
-> 💡 **Rekomendasi Terbaik YZ.AI:**  
+>  **Rekomendasi Terbaik YZ.AI:**  
 > Ambil **Opsi 2 (Durasi 9-10 Bulan)**. Laptop terbeli CASH di bulan ke-10 menggunakan kombinasi sisa kas bebas + pencairan bunga deposito Rp 5M tanpa perlu kredit/utang dan tanpa merusak alokasi investasi Danamon maupun dana darurat!`;
     }
 
-    return `### 🎯 Jawaban Strategis YZ.AI untuk Pertanyaan Anda:
+    return `###  Jawaban Strategis YZ.AI untuk Pertanyaan Anda:
 
 Pertanyaan: "${question}"
 
@@ -185,7 +185,7 @@ Berdasarkan analisis profil keuangan Anda:
 Dengan sisa cashflow bebas **Rp 1.41M/bulan**, Anda dapat mengalokasikan alokasi target khusus tersebut secara bertahap tanpa mengganggu kewajiban bulanan (Cicilan mobil Rp 2.5M & Kos Rp 1.7M) maupun tabungan berjangka Danamon (Rp 1.2M).`;
   }
 
-  return `### 🏆 1. Scorecard & Evaluasi Kesehatan Finansial (Skor: 96/100 - PRIMA)
+  return `###  1. Scorecard & Evaluasi Kesehatan Finansial (Skor: 96/100 - PRIMA)
 
 Portofolio keuangan Anda berada dalam kondisi yang **sangat sehat, disiplin, dan terstruktur rapi**.
 
