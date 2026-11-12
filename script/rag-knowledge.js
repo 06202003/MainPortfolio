@@ -25,8 +25,8 @@ window.YEHEZKIEL_KNOWLEDGE_BASE = [
   {
     id: "award_airea",
     title: "AIREA 2026 Competition & S-SPARC",
-    keywords: ["airea", "airea 2026", "s-sparc", "hong kong", "merit award", "competition", "eco conscious", "responsible ai", "mindful prompting"],
-    content: "In 2026, Yehezkiel led the Maranatha delegation team to win the Merit Award (~41 Million IDR / ~HKD 20,000) at the 2nd International Competition on AI in Education (AIREA 2026) hosted by The Education University of Hong Kong among 212 international teams. They created 'S-SPARC' (The Next Level of Eco-Conscious AI for Education), an AI companion encouraging responsible AI use through mindful prompt interval controls, response reuse recommendations, and gamified points."
+    keywords: ["airea", "airea 2026", "s-sparc", "hong kong", "merit award", "competition", "eco conscious", "responsible ai", "mindful prompting", "mas rusdi", "rusdi barber", "mas rusdi barber"],
+    content: "In 2026, Yehezkiel led the Maranatha delegation team to win the Merit Award (~41 Million IDR / ~HKD 20,000) at the 2nd International Competition on AI in Education (AIREA 2026) hosted by The Education University of Hong Kong among 212 international teams. The team consisted of Yehezkiel David Setiawan (Lead), MAS RUSDI BARBER, and Archangela Sheilla Haryanto, mentored by Dr. Oscar Karnalim. They created 'S-SPARC' (The Next Level of Eco-Conscious AI for Education), an AI companion encouraging responsible AI use through mindful prompt interval controls, response reuse recommendations, and gamified points."
   },
   {
     id: "award_impact_edu",
