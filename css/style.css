@@ -2352,3 +2352,241 @@ section.bg-dark .btn-outline-success:hover {
   border-radius: 16px !important;
   display: block !important;
 }
+
+
+/* ==========================================================================
+   MASTER GLASSMORPHISM BUTTON SYSTEM (100% UNIFIED ACROSS ENTIRE PORTFOLIO)
+   ========================================================================== */
+
+/* Universal Glassmorphism Baseline for all Buttons and Button Links */
+.btn,
+button.btn,
+a.btn,
+.btn-hero-primary,
+.btn-hero-secondary,
+.qual-tab-btn,
+.sparc-media-tab,
+.hero-badge-pill,
+.secret-door-btn,
+.btn-pub-details,
+.btn-pub-paper,
+.btn-dossier-inspect,
+.btn-sparc-solid,
+.chip-btn,
+#contact-button {
+  backdrop-filter: blur(14px) saturate(160%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(160%) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* 1. Emerald / Success Glass (Hero, Navbar, S-SPARC, Contact, Modals) */
+.btn-success,
+.btn-outline-success,
+.btn-hero-primary,
+.btn-sparc-green,
+.btn-pub-paper,
+#contact-button {
+  background: rgba(16, 185, 129, 0.16) !important;
+  border: 1px solid rgba(52, 211, 153, 0.48) !important;
+  color: #34d399 !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+}
+
+.btn-success:hover,
+.btn-outline-success:hover,
+.btn-hero-primary:hover,
+.btn-sparc-green:hover,
+.btn-pub-paper:hover,
+#contact-button:hover {
+  background: rgba(16, 185, 129, 0.3) !important;
+  border-color: rgba(52, 211, 153, 0.85) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.38) !important;
+}
+
+.btn-success:active,
+.btn-outline-success:active,
+.btn-hero-primary:active,
+#contact-button:active {
+  transform: translateY(0) !important;
+}
+
+/* 2. Light / Frosted White Glass */
+.btn-outline-light,
+.btn-light,
+.btn-pub-details,
+.hero-badge-pill,
+.secret-door-btn {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+}
+
+.btn-outline-light:hover,
+.btn-light:hover,
+.btn-pub-details:hover,
+.hero-badge-pill:hover,
+.secret-door-btn:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+/* 3. Dark Charcoal Glass (CV Download, Secondary, Modal Close) */
+.btn-dark,
+.btn-secondary,
+.btn-outline-secondary,
+.btn-cv-glass,
+#about .btn-dark {
+  background: rgba(15, 23, 42, 0.82) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #f8fafc !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-dark:hover,
+.btn-secondary:hover,
+.btn-outline-secondary:hover,
+.btn-cv-glass:hover,
+#about .btn-dark:hover {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border-color: rgba(52, 211, 153, 0.6) !important;
+  color: #34d399 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+/* 4. Primary Blue Glass */
+.btn-primary,
+.btn-outline-primary,
+.btn-sparc-blue {
+  background: rgba(59, 130, 246, 0.16) !important;
+  border: 1px solid rgba(96, 165, 250, 0.5) !important;
+  color: #60a5fa !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-primary:hover,
+.btn-outline-primary:hover,
+.btn-sparc-blue:hover {
+  background: rgba(59, 130, 246, 0.3) !important;
+  border-color: rgba(96, 165, 250, 0.85) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+/* 5. Warning / Amber Gold Glass */
+.btn-warning,
+.btn-outline-warning,
+.btn-sparc-gold {
+  background: rgba(245, 158, 11, 0.16) !important;
+  border: 1px solid rgba(251, 191, 36, 0.5) !important;
+  color: #fbbf24 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-warning:hover,
+.btn-outline-warning:hover,
+.btn-sparc-gold:hover {
+  background: rgba(245, 158, 11, 0.3) !important;
+  border-color: rgba(251, 191, 36, 0.85) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 158, 11, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+/* 6. Info / Cyan Glass */
+.btn-info,
+.btn-outline-info,
+.btn-sparc-cyan {
+  background: rgba(6, 182, 212, 0.16) !important;
+  border: 1px solid rgba(34, 211, 238, 0.5) !important;
+  color: #22d3ee !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-info:hover,
+.btn-outline-info:hover,
+.btn-sparc-cyan:hover {
+  background: rgba(6, 182, 212, 0.3) !important;
+  border-color: rgba(34, 211, 238, 0.85) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+}
+
+/* 7. Danger / Red Glass */
+.btn-danger,
+.btn-outline-danger {
+  background: rgba(239, 68, 68, 0.16) !important;
+  border: 1px solid rgba(248, 113, 113, 0.5) !important;
+  color: #f87171 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-danger:hover,
+.btn-outline-danger:hover {
+  background: rgba(239, 68, 68, 0.3) !important;
+  border-color: rgba(248, 113, 113, 0.85) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.35) !important;
+}
+
+/* 8. Qualification & Interactive Tabs Glass */
+.qual-tab-btn {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #cbd5e1 !important;
+}
+
+.qual-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.14) !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+  color: #ffffff !important;
+}
+
+.qual-tab-btn.active {
+  background: rgba(16, 185, 129, 0.2) !important;
+  border-color: rgba(52, 211, 153, 0.6) !important;
+  color: #34d399 !important;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+/* 9. Peer Review Dossier Inspect Button */
+.btn-dossier-inspect {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #e2e8f0 !important;
+  border-radius: 50px !important;
+  padding: 8px 18px !important;
+}
+
+.btn-dossier-inspect:hover {
+  background: rgba(16, 185, 129, 0.25) !important;
+  border-color: rgba(52, 211, 153, 0.75) !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3) !important;
+}
+
+/* 10. Chatbot Chips Glass */
+.chip-btn {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #e2e8f0 !important;
+  backdrop-filter: blur(10px) !important;
+  border-radius: 9999px !important;
+  transition: all 0.2s ease !important;
+}
+
+.chip-btn:hover {
+  background: rgba(16, 185, 129, 0.2) !important;
+  border-color: rgba(52, 211, 153, 0.6) !important;
+  color: #34d399 !important;
+}
